@@ -1,11 +1,11 @@
 {
   "name": "eslint-config-galex",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "yarn-deduplicate -l",
+    "dedup": "yarn-deduplicate -l",
     "publish": "np"
   },
   "repository": {
