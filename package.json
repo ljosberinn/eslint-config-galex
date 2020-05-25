@@ -4,7 +4,9 @@
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
-    "postinstall": "yarn-deduplicate -l"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "yarn-deduplicate -l",
+    "publish": "np"
   },
   "repository": {
     "type": "git",
@@ -46,5 +48,8 @@
   },
   "eslintIgnore": [
     "node_modules"
-  ]
+  ],
+  "devDependencies": {
+    "np": "^6.2.3"
+  }
 }
