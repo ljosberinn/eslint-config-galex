@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['react-app', 'prettier', 'kentcdodds/jest'],
   rules: {
+    'no-else-return': 'error',
     'no-alert': 'error',
     'no-console': 'warn',
     'require-await': 'error',
