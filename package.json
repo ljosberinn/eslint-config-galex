@@ -1,0 +1,50 @@
+{
+  "name": "eslint-config-galex",
+  "version": "0.0.1",
+  "description": "personal ESLint ruleset of galex",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "yarn-deduplicate -l"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljosberinn/eslint-config-galex.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "galex",
+    "javascript",
+    "styleguide"
+  ],
+  "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ljosberinn/eslint-config-galex/issues"
+  },
+  "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "^6.8.0",
+    "eslint-config-kentcdodds": "^14.13.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "3.x || 4.x",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "1.x || 2.x",
+    "eslint-plugin-testing-library": "^3.1.3",
+    "typescript": "3.9.3",
+    "yarn-deduplicate": "^2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "./index.js"
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ]
+}
