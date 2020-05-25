@@ -4,7 +4,7 @@
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "dedup": "yarn-deduplicate -l",
     "publish": "np"
   },
