@@ -1743,6 +1743,13 @@ eslint-plugin-react@7.20.0, eslint-plugin-react@^7.20.0:
     string.prototype.matchall "^4.0.2"
     xregexp "^4.3.0"
 
+eslint-plugin-sort-keys-fix@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-keys-fix/-/eslint-plugin-sort-keys-fix-1.1.1.tgz#2ed201b53fd4a89552c6e2abd38933f330a4b62e"
+  integrity sha512-x02SLBg+8OEaoT9vvMbsgeInw17wjHLsa9cOieIVQY+xMNRiXBbyMWw+NiBoxYyJIR4QKDOPDofCjQdoSvltQg==
+  dependencies:
+    requireindex "~1.2.0"
+
 eslint-plugin-testing-library@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-3.1.3.tgz#e7c228d5489b2b5a0c1bf54aad2c35e1a4568870"
