@@ -44,6 +44,9 @@
     "read-pkg-up": "^7.0.1",
     "typescript": "3.9.3"
   },
+  "peerDependencies": {
+    "eslint": "^7.1.0"
+  },
   "eslintConfig": {
     "extends": "./index.js"
   },
@@ -51,7 +54,6 @@
     "node_modules"
   ],
   "devDependencies": {
-    "np": "^6.2.3",
     "yarn-deduplicate": "^2.0.0"
   }
 }
