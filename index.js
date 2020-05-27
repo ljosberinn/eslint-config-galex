@@ -22,13 +22,13 @@ const { hasJest, hasReact } = (() => {
     ];
 
     return {
-      jest: allDeps.includes('jest'),
-      react: deps.includes('react'),
+      hasJest: allDeps.includes('jest'),
+      hasReact: ['react', 'preact', 'next'].some(pkg => deps.includes(pkg)),
     };
   } catch (error) {
     return {
-      jest: false,
-      react: false,
+      hasJest: false,
+      hasReact: false,
     };
   }
 })();
