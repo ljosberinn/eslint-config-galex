@@ -1,4 +1,4 @@
-const hasJest = (() => {
+const { hasJest, hasReact } = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   const { sync } = require('read-pkg-up');
 
@@ -11,42 +11,34 @@ const hasJest = (() => {
       },
     } = sync({ normalize: true });
 
-    const allDeps = Object.keys({
-      ...peerDependencies,
-      ...devDependencies,
-      ...dependencies,
-    });
+    const deps = Object.keys(dependencies);
 
-    return allDeps.includes('jest');
+    const allDeps = [
+      ...Object.keys({
+        ...peerDependencies,
+        ...devDependencies,
+      }),
+      ...deps,
+    ];
+
+    return {
+      jest: allDeps.includes('jest'),
+      react: deps.includes('react'),
+    };
   } catch (error) {
-    return false;
+    return {
+      jest: false,
+      react: false,
+    };
   }
 })();
 
-module.exports = {
+const defaultConfig = {
   extends: ['react-app', 'prettier', hasJest && 'kentcdodds/jest'].filter(
     Boolean
   ),
   plugins: ['sort-keys-fix'],
-  rules: {
-    'import/order': [
-      'warn',
-      {
-        alphabetize: {
-          order: 'asc',
-        },
-        groups: [
-          ['builtin', 'external', 'internal'],
-          ['unknown', 'parent', 'sibling'],
-          'index',
-        ],
-        'newlines-between': 'always',
-      },
-    ],
-    'no-alert': 'error',
-    'no-console': 'warn',
-    'no-else-return': 'error',
-    'require-await': 'error',
-    'sort-keys-fix/sort-keys-fix': 'warn',
-  },
+  rules: require('./custom-rules'),
 };
+
+module.exports = hasReact ? defaultConfig : require('./no-react');
