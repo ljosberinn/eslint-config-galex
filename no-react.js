@@ -18,12 +18,6 @@ const filterJSXAndReactRules = rules =>
 
 module.exports = {
   ...reactApp,
-  plugins: ['import', 'prettier'],
-  parserOptions: {
-    ...reactApp.parserOptions,
-    ecmaFeatures: undefined,
-  },
-  settings: undefined,
   overrides: [
     {
       ...reactApp.overrides[0],
@@ -34,5 +28,11 @@ module.exports = {
       rules: filterJSXAndReactRules(reactApp.overrides[0].rules),
     },
   ],
+  parserOptions: {
+    ...reactApp.parserOptions,
+    ecmaFeatures: undefined,
+  },
+  plugins: ['import', 'prettier', 'sort-keys-fix'],
   rules: filterJSXAndReactRules(reactApp.rules),
+  settings: undefined,
 };

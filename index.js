@@ -1,3 +1,6 @@
+const customRules = require('./custom-rules');
+const noReact = require('./no-react');
+
 const { hasJest, hasReact } = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   const { sync } = require('read-pkg-up');
@@ -38,7 +41,15 @@ const defaultConfig = {
     Boolean
   ),
   plugins: ['sort-keys-fix'],
-  rules: require('./custom-rules'),
+  rules: customRules,
 };
 
-module.exports = hasReact ? defaultConfig : require('./no-react');
+const noReactConfig = {
+  ...noReact,
+  rules: {
+    ...noReact.rules,
+    ...customRules,
+  },
+};
+
+module.exports = hasReact ? defaultConfig : noReactConfig;
