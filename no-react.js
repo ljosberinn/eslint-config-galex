@@ -32,7 +32,7 @@ module.exports = {
     ...reactApp.parserOptions,
     ecmaFeatures: undefined,
   },
-  plugins: ['import', 'prettier', 'sort-keys-fix'],
+  plugins: ['import', 'prettier'],
   rules: filterJSXAndReactRules(reactApp.rules),
   settings: undefined,
 };

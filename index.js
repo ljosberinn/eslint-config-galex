@@ -28,7 +28,7 @@ const { hasJest, hasReact } = (() => {
       hasJest: allDeps.includes('jest'),
       hasReact: ['react', 'preact', 'next'].some(pkg => deps.includes(pkg)),
     };
-  } catch (error) {
+  } catch {
     return {
       hasJest: false,
       hasReact: false,
@@ -36,16 +36,19 @@ const { hasJest, hasReact } = (() => {
   }
 })();
 
+const corePlugins = ['sort-keys-fix', 'unicorn'];
+
 const defaultConfig = {
   extends: ['react-app', 'prettier', hasJest && 'kentcdodds/jest'].filter(
     Boolean
   ),
-  plugins: ['sort-keys-fix'],
+  plugins: corePlugins,
   rules: customRules,
 };
 
 const noReactConfig = {
   ...noReact,
+  plugins: [...corePlugins, ...noReact.plugins],
   rules: {
     ...noReact.rules,
     ...customRules,
