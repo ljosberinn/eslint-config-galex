@@ -1,5 +1,9 @@
-const customRules = require('./custom-rules');
-const noReact = require('./no-react');
+const customRules = require('./rulesets/custom-rules');
+const noReact = require('./rulesets/no-react');
+const react = require('./rulesets/react');
+
+const mergeObjects = (...objects) =>
+  objects.reduce((acc, obj) => ({ ...acc, ...obj }), {});
 
 const { hasJest, hasReact } = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
@@ -43,16 +47,13 @@ const defaultConfig = {
     Boolean
   ),
   plugins: corePlugins,
-  rules: customRules,
+  rules: mergeObjects(customRules, react),
 };
 
 const noReactConfig = {
   ...noReact,
   plugins: [...corePlugins, ...noReact.plugins],
-  rules: {
-    ...noReact.rules,
-    ...customRules,
-  },
+  rules: mergeObjects(noReact.rules, customRules),
 };
 
 module.exports = hasReact ? defaultConfig : noReactConfig;
