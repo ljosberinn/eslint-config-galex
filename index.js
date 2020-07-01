@@ -30,7 +30,7 @@ const { hasJest, hasReact } = (() => {
 
     return {
       hasJest: allDeps.includes('jest'),
-      hasReact: ['react', 'preact', 'next'].some(pkg => deps.includes(pkg)),
+      hasReact: ['react', 'preact', 'next'].some(pkg => allDeps.includes(pkg)),
     };
   } catch {
     return {
