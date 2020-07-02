@@ -48,7 +48,7 @@
   "devDependencies": {
     "eslint": "^7.3.1",
     "prettier": "2.0.5",
-    "typescript": "3.9.5",
+    "typescript": "3.9.6",
     "yarn-deduplicate": "^2.0.0"
   },
   "peerDependencies": {
