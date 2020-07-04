@@ -5,6 +5,10 @@
 ![npm](https://img.shields.io/npm/v/eslint-config-galex)
 ![NPM](https://img.shields.io/npm/l/eslint-config-galex)
 
+# Warning
+
+Due to dependency incompatibilities (this repo is more up to date than CRA), this config won't work with projects bootstrapped with create-react-app.
+
 # Extends
 
 ## Always
