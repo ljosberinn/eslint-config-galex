@@ -1,3 +1,5 @@
+const { sync } = require('read-pkg-up');
+
 const customRules = require('./rulesets/custom-rules');
 const noReact = require('./rulesets/no-react');
 const react = require('./rulesets/react');
@@ -7,8 +9,6 @@ const mergeObjects = (...objects) =>
 
 const { hasJest, hasReact } = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
-  const { sync } = require('read-pkg-up');
-
   try {
     const {
       packageJson: {
@@ -20,19 +20,21 @@ const { hasJest, hasReact } = (() => {
 
     const deps = Object.keys(dependencies);
 
-    const allDeps = [
+    const allDeps = new Set([
       ...Object.keys({
         ...peerDependencies,
         ...devDependencies,
       }),
       ...deps,
-    ];
+    ]);
 
     return {
-      hasJest: allDeps.includes('jest'),
-      hasReact: ['react', 'preact', 'next'].some(pkg => allDeps.includes(pkg)),
+      hasJest: allDeps.has('jest'),
+      hasReact: ['react', 'preact', 'next'].some(pkg => allDeps.has(pkg)),
     };
   } catch {
+    // eslint-disable-next-line no-console
+    console.error('error parsing package.json!');
     return {
       hasJest: false,
       hasReact: false,
@@ -40,12 +42,14 @@ const { hasJest, hasReact } = (() => {
   }
 })();
 
-const corePlugins = ['sort-keys-fix', 'unicorn'];
+const corePlugins = ['sort-keys-fix', 'unicorn', 'promise'];
 
 const defaultConfig = {
-  extends: ['react-app', 'prettier', hasJest && 'kentcdodds/jest'].filter(
-    Boolean
-  ),
+  extends: [
+    'react-app',
+    'prettier',
+    ...(hasJest ? ['kentcdodds/jest', 'plugin:jest-formatting/strict'] : []),
+  ].filter(Boolean),
   plugins: corePlugins,
   rules: mergeObjects(customRules, react),
 };

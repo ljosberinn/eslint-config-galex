@@ -6,6 +6,13 @@ module.exports = {
       allowImplicit: true,
     },
   ],
+  'import/newline-after-import': 'warn',
+  'import/no-anonymous-default-export': 'error',
+  /**
+   * - groups imports
+   * - alphabetically sorts them
+   * - enforces new lines between groups
+   */
   'import/order': [
     'warn',
     {
@@ -26,7 +33,25 @@ module.exports = {
   // disables core eslint rule, see unicorn/no-nested-ternary
   'no-nested-ternary': 'off',
   'prefer-exponentiation-operator': 'warn',
+  // for promise-rules, see
+  // https://github.com/xjamundx/eslint-plugin-promise/tree/master/docs/rules
+  'promise/catch-or-return': [
+    'error',
+    {
+      allowFinally: true,
+      allowThen: true,
+    },
+  ],
+  'promise/no-nesting': 'warn',
+  'promise/no-new-statics': 'error',
+  'promise/no-promise-in-callback': 'warn',
+  'promise/no-return-in-finally': 'warn',
+  'promise/no-return-wrap': 'error',
+  'promise/param-names': 'warn',
+  'promise/prefer-await-to-callbacks': 'warn',
+  'promise/prefer-await-to-then': 'warn',
   'require-await': 'error',
+  // alphabetically sorts object keys
   'sort-keys-fix/sort-keys-fix': 'warn',
   // for all below, see
   // https://github.com/sindresorhus/eslint-plugin-unicorn/tree/master/docs/rules
