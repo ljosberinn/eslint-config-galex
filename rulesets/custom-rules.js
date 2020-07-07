@@ -8,6 +8,7 @@ module.exports = {
   ],
   'import/newline-after-import': 'warn',
   'import/no-anonymous-default-export': 'error',
+  'import/no-default-export': 'warn',
   /**
    * - groups imports
    * - alphabetically sorts them
@@ -69,6 +70,7 @@ module.exports = {
   'unicorn/no-console-spaces': 'error',
   'unicorn/no-for-loop': 'error',
   'unicorn/no-hex-escape': 'error',
+
   'unicorn/no-keyword-prefix': 'off',
   // at least warn
   'unicorn/no-nested-ternary': 'warn',

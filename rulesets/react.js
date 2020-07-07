@@ -5,6 +5,7 @@ module.exports = {
   'jsx-a11y/media-has-caption': 'warn',
   'jsx-a11y/no-autofocus': 'error',
   'no-redeclare': 'error',
+  'react-hooks/exhaustive-deps': 'error',
   'react/button-has-type': 'error',
   'react/jsx-boolean-value': 'warn',
   'react/jsx-curly-brace-presence': [
