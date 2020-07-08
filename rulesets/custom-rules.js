@@ -49,7 +49,6 @@ module.exports = {
   'promise/no-return-in-finally': 'warn',
   'promise/no-return-wrap': 'error',
   'promise/param-names': 'warn',
-  'promise/prefer-await-to-callbacks': 'warn',
   'promise/prefer-await-to-then': 'warn',
   'require-await': 'error',
   // alphabetically sorts object keys
