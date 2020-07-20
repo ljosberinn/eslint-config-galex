@@ -74,13 +74,13 @@ module.exports = {
   // at least warn
   'unicorn/no-nested-ternary': 'warn',
   'unicorn/no-new-buffer': 'error',
+  'unicorn/no-object-as-default-parameter': 'warn',
   'unicorn/no-process-exit': 'error',
   'unicorn/no-unsafe-regex': 'error',
   'unicorn/no-useless-undefined': 'error',
   'unicorn/no-zero-fractions': 'error',
   'unicorn/prefer-add-event-listener': 'error',
-  // not yet released
-  // 'unicorn/prefer-array-find': 'error',
+  'unicorn/prefer-array-find': 'error',
   'unicorn/prefer-dataset': 'error',
   'unicorn/prefer-event-key': 'error',
   'unicorn/prefer-flat-map': 'error',
