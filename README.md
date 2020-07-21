@@ -5,9 +5,30 @@
 ![npm](https://img.shields.io/npm/v/eslint-config-galex)
 ![NPM](https://img.shields.io/npm/l/eslint-config-galex)
 
-# Warning
+# Usage in create-react-app
 
-Due to dependency incompatibilities (this repo is more up to date than CRA), this config won't work with projects bootstrapped with create-react-app.
+Due to dependency incompatibilities on CRAs side, you might have to disable certain rules.
+Currently I'm aware of only one, but this might change any time.
+
+```js
+{
+    "extends": "galex",
+    "rules": {
+        "jsx-a11y/autocomplete-valid": "off"
+    }
+}
+```
+
+or if you prefer to have it in your `package.json`:
+
+```js
+"eslintConfig": {
+    "extends": "galex",
+    "rules": {
+        "jsx-a11y/autocomplete-valid": "off"
+    }
+}
+```
 
 # Extends
 
