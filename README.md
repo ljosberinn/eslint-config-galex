@@ -2,7 +2,11 @@
 
 ![Build and Publish](https://github.com/ljosberinn/eslint-config-galex/workflows/Build%20and%20Publish/badge.svg?branch=master)
 
+[npm-shield]: https://img.shields.io/npm/dt/eslint-config-galex.svg
+[npm-url]: https://www.npmjs.com/package/eslint-config-galex
+
 ![npm](https://img.shields.io/npm/v/eslint-config-galex)
+[![NPM Total Downloads][npm-shield]][npm-url]
 ![NPM](https://img.shields.io/npm/l/eslint-config-galex)
 
 # Usage in create-react-app
