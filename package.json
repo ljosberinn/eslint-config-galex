@@ -8,7 +8,8 @@
     "dedup": "yarn-deduplicate -l",
     "publish": "np",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix && prettier --write ."
+    "lint-fix": "eslint . --fix && prettier --write .",
+    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn"
   },
   "repository": {
     "type": "git",
@@ -44,18 +45,18 @@
     "eslint-plugin-react": "7.20.3",
     "eslint-plugin-react-hooks": "4.0.8",
     "eslint-plugin-sort-keys-fix": "^1.1.1",
-    "eslint-plugin-testing-library": "^3.3.1",
+    "eslint-plugin-testing-library": "^3.3.2",
     "eslint-plugin-unicorn": "^21.0.0",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "prettier": "2.0.5",
     "typescript": "3.9.7",
     "yarn-deduplicate": "^2.0.0"
   },
   "peerDependencies": {
-    "eslint": "^7.4.0"
+    "eslint": "^7.5.0"
   },
   "eslintIgnore": [
     "node_modules"
