@@ -45,18 +45,18 @@
     "eslint-plugin-react": "7.20.5",
     "eslint-plugin-react-hooks": "4.0.8",
     "eslint-plugin-sort-keys-fix": "^1.1.1",
-    "eslint-plugin-testing-library": "^3.3.2",
+    "eslint-plugin-testing-library": "^3.4.0",
     "eslint-plugin-unicorn": "^21.0.0",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.5.0",
+    "eslint": "^7.6.0",
     "prettier": "2.0.5",
     "typescript": "3.9.7",
-    "yarn-deduplicate": "^2.0.0"
+    "yarn-deduplicate": "^2.1.1"
   },
   "peerDependencies": {
-    "eslint": "^7.5.0"
+    "eslint": "^7.6.0"
   },
   "eslintIgnore": [
     "node_modules"
