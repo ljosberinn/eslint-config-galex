@@ -3,6 +3,7 @@ const { sync } = require('read-pkg-up');
 const customRules = require('./rulesets/custom-rules');
 const noReact = require('./rulesets/no-react');
 const react = require('./rulesets/react');
+const typescript = require('./rulesets/typescript');
 
 const mergeObjects = (...objects) =>
   objects.reduce((acc, obj) => ({ ...acc, ...obj }), {});
@@ -50,12 +51,14 @@ const defaultConfig = {
     'prettier',
     ...(hasJest ? ['kentcdodds/jest', 'plugin:jest-formatting/strict'] : []),
   ].filter(Boolean),
+  overrides: typescript,
   plugins: corePlugins,
   rules: mergeObjects(customRules, react),
 };
 
 const noReactConfig = {
   ...noReact,
+  overrides: typescript,
   plugins: [...corePlugins, ...noReact.plugins],
   rules: mergeObjects(noReact.rules, customRules),
 };
