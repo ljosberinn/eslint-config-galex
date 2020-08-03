@@ -1,7 +1,10 @@
 module.exports = {
   /**
    *
-   * @param {{hasTypeScript: boolean; hasReact: boolean;}} options
+   * @param {{
+   *  hasTypeScript: boolean;
+   *  hasReact: boolean;
+   * }} options
    */
   createTSOverride: ({ hasTypeScript, hasReact }) => {
     if (!hasTypeScript) {
