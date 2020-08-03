@@ -220,8 +220,6 @@ module.exports = {
     // https://github.com/xjamundx/eslint-plugin-promise/tree/master/docs/rules
     /**
      * all promises must either be returned or handled
-     *
-     * avoids accidental oversights
      */
     'promise/catch-or-return': [
       'error',
@@ -241,22 +239,15 @@ module.exports = {
     'promise/no-new-statics': 'error',
     'promise/no-promise-in-callback': 'warn',
     /**
-     * return value in finally is unhandled
+     * disallows returning in finally as its unhandled
      */
     'promise/no-return-in-finally': 'warn',
     'promise/no-return-wrap': 'error',
     /**
-     * given
-     * ```js
-     * new Promise((resolve, reject) => {})
-     * ```
-     * disallows renaming `resolve` and `reject`
+     * disallows renaming callbacks within `new Promise`
      */
     'promise/param-names': 'warn',
     'promise/prefer-await-to-then': 'warn',
-    /**
-     * don't use async without await
-     */
     'require-await': 'error',
     'require-yield': 'warn',
     'rest-spread-spacing': ['warn', 'never'],
@@ -264,8 +255,6 @@ module.exports = {
     'sort-keys-fix/sort-keys-fix': 'warn',
     strict: ['warn', 'never'],
     'unicode-bom': ['warn', 'never'],
-    // for all below, see
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/tree/master/docs/rules
     'unicorn/better-regex': 'error',
     'unicorn/catch-error-name': 'error',
     'unicorn/consistent-function-scoping': 'error',
@@ -275,72 +264,45 @@ module.exports = {
     'unicorn/explicit-length-check': 'error',
     'unicorn/import-index': 'error',
     'unicorn/new-for-builtins': 'error',
-    /**
-     * disallows mass disabling or globally disabling rules
-     */
     'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-array-instanceof': 'error',
     'unicorn/no-console-spaces': 'error',
     'unicorn/no-for-loop': 'error',
     'unicorn/no-hex-escape': 'error',
     'unicorn/no-keyword-prefix': 'off',
-    /**
-     * usually avoidable; in rare cases, disable the warning
-     */
     'unicorn/no-nested-ternary': 'warn',
     'unicorn/no-new-buffer': 'error',
+    /**
+     * off because jesus no, bad take. null conveys meaning! hard to debug
+     * unintentional undefined from intentional undefined. null declares
+     * active absence.
+     *
+     * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
+     */
+    'unicorn/no-null': 'off',
     'unicorn/no-object-as-default-parameter': 'warn',
     'unicorn/no-process-exit': 'error',
     'unicorn/no-unsafe-regex': 'error',
     'unicorn/no-useless-undefined': 'error',
     'unicorn/no-zero-fractions': 'error',
-    /**
-     * don't use onclick and similar
-     */
     'unicorn/prefer-add-event-listener': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-array-find': 'error',
     'unicorn/prefer-dataset': 'error',
     'unicorn/prefer-event-key': 'error',
-    /**
-     * @category code quality
-     */
+    'unicorn/prefer-exponentiation-operator': 'error',
     'unicorn/prefer-flat-map': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-includes': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-modern-dom-apis': 'error',
     'unicorn/prefer-negative-index': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-node-append': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-node-remove': 'error',
     'unicorn/prefer-number-properties': 'error',
     'unicorn/prefer-optional-catch-binding': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-query-selector': 'error',
     'unicorn/prefer-reflect-apply': 'error',
     'unicorn/prefer-replace-all': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-set-has': 'error',
     'unicorn/prefer-spread': 'error',
-    /**
-     * @category code quality
-     */
     'unicorn/prefer-starts-ends-with': 'error',
     'unicorn/prefer-string-slice': 'error',
     'unicorn/prefer-text-content': 'error',
