@@ -10,7 +10,7 @@ module.exports = {
 
     return {
       plugins: ['jsx-a11y', 'react-hooks'],
-      files: ['**/*.?(ts|jsx)?(x)'],
+      files: ['**/*.?(ts|js)?(x)'],
       extends: [],
       parser: 'babel-eslint',
       parserOptions: {
