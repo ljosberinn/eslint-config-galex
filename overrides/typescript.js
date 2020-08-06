@@ -82,6 +82,12 @@ module.exports = {
         'dot-notation': 'warn',
         // taken care of by @typescript-eslint
         'no-return-await': 'off',
+        /**
+         * taken care of by typescript
+         *
+         * @see https://github.com/xjamundx/eslint-plugin-promise/blob/master/docs/rules/valid-params.md
+         */
+        'promise/valid-params': 'error',
       },
       settings: {
         react: {

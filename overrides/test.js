@@ -306,147 +306,8 @@ module.exports = {
          * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-title.md
          */
         'jest/valid-title': 'warn',
-        ...(hasJestDom
-          ? {
-              /**
-               * improves semantics of expect
-               *
-               * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-checked.md
-               */
-              'jest-dom/prefer-checked': 'error',
-              /**
-               * improves semantics of expect
-               *
-               * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-empty.md
-               */
-              'jest-dom/prefer-empty': 'error',
-              /**
-               * improves semantics of expect
-               *
-               * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-enabled-disabled.md
-               */
-              'jest-dom/prefer-enabled-disabled': 'error',
-              /**
-               * improves semantics of expect
-               *
-               * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-focus.md
-               */
-              'jest-dom/prefer-focus': 'error',
-              /**
-               * improves semantics of expect
-               *
-               * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-required.md
-               */
-              'jest-dom/prefer-required': 'error',
-              /**
-               * improves semantics of expect
-               *
-               * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-attribute.md
-               */
-              'jest-dom/prefer-to-have-attribute': 'error',
-              /**
-               * improves semantics of expect
-               *
-               * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-text-content.md
-               */
-              'jest-dom/prefer-to-have-text-content': 'error',
-            }
-          : null),
-
-        ...(hasTestingLibrary
-          ? {
-              /**
-               * enforces awaiting async queries (find*)
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-query.md
-               */
-              'testing-library/await-async-query': 'error',
-              /**
-               * enforces awaiting async utils (waitFor)
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-utils.md
-               */
-              'testing-library/await-async-utils': 'error',
-              /**
-               * enforces awaiting events
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-fire-event.md
-               */
-              'testing-library/await-fire-event': 'error',
-              /**
-               * enforces consistent naming based on regex pattern
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/consistent-data-testid.md
-               */
-              'testing-library/consistent-data-testid': [
-                'error',
-                {
-                  testIdPattern: '^TestId(__[A-Z]*)?$',
-                },
-              ],
-              /**
-               * no unecessary `await` for non-async queries
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-await-sync-query.md
-               */
-              'testing-library/no-await-sync-query': 'error',
-              /**
-               * hints the use of `screen.debug()`
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-debug.md
-               */
-              'testing-library/no-debug': 'error',
-              /**
-               * disallows direct imports from `@testing-library/dom` in react
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-dom-import.md
-               */
-              'testing-library/no-dom-import': ['error', 'react'],
-              /**
-               * hints on `cleanup` not being necessary
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-manual-cleanup.md
-               */
-              'testing-library/no-manual-cleanup': 'error',
-              /**
-               * no empty `waitFor` or `waitForElementToBeRemoved`
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-wait-for-empty-callback.md
-               */
-              'testing-library/no-wait-for-empty-callback': 'error',
-              /**
-               * use `expect(getByText('foo').tobeInTheDocument()` instead of
-               * `getByText('foo')` expecting it not to throw
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-explicit-assert.md
-               */
-              'testing-library/prefer-explicit-assert': 'warn',
-              /**
-               * use `findBy*` instead of `waitFor` + `getBy*`
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-find-by.md
-               */
-              'testing-library/prefer-find-by': 'error',
-              /**
-               * ensure more specific queries to check element presence
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-presence-queries.md
-               */
-              'testing-library/prefer-presence-queries': 'error',
-              /**
-               * suggest using `screen` over destructured methods
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-screen-queries.md
-               */
-              'testing-library/prefer-screen-queries': 'error',
-              /**
-               * prefer `waitFor` instead of deprecated `wait` and similar
-               *
-               * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-wait-for.md
-               */
-              'testing-library/prefer-wait-for': 'error',
-            }
-          : null),
+        ...(hasJestDom ? jestDomRules : null),
+        ...(hasTestingLibrary ? testingLibraryRules : null),
       },
       settings: {
         jest: {
@@ -455,4 +316,142 @@ module.exports = {
       },
     };
   },
+};
+
+const jestDomRules = {
+  /**
+   * improves semantics of expect
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-checked.md
+   */
+  'jest-dom/prefer-checked': 'error',
+  /**
+   * improves semantics of expect
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-empty.md
+   */
+  'jest-dom/prefer-empty': 'error',
+  /**
+   * improves semantics of expect
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-enabled-disabled.md
+   */
+  'jest-dom/prefer-enabled-disabled': 'error',
+  /**
+   * improves semantics of expect
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-focus.md
+   */
+  'jest-dom/prefer-focus': 'error',
+  /**
+   * improves semantics of expect
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-required.md
+   */
+  'jest-dom/prefer-required': 'error',
+  /**
+   * improves semantics of expect
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-attribute.md
+   */
+  'jest-dom/prefer-to-have-attribute': 'error',
+  /**
+   * improves semantics of expect
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-text-content.md
+   */
+  'jest-dom/prefer-to-have-text-content': 'error',
+};
+
+const testingLibraryRules = {
+  /**
+   * enforces awaiting async queries (find*)
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-query.md
+   */
+  'testing-library/await-async-query': 'error',
+  /**
+   * enforces awaiting async utils (waitFor)
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-utils.md
+   */
+  'testing-library/await-async-utils': 'error',
+  /**
+   * enforces awaiting events
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-fire-event.md
+   */
+  'testing-library/await-fire-event': 'error',
+  /**
+   * enforces consistent naming based on regex pattern
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/consistent-data-testid.md
+   */
+  'testing-library/consistent-data-testid': [
+    'error',
+    {
+      testIdPattern: '^TestId(__[A-Z]*)?$',
+    },
+  ],
+  /**
+   * no unecessary `await` for non-async queries
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-await-sync-query.md
+   */
+  'testing-library/no-await-sync-query': 'error',
+  /**
+   * hints the use of `screen.debug()`
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-debug.md
+   */
+  'testing-library/no-debug': 'error',
+  /**
+   * disallows direct imports from `@testing-library/dom` in react
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-dom-import.md
+   */
+  'testing-library/no-dom-import': ['error', 'react'],
+  /**
+   * hints on `cleanup` not being necessary
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-manual-cleanup.md
+   */
+  'testing-library/no-manual-cleanup': 'error',
+  /**
+   * no empty `waitFor` or `waitForElementToBeRemoved`
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-wait-for-empty-callback.md
+   */
+  'testing-library/no-wait-for-empty-callback': 'error',
+  /**
+   * use `expect(getByText('foo').tobeInTheDocument()` instead of
+   * `getByText('foo')` expecting it not to throw
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-explicit-assert.md
+   */
+  'testing-library/prefer-explicit-assert': 'warn',
+  /**
+   * use `findBy*` instead of `waitFor` + `getBy*`
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-find-by.md
+   */
+  'testing-library/prefer-find-by': 'error',
+  /**
+   * ensure more specific queries to check element presence
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-presence-queries.md
+   */
+  'testing-library/prefer-presence-queries': 'error',
+  /**
+   * suggest using `screen` over destructured methods
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-screen-queries.md
+   */
+  'testing-library/prefer-screen-queries': 'error',
+  /**
+   * prefer `waitFor` instead of deprecated `wait` and similar
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-wait-for.md
+   */
+  'testing-library/prefer-wait-for': 'error',
 };
