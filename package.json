@@ -31,7 +31,7 @@
   "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "3.9.0",
-    "@typescript-eslint/parser": "3.8.0",
+    "@typescript-eslint/parser": "3.9.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-kentcdodds": "^14.14.2",
     "eslint-config-prettier": "^6.11.0",
