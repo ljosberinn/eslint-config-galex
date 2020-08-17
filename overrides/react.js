@@ -25,7 +25,7 @@ module.exports = {
           jsx: true,
         },
       },
-      plugins: ['jsx-a11y', 'react-hooks'],
+      plugins: ['jsx-a11y', 'react-hooks', 'react'],
       rules: {
         ...createReactRules({ isNext, version }),
         ...jsxA11yRules,
