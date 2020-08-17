@@ -1,3 +1,5 @@
+/* eslint-disable inclusive-language/use-inclusive-words */
+
 module.exports = {
   /**
    * improves regex

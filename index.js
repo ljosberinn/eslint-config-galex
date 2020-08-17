@@ -1,11 +1,14 @@
+/* eslint-disable inclusive-language/use-inclusive-words */
 const { sync } = require('read-pkg-up');
 
 const { createReactOverride } = require('./overrides/react');
 const { createTestOverride } = require('./overrides/test');
 const { createTSOverride } = require('./overrides/typescript');
-const eslintCoreRules = require('./rulesets/eslint-core');
+const { createEslintCoreRules } = require('./rulesets/eslint-core');
 const importRules = require('./rulesets/import');
-const promiseRules = require('./rulesets/promise');
+const inclusiveLanguageRules = require('./rulesets/inclusive-language');
+const { createPromiseRules } = require('./rulesets/promise');
+const { createSonarjsRules } = require('./rulesets/sonarjs');
 const sortKeysFixRules = require('./rulesets/sort-keys-fix');
 const unicornRules = require('./rulesets/unicorn');
 
@@ -33,19 +36,28 @@ const project = (() => {
     return {
       hasJest: allDeps.has('jest'),
       hasJestDom: allDeps.has('@testing-library/jest-dom'),
-      hasReact: ['react', 'preact', 'next'].some(pkg => allDeps.has(pkg)),
       hasTestingLibrary: allDeps.has('@testing-library/react'),
       hasTypeScript: allDeps.has('typescript'),
+      react: {
+        exists: ['react', 'preact', 'next'].some(pkg => allDeps.has(pkg)),
+        isNext: allDeps.has('next'),
+        version: allDeps.has('react') ? allDeps.get('react') : '',
+      },
     };
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('error parsing package.json!', error);
+
     return {
       hasJest: false,
       hasJestDom: false,
-      hasReact: false,
       hasTestingLibrary: false,
       hasTypeScript: false,
+      react: {
+        exists: false,
+        next: false,
+        version: '',
+      },
     };
   }
 })();
@@ -57,7 +69,7 @@ const overrides = [
 ].filter(Boolean);
 
 // schema reference: https://github.com/eslint/eslint/blob/master/conf/config-schema.js
-module.exports = {
+module.expots = {
   env: {
     browser: true,
     es2020: true,
@@ -70,12 +82,21 @@ module.exports = {
     // ecmaVersion: 2020,
     sourceType: 'module',
   },
-  plugins: ['import', 'sort-keys-fix', 'unicorn', 'promise'],
+  plugins: [
+    'import',
+    'sort-keys-fix',
+    'unicorn',
+    'promise',
+    'sonarjs',
+    'inclusive-language',
+  ],
   rules: {
-    ...eslintCoreRules,
+    ...createEslintCoreRules(project),
     ...unicornRules,
-    ...promiseRules,
+    ...createPromiseRules(project),
     ...importRules,
     ...sortKeysFixRules,
+    ...createSonarjsRules(project),
+    ...inclusiveLanguageRules,
   },
 };

@@ -1,3 +1,4 @@
+/* eslint-disable inclusive-language/use-inclusive-words */
 module.exports = {
   /**
    *
@@ -25,13 +26,31 @@ module.exports = {
       },
       plugins: ['@typescript-eslint'],
       rules: {
+        /**
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/adjacent-overload-signatures.md
+         */
         '@typescript-eslint/adjacent-overload-signatures': 'error',
+        /**
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md
+         */
         '@typescript-eslint/array-type': [
           'warn',
           {
             default: 'array',
           },
         ],
+        /**
+         * disallows awaiting a value that is not thenable
+         *
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/await-thenable.md
+         */
+        '@typescript-eslint/await-thenable': 'error',
+        /**
+         * disallows // @ts-<directive> comments except for -expect-error with
+         * description
+         *
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md
+         */
         '@typescript-eslint/ban-ts-comment': [
           'error',
           {
@@ -40,8 +59,29 @@ module.exports = {
             'ts-nocheck': true,
           },
         ],
+        /**
+         * TSLint is dead
+         *
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-tslint-comment.md
+         */
         '@typescript-eslint/ban-tslint-comment': 'error',
+        /**
+         * off because not needed
+         *
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
+         */
+        '@typescript-eslint/ban-types': 'off',
+        /**
+         * off because prettier
+         *
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md
+         */
+        '@typescript-eslint/brace-style': 'off',
         '@typescript-eslint/default-param-last': 'error',
+        /**
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
+         */
+        '@typescript-eslint/dot-notation': 'error',
         '@typescript-eslint/method-signature-style': ['warn', 'property'],
         '@typescript-eslint/no-empty-interface': 'warn',
         '@typescript-eslint/no-explicit-any': 'warn',
@@ -60,6 +100,10 @@ module.exports = {
         ],
         '@typescript-eslint/no-unnecessary-condition': 'warn',
         '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
+        /**
+         * off because typescript itself already does this
+         */
+        '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/prefer-literal-enum-member': 'warn',
         '@typescript-eslint/prefer-nullish-coalescing': 'error',
         '@typescript-eslint/prefer-optional-chain': 'error',
@@ -77,17 +121,6 @@ module.exports = {
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/switch-exhaustiveness-check': 'warn',
         '@typescript-eslint/unified-signatures': 'warn',
-        // taken care of by @typescript-eslint
-        'default-param-last': 'off',
-        'dot-notation': 'warn',
-        // taken care of by @typescript-eslint
-        'no-return-await': 'off',
-        /**
-         * taken care of by typescript
-         *
-         * @see https://github.com/xjamundx/eslint-plugin-promise/blob/master/docs/rules/valid-params.md
-         */
-        'promise/valid-params': 'error',
       },
       settings: {
         react: {
