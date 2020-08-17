@@ -23,25 +23,23 @@ const project = (() => {
       },
     } = sync({ normalize: true });
 
-    const deps = Object.keys(dependencies);
-
-    const allDeps = new Set([
-      ...Object.keys({
-        ...peerDependencies,
+    const deps = new Map(
+      Object.entries({
+        ...dependencies,
         ...devDependencies,
-      }),
-      ...deps,
-    ]);
+        ...peerDependencies,
+      })
+    );
 
     return {
-      hasJest: allDeps.has('jest'),
-      hasJestDom: allDeps.has('@testing-library/jest-dom'),
-      hasTestingLibrary: allDeps.has('@testing-library/react'),
-      hasTypeScript: allDeps.has('typescript'),
+      hasJest: deps.has('jest'),
+      hasJestDom: deps.has('@testing-library/jest-dom'),
+      hasTestingLibrary: deps.has('@testing-library/react'),
+      hasTypeScript: deps.has('typescript'),
       react: {
-        exists: ['react', 'preact', 'next'].some(pkg => allDeps.has(pkg)),
-        isNext: allDeps.has('next'),
-        version: allDeps.has('react') ? allDeps.get('react') : '',
+        exists: ['react', 'preact', 'next'].some(pkg => deps.has(pkg)),
+        isNext: deps.has('next'),
+        version: deps.get('react') ?? '',
       },
     };
   } catch (error) {
@@ -69,11 +67,10 @@ const overrides = [
 ].filter(Boolean);
 
 // schema reference: https://github.com/eslint/eslint/blob/master/conf/config-schema.js
-module.expots = {
+module.exports = {
   env: {
-    browser: true,
+    browser: project.react.exists,
     es2020: true,
-    jest: project.hasJest,
     node: true,
   },
   extends: ['prettier'],
