@@ -608,30 +608,229 @@ const createReactRules = ({ isNext, version, hasTypeScript }) => ({
 
 // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
 const jsxA11yRules = {
-  'jsx-a11y/alt-text': 'warn',
-  'jsx-a11y/anchor-has-content': 'warn',
+  /**
+   * off because deprecated
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/accessible-emoji.md
+   */
+  'jsx-a11y/accessible-emoji': 'off',
+  /**
+   * enforces <img alt /> attribute
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md
+   */
+  'jsx-a11y/alt-text': 'error',
+  /**
+   * enforces `children` in `a`
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md
+   */
+  'jsx-a11y/anchor-has-content': 'error',
+  /**
+   * ensures core `a` attributes are valid
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
+   */
   'jsx-a11y/anchor-is-valid': [
     'warn',
     {
       aspects: ['noHref', 'invalidHref'],
     },
   ],
+  /**
+   * ensures using `aria-activedescendant` also has a valid `tabIndex`
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-activedescendant-has-tabindex.md
+   */
   'jsx-a11y/aria-activedescendant-has-tabindex': 'warn',
-  'jsx-a11y/aria-props': 'warn',
-  'jsx-a11y/aria-proptypes': 'warn',
+  /**
+   * disallows invalid `aria-*` attributes
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-props.md
+   */
+  'jsx-a11y/aria-props': 'error',
+  /**
+   * enforces correct values for `aria-*` values
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-proptypes.md
+   */
+  'jsx-a11y/aria-proptypes': 'error',
+  /**
+   * enforces use of real `aria-role` values
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md
+   */
   'jsx-a11y/aria-role': ['warn', { ignoreNonDOM: true }],
-  'jsx-a11y/aria-unsupported-elements': 'warn',
+  /**
+   * enforces using `aria-*` attributes only on elements that support it
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-unsupported-elements.md
+   */
+  'jsx-a11y/aria-unsupported-elements': 'error',
+  /**
+   * enforces proper use of the `autocomplete` property
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/autocomplete-valid.md
+   */
   'jsx-a11y/autocomplete-valid': 'error',
+  /**
+   * enforces `onClick`s are accompanied by at least one of `onKey*`
+   *
+   * experimental
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md
+   */
+  'jsx-a11y/click-events-have-key-events': 'warn',
+  /**
+   * enforces use of `aria-label` where needed
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md
+   */
   'jsx-a11y/control-has-associated-label': 'warn',
+  /**
+   * enforces `h1` etc. have content
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/heading-has-content.md
+   */
   'jsx-a11y/heading-has-content': 'warn',
+  /**
+   * ensures `html` tag has a `lang` attribute
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/html-has-lang.md
+   */
+  'jsx-a11y/html-has-lang': 'warn',
+  /**
+   * ensures `iframe` tag has a `title` attribute
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/iframe-has-title.md
+   */
   'jsx-a11y/iframe-has-title': 'warn',
+  /**
+   * ensures validity of `img` `alt` attribute
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md
+   */
   'jsx-a11y/img-redundant-alt': 'warn',
+  /**
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/interactive-supports-focus.md
+   */
+  'jsx-a11y/interactive-supports-focus': 'error',
+  /**
+   * enforce that a `label` tag has a text label and an associated control
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
+   */
+  'jsx-a11y/label-has-associated-control': 'error',
+  /**
+   * off because deprecated in favor of `jsx-a11y/label-has-associated-control'
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
+   */
+  'jsx-a11y/label-has-for': 'off',
+  /**
+   * ensures `html` tag has a valid `lang` attribute
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/lang.md
+   */
+  'jsx-a11y/lang': 'error',
+  /**
+   * ensures media elements have captions
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/media-has-caption.md
+   */
   'jsx-a11y/media-has-caption': 'warn',
+  /**
+   * enforce `onMouse*` are accompanied by `onFocus`/`onBlur`
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/mouse-events-have-key-events.md
+   */
+  'jsx-a11y/mouse-events-have-key-events': 'error',
+  /**
+   * enforce no `accessKey` prop on element
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md
+   */
   'jsx-a11y/no-access-key': 'warn',
+  /**
+   * enforce that `autoFocus` prop is not used on elements
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-autofocus.md
+   */
   'jsx-a11y/no-autofocus': 'error',
+  /**
+   * enforces that no distracting elements are used
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-distracting-elements.md
+   */
   'jsx-a11y/no-distracting-elements': 'warn',
+  /**
+   * use appropriate tags
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-interactive-element-to-noninteractive-role.md
+   */
+  'jsx-a11y/no-interactive-element-to-noninteractive-role': 'error',
+  /**
+   * prevents assigning interactions to non-interactive elements
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md
+   */
+  'jsx-a11y/no-noninteractive-element-interactions': 'error',
+  /**
+   * prevents assigning interactive roles to non-interactive elements
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-to-interactive-role.md
+   */
+  'jsx-a11y/no-noninteractive-element-to-interactive-role': 'error',
+  /**
+   * limits tab key navigation to elements that can be interacted with
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-tabindex.md
+   */
+  'jsx-a11y/no-noninteractive-tabindex': 'error',
+  /**
+   * prefer `onBlur` over `onChange`
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-onchange.md
+   */
+  'jsx-a11y/no-onchange': 'warn',
+  /**
+   * prevents roles on elements that already have the role implicitly
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-redundant-roles.md
+   */
   'jsx-a11y/no-redundant-roles': 'warn',
-  'jsx-a11y/role-has-required-aria-props': 'warn',
-  'jsx-a11y/role-supports-aria-props': 'warn',
-  'jsx-a11y/scope': 'warn',
+  /**
+   * prevents assigning interactions to static elements
+   *
+   * use a role
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md
+   */
+  'jsx-a11y/no-static-element-interactions': 'error',
+  /**
+   * elements with roles must have all required attributes for that role
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-has-required-aria-props.md
+   */
+  'jsx-a11y/role-has-required-aria-props': 'error',
+  /**
+   * enforce that elements with roles defined contain only `aria-*` properties
+   * supported by that role
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-supports-aria-props.md
+   */
+  'jsx-a11y/role-supports-aria-props': 'error',
+  /**
+   * prevents using `scope` prop on anything other than `th`
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/scope.md
+   */
+  'jsx-a11y/scope': 'error',
+  /**
+   * prevents positive `tabIndex` props to not mess with page flow
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/tabindex-no-positive.md
+   */
+  'jsx-a11y/tabindex-no-positive': 'error',
 };
