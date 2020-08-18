@@ -117,7 +117,7 @@ module.exports = {
             allowBoolean: true,
           },
         ],
-        // experimental; if removed, remove also `no-return-await`
+        // __EXPERIMENTAL__; if removed, remove also `no-return-await`
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/switch-exhaustiveness-check': 'warn',
         '@typescript-eslint/unified-signatures': 'warn',

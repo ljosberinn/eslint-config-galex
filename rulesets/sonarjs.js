@@ -8,6 +8,13 @@ module.exports = {
    * }} options
    */
   createSonarjsRules: ({ hasTypeScript }) => ({
+    /**
+     * prevents creeping complexity. consider alternative approach.
+     *
+     * @default 15
+     *
+     * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/cognitive-complexity.md
+     */
     'sonarjs/cognitive-complexity': 'warn',
     /**
      * prevents endless switches. consider alternative approach. limit upped to 15.

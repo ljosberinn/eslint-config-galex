@@ -676,7 +676,7 @@ const jsxA11yRules = {
   /**
    * enforces `onClick`s are accompanied by at least one of `onKey*`
    *
-   * experimental
+   * __EXPERIMENTAL__
    *
    * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md
    */
