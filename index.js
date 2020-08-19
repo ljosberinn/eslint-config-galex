@@ -5,7 +5,7 @@ const { createReactOverride } = require('./overrides/react');
 const { createTestOverride } = require('./overrides/test');
 const { createTSOverride } = require('./overrides/typescript');
 const { createEslintCoreRules } = require('./rulesets/eslint-core');
-const importRules = require('./rulesets/import');
+const { createImportRules } = require('./rulesets/import');
 const inclusiveLanguageRules = require('./rulesets/inclusive-language');
 const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
@@ -91,7 +91,7 @@ module.exports = {
     ...createEslintCoreRules(project),
     ...unicornRules,
     ...createPromiseRules(project),
-    ...importRules,
+    ...createImportRules(project),
     ...sortKeysFixRules,
     ...createSonarjsRules(project),
     ...inclusiveLanguageRules,

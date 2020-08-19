@@ -32,6 +32,12 @@ module.exports = {
         ...jestRules,
         ...(hasJestDom ? jestDomRules : null),
         ...(hasTestingLibrary ? testingLibraryRules : null),
+        /**
+         * off to allow spying on methods
+         *
+         * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
+         */
+        'import/no-namespace': 'off',
       },
       settings: {
         jest: {
