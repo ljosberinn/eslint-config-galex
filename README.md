@@ -40,8 +40,8 @@ litters the code.
 You begin disabling rules altogether. Maybe because you don't know better, or
 because the rule is actually bad for your situation. You begin to wonder.
 
-You check npm and see there are 2.8k+ (August 2020) `eslint-plugin-*` package
-s out there. And even worse - 10k+ `eslint-config-*` packages. Which to choose?
+You check npm and see there are 2.8k+ (August 2020) `eslint-plugin-*` packages
+out there. And even worse - 10k+ `eslint-config-*` packages. Which to choose?
 You sort by popularity and see some familiar faces. "Now is the time to finally
 read through their rulesets and decide which I want!" you scream out loud, but
 find yourself finishing the first repo after 6 hours.
@@ -92,26 +92,54 @@ criteria:
 
 - actively maintained
 - follow best practices in their domain
+
+  how can you find out? if a rule such as `no-anonymous-default-exports` is
+  [actively encouraged by the React core team](https://twitter.com/dan_abramov/status/1255229440860262400),
+  you should probably consider using it.
+
 - improve code quality (such as `unicorn/prefer-flat-map`)
 - only minor stylistic influence (such as `import/newline-after-import`)
 
+If you want to add support, please follow the detection logic in `index.js`.
+
 ## When should you not use this?
 
-When you can't use modern DOM apis such as `Array.flatMap`.
+When you can't use modern APIs such as `Array.flatMap`. However, you may disable those
+rules (see [here](#want-to-build-your-own-config-with-the-standards-defined-in-this)).
 
 When using Vue/Svelte/Angular, because those are currently not supported.
 
 And obviously, when disagreeing with most of the choices made here. Your time to
 build your own config might have come, after all.
 
-# List of opinions coming with this config
+# List of included opinions
 
-- let typescript inference work where possible. only strongly type exports
+## TypeScript:
+
+- let inference work where possible:
+
+  - only strongly type exports (enforced via `@typescript-eslint/explicit-module-boundary-types`)
+
+  - strongly type complex return types (currently not enforceable)
+
+## JavaScript
+
 - `null` is not forbidden, as it conveys meaning. Enjoy debugging code which
   does not differentiate between intentional `undefined` and unintentional
   `undefined`.
+
+## Tests
+
 - use whitespace between test blocks
+
+  stylistic choice that can't be enforced by prettier
+
 - use describe blocks
+
+  [considered best practice](https://github.com/jest-community/eslint-plugin-jest/blob/master/src/rules/require-top-level-describe.ts#L8) by `eslint-plugin-jest`
+
+## General
+
 - sort your imports (this does not work when using absolute imports, sadly)
 - sort your object keys alphabetically
 - don't write unecessary code (e.g. `return undefined` or `if(condition === true)`)
@@ -174,7 +202,7 @@ import { createTSOverride } from 'eslint-config-galex/overrides/typescript';
 
 createTSOverride({
   react: {
-    exists: boolean;
+    hasReact: boolean;
   };
   hasTypeScript: boolean;
   customRules: Record<string, string | [string, object | string]>
