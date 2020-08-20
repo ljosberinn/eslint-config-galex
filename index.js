@@ -6,11 +6,13 @@ const { createTestOverride } = require('./overrides/test');
 const { createTSOverride } = require('./overrides/typescript');
 const { createEslintCoreRules } = require('./rulesets/eslint-core');
 const { createImportRules } = require('./rulesets/import');
-const inclusiveLanguageRules = require('./rulesets/inclusive-language');
+const {
+  createInclusiveLanguageRules,
+} = require('./rulesets/inclusive-language');
 const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
-const sortKeysFixRules = require('./rulesets/sort-keys-fix');
-const unicornRules = require('./rulesets/unicorn');
+const { createSortKeysFixRules } = require('./rulesets/sort-keys-fix');
+const { createUnicornRules } = require('./rulesets/unicorn');
 
 const project = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
@@ -31,15 +33,40 @@ const project = (() => {
       })
     );
 
+    /**
+     * anything that isn't `jest-dom`, `user-event` or `jest-native`
+     *
+     * @see https://www.npmjs.com/org/testing-library
+     */
+    const testingLibFamily = [
+      'angular',
+      'cypress',
+      'dom',
+      'nightwatch',
+      'preact',
+      'preact-hooks',
+      'react',
+      'react-hooks',
+      'react-native',
+      'svelte',
+      'testcafe',
+      'vue',
+    ];
+
+    const reactFlavours = ['react', 'preact', 'next'];
+
     return {
       hasJest: deps.has('jest'),
       hasJestDom: deps.has('@testing-library/jest-dom'),
-      hasTestingLibrary: deps.has('@testing-library/react'),
+      hasNodeTypes: deps.has('@types/node'),
+      hasTestingLibrary: testingLibFamily.some(pkg =>
+        deps.has(`@testing-library/${pkg}`)
+      ),
       hasTypeScript: deps.has('typescript'),
       react: {
-        exists: ['react', 'preact', 'next'].some(pkg => deps.has(pkg)),
+        hasReact: reactFlavours.some(pkg => deps.has(pkg)),
         isNext: deps.has('next'),
-        version: deps.get('react') ?? '',
+        version: deps.get('react') || '',
       },
     };
   } catch (error) {
@@ -49,11 +76,12 @@ const project = (() => {
     return {
       hasJest: false,
       hasJestDom: false,
+      hasNodeTypes: false,
       hasTestingLibrary: false,
       hasTypeScript: false,
       react: {
-        exists: false,
-        next: false,
+        hasReact: false,
+        isNext: false,
         version: '',
       },
     };
@@ -66,12 +94,31 @@ const overrides = [
   createTSOverride(project),
 ].filter(Boolean);
 
+const defaultPlugins = [
+  'import',
+  'sort-keys-fix',
+  'unicorn',
+  'promise',
+  'sonarjs',
+  'inclusive-language',
+];
+
+const rules = {
+  ...createEslintCoreRules(project),
+  ...createUnicornRules(project),
+  ...createPromiseRules(project),
+  ...createImportRules(project),
+  ...createSortKeysFixRules(project),
+  ...createSonarjsRules(project),
+  ...createInclusiveLanguageRules(project),
+};
+
 // schema reference: https://github.com/eslint/eslint/blob/master/conf/config-schema.js
 module.exports = {
   env: {
-    browser: project.react.exists,
+    browser: project.react.hasReact,
     es2020: true,
-    node: true,
+    node: project.hasTypeScript ? project.hasNodeTypes : true,
   },
   extends: ['prettier'],
   overrides,
@@ -79,21 +126,6 @@ module.exports = {
     // ecmaVersion: 2020,
     sourceType: 'module',
   },
-  plugins: [
-    'import',
-    'sort-keys-fix',
-    'unicorn',
-    'promise',
-    'sonarjs',
-    'inclusive-language',
-  ],
-  rules: {
-    ...createEslintCoreRules(project),
-    ...unicornRules,
-    ...createPromiseRules(project),
-    ...createImportRules(project),
-    ...sortKeysFixRules,
-    ...createSonarjsRules(project),
-    ...inclusiveLanguageRules,
-  },
+  plugins: defaultPlugins,
+  rules,
 };
