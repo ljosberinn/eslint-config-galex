@@ -129,6 +129,8 @@ build your own config might have come, after all.
   does not differentiate between intentional `undefined` and unintentional
   `undefined`.
 
+- `prefer-const`
+
 ## Tests
 
 - use new lines between test blocks & `expect` and non-`expect`-code

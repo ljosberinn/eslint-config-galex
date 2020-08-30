@@ -137,7 +137,7 @@ const getUnicornRules = ({ hasTypeScript }) => ({
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-for-loop.md
    */
-  'unicorn/no-for-loop': 'error',
+  'unicorn/no-for-loop': hasTypeScript ? 'off' : 'warn',
 
   /**
    * use unicode escapes instead of hexadecimal escales
@@ -319,7 +319,7 @@ const getUnicornRules = ({ hasTypeScript }) => ({
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-number-properties.md
    */
-  'unicorn/prefer-number-properties': 'error',
+  'unicorn/prefer-number-properties': 'warn',
 
   /**
    * handle error in try/catch or omit it

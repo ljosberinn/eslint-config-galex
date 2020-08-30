@@ -681,7 +681,7 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-for-of.md
    */
-  '@typescript-eslint/prefer-for-of': 'error',
+  '@typescript-eslint/prefer-for-of': 'warn',
 
   /**
    * off because opinonated
