@@ -1,6 +1,7 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
 const restrictedGlobals = require('confusing-browser-globals');
+const { rules: prettierRules } = require('eslint-config-prettier');
 
 module.exports = {
   /**
@@ -13,6 +14,7 @@ module.exports = {
    */
   createEslintCoreRules: ({ typescript, customRules = {} }) => ({
     ...getESlintCoreRules(typescript),
+    ...prettierRules,
     ...customRules,
   }),
 };
@@ -41,9 +43,12 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
   /**
    * disallows `fn ()`, prefers `fn()`
    *
+   * off because prettier takes care of that
+   *
    * @see https://eslint.org/docs/rules/func-call-spacing
+   * @see @typescript-eslint/func-call-spacing.md
    */
-  'func-call-spacing': hasTypeScript ? 'off' : 'warn',
+  'func-call-spacing': 'off',
   'getter-return': 'warn',
   /**
    * off because required to escape scope
@@ -56,6 +61,7 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
    * off because prettier takes care of that
    *
    * @see https://eslint.org/docs/rules/keyword-spacing
+   * @see @typescript-eslint/keyword-spacing
    */
   'keyword-spacing': 'off',
 

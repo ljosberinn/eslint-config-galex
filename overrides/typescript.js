@@ -1,4 +1,8 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
+const {
+  rules: prettierTypeScriptRules,
+} = require('eslint-config-prettier/@typescript-eslint');
+
 module.exports = {
   /**
    * @param {{
@@ -36,6 +40,7 @@ module.exports = {
       plugins: ['@typescript-eslint'],
       rules: {
         ...getTypeScriptRules({ hasReact, is4OrLater }),
+        ...prettierTypeScriptRules,
         ...customRules,
       },
       settings: {
@@ -191,10 +196,12 @@ const getTypeScriptRules = ({ is4OrLater, hasReact }) => ({
   '@typescript-eslint/explicit-module-boundary-types': 'error',
 
   /**
+   * off because prettier takes care of that
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
    * @see func-call-spacing
    */
-  '@typescript-eslint/func-call-spacing': ['warn', 'never'],
+  '@typescript-eslint/func-call-spacing': 'off',
 
   /**
    * off because prettier takes care of that
@@ -228,21 +235,11 @@ const getTypeScriptRules = ({ is4OrLater, hasReact }) => ({
   /**
    * enforces consistent member delimiter style in interfaces & types
    *
+   * off because prettier takes care of that
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md
    */
-  '@typescript-eslint/member-delimiter-style': [
-    'warn',
-    {
-      multiline: {
-        delimiter: 'semi',
-        requireLast: true,
-      },
-      singleline: {
-        delimiter: 'semi',
-        requireLast: false,
-      },
-    },
-  ],
+  '@typescript-eslint/member-delimiter-style': 'off',
 
   /**
    * ensures consistend ordering of class internals

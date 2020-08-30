@@ -1,4 +1,7 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
+const {
+  rules: prettierUnicornRules,
+} = require('eslint-config-prettier/unicorn');
 
 module.exports = {
   /**
@@ -11,6 +14,7 @@ module.exports = {
    */
   createUnicornRules: ({ typescript, customRules = {} }) => ({
     ...getUnicornRules(typescript),
+    ...prettierUnicornRules,
     ...customRules,
   }),
 };
@@ -150,12 +154,11 @@ const getUnicornRules = ({ hasTypeScript }) => ({
   'unicorn/no-keyword-prefix': 'warn',
 
   /**
-   * extends core rule; no error because there are valid use cases, but at least
-   * be aware
+   * off because prettier takes care of it
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-nested-ternary.md
    */
-  'unicorn/no-nested-ternary': 'warn',
+  'unicorn/no-nested-ternary': 'off',
 
   /**
    * use Buffer.from/Buffer.alloc instead of new Buffer (deprecated)
@@ -234,11 +237,11 @@ const getUnicornRules = ({ hasTypeScript }) => ({
   'unicorn/no-zero-fractions': 'error',
 
   /**
-   * enforce proper casing
+   * off because prettier takes care of it
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/number-literal-case.md
    */
-  'unicorn/number-literal-case': 'error',
+  'unicorn/number-literal-case': 'off',
 
   /**
    * prefer element.addEventListener instead of element.[event]

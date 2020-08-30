@@ -1,6 +1,6 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
-// WIP
+const { rules: prettierReactRules } = require('eslint-config-prettier/react');
 
 module.exports = {
   /**
@@ -34,6 +34,7 @@ module.exports = {
       plugins: ['jsx-a11y', 'react-hooks', 'react'],
       rules: {
         ...createReactRules({ hasTypeScript, is17OrLater, isNext }),
+        ...prettierReactRules,
         ...createJSXA11yRules({ isNext }),
         ...hookRules,
         ...customRules,

@@ -156,7 +156,6 @@ module.exports = {
     es2020: true,
     node: project.hasTypeScript ? project.hasNodeTypes : true,
   },
-  extends: ['prettier'],
   overrides,
   parserOptions: {
     // ecmaVersion: 2020,
