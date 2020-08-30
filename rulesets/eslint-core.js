@@ -26,20 +26,31 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
       allowImplicit: true,
     },
   ],
+
   // http://eslint.org/docs/rules/
   'default-case': ['warn', { commentPattern: '^no default$' }],
+
   /**
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
    * @see @typescript-eslint/default-param-last
    */
   'default-param-last': hasTypeScript ? 'off' : 'error',
+
   'dot-location': ['warn', 'property'],
+
   /**
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
    * @see @typescript-eslint/dot-notation
    */
   'dot-notation': hasTypeScript ? 'off' : 'warn',
+
   eqeqeq: ['warn', 'smart'],
+
+  /**
+   * @see https://eslint.org/docs/rules/for-direction
+   */
+  'for-direction': 'error',
+
   /**
    * disallows `fn ()`, prefers `fn()`
    *
@@ -49,7 +60,12 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
    * @see @typescript-eslint/func-call-spacing.md
    */
   'func-call-spacing': 'off',
+
+  /**
+   * @see https://eslint.org/docs/rules/getter-return
+   */
   'getter-return': 'warn',
+
   /**
    * off because required to escape scope
    *
@@ -72,28 +88,114 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
    * @see @typescript-eslint/lines-between-class-members
    */
   'lines-between-class-members': hasTypeScript ? 'off' : 'warn',
+
   'new-parens': 'warn',
+
   'no-alert': 'error',
   /**
    * @see https://eslint.org/docs/rules/no-array-constructor
    * @see @typescript-eslint/no-array-constructor
    */
   'no-array-constructor': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * prevents usage of async within `new Promise`
+   *
+   * @see https://eslint.org/docs/rules/no-async-promise-executor
+   */
+  'no-async-promise-executor': 'error',
+
+  /**
+   * prevents using async in for loop; `use Promise.all` instead
+   *
+   * @see https://eslint.org/docs/rules/no-await-in-loop
+   */
+  'no-await-in-loop': 'error',
+
   'no-caller': 'warn',
+
+  /**
+   * prevents comparing against negative zero
+   *
+   * @see https://eslint.org/docs/rules/no-compare-neg-zero
+   */
+  'no-compare-neg-zero': 'error',
+
+  /**
+   * prevents assigning in condition
+   *
+   * @see https://eslint.org/docs/rules/no-cond-assign
+   */
   'no-cond-assign': ['warn', 'except-parens'],
+
+  /**
+   * prevents forgotten debug statements. either uncomment the line
+   * or remove the statement
+   *
+   * @see https://eslint.org/docs/rules/no-console
+   */
   'no-console': 'warn',
+
   'no-const-assign': 'warn',
+  /**
+   * prevents inline constant conditions
+   *
+   * @see https://eslint.org/docs/rules/no-constant-condition
+   */
+  'no-constant-condition': 'error',
+
+  /**
+   * prevents mistakenly using control characters in regex
+   *
+   * disable when really required
+   *
+   * @see https://eslint.org/docs/rules/no-control-regex
+   */
   'no-control-regex': 'warn',
+
+  /**
+   * prevents forgotten debug statements
+   *
+   * @see https://eslint.org/docs/rules/no-debugger
+   */
+  'no-debugger': 'warn',
+
   'no-delete-var': 'warn',
-  'no-dupe-args': 'warn',
+
+  /**
+   * prevents duplicate function arg names
+   *
+   * @see https://eslint.org/docs/rules/no-dupe-args
+   */
+  'no-dupe-args': hasTypeScript ? 'off' : 'error',
+
   /**
    * @see https://eslint.org/docs/rules/no-dupe-class-members
    * @see @typescript-eslint/no-dupe-class-members
    */
   'no-dupe-class-members': hasTypeScript ? 'off' : 'error',
-  'no-dupe-keys': 'warn',
+
+  /**
+   * prevents identical branches
+   *
+   * @see https://eslint.org/docs/rules/no-dupe-else-if
+   */
+  'no-dupe-else-if': 'warn',
+
+  /**
+   * prevents duplicate keys in object
+   *
+   * @see https://eslint.org/docs/rules/no-dupe-keys
+   */
+  'no-dupe-keys': hasTypeScript ? 'off' : 'warn',
+
+  /**
+   * @see https://eslint.org/docs/rules/no-duplicate-case
+   */
   'no-duplicate-case': 'warn',
+
   'no-else-return': 'error',
+
   'no-empty-character-class': 'warn',
   /**
    * @see https://eslint.org/docs/rules/no-empty-function
