@@ -38,6 +38,18 @@ module.exports = {
         ...(hasJestDom ? jestDomRules : null),
         ...(hasTestingLibrary ? testingLibraryRules : null),
         /**
+         * off to allow non-null casting e.g. querySelector or .find() results
+         *
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/v3.9.0/packages/eslint-plugin/docs/rules/no-non-null-assertion.md
+         */
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        /**
+         * off because its regularily done in tests
+         *
+         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
+         */
+        '@typescript-eslint/unbound-method': 'off',
+        /**
          * off to allow spying on methods
          *
          * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md

@@ -5,12 +5,14 @@ const restrictedGlobals = require('confusing-browser-globals');
 module.exports = {
   /**
    * @param {{
-   *  hasTypeScript: boolean;
+   *  typescript: {
+   *    hasTypeScript: boolean;
+   *  };
    *  customRules?: Record<string, string | [string, string | object];
    * }} options
    */
-  createEslintCoreRules: ({ hasTypeScript, customRules = {} }) => ({
-    ...getESlintCoreRules({ hasTypeScript }),
+  createEslintCoreRules: ({ typescript, customRules = {} }) => ({
+    ...getESlintCoreRules(typescript),
     ...customRules,
   }),
 };
@@ -26,11 +28,13 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
   'default-case': ['warn', { commentPattern: '^no default$' }],
   /**
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
+   * @see @typescript-eslint/default-param-last
    */
   'default-param-last': hasTypeScript ? 'off' : 'error',
   'dot-location': ['warn', 'property'],
   /**
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
+   * @see @typescript-eslint/dot-notation
    */
   'dot-notation': hasTypeScript ? 'off' : 'warn',
   eqeqeq: ['warn', 'smart'],
@@ -59,12 +63,14 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
    * ensures proper spacing between class members
    *
    * @see https://eslint.org/docs/rules/lines-between-class-members
+   * @see @typescript-eslint/lines-between-class-members
    */
   'lines-between-class-members': hasTypeScript ? 'off' : 'warn',
   'new-parens': 'warn',
   'no-alert': 'error',
   /**
    * @see https://eslint.org/docs/rules/no-array-constructor
+   * @see @typescript-eslint/no-array-constructor
    */
   'no-array-constructor': hasTypeScript ? 'off' : 'error',
   'no-caller': 'warn',
@@ -74,11 +80,20 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
   'no-control-regex': 'warn',
   'no-delete-var': 'warn',
   'no-dupe-args': 'warn',
-  'no-dupe-class-members': 'warn',
+  /**
+   * @see https://eslint.org/docs/rules/no-dupe-class-members
+   * @see @typescript-eslint/no-dupe-class-members
+   */
+  'no-dupe-class-members': hasTypeScript ? 'off' : 'error',
   'no-dupe-keys': 'warn',
   'no-duplicate-case': 'warn',
   'no-else-return': 'error',
   'no-empty-character-class': 'warn',
+  /**
+   * @see https://eslint.org/docs/rules/no-empty-function
+   * @see @typescript-eslint/no-empty-function
+   */
+  'no-empty-function': hasTypeScript ? 'off' : 'error',
   'no-empty-pattern': 'warn',
   'no-eval': 'warn',
   'no-ex-assign': 'warn',
@@ -89,11 +104,22 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
   'no-func-assign': 'warn',
   'no-implied-eval': 'warn',
   'no-invalid-regexp': 'warn',
+  'no-invalid-this': hasTypeScript ? 'off' : 'error',
   'no-iterator': 'warn',
   'no-label-var': 'warn',
   'no-labels': ['warn', { allowLoop: true, allowSwitch: false }],
   'no-lone-blocks': 'warn',
   'no-loop-func': 'warn',
+  /**
+   * @see https://eslint.org/docs/rules/no-loss-of-precision
+   * @see @typescript-eslint/no-loss-of-precision
+   */
+  'no-loss-of-precision': hasTypeScript ? 'off' : 'error',
+  /**
+   * @see https://eslint.org/docs/rules/no-magic-numbers
+   * @see @typescript-eslint/no-magic-numbers
+   */
+  'no-magic-numbers': 'off',
   'no-mixed-operators': [
     'warn',
     {
@@ -124,7 +150,8 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
   'no-restricted-globals': ['error'].concat(restrictedGlobals),
   'no-restricted-syntax': ['warn', 'WithStatement'],
   /**
-   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md
+   * @see https://eslint.org/docs/rules/no-return-await
+   * @see @typescript-eslint/no-return-await
    */
   'no-return-await': hasTypeScript ? 'off' : 'error',
   'no-script-url': 'warn',
@@ -138,15 +165,25 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
   'no-throw-literal': 'warn',
   'no-undef': 'error',
   'no-unreachable': 'warn',
-  'no-unused-expressions': [
-    'error',
-    {
-      allowShortCircuit: true,
-      allowTaggedTemplates: true,
-      allowTernary: true,
-    },
-  ],
+  /**
+   * @see https://eslint.org/docs/rules/no-unused-expression
+   * @see @typescript-eslint/no-unused-expression
+   */
+  'no-unused-expressions': hasTypeScript
+    ? 'off'
+    : [
+        'error',
+        {
+          allowShortCircuit: true,
+          allowTaggedTemplates: true,
+          allowTernary: true,
+        },
+      ],
   'no-unused-labels': 'warn',
+  /**
+   * @see https://eslint.org/docs/rules/no-unused-vars
+   * @see @typescript-eslint/no-unused-vars
+   */
   'no-unused-vars': hasTypeScript
     ? 'off'
     : [
@@ -156,17 +193,27 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
           ignoreRestSiblings: true,
         },
       ],
-  'no-use-before-define': [
-    'warn',
-    {
-      classes: false,
-      functions: false,
-      variables: false,
-    },
-  ],
+  /**
+   * @see https://eslint.org/docs/rules/no-use-before-define
+   * @see @typescript-eslint/no-use-before-define
+   */
+  'no-use-before-define': hasTypeScript
+    ? 'off'
+    : [
+        'warn',
+        {
+          classes: false,
+          functions: false,
+          variables: false,
+        },
+      ],
   'no-useless-computed-key': 'warn',
   'no-useless-concat': 'warn',
-  'no-useless-constructor': 'warn',
+  /**
+   * @see https://eslint.org/docs/rules/no-useless-constructor
+   * @see @typescript-eslint/no-useless-constructor
+   */
+  'no-useless-constructor': hasTypeScript ? 'off' : 'warn',
   'no-useless-escape': 'warn',
   'no-useless-rename': [
     'warn',
@@ -179,9 +226,29 @@ const getESlintCoreRules = ({ hasTypeScript }) => ({
   'no-whitespace-before-property': 'warn',
   'no-with': 'warn',
   'prefer-exponentiation-operator': 'warn',
-  'require-await': 'error',
+  /**
+   * prevents using `async` without `await`
+   *
+   * @see https://eslint.org/docs/rules/require-await
+   * @see @typescript-eslint/require-await
+   */
+  'require-await': hasTypeScript ? 'off' : 'error',
   'require-yield': 'warn',
   'rest-spread-spacing': ['warn', 'never'],
+  /**
+   * off because handled by prettier
+   *
+   * @see https://eslint.org/docs/rules/semi
+   * @see @typescript-eslint/semi
+   */
+  semi: 'off',
+  /**
+   * off because handled by prettier
+   *
+   * @see https://eslint.org/docs/rules/space-before-function-paren
+   * @see @typescript-eslint/space-before-function-paren
+   */
+  'space-before-function-paren': 'off',
   strict: ['warn', 'never'],
   'unicode-bom': ['warn', 'never'],
   'use-isnan': 'warn',

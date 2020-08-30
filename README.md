@@ -169,10 +169,16 @@ interface Project {
    * whether any `@testing-library/<environment>` is present
    */
   hasTestingLibrary: boolean;
-  /**
-   * whether `typescript` is present
-   */
-  hasTypeScript: boolean;
+  typescript: {
+    /**
+     * whether `typescript` is present
+     */
+    hasTypeScript: boolean;
+    /**
+     * whether the major version is >= 4
+     */
+    is4OrLater: boolean;
+  };
   react: {
     /**
      * whether any flavour of react is present
@@ -183,11 +189,9 @@ interface Project {
      */
     isNext: boolean;
     /**
-     * version of react
-     *
-     * @default ''
+     * whether the major version is >= 17
      */
-    version: string;
+    is17OrLater: string;
   };
 }
 ```
@@ -202,12 +206,15 @@ import { createTSOverride } from 'eslint-config-galex/overrides/typescript';
 
 createTSOverride({
   react: {
-    hasReact: boolean;
-  };
-  hasTypeScript: boolean;
-  customRules: Record<string, string | [string, object | string]>
+    hasReact: true,
+    is17OrLater: true,
+  },
+  typescript: {
+    hasTypeScript: true,
+    is4OrLater: true,
+  },
+  customRules: {},
 });
-
 ```
 
 ## Available exports:
@@ -217,6 +224,8 @@ createTSOverride({
 - `import { createTSOverride } from 'eslint-config-galex/overrides/typescript'`
 - `import { createReactOverride } from 'eslint-config-galex/overrides/react'`
 - `import { createTestOverride } from 'eslint-config-galex/overrides/test'`
+
+> Please note that the test override should always come last.
 
 ### Rulesets
 

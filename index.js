@@ -14,6 +14,18 @@ const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createSortKeysFixRules } = require('./rulesets/sort-keys-fix');
 const { createUnicornRules } = require('./rulesets/unicorn');
 
+const fulfillsMinVersion = (version, min) => {
+  try {
+    const [major] = version.split('.');
+
+    return Number.parseInt(major) >= min;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(`Error determining version; ${error.message}`);
+    return false;
+  }
+};
+
 const project = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
@@ -33,15 +45,20 @@ const project = (() => {
       })
     );
 
+    const hasJest = deps.has('jest');
+    const hasJestDom = deps.has('@testing-library/jest-dom');
+    const hasNodeTypes = deps.has('@types/node');
+
     /**
-     * anything that isn't `jest-dom`, `user-event` or `jest-native`
-     *
      * @see https://www.npmjs.com/org/testing-library
      */
     const testingLibFamily = [
       'angular',
       'cypress',
       'dom',
+      // jasmine-dom
+      // jest-dom
+      // jest-native
       'nightwatch',
       'preact',
       'preact-hooks',
@@ -50,24 +67,39 @@ const project = (() => {
       'react-native',
       'svelte',
       'testcafe',
+      // user-event
       'vue',
     ];
 
+    const hasTestingLibrary = testingLibFamily.some(pkg =>
+      deps.has(`@testing-library/${pkg}`)
+    );
+
     const reactFlavours = ['react', 'preact', 'next'];
+    const hasReact = reactFlavours.some(pkg => deps.has(pkg));
+
+    const react = {
+      hasReact,
+      is17OrLater: hasReact ? fulfillsMinVersion(deps.get('react'), 17) : false,
+      isNext: deps.has('next'),
+    };
+
+    const hasTypeScript = deps.has('typescript');
+
+    const typescript = {
+      hasTypeScript,
+      is4OrLater: hasTypeScript
+        ? fulfillsMinVersion(deps.get('typescript'), 4)
+        : false,
+    };
 
     return {
-      hasJest: deps.has('jest'),
-      hasJestDom: deps.has('@testing-library/jest-dom'),
-      hasNodeTypes: deps.has('@types/node'),
-      hasTestingLibrary: testingLibFamily.some(pkg =>
-        deps.has(`@testing-library/${pkg}`)
-      ),
-      hasTypeScript: deps.has('typescript'),
-      react: {
-        hasReact: reactFlavours.some(pkg => deps.has(pkg)),
-        isNext: deps.has('next'),
-        version: deps.get('react') || '',
-      },
+      hasJest,
+      hasJestDom,
+      hasNodeTypes,
+      hasTestingLibrary,
+      react,
+      typescript,
     };
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -78,20 +110,24 @@ const project = (() => {
       hasJestDom: false,
       hasNodeTypes: false,
       hasTestingLibrary: false,
-      hasTypeScript: false,
       react: {
         hasReact: false,
+        is17OrLater: false,
         isNext: false,
-        version: '',
+      },
+      typescript: {
+        hasTypeScript: false,
+        is4OrLater: false,
       },
     };
   }
 })();
 
 const overrides = [
-  createTestOverride(project),
   createReactOverride(project),
   createTSOverride(project),
+  // order is important - test must come last, as it has overrides for e.g. ts
+  createTestOverride(project),
 ].filter(Boolean);
 
 const defaultPlugins = [

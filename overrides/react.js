@@ -8,13 +8,14 @@ module.exports = {
    *  react: {
    *   hasReact: boolean;
    *   isNext: boolean;
-   *   version: string
+   *   is17OrLater: boolean;
    *  };
    *  customRules?: Record<string, string | [string, string | object];
    * } options
    */
   createReactOverride: ({
-    react: { hasReact, isNext, version },
+    react: { hasReact, isNext, is17OrLater },
+    typescript: { hasTypeScript },
     customRules = {},
   }) => {
     if (!hasReact) {
@@ -32,7 +33,7 @@ module.exports = {
       },
       plugins: ['jsx-a11y', 'react-hooks', 'react'],
       rules: {
-        ...createReactRules({ isNext, version }),
+        ...createReactRules({ hasTypeScript, is17OrLater, isNext }),
         ...createJSXA11yRules({ isNext }),
         ...hookRules,
         ...customRules,
@@ -65,7 +66,7 @@ const hookRules = {
 };
 
 // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-const createReactRules = ({ isNext, version, hasTypeScript }) => ({
+const createReactRules = ({ isNext, is17OrLater, hasTypeScript }) => ({
   /**
    * off because it doesnt seem to work anyways
    *
@@ -625,8 +626,7 @@ const createReactRules = ({ isNext, version, hasTypeScript }) => ({
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
    */
-  'react/react-in-jsx-scope':
-    isNext || version.startsWith('17') ? 'off' : 'error',
+  'react/react-in-jsx-scope': isNext || is17OrLater ? 'off' : 'error',
 
   /**
    * off because use function default arguments

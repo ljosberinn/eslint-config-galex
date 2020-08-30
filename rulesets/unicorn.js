@@ -1,13 +1,21 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
 module.exports = {
-  createUnicornRules: ({ customRules = {} }) => ({
-    ...unicornRules,
+  /**
+   * @param {{
+   *  typescript: {
+   *    hasTypeScript: boolean;
+   *  };
+   *  customRules?: Record<string, string | [string, string | object];
+   * }} options
+   */
+  createUnicornRules: ({ typescript, customRules = {} }) => ({
+    ...getUnicornRules(typescript),
     ...customRules,
   }),
 };
 
-const unicornRules = {
+const getUnicornRules = ({ hasTypeScript }) => ({
   /**
    * improves regex
    *
@@ -271,8 +279,9 @@ const unicornRules = {
    * prefer (Array|String).includes over (Array|String).indexOf
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-includes.md
+   * @see @typescript-eslint/prefer-includes
    */
-  'unicorn/prefer-includes': 'error',
+  'unicorn/prefer-includes': hasTypeScript ? 'off' : 'warn',
 
   /**
    * prefer using modern APIs
@@ -355,8 +364,9 @@ const unicornRules = {
    * use String.startsWith/.endsWith over String.indexOf or regex
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-starts-ends-with.md
+   * @see @typescript-eslint/prefer-string-starts-ends-with
    */
-  'unicorn/prefer-starts-ends-with': 'error',
+  'unicorn/prefer-starts-ends-with': hasTypeScript ? 'off' : 'error',
 
   /**
    * use String.slice over String.substr/.substring
@@ -407,4 +417,4 @@ const unicornRules = {
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/throw-new-error.md
    */
   'unicorn/throw-new-error': 'error',
-};
+});

@@ -4,12 +4,10 @@ module.exports = {
    *  customRules?: Record<string, string | [string, string | object];
    * }}
    */
-  createSortKeysFixRules: ({ customRules = {} }) => {
-    return {
-      ...sortKeysFixRules,
-      ...customRules,
-    };
-  },
+  createSortKeysFixRules: ({ customRules = {} }) => ({
+    ...sortKeysFixRules,
+    ...customRules,
+  }),
 };
 
 const sortKeysFixRules = {

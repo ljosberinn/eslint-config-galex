@@ -2,14 +2,15 @@
 
 module.exports = {
   /**
-   *
    * @param {{
-   *  hasTypeScript: boolean;
+   *  typescript: {
+   *    hasTypeScript: boolean;
+   *  };
    *  customRules?: Record<string, string | [string, string | object];
    * }} options
    */
-  createPromiseRules: ({ hasTypeScript, customRules }) => ({
-    ...getPromiseRules({ hasTypeScript }),
+  createPromiseRules: ({ typescript, customRules = {} }) => ({
+    ...getPromiseRules(typescript),
     ...customRules,
   }),
 };
@@ -35,13 +36,15 @@ const getPromiseRules = ({ hasTypeScript }) => ({
    *
    * @see https://github.com/xjamundx/eslint-plugin-promise/blob/master/docs/rules/catch-or-return.md
    */
-  'promise/catch-or-return': [
-    'error',
-    {
-      allowFinally: true,
-      allowThen: true,
-    },
-  ],
+  'promise/catch-or-return': hasTypeScript
+    ? 'off'
+    : [
+        'error',
+        {
+          allowFinally: true,
+          allowThen: true,
+        },
+      ],
 
   /**
    * off because too opinionated; not gonna pull in a dependency just for that

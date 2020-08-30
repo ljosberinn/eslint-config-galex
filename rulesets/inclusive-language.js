@@ -4,12 +4,10 @@ module.exports = {
    *  customRules?: Record<string, string | [string, string | object];
    * }}
    */
-  createInclusiveLanguageRules: ({ customRules = {} }) => {
-    return {
-      ...inclusiveLanguageRules,
-      ...customRules,
-    };
-  },
+  createInclusiveLanguageRules: ({ customRules = {} }) => ({
+    ...inclusiveLanguageRules,
+    ...customRules,
+  }),
 };
 
 const inclusiveLanguageRules = {
