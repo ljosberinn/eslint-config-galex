@@ -77,6 +77,7 @@ Rules are selectively applied based on file name patterns.
 All rules are commented and link to their docs.
 
 - [x] React
+- [x] Next.js
 - [x] TypeScript
 - [x] Node.js
 - [x] jest
@@ -130,7 +131,7 @@ build your own config might have come, after all.
 
 ## Tests
 
-- use whitespace between test blocks
+- use new lines between test blocks & `expect` and non-`expect`-code
 
   stylistic choice that can't be enforced by prettier
 
@@ -188,6 +189,10 @@ interface Project {
      * whether `next` is present
      */
     isNext: boolean;
+    /**
+     * whether `preact` is present
+     * currently withou effect
+    isPreact: boolean;
     /**
      * the installed version
      */

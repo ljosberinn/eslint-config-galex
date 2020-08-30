@@ -14,18 +14,6 @@ const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createSortKeysFixRules } = require('./rulesets/sort-keys-fix');
 const { createUnicornRules } = require('./rulesets/unicorn');
 
-const fulfillsMinVersion = (version, min) => {
-  try {
-    const [major] = version.split('.');
-
-    return Number.parseInt(major) >= min;
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(`Error determining version; ${error.message}`);
-    return false;
-  }
-};
-
 const project = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
@@ -81,6 +69,9 @@ const project = (() => {
     const react = {
       hasReact,
       isNext: deps.has('next'),
+      // no effect yet
+      isPreact: deps.has('preact'),
+      // might have to be adjusted for preact in the future
       version: deps.get('react'),
     };
 
@@ -111,6 +102,7 @@ const project = (() => {
       react: {
         hasReact: false,
         isNext: false,
+        isPreact: false,
         version: '17.0.0-rc.1',
       },
       typescript: {

@@ -146,13 +146,18 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-assertions.md
    */
-  '@typescript-eslint/consistent-type-assertions': [
-    'error',
-    {
-      assertionStyle: 'as',
-      objectLiteralTypeAssertions: 'never',
-    },
-  ],
+  '@typescript-eslint/consistent-type-assertions': fulfillsVersionRequirement(
+    version,
+    { major: 3, minor: 4 }
+  )
+    ? [
+        'error',
+        {
+          assertionStyle: 'as',
+          objectLiteralTypeAssertions: 'never',
+        },
+      ]
+    : 'off',
 
   /**
    * off because both type and interface have advantages over the other
@@ -160,6 +165,16 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
    */
   '@typescript-eslint/consistent-type-definitions': 'off',
+
+  /**
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
+   */
+  '@typescript-eslint/consistent-type-imports': fulfillsVersionRequirement(
+    version,
+    { major: 3, minor: 8 }
+  )
+    ? 'error'
+    : 'off',
 
   /**
    * prevents having optional params before default
@@ -460,7 +475,12 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-non-null-asserted-optional-chain.md
    */
-  '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
+  '@typescript-eslint/no-non-null-asserted-optional-chain': fulfillsVersionRequirement(
+    version,
+    { major: 3, minor: 7 }
+  )
+    ? 'error'
+    : 'off',
 
   /**
    * prevents casting something as non-null that probably is null
@@ -632,7 +652,12 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-as-const.md
    */
-  '@typescript-eslint/prefer-as-const': 'error',
+  '@typescript-eslint/prefer-as-const': fulfillsVersionRequirement(version, {
+    major: 3,
+    minor: 4,
+  })
+    ? 'error'
+    : 'off',
 
   /**
    * be explicit about enum members
@@ -681,14 +706,24 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md
    */
-  '@typescript-eslint/prefer-nullish-coalescing': 'error',
+  '@typescript-eslint/prefer-nullish-coalescing': fulfillsVersionRequirement(
+    version,
+    { major: 3, minor: 7 }
+  )
+    ? 'error'
+    : 'off',
 
   /**
    * prefer `foo?.bar?.baz` over `foo && foo.bar && foo.bar.baz`
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-optional-chain.md
    */
-  '@typescript-eslint/prefer-optional-chain': 'error',
+  '@typescript-eslint/prefer-optional-chain': fulfillsVersionRequirement(
+    version,
+    { major: 3, minor: 7 }
+  )
+    ? 'error'
+    : 'off',
 
   /**
    * prefer having all function parameters to be readonly
@@ -734,7 +769,12 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md
    */
-  '@typescript-eslint/prefer-ts-expect-error': 'error',
+  '@typescript-eslint/prefer-ts-expect-error': fulfillsVersionRequirement(
+    version,
+    { major: 3, minor: 9 }
+  )
+    ? 'error'
+    : 'off',
 
   /**
    * off because nonsensical
