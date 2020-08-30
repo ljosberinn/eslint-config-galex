@@ -2,19 +2,23 @@
 
 const { rules: prettierReactRules } = require('eslint-config-prettier/react');
 
+const {
+  fulfillsVersionRequirement,
+} = require('../utils/fulfillsVersionRequirement');
+
 module.exports = {
   /**
    * @param {
    *  react: {
    *   hasReact: boolean;
    *   isNext: boolean;
-   *   is17OrLater: boolean;
+   *   version: string;
    *  };
    *  customRules?: Record<string, string | [string, string | object];
    * } options
    */
   createReactOverride: ({
-    react: { hasReact, isNext, is17OrLater },
+    react: { hasReact, isNext, version },
     typescript: { hasTypeScript },
     customRules = {},
   }) => {
@@ -33,7 +37,7 @@ module.exports = {
       },
       plugins: ['jsx-a11y', 'react-hooks', 'react'],
       rules: {
-        ...createReactRules({ hasTypeScript, is17OrLater, isNext }),
+        ...createReactRules({ hasTypeScript, isNext, version }),
         ...prettierReactRules,
         ...createJSXA11yRules({ isNext }),
         ...hookRules,
@@ -67,7 +71,7 @@ const hookRules = {
 };
 
 // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-const createReactRules = ({ isNext, is17OrLater, hasTypeScript }) => ({
+const createReactRules = ({ isNext, version, hasTypeScript }) => ({
   /**
    * off because it doesnt seem to work anyways
    *
@@ -627,7 +631,10 @@ const createReactRules = ({ isNext, is17OrLater, hasTypeScript }) => ({
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
    */
-  'react/react-in-jsx-scope': isNext || is17OrLater ? 'off' : 'error',
+  'react/react-in-jsx-scope':
+    isNext || fulfillsVersionRequirement(version, { major: 17 })
+      ? 'off'
+      : 'error',
 
   /**
    * off because use function default arguments

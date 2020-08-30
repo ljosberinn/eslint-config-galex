@@ -175,9 +175,9 @@ interface Project {
      */
     hasTypeScript: boolean;
     /**
-     * whether the major version is >= 4
+     * the installed version
      */
-    is4OrLater: boolean;
+    version: string;
   };
   react: {
     /**
@@ -189,9 +189,9 @@ interface Project {
      */
     isNext: boolean;
     /**
-     * whether the major version is >= 17
+     * the installed version
      */
-    is17OrLater: string;
+    version: string;
   };
 }
 ```
@@ -207,11 +207,11 @@ import { createTSOverride } from 'eslint-config-galex/overrides/typescript';
 createTSOverride({
   react: {
     hasReact: true,
-    is17OrLater: true,
+    version: '17.0.0-rc.1',
   },
   typescript: {
     hasTypeScript: true,
-    is4OrLater: true,
+    version: '4.0.2',
   },
   customRules: {},
 });

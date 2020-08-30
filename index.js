@@ -80,17 +80,15 @@ const project = (() => {
 
     const react = {
       hasReact,
-      is17OrLater: hasReact ? fulfillsMinVersion(deps.get('react'), 17) : false,
       isNext: deps.has('next'),
+      version: deps.get('react'),
     };
 
     const hasTypeScript = deps.has('typescript');
 
     const typescript = {
       hasTypeScript,
-      is4OrLater: hasTypeScript
-        ? fulfillsMinVersion(deps.get('typescript'), 4)
-        : false,
+      version: deps.get('typescript'),
     };
 
     return {
@@ -112,12 +110,12 @@ const project = (() => {
       hasTestingLibrary: false,
       react: {
         hasReact: false,
-        is17OrLater: false,
         isNext: false,
+        version: '17.0.0-rc.1',
       },
       typescript: {
         hasTypeScript: false,
-        is4OrLater: false,
+        version: '4.0.2',
       },
     };
   }

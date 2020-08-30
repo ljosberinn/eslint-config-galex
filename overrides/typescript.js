@@ -3,12 +3,16 @@ const {
   rules: prettierTypeScriptRules,
 } = require('eslint-config-prettier/@typescript-eslint');
 
+const {
+  fulfillsVersionRequirement,
+} = require('../utils/fulfillsVersionRequirement');
+
 module.exports = {
   /**
    * @param {{
    *  typescript: {
    *    hasTypeScript: boolean;
-   *    is4OrLater: boolean;
+   *    version: string;
    *  };
    *  react: {
    *    hasReact: boolean;
@@ -17,7 +21,7 @@ module.exports = {
    * }} options
    */
   createTSOverride: ({
-    typescript: { hasTypeScript, is4OrLater },
+    typescript: { hasTypeScript, version },
     react: { hasReact },
     customRules = {},
   }) => {
@@ -39,7 +43,7 @@ module.exports = {
       },
       plugins: ['@typescript-eslint'],
       rules: {
-        ...getTypeScriptRules({ hasReact, is4OrLater }),
+        ...getTypeScriptRules({ hasReact, version }),
         ...prettierTypeScriptRules,
         ...customRules,
       },
@@ -52,7 +56,7 @@ module.exports = {
   },
 };
 
-const getTypeScriptRules = ({ is4OrLater, hasReact }) => ({
+const getTypeScriptRules = ({ version, hasReact }) => ({
   /**
    * prevents loose overloads
    *
@@ -373,7 +377,12 @@ const getTypeScriptRules = ({ is4OrLater, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md
    */
-  //'@typescript-eslint/no-implicit-any-catch': is4OrLater ? 'warn' : 'off',
+  '@typescript-eslint/no-implicit-any-catch': fulfillsVersionRequirement(
+    version,
+    { major: 4 }
+  )
+    ? 'warn'
+    : 'off',
 
   /**
    * prevents odd cases of implied eval. probably intentional, given those
