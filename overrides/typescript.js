@@ -167,14 +167,24 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
   '@typescript-eslint/consistent-type-definitions': 'off',
 
   /**
+   *  enforces type-only imports when possible
+   *
+   * NOT YET RELEASED
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
    */
-  '@typescript-eslint/consistent-type-imports': fulfillsVersionRequirement(
+  /* '@typescript-eslint/consistent-type-imports': fulfillsVersionRequirement(
     version,
     { major: 3, minor: 8 }
   )
-    ? 'error'
-    : 'off',
+    ? [
+        'error',
+        {
+          disallowTypeAnnotations: true,
+          prefer: 'type-imports',
+        },
+      ]
+    : 'off', */
 
   /**
    * prevents having optional params before default
@@ -392,12 +402,12 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md
    */
-  '@typescript-eslint/no-implicit-any-catch': fulfillsVersionRequirement(
+  /* '@typescript-eslint/no-implicit-any-catch': fulfillsVersionRequirement(
     version,
     { major: 4 }
   )
     ? 'warn'
-    : 'off',
+    : 'off', */
 
   /**
    * prevents odd cases of implied eval. probably intentional, given those
