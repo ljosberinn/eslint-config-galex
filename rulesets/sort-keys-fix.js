@@ -1,14 +1,12 @@
-module.exports = {
-  /**
-   * @param {{
-   *  customRules?: Record<string, string | [string, string | object];
-   * }}
-   */
-  createSortKeysFixRules: ({ customRules = {} }) => ({
-    ...sortKeysFixRules,
-    ...customRules,
-  }),
-};
+/**
+ * @param {{
+ *  customRules?: Record<string, string | [string, string | object];
+ * }}
+ */
+const createSortKeysFixRules = ({ customRules = {} }) => ({
+  ...sortKeysFixRules,
+  ...customRules,
+});
 
 const sortKeysFixRules = {
   /**
@@ -17,4 +15,9 @@ const sortKeysFixRules = {
    * @see https://github.com/leo-buneev/eslint-plugin-sort-keys-fix
    */
   'sort-keys-fix/sort-keys-fix': 'warn',
+};
+
+module.exports = {
+  createSortKeysFixRules,
+  sortKeysFixRules,
 };

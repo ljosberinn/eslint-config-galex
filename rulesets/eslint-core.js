@@ -3,26 +3,24 @@
 const restrictedGlobals = require('confusing-browser-globals');
 const { rules: prettierRules } = require('eslint-config-prettier');
 
-module.exports = {
-  /**
-   * @param {{
-   *  typescript: {
-   *    hasTypeScript: boolean;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * }} options
-   */
-  createEslintCoreRules: ({ typescript, customRules = {} }) => ({
-    ...getPossibleErrorRules(typescript),
-    ...getBestPractices(typescript),
-    ...getVariablesRules(typescript),
-    ...getStylisticIssues(typescript),
-    ...getES6Rules(typescript),
-    ...prettierRules,
-    ...safePrettierOverrides,
-    ...customRules,
-  }),
-};
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createEslintCoreRules = ({ typescript, customRules = {} }) => ({
+  ...getPossibleErrorRules(typescript),
+  ...getBestPractices(typescript),
+  ...getVariableRules(typescript),
+  ...getStylisticIssuesRules(typescript),
+  ...getES6Rules(typescript),
+  ...prettierRules,
+  ...safePrettierOverrides,
+  ...customRules,
+});
 
 /**
  * @see https://eslint.org/docs/rules/#possible-errors
@@ -405,7 +403,7 @@ const getBestPractices = ({ hasTypeScript }) => ({
 /**
  * @see https://eslint.org/docs/rules/#variables
  */
-const getVariablesRules = ({ hasTypeScript }) => ({
+const getVariableRules = ({ hasTypeScript }) => ({
   /**
    * off because required to escape scope
    *
@@ -503,7 +501,7 @@ const getVariablesRules = ({ hasTypeScript }) => ({
 /**
  * @see https://eslint.org/docs/rules/#stylistic-issues
  */
-const getStylisticIssues = ({ hasTypeScript }) => ({
+const getStylisticIssuesRules = ({ hasTypeScript }) => ({
   /**
    * off because handled by prettier
    *
@@ -1156,4 +1154,16 @@ const safePrettierOverrides = {
    * @see https://eslint.org/docs/rules/prefer-arrow-callback
    */
   'prefer-arrow-callback': 'warn',
+};
+
+module.exports = {
+  createEslintCoreRules,
+  getPossibleErrorRules,
+  getBestPractices,
+  getVariableRules,
+  getStylisticIssuesRulesRules,
+  getES6Rules,
+  safePrettierOverrides,
+  prettierRules,
+  restrictedGlobals,
 };

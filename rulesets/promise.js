@@ -1,20 +1,25 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
-module.exports = {
-  /**
-   * @param {{
-   *  typescript: {
-   *    hasTypeScript: boolean;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * }} options
-   */
-  createPromiseRules: ({ typescript, customRules = {} }) => ({
-    ...getPromiseRules(typescript),
-    ...customRules,
-  }),
-};
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createPromiseRules = ({ typescript, customRules = {} }) => ({
+  ...getPromiseRules(typescript),
+  ...customRules,
+});
 
+/**
+ * @see https://github.com/xjamundx/eslint-plugin-promise
+ *
+ * @param {{
+ *  hasTypeScript: boolean;
+ * }}
+ */
 const getPromiseRules = ({ hasTypeScript }) => ({
   /**
    * off because superseded by `promise/catch-or-return`
@@ -123,3 +128,8 @@ const getPromiseRules = ({ hasTypeScript }) => ({
    */
   'promise/valid-params': hasTypeScript ? 'off' : 'error',
 });
+
+module.exports = {
+  createPromiseRules,
+  getPromiseRules,
+};

@@ -1,20 +1,25 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
-module.exports = {
-  /**
-   * @param {{
-   *  typescript: {
-   *    hasTypeScript: boolean;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * }} options
-   */
-  createSonarjsRules: ({ typescript, customRules = {} }) => ({
-    ...getSonarJsRules(typescript),
-    ...customRules,
-  }),
-};
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createSonarjsRules = ({ typescript, customRules = {} }) => ({
+  ...getSonarJsRules(typescript),
+  ...customRules,
+});
 
+/**
+ * @see https://github.com/SonarSource/eslint-plugin-sonarjs
+ *
+ * @param {{
+ *  hasTypeScript: boolean;
+ * }}
+ */
 const getSonarJsRules = ({ hasTypeScript }) => ({
   /**
    * prevents creeping complexity. consider alternative approach.
@@ -198,3 +203,8 @@ const getSonarJsRules = ({ hasTypeScript }) => ({
    */
   'sonarjs/prefer-while': 'error',
 });
+
+module.exports = {
+  createSonarjsRules,
+  getSonarJsRules,
+};

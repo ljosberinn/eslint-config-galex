@@ -3,22 +3,27 @@ const {
   rules: prettierUnicornRules,
 } = require('eslint-config-prettier/unicorn');
 
-module.exports = {
-  /**
-   * @param {{
-   *  typescript: {
-   *    hasTypeScript: boolean;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * }} options
-   */
-  createUnicornRules: ({ typescript, customRules = {} }) => ({
-    ...getUnicornRules(typescript),
-    ...prettierUnicornRules,
-    ...customRules,
-  }),
-};
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createUnicornRules = ({ typescript, customRules = {} }) => ({
+  ...getUnicornRules(typescript),
+  ...prettierUnicornRules,
+  ...customRules,
+});
 
+/**
+ * @see https://github.com/sindresorhus/eslint-plugin-unicorn
+ *
+ * @param {{
+ *  hasTypeScript: boolean;
+ * }}
+ */
 const getUnicornRules = ({ hasTypeScript }) => ({
   /**
    * improves regex
@@ -421,3 +426,9 @@ const getUnicornRules = ({ hasTypeScript }) => ({
    */
   'unicorn/throw-new-error': 'error',
 });
+
+module.exports = {
+  createUnicornRules,
+  getUnicornRules,
+  prettierUnicornRules,
+};

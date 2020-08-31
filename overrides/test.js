@@ -1,64 +1,70 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
-module.exports = {
-  /**
-   * @param {{
-   *  hasJestDom: boolean;
-   *  hasJest: boolean;
-   *  hasTestingLibrary: boolean;
-   *  react: {
-   *    hasReact: boolean;
-   *  };
-   *  typescript: {
-   *    hasTypeScript: boolean;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * }} options
-   */
-  createTestOverride: ({
-    hasJestDom,
-    hasJest,
-    hasTestingLibrary,
-    react,
-    typescript,
-    customRules = {},
-  }) => {
-    if (!hasJest) {
-      return null;
-    }
+const env = {
+  'jest/globals': true,
+};
 
-    const plugins = [
-      'jest',
-      hasJestDom && 'jest-dom',
-      hasTestingLibrary && 'testing-library',
-    ].filter(Boolean);
+const extendsConfig = ['plugin:jest-formatting/strict'];
+const files = ['**/*.?(test|spec).?(ts|js)?(x)'];
+const parserOptions = {
+  ecmaVersion: 2020,
+};
 
-    const rules = {
-      ...jestRules,
-      ...(hasJestDom ? jestDomRules : null),
-      ...(hasTestingLibrary ? getTestingLibraryRules(react) : null),
-      ...getOverrides(typescript),
-      ...customRules,
-    };
-
-    return {
-      env: {
-        'jest/globals': true,
-      },
-      extends: ['plugin:jest-formatting/strict'],
-      files: ['**/*.?(test|spec).?(ts|js)?(x)'],
-      parserOptions: {
-        ecmaVersion: 2020,
-      },
-      plugins,
-      rules,
-      settings: {
-        jest: {
-          version: 'detect',
-        },
-      },
-    };
+const settings = {
+  jest: {
+    version: 'detect',
   },
+};
+
+/**
+ * @param {{
+ *  hasJestDom: boolean;
+ *  hasJest: boolean;
+ *  hasTestingLibrary: boolean;
+ *  react: {
+ *    hasReact: boolean;
+ *  };
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createTestOverride = ({
+  hasJestDom,
+  hasJest,
+  hasTestingLibrary,
+  react,
+  typescript,
+  customRules = {},
+}) => {
+  if (!hasJest) {
+    return null;
+  }
+
+  const plugins = [
+    'jest',
+    hasJestDom && 'jest-dom',
+    hasTestingLibrary && 'testing-library',
+  ].filter(Boolean);
+
+  const rules = {
+    ...jestRules,
+    ...(hasJestDom ? jestDomRules : null),
+    ...(hasTestingLibrary ? getTestingLibraryRules(react) : null),
+    ...getTestOverrides(typescript),
+    ...customRules,
+  };
+
+  return {
+    env,
+    extends: extendsConfig,
+    files,
+    parserOptions,
+    plugins,
+    rules,
+    settings,
+  };
 };
 
 /**
@@ -566,7 +572,7 @@ const getTestingLibraryRules = ({ hasReact }) => ({
   'testing-library/prefer-wait-for': 'warn',
 });
 
-const getOverrides = ({ hasTypeScript }) => ({
+const getTestOverrides = ({ hasTypeScript }) => ({
   /**
    * off to allow non-null casting e.g. querySelector or .find() results
    *
@@ -589,3 +595,16 @@ const getOverrides = ({ hasTypeScript }) => ({
    */
   'import/no-namespace': 'off',
 });
+
+module.exports = {
+  env,
+  extendsConfig,
+  files,
+  parserOptions,
+  settings,
+  createTestOverride,
+  jestRules,
+  jestDomRules,
+  getTestingLibraryRules,
+  getTestOverrides,
+};

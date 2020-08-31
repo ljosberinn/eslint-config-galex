@@ -1,20 +1,25 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
-module.exports = {
-  /**
-   * @param {{
-   *  typescript: {
-   *    hasTypeScript: boolean;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * }} options
-   */
-  createImportRules: ({ typescript, customRules = {} }) => ({
-    ...getImportRules(typescript),
-    ...customRules,
-  }),
-};
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createImportRules = ({ typescript, customRules = {} }) => ({
+  ...getImportRules(typescript),
+  ...customRules,
+});
 
+/**
+ * @see https://github.com/benmosher/eslint-plugin-import
+ *
+ * @param {{
+ *  hasTypeScript: boolean;
+ * }}
+ */
 const getImportRules = ({ hasTypeScript }) => ({
   'import/default': 'warn',
   /**
@@ -329,3 +334,8 @@ const getImportRules = ({ hasTypeScript }) => ({
    */
   'import/unambiguous': 'off',
 });
+
+module.exports = {
+  createImportRules,
+  getImportRules,
+};

@@ -6,53 +6,62 @@ const {
   fulfillsVersionRequirement,
 } = require('../utils/fulfillsVersionRequirement');
 
-module.exports = {
-  /**
-   * @param {
-   *  react: {
-   *   hasReact: boolean;
-   *   isNext: boolean;
-   *   version: string;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * } options
-   */
-  createReactOverride: ({
-    react: { hasReact, isNext, version },
-    typescript: { hasTypeScript },
-    customRules = {},
-  }) => {
-    if (!hasReact) {
-      return null;
-    }
-
-    return {
-      extends: [],
-      files: ['**/*.?(ts|js)?(x)'],
-      parser: 'babel-eslint',
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-      plugins: ['jsx-a11y', 'react-hooks', 'react'],
-      rules: {
-        ...createReactRules({ hasTypeScript, isNext, version }),
-        ...prettierReactRules,
-        ...createJSXA11yRules({ isNext }),
-        ...hookRules,
-        ...customRules,
-      },
-      settings: {
-        react: {
-          version: 'detect',
-        },
-      },
-    };
+const extendsConfigs = [];
+const plugins = ['jsx-a11y', 'react-hooks', 'react'];
+const files = ['**/*.?(ts|js)?(x)'];
+const parser = 'babel-eslint';
+const parserOptions = {
+  ecmaFeatures: {
+    jsx: true,
+  },
+};
+const settings = {
+  react: {
+    version: 'detect',
   },
 };
 
-// https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
+/**
+ * @param {
+ *  react: {
+ *   hasReact: boolean;
+ *   isNext: boolean;
+ *   version: string;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * } options
+ */
+const createReactOverride = ({
+  react: { hasReact, isNext, version },
+  typescript: { hasTypeScript },
+  customRules = {},
+}) => {
+  if (!hasReact) {
+    return null;
+  }
+
+  const rules = {
+    ...createReactRules({ hasTypeScript, isNext, version }),
+    ...prettierReactRules,
+    ...createJSXA11yRules({ isNext }),
+    ...hookRules,
+    ...customRules,
+  };
+
+  return {
+    extends: extendsConfigs,
+    files,
+    parser,
+    parserOptions,
+    plugins,
+    rules,
+    settings,
+  };
+};
+
+/**
+ * @see https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
+ */
 const hookRules = {
   /**
    * elevated to error because you either want all deps or you have to explicitly
@@ -70,7 +79,9 @@ const hookRules = {
   'react-hooks/rules-of-hooks': 'error',
 };
 
-// https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
+/**
+ * @see https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
+ */
 const createReactRules = ({ isNext, version, hasTypeScript }) => ({
   /**
    * off because it doesnt seem to work anyways
@@ -707,7 +718,13 @@ const createReactRules = ({ isNext, version, hasTypeScript }) => ({
   'react/void-dom-elements-no-children': 'error',
 });
 
-// https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
+/**
+ * @see https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
+ *
+ * @param {{
+ *  isNext: boolean;
+ * }}
+ */
 const createJSXA11yRules = ({ isNext }) => ({
   /**
    * off because deprecated
@@ -971,3 +988,17 @@ const createJSXA11yRules = ({ isNext }) => ({
    */
   'jsx-a11y/tabindex-no-positive': 'error',
 });
+
+module.exports = {
+  plugins,
+  files,
+  parser,
+  parserOptions,
+  extends: extendsConfigs,
+  settings,
+  createReactOverride,
+  hookRules,
+  createReactRules,
+  createJSXA11yRules,
+  prettierReactRules,
+};

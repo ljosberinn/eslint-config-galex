@@ -7,55 +7,79 @@ const {
   fulfillsVersionRequirement,
 } = require('../utils/fulfillsVersionRequirement');
 
-module.exports = {
-  /**
-   * @param {{
-   *  typescript: {
-   *    hasTypeScript: boolean;
-   *    version: string;
-   *  };
-   *  react: {
-   *    hasReact: boolean;
-   *  };
-   *  customRules?: Record<string, string | [string, string | object];
-   * }} options
-   */
-  createTSOverride: ({
-    typescript: { hasTypeScript, version },
-    react: { hasReact },
-    customRules = {},
-  }) => {
-    if (!hasTypeScript) {
-      return null;
-    }
+const extendsConfig = [];
+const files = ['**/*.ts?(x)'];
+const parser = '@typescript-eslint/parser';
+const parserOptions = {
+  ecmaFeatures: {
+    jsx: false,
+  },
+  project: './tsconfig.json',
+  // using false here because I'm almost always on nightly TS
+  warnOnUnsupportedTypeScriptVersion: false,
+};
 
-    return {
-      extends: [],
-      files: ['**/*.ts?(x)'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: hasReact,
-        },
-        project: './tsconfig.json',
-        // using false here because I'm almost always on nightly TS
-        warnOnUnsupportedTypeScriptVersion: false,
-      },
-      plugins: ['@typescript-eslint'],
-      rules: {
-        ...getTypeScriptRules({ hasReact, version }),
-        ...prettierTypeScriptRules,
-        ...customRules,
-      },
-      settings: {
-        react: {
-          version: 'detect',
-        },
-      },
-    };
+const plugins = ['@typescript-eslint'];
+const settings = {
+  react: {
+    version: 'detect',
   },
 };
 
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *    version: string;
+ *  };
+ *  react: {
+ *    hasReact: boolean;
+ *  };
+ *  customRules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createTSOverride = ({
+  typescript: { hasTypeScript, version },
+  react: { hasReact },
+  customRules = {},
+}) => {
+  if (!hasTypeScript) {
+    return null;
+  }
+
+  const rules = {
+    ...getTypeScriptRules({ hasReact, version }),
+    ...prettierTypeScriptRules,
+    ...customRules,
+  };
+
+  const actualParserOptions = {
+    ...parserOptions,
+    ecmaFeatures: {
+      ...parserOptions.ecmaFeatures,
+      jsx: hasReact,
+    },
+  };
+
+  return {
+    extends: extendsConfig,
+    files,
+    parser,
+    parserOptions: actualParserOptions,
+    plugins,
+    rules,
+    settings,
+  };
+};
+
+/**
+ * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/README.md
+ *
+ * @param {{
+ *  version: string;
+ *  hasReact: boolean;
+ * }}
+ */
 const getTypeScriptRules = ({ version, hasReact }) => ({
   /**
    * prevents loose overloads
@@ -898,3 +922,15 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    */
   '@typescript-eslint/unified-signatures': 'warn',
 });
+
+module.exports = {
+  extends: extendsConfig,
+  files,
+  parser,
+  parserOptions,
+  plugins,
+  settings,
+  createTSOverride,
+  getTypeScriptRules,
+  prettierTypeScriptRules,
+};
