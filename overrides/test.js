@@ -6,6 +6,12 @@ module.exports = {
    *  hasJestDom: boolean;
    *  hasJest: boolean;
    *  hasTestingLibrary: boolean;
+   *  react: {
+   *    hasReact: boolean;
+   *  };
+   *  typescript: {
+   *    hasTypeScript: boolean;
+   *  };
    *  customRules?: Record<string, string | [string, string | object];
    * }} options
    */
@@ -13,11 +19,27 @@ module.exports = {
     hasJestDom,
     hasJest,
     hasTestingLibrary,
+    react,
+    typescript,
     customRules = {},
   }) => {
     if (!hasJest) {
       return null;
     }
+
+    const plugins = [
+      'jest',
+      hasJestDom && 'jest-dom',
+      hasTestingLibrary && 'testing-library',
+    ].filter(Boolean);
+
+    const rules = {
+      ...jestRules,
+      ...(hasJestDom ? jestDomRules : null),
+      ...(hasTestingLibrary ? getTestingLibraryRules(react) : null),
+      ...getOverrides(typescript),
+      ...customRules,
+    };
 
     return {
       env: {
@@ -28,35 +50,8 @@ module.exports = {
       parserOptions: {
         ecmaVersion: 2020,
       },
-      plugins: [
-        'jest',
-        hasJestDom && 'jest-dom',
-        hasTestingLibrary && 'testing-library',
-      ].filter(Boolean),
-      rules: {
-        ...jestRules,
-        ...(hasJestDom ? jestDomRules : null),
-        ...(hasTestingLibrary ? testingLibraryRules : null),
-        /**
-         * off to allow non-null casting e.g. querySelector or .find() results
-         *
-         * @see https://github.com/typescript-eslint/typescript-eslint/blob/v3.9.0/packages/eslint-plugin/docs/rules/no-non-null-assertion.md
-         */
-        '@typescript-eslint/no-non-null-assertion': 'off',
-        /**
-         * off because its regularily done in tests
-         *
-         * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
-         */
-        '@typescript-eslint/unbound-method': 'off',
-        /**
-         * off to allow spying on methods
-         *
-         * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
-         */
-        'import/no-namespace': 'off',
-        ...customRules,
-      },
+      plugins,
+      rules,
       settings: {
         jest: {
           version: 'detect',
@@ -66,6 +61,9 @@ module.exports = {
   },
 };
 
+/**
+ * @see https://github.com/jest-community/eslint-plugin-jest
+ */
 const jestRules = {
   /**
    * off because `test`/`it` are different things and convey meaning
@@ -391,58 +389,71 @@ const jestRules = {
   'jest/valid-title': 'warn',
 };
 
+/**
+ * @see https://github.com/testing-library/eslint-plugin-jest-dom
+ */
 const jestDomRules = {
   /**
-   * improves semantics of expect
+   * prefer toBeChecked over checking attributes
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-checked.md
    */
-  'jest-dom/prefer-checked': 'error',
+  'jest-dom/prefer-checked': 'warn',
 
   /**
-   * improves semantics of expect
+   * prefer toBeEmpty over checking innerHTML
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-empty.md
    */
-  'jest-dom/prefer-empty': 'error',
+  'jest-dom/prefer-empty': 'warn',
 
   /**
-   * improves semantics of expect
+   * prefer toBeDisabled or toBeEnabled over checking attributes
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-enabled-disabled.md
    */
-  'jest-dom/prefer-enabled-disabled': 'error',
+  'jest-dom/prefer-enabled-disabled': 'warn',
 
   /**
-   * improves semantics of expect
+   * prefer toHaveFocus over checking document.activeElement
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-focus.md
    */
-  'jest-dom/prefer-focus': 'error',
+  'jest-dom/prefer-focus': 'warn',
 
   /**
-   * improves semantics of expect
+   * prefer toBeRequired over checking properties
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-required.md
    */
-  'jest-dom/prefer-required': 'error',
+  'jest-dom/prefer-required': 'warn',
 
   /**
-   * improves semantics of expect
+   * prefer toHaveAttribute over checking getAttribute/hasAttribute
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-attribute.md
    */
-  'jest-dom/prefer-to-have-attribute': 'error',
+  'jest-dom/prefer-to-have-attribute': 'warn',
 
   /**
-   * improves semantics of expect
+   * prefer toHaveStyle over checking element style
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-attribute.md
+   */
+  'jest-dom/prefer-to-have-style': 'warn',
+
+  /**
+   * prefer toHaveTextContent over checking element.textContent
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-text-content.md
    */
-  'jest-dom/prefer-to-have-text-content': 'error',
+  'jest-dom/prefer-to-have-text-content': 'warn',
 };
 
-const testingLibraryRules = {
+/**
+ * @see https://github.com/testing-library/eslint-plugin-testing-library
+ */
+const getTestingLibraryRules = ({ hasReact }) => ({
   /**
    * enforces awaiting async queries (find*)
    *
@@ -495,7 +506,7 @@ const testingLibraryRules = {
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-dom-import.md
    */
-  'testing-library/no-dom-import': ['error', 'react'],
+  'testing-library/no-dom-import': hasReact ? ['warn', 'react'] : 'off',
 
   /**
    * hints on `cleanup` not being necessary
@@ -531,7 +542,7 @@ const testingLibraryRules = {
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-find-by.md
    */
-  'testing-library/prefer-find-by': 'error',
+  'testing-library/prefer-find-by': 'warn',
 
   /**
    * ensure more specific queries to check element presence
@@ -552,5 +563,29 @@ const testingLibraryRules = {
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-wait-for.md
    */
-  'testing-library/prefer-wait-for': 'error',
-};
+  'testing-library/prefer-wait-for': 'warn',
+});
+
+const getOverrides = ({ hasTypeScript }) => ({
+  /**
+   * off to allow non-null casting e.g. querySelector or .find() results
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/v3.9.0/packages/eslint-plugin/docs/rules/no-non-null-assertion.md
+   */
+  ...(hasTypeScript
+    ? { '@typescript-eslint/no-non-null-assertion': 'off' }
+    : null),
+  /**
+   * off because its regularily done in tests
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
+   */
+  ...(hasTypeScript ? { '@typescript-eslint/unbound-method': 'off' } : null),
+
+  /**
+   * off to allow spying on methods
+   *
+   * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
+   */
+  'import/no-namespace': 'off',
+});
