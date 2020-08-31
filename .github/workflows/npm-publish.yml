@@ -6,25 +6,43 @@ on:
       - master
 
 jobs:
-  all:
+  lint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Get Yarn cache path
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/checkout@master
+      - name: Load Yarn cache
+        uses: actions/cache@master
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Installing dependencies
+        run: yarn --frozen-lockfile
+      - run: yarn lint:code
+
+  build-publish:
     name: Build and Publish
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Shell Linter
-      uses: azohra/shell-linter@v0.3.0
-    - name: Cache node_modules
-      id: cache-modules
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: ${{ runner.OS }}-build-${{ hashFiles('package.json') }}
-    - name: Build
-      if: steps.cache-modules.outputs.cache-hit != 'true'
-      run: yarn install
-    - name: Publish
-      if: github.ref == 'refs/heads/master'
-      uses: mikeal/merge-release@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_AUTH_TOKEN: ${{ secrets.npm_token }}
+      - uses: actions/checkout@master
+      - name: Load Yarn cache
+        id: cache-modules
+        uses: actions/cache@master
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+      - name: Build
+        if: steps.cache-modules.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+      - name: Publish
+        if: github.ref == 'refs/heads/master'
+        uses: mikeal/merge-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.npm_token }}
