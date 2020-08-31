@@ -14,6 +14,7 @@ const { rules: prettierRules } = require('eslint-config-prettier');
 const createEslintCoreRules = ({ typescript, customRules = {} }) => ({
   ...getPossibleErrorRules(typescript),
   ...getBestPractices(typescript),
+  ...strictModeRules,
   ...getVariableRules(typescript),
   ...getStylisticIssuesRules(typescript),
   ...getES6Rules(typescript),
@@ -400,6 +401,17 @@ const getBestPractices = ({ hasTypeScript }) => ({
   'require-await': hasTypeScript ? 'off' : 'error',
 });
 
+const strictModeRules = {
+  /**
+   * enables/disables strict mode
+   *
+   * without effect since index declares parserOptions.sourceType to module
+   *
+   * @see https://eslint.org/docs/rules/strict
+   */
+  strict: 'off',
+};
+
 /**
  * @see https://eslint.org/docs/rules/#variables
  */
@@ -537,8 +549,19 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'brace-style': 'off',
 
-  camelcase: 'TODO',
-  'capitalized-comments': 'TODO',
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/camelcase
+   */
+  camelcase: 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/capitalized-comments
+   */
+  'capitalized-comments': 'off',
 
   /**
    * off because handled by prettier
@@ -568,7 +591,12 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'computed-property-spacing': 'off',
 
-  'consistent-this': 'TODO',
+  /**
+   * off because opinionated, partially outdated and individual
+   *
+   * @see https://eslint.org/docs/rules/consistent-this
+   */
+  'consistent-this': 'off',
 
   /**
    * off because handled by prettier
@@ -587,9 +615,26 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'func-call-spacing': 'off',
 
-  'func-name-matching': 'TODO',
-  'func-names': 'TODO',
-  'func-style': 'TODO',
+  /**
+   * off because arbitrary
+   *
+   * @see https://eslint.org/docs/rules/func-name-matching
+   */
+  'func-name-matching': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/func-names
+   */
+  'func-names': ['warn', 'as-needed'],
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/func-style
+   */
+  'func-style': 'off',
 
   /**
    * off because handled by prettier
@@ -605,9 +650,26 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'function-paren-newline': 'off',
 
-  'id-denylist': 'TODO',
-  'id-length': 'TODO',
-  'id-match': 'TODO',
+  /**
+   * off because opinonated
+   *
+   * @see https://eslint.org/docs/rules/id-denylist
+   */
+  'id-denylist': 'off',
+
+  /**
+   * off because too specific
+   *
+   * @see https://eslint.org/docs/rules/id-length
+   */
+  'id-length': 'off',
+
+  /**
+   * off because too specific
+   *
+   * @see https://eslint.org/docs/rules/id-match
+   */
+  'id-match': 'off',
 
   /**
    * off because handled by prettier
@@ -645,7 +707,12 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'keyword-spacing': 'off',
 
-  'line-comment-position': 'TODO',
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/line-comment-position
+   */
+  'line-comment-position': 'off',
 
   /**
    * off because handled by prettier
@@ -654,7 +721,12 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'linebreak-style': 'off',
 
-  'lines-around-comment': 'TODO',
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/lines-around-comment
+   */
+  'lines-around-comment': 'off',
 
   /**
    * ensures proper spacing between class members
@@ -664,15 +736,68 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'lines-between-class-members': hasTypeScript ? 'off' : 'warn',
 
-  'max-depth': 'TODO',
-  'max-len': 'TODO',
-  'max-lines': 'TODO',
-  'max-lines-per-function': 'TODO',
-  'max-nested-callbacks': 'TODO',
-  'max-params': 'TODO',
-  'max-statements': 'TODO',
-  'max-statements-per-line': 'TODO',
-  'multiline-comment-style': 'TODO',
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/max-depth
+   */
+  'max-depth': 'off',
+
+  /**
+   * off because taken care of by prettier
+   *
+   * @see https://eslint.org/docs/rules/max-len
+   */
+  'max-len': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/max-lines
+   */
+  'max-lines': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/max-lines-per-function
+   */
+  'max-lines-per-function': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/max-nested-callbacks
+   */
+  'max-nested-callbacks': 'off',
+
+  /**
+   * off because technically nice, although individual
+   *
+   * @see https://eslint.org/docs/rules/max-params
+   */
+  'max-params': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/max-statements
+   */
+  'max-statements': 'off',
+
+  /**
+   * off because handled by prettier to some degree
+   *
+   * @see https://eslint.org/docs/rules/max-statements-per-line
+   */
+  'max-statements-per-line': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/multiline-comment-style
+   */
+  'multiline-comment-style': 'off',
 
   /**
    * off because handled by prettier
@@ -681,7 +806,12 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'multiline-ternary': 'off',
 
-  'new-cap': 'TODO',
+  /**
+   * expects instance creations to begin with a capital letter
+   *
+   * @see https://eslint.org/docs/rules/new-cap
+   */
+  'new-cap': 'warn',
 
   /**
    * off because handled by prettier
@@ -703,11 +833,49 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'no-array-constructor': hasTypeScript ? 'off' : 'error',
 
-  'no-bitwise': 'TODO',
-  'no-continue': 'TODO',
-  'no-inline-comments': 'TODO',
-  'no-lonely-if': 'TODO',
-  'no-mixed-operators': 'TODO',
+  /**
+   * prevents accidental uses of bitwise operators
+   *
+   * @see https://eslint.org/docs/rules/no-bitwise
+   */
+  'no-bitwise': 'warn',
+
+  /**
+   * off because opinionated although rarely used anyways
+   *
+   * @see https://eslint.org/docs/rules/no-continue
+   */
+  'no-continue': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/no-inline-comments
+   */
+  'no-inline-comments': 'off',
+
+  /**
+   * prefer `else if` over `else { if (condition )}`
+   *
+   * @see https://eslint.org/docs/rules/no-lonely-if
+   */
+  'no-lonely-if': 'warn',
+
+  /**
+   * @see https://eslint.org/docs/rules/no-mixed-operators
+   */
+  'no-mixed-operators': [
+    'warn',
+    {
+      allowSamePrecedence: false,
+      groups: [
+        ['&', '|', '^', '~', '<<', '>>', '>>>'],
+        ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+        ['&&', '||'],
+        ['in', 'instanceof'],
+      ],
+    },
+  ],
 
   /**
    * off because handled by prettier
@@ -716,7 +884,12 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'no-mixed-spaces-and-tabs': 'off',
 
-  'no-multi-assign': 'TODO',
+  /**
+   * prefer declaring one variable at a time, also bug prone
+   *
+   * @see https://eslint.org/docs/rules/no-multi-assign
+   */
+  'no-multi-assign': 'error',
 
   /**
    * off because handled by prettier
@@ -725,13 +898,54 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'no-multiple-empty-lines': 'off',
 
-  'no-negated-condition': 'TODO',
-  'no-nested-ternary': 'TODO',
-  'no-new-object': 'TODO',
-  'no-plusplus': 'TODO',
-  'no-restricted-syntax': 'TODO',
-  'no-tabs': 'TODO',
-  'no-ternary': 'TODO',
+  /**
+   * prefer `if(true) {} else` flows
+   *
+   * @see https://eslint.org/docs/rules/no-negated-condition
+   */
+  'no-negated-condition': 'error',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/no-nested-ternary
+   */
+  'no-nested-ternary': 'off',
+
+  /**
+   * prevents calling `new Object()`
+   *
+   * @see https://eslint.org/docs/rules/no-new-object
+   */
+  'no-new-object': 'error',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/no-plusplus
+   */
+  'no-plusplus': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/no-restricted-syntax
+   */
+  'no-restricted-syntax': 'off',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/no-tabs
+   */
+  'no-tabs': 'off',
+
+  /**
+   * off because pointless
+   *
+   * @see https://eslint.org/docs/rules/no-ternary
+   */
+  'no-ternary': 'off',
 
   /**
    * off because handled by prettier
@@ -740,8 +954,19 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'no-trailing-spaces': 'off',
 
-  'no-underscore-dangle': 'TODO',
-  'no-unneeded-ternary': 'TODO',
+  /**
+   * off because opinionated and sometimes still needed for copies
+   *
+   * @see https://eslint.org/docs/rules/no-underscore-dangle
+   */
+  'no-underscore-dangle': 'off',
+
+  /**
+   * prefer foo === bar over foo === bar ? true : false
+   *
+   * @see https://eslint.org/docs/rules/no-unneeded-ternary
+   */
+  'no-unneeded-ternary': 'warn',
 
   /**
    * off because handled by prettier
@@ -778,7 +1003,12 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'object-property-newline': 'off',
 
-  'one-var': 'TODO',
+  /**
+   * always declare variables separately
+   *
+   * @see https://eslint.org/docs/rules/one-var
+   */
+  'one-var': ['warn', 'never'],
 
   /**
    * off because handled by prettier
@@ -787,7 +1017,12 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'one-var-declaration-per-line': 'off',
 
-  'operator-assignment': 'TODO',
+  /**
+   * prefer `x += y` over `x = x + y`
+   *
+   * @see https://eslint.org/docs/rules/operator-assignment
+   */
+  'operator-assignment': ['warn', 'always'],
 
   /**
    * off because handled by prettier
@@ -803,9 +1038,26 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'padded-blocks': 'off',
 
-  'padding-line-between-statements': 'TODO',
-  'prefer-exponentiation-operator': 'TODO',
-  'prefer-object-spread': 'TODO',
+  /**
+   * off because too opinionated
+   *
+   * @see https://eslint.org/docs/rules/padding-line-between-statements
+   */
+  'padding-line-between-statements': 'off',
+
+  /**
+   * prefer ** over Math.pow
+   *
+   * @see https://eslint.org/docs/rules/prefer-exponentiation-operator
+   */
+  'prefer-exponentiation-operator': 'warn',
+
+  /**
+   * prefer spreading over Object.assign
+   *
+   * @see https://eslint.org/docs/rules/prefer-object-spread
+   */
+  'prefer-object-spread': 'warn',
 
   /**
    * off because handled by prettier
@@ -842,8 +1094,21 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'semi-style': 'off',
 
-  'sort-keys': 'TODO',
-  'sort-vars': 'TODO',
+  /**
+   * off because taken care of by sort-keys-fix
+   *
+   * @see https://eslint.org/docs/rules/sort-keys
+   * @see sort-keys-fix/sort-keys-fix
+   */
+  'sort-keys': 'off',
+
+  /**
+   * off because opinionated and you usually don't assign multiple variables
+   * anymore nowadays anyways
+   *
+   * @see https://eslint.org/docs/rules/sort-vars
+   */
+  'sort-vars': 'off',
 
   /**
    * off because handled by prettier
@@ -880,7 +1145,10 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
    */
   'space-unary-ops': 'off',
 
-  'spaced-comment': 'TODO',
+  /**
+   * @see https://eslint.org/docs/rules/spaced-comment
+   */
+  'spaced-comment': ['warn', 'always'],
 
   /**
    * off because handled by prettier
@@ -1158,12 +1426,13 @@ const safePrettierOverrides = {
 
 module.exports = {
   createEslintCoreRules,
-  getPossibleErrorRules,
   getBestPractices,
-  getVariableRules,
-  getStylisticIssuesRulesRules,
   getES6Rules,
-  safePrettierOverrides,
+  getPossibleErrorRules,
+  getStylisticIssuesRules,
+  getVariableRules,
   prettierRules,
   restrictedGlobals,
+  safePrettierOverrides,
+  strictModeRules,
 };

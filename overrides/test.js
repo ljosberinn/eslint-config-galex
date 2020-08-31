@@ -597,14 +597,14 @@ const getTestOverrides = ({ hasTypeScript }) => ({
 });
 
 module.exports = {
+  createTestOverride,
   env,
   extendsConfig,
   files,
+  getTestOverrides,
+  getTestingLibraryRules,
+  jestDomRules,
+  jestRules,
   parserOptions,
   settings,
-  createTestOverride,
-  jestRules,
-  jestDomRules,
-  getTestingLibraryRules,
-  getTestOverrides,
 };

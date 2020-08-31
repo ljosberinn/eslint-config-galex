@@ -990,15 +990,15 @@ const createJSXA11yRules = ({ isNext }) => ({
 });
 
 module.exports = {
-  plugins,
+  createJSXA11yRules,
+  createReactOverride,
+  createReactRules,
+  extends: extendsConfigs,
   files,
+  hookRules,
   parser,
   parserOptions,
-  extends: extendsConfigs,
-  settings,
-  createReactOverride,
-  hookRules,
-  createReactRules,
-  createJSXA11yRules,
+  plugins,
   prettierReactRules,
+  settings,
 };

@@ -924,13 +924,13 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
 });
 
 module.exports = {
+  createTSOverride,
   extends: extendsConfig,
   files,
+  getTypeScriptRules,
   parser,
   parserOptions,
   plugins,
-  settings,
-  createTSOverride,
-  getTypeScriptRules,
   prettierTypeScriptRules,
+  settings,
 };
