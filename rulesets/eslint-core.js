@@ -34,8 +34,9 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
 
   /**
    * @see https://eslint.org/docs/rules/getter-return
+   * @see ts(2378)
    */
-  'getter-return': 'warn',
+  'getter-return': hasTypeScript ? 'off' : 'warn',
 
   /**
    * prevents usage of async within `new Promise`
@@ -99,7 +100,8 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
   /**
    * prevents duplicate function arg names
    *
-   * @see https://eslint.org/docs/rules/no-dupe-args
+   * @see https://eslint.org/docs/rules/
+   * @see ts(2300)
    */
   'no-dupe-args': hasTypeScript ? 'off' : 'error',
 
@@ -113,7 +115,8 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
   /**
    * prevents duplicate keys in object
    *
-   * @see https://eslint.org/docs/rules/no-dupe-keys
+   * @see https://eslint.org/docs/rules/
+   * @see ts(1117)
    */
   'no-dupe-keys': hasTypeScript ? 'off' : 'warn',
 
@@ -170,15 +173,18 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
    * prevents overwriting functions declared via `function` syntax
    *
    * @see https://eslint.org/docs/rules/no-func-assign
+   * @see ts(2539)
    */
-  'no-func-assign': 'warn',
+  'no-func-assign': hasTypeScript ? 'off' : 'warn',
 
   /**
    * disallows trying to overwrite imports
    *
    * @see https://eslint.org/docs/rules/no-import-assign
+   * @see ts(2539)
+   * @see ts(2540)
    */
-  'no-import-assign': 'error',
+  'no-import-assign': hasTypeScript ? 'off' : 'error',
 
   /**
    * disallows variable or `function` declaration in nested blocks
@@ -221,6 +227,7 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
    * prevents calling certain native objects as function or class
    *
    * @see https://eslint.org/docs/rules/no-obj-calls
+   * @see ts(2349)
    */
   'no-obj-calls': hasTypeScript ? 'off' : 'error',
 
@@ -248,7 +255,8 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
   /**
    * disallow return on setters as its nonsensical
    *
-   * @see https://eslint.org/docs/rules/no-setter-return
+   * @see https://eslint.org/docs/rules/
+   * @see ts(2408)
    */
   'no-setter-return': hasTypeScript ? 'off' : 'error',
 
@@ -277,6 +285,7 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
    * prevents unreachable code
    *
    * @see https://eslint.org/docs/rules/no-unreachable
+   * @see ts(7027)
    */
   'no-unreachable': hasTypeScript ? 'off' : 'warn',
 
@@ -299,8 +308,11 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
    * prevents cases of unsafe negation
    *
    * @see https://eslint.org/docs/rules/no-unsafe-negation
+   * @see ts(2365)
+   * @see ts(2360)
+   * @see ts(2358)
    */
-  'no-unsafe-negation': 'warn',
+  'no-unsafe-negation': hasTypeScript ? 'off' : 'warn',
 
   /**
    * prevents self-repeating regexp
@@ -336,6 +348,8 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
    * prevents typos when comparing to types
    *
    * @see https://eslint.org/docs/rules/valid-typeof
+   *
+   * @see ts(2367)
    */
   'valid-typeof': hasTypeScript ? 'off' : 'warn',
 });
@@ -462,6 +476,7 @@ const getVariableRules = ({ hasTypeScript }) => ({
    * disallow using undefined variables
    *
    * @see https://eslint.org/docs/rules/no-undef
+   * @see ts(2304)
    */
   'no-undef': hasTypeScript ? 'off' : 'error',
 
@@ -1214,7 +1229,9 @@ const getES6Rules = ({ hasTypeScript }) => ({
   'arrow-spacing': 'off',
 
   /**
-   * @see https://eslint.org/docs/rules/constructor-super
+   * @see https://eslint.org/docs/rules/
+   * @see ts(2335)
+   * @see ts(2377)
    */
   'constructor-super': hasTypeScript ? 'off' : 'error',
 
@@ -1243,12 +1260,15 @@ const getES6Rules = ({ hasTypeScript }) => ({
    * disallows trying to overwrite a constant
    *
    * @see https://eslint.org/docs/rules/no-const-assign
+   * @see ts(2588)
    */
   'no-const-assign': hasTypeScript ? 'off' : 'error',
 
   /**
    * @see https://eslint.org/docs/rules/no-dupe-class-members
    * @see @typescript-eslint/no-dupe-class-members
+   * @see ts(2393)
+   * @see ts(2300)
    */
   'no-dupe-class-members': hasTypeScript ? 'off' : 'error',
 
@@ -1267,6 +1287,7 @@ const getES6Rules = ({ hasTypeScript }) => ({
    *
    * @see https://eslint.org/docs/rules/no-new-symbol
    * @see unicorn/new-for-builtins
+   * @see ts(2588)
    */
   'no-new-symbol': 'off',
 
@@ -1288,6 +1309,7 @@ const getES6Rules = ({ hasTypeScript }) => ({
    * prevents using `this` before calling `super`
    *
    * @see https://eslint.org/docs/rules/no-this-before-super
+   * @see ts(2376)
    */
   'no-this-before-super': hasTypeScript ? 'off' : 'error',
 
@@ -1317,6 +1339,9 @@ const getES6Rules = ({ hasTypeScript }) => ({
    * prevents usage of `var`
    *
    * @see https://eslint.org/docs/rules/no-var
+   * @see ts(2365)
+   * @see ts(2360)
+   * @see ts(2358)
    */
   'no-var': 'error',
 
@@ -1332,9 +1357,11 @@ const getES6Rules = ({ hasTypeScript }) => ({
   /**
    * does this really need a comment?
    *
+   * ts provides better types with const
+   *
    * @see https://eslint.org/docs/rules/prefer-const
    */
-  'prefer-const': 'warn',
+  'prefer-const': hasTypeScript ? 'error' : 'warn',
 
   /**
    * prefer destructuring :shrug:
@@ -1353,12 +1380,16 @@ const getES6Rules = ({ hasTypeScript }) => ({
   /**
    * prefer ...rest for variadic functions
    *
+   * ts provides better types with rest args over arguments
+   *
    * @see https://eslint.org/docs/rules/prefer-rest-params
    */
   'prefer-rest-params': 'error',
 
   /**
    * prefer spreading where possible
+   *
+   * ts transpiles spread to apply, so no need for manual apply
    *
    * @see https://eslint.org/docs/rules/prefer-spread
    */
