@@ -7,6 +7,8 @@
 [![NPM Total Downloads][npm-shield]][npm-url]
 ![NPM](https://img.shields.io/npm/l/eslint-config-galex)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9c3a13e05f2a195ba0d5/test_coverage)](https://codeclimate.com/github/ljosberinn/eslint-config-galex/test_coverage)
+
 ```sh
 yarn add -D eslint-config-galex
 
@@ -30,18 +32,29 @@ because the rule is actually bad for your situation. You begin to wonder.
 
 You check npm and see there are 2.8k+ (August 2020) `eslint-plugin-*` packages
 out there. And even worse - 10k+ `eslint-config-*` packages. Which to choose?
-You sort by popularity and see some familiar faces. "Now is the time to finally
-read through their rulesets and decide which I want!" you scream out loud, but
-find yourself finishing the first repo after 6 hours.
+You sort by popularity and see some familiar faces. Time to install!
 
-Setting up ESLint wasn't that easy after all.
+A few hours into stitching all those popular linting rules together you notice
+some rules collide, some rules are outdated, some expect others to be disabled,
+but only circumstantially. Enough!
+
+_"Now is the time to finally read through all rulesets and decide which I want!"_
+you scream out loud, _"it can't be that many!"_ - but find yourself finishing the
+first repo after 6 hours.
+
+Setting up ESLint _properly_ wasn't that easy after all.
 
 Couldn't this be easier?
 
 ## What makes this different than all the other configs out there?
 
-- All internally used parts, literally everything, is re-exported. Don't like some
+- All internals, literally everything, is re-exported.Don't like some
   decision? Rules too weak? Want to add custom rules? Everything is covered!
+
+  This hopefully prevents the need of having to migrate between configs every
+  once in a while which builds up frustration due to misconfiguration and the
+  entire overhead related to that. Dependency injection, just for an eslint
+  config!
 
   > The following examples are not exhaustive - there's a lot more. Check out
   > the source!
@@ -57,21 +70,6 @@ Couldn't this be easier?
 
   // package.json / tsconfig.json in other directories?
   const config = createConfig({ cwd: 'path/to/file' });
-
-  // only use the TS override:
-  import { createTSOverride } from 'eslint-config-galex/src/overrides/typescript';
-
-  const override = createTSOverride({
-    react: {
-      hasReact: true,
-      version: '17.0.0-rc.1',
-    },
-    typescript: {
-      hasTypeScript: true,
-      version: '4.0.2',
-    },
-    customRules: {},
-  });
 
   // only use the TS override:
   import { createTSOverride } from 'eslint-config-galex/src/overrides/typescript';
