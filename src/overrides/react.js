@@ -293,11 +293,11 @@ const createReactRules = ({ isNext, version, hasTypeScript }) => ({
   'react/jsx-max-props-per-line': 'off',
 
   /**
-   * prefer passing declared functions for readability over inline arrow functions
+   * off because its nonsensical to enforce memoizing every function
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
    */
-  'react/jsx-no-bind': 'error',
+  'react/jsx-no-bind': 'off',
 
   /**
    * prevents comments from being inserted as text nodes
