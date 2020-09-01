@@ -49,7 +49,7 @@ Object {
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": Array [
-      "error",
+      "warn",
       Object {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
@@ -86,7 +86,7 @@ Object {
     "@typescript-eslint/no-extraneous-class": "error",
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-for-in-array": "warn",
-    "@typescript-eslint/no-implicit-any-catch": "warn",
+    "@typescript-eslint/no-implicit-any-catch": "off",
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/no-inferrable-types": "warn",
     "@typescript-eslint/no-invalid-this": "error",
@@ -1888,7 +1888,7 @@ Object {
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": Array [
-      "error",
+      "warn",
       Object {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
@@ -2065,7 +2065,7 @@ Object {
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": Array [
-      "error",
+      "warn",
       Object {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
@@ -2242,7 +2242,7 @@ Object {
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": Array [
-      "error",
+      "warn",
       Object {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
@@ -2420,7 +2420,7 @@ Object {
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": Array [
-      "error",
+      "warn",
       Object {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
@@ -2598,7 +2598,7 @@ Object {
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": Array [
-      "error",
+      "warn",
       Object {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
@@ -2635,7 +2635,7 @@ Object {
     "@typescript-eslint/no-extraneous-class": "error",
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-for-in-array": "warn",
-    "@typescript-eslint/no-implicit-any-catch": "warn",
+    "@typescript-eslint/no-implicit-any-catch": "off",
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/no-inferrable-types": "warn",
     "@typescript-eslint/no-invalid-this": "error",
@@ -2777,7 +2777,7 @@ Object {
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": Array [
-      "error",
+      "warn",
       Object {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
@@ -2814,7 +2814,7 @@ Object {
     "@typescript-eslint/no-extraneous-class": "error",
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-for-in-array": "warn",
-    "@typescript-eslint/no-implicit-any-catch": "warn",
+    "@typescript-eslint/no-implicit-any-catch": "off",
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/no-inferrable-types": "warn",
     "@typescript-eslint/no-invalid-this": "error",

@@ -197,7 +197,7 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
   ...(fulfillsVersionRequirement(version, { major: 3, minor: 8 })
     ? {
         '@typescript-eslint/consistent-type-imports': [
-          'error',
+          'warn',
           {
             disallowTypeAnnotations: true,
             prefer: 'type-imports',
@@ -421,7 +421,7 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md
    */
   ...(fulfillsVersionRequirement(version, { major: 4 })
-    ? { '@typescript-eslint/no-implicit-any-catch': 'warn' }
+    ? { '@typescript-eslint/no-implicit-any-catch': 'off' }
     : null),
 
   /**

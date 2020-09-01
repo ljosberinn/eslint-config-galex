@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-galex",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,12 @@
     "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --ci --coverage"
+    "test:coverage": "jest --coverage",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ljosberinn/eslint-config-galex.git"
+    "url": "https://github.com/ljosberinn/eslint-config-galex.git"
   },
   "keywords": [
     "eslint",
@@ -22,7 +23,13 @@
     "config",
     "galex",
     "javascript",
-    "styleguide"
+    "styleguide",
+    "typescript",
+    "react",
+    "nextjs",
+    "typescript",
+    "jest",
+    "testing-library"
   ],
   "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
   "license": "MIT",
@@ -54,12 +61,15 @@
     "typescript": "4.0.2"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@types/jest": "^26.0.12",
     "eslint": "7.8.0",
     "jest": "^26.4.2",
     "jest-runner-eslint": "^0.10.0",
     "jest-watch-typeahead": "^0.6.0",
     "prettier": "2.1.1",
+    "semantic-release": "^17.1.1",
     "yarn-deduplicate": "3.0.0"
   },
   "peerDependencies": {
@@ -70,7 +80,8 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "src/(overrides|rulesets|utils)/**/*.{js,jsx,ts,tsx}"
+      "src/(overrides|rulesets|utils)/**/*.{js,jsx,ts,tsx}",
+      "src/createConfig.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -90,22 +101,12 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ],
-    "projects": [
-      {
-        "displayName": "test",
-        "testEnvironment": "node"
-      },
-      {
-        "displayName": "lint",
-        "runner": "jest-runner-eslint",
-        "testMatch": [
-          "<rootDir>/**/*.{js,ts}"
-        ],
-        "testPathIgnorePatterns": [
-          "<rootDir>/lib/.*"
-        ]
-      }
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/changelog",
+      "@semantic-release/git"
     ]
   }
 }

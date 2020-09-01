@@ -54,6 +54,7 @@ module.exports = {
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(`Error parsing version: ${error.message}`);
+
       return false;
     }
   },

@@ -1,7 +1,5 @@
 # eslint-config-galex
 
-![Build and Publish](https://github.com/ljosberinn/eslint-config-galex/workflows/Build%20and%20Publish/badge.svg?branch=master)
-
 [npm-shield]: https://img.shields.io/npm/dt/eslint-config-galex.svg
 [npm-url]: https://www.npmjs.com/package/eslint-config-galex
 
@@ -13,16 +11,6 @@
 yarn add -D eslint-config-galex
 
 npm install --save-dev eslint-config-galex
-```
-
-```
-// .eslintrc
-{
-  extends: ['galex'],
-  rules: {
-    // overrides here
-  }
-}
 ```
 
 # I went through 30+ eslint-plugins so you don't have to.
@@ -50,24 +38,88 @@ Setting up ESLint wasn't that easy after all.
 
 Couldn't this be easier?
 
-## What should you do, then?
-
-The recommended approach would be to fork this and adapt to your own likings.
-
-Yes, that will still cost time. But at least you don't have to wade through the
-endless amounts of repos out there, as I already did. Consider this a blueprint.
-
-You may of course just use it directly too.
-
 ## What makes this different than all the other configs out there?
 
-This one is brand new with a _heavy_ focus on code quality, best practices and
-tries to omit opinions. We're using a subset at work too, and it has exclusively
-detected overseen/undetected bugs and reasonable improvements.
+- All internally used parts, literally everything, is re-exported. Don't like some
+  decision? Rules too weak? Want to add custom rules? Everything is covered!
 
-Feedback so far has been generally positive. The only rule that raised eyebrows
-was `import/order` because it leads to a huge git diff when applied on existing
-projects.
+  > The following examples are not exhaustive - there's a lot more. Check out
+  > the source!
+
+  ```js
+  // customize the config as-is:
+  import { createConfig } from 'eslint-config-galex/src/createConfig';
+
+  const config = createConfig();
+
+  // pass in your own rules
+  const config = createConfig({ customRules: myCustomRules });
+
+  // package.json / tsconfig.json in other directories?
+  const config = createConfig({ cwd: 'path/to/file' });
+
+  // only use the TS override:
+  import { createTSOverride } from 'eslint-config-galex/src/overrides/typescript';
+
+  const override = createTSOverride({
+    react: {
+      hasReact: true,
+      version: '17.0.0-rc.1',
+    },
+    typescript: {
+      hasTypeScript: true,
+      version: '4.0.2',
+    },
+    customRules: {},
+  });
+
+  // only use the TS override:
+  import { createTSOverride } from 'eslint-config-galex/src/overrides/typescript';
+
+  const override = createTSOverride({
+    react: {
+      hasReact: true,
+      version: '17.0.0-rc.1',
+    },
+    typescript: {
+      hasTypeScript: true,
+      version: '4.0.2',
+    },
+    customRules: {},
+  });
+
+  // only use the glob pattern for TS files:
+  import { files } from 'eslint-config-galex/src/overrides/typescript';
+
+  // only use testing-library rules:
+  import { getTestingLibraryRules } from 'eslint-config-galex/src/overrides/jest';
+
+  const testingLibRules = getTestingLibraryRules({ hasReact: boolean });
+  ```
+
+  Learn more on customizing [here](#customization).
+
+- This one is brand new with a _heavy_ focus on code quality, best practices and
+  tries to omit opinions. We're using a subset at work too, and it has exclusively
+  detected overseen/undetected bugs and reasonable improvements.
+
+  Feedback so far has been generally positive. The only rule that raised eyebrows
+  was `import/order` because it leads to a huge git diff when applied on existing
+  projects.
+
+- You may of course just use it directly too:
+
+  ```js
+  // eslintrc.js
+  module.exports = {
+    extends: 'galex',
+  };
+
+  // .eslintrc
+  {
+    extends: 'galex'
+  }
+  ```
 
 ## What's included?
 
@@ -103,67 +155,7 @@ criteria:
 
 If you want to add support, please follow the detection logic in `index.js`.
 
-## When should you not use this?
-
-When you can't use modern APIs such as `Array.flatMap`. However, you may disable those
-rules (see [here](#want-to-build-your-own-config-with-the-standards-defined-in-this)).
-
-When using Vue/Svelte/Angular, because those are currently not supported.
-
-And obviously, when disagreeing with most of the choices made here. Your time to
-build your own config might have come, after all.
-
-# List of included opinions
-
-## TypeScript:
-
-- let inference work where possible:
-
-  - only strongly type exports (enforced via `@typescript-eslint/explicit-module-boundary-types`)
-
-  - strongly type complex return types (currently not enforceable)
-
-## JavaScript
-
-- `null` is not forbidden, as it conveys meaning. Enjoy debugging code which
-  does not differentiate between intentional `undefined` and unintentional
-  `undefined`.
-
-- `prefer-const`
-
-- `curly`: prefer
-
-  ```js
-  if (true) {
-    doSomething();
-  }
-  ```
-
-  over
-
-  ````js
-  if (true) doSomething();
-  ````
-
-## Tests
-
-- use new lines between test blocks & `expect` and non-`expect`-code
-
-  stylistic choice that can't be enforced by prettier
-
-- use describe blocks
-
-  [considered best practice](https://github.com/jest-community/eslint-plugin-jest/blob/master/src/rules/require-top-level-describe.ts#L8) by `eslint-plugin-jest`
-
-## General
-
-- sort your imports (this does not work when using absolute imports, sadly)
-- sort your object keys alphabetically
-- don't write unecessary code (e.g. `return undefined` or `if(condition === true)`)
-- new line after all imports
-- group imports at the top
-
-# Want to build your own config with the standards defined in this?
+# Customization
 
 All rulesets are created through a function that accepts an object matching this
 schema:
@@ -207,7 +199,8 @@ interface Project {
     isNext: boolean;
     /**
      * whether `preact` is present
-     * currently withou effect
+     * currently without effect
+     */
     isPreact: boolean;
     /**
      * the installed version
@@ -217,46 +210,78 @@ interface Project {
 }
 ```
 
-That means you can leverage the preset by importing e.g. `createTSOverride` and
-feeding it the required params. And on top - your `customRules` object, which
-will be merged onto the predefined, overwriting previously defined rules or
-adding to it.
+## Available main exports:
 
-```js
-import { createTSOverride } from 'eslint-config-galex/overrides/typescript';
-
-createTSOverride({
-  react: {
-    hasReact: true,
-    version: '17.0.0-rc.1',
-  },
-  typescript: {
-    hasTypeScript: true,
-    version: '4.0.2',
-  },
-  customRules: {},
-});
-```
-
-## Available exports:
+This list only mentions the exports most people will need. For an exhaustive
+list, check out the source.
 
 ### Overrides
 
-- `import { createTSOverride } from 'eslint-config-galex/overrides/typescript'`
-- `import { createReactOverride } from 'eslint-config-galex/overrides/react'`
-- `import { createTestOverride } from 'eslint-config-galex/overrides/test'`
+- `import { createTSOverride } from 'eslint-config-galex/src/overrides/typescript'`
+- `import { createReactOverride } from 'eslint-config-galex/src/overrides/react'`
+- `import { createJestOverride } from 'eslint-config-galex/src/overrides/jest'`
 
 > Please note that the test override should always come last.
 
 ### Rulesets
 
-- `import { createEslintCoreRules } from 'eslint-config-galex/rulesets/eslint-core'`
-- `import { createImportRules } from 'eslint-config-galex/rulesets/import'`
-- `import { createInclusiveLanguageRules } from 'eslint-config-galex/rulesets/inclusive-language'`
-- `import { createPromiseRules } from 'eslint-config-galex/rulesets/promise'`
-- `import { createSonarjsRules } from 'eslint-config-galex/rulesets/sonarjs'`
-- `import { createSortKeysFixRules } from 'eslint-config-galex/rulesets/sort-keys-fix'`
-- `import { createUnicornRules } from 'eslint-config-galex/rulesets/unicorn'`
+- `import { createEslintCoreRules } from 'eslint-config-galex/src/rulesets/eslint-core'`
+- `import { createImportRules } from 'eslint-config-galex/src/rulesets/import'`
+- `import { createInclusiveLanguageRules } from 'eslint-config-galex/src/rulesets/inclusive-language'`
+- `import { createPromiseRules } from 'eslint-config-galex/src/rulesets/promise'`
+- `import { createSonarjsRules } from 'eslint-config-galex/src/rulesets/sonarjs'`
+- `import { createSortKeysFixRules } from 'eslint-config-galex/src/rulesets/sort-keys-fix'`
+- `import { createUnicornRules } from 'eslint-config-galex/src/rulesets/unicorn'`
+
+# List of included opinions
+
+## TypeScript:
+
+- let inference work where possible:
+
+  - only strongly type exports (enforced via `@typescript-eslint/explicit-module-boundary-types`)
+
+  - strongly type complex return types (currently not enforceable)
+
+## JavaScript
+
+- `null` is not forbidden, as it conveys meaning. Enjoy debugging code which
+  does not differentiate between intentional `undefined` and unintentional
+  `undefined`.
+
+- `prefer-const`
+
+- `curly`: prefer
+
+  ```js
+  if (true) {
+    doSomething();
+  }
+  ```
+
+  over
+
+  ```js
+  if (true) doSomething();
+  ```
+
+## Tests
+
+- use new lines between test blocks & `expect` and non-`expect`-code
+
+  stylistic choice that can't be enforced by prettier
+
+- use describe blocks
+
+  [considered best practice](https://github.com/jest-community/eslint-plugin-jest/blob/master/src/rules/require-top-level-describe.ts#L8) by `eslint-plugin-jest`
+
+## General
+
+- sort your imports (this does not work when using absolute imports, sadly)
+- sort your object keys alphabetically
+- don't write unecessary code (e.g. `return undefined` or `if(condition === true)`)
+- new line after all imports
+- group imports at the top
 
 # Meta
 
