@@ -359,10 +359,91 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
  */
 const getBestPractices = ({ hasTypeScript }) => ({
   /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/accessor-pairs
+   */
+  'accessor-pairs': 'off',
+
+  /**
+   * enforces consistent return in array methods
+   *
+   * @see https://eslint.org/docs/rules/array-callback-return
+   */
+  'array-callback-return': hasTypeScript
+    ? 'off'
+    : [
+        'error',
+        {
+          checkForEach: true,
+        },
+      ],
+
+  /**
+   * off because prefer-const
+   *
+   * @see https://eslint.org/docs/rules/block-scoped-var
+   * @see prefer-const
+   */
+  'block-scoped-var': 'off',
+
+  /**
+   * off because rarely applicable
+   *
+   * @see https://eslint.org/docs/rules/class-methods-use-this
+   */
+  'class-methods-use-this': 'off',
+
+  /**
+   * off because handled by sonarjs/cognitive-complexity
+   *
+   * @see https://eslint.org/docs/rules/complexity
+   * @see sonarjs/cognitive-complexity
+   */
+  complexity: 'off',
+
+  /**
+   * enforces consistent return
+   *
+   * off due to false positives
+   *
+   * @see https://eslint.org/docs/rules/consistent-return
+   */
+  'consistent-return': 'off',
+
+  /**
+   * prefer curly braces for clarity
+   *
+   * @see https://eslint.org/docs/rules/curly
+   */
+  curly: 'warn',
+
+  /**
+   * avoids unexpected side effects of switches without default
+   *
+   * @see https://eslint.org/docs/rules/default-case
+   */
+  'default-case': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * prevents uncommon ways of writing switch
+   *
+   * @see https://eslint.org/docs/rules/default-case-last
+   */
+  'default-case-last': 'error',
+
+  /**
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
    * @see @typescript-eslint/default-param-last
    */
   'default-param-last': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * off because prettier territory
+   *
+   * @see https://eslint.org/docs/rules/dot-location
+   */
+  'dot-location': 'off',
 
   /**
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
@@ -371,10 +452,214 @@ const getBestPractices = ({ hasTypeScript }) => ({
   'dot-notation': hasTypeScript ? 'off' : 'warn',
 
   /**
+   * prevents unsafe comparison
+   *
+   * @see https://eslint.org/docs/rules/eqeqeq
+   */
+  eqeqeq: 'warn',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/grouped-accessor-pairs
+   */
+  'grouped-accessor-pairs': 'off',
+
+  /**
+   * warns about unexpected behaviour
+   *
+   * @see https://eslint.org/docs/rules/guard-for-in
+   */
+  'guard-for-in': 'warn',
+
+  /**
+   * off because abitrary
+   *
+   * @see https://eslint.org/docs/rules/max-classes-per-file
+   */
+  'max-classes-per-file': 'off',
+
+  /**
+   * prevents potentially accidentally blocking code
+   *
+   * @see https://eslint.org/docs/rules/no-alert
+   */
+  'no-alert': 'error',
+
+  /**
+   * forbidden in strict mode anyways
+   *
+   * @see https://eslint.org/docs/rules/no-caller
+   */
+  'no-caller': 'error',
+
+  /**
+   * disallows declarations in switch cases due to potentially unexpected
+   * behaviour
+   *
+   * @see https://eslint.org/docs/rules/no-case-declarations
+   */
+  'no-case-declarations': 'warn',
+
+  /**
+   * disallows returning in constructors
+   *
+   * @see https://eslint.org/docs/rules/no-constructor-return
+   */
+  'no-constructor-return': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * requires regex literals to escape division operators
+   *
+   * @see https://eslint.org/docs/rules/no-div-regex
+   */
+  'no-div-regex': 'warn',
+
+  /**
+   * prefer early return
+   *
+   * @see https://eslint.org/docs/rules/no-else-return
+   */
+  'no-else-return': 'warn',
+
+  /**
    * @see https://eslint.org/docs/rules/no-empty-function
    * @see @typescript-eslint/no-empty-function
    */
   'no-empty-function': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * disallows empty destructuring
+   *
+   * @see https://eslint.org/docs/rules/no-empty-pattern
+   */
+  'no-empty-pattern': 'warn',
+
+  /**
+   * disallow unsafe null comparison
+   *
+   * @see https://eslint.org/docs/rules/no-eq-null
+   */
+  'no-eq-null': 'error',
+
+  /**
+   * disallows eval
+   *
+   * @see https://eslint.org/docs/rules/no-eval
+   */
+  'no-eval': 'error',
+
+  /**
+   * prevents extending native prototypes
+   *
+   * @see https://eslint.org/docs/rules/no-extend-native
+   */
+  'no-extend-native': 'error',
+
+  /**
+   * prevents unecessary function binding
+   *
+   * @see https://eslint.org/docs/rules/no-extra-bind
+   */
+  'no-extra-bind': 'warn',
+
+  /**
+   * disallows unecessary labels
+   *
+   * off because labels are forbidden
+   *
+   * @see https://eslint.org/docs/rules/no-extra-label
+   * @see no-label
+   */
+  'no-extra-label': 'off',
+
+  /**
+   * disallows case fallthrough
+   *
+   * @see https://eslint.org/docs/rules/no-fallthrough
+   */
+  'no-fallthrough': 'warn',
+
+  /**
+   * disallows floating decimals
+   *
+   * @see https://eslint.org/docs/rules/no-floating-decimal
+   */
+  'no-floating-decimal': 'warn',
+
+  /**
+   * disallows overwriting globals
+   *
+   * @see https://eslint.org/docs/rules/no-global-assign
+   */
+  'no-global-assign': 'warn',
+
+  /**
+   * disallows coercion for anything but booleans
+   *
+   * @see https://eslint.org/docs/rules/no-implicit-coercion
+   */
+  'no-implicit-coercion': [
+    'warn',
+    {
+      boolean: false,
+      number: true,
+      string: true,
+    },
+  ],
+
+  /**
+   * disallows implicit globals for clarity
+   *
+   * @see https://eslint.org/docs/rules/no-implicit-globals
+   */
+  'no-implicit-globals': 'error',
+
+  /**
+   * disallows implied eval
+   *
+   * @see https://eslint.org/docs/rules/no-implied-eval
+   */
+  'no-implied-eval': 'error',
+
+  /**
+   * disallows this outside of classes/class-like objects
+   *
+   * @see https://eslint.org/docs/rules/no-invalid-this
+   */
+  'no-invalid-this': 'error',
+
+  /**
+   * disallows __iterator__ property
+   *
+   * off because legacy
+   *
+   * @see https://eslint.org/docs/rules/no-iterator
+   */
+  'no-iterator': 'off',
+
+  /**
+   * disallows labels
+   *
+   * @see https://eslint.org/docs/rules/no-labels
+   */
+  'no-labels': 'error',
+
+  /**
+   * disallows standalone code blocks
+   *
+   * off because valid in es6
+   *
+   * @see https://eslint.org/docs/rules/no-lone-blocks
+   */
+  'no-lone-blocks': 'off',
+
+  /**
+   * disallow function creation in loops
+   *
+   * @see https://eslint.org/docs/rules/no-loop-func
+   */
+  'no-loop-func': 'error',
 
   /**
    * always off because it expects literally every number to be assigned to
@@ -386,10 +671,142 @@ const getBestPractices = ({ hasTypeScript }) => ({
   'no-magic-numbers': 'off',
 
   /**
+   * off because prettier takes care of that
+   *
+   * @see https://eslint.org/docs/rules/no-multi-spaces
+   */
+  'no-multi-spaces': 'off',
+
+  /**
+   * disallow multiline strings; use template literals instead.
+   *
+   * off because of misleading error message.
+   *
+   * @see https://eslint.org/docs/rules/no-multi-str
+   */
+  'no-multi-str': 'off',
+
+  /**
+   * disallow new for side effects
+   *
+   * @see https://eslint.org/docs/rules/no-new
+   */
+  'no-new': 'error',
+
+  /**
+   * disallows implicit eval
+   *
+   * @see https://eslint.org/docs/rules/no-new-func
+   */
+  'no-new-func': 'error',
+
+  /**
+   * disallows primitive wrapper instances such as `new String('foo')`
+   *
+   * @see https://eslint.org/docs/rules/no-new-wrappers
+   */
+  'no-new-wrappers': 'error',
+
+  /**
+   * disallows octals
+   *
+   * @see https://eslint.org/docs/rules/no-octal
+   */
+  'no-octal': 'warn',
+
+  /**
+   * disallow octal escapse; deprecated
+   *
+   * @see https://eslint.org/docs/rules/no-octal-escape
+   */
+  'no-octal-escape': 'error',
+
+  /**
+   * disallows param mutation. copy locally instead.
+   *
+   * @see https://eslint.org/docs/rules/no-param-reassign
+   */
+  'no-param-reassign': 'error',
+
+  /**
+   * disallows usage of `__proto__`
+   *
+   * @see https://eslint.org/docs/rules/no-proto
+   */
+  'no-proto': 'error',
+
+  /**
+   * disallows reassigning a variable
+   *
+   * @see https://eslint.org/docs/rules/no-redeclare
+   * @see ts(2451)
+   */
+  'no-redeclare': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * off because indivudal
+   *
+   * @see https://eslint.org/docs/rules/no-restricted-properties
+   */
+  'no-restricted-properties': 'off',
+
+  /**
+   * disallows assignments in return
+   *
+   * @see https://eslint.org/docs/rules/no-return-assign
+   */
+  'no-return-assign': 'error',
+
+  /**
    * @see https://eslint.org/docs/rules/no-return-await
    * @see @typescript-eslint/no-return-await
    */
   'no-return-await': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * disallow inline javascript in urls
+   *
+   * @see https://eslint.org/docs/rules/no-script-url
+   */
+  'no-script-url': 'error',
+
+  /**
+   * disallow self assignments
+   *
+   * @see https://eslint.org/docs/rules/no-self-assign
+   */
+  'no-self-assign': 'error',
+
+  /**
+   * disallow comparing a variable against itself
+   *
+   * @see https://eslint.org/docs/rules/no-self-compare
+   */
+  'no-self-compare': 'error',
+
+  /**
+   * disallows use of comma as operator
+   *
+   * @see https://eslint.org/docs/rules/no-sequences
+   */
+  'no-sequences': 'error',
+
+  /**
+   * disallows throwing anything but errors
+   *
+   * off because handled by @typescript-eslint/no-throw-literal
+   *
+   * @see https://eslint.org/docs/rules/no-throw-literal
+   * @see @typescript-eslint/no-throw-literal
+   */
+  'no-throw-literal': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * disallow infinite loops
+   *
+   * @see https://eslint.org/docs/rules/no-unmodified-loop-condition
+   */
+  'no-unmodified-loop-condition': 'error',
 
   /**
    * @see https://eslint.org/docs/rules/no-unused-expression
@@ -407,12 +824,141 @@ const getBestPractices = ({ hasTypeScript }) => ({
       ],
 
   /**
+   * removes unused labels
+   *
+   * off because labels are forbidden
+   *
+   * @see https://eslint.org/docs/rules/no-unused-labels
+   * @see no-label
+   */
+  'no-unused-labels': 'off',
+
+  /**
+   * call functions directly
+   *
+   * @see https://eslint.org/docs/rules/no-useless-call
+   */
+  'no-useless-call': 'error',
+
+  /**
+   * disallows useless catch
+   *
+   * off because already handled by @sonarjs/no-useless-catch
+   *
+   * @see https://eslint.org/docs/rules/no-useless-catch
+   * @see sonarjs/no-useless-catch
+   */
+  'no-useless-catch': 'off',
+
+  /**
+   * disallows string concat, just write it as string
+   *
+   * @see https://eslint.org/docs/rules/no-useless-concat
+   */
+  'no-useless-concat': 'error',
+
+  /**
+   * disallows needlessly escaping
+   *
+   * @see https://eslint.org/docs/rules/no-useless-escape
+   */
+  'no-useless-escape': 'warn',
+
+  /**
+   * disallows useless return
+   *
+   * @see https://eslint.org/docs/rules/no-useless-return
+   */
+  'no-useless-return': 'warn',
+
+  /**
+   * prevents use of void operator
+   *
+   * @see https://eslint.org/docs/rules/no-void
+   */
+  'no-void': 'warn',
+
+  /**
+   * off because opinionated
+   *
+   * @see https://eslint.org/docs/rules/no-warning-comments
+   */
+  'no-warning-comments': 'off',
+
+  /**
+   * disallows `with`, forbidden in strict mode anyways
+   *
+   * @see https://eslint.org/docs/rules/no-with
+   */
+  'no-with': 'error',
+
+  /**
+   * prefer named capture groups in regexp
+   *
+   * off because it leads to a lot of additional code. case per case basis.
+   *
+   * @see https://eslint.org/docs/rules/prefer-named-capture-group
+   */
+  'prefer-named-capture-group': 'off',
+
+  /**
+   * prefer rejecting with errors
+   *
+   * @see https://eslint.org/docs/rules/prefer-promise-reject-errors
+   */
+  'prefer-promise-reject-errors': 'error',
+
+  /**
+   * disallow regexp constructor with strings as argument
+   *
+   * use it inline
+   *
+   * @see https://eslint.org/docs/rules/prefer-regex-literals
+   */
+  'prefer-regex-literals': 'error',
+
+  /**
+   * off because irrelevant in an es5+ world
+   *
+   * @see https://eslint.org/docs/rules/radix
+   */
+  radix: 'off',
+
+  /**
    * prevents using `async` without `await`
    *
    * @see https://eslint.org/docs/rules/require-await
    * @see @typescript-eslint/require-await
    */
   'require-await': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * enforces u flag on regexp. mostly here for the 2nd reason: find errors early
+   *
+   * @see https://eslint.org/docs/rules/require-unicode-regexp
+   */
+  'require-unicode-regexp': 'error',
+
+  /**
+   * off because nonsensical
+   *
+   * @see https://eslint.org/docs/rules/vars-on-top
+   */
+  'vars-on-top': 'off',
+
+  /**
+   * expects iifes to be wrapped
+   *
+   * @see https://eslint.org/docs/rules/wrap-iife
+   */
+  'wrap-iife': 'warn',
+
+  /**
+   * disallows reversing a comparison
+   *
+   * @see https://eslint.org/docs/rules/yoda
+   */
+  yoda: 'warn',
 });
 
 const strictModeRules = {
@@ -447,9 +993,12 @@ const getVariableRules = ({ hasTypeScript }) => ({
   /**
    * disallows labels that are variable names
    *
+   * off because labels are disallowed
+   *
    * @see https://eslint.org/docs/rules/no-label-var
+   * @see no-label
    */
-  'no-label-var': 'error',
+  'no-label-var': 'off',
 
   /**
    * disallows usage of specific globals
