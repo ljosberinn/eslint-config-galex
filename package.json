@@ -1,19 +1,21 @@
 {
   "name": "eslint-config-galex",
-  "version": "SEMANTICALLY_RELEASED",
+  "version": "0.0.0-development",
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "dedup": "yarn-deduplicate -l",
-    "publish": "np",
+    "postinstall": "yarn-deduplicate -l",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix && prettier --write .",
-    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn"
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ljosberinn/eslint-config-galex.git"
+    "url": "https://github.com/ljosberinn/eslint-config-galex.git"
   },
   "keywords": [
     "eslint",
@@ -21,7 +23,13 @@
     "config",
     "galex",
     "javascript",
-    "styleguide"
+    "styleguide",
+    "typescript",
+    "react",
+    "nextjs",
+    "typescript",
+    "jest",
+    "testing-library"
   ],
   "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
   "license": "MIT",
@@ -30,35 +38,75 @@
   },
   "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "3.9.0",
-    "@typescript-eslint/parser": "3.9.0",
-    "babel-eslint": "^10.1.0",
-    "eslint-config-kentcdodds": "^14.14.2",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-react-app": "^5.2.1",
-    "eslint-plugin-flowtype": "5.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest-formatting": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
+    "babel-eslint": "10.1.0",
+    "confusing-browser-globals": "1.0.9",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-inclusive-language": "1.2.1",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jest-dom": "3.2.1",
+    "eslint-plugin-jest-formatting": "2.0.0",
     "eslint-plugin-jsx-a11y": "6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.20.6",
-    "eslint-plugin-react-hooks": "4.0.8",
-    "eslint-plugin-sort-keys-fix": "^1.1.1",
-    "eslint-plugin-testing-library": "^3.4.0",
-    "eslint-plugin-unicorn": "^21.0.0",
-    "read-pkg-up": "^7.0.1"
+    "eslint-plugin-react-hooks": "4.1.0",
+    "eslint-plugin-sonarjs": "0.5.0",
+    "eslint-plugin-sort-keys-fix": "1.1.1",
+    "eslint-plugin-testing-library": "3.8.0",
+    "eslint-plugin-unicorn": "21.0.0",
+    "read-pkg-up": "7.0.1",
+    "typescript": "4.0.2"
   },
   "devDependencies": {
-    "eslint": "^7.6.0",
-    "prettier": "2.0.5",
-    "typescript": "4.0.2",
-    "yarn-deduplicate": "^2.1.1"
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@types/jest": "^26.0.12",
+    "eslint": "7.8.0",
+    "jest": "^26.4.2",
+    "jest-runner-eslint": "^0.10.0",
+    "jest-watch-typeahead": "^0.6.0",
+    "prettier": "2.1.1",
+    "semantic-release": "^17.1.1",
+    "yarn-deduplicate": "3.0.0"
   },
   "peerDependencies": {
-    "eslint": "^7.6.0"
+    "eslint": "7.8.0"
   },
   "eslintIgnore": [
     "node_modules"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/(overrides|rulesets|utils)/**/*.{js,jsx,ts,tsx}",
+      "src/createConfig.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "coverageDirectory": "coverage",
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ]
+  }
 }

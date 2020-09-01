@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "1.0.0",
+    "@typescript-eslint/parser": "1.0.0",
+    "babel-eslint": "1.0.00",
+    "confusing-browser-globals": "1.0.0",
+    "eslint-config-prettier": "1.0.00",
+    "eslint-plugin-import": "1.0.00",
+    "eslint-plugin-inclusive-language": "1.0.0",
+    "eslint-plugin-jest": "1.0.00.0",
+    "eslint-plugin-jest-dom": "1.0.0",
+    "eslint-plugin-jest-formatting": "1.0.0",
+    "eslint-plugin-jsx-a11y": "1.0.0",
+    "eslint-plugin-prettier": "1.0.0",
+    "eslint-plugin-promise": "1.0.0",
+    "eslint-plugin-react": "1.0.06",
+    "eslint-plugin-react-hooks": "1.0.0",
+    "eslint-plugin-sonarjs": "1.0.0",
+    "eslint-plugin-sort-keys-fix": "1.0.0",
+    "eslint-plugin-testing-library": "1.0.0",
+    "eslint-plugin-unicorn": "1.0.00",
+    "read-pkg-up": "1.0.0",
+    "typescript": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "1.0.0",
+    "eslint": "1.0.0",
+    "find-up": "1.0.00",
+    "jest": "1.0.0.2",
+    "jest-runner-eslint": "1.0.0.0",
+    "jest-watch-typeahead": "1.0.00",
+    "prettier": "1.0.0",
+    "yarn-deduplicate": "1.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "1.0.0"
+  }
+}

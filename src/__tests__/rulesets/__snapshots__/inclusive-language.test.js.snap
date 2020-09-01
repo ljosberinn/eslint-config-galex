@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createInclusiveLanguageRules allows passing custom rules 1`] = `
+Object {
+  "inclusive-language/use-inclusive-words": "off",
+}
+`;
+
+exports[`createInclusiveLanguageRules matches snapshot 1`] = `
+Object {
+  "inclusive-language/use-inclusive-words": "error",
+}
+`;

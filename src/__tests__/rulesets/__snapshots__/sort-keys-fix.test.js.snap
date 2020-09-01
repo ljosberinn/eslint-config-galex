@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createSortKeysFixRules allows passing custom rules 1`] = `
+Object {
+  "sort-keys-fix/sort-keys-fix": "off",
+}
+`;
+
+exports[`createSortKeysFixRules matches snapshot 1`] = `
+Object {
+  "sort-keys-fix/sort-keys-fix": "warn",
+}
+`;

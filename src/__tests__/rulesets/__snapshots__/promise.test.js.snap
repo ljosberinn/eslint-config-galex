@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createPromiseRules allows passing custom rules 1`] = `
+Object {
+  "promise/always-return": "error",
+  "promise/avoid-new": "off",
+  "promise/catch-or-return": "off",
+  "promise/no-callback-in-promise": "off",
+  "promise/no-native": "off",
+  "promise/no-nesting": "warn",
+  "promise/no-new-statics": "error",
+  "promise/no-promise-in-callback": "warn",
+  "promise/no-return-in-finally": "warn",
+  "promise/no-return-wrap": "error",
+  "promise/param-names": "warn",
+  "promise/prefer-await-to-callbacks": "warn",
+  "promise/prefer-await-to-then": "warn",
+  "promise/valid-params": "off",
+}
+`;
+
+exports[`createPromiseRules matches snapshot with typescript 1`] = `
+Object {
+  "promise/always-return": "off",
+  "promise/avoid-new": "off",
+  "promise/catch-or-return": "off",
+  "promise/no-callback-in-promise": "off",
+  "promise/no-native": "off",
+  "promise/no-nesting": "warn",
+  "promise/no-new-statics": "error",
+  "promise/no-promise-in-callback": "warn",
+  "promise/no-return-in-finally": "warn",
+  "promise/no-return-wrap": "error",
+  "promise/param-names": "warn",
+  "promise/prefer-await-to-callbacks": "warn",
+  "promise/prefer-await-to-then": "warn",
+  "promise/valid-params": "off",
+}
+`;
+
+exports[`createPromiseRules matches snapshot without typescript 1`] = `
+Object {
+  "promise/always-return": "off",
+  "promise/avoid-new": "off",
+  "promise/catch-or-return": Array [
+    "error",
+    Object {
+      "allowFinally": true,
+      "allowThen": true,
+    },
+  ],
+  "promise/no-callback-in-promise": "off",
+  "promise/no-native": "off",
+  "promise/no-nesting": "warn",
+  "promise/no-new-statics": "error",
+  "promise/no-promise-in-callback": "warn",
+  "promise/no-return-in-finally": "warn",
+  "promise/no-return-wrap": "error",
+  "promise/param-names": "warn",
+  "promise/prefer-await-to-callbacks": "warn",
+  "promise/prefer-await-to-then": "warn",
+  "promise/valid-params": "error",
+}
+`;
