@@ -91,7 +91,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -301,7 +301,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -510,7 +510,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -722,7 +722,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -929,7 +929,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -1139,7 +1139,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -1348,7 +1348,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -1560,7 +1560,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
@@ -1767,7 +1767,7 @@ Object {
     ],
     "react/forbid-prop-types": "off",
     "react/function-component-definition": Array [
-      "error",
+      "warn",
       Object {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",

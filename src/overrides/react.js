@@ -153,7 +153,7 @@ const createReactRules = ({ isNext, version, hasTypeScript }) => ({
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
    */
   'react/function-component-definition': [
-    'error',
+    'warn',
     {
       namedComponents: 'function-declaration',
       unnamedComponents: 'arrow-function',
