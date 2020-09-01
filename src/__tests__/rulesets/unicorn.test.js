@@ -1,8 +1,11 @@
 const { createUnicornRules } = require('../../rulesets/unicorn');
 
 describe('createUnicornRules', () => {
-  test('matches snapshot without typescript', () => {
+  test('matches snapshot without typescript & react', () => {
     const project = {
+      react: {
+        hasReact: false,
+      },
       typescript: {
         hasTypeScript: false,
       },
@@ -11,8 +14,37 @@ describe('createUnicornRules', () => {
     expect(createUnicornRules(project)).toMatchSnapshot();
   });
 
-  test('matches snapshot with typescript', () => {
+  test('matches snapshot with typescript, without react', () => {
     const project = {
+      react: {
+        hasReact: false,
+      },
+      typescript: {
+        hasTypeScript: true,
+      },
+    };
+
+    expect(createUnicornRules(project)).toMatchSnapshot();
+  });
+
+  test('matches snapshot with react, without typescript', () => {
+    const project = {
+      react: {
+        hasReact: true,
+      },
+      typescript: {
+        hasTypeScript: false,
+      },
+    };
+
+    expect(createUnicornRules(project)).toMatchSnapshot();
+  });
+
+  test('matches snapshot with typescript & react', () => {
+    const project = {
+      react: {
+        hasReact: true,
+      },
       typescript: {
         hasTypeScript: true,
       },
@@ -28,6 +60,9 @@ describe('createUnicornRules', () => {
     const project = {
       customRules: {
         [rule]: level,
+      },
+      react: {
+        hasReact: true,
       },
       typescript: {
         hasTypeScript: true,

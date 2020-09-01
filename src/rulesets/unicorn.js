@@ -8,11 +8,18 @@ const {
  *  typescript: {
  *    hasTypeScript: boolean;
  *  };
+ *  react: {
+ *    hasReact: boolean;
+ *  }
  *  customRules?: Record<string, string | [string, string | object];
  * }} options
  */
-const createUnicornRules = ({ typescript, customRules = {} }) => ({
-  ...getUnicornRules(typescript),
+const createUnicornRules = ({
+  typescript: { hasTypeScript },
+  react: { hasReact },
+  customRules = {},
+}) => ({
+  ...getUnicornRules({ hasReact, hasTypeScript }),
   ...prettierUnicornRules,
   ...customRules,
 });
@@ -22,9 +29,10 @@ const createUnicornRules = ({ typescript, customRules = {} }) => ({
  *
  * @param {{
  *  hasTypeScript: boolean;
+ *  hasReact: boolean;
  * }}
  */
-const getUnicornRules = ({ hasTypeScript }) => ({
+const getUnicornRules = ({ hasTypeScript, hasReact }) => ({
   /**
    * improves regex
    *
@@ -156,7 +164,7 @@ const getUnicornRules = ({ hasTypeScript }) => ({
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-keyword-prefix.md
    */
-  'unicorn/no-keyword-prefix': 'warn',
+  'unicorn/no-keyword-prefix': hasReact ? 'off' : 'warn',
 
   /**
    * off because prettier takes care of it
