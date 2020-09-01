@@ -4,7 +4,6 @@
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
-    "postinstall": "yarn-deduplicate -l",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix && prettier --write .",
     "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
@@ -69,8 +68,7 @@
     "jest-runner-eslint": "0.10.0",
     "jest-watch-typeahead": "0.6.0",
     "prettier": "2.1.1",
-    "semantic-release": "17.1.1",
-    "yarn-deduplicate": "3.0.0"
+    "semantic-release": "17.1.1"
   },
   "peerDependencies": {
     "eslint": "7.8.1"
