@@ -131,6 +131,20 @@ build your own config might have come, after all.
 
 - `prefer-const`
 
+- `curly`: prefer
+
+  ```js
+  if (true) {
+    doSomething();
+  }
+  ```
+
+  over
+
+  ````js
+  if (true) doSomething();
+  ````
+
 ## Tests
 
 - use new lines between test blocks & `expect` and non-`expect`-code
