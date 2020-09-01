@@ -4,11 +4,13 @@
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
     "postinstall": "yarn-deduplicate -l",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix && prettier --write .",
-    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn"
+    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --ci --coverage"
   },
   "repository": {
     "type": "git",
@@ -29,13 +31,14 @@
   },
   "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "4.0.0-alpha.16",
-    "@typescript-eslint/parser": "4.0.0-alpha.16",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
     "babel-eslint": "10.1.0",
     "confusing-browser-globals": "1.0.9",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-inclusive-language": "1.2.1",
+    "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-jest-dom": "3.2.1",
     "eslint-plugin-jest-formatting": "2.0.0",
     "eslint-plugin-jsx-a11y": "6.3.1",
@@ -51,7 +54,11 @@
     "typescript": "4.0.2"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.12",
     "eslint": "7.8.0",
+    "jest": "^26.4.2",
+    "jest-runner-eslint": "^0.10.0",
+    "jest-watch-typeahead": "^0.6.0",
     "prettier": "2.1.1",
     "yarn-deduplicate": "3.0.0"
   },
@@ -60,5 +67,45 @@
   },
   "eslintIgnore": [
     "node_modules"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/(overrides|rulesets|utils)/**/*.{js,jsx,ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "coverageDirectory": "coverage",
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "projects": [
+      {
+        "displayName": "test",
+        "testEnvironment": "node"
+      },
+      {
+        "displayName": "lint",
+        "runner": "jest-runner-eslint",
+        "testMatch": [
+          "<rootDir>/**/*.{js,ts}"
+        ],
+        "testPathIgnorePatterns": [
+          "<rootDir>/lib/.*"
+        ]
+      }
+    ]
+  }
 }

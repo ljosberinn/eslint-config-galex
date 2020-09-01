@@ -1,18 +1,18 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 const { sync } = require('read-pkg-up');
 
-const { createReactOverride } = require('./overrides/react');
-const { createTestOverride } = require('./overrides/test');
-const { createTSOverride } = require('./overrides/typescript');
-const { createEslintCoreRules } = require('./rulesets/eslint-core');
-const { createImportRules } = require('./rulesets/import');
+const { createJestOverride } = require('./src/overrides/jest');
+const { createReactOverride } = require('./src/overrides/react');
+const { createTSOverride } = require('./src/overrides/typescript');
+const { createEslintCoreRules } = require('./src/rulesets/eslint-core');
+const { createImportRules } = require('./src/rulesets/import');
 const {
   createInclusiveLanguageRules,
-} = require('./rulesets/inclusive-language');
-const { createPromiseRules } = require('./rulesets/promise');
-const { createSonarjsRules } = require('./rulesets/sonarjs');
-const { createSortKeysFixRules } = require('./rulesets/sort-keys-fix');
-const { createUnicornRules } = require('./rulesets/unicorn');
+} = require('./src/rulesets/inclusive-language');
+const { createPromiseRules } = require('./src/rulesets/promise');
+const { createSonarjsRules } = require('./src/rulesets/sonarjs');
+const { createSortKeysFixRules } = require('./src/rulesets/sort-keys-fix');
+const { createUnicornRules } = require('./src/rulesets/unicorn');
 
 const project = (() => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
@@ -75,7 +75,20 @@ const project = (() => {
       version: deps.get('react'),
     };
 
-    const hasTypeScript = deps.has('typescript');
+    const hasTypeScript =
+      deps.has('typescript') &&
+      (() => {
+        try {
+          const tsconfig = require('./tsconfig');
+          return !!tsconfig;
+        } catch {
+          // eslint-disable-next-line no-console
+          console.warn(
+            'TypeScript found in package.json, however, no tsconfig.json found.'
+          );
+          return false;
+        }
+      })();
 
     const typescript = {
       hasTypeScript,
@@ -103,11 +116,11 @@ const project = (() => {
         hasReact: false,
         isNext: false,
         isPreact: false,
-        version: '17.0.0-rc.1',
+        version: '',
       },
       typescript: {
         hasTypeScript: false,
-        version: '4.0.2',
+        version: '',
       },
     };
   }
@@ -117,7 +130,7 @@ const overrides = [
   createReactOverride(project),
   createTSOverride(project),
   // order is important - test must come last, as it has overrides for e.g. ts
-  createTestOverride(project),
+  createJestOverride(project),
 ].filter(Boolean);
 
 const defaultPlugins = [

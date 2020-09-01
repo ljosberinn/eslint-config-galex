@@ -193,11 +193,9 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
   /**
    *  enforces type-only imports when possible
    *
-   * NOT YET RELEASED
-   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
    */
-  /* '@typescript-eslint/consistent-type-imports': fulfillsVersionRequirement(
+  '@typescript-eslint/consistent-type-imports': fulfillsVersionRequirement(
     version,
     { major: 3, minor: 8 }
   )
@@ -208,7 +206,7 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
           prefer: 'type-imports',
         },
       ]
-    : 'off', */
+    : 'off',
 
   /**
    * prevents having optional params before default
@@ -422,16 +420,14 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
   /**
    * warns implicit-any catches
    *
-   * NOT YET RELEASED
-   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md
    */
-  /* '@typescript-eslint/no-implicit-any-catch': fulfillsVersionRequirement(
+  '@typescript-eslint/no-implicit-any-catch': fulfillsVersionRequirement(
     version,
     { major: 4 }
   )
     ? 'warn'
-    : 'off', */
+    : 'off',
 
   /**
    * prevents odd cases of implied eval. probably intentional, given those
@@ -660,10 +656,13 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
   '@typescript-eslint/no-unused-vars-experimental': 'off',
 
   /**
-   * off until the release of 4.0
+   * blocked because false positives
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md
-   * @see https://github.com/typescript-eslint/typescript-eslint/issues/1856
+   * @see https://github.com/typescript-eslint/typescript-eslint/issues/2453
+   * @see https://github.com/typescript-eslint/typescript-eslint/issues/2452
+   * @see https://github.com/typescript-eslint/typescript-eslint/issues/2451
+   * @see https://github.com/typescript-eslint/typescript-eslint/issues/2449
    */
   '@typescript-eslint/no-use-before-define': 'off',
 

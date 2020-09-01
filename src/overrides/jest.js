@@ -1,7 +1,7 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
 const env = {
-  'jest/globals': true,
+  jest: true,
 };
 
 const extendsConfig = ['plugin:jest-formatting/strict'];
@@ -30,7 +30,7 @@ const settings = {
  *  customRules?: Record<string, string | [string, string | object];
  * }} options
  */
-const createTestOverride = ({
+const createJestOverride = ({
   hasJestDom,
   hasJest,
   hasTestingLibrary,
@@ -597,7 +597,7 @@ const getTestOverrides = ({ hasTypeScript }) => ({
 });
 
 module.exports = {
-  createTestOverride,
+  createJestOverride,
   env,
   extendsConfig,
   files,
