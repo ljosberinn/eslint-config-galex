@@ -37,8 +37,8 @@ jobs:
         run: yarn --frozen-lockfile
       - run: yarn lint
 
-  test:
-    name: Test
+  test-coverage:
+    name: Test & Coverage Report
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
@@ -56,7 +56,12 @@ jobs:
       - name: Installing dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
-      - run: yarn test:coverage --ci
+      - name: Test & Upload coverage
+        uses: paambaati/codeclimate-action@v2.6.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: yarn test:coverage --ci
 
   build-publish:
     name: Build and Publish
