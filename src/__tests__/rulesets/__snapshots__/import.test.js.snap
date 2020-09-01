@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createImportRules allows passing custom rules 1`] = `
+Object {
+  "import/default": "off",
+  "import/dynamic-import-chunkname": "warn",
+  "import/export": "off",
+  "import/exports-last": "off",
+  "import/extensions": "off",
+  "import/first": "error",
+  "import/group-exports": "off",
+  "import/max-dependencies": "off",
+  "import/named": "off",
+  "import/namespace": "off",
+  "import/newline-after-import": "warn",
+  "import/no-absolute-path": "off",
+  "import/no-amd": "error",
+  "import/no-anonymous-default-export": "error",
+  "import/no-commonjs": "off",
+  "import/no-cycle": Array [
+    "warn",
+    Object {
+      "ignoreExternal": true,
+      "maxDepth": 5,
+    },
+  ],
+  "import/no-default-export": "warn",
+  "import/no-deprecated": "off",
+  "import/no-duplicates": "warn",
+  "import/no-dynamic-require": "warn",
+  "import/no-extraneous-dependencies": "warn",
+  "import/no-internal-modules": "off",
+  "import/no-mutable-exports": "error",
+  "import/no-named-as-default": "off",
+  "import/no-named-as-default-member": "off",
+  "import/no-named-default": "error",
+  "import/no-named-export": "off",
+  "import/no-namespace": "error",
+  "import/no-nodejs-modules": "off",
+  "import/no-relative-parent-imports": "warn",
+  "import/no-restricted-paths": "off",
+  "import/no-self-import": "error",
+  "import/no-unassigned-import": "off",
+  "import/no-unresolved": "off",
+  "import/no-unused-modules": "warn",
+  "import/no-useless-path-segments": Array [
+    "error",
+    Object {
+      "noUselessIndex": true,
+    },
+  ],
+  "import/no-webpack-loader-syntax": "error",
+  "import/order": Array [
+    "warn",
+    Object {
+      "alphabetize": Object {
+        "order": "asc",
+      },
+      "groups": Array [
+        Array [
+          "builtin",
+          "external",
+          "internal",
+        ],
+        Array [
+          "unknown",
+          "parent",
+          "sibling",
+        ],
+        "index",
+      ],
+      "newlines-between": "always",
+    },
+  ],
+  "import/prefer-default-export": "off",
+  "import/unambiguous": "off",
+}
+`;
+
+exports[`createImportRules matches snapshot with typescript 1`] = `
+Object {
+  "import/default": "warn",
+  "import/dynamic-import-chunkname": "warn",
+  "import/export": "off",
+  "import/exports-last": "off",
+  "import/extensions": "off",
+  "import/first": "error",
+  "import/group-exports": "off",
+  "import/max-dependencies": "off",
+  "import/named": "off",
+  "import/namespace": "off",
+  "import/newline-after-import": "warn",
+  "import/no-absolute-path": "off",
+  "import/no-amd": "error",
+  "import/no-anonymous-default-export": "error",
+  "import/no-commonjs": "off",
+  "import/no-cycle": Array [
+    "warn",
+    Object {
+      "ignoreExternal": true,
+      "maxDepth": 5,
+    },
+  ],
+  "import/no-default-export": "warn",
+  "import/no-deprecated": "off",
+  "import/no-duplicates": "warn",
+  "import/no-dynamic-require": "warn",
+  "import/no-extraneous-dependencies": "warn",
+  "import/no-internal-modules": "off",
+  "import/no-mutable-exports": "error",
+  "import/no-named-as-default": "off",
+  "import/no-named-as-default-member": "off",
+  "import/no-named-default": "error",
+  "import/no-named-export": "off",
+  "import/no-namespace": "error",
+  "import/no-nodejs-modules": "off",
+  "import/no-relative-parent-imports": "warn",
+  "import/no-restricted-paths": "off",
+  "import/no-self-import": "error",
+  "import/no-unassigned-import": "off",
+  "import/no-unresolved": "off",
+  "import/no-unused-modules": "warn",
+  "import/no-useless-path-segments": Array [
+    "error",
+    Object {
+      "noUselessIndex": true,
+    },
+  ],
+  "import/no-webpack-loader-syntax": "error",
+  "import/order": Array [
+    "warn",
+    Object {
+      "alphabetize": Object {
+        "order": "asc",
+      },
+      "groups": Array [
+        Array [
+          "builtin",
+          "external",
+          "internal",
+        ],
+        Array [
+          "unknown",
+          "parent",
+          "sibling",
+        ],
+        "index",
+      ],
+      "newlines-between": "always",
+    },
+  ],
+  "import/prefer-default-export": "off",
+  "import/unambiguous": "off",
+}
+`;
+
+exports[`createImportRules matches snapshot without typescript 1`] = `
+Object {
+  "import/default": "warn",
+  "import/dynamic-import-chunkname": "warn",
+  "import/export": "error",
+  "import/exports-last": "off",
+  "import/extensions": "off",
+  "import/first": "error",
+  "import/group-exports": "off",
+  "import/max-dependencies": "off",
+  "import/named": "error",
+  "import/namespace": "error",
+  "import/newline-after-import": "warn",
+  "import/no-absolute-path": "off",
+  "import/no-amd": "error",
+  "import/no-anonymous-default-export": "error",
+  "import/no-commonjs": "off",
+  "import/no-cycle": Array [
+    "warn",
+    Object {
+      "ignoreExternal": true,
+      "maxDepth": 5,
+    },
+  ],
+  "import/no-default-export": "warn",
+  "import/no-deprecated": "warn",
+  "import/no-duplicates": "warn",
+  "import/no-dynamic-require": "warn",
+  "import/no-extraneous-dependencies": "warn",
+  "import/no-internal-modules": "off",
+  "import/no-mutable-exports": "error",
+  "import/no-named-as-default": "off",
+  "import/no-named-as-default-member": "off",
+  "import/no-named-default": "error",
+  "import/no-named-export": "off",
+  "import/no-namespace": "error",
+  "import/no-nodejs-modules": "off",
+  "import/no-relative-parent-imports": "warn",
+  "import/no-restricted-paths": "off",
+  "import/no-self-import": "error",
+  "import/no-unassigned-import": "off",
+  "import/no-unresolved": "warn",
+  "import/no-unused-modules": "warn",
+  "import/no-useless-path-segments": Array [
+    "error",
+    Object {
+      "noUselessIndex": true,
+    },
+  ],
+  "import/no-webpack-loader-syntax": "error",
+  "import/order": Array [
+    "warn",
+    Object {
+      "alphabetize": Object {
+        "order": "asc",
+      },
+      "groups": Array [
+        Array [
+          "builtin",
+          "external",
+          "internal",
+        ],
+        Array [
+          "unknown",
+          "parent",
+          "sibling",
+        ],
+        "index",
+      ],
+      "newlines-between": "always",
+    },
+  ],
+  "import/prefer-default-export": "off",
+  "import/unambiguous": "off",
+}
+`;

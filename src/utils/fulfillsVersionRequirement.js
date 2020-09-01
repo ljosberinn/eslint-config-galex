@@ -11,12 +11,9 @@ module.exports = {
    */
   fulfillsVersionRequirement: (version, { major, minor = 0, patch = 0 }) => {
     try {
-      const [_depMajor, _depMinor, _depPatch] = version.split('.');
-      const [depMajor, depMinor, depPatch] = [
-        _depMajor,
-        _depMinor,
-        _depPatch,
-      ].map(str => Number.parseInt(str));
+      const [depMajor, depMinor, depPatch] = version
+        .split('.')
+        .map(str => Number.parseInt(str));
 
       // version is identical to required
       if (depMajor === major && depMinor === minor && depPatch === patch) {

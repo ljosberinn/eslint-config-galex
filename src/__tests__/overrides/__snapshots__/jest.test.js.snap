@@ -69,6 +69,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
@@ -175,6 +176,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
   },
   "settings": Object {
     "jest": Object {
@@ -204,6 +206,7 @@ Object {
     "testing-library",
   ],
   "rules": Object {
+    "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
@@ -264,6 +267,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
@@ -374,6 +378,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
@@ -426,6 +431,7 @@ Object {
     "testing-library",
   ],
   "rules": Object {
+    "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
@@ -486,6 +492,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
@@ -593,6 +600,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
@@ -641,6 +649,7 @@ Object {
     "jest-dom",
   ],
   "rules": Object {
+    "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
@@ -701,6 +710,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
   },
   "settings": Object {
     "jest": Object {
@@ -787,6 +797,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
   },
   "settings": Object {
     "jest": Object {
@@ -864,6 +875,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
   },
   "settings": Object {
     "jest": Object {
@@ -942,6 +954,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
@@ -989,6 +1002,7 @@ Object {
     "jest",
   ],
   "rules": Object {
+    "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
@@ -1041,6 +1055,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
   },
   "settings": Object {
     "jest": Object {
@@ -1118,6 +1133,7 @@ Object {
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
+    "no-empty-function": "off",
   },
   "settings": Object {
     "jest": Object {

@@ -589,11 +589,29 @@ const getTestOverrides = ({ hasTypeScript }) => ({
   ...(hasTypeScript ? { '@typescript-eslint/unbound-method': 'off' } : null),
 
   /**
+   * off to allow silent mocks, e.g. for console
+   *
+   * @see https://eslint.org/docs/rules/no-empty-function
+   * @see @typescript-eslint/no-empty-function
+   */
+  ...(hasTypeScript
+    ? { '@typescript-eslint/no-empty-function': 'error' }
+    : null),
+
+  /**
    * off to allow spying on methods
    *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
    */
   'import/no-namespace': 'off',
+
+  /**
+   * off to allow silent mocks, e.g. for console
+   *
+   * @see https://eslint.org/docs/rules/no-empty-function
+   * @see @typescript-eslint/no-empty-function
+   */
+  'no-empty-function': 'off',
 });
 
 module.exports = {
