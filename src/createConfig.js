@@ -67,7 +67,7 @@ const parserOptions = {
 const getDependencies = ({ cwd = process.cwd() } = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
-    /* istanbul ignore next line 75 is supposedly uncovered :shrug: */
+    /* istanbul ignore next line 75 is supposedly uncovered */
     const {
       packageJson: {
         peerDependencies = {},
