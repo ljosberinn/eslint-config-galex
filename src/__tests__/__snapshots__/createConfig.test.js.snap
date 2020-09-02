@@ -5,7 +5,7 @@ Object {
   "env": Object {
     "browser": false,
     "es2020": true,
-    "node": true,
+    "node": false,
   },
   "overrides": Array [
     Object {
@@ -502,7 +502,7 @@ Object {
   "env": Object {
     "browser": false,
     "es2020": true,
-    "node": true,
+    "node": false,
   },
   "overrides": Array [
     Object {
@@ -993,7 +993,7 @@ Object {
 }
 `;
 
-exports[`getDependencies accepts alternative tsdefaultConfig path 1`] = `
+exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
 Object {
   "hasJest": true,
   "hasJestDom": false,
@@ -1006,6 +1006,75 @@ Object {
     "version": undefined,
   },
   "typescript": Object {
+    "config": Object {},
+    "hasTypeScript": true,
+    "version": "1.0.0",
+  },
+}
+`;
+
+exports[`getDependencies given typescript bails on the first config found with compilerOptions 1`] = `
+Object {
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": Object {
+      "compilerOptions": Object {
+        "foo": "bar",
+      },
+    },
+    "hasTypeScript": true,
+    "version": "1.0.0",
+  },
+}
+`;
+
+exports[`getDependencies given typescript does not check tsconfig.json if no ts dependency was found 1`] = `
+Object {
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": undefined,
+    "hasTypeScript": false,
+    "version": undefined,
+  },
+}
+`;
+
+exports[`getDependencies given typescript recursively reads extends property and retrieves next 1`] = `
+Object {
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": Object {
+      "compilerOptions": Object {
+        "foo": "bar",
+      },
+    },
     "hasTypeScript": true,
     "version": "1.0.0",
   },
@@ -1025,6 +1094,7 @@ Object {
     "version": undefined,
   },
   "typescript": Object {
+    "config": undefined,
     "hasTypeScript": false,
     "version": "4.0.2",
   },
@@ -1044,6 +1114,7 @@ Object {
     "version": undefined,
   },
   "typescript": Object {
+    "config": Object {},
     "hasTypeScript": false,
     "version": undefined,
   },

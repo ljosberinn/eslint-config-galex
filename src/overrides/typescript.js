@@ -31,6 +31,7 @@ const settings = {
  *  typescript: {
  *    hasTypeScript: boolean;
  *    version: string;
+ *    config: object;
  *  };
  *  react: {
  *    hasReact: boolean;
@@ -39,7 +40,7 @@ const settings = {
  * }} options
  */
 const createTSOverride = ({
-  typescript: { hasTypeScript, version },
+  typescript: { hasTypeScript, version, config = {} },
   react: { hasReact },
   customRules = {},
 }) => {
@@ -48,7 +49,7 @@ const createTSOverride = ({
   }
 
   const rules = {
-    ...getTypeScriptRules({ hasReact, version }),
+    ...getTypeScriptRules({ config, version }),
     ...prettierTypeScriptRules,
     ...customRules,
   };
@@ -80,7 +81,7 @@ const createTSOverride = ({
  *  hasReact: boolean;
  * }}
  */
-const getTypeScriptRules = ({ version, hasReact }) => ({
+const getTypeScriptRules = ({ version, config }) => ({
   /**
    * prevents loose overloads
    *
@@ -572,7 +573,10 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
    */
-  '@typescript-eslint/no-unnecessary-condition': 'warn',
+  '@typescript-eslint/no-unnecessary-condition': config.compilerOptions
+    ?.strictNullChecks
+    ? 'warn'
+    : 'off',
 
   /**
    * prevents using unmecessary qualifier

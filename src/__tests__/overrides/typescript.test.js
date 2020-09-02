@@ -61,6 +61,25 @@ describe('createTSOverride', () => {
     expect(createTSOverride(project)).toMatchSnapshot();
   });
 
+  test('conditionally toggles rules depending on config passed', () => {
+    const project = {
+      react: {
+        hasReact: true,
+      },
+      typescript: {
+        config: {
+          compilerOptions: {
+            strictNullChecks: true,
+          },
+        },
+        hasTypeScript: true,
+        version: '4.0.2',
+      },
+    };
+
+    expect(createTSOverride(project)).toMatchSnapshot();
+  });
+
   test('allows passing custom rules', () => {
     const rule = '@typescript-eslint/ban-types';
     const level = 'error';

@@ -2,6 +2,7 @@
 const fs = require('fs');
 const { resolve } = require('path');
 const readPkgUp = require('read-pkg-up');
+const ts = require('typescript');
 
 const { createJestOverride } = require('./overrides/jest');
 const { createReactOverride } = require('./overrides/react');
@@ -60,6 +61,31 @@ const parserOptions = {
 };
 
 /**
+ * @param {string} cwd
+ * @returns {object}
+ */
+const getTopLevelTsConfig = cwd => {
+  const path = resolve(cwd, cwd.includes('.json') ? '' : 'tsconfig.json');
+
+  const tsConfigRaw = fs.readFileSync(path, 'utf-8');
+  const tsConfig = ts.convertToObject(
+    ts.parseJsonText('tsconfig.json', tsConfigRaw)
+  );
+
+  // really only thing we need from the config
+  if (tsConfig.compilerOptions) {
+    return tsConfig;
+  }
+
+  // no compilerOptions, check for parent configs
+  if (tsConfig.extends) {
+    return getTopLevelTsConfig(resolve(cwd, tsConfig.extends));
+  }
+
+  return tsConfig;
+};
+
+/**
  * @param {
  *  cwd?: string
  * } detectionOptions
@@ -103,24 +129,26 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
       version: deps.get('react'),
     };
 
-    const hasTypeScript =
-      deps.has('typescript') &&
-      (() => {
-        try {
-          fs.accessSync(resolve(cwd, 'tsconfig.json'));
+    const hasTypeScriptDependency = deps.has('typescript');
 
-          return true;
-        } catch {
-          // eslint-disable-next-line no-console
-          console.info(
-            'TypeScript found in `package.json` but no `tsconfig.json` was found.'
-          );
-          return false;
-        }
-      })();
+    const tsConfig = (() => {
+      if (!hasTypeScriptDependency) {
+        return;
+      }
+
+      try {
+        return getTopLevelTsConfig(cwd);
+      } catch {
+        // eslint-disable-next-line no-console
+        console.info(
+          'TypeScript found in `package.json` but no `tsconfig.json` was found.'
+        );
+      }
+    })();
 
     const typescript = {
-      hasTypeScript,
+      config: tsConfig,
+      hasTypeScript: hasTypeScriptDependency && !!tsConfig,
       version: deps.get('typescript'),
     };
 
@@ -134,7 +162,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
     };
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('error parsing package.json!', error);
+    console.error('error parsing `package.json`!', error);
 
     return {
       hasJest: false,
@@ -148,6 +176,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
         version: undefined,
       },
       typescript: {
+        config: {},
         hasTypeScript: false,
         version: undefined,
       },
@@ -194,7 +223,7 @@ const createConfig = ({ cwd, customRules = {} } = {}) => {
     env: {
       ...env,
       browser: project.react.hasReact,
-      node: project.typescript.hasTypeScript ? project.hasNodeTypes : true,
+      node: project.typescript.hasTypeScript ? project.hasNodeTypes : false,
     },
     overrides,
     parserOptions,
