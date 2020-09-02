@@ -573,10 +573,10 @@ const getTypeScriptRules = ({ version, config }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
    */
-  '@typescript-eslint/no-unnecessary-condition': config.compilerOptions
-    ?.strictNullChecks
-    ? 'warn'
-    : 'off',
+  '@typescript-eslint/no-unnecessary-condition':
+    config.compilerOptions && config.compilerOptions.strictNullChecks
+      ? 'warn'
+      : 'off',
 
   /**
    * prevents using unmecessary qualifier
