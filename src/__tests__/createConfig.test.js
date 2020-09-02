@@ -75,7 +75,7 @@ describe('getDependencies', () => {
       const deps = getDependencies();
 
       expect(deps).toMatchSnapshot();
-      expect(deps.typescript.config?.compilerOptions[key]).toBe(value);
+      expect(deps.typescript.config.compilerOptions[key]).toBe(value);
     });
 
     test('recursively reads extends property and retrieves next', () => {
@@ -111,7 +111,7 @@ describe('getDependencies', () => {
       const deps = getDependencies();
 
       expect(deps).toMatchSnapshot();
-      expect(deps.typescript.config?.compilerOptions[key]).toBe(value);
+      expect(deps.typescript.config.compilerOptions[key]).toBe(value);
     });
   });
 });
