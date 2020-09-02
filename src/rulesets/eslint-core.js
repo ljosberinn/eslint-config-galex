@@ -416,7 +416,7 @@ const getBestPractices = ({ hasTypeScript }) => ({
    *
    * @see https://eslint.org/docs/rules/curly
    */
-  curly: 'warn',
+  curly: ['warn', 'all'],
 
   /**
    * avoids unexpected side effects of switches without default
@@ -1996,6 +1996,11 @@ const getES6Rules = ({ hasTypeScript }) => ({
 });
 
 const safePrettierOverrides = {
+  /**
+   * @see https://eslint.org/docs/rules/curly
+   */
+  curly: getBestPractices({ hasTypeScript: false }).curly,
+
   /**
    * off because handled by prettier
    *

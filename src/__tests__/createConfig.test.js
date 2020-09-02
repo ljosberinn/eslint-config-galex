@@ -156,4 +156,42 @@ describe('createConfig', () => {
     expect(config.rules[rule]).toBe(value);
     expect(config).toMatchSnapshot();
   });
+
+  test('allows passing customEnv', () => {
+    const key = 'foo';
+    const value = 'bar';
+
+    const config = createConfig({ customEnv: { [key]: value } });
+
+    expect(config.env[key]).toBe(value);
+    expect(config).toMatchSnapshot();
+  });
+
+  test('allows passing customPlugins', () => {
+    const plugin = 'galex';
+
+    const config = createConfig({ customPlugins: [plugin] });
+
+    expect(config.plugins).toContain(plugin);
+    expect(config).toMatchSnapshot();
+  });
+
+  test('allows passing customOverrides', () => {
+    const plugin = 'galex';
+
+    const config = createConfig({ customOverrides: [plugin] });
+
+    expect(config.overrides).toContain(plugin);
+    expect(config).toMatchSnapshot();
+  });
+
+  test('allows passing parserOptions', () => {
+    const key = 'foo';
+    const value = 'bar';
+
+    const config = createConfig({ customParserOptions: { [key]: value } });
+
+    expect(config.parserOptions[key]).toBe(value);
+    expect(config).toMatchSnapshot();
+  });
 });

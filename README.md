@@ -67,6 +67,8 @@ Couldn't this be easier?
 
   // pass in your own rules
   const config = createConfig({ customRules: myCustomRules });
+  // or plugins
+  const config = createConfig({ customPlugins: myCustomPluginArray });
 
   // package.json / tsconfig.json in other directories?
   const config = createConfig({ cwd: 'path/to/file' });
@@ -185,6 +187,10 @@ interface Project {
      * the installed version
      */
     version: string;
+    /**
+     * your tsConfig; used to detect feature availability
+     */
+    config?: object;
   };
   react: {
     /**

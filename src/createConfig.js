@@ -50,13 +50,13 @@ const defaultPlugins = [
   'inclusive-language',
 ];
 
-const env = {
+const defaultEnv = {
   browser: false,
   es2020: true,
   node: false,
 };
 
-const parserOptions = {
+const defaultParserOptions = {
   sourceType: 'module',
 };
 
@@ -176,7 +176,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
         version: undefined,
       },
       typescript: {
-        config: {},
+        config: undefined,
         hasTypeScript: false,
         version: undefined,
       },
@@ -187,9 +187,21 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
 /**
  * @param {
  *  cwd?: string
+ *  customRules?: object;
+ *  customOverrides?: unknown[];
+ *  customPlugins?: unknown[];
+ *  customEnv?: object;
+ *  customParserOptions?: object;
  * } detectionOptions
  */
-const createConfig = ({ cwd, customRules = {} } = {}) => {
+const createConfig = ({
+  cwd,
+  customRules = {},
+  customOverrides = [],
+  customPlugins = [],
+  customEnv = {},
+  customParserOptions = {},
+} = {}) => {
   const project = getDependencies({ cwd });
 
   const overrides = [
@@ -197,6 +209,7 @@ const createConfig = ({ cwd, customRules = {} } = {}) => {
     createTSOverride(project),
     // order is important - test must come last, as it has overrides for e.g. ts
     createJestOverride(project),
+    ...customOverrides,
   ].filter(Boolean);
 
   const rules = Object.entries({
@@ -209,7 +222,8 @@ const createConfig = ({ cwd, customRules = {} } = {}) => {
     ...createInclusiveLanguageRules(project),
     ...customRules,
   }).reduce((carry, [key, value]) => {
-    if (value === 'off') {
+    // omit disabled rules
+    if (value === 'off' || value === 0) {
       return carry;
     }
 
@@ -218,16 +232,26 @@ const createConfig = ({ cwd, customRules = {} } = {}) => {
     return carry;
   }, {});
 
+  const plugins = [...defaultPlugins, ...customPlugins];
+
+  const env = {
+    ...defaultEnv,
+    browser: project.react.hasReact,
+    node: project.typescript.hasTypeScript ? project.hasNodeTypes : false,
+    ...customEnv,
+  };
+
+  const parserOptions = {
+    ...defaultParserOptions,
+    ...customParserOptions,
+  };
+
   // schema reference: https://github.com/eslint/eslint/blob/master/conf/config-schema.js
   return {
-    env: {
-      ...env,
-      browser: project.react.hasReact,
-      node: project.typescript.hasTypeScript ? project.hasNodeTypes : false,
-    },
+    env,
     overrides,
     parserOptions,
-    plugins: defaultPlugins,
+    plugins,
     rules,
   };
 };
@@ -235,9 +259,9 @@ const createConfig = ({ cwd, customRules = {} } = {}) => {
 module.exports = {
   createConfig,
   defaultPlugins,
-  env,
+  env: defaultEnv,
   getDependencies,
-  parserOptions,
+  parserOptions: defaultParserOptions,
   reactFlavours,
   testingLibFamily,
 };
