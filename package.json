@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-galex",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
