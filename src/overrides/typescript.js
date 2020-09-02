@@ -751,13 +751,11 @@ const getTypeScriptRules = ({ version, hasReact }) => ({
   /**
    * prefer all function parameters to be readonly
    *
-   * off for react because of props being flagged
+   * off because of false positives that never go away :cry:
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly-parameter-types.md
    */
-  '@typescript-eslint/prefer-readonly-parameter-types': hasReact
-    ? 'off'
-    : 'error',
+  '@typescript-eslint/prefer-readonly-parameter-types': 'off',
 
   /**
    * use `[].reduce<Type>` over `[].reduce(...) as Type`
