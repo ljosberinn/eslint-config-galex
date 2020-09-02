@@ -235,9 +235,11 @@ const getImportRules = ({ hasTypeScript }) => ({
   /**
    * prevents imports from parent folders
    *
+   * off because not necessarily a bad pattern
+   *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-relative-parent-imports.md
    */
-  'import/no-relative-parent-imports': 'warn',
+  'import/no-relative-parent-imports': 'off',
 
   /**
    * off because workspace sensitive
