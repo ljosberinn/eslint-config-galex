@@ -8,7 +8,12 @@ const {
 } = require('../utils/fulfillsVersionRequirement');
 
 const extendsConfigs = [];
-const plugins = ['jsx-a11y', 'react-hooks', 'react', 'next'];
+const plugins = [
+  'jsx-a11y',
+  'react-hooks',
+  'react',
+  'plugin:@next/eslint-plugin-next',
+];
 const files = ['**/*.?(ts|js)?(x)'];
 const parser = 'babel-eslint';
 const parserOptions = {
