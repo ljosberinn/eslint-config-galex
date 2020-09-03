@@ -6,13 +6,23 @@
 ![npm](https://img.shields.io/npm/v/eslint-config-galex)
 [![NPM Total Downloads][npm-shield]][npm-url]
 ![NPM](https://img.shields.io/npm/l/eslint-config-galex)
-
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9c3a13e05f2a195ba0d5/test_coverage)](https://codeclimate.com/github/ljosberinn/eslint-config-galex/test_coverage)
 
 ```sh
 yarn add -D eslint-config-galex
 
 npm install --save-dev eslint-config-galex
+```
+```js
+// eslintrc.js
+module.exports = {
+  extends: 'galex',
+};
+
+// or .eslintrc
+{
+  extends: 'galex'
+}
 ```
 
 # I went through 30+ eslint-plugins so you don't have to.
@@ -107,19 +117,7 @@ Couldn't this be easier?
   was `import/order` because it leads to a huge git diff when applied on existing
   projects.
 
-- You may of course just use it directly too:
-
-  ```js
-  // eslintrc.js
-  module.exports = {
-    extends: 'galex',
-  };
-
-  // .eslintrc
-  {
-    extends: 'galex'
-  }
-  ```
+- You may of course just use it as is!
 
 ## What's included?
 
