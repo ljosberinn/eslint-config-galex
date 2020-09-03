@@ -9,18 +9,14 @@
  * }} options
  */
 const createPromiseRules = ({ typescript, rules: customRules = {} }) => ({
-  ...getPromiseRules(typescript),
+  ...getPromiseRules({ typescript }),
   ...customRules,
 });
 
 /**
  * @see https://github.com/xjamundx/eslint-plugin-promise
- *
- * @param {{
- *  hasTypeScript: boolean;
- * }}
  */
-const getPromiseRules = ({ hasTypeScript }) => ({
+const getPromiseRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because superseded by `promise/catch-or-return`
    *

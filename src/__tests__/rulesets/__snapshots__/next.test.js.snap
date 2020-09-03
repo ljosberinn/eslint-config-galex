@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createNextJsRules allows passing custom rules 1`] = `
+Object {
+  "@next/next/missing-preload": "warn",
+  "@next/next/no-css-tags": "warn",
+  "@next/next/no-html-link-for-pages": "warn",
+  "@next/next/no-sync-scripts": "warn",
+  "@next/next/no-unwanted-polyfillio": "off",
+}
+`;
+
+exports[`createNextJsRules matches snapshot with next 1`] = `
+Object {
+  "@next/next/missing-preload": "warn",
+  "@next/next/no-css-tags": "warn",
+  "@next/next/no-html-link-for-pages": "warn",
+  "@next/next/no-sync-scripts": "warn",
+  "@next/next/no-unwanted-polyfillio": "warn",
+}
+`;
+
+exports[`createNextJsRules matches snapshot without next 1`] = `null`;

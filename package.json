@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "dependencies": {
+    "@next/eslint-plugin-next": "^9.5.3",
     "@typescript-eslint/eslint-plugin": "4.0.1",
     "@typescript-eslint/parser": "4.0.1",
     "babel-eslint": "10.1.0",

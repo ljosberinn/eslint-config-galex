@@ -93,7 +93,7 @@ const getTopLevelTsConfig = cwd => {
 const getDependencies = ({ cwd = process.cwd() } = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
-    /* istanbul ignore next line 75 is supposedly uncovered :shrug: */
+    /* istanbul ignore next line 101 is supposedly uncovered :shrug: */
     const {
       packageJson: {
         peerDependencies = {},
@@ -212,7 +212,7 @@ const createConfig = ({
     ...customOverrides,
   ].filter(Boolean);
 
-  const rules = Object.entries({
+  const rules = {
     ...createEslintCoreRules(project),
     ...createUnicornRules(project),
     ...createPromiseRules(project),
@@ -221,16 +221,7 @@ const createConfig = ({
     ...createSonarjsRules(project),
     ...createInclusiveLanguageRules(project),
     ...customRules,
-  }).reduce((carry, [key, value]) => {
-    // omit disabled rules
-    if (value === 'off' || value === 0) {
-      return carry;
-    }
-
-    carry[key] = value;
-
-    return carry;
-  }, {});
+  };
 
   const plugins = [...defaultPlugins, ...customPlugins];
 

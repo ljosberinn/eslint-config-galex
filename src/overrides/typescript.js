@@ -49,7 +49,7 @@ const createTSOverride = ({
   }
 
   const rules = {
-    ...getTypeScriptRules({ config, version }),
+    ...getTypeScriptRules({ typescript: { config, version } }),
     ...prettierTypeScriptRules,
     ...customRules,
   };
@@ -76,12 +76,8 @@ const createTSOverride = ({
 /**
  * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/README.md
  *
- * @param {{
- *  version: string;
- *  hasReact: boolean;
- * }}
  */
-const getTypeScriptRules = ({ version, config }) => ({
+const getTypeScriptRules = ({ typescript: { version, config } }) => ({
   /**
    * prevents loose overloads
    *

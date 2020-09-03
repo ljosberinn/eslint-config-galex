@@ -163,8 +163,8 @@ If you want to add support, please follow the detection logic in `index.js`.
 
 # Customization
 
-All rulesets are created through a function that accepts an object matching this
-schema:
+All rulesets and overrides are created through functions accepting an object
+matching this schema:
 
 ```ts
 interface Project {
@@ -217,6 +217,10 @@ interface Project {
      */
     version: string;
   };
+  /**
+   * your custom rules on top
+   */
+  rules?: object;
 }
 ```
 
@@ -238,6 +242,7 @@ list, check out the source.
 - `const { createEslintCoreRules } = require('eslint-config-galex/src/rulesets/eslint-core')`
 - `const { createImportRules } = require('eslint-config-galex/src/rulesets/import')`
 - `const { createInclusiveLanguageRules } = require('eslint-config-galex/src/rulesets/inclusive-language')`
+- `const { createNextJsRules } = require('eslint-config-galex/src/rulesets/next')`
 - `const { createPromiseRules } = require('eslint-config-galex/src/rulesets/promise')`
 - `const { createSonarjsRules } = require('eslint-config-galex/src/rulesets/sonarjs')`
 - `const { createSortKeysFixRules } = require('eslint-config-galex/src/rulesets/sort-keys-fix')`

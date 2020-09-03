@@ -15,24 +15,22 @@ const {
  * }} options
  */
 const createUnicornRules = ({
-  typescript: { hasTypeScript },
-  react: { hasReact },
+  typescript,
+  react,
   rules: customRules = {},
 }) => ({
-  ...getUnicornRules({ hasReact, hasTypeScript }),
+  ...getUnicornRules({ react, typescript }),
   ...prettierUnicornRules,
   ...customRules,
 });
 
 /**
  * @see https://github.com/sindresorhus/eslint-plugin-unicorn
- *
- * @param {{
- *  hasTypeScript: boolean;
- *  hasReact: boolean;
- * }}
  */
-const getUnicornRules = ({ hasTypeScript, hasReact }) => ({
+const getUnicornRules = ({
+  typescript: { hasTypeScript },
+  react: { hasReact },
+}) => ({
   /**
    * improves regex
    *

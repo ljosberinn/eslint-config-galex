@@ -51,8 +51,8 @@ const createJestOverride = ({
   const rules = {
     ...jestRules,
     ...(hasJestDom ? jestDomRules : null),
-    ...(hasTestingLibrary ? getTestingLibraryRules(react) : null),
-    ...getTestOverrides(typescript),
+    ...(hasTestingLibrary ? getTestingLibraryRules({ react }) : null),
+    ...getTestOverrides({ typescript }),
     ...customRules,
   };
 
@@ -459,7 +459,7 @@ const jestDomRules = {
 /**
  * @see https://github.com/testing-library/eslint-plugin-testing-library
  */
-const getTestingLibraryRules = ({ hasReact }) => ({
+const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * enforces awaiting async queries (find*)
    *
@@ -572,7 +572,7 @@ const getTestingLibraryRules = ({ hasReact }) => ({
   'testing-library/prefer-wait-for': 'warn',
 });
 
-const getTestOverrides = ({ hasTypeScript }) => ({
+const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off to allow non-null casting e.g. querySelector or .find() results
    *

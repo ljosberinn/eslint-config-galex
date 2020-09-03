@@ -9,18 +9,15 @@
  * }} options
  */
 const createImportRules = ({ typescript, rules: customRules = {} }) => ({
-  ...getImportRules(typescript),
+  ...getImportRules({ typescript }),
   ...customRules,
 });
 
 /**
  * @see https://github.com/benmosher/eslint-plugin-import
  *
- * @param {{
- *  hasTypeScript: boolean;
- * }}
  */
-const getImportRules = ({ hasTypeScript }) => ({
+const getImportRules = ({ typescript: { hasTypeScript } }) => ({
   'import/default': 'warn',
   /**
    * reports any dynamic imports without a webpackChunkName specificied

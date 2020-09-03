@@ -9,18 +9,14 @@
  * }} options
  */
 const createSonarjsRules = ({ typescript, rules: customRules = {} }) => ({
-  ...getSonarJsRules(typescript),
+  ...getSonarJsRules({ typescript }),
   ...customRules,
 });
 
 /**
  * @see https://github.com/SonarSource/eslint-plugin-sonarjs
- *
- * @param {{
- *  hasTypeScript: boolean;
- * }}
  */
-const getSonarJsRules = ({ hasTypeScript }) => ({
+const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * prevents creeping complexity. consider alternative approach.
    *

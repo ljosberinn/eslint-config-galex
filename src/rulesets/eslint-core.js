@@ -12,12 +12,12 @@ const { rules: prettierRules } = require('eslint-config-prettier');
  * }} options
  */
 const createEslintCoreRules = ({ typescript, rules: customRules = {} }) => ({
-  ...getPossibleErrorRules(typescript),
-  ...getBestPractices(typescript),
+  ...getPossibleErrorRules({ typescript }),
+  ...getBestPractices({ typescript }),
   ...strictModeRules,
-  ...getVariableRules(typescript),
-  ...getStylisticIssuesRules(typescript),
-  ...getES6Rules(typescript),
+  ...getVariableRules({ typescript }),
+  ...getStylisticIssuesRules({ typescript }),
+  ...getES6Rules({ typescript }),
   ...prettierRules,
   ...safePrettierOverrides,
   ...customRules,
@@ -26,7 +26,7 @@ const createEslintCoreRules = ({ typescript, rules: customRules = {} }) => ({
 /**
  * @see https://eslint.org/docs/rules/#possible-errors
  */
-const getPossibleErrorRules = ({ hasTypeScript }) => ({
+const getPossibleErrorRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * @see https://eslint.org/docs/rules/for-direction
    */
@@ -357,7 +357,7 @@ const getPossibleErrorRules = ({ hasTypeScript }) => ({
 /**
  * @see https://eslint.org/docs/rules/#best-practices
  */
-const getBestPractices = ({ hasTypeScript }) => ({
+const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because opinionated
    *
@@ -975,7 +975,7 @@ const strictModeRules = {
 /**
  * @see https://eslint.org/docs/rules/#variables
  */
-const getVariableRules = ({ hasTypeScript }) => ({
+const getVariableRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because required to escape scope
    *
@@ -1077,7 +1077,7 @@ const getVariableRules = ({ hasTypeScript }) => ({
 /**
  * @see https://eslint.org/docs/rules/#stylistic-issues
  */
-const getStylisticIssuesRules = ({ hasTypeScript }) => ({
+const getStylisticIssuesRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because handled by prettier
    *
@@ -1755,7 +1755,7 @@ const getStylisticIssuesRules = ({ hasTypeScript }) => ({
 /**
  * @see https://eslint.org/docs/rules/#ecmascript-6
  */
-const getES6Rules = ({ hasTypeScript }) => ({
+const getES6Rules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because handled by prettier
    *
@@ -1999,7 +1999,7 @@ const safePrettierOverrides = {
   /**
    * @see https://eslint.org/docs/rules/curly
    */
-  curly: getBestPractices({ hasTypeScript: false }).curly,
+  curly: getBestPractices({ typescript: { hasTypeScript: false } }).curly,
 
   /**
    * off because handled by prettier

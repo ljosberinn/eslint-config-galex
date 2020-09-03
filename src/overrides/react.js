@@ -2,12 +2,13 @@
 
 const { rules: prettierReactRules } = require('eslint-config-prettier/react');
 
+const { createNextJsRules } = require('../rulesets/next');
 const {
   fulfillsVersionRequirement,
 } = require('../utils/fulfillsVersionRequirement');
 
 const extendsConfigs = [];
-const plugins = ['jsx-a11y', 'react-hooks', 'react'];
+const plugins = ['jsx-a11y', 'react-hooks', 'react', 'next'];
 const files = ['**/*.?(ts|js)?(x)'];
 const parser = 'babel-eslint';
 const parserOptions = {
@@ -32,18 +33,22 @@ const settings = {
  * } options
  */
 const createReactOverride = ({
-  react: { hasReact, isNext, version },
-  typescript: { hasTypeScript },
+  react,
+  typescript,
   rules: customRules = {},
 }) => {
-  if (!hasReact) {
+  if (!react.hasReact) {
     return null;
   }
 
   const rules = {
-    ...createReactRules({ hasTypeScript, isNext, version }),
+    ...createReactRules({
+      react,
+      typescript,
+    }),
+    ...createNextJsRules({ react }),
     ...prettierReactRules,
-    ...createJSXA11yRules({ isNext }),
+    ...createJSXA11yRules({ react }),
     ...hookRules,
     ...customRules,
   };
@@ -82,7 +87,10 @@ const hookRules = {
 /**
  * @see https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
  */
-const createReactRules = ({ isNext, version, hasTypeScript }) => ({
+const createReactRules = ({
+  react: { isNext, version },
+  typescript: { hasTypeScript },
+}) => ({
   /**
    * off because it doesnt seem to work anyways
    *
@@ -720,12 +728,8 @@ const createReactRules = ({ isNext, version, hasTypeScript }) => ({
 
 /**
  * @see https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
- *
- * @param {{
- *  isNext: boolean;
- * }}
  */
-const createJSXA11yRules = ({ isNext }) => ({
+const createJSXA11yRules = ({ react: { isNext } }) => ({
   /**
    * off because deprecated
    *
