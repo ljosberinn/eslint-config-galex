@@ -13,6 +13,7 @@ yarn add -D eslint-config-galex
 
 npm install --save-dev eslint-config-galex
 ```
+
 ```js
 // eslintrc.js
 module.exports = {
@@ -70,22 +71,27 @@ Couldn't this be easier?
   > the source!
 
   ```js
-  // customize the config as-is:
-  import { createConfig } from 'eslint-config-galex/src/createConfig';
+  // .eslintrc.js
 
-  const config = createConfig();
+  // customize the config as-is:
+  const { createConfig } = require('eslint-config-galex/src/createConfig');
+
+  module.exports = createConfig();
 
   // pass in your own rules
-  const config = createConfig({ customRules: myCustomRules });
+  module.exports = createConfig({ rules: myCustomRules });
   // or plugins
-  const config = createConfig({ customPlugins: myCustomPluginArray });
+  module.exports = createConfig({ customPlugins: myCustomPluginArray });
 
   // package.json / tsconfig.json in other directories?
-  const config = createConfig({ cwd: 'path/to/file' });
+  module.exports = createConfig({ cwd: 'path/to/file' });
 
   // only use the TS override:
-  import { createTSOverride } from 'eslint-config-galex/src/overrides/typescript';
+  const {
+    createTSOverride,
+  } = require('eslint-config-galex/src/overrides/typescript');
 
+  // then compose with e.g. other overrides and createConfig
   const override = createTSOverride({
     react: {
       hasReact: true,
@@ -95,14 +101,16 @@ Couldn't this be easier?
       hasTypeScript: true,
       version: '4.0.2',
     },
-    customRules: {},
+    rules: {},
   });
 
   // only use the glob pattern for TS files:
-  import { files } from 'eslint-config-galex/src/overrides/typescript';
+  const { files } = require('eslint-config-galex/src/overrides/typescript');
 
   // only use testing-library rules:
-  import { getTestingLibraryRules } from 'eslint-config-galex/src/overrides/jest';
+  const {
+    getTestingLibraryRules,
+  } = require('eslint-config-galex/src/overrides/jest');
 
   const testingLibRules = getTestingLibraryRules({ hasReact: boolean });
   ```
@@ -219,21 +227,21 @@ list, check out the source.
 
 ### Overrides
 
-- `import { createTSOverride } from 'eslint-config-galex/src/overrides/typescript'`
-- `import { createReactOverride } from 'eslint-config-galex/src/overrides/react'`
-- `import { createJestOverride } from 'eslint-config-galex/src/overrides/jest'`
+- `const { createTSOverride } = require('eslint-config-galex/src/overrides/typescript')`
+- `const { createReactOverride } = require('eslint-config-galex/src/overrides/react')`
+- `const { createJestOverride } = require('eslint-config-galex/src/overrides/jest')`
 
 > Please note that the test override should always come last.
 
 ### Rulesets
 
-- `import { createEslintCoreRules } from 'eslint-config-galex/src/rulesets/eslint-core'`
-- `import { createImportRules } from 'eslint-config-galex/src/rulesets/import'`
-- `import { createInclusiveLanguageRules } from 'eslint-config-galex/src/rulesets/inclusive-language'`
-- `import { createPromiseRules } from 'eslint-config-galex/src/rulesets/promise'`
-- `import { createSonarjsRules } from 'eslint-config-galex/src/rulesets/sonarjs'`
-- `import { createSortKeysFixRules } from 'eslint-config-galex/src/rulesets/sort-keys-fix'`
-- `import { createUnicornRules } from 'eslint-config-galex/src/rulesets/unicorn'`
+- `const { createEslintCoreRules } = require('eslint-config-galex/src/rulesets/eslint-core')`
+- `const { createImportRules } = require('eslint-config-galex/src/rulesets/import')`
+- `const { createInclusiveLanguageRules } = require('eslint-config-galex/src/rulesets/inclusive-language')`
+- `const { createPromiseRules } = require('eslint-config-galex/src/rulesets/promise')`
+- `const { createSonarjsRules } = require('eslint-config-galex/src/rulesets/sonarjs')`
+- `const { createSortKeysFixRules } = require('eslint-config-galex/src/rulesets/sort-keys-fix')`
+- `const { createUnicornRules } = require('eslint-config-galex/src/rulesets/unicorn')`
 
 # List of included opinions
 

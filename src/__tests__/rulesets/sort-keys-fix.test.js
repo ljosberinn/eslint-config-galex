@@ -12,7 +12,7 @@ describe('createSortKeysFixRules', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
+      rules: {
         [rule]: level,
       },
       typescript: {
@@ -22,7 +22,7 @@ describe('createSortKeysFixRules', () => {
 
     const defaultRuleset = createSortKeysFixRules({
       ...project,
-      customRules: {},
+      rules: {},
     });
 
     const result = createSortKeysFixRules(project);

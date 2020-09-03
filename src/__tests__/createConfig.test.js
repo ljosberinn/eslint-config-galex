@@ -151,35 +151,35 @@ describe('createConfig', () => {
     const rule = 'foo';
     const value = 'bar';
 
-    const config = createConfig({ customRules: { [rule]: value } });
+    const config = createConfig({ rules: { [rule]: value } });
 
     expect(config.rules[rule]).toBe(value);
     expect(config).toMatchSnapshot();
   });
 
-  test('allows passing customEnv', () => {
+  test('allows passing env', () => {
     const key = 'foo';
     const value = 'bar';
 
-    const config = createConfig({ customEnv: { [key]: value } });
+    const config = createConfig({ env: { [key]: value } });
 
     expect(config.env[key]).toBe(value);
     expect(config).toMatchSnapshot();
   });
 
-  test('allows passing customPlugins', () => {
+  test('allows passing plugins', () => {
     const plugin = 'galex';
 
-    const config = createConfig({ customPlugins: [plugin] });
+    const config = createConfig({ plugins: [plugin] });
 
     expect(config.plugins).toContain(plugin);
     expect(config).toMatchSnapshot();
   });
 
-  test('allows passing customOverrides', () => {
+  test('allows passing overrides', () => {
     const plugin = 'galex';
 
-    const config = createConfig({ customOverrides: [plugin] });
+    const config = createConfig({ overrides: [plugin] });
 
     expect(config.overrides).toContain(plugin);
     expect(config).toMatchSnapshot();
@@ -189,7 +189,7 @@ describe('createConfig', () => {
     const key = 'foo';
     const value = 'bar';
 
-    const config = createConfig({ customParserOptions: { [key]: value } });
+    const config = createConfig({ parserOptions: { [key]: value } });
 
     expect(config.parserOptions[key]).toBe(value);
     expect(config).toMatchSnapshot();

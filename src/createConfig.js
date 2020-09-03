@@ -187,20 +187,20 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
 /**
  * @param {
  *  cwd?: string
- *  customRules?: object;
- *  customOverrides?: unknown[];
- *  customPlugins?: unknown[];
- *  customEnv?: object;
- *  customParserOptions?: object;
+ *  rules?: object;
+ *  overrides?: unknown[];
+ *  plugins?: unknown[];
+ *  env?: object;
+ *  parserOptions?: object;
  * } detectionOptions
  */
 const createConfig = ({
   cwd,
-  customRules = {},
-  customOverrides = [],
-  customPlugins = [],
-  customEnv = {},
-  customParserOptions = {},
+  rules: customRules = {},
+  overrides: customOverrides = [],
+  plugins: customPlugins = [],
+  env: customEnv = {},
+  parserOptions: customParserOptions = {},
 } = {}) => {
   const project = getDependencies({ cwd });
 

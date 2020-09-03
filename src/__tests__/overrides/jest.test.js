@@ -198,21 +198,21 @@ describe('createJestOverride', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
-        [rule]: level,
-      },
       hasJest: true,
       hasJestDom: false,
       hasTestingLibrary: true,
       react: {
         hasReact: false,
       },
+      rules: {
+        [rule]: level,
+      },
       typescript: {
         hasTypeScript: false,
       },
     };
 
-    const override = createJestOverride({ ...project, customRules: {} });
+    const override = createJestOverride({ ...project, rules: {} });
 
     const result = createJestOverride(project);
 

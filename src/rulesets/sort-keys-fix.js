@@ -1,9 +1,9 @@
 /**
  * @param {{
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * }}
  */
-const createSortKeysFixRules = ({ customRules = {} }) => ({
+const createSortKeysFixRules = ({ rules: customRules = {} }) => ({
   ...sortKeysFixRules,
   ...customRules,
 });

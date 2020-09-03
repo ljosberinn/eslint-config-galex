@@ -8,10 +8,10 @@ const { rules: prettierRules } = require('eslint-config-prettier');
  *  typescript: {
  *    hasTypeScript: boolean;
  *  };
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
-const createEslintCoreRules = ({ typescript, customRules = {} }) => ({
+const createEslintCoreRules = ({ typescript, rules: customRules = {} }) => ({
   ...getPossibleErrorRules(typescript),
   ...getBestPractices(typescript),
   ...strictModeRules,

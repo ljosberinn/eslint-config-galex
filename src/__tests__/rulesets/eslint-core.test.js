@@ -26,7 +26,7 @@ describe('createEslintCoreRules', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
+      rules: {
         [rule]: level,
       },
       typescript: {
@@ -36,9 +36,8 @@ describe('createEslintCoreRules', () => {
 
     const defaultRuleset = createEslintCoreRules({
       ...project,
-      customRules: {},
+      rules: {},
     });
-
     const result = createEslintCoreRules(project);
 
     expect(result[rule]).toBe(level);

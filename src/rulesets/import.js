@@ -5,10 +5,10 @@
  *  typescript: {
  *    hasTypeScript: boolean;
  *  };
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
-const createImportRules = ({ typescript, customRules = {} }) => ({
+const createImportRules = ({ typescript, rules: customRules = {} }) => ({
   ...getImportRules(typescript),
   ...customRules,
 });

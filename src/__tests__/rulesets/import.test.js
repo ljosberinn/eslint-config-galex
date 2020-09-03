@@ -26,7 +26,7 @@ describe('createImportRules', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
+      rules: {
         [rule]: level,
       },
       typescript: {
@@ -36,7 +36,7 @@ describe('createImportRules', () => {
 
     const defaultRuleset = createImportRules({
       ...project,
-      customRules: {},
+      rules: {},
     });
 
     const result = createImportRules(project);

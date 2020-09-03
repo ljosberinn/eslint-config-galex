@@ -27,7 +27,7 @@ const settings = {
  *  typescript: {
  *    hasTypeScript: boolean;
  *  };
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
 const createJestOverride = ({
@@ -36,7 +36,7 @@ const createJestOverride = ({
   hasTestingLibrary,
   react,
   typescript,
-  customRules = {},
+  rules: customRules = {},
 }) => {
   if (!hasJest) {
     return null;

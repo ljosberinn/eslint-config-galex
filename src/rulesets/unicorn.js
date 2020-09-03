@@ -11,13 +11,13 @@ const {
  *  react: {
  *    hasReact: boolean;
  *  }
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
 const createUnicornRules = ({
   typescript: { hasTypeScript },
   react: { hasReact },
-  customRules = {},
+  rules: customRules = {},
 }) => ({
   ...getUnicornRules({ hasReact, hasTypeScript }),
   ...prettierUnicornRules,

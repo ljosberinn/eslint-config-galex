@@ -26,7 +26,7 @@ describe('createSonarjsRules', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
+      rules: {
         [rule]: level,
       },
       typescript: {
@@ -36,7 +36,7 @@ describe('createSonarjsRules', () => {
 
     const defaultRuleset = createSonarjsRules({
       ...project,
-      customRules: {},
+      rules: {},
     });
 
     const result = createSonarjsRules(project);

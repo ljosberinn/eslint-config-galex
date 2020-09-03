@@ -36,13 +36,13 @@ const settings = {
  *  react: {
  *    hasReact: boolean;
  *  };
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
 const createTSOverride = ({
   typescript: { hasTypeScript, version, config = {} },
   react: { hasReact },
-  customRules = {},
+  rules: customRules = {},
 }) => {
   if (!hasTypeScript) {
     return null;

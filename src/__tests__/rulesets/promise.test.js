@@ -26,7 +26,7 @@ describe('createPromiseRules', () => {
     const level = 'error';
 
     const project = {
-      customRules: {
+      rules: {
         [rule]: level,
       },
       typescript: {
@@ -36,7 +36,7 @@ describe('createPromiseRules', () => {
 
     const defaultRuleset = createPromiseRules({
       ...project,
-      customRules: {},
+      rules: {},
     });
 
     const result = createPromiseRules(project);

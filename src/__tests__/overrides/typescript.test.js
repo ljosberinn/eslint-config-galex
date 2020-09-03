@@ -85,11 +85,11 @@ describe('createTSOverride', () => {
     const level = 'error';
 
     const project = {
-      customRules: {
-        [rule]: level,
-      },
       react: {
         hasReact: true,
+      },
+      rules: {
+        [rule]: level,
       },
       typescript: {
         hasTypeScript: true,
@@ -97,8 +97,7 @@ describe('createTSOverride', () => {
       },
     };
 
-    const override = createTSOverride({ ...project, customRules: {} });
-
+    const override = createTSOverride({ ...project, rules: {} });
     const result = createTSOverride(project);
 
     expect(result.rules[rule]).toBe(level);

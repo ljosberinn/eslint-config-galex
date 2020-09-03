@@ -28,13 +28,13 @@ const settings = {
  *   isNext: boolean;
  *   version: string;
  *  };
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * } options
  */
 const createReactOverride = ({
   react: { hasReact, isNext, version },
   typescript: { hasTypeScript },
-  customRules = {},
+  rules: customRules = {},
 }) => {
   if (!hasReact) {
     return null;

@@ -143,21 +143,20 @@ describe('createReactOverride', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
-        [rule]: level,
-      },
       react: {
         hasReact: true,
         isNext: true,
         version: '16.13.1',
+      },
+      rules: {
+        [rule]: level,
       },
       typescript: {
         hasTypeScript: false,
       },
     };
 
-    const override = createReactOverride({ ...project, customRules: {} });
-
+    const override = createReactOverride({ ...project, rules: {} });
     const result = createReactOverride(project);
 
     expect(result.rules[rule]).toBe(level);

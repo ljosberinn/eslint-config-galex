@@ -14,14 +14,14 @@ describe('createInclusiveLanguageRules', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
+      rules: {
         [rule]: level,
       },
     };
 
     const defaultRuleset = createInclusiveLanguageRules({
       ...project,
-      customRules: {},
+      rules: {},
     });
 
     const result = createInclusiveLanguageRules(project);

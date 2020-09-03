@@ -58,11 +58,11 @@ describe('createUnicornRules', () => {
     const level = 'off';
 
     const project = {
-      customRules: {
-        [rule]: level,
-      },
       react: {
         hasReact: true,
+      },
+      rules: {
+        [rule]: level,
       },
       typescript: {
         hasTypeScript: true,
@@ -71,7 +71,7 @@ describe('createUnicornRules', () => {
 
     const defaultRuleset = createUnicornRules({
       ...project,
-      customRules: {},
+      rules: {},
     });
 
     const result = createUnicornRules(project);

@@ -5,10 +5,10 @@
  *  typescript: {
  *    hasTypeScript: boolean;
  *  };
- *  customRules?: Record<string, string | [string, string | object];
+ *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
-const createSonarjsRules = ({ typescript, customRules = {} }) => ({
+const createSonarjsRules = ({ typescript, rules: customRules = {} }) => ({
   ...getSonarJsRules(typescript),
   ...customRules,
 });

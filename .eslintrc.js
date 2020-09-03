@@ -1,9 +1,3 @@
-const config = require('.');
+const { createConfig } = require('./src/createConfig');
 
-module.exports = {
-  ...config,
-  env: {
-    ...config.env,
-    node: true,
-  },
-};
+module.exports = createConfig({ env: { node: true } });
