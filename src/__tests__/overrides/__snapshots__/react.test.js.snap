@@ -2,9 +2,7 @@
 
 exports[`createReactOverride allows passing extra rules 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -18,6 +16,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -221,9 +220,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is < 17 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -237,6 +234,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -433,9 +431,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is < 17 with Next & TS 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -449,6 +445,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -649,9 +646,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is < 17 with Next 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -665,6 +660,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -868,9 +864,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is < 17 with TS 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -884,6 +878,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -1077,9 +1072,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is >= 17 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -1093,6 +1086,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -1289,9 +1283,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is >= 17 with Next & TS 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -1305,6 +1297,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -1505,9 +1498,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is >= 17 with Next 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -1521,6 +1512,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -1724,9 +1716,7 @@ Object {
 
 exports[`createReactOverride matches snapshot if react is >= 17 with TS 1`] = `
 Object {
-  "extends": Array [
-    "plugin:@next/eslint-plugin-next",
-  ],
+  "extends": Array [],
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
@@ -1740,6 +1730,7 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
+    "@next/eslint-plugin-next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
