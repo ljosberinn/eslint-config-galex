@@ -9,9 +9,9 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9c3a13e05f2a195ba0d5/test_coverage)](https://codeclimate.com/github/ljosberinn/eslint-config-galex/test_coverage)
 
 ```sh
-yarn add -D eslint-config-galex
+yarn add -D eslint-config-galex eslint
 
-npm install --save-dev eslint-config-galex
+npm install --save-dev eslint-config-galex eslint
 ```
 
 ```js

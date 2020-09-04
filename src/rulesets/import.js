@@ -5,11 +5,14 @@
  *  typescript: {
  *    hasTypeScript: boolean;
  *  };
+ *  react: {
+ *    isCreateReactApp: boolean;
+ *  }
  *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
-const createImportRules = ({ typescript, rules: customRules = {} }) => ({
-  ...getImportRules({ typescript }),
+const createImportRules = ({ typescript, react, rules: customRules = {} }) => ({
+  ...getImportRules({ react, typescript }),
   ...customRules,
 });
 
@@ -17,7 +20,10 @@ const createImportRules = ({ typescript, rules: customRules = {} }) => ({
  * @see https://github.com/benmosher/eslint-plugin-import
  *
  */
-const getImportRules = ({ typescript: { hasTypeScript } }) => ({
+const getImportRules = ({
+  typescript: { hasTypeScript },
+  react: { isCreateReactApp },
+}) => ({
   'import/default': 'warn',
   /**
    * reports any dynamic imports without a webpackChunkName specificied
@@ -126,13 +132,15 @@ const getImportRules = ({ typescript: { hasTypeScript } }) => ({
    *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md
    */
-  'import/no-cycle': [
-    'warn',
-    {
-      ignoreExternal: true,
-      maxDepth: 5,
-    },
-  ],
+  'import/no-cycle': isCreateReactApp
+    ? 'warn'
+    : [
+        'warn',
+        {
+          ignoreExternal: true,
+          maxDepth: 5,
+        },
+      ],
 
   /**
    * any module should exclusively contain named exports

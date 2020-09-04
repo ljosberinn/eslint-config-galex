@@ -122,6 +122,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
 
     const react = {
       hasReact,
+      isCreateReactApp: deps.get('react-scripts'),
       isNext: deps.has('next'),
       // no effect yet
       isPreact: deps.has('preact'),
@@ -171,6 +172,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
       hasTestingLibrary: false,
       react: {
         hasReact: false,
+        isCreateReactApp: undefined,
         isNext: false,
         isPreact: false,
         version: undefined,

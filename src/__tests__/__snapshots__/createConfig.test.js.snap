@@ -3979,6 +3979,7 @@ Object {
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
+    "isCreateReactApp": undefined,
     "isNext": false,
     "isPreact": false,
     "version": undefined,
@@ -3999,6 +4000,7 @@ Object {
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
+    "isCreateReactApp": undefined,
     "isNext": false,
     "isPreact": false,
     "version": undefined,
@@ -4023,6 +4025,7 @@ Object {
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
+    "isCreateReactApp": undefined,
     "isNext": false,
     "isPreact": false,
     "version": undefined,
@@ -4043,6 +4046,7 @@ Object {
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
+    "isCreateReactApp": undefined,
     "isNext": false,
     "isPreact": false,
     "version": undefined,
@@ -4067,6 +4071,7 @@ Object {
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
+    "isCreateReactApp": undefined,
     "isNext": false,
     "isPreact": false,
     "version": undefined,
@@ -4087,6 +4092,7 @@ Object {
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
+    "isCreateReactApp": undefined,
     "isNext": false,
     "isPreact": false,
     "version": undefined,
