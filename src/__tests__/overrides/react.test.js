@@ -138,6 +138,31 @@ describe('createReactOverride', () => {
     expect(createReactOverride(project)).toMatchSnapshot();
   });
 
+  test('disables jsx-a11y/autocomplete-valid given a CRA project', () => {
+    const rule = 'jsx-a11y/autocomplete-valid';
+
+    const project = {
+      react: {
+        hasReact: true,
+        isCreateReactApp: true,
+        isNext: false,
+        version: '16.13.1',
+      },
+      typescript: {
+        hasTypeScript: false,
+      },
+    };
+
+    const override = createReactOverride({
+      ...project,
+      react: { ...project.react, isCreateReactApp: false },
+    });
+    const result = createReactOverride(project);
+
+    expect(override.rules[rule]).not.toBe(result.rules[rule]);
+    expect(result).toMatchSnapshot();
+  });
+
   test('allows passing extra rules', () => {
     const rule = 'react/jsx-uses-react';
     const level = 'off';

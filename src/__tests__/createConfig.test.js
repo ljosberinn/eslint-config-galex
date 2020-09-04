@@ -35,9 +35,27 @@ describe('getDependencies', () => {
     expect(getDependencies({ cwd })).toMatchSnapshot();
   });
 
-  describe('given typescript', () => {
-    beforeEach(() => {});
+  test('given CRA, forces jest to true', () => {
+    jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+      packageJson: {
+        dependencies: {
+          'react-scripts': '3.4.1',
+        },
+      },
+    });
 
+    jest.spyOn(fs, 'readFileSync').mockImplementation(() => '');
+    jest.spyOn(ts, 'parseJsonText').mockImplementation(() => '');
+
+    const deps = getDependencies();
+
+    expect(deps.hasJest).toBeTruthy();
+    expect(deps.react.isCreateReactApp).toBeTruthy();
+
+    expect(deps).toMatchSnapshot();
+  });
+
+  describe('given typescript', () => {
     test('does not check tsconfig.json if no ts dependency was found', () => {
       jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
         packageJson: {

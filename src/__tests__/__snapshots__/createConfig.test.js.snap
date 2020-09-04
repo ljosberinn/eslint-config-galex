@@ -3992,6 +3992,27 @@ Object {
 }
 `;
 
+exports[`getDependencies given CRA, forces jest to true 1`] = `
+Object {
+  "hasJest": true,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isCreateReactApp": "3.4.1",
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": undefined,
+    "hasTypeScript": false,
+    "version": undefined,
+  },
+}
+`;
+
 exports[`getDependencies given typescript bails on the first config found with compilerOptions 1`] = `
 Object {
   "hasJest": false,

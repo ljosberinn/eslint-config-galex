@@ -110,14 +110,6 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
       })
     );
 
-    const hasJest = deps.has('jest');
-    const hasJestDom = deps.has('@testing-library/jest-dom');
-    const hasNodeTypes = deps.has('@types/node');
-
-    const hasTestingLibrary = testingLibFamily.some(pkg =>
-      deps.has(`@testing-library/${pkg}`)
-    );
-
     const hasReact = reactFlavours.some(pkg => deps.has(pkg));
 
     const react = {
@@ -152,6 +144,14 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
       hasTypeScript: hasTypeScriptDependency && !!tsConfig,
       version: deps.get('typescript'),
     };
+
+    const hasJest = react.isCreateReactApp ? true : deps.has('jest');
+    const hasJestDom = deps.has('@testing-library/jest-dom');
+    const hasNodeTypes = deps.has('@types/node');
+
+    const hasTestingLibrary = testingLibFamily.some(pkg =>
+      deps.has(`@testing-library/${pkg}`)
+    );
 
     return {
       hasJest,

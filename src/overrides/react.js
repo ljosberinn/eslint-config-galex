@@ -734,7 +734,7 @@ const createReactRules = ({
 /**
  * @see https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
  */
-const createJSXA11yRules = ({ react: { isNext } }) => ({
+const createJSXA11yRules = ({ react: { isNext, isCreateReactApp } }) => ({
   /**
    * off because deprecated
    *
@@ -809,7 +809,7 @@ const createJSXA11yRules = ({ react: { isNext } }) => ({
    *
    * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/autocomplete-valid.md
    */
-  'jsx-a11y/autocomplete-valid': 'error',
+  ...(isCreateReactApp ? null : { 'jsx-a11y/autocomplete-valid': 'error' }),
 
   /**
    * enforces `onClick`s are accompanied by at least one of `onKey*`
