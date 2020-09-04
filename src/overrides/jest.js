@@ -135,6 +135,13 @@ const jestRules = {
   'jest/no-disabled-tests': 'warn',
 
   /**
+   * ensures `done` callback is awaited or in try/catch
+   *
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-done-callback.md
+   */
+  'jest/no-done-callback': 'error',
+
+  /**
    * ensures each hook is only called once per describe
    *
    * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-duplicate-hooks.md
@@ -233,13 +240,6 @@ const jestRules = {
    * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md
    */
   'jest/no-standalone-expect': 'off',
-
-  /**
-   * off ensures `done` callback is awaited or in try/catch
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-callback.md
-   */
-  'jest/no-test-callback': 'error',
 
   /**
    * disallows `f`/`x` prefixes for `it`/`test`
