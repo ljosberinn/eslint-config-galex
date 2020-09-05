@@ -191,7 +191,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
  *  cwd?: string
  *  rules?: object;
  *  overrides?: unknown[];
- *  plugins?: unknown[];
+ *  plugins?: string[];
  *  env?: object;
  *  parserOptions?: object;
  * } detectionOptions

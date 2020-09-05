@@ -1,16 +1,16 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
-const env = {
+const defaultEnv = {
   jest: true,
 };
 
 const extendsConfig = ['plugin:jest-formatting/strict'];
-const files = ['**/*.?(test|spec).?(ts|js)?(x)'];
-const parserOptions = {
+const defaultFiles = ['**/*.?(test|spec).?(ts|js)?(x)'];
+const defaultParserOptions = {
   ecmaVersion: 2020,
 };
 
-const settings = {
+const defaultSettings = {
   jest: {
     version: 'detect',
   },
@@ -28,6 +28,11 @@ const settings = {
  *    hasTypeScript: boolean;
  *  };
  *  rules?: Record<string, string | [string, string | object];
+ *  files?: string[];
+ *  env?: object;
+ *  parseroOptions?: object;
+ *  settings?: object;
+ *  extends?: string[];
  * }} options
  */
 const createJestOverride = ({
@@ -37,6 +42,12 @@ const createJestOverride = ({
   react,
   typescript,
   rules: customRules = {},
+  files: customFiles,
+  extends: customExtends = [],
+  env: customEnv,
+  parserOptions: customParserOptions,
+  settings: customSettings,
+  plugins: customPlugins = [],
 }) => {
   if (!hasJest) {
     return null;
@@ -46,6 +57,7 @@ const createJestOverride = ({
     'jest',
     hasJestDom && 'jest-dom',
     hasTestingLibrary && 'testing-library',
+    ...customPlugins,
   ].filter(Boolean);
 
   const rules = {
@@ -56,9 +68,27 @@ const createJestOverride = ({
     ...customRules,
   };
 
+  const parserOptions = {
+    ...defaultParserOptions,
+    ...customParserOptions,
+  };
+
+  const settings = {
+    ...defaultSettings,
+    ...customSettings,
+  };
+
+  const env = {
+    ...defaultEnv,
+    ...customEnv,
+  };
+
+  const files = customFiles ?? defaultFiles;
+  const finalExtends = customExtends.length > 0 ? customExtends : extendsConfig;
+
   return {
     env,
-    extends: extendsConfig,
+    extends: finalExtends,
     files,
     parserOptions,
     plugins,
@@ -581,6 +611,7 @@ const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
   ...(hasTypeScript
     ? { '@typescript-eslint/no-non-null-assertion': 'off' }
     : null),
+
   /**
    * off because its regularily done in tests
    *
@@ -594,8 +625,22 @@ const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
    * @see https://eslint.org/docs/rules/no-empty-function
    * @see @typescript-eslint/no-empty-function
    */
+  ...(hasTypeScript ? { '@typescript-eslint/no-empty-function': 'off' } : null),
+
+  /**
+   * off because its regularily done in tests
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
+   */
+  ...(hasTypeScript ? { '@typescript-eslint/unbound-method': 'off' } : null),
+
+  /**
+   * off because irrelevant in tests
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
+   */
   ...(hasTypeScript
-    ? { '@typescript-eslint/no-empty-function': 'error' }
+    ? { '@typescript-eslint/explicit-member-accessibility': 'off' }
     : null),
 
   /**
@@ -616,13 +661,13 @@ const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
 
 module.exports = {
   createJestOverride,
-  env,
+  env: defaultEnv,
   extendsConfig,
-  files,
+  files: defaultFiles,
   getTestOverrides,
   getTestingLibraryRules,
   jestDomRules,
   jestRules,
-  parserOptions,
-  settings,
+  parserOptions: defaultParserOptions,
+  settings: defaultSettings,
 };

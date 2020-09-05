@@ -206,7 +206,8 @@ Object {
     "testing-library",
   ],
   "rules": Object {
-    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
@@ -431,7 +432,8 @@ Object {
     "testing-library",
   ],
   "rules": Object {
-    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
@@ -649,7 +651,8 @@ Object {
     "jest-dom",
   ],
   "rules": Object {
-    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
@@ -1002,7 +1005,8 @@ Object {
     "jest",
   ],
   "rules": Object {
-    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-namespace": "off",
