@@ -83,7 +83,7 @@ const createJestOverride = ({
     ...customEnv,
   };
 
-  const files = customFiles ?? defaultFiles;
+  const files = customFiles || defaultFiles;
   const finalExtends = customExtends.length > 0 ? customExtends : extendsConfig;
 
   return {
