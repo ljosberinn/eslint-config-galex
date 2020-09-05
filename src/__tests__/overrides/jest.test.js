@@ -221,4 +221,29 @@ describe('createJestOverride', () => {
 
     expect(result).toMatchSnapshot();
   });
+
+  test('allows passing extra extends', () => {
+    const customExtends = ['foo'];
+
+    const project = {
+      extends: customExtends,
+      hasJest: true,
+      hasJestDom: false,
+      hasTestingLibrary: true,
+      react: {
+        hasReact: false,
+      },
+      typescript: {
+        hasTypeScript: false,
+      },
+    };
+
+    const override = createJestOverride({ ...project, extends: [] });
+    const result = createJestOverride(project);
+
+    expect(override.extends).not.toBe(customExtends);
+    expect(result.extends).toBe(customExtends);
+
+    expect(result).toMatchSnapshot();
+  });
 });
