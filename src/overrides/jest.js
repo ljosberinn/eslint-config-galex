@@ -516,12 +516,7 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/consistent-data-testid.md
    */
-  'testing-library/consistent-data-testid': [
-    'error',
-    {
-      testIdPattern: '^TestId(__[A-Z]*)?$',
-    },
-  ],
+  'testing-library/consistent-data-testid': 'error',
 
   /**
    * no unecessary `await` for non-async queries

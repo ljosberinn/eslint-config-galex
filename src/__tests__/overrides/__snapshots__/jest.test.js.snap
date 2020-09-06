@@ -73,12 +73,7 @@ Object {
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
-    "testing-library/consistent-data-testid": Array [
-      "error",
-      Object {
-        "testIdPattern": "^TestId(__[A-Z]*)?$",
-      },
-    ],
+    "testing-library/consistent-data-testid": "error",
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "error",
     "testing-library/no-dom-import": "off",
@@ -172,12 +167,7 @@ Object {
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
-    "testing-library/consistent-data-testid": Array [
-      "error",
-      Object {
-        "testIdPattern": "^TestId(__[A-Z]*)?$",
-      },
-    ],
+    "testing-library/consistent-data-testid": "error",
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "error",
     "testing-library/no-dom-import": "off",
@@ -371,12 +361,7 @@ Object {
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
-    "testing-library/consistent-data-testid": Array [
-      "error",
-      Object {
-        "testIdPattern": "^TestId(__[A-Z]*)?$",
-      },
-    ],
+    "testing-library/consistent-data-testid": "error",
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "error",
     "testing-library/no-dom-import": Array [
@@ -482,12 +467,7 @@ Object {
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
-    "testing-library/consistent-data-testid": Array [
-      "error",
-      Object {
-        "testIdPattern": "^TestId(__[A-Z]*)?$",
-      },
-    ],
+    "testing-library/consistent-data-testid": "error",
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "error",
     "testing-library/no-dom-import": Array [
@@ -597,12 +577,7 @@ Object {
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
-    "testing-library/consistent-data-testid": Array [
-      "error",
-      Object {
-        "testIdPattern": "^TestId(__[A-Z]*)?$",
-      },
-    ],
+    "testing-library/consistent-data-testid": "error",
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "error",
     "testing-library/no-dom-import": "off",
@@ -705,12 +680,7 @@ Object {
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
-    "testing-library/consistent-data-testid": Array [
-      "error",
-      Object {
-        "testIdPattern": "^TestId(__[A-Z]*)?$",
-      },
-    ],
+    "testing-library/consistent-data-testid": "error",
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "error",
     "testing-library/no-dom-import": "off",
@@ -1060,12 +1030,7 @@ Object {
     "testing-library/await-async-query": "error",
     "testing-library/await-async-utils": "error",
     "testing-library/await-fire-event": "error",
-    "testing-library/consistent-data-testid": Array [
-      "error",
-      Object {
-        "testIdPattern": "^TestId(__[A-Z]*)?$",
-      },
-    ],
+    "testing-library/consistent-data-testid": "error",
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "error",
     "testing-library/no-dom-import": "off",
