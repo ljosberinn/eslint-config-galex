@@ -30,7 +30,7 @@ describe('createEslintCoreRules', () => {
         [rule]: level,
       },
       typescript: {
-        hasTypeScript: true,
+        hasTypeScript: false,
       },
     };
 

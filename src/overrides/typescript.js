@@ -162,6 +162,14 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
   '@typescript-eslint/comma-spacing': 'off',
 
   /**
+   * disallow function creation in loops
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md
+   * @see https://eslint.org/docs/rules/no-loop-func
+   */
+  '@typescript-eslint/no-loop-func': 'error',
+
+  /**
    * streamlines assertions to use `as` over `<type>`
    * expects objects to be defined by `const foo: Type` over `as Type`
    *

@@ -658,8 +658,9 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
    * disallow function creation in loops
    *
    * @see https://eslint.org/docs/rules/no-loop-func
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md
    */
-  'no-loop-func': 'error',
+  'no-loop-func': hasTypeScript ? 'off' : 'error',
 
   /**
    * always off because it expects literally every number to be assigned to
