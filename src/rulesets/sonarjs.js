@@ -174,9 +174,11 @@ const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * prevents unecessary code
    *
+   * warning because autofixable
+   *
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/prefer-immediate-return.md
    */
-  'sonarjs/prefer-immediate-return': 'error',
+  'sonarjs/prefer-immediate-return': 'warn',
 
   /**
    * prevents bad practice
