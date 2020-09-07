@@ -514,9 +514,11 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * enforces consistent naming based on regex pattern
    *
+   * off because opinionated
+   *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/consistent-data-testid.md
    */
-  'testing-library/consistent-data-testid': 'error',
+  'testing-library/consistent-data-testid': 'off',
 
   /**
    * no unecessary `await` for non-async queries
