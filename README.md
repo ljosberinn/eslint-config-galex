@@ -81,7 +81,7 @@ Couldn't this be easier?
   // pass in your own rules
   module.exports = createConfig({ rules: myCustomRules });
   // or plugins
-  module.exports = createConfig({ customPlugins: myCustomPluginArray });
+  module.exports = createConfig({ plugins: myCustomPluginArray });
 
   // package.json / tsconfig.json in other directories?
   module.exports = createConfig({ cwd: 'path/to/file' });
