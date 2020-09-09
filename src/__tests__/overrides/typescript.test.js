@@ -61,6 +61,30 @@ describe('createTSOverride', () => {
     expect(createTSOverride(project)).toMatchSnapshot();
   });
 
+  test.each([
+    '3.3.0',
+    '3.4.0',
+    '3.5.0',
+    '3.6.0',
+    '3.7.0',
+    '3.8.0',
+    '3.9.0',
+    '4.0.0',
+  ])('matches snapshot with TS %s & react & CRA', version => {
+    const project = {
+      react: {
+        hasReact: true,
+        isCreateReactApp: true,
+      },
+      typescript: {
+        hasTypeScript: true,
+        version,
+      },
+    };
+
+    expect(createTSOverride(project)).toMatchSnapshot();
+  });
+
   test('conditionally toggles rules depending on config passed', () => {
     const project = {
       react: {

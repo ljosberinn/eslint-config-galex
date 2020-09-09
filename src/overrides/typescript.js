@@ -41,7 +41,7 @@ const settings = {
  */
 const createTSOverride = ({
   typescript: { hasTypeScript, version, config = {} },
-  react: { hasReact },
+  react: { hasReact, isCreateReactApp },
   rules: customRules = {},
 }) => {
   if (!hasTypeScript) {
@@ -49,7 +49,10 @@ const createTSOverride = ({
   }
 
   const rules = {
-    ...getTypeScriptRules({ typescript: { config, version } }),
+    ...getTypeScriptRules({
+      react: { isCreateReactApp },
+      typescript: { config, version },
+    }),
     ...prettierTypeScriptRules,
     ...customRules,
   };
@@ -77,7 +80,10 @@ const createTSOverride = ({
  * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/README.md
  *
  */
-const getTypeScriptRules = ({ typescript: { version, config } }) => ({
+const getTypeScriptRules = ({
+  typescript: { version, config },
+  react: { isCreateReactApp },
+}) => ({
   /**
    * prevents loose overloads
    *
@@ -113,7 +119,7 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
   '@typescript-eslint/ban-ts-comment': [
     'error',
     {
-      'ts-expect-error': 'allow-with-description',
+      'ts-expect-error': isCreateReactApp ? true : 'allow-with-description',
       'ts-ignore': true,
       'ts-nocheck': true,
     },
@@ -124,7 +130,9 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-tslint-comment.md
    */
-  '@typescript-eslint/ban-tslint-comment': 'error',
+  ...(isCreateReactApp
+    ? null
+    : { '@typescript-eslint/ban-tslint-comment': 'error' }),
 
   /**
    * off because not needed
@@ -167,7 +175,7 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md
    * @see https://eslint.org/docs/rules/no-loop-func
    */
-  '@typescript-eslint/no-loop-func': 'error',
+  ...(isCreateReactApp ? null : { '@typescript-eslint/no-loop-func': 'error' }),
 
   /**
    * streamlines assertions to use `as` over `<type>`
@@ -340,7 +348,9 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md
    */
 
-  '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+  ...(isCreateReactApp
+    ? null
+    : { '@typescript-eslint/no-confusing-non-null-assertion': 'error' }),
   /**
    * disallows duplicate names in class members
    *
@@ -463,7 +473,9 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loss-of-precision.md
    * @see no-loss-of-precision
    */
-  '@typescript-eslint/no-loss-of-precision': 'error',
+  ...(isCreateReactApp
+    ? null
+    : { '@typescript-eslint/no-loss-of-precision': 'error' }),
 
   /**
    * off because it expects literally every number to be declared as variable
@@ -564,13 +576,15 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md
    */
-  '@typescript-eslint/no-unnecessary-boolean-literal-compare': [
-    'warn',
-    {
-      allowComparingNullableBooleansToFalse: false,
-      allowComparingNullableBooleansToTrue: false,
-    },
-  ],
+  '@typescript-eslint/no-unnecessary-boolean-literal-compare': isCreateReactApp
+    ? 'warn'
+    : [
+        'warn',
+        {
+          allowComparingNullableBooleansToFalse: false,
+          allowComparingNullableBooleansToTrue: false,
+        },
+      ],
 
   /**
    * prevents unecessary checks
@@ -694,7 +708,9 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-enum-initializers.md
    */
-  '@typescript-eslint/prefer-enum-initializers': 'error',
+  ...(isCreateReactApp
+    ? null
+    : { '@typescript-eslint/prefer-enum-initializers': 'error' }),
 
   /**
    * prefer using `for...of` when only iterating the index
@@ -722,7 +738,9 @@ const getTypeScriptRules = ({ typescript: { version, config } }) => ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-literal-enum-member.md
    */
-  '@typescript-eslint/prefer-literal-enum-member': 'error',
+  ...(isCreateReactApp
+    ? null
+    : { '@typescript-eslint/prefer-literal-enum-member': 'error' }),
 
   /**
    * use `namespace` over `module`
