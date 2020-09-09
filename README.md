@@ -22,7 +22,7 @@ module.exports = {
 
 // or .eslintrc
 {
-  extends: 'galex'
+  "extends": "galex"
 }
 ```
 
@@ -95,13 +95,18 @@ Couldn't this be easier?
   const override = createTSOverride({
     react: {
       hasReact: true,
+      // might also be a good idea to `require('./package.json') and reference
+      // `packageJson.dependencies.react`
       version: '17.0.0-rc.1',
+      isCreateReactApp: false,
     },
     typescript: {
       hasTypeScript: true,
       version: '4.0.2',
     },
-    rules: {},
+    rules: {
+      // typescript specific rules go here
+    },
   });
 
   // only use the glob pattern for TS files:
@@ -216,6 +221,10 @@ interface Project {
      * the installed version
      */
     version: string;
+    /**
+     * whether the project was bootstrapped with create-react-app
+     */
+    isCreateReactApp: boolean;
   };
   /**
    * your custom rules on top
