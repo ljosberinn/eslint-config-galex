@@ -86,9 +86,9 @@ const getTopLevelTsConfig = cwd => {
 };
 
 /**
- * @param {
+ * @param {{
  *  cwd?: string
- * } detectionOptions
+ * }} detectionOptions
  */
 const getDependencies = ({ cwd = process.cwd() } = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
@@ -187,14 +187,14 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
 };
 
 /**
- * @param {
+ * @param {{
  *  cwd?: string
  *  rules?: object;
  *  overrides?: unknown[];
  *  plugins?: string[];
  *  env?: object;
  *  parserOptions?: object;
- * } detectionOptions
+ * }} param
  */
 const createConfig = ({
   cwd,
