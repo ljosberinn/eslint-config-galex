@@ -2852,6 +2852,13 @@ Object {
       },
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/consistent-type-imports": Array [
+      "warn",
+      Object {
+        "disallowTypeAnnotations": true,
+        "prefer": "type-imports",
+      },
+    ],
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/dot-notation": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -3367,6 +3374,13 @@ Object {
       },
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/consistent-type-imports": Array [
+      "warn",
+      Object {
+        "disallowTypeAnnotations": true,
+        "prefer": "type-imports",
+      },
+    ],
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/dot-notation": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -3885,6 +3899,13 @@ Object {
       },
     ],
     "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/consistent-type-imports": Array [
+      "warn",
+      Object {
+        "disallowTypeAnnotations": true,
+        "prefer": "type-imports",
+      },
+    ],
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/dot-notation": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
