@@ -207,7 +207,8 @@ const getTypeScriptRules = ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
    */
-  ...(fulfillsVersionRequirement(version, { major: 3, minor: 8 })
+  ...(fulfillsVersionRequirement(version, { major: 3, minor: 8 }) &&
+  !isCreateReactApp
     ? {
         '@typescript-eslint/consistent-type-imports': [
           'warn',
