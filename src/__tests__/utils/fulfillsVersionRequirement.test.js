@@ -13,6 +13,7 @@ describe('fulfillsVersionRequirement', () => {
     ['16.13.1', { major: 16 }, true],
     ['16.13.1', { major: 16, minor: 14 }, false],
     ['16.13.1', { major: 16, minor: 13, patch: 2 }, false],
+    ['^16.13.1', { major: 16, minor: 13, patch: 2 }, false],
 
     ['16.13.1', { major: 17 }, false],
     ['16.13.1', { major: 17, minor: 13 }, false],

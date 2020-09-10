@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`fulfillsVersionRequirement fulfillsVersionRequirement(^16.13.1, { major: 16, minor: 13, patch: 2 }) 1`] = `false`;
+
 exports[`fulfillsVersionRequirement fulfillsVersionRequirement(16.13.1, { major: 16 }) 1`] = `true`;
 
 exports[`fulfillsVersionRequirement fulfillsVersionRequirement(16.13.1, { major: 16 }) 2`] = `true`;

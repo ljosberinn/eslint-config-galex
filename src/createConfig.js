@@ -114,7 +114,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
 
     const react = {
       hasReact,
-      isCreateReactApp: deps.get('react-scripts'),
+      isCreateReactApp: deps.has('react-scripts'),
       isNext: deps.has('next'),
       // no effect yet
       isPreact: deps.has('preact'),

@@ -14,6 +14,9 @@ yarn add -D eslint-config-galex eslint
 npm install --save-dev eslint-config-galex eslint
 ```
 
+> If you're using `create-react-app` with TypeScript, you will need to separately
+> install `@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin` too.
+
 ```js
 // eslintrc.js
 module.exports = {
