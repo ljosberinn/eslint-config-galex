@@ -90,7 +90,9 @@ const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
   // no compilerOptions, check for parent configs
   if (tsConfig.extends) {
     return getTopLevelTsConfig({
-      cwd: resolve(cwd, tsConfig.extends),
+      // on current path, replace tsConfigName with nothing to prevent having
+      // an path with 2x file names
+      cwd: resolve(path.replace(tsConfigName, ''), tsConfig.extends),
     });
   }
 
