@@ -4013,6 +4013,31 @@ Object {
 }
 `;
 
+exports[`getDependencies given typescript allows passing an alternative tsConfigPath which has priority 1`] = `
+Object {
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": Object {
+      "compilerOptions": Object {
+        "foo": "bar",
+      },
+    },
+    "hasTypeScript": true,
+    "version": "1.0.0",
+  },
+}
+`;
+
 exports[`getDependencies given typescript bails on the first config found with compilerOptions 1`] = `
 Object {
   "hasJest": false,

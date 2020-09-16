@@ -61,11 +61,16 @@ const defaultParserOptions = {
 };
 
 /**
- * @param {string} cwd
- * @returns {object}
+ * @param {{
+ *  cwd: string;
+ *  tsConfigPath?: string
+ * }} detectionOptions
  */
-const getTopLevelTsConfig = cwd => {
-  const path = resolve(cwd, cwd.includes('.json') ? '' : 'tsconfig.json');
+const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
+  const resolveArgs = tsConfigPath
+    ? [tsConfigPath]
+    : [cwd, cwd.includes('.json') ? '' : 'tsconfig.json'];
+  const path = resolve(...resolveArgs);
 
   const tsConfigRaw = fs.readFileSync(path, 'utf-8');
   const tsConfig = ts.convertToObject(
@@ -79,7 +84,10 @@ const getTopLevelTsConfig = cwd => {
 
   // no compilerOptions, check for parent configs
   if (tsConfig.extends) {
-    return getTopLevelTsConfig(resolve(cwd, tsConfig.extends));
+    return getTopLevelTsConfig({
+      cwd: resolve(cwd, tsConfig.extends),
+      tsConfigPath,
+    });
   }
 
   return tsConfig;
@@ -87,10 +95,11 @@ const getTopLevelTsConfig = cwd => {
 
 /**
  * @param {{
- *  cwd?: string
+ *  cwd?: string;
+ *  tsConfigPath?: string
  * }} detectionOptions
  */
-const getDependencies = ({ cwd = process.cwd() } = {}) => {
+const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
     /* istanbul ignore next line 101 is supposedly uncovered :shrug: */
@@ -130,7 +139,7 @@ const getDependencies = ({ cwd = process.cwd() } = {}) => {
       }
 
       try {
-        return getTopLevelTsConfig(cwd);
+        return getTopLevelTsConfig({ cwd, tsConfigPath });
       } catch {
         // eslint-disable-next-line no-console
         console.info(

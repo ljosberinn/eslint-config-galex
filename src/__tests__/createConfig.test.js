@@ -44,8 +44,8 @@ describe('getDependencies', () => {
       },
     });
 
-    jest.spyOn(fs, 'readFileSync').mockImplementation(() => '');
-    jest.spyOn(ts, 'parseJsonText').mockImplementation(() => '');
+    jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+    jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
 
     const deps = getDependencies();
 
@@ -80,8 +80,8 @@ describe('getDependencies', () => {
         },
       });
 
-      jest.spyOn(fs, 'readFileSync').mockImplementation(() => '');
-      jest.spyOn(ts, 'parseJsonText').mockImplementation(() => '');
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
 
       const key = 'foo';
       const value = 'bar';
@@ -105,8 +105,8 @@ describe('getDependencies', () => {
         },
       });
 
-      jest.spyOn(fs, 'readFileSync').mockImplementation(() => '');
-      jest.spyOn(ts, 'parseJsonText').mockImplementation(() => '');
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
 
       const key = 'foo';
       const value = 'bar';
@@ -130,6 +130,38 @@ describe('getDependencies', () => {
 
       expect(deps).toMatchSnapshot();
       expect(deps.typescript.config.compilerOptions[key]).toBe(value);
+    });
+
+    test('allows passing an alternative tsConfigPath which has priority', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+        packageJson: {
+          dependencies: {
+            typescript: '1.0.0',
+          },
+        },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      const key = 'foo';
+      const value = 'bar';
+
+      jest.spyOn(ts, 'convertToObject').mockReturnValue({
+        compilerOptions: { [key]: value },
+      });
+
+      const tsConfigName = 'tsconfig.base.json';
+      const mockTsConfigPath = `../${tsConfigName}`;
+
+      const deps = getDependencies({ tsConfigPath: mockTsConfigPath });
+
+      expect(fs.readFileSync).toHaveBeenLastCalledWith(
+        expect.stringContaining(tsConfigName),
+        expect.any(String)
+      );
+
+      expect(deps).toMatchSnapshot();
     });
   });
 });
