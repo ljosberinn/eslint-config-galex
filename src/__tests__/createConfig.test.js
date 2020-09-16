@@ -160,6 +160,10 @@ describe('getDependencies', () => {
         expect.stringContaining(tsConfigName),
         expect.any(String)
       );
+      expect(ts.parseJsonText).toHaveBeenCalledWith(
+        tsConfigName,
+        expect.any(String)
+      );
 
       expect(deps).toMatchSnapshot();
     });

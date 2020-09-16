@@ -60,6 +60,8 @@ const defaultParserOptions = {
   sourceType: 'module',
 };
 
+const defaultTsConfigName = 'tsconfig.json';
+
 /**
  * @param {{
  *  cwd: string;
@@ -69,12 +71,15 @@ const defaultParserOptions = {
 const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
   const resolveArgs = tsConfigPath
     ? [tsConfigPath]
-    : [cwd, cwd.includes('.json') ? '' : 'tsconfig.json'];
+    : [cwd, cwd.includes('.json') ? '' : defaultTsConfigName];
   const path = resolve(...resolveArgs);
 
   const tsConfigRaw = fs.readFileSync(path, 'utf-8');
+  const tsConfigName = tsConfigPath
+    ? tsConfigPath.split('/').pop()
+    : defaultTsConfigName;
   const tsConfig = ts.convertToObject(
-    ts.parseJsonText('tsconfig.json', tsConfigRaw)
+    ts.parseJsonText(tsConfigName, tsConfigRaw)
   );
 
   // really only thing we need from the config
