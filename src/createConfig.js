@@ -145,6 +145,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       try {
         return getTopLevelTsConfig({ cwd, tsConfigPath });
       } catch (error) {
+        /* istanbul ignore next warning aint that relevant */
         const info = tsConfigPath
           ? `TypeScript found in \`package.json\`, but no config was found or is readable at "${tsConfigPath}":`
           : 'TypeScript found in `package.json` but no `tsconfig.json` was found:';
