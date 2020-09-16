@@ -91,7 +91,6 @@ const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
   if (tsConfig.extends) {
     return getTopLevelTsConfig({
       cwd: resolve(cwd, tsConfig.extends),
-      tsConfigPath,
     });
   }
 
