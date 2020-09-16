@@ -203,17 +203,19 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
  *  plugins?: string[];
  *  env?: object;
  *  parserOptions?: object;
+ *  tsConfigPath?: string
  * }} param
  */
 const createConfig = ({
   cwd,
+  tsConfigPath,
   rules: customRules = {},
   overrides: customOverrides = [],
   plugins: customPlugins = [],
   env: customEnv = {},
   parserOptions: customParserOptions = {},
 } = {}) => {
-  const project = getDependencies({ cwd });
+  const project = getDependencies({ cwd, tsConfigPath });
 
   const overrides = [
     createReactOverride(project),
