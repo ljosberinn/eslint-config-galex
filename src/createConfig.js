@@ -74,10 +74,10 @@ const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
     : [cwd, cwd.includes('.json') ? '' : defaultTsConfigName];
   const path = resolve(...resolveArgs);
 
-  const tsConfigRaw = fs.readFileSync(path, 'utf-8');
   const tsConfigName = tsConfigPath
     ? tsConfigPath.split('/').pop()
     : defaultTsConfigName;
+  const tsConfigRaw = fs.readFileSync(path, 'utf-8');
   const tsConfig = ts.convertToObject(
     ts.parseJsonText(tsConfigName, tsConfigRaw)
   );
@@ -144,11 +144,12 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
 
       try {
         return getTopLevelTsConfig({ cwd, tsConfigPath });
-      } catch {
+      } catch (error) {
+        const info = tsConfigPath
+          ? `TypeScript found in \`package.json\`, but no config was found or is readable at "${tsConfigPath}":`
+          : 'TypeScript found in `package.json` but no `tsconfig.json` was found:';
         // eslint-disable-next-line no-console
-        console.info(
-          'TypeScript found in `package.json` but no `tsconfig.json` was found.'
-        );
+        console.info(info, error.message);
       }
     })();
 
