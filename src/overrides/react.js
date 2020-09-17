@@ -758,12 +758,24 @@ const createJSXA11yRules = ({ react: { isNext, isCreateReactApp } }) => ({
   /**
    * ensures core `a` attributes are valid
    *
+   * exclude `noHref` validation for Nextjs because
+   *
+   * @example
+   * ```js
+   * <Link passHref href="/foo">
+   *  <a>hi</a
+   * </Link>
+   * ```
+   * is valid
+   *
    * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
    */
   'jsx-a11y/anchor-is-valid': [
     'error',
     {
-      aspects: ['noHref', 'invalidHref', 'preferButton'],
+      aspects: ['invalidHref', isNext ? null : 'noHref', 'preferButton'].filter(
+        Boolean
+      ),
       components: isNext ? ['Link'] : [],
     },
   ],

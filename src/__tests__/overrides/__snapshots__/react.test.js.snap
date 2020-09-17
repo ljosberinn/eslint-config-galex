@@ -31,7 +31,6 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
           "preferButton",
         ],
@@ -244,8 +243,8 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
+          "noHref",
           "preferButton",
         ],
         "components": Array [],
@@ -454,8 +453,8 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
+          "noHref",
           "preferButton",
         ],
         "components": Array [],
@@ -670,7 +669,6 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
           "preferButton",
         ],
@@ -885,7 +883,6 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
           "preferButton",
         ],
@@ -1098,8 +1095,8 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
+          "noHref",
           "preferButton",
         ],
         "components": Array [],
@@ -1306,8 +1303,8 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
+          "noHref",
           "preferButton",
         ],
         "components": Array [],
@@ -1522,7 +1519,6 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
           "preferButton",
         ],
@@ -1737,7 +1733,6 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
           "preferButton",
         ],
@@ -1950,8 +1945,8 @@ Object {
       "error",
       Object {
         "aspects": Array [
-          "noHref",
           "invalidHref",
+          "noHref",
           "preferButton",
         ],
         "components": Array [],
