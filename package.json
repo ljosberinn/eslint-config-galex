@@ -58,7 +58,7 @@
     "eslint-plugin-testing-library": "3.8.0",
     "eslint-plugin-unicorn": "21.0.0",
     "read-pkg-up": "7.0.1",
-    "typescript": "4.0.2"
+    "typescript": "4.0.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "5.0.1",
