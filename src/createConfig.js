@@ -52,11 +52,12 @@ const defaultPlugins = [
 
 const defaultEnv = {
   browser: false,
-  es2020: true,
+  es2021: true,
   node: false,
 };
 
 const defaultParserOptions = {
+  ecmaVersion: 2021,
   sourceType: 'module',
 };
 
