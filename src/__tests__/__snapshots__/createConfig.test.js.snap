@@ -4,7 +4,7 @@ exports[`createConfig allows passing env 1`] = `
 Object {
   "env": Object {
     "browser": false,
-    "es2020": true,
+    "es2021": true,
     "foo": "bar",
     "node": false,
   },
@@ -86,6 +86,7 @@ Object {
     },
   ],
   "parserOptions": Object {
+    "ecmaVersion": 2021,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -606,6 +607,7 @@ Object {
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
     "unicorn/import-index": "error",
+    "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-instanceof": "error",
@@ -666,7 +668,7 @@ exports[`createConfig allows passing extra rules 1`] = `
 Object {
   "env": Object {
     "browser": false,
-    "es2020": true,
+    "es2021": true,
     "node": false,
   },
   "overrides": Array [
@@ -747,6 +749,7 @@ Object {
     },
   ],
   "parserOptions": Object {
+    "ecmaVersion": 2021,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1268,6 +1271,7 @@ Object {
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
     "unicorn/import-index": "error",
+    "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-instanceof": "error",
@@ -1328,7 +1332,7 @@ exports[`createConfig allows passing overrides 1`] = `
 Object {
   "env": Object {
     "browser": false,
-    "es2020": true,
+    "es2021": true,
     "node": false,
   },
   "overrides": Array [
@@ -1410,6 +1414,7 @@ Object {
     "galex",
   ],
   "parserOptions": Object {
+    "ecmaVersion": 2021,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1930,6 +1935,7 @@ Object {
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
     "unicorn/import-index": "error",
+    "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-instanceof": "error",
@@ -1990,7 +1996,7 @@ exports[`createConfig allows passing parserOptions 1`] = `
 Object {
   "env": Object {
     "browser": false,
-    "es2020": true,
+    "es2021": true,
     "node": false,
   },
   "overrides": Array [
@@ -2071,6 +2077,7 @@ Object {
     },
   ],
   "parserOptions": Object {
+    "ecmaVersion": 2021,
     "foo": "bar",
     "sourceType": "module",
   },
@@ -2592,6 +2599,7 @@ Object {
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
     "unicorn/import-index": "error",
+    "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-instanceof": "error",
@@ -2652,7 +2660,7 @@ exports[`createConfig allows passing plugins 1`] = `
 Object {
   "env": Object {
     "browser": false,
-    "es2020": true,
+    "es2021": true,
     "node": false,
   },
   "overrides": Array [
@@ -2733,6 +2741,7 @@ Object {
     },
   ],
   "parserOptions": Object {
+    "ecmaVersion": 2021,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -3254,6 +3263,7 @@ Object {
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
     "unicorn/import-index": "error",
+    "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-instanceof": "error",
@@ -3314,7 +3324,7 @@ exports[`createConfig matches snapshot 1`] = `
 Object {
   "env": Object {
     "browser": false,
-    "es2020": true,
+    "es2021": true,
     "node": false,
   },
   "overrides": Array [
@@ -3395,6 +3405,7 @@ Object {
     },
   ],
   "parserOptions": Object {
+    "ecmaVersion": 2021,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -3915,6 +3926,7 @@ Object {
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
     "unicorn/import-index": "error",
+    "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-instanceof": "error",
