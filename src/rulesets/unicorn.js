@@ -102,11 +102,11 @@ const getUnicornRules = ({
   'unicorn/import-index': 'error',
 
   /**
-   * not yet released
+   * off because situational
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/import-style.md
    */
-  // 'unicorn/import-style': 'off',
+  'unicorn/import-style': 'off',
 
   /**
    * enforces `new` for builtins
