@@ -17,7 +17,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -235,7 +234,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -446,7 +444,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -658,7 +655,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -873,7 +869,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -1091,7 +1086,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -1300,7 +1294,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -1512,7 +1505,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -1727,7 +1719,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "@next/next/missing-preload": "warn",
@@ -1945,7 +1936,6 @@ Object {
     "react-hooks",
     "react",
     "@next/eslint-plugin-next",
-    "prettier/react",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",

@@ -19,7 +19,7 @@ const parserOptions = {
   warnOnUnsupportedTypeScriptVersion: false,
 };
 
-const plugins = ['@typescript-eslint', '@typescript-eslint'];
+const plugins = ['@typescript-eslint'];
 const settings = {
   react: {
     version: 'detect',

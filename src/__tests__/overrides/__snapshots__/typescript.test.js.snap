@@ -16,7 +16,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -197,7 +196,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -380,7 +378,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -529,7 +526,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -692,7 +688,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -854,7 +849,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1011,7 +1005,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -1182,7 +1175,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1352,7 +1344,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1509,7 +1500,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -1680,7 +1670,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1850,7 +1839,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2007,7 +1995,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -2178,7 +2165,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2348,7 +2334,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2508,7 +2493,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -2682,7 +2666,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2855,7 +2838,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3022,7 +3004,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -3203,7 +3184,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3383,7 +3363,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3551,7 +3530,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -3733,7 +3711,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3914,7 +3891,6 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
-    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -4083,7 +4059,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
@@ -4265,7 +4240,6 @@ Object {
     "warnOnUnsupportedTypeScriptVersion": false,
   },
   "plugins": Array [
-    "@typescript-eslint",
     "@typescript-eslint",
   ],
   "rules": Object {
