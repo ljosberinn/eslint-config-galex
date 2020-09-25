@@ -16,6 +16,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -39,6 +40,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -196,6 +198,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -219,6 +222,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -376,6 +380,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -398,6 +403,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/default-param-last": "error",
@@ -524,6 +530,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -547,6 +554,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/default-param-last": "error",
@@ -684,6 +692,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -707,6 +716,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/default-param-last": "error",
@@ -844,6 +854,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -866,6 +877,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -1000,6 +1012,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1023,6 +1036,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -1168,6 +1182,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1191,6 +1206,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -1336,6 +1352,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1358,6 +1375,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -1492,6 +1510,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1515,6 +1534,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -1660,6 +1680,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1683,6 +1704,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -1828,6 +1850,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -1850,6 +1873,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -1984,6 +2008,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2007,6 +2032,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -2152,6 +2178,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2175,6 +2202,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -2320,6 +2348,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2342,6 +2371,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -2479,6 +2509,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2502,6 +2533,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -2650,6 +2682,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2673,6 +2706,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -2821,6 +2855,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -2843,6 +2878,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -2987,6 +3023,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3010,6 +3047,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -3165,6 +3203,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3188,6 +3227,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -3343,6 +3383,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3365,6 +3406,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -3510,6 +3552,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3533,6 +3576,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -3689,6 +3733,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3712,6 +3757,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -3868,6 +3914,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -3890,6 +3937,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -4036,6 +4084,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -4059,6 +4108,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
@@ -4216,6 +4266,7 @@ Object {
   },
   "plugins": Array [
     "@typescript-eslint",
+    "@typescript-eslint",
   ],
   "rules": Object {
     "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -4239,6 +4290,7 @@ Object {
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/class-literal-property-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",

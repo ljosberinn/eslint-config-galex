@@ -12,6 +12,7 @@ const plugins = [
   'react-hooks',
   'react',
   '@next/eslint-plugin-next',
+  'prettier/react',
 ];
 const files = ['**/*.?(ts|js)?(x)'];
 const parser = 'babel-eslint';

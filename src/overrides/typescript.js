@@ -19,7 +19,7 @@ const parserOptions = {
   warnOnUnsupportedTypeScriptVersion: false,
 };
 
-const plugins = ['@typescript-eslint'];
+const plugins = ['@typescript-eslint', '@typescript-eslint'];
 const settings = {
   react: {
     version: 'detect',
@@ -161,6 +161,13 @@ const getTypeScriptRules = ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-literal-property-style.md
    */
   '@typescript-eslint/class-literal-property-style': 'off',
+
+  /**
+   * off because prettier takes care of that
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-dangle.md
+   */
+  '@typescript-eslint/comma-dangle': 'off',
 
   /**
    * off because prettier takes care of that
