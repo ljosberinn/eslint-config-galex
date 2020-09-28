@@ -39,7 +39,7 @@
   "dependencies": {
     "@next/eslint-plugin-next": "^9.5.3",
     "@typescript-eslint/eslint-plugin": "4.3.0",
-    "@typescript-eslint/parser": "4.2.0",
+    "@typescript-eslint/parser": "4.3.0",
     "babel-eslint": "10.1.0",
     "confusing-browser-globals": "1.0.9",
     "eslint-config-prettier": "6.12.0",
