@@ -163,7 +163,7 @@ const getImportRules = ({
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
    * @see no-duplicate-imports
    */
-  'import/no-duplicates': 'warn',
+  'import/no-duplicates': hasTypeScript ? 'off' : 'warn',
 
   /**
    * pervents use of dynamic `require`s. when necessary, disable the rule.

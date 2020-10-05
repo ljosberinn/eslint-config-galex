@@ -41,6 +41,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -77,6 +78,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -222,6 +224,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -258,6 +261,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -402,6 +406,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/dot-notation": "error",
@@ -423,6 +428,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -552,6 +558,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/dot-notation": "error",
@@ -574,6 +581,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -713,6 +721,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/dot-notation": "error",
@@ -735,6 +744,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -873,6 +883,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -901,6 +912,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -1031,6 +1043,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -1060,6 +1073,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -1200,6 +1214,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -1229,6 +1244,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -1368,6 +1384,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -1396,6 +1413,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -1526,6 +1544,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -1555,6 +1574,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -1695,6 +1715,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -1724,6 +1745,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -1863,6 +1885,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -1891,6 +1914,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -2021,6 +2045,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -2050,6 +2075,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -2190,6 +2216,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -2219,6 +2246,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -2358,6 +2386,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -2386,6 +2415,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -2519,6 +2549,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -2548,6 +2579,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -2691,6 +2723,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -2720,6 +2753,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -2862,6 +2896,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -2897,6 +2932,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -3030,6 +3066,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -3066,6 +3103,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -3209,6 +3247,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -3245,6 +3284,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -3387,6 +3427,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -3422,6 +3463,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -3556,6 +3598,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -3592,6 +3635,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -3736,6 +3780,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -3772,6 +3817,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -3915,6 +3961,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -3950,6 +3997,7 @@ Object {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -4085,6 +4133,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -4121,6 +4170,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
@@ -4266,6 +4316,7 @@ Object {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
       Object {
@@ -4302,6 +4353,7 @@ Object {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-duplicate-imports": "warn",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",

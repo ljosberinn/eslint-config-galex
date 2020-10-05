@@ -358,14 +358,31 @@ const getTypeScriptRules = ({
   ...(isCreateReactApp
     ? null
     : { '@typescript-eslint/no-confusing-non-null-assertion': 'error' }),
+
+  /**
+   * off because opinionated
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-indexed-object-style.md
+   */
+  '@typescript-eslint/consistent-indexed-object-style': 'off',
+
   /**
    * disallows duplicate names in class members
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md
    * @see no-dupe-class-members
    */
-
   '@typescript-eslint/no-dupe-class-members': 'error',
+
+  /**
+   * prevents duplicate type imports too, on top of the default rule
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-duplicate-imports.md
+   * @see no-duplicate-imports
+   * @see import/no-duplicates
+   */
+  '@typescript-eslint/no-duplicate-imports': 'warn',
+
   /**
    * warns when trying to dynamically delete a property
    *
