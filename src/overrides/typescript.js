@@ -203,11 +203,16 @@ const getTypeScriptRules = ({
     : null),
 
   /**
-   * off because both type and interface have advantages over the other
+   * prefer using types since interfaces:
+   * - implicitly merged given multiple declarations of the same name
+   * - aren't entirely as flexible as types
+   * - may have confusing syntax for functions
+   *
+   * also consistency
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
    */
-  '@typescript-eslint/consistent-type-definitions': 'off',
+  '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
 
   /**
    *  enforces type-only imports when possible
@@ -322,9 +327,11 @@ const getTypeScriptRules = ({
   /**
    * ensures consistent method signature declaration on interfaces
    *
+   * off since interfaces are forbidden anyways
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/method-signature-style.md
    */
-  '@typescript-eslint/method-signature-style': ['warn', 'property'],
+  '@typescript-eslint/method-signature-style': 'off',
 
   /**
    * off because too opinionated
@@ -399,9 +406,11 @@ const getTypeScriptRules = ({
   /**
    * disallows empty interfaces
    *
+   * off because interfaces are forbidden anyways
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-interface.md
    */
-  '@typescript-eslint/no-empty-interface': 'error',
+  '@typescript-eslint/no-empty-interface': 'off',
 
   /**
    * disallows explicit any. escalated to error because `warn` would be
@@ -512,9 +521,11 @@ const getTypeScriptRules = ({
   /**
    * disallows defining constructors in interfaces, use `new` instead
    *
+   * off because interfaces are forbidden anyways
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-new.md
    */
-  '@typescript-eslint/no-misused-new': 'error',
+  '@typescript-eslint/no-misused-new': 'off',
 
   /**
    * prevents most likely improperly handled promises

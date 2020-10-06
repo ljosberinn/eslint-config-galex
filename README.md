@@ -270,6 +270,8 @@ list, check out the source.
 
   - strongly type complex return types (currently not enforceable)
 
+- prefer using `type` over `interface`
+
 ## JavaScript
 
 - `null` is not forbidden, as it conveys meaning. Enjoy debugging code which
