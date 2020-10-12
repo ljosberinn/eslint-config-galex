@@ -14,7 +14,6 @@ const defaultParserOptions = {
   ecmaFeatures: {
     jsx: false,
   },
-  ecmaVersion: 'es2020',
   project: './tsconfig.json',
   // using false here because I'm almost always on nightly TS
   warnOnUnsupportedTypeScriptVersion: false,
