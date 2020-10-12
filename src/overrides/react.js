@@ -15,12 +15,12 @@ const plugins = [
 ];
 const files = ['**/*.?(ts|js)?(x)'];
 const parser = 'babel-eslint';
-const parserOptions = {
+const defaultParserOptions = {
   ecmaFeatures: {
     jsx: true,
   },
 };
-const settings = {
+const defaultSettings = {
   react: {
     version: 'detect',
   },
@@ -34,12 +34,16 @@ const settings = {
  *   version: string;
  *  };
  *  rules?: Record<string, any>;
+ *  settings?: object;
+ *  parserOptions?: object;
  * }} options
  */
 const createReactOverride = ({
   react,
   typescript,
   rules: customRules = {},
+  parserOptions: customParserOptions = {},
+  settings: customSettings = {},
 }) => {
   if (!react.hasReact) {
     return null;
@@ -55,6 +59,24 @@ const createReactOverride = ({
     ...createJSXA11yRules({ react }),
     ...hookRules,
     ...customRules,
+  };
+
+  const parserOptions = {
+    ...defaultParserOptions,
+    ...customParserOptions,
+    ecmaFeatures: {
+      ...defaultParserOptions.ecmaFeatures,
+      ...customParserOptions.ecmaFeatures,
+    },
+  };
+
+  const settings = {
+    ...defaultSettings,
+    ...customSettings,
+    react: {
+      ...defaultSettings.react,
+      ...customSettings.react,
+    },
   };
 
   return {
@@ -1055,8 +1077,8 @@ module.exports = {
   files,
   hookRules,
   parser,
-  parserOptions,
+  parserOptions: defaultParserOptions,
   plugins,
   prettierReactRules,
-  settings,
+  settings: defaultParserOptions,
 };

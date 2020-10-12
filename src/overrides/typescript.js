@@ -10,17 +10,18 @@ const {
 const extendsConfig = [];
 const files = ['**/*.ts?(x)'];
 const parser = '@typescript-eslint/parser';
-const parserOptions = {
+const defaultParserOptions = {
   ecmaFeatures: {
     jsx: false,
   },
+  ecmaVersion: 'es2020',
   project: './tsconfig.json',
   // using false here because I'm almost always on nightly TS
   warnOnUnsupportedTypeScriptVersion: false,
 };
 
 const plugins = ['@typescript-eslint'];
-const settings = {
+const defaultSettings = {
   react: {
     version: 'detect',
   },
@@ -37,12 +38,16 @@ const settings = {
  *    hasReact: boolean;
  *  };
  *  rules?: Record<string, string | [string, string | object];
+ *  settings?: object;
+ *  parserOptions?: object;
  * }} options
  */
 const createTSOverride = ({
   typescript: { hasTypeScript, version, config = {} },
   react: { hasReact, isCreateReactApp },
   rules: customRules = {},
+  parserOptions: customParserOptions = {},
+  settings: customSettings = {},
 }) => {
   if (!hasTypeScript) {
     return null;
@@ -57,11 +62,22 @@ const createTSOverride = ({
     ...customRules,
   };
 
-  const actualParserOptions = {
-    ...parserOptions,
+  const parserOptions = {
+    ...defaultParserOptions,
+    ...customParserOptions,
     ecmaFeatures: {
-      ...parserOptions.ecmaFeatures,
+      ...defaultParserOptions.ecmaFeatures,
+      ...customParserOptions.ecmaFeatures,
       jsx: hasReact,
+    },
+  };
+
+  const settings = {
+    ...defaultSettings,
+    ...customSettings,
+    react: {
+      ...defaultSettings.react,
+      ...customSettings.react,
     },
   };
 
@@ -69,7 +85,7 @@ const createTSOverride = ({
     extends: extendsConfig,
     files,
     parser,
-    parserOptions: actualParserOptions,
+    parserOptions,
     plugins,
     rules,
     settings,
@@ -967,8 +983,8 @@ module.exports = {
   files,
   getTypeScriptRules,
   parser,
-  parserOptions,
+  parserOptions: defaultParserOptions,
   plugins,
   prettierTypeScriptRules,
-  settings,
+  settings: defaultSettings,
 };
