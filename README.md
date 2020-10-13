@@ -18,7 +18,7 @@ npm install --save-dev eslint-config-galex eslint
 > install `@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin` too.
 
 ```js
-// eslintrc.js
+// .eslintrc.js
 module.exports = {
   extends: 'galex',
 };
