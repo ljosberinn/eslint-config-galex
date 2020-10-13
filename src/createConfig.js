@@ -250,7 +250,7 @@ const createConfig = ({
   const env = {
     ...defaultEnv,
     browser: project.react.hasReact,
-    node: project.typescript.hasTypeScript ? project.hasNodeTypes : false,
+    node: project.typescript.hasTypeScript ? project.hasNodeTypes : true,
     ...customEnv,
   };
 

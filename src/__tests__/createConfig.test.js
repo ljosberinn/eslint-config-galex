@@ -179,28 +179,6 @@ describe('createConfig', () => {
     expect(createConfig()).toMatchSnapshot();
   });
 
-  test('given typescript, determines env.node based on presence of tsconfig.json', () => {
-    const defaultConfig = createConfig();
-
-    jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
-      packageJson: {
-        dependencies: {
-          '@types/node': '1.0.0',
-          typescript: '1.0.0',
-        },
-      },
-    });
-
-    jest.spyOn(fs, 'readFileSync').mockReturnValueOnce('');
-    jest.spyOn(ts, 'parseJsonText').mockReturnValueOnce('');
-    jest.spyOn(ts, 'convertToObject').mockReturnValueOnce({});
-
-    const config = createConfig();
-
-    expect(config.env.node).toBeTruthy();
-    expect(config.env.node).not.toBe(defaultConfig.env.node);
-  });
-
   test('allows passing extra rules', () => {
     const rule = 'foo';
     const value = 'bar';
