@@ -121,7 +121,6 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-abusive-eslint-disable.md
    */
   'unicorn/no-abusive-eslint-disable': 'error',
-
   /**
    * use `Array.isArray` instead of `instanceof Array`
    *
@@ -255,6 +254,13 @@ const getUnicornRules = ({
   'unicorn/number-literal-case': 'off',
 
   /**
+   * enforces consistent numeric separators style
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/numeric-separators-style.md
+   */
+  'unicorn/numeric-separators-style': 'warn',
+
+  /**
    * prefer element.addEventListener instead of element.[event]
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-add-event-listener.md
@@ -296,6 +302,13 @@ const getUnicornRules = ({
    * @see @typescript-eslint/prefer-includes
    */
   'unicorn/prefer-includes': hasTypeScript ? 'off' : 'warn',
+
+  /**
+   * enforces usage of `Math.trunc()` over bitwise
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-math-trunc.md
+   */
+  'unicorn/prefer-math-trunc': 'warn',
 
   /**
    * prefer using modern APIs
@@ -388,6 +401,14 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-string-slice.md
    */
   'unicorn/prefer-string-slice': 'error',
+
+  /**
+   * off as long as promises & generators are not excludable
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-ternary.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/issues/867
+   */
+  'unicorn/prefer-ternary': 'off',
 
   /**
    * use element.textContent over element.innerText
