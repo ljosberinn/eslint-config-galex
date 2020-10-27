@@ -105,7 +105,6 @@ const getTypeScriptRules = ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/adjacent-overload-signatures.md
    */
   '@typescript-eslint/adjacent-overload-signatures': 'error',
-
   /**
    * prefer using `T[]` over `Array<T>`
    *
@@ -666,6 +665,11 @@ const getTypeScriptRules = ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-type-assertion.md
    */
   '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
+
+  /**
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-type-constraint.md
+   */
+  '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
 
   /**
    * off because already handled
