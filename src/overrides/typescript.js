@@ -930,6 +930,14 @@ const getTypeScriptRules = ({
   '@typescript-eslint/space-before-function-paren': 'off',
 
   /**
+   * off because handled by prettier
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-infix-ops.md
+   * @see space-infix-ops
+   */
+  '@typescript-eslint/space-infix-ops': 'off',
+
+  /**
    * off because opinionated. unless you have odd types going on, this shouldn't
    * be an issue following best practices.
    *
