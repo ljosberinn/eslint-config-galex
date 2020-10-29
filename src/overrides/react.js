@@ -969,7 +969,32 @@ const createJSXA11yRules = ({ react: { isNext, isCreateReactApp } }) => ({
    *
    * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-to-interactive-role.md
    */
-  'jsx-a11y/no-noninteractive-element-to-interactive-role': 'error',
+  'jsx-a11y/no-noninteractive-element-to-interactive-role': [
+    'error',
+    {
+      li: ['menuitem', 'option', 'row', 'tab', 'treeitem'],
+      ol: [
+        'listbox',
+        'menu',
+        'menubar',
+        'radiogroup',
+        'tablist',
+        'tree',
+        'treegrid',
+      ],
+      table: ['grid'],
+      td: ['gridcell'],
+      ul: [
+        'listbox',
+        'menu',
+        'menubar',
+        'radiogroup',
+        'tablist',
+        'tree',
+        'treegrid',
+      ],
+    },
+  ],
 
   /**
    * limits tab key navigation to elements that can be interacted with
