@@ -521,6 +521,13 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   'testing-library/consistent-data-testid': 'off',
 
   /**
+   * ensures sync events are not awaited unnecessarily
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-await-sync-events.md
+   */
+  'testing-library/no-await-sync-events': 'error',
+
+  /**
    * no unecessary `await` for non-async queries
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-await-sync-query.md
