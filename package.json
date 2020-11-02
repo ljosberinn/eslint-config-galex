@@ -38,8 +38,8 @@
   "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "dependencies": {
     "@next/eslint-plugin-next": "10.0.0",
-    "@typescript-eslint/eslint-plugin": "4.6.0",
-    "@typescript-eslint/parser": "4.6.0",
+    "@typescript-eslint/eslint-plugin": "4.6.1",
+    "@typescript-eslint/parser": "4.6.1",
     "babel-eslint": "10.1.0",
     "confusing-browser-globals": "1.0.10",
     "eslint-config-prettier": "6.15.0",
