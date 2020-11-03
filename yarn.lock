@@ -539,10 +539,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@next/eslint-plugin-next@10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-10.0.0.tgz#bf31db554774eab0770aae26cfd542b452083272"
-  integrity sha512-4YwtYRqD0F6GheYPcuvv2WfRz+WOvwaDsIbp6XYYlM2l3TOGsAMnVP+sPsal3i6d2qaIxqYsJb04U4GtEc6J4w==
+"@next/eslint-plugin-next@10.0.1":
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-10.0.1.tgz#82fb73f48ff8989d6f82eb90cc0584b5d6637137"
+  integrity sha512-VYZfnO6S4BOa6YjBv1zyvlZumotQ2GcYrQ8N9jOR54jreYn2pytCJbdozLiEPZaKz+sQFdhSEl2RzEPbSbIEeg==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
