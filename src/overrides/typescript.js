@@ -868,6 +868,13 @@ const getTypeScriptRules = ({
     : null),
 
   /**
+   * returning void may lead to confusing code
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-void-expression.md
+   */
+  '@typescript-eslint/no-confusing-void-expression': 'warn',
+
+  /**
    * off because nonsensical
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/promise-function-async.md
