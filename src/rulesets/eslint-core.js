@@ -709,6 +709,13 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
   'no-new-wrappers': 'error',
 
   /**
+   * disallows legacy escape sequences
+   *
+   * @see https://eslint.org/docs/rules/no-nonoctal-decimal-escape
+   */
+  'no-nonoctal-decimal-escape': 'error',
+
+  /**
    * disallows octals
    *
    * @see https://eslint.org/docs/rules/no-octal
