@@ -627,7 +627,7 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
    *
    * @see https://eslint.org/docs/rules/no-invalid-this
    */
-  'no-invalid-this': 'error',
+  'no-invalid-this': hasTypeScript ? 'off' : 'error',
 
   /**
    * disallows __iterator__ property

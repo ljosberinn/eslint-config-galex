@@ -530,7 +530,7 @@ Object {
   "no-inline-comments": "off",
   "no-inner-declarations": "warn",
   "no-invalid-regexp": "error",
-  "no-invalid-this": "error",
+  "no-invalid-this": "off",
   "no-irregular-whitespace": "warn",
   "no-iterator": "off",
   "no-label-var": "off",
