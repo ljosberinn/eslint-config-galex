@@ -458,6 +458,13 @@ const jestDomRules = {
   'jest-dom/prefer-focus': 'warn',
 
   /**
+   * prefer .toBeInTheDocument in favor of .toHaveLength(1)
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-in-document.md
+   */
+  'jest-dom/prefer-in-document': 'warn',
+
+  /**
    * prefer toBeRequired over checking properties
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-required.md
