@@ -479,6 +479,13 @@ const jestDomRules = {
   'jest-dom/prefer-to-have-attribute': 'warn',
 
   /**
+   * prefer toHaveClass over checking attributes
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-class.md
+   */
+  'jest-dom/prefer-to-have-class': 'warn',
+
+  /**
    * prefer toHaveStyle over checking element style
    *
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-attribute.md
@@ -491,6 +498,13 @@ const jestDomRules = {
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-text-content.md
    */
   'jest-dom/prefer-to-have-text-content': 'warn',
+
+  /**
+   * prefer toHaveAttribute('value') over checking attributes
+   *
+   * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-value.md
+   */
+  'jest-dom/prefer-to-have-value': 'warn',
 };
 
 /**
