@@ -12,7 +12,7 @@ Object {
     },
   ],
   "array-element-newline": "off",
-  "arrow-body-style": 0,
+  "arrow-body-style": "off",
   "arrow-parens": "off",
   "arrow-spacing": "off",
   "block-scoped-var": "off",
@@ -276,6 +276,7 @@ Object {
   "no-unreachable-loop": "off",
   "no-unsafe-finally": "error",
   "no-unsafe-negation": "warn",
+  "no-unsafe-optional-chaining": "error",
   "no-unused-expressions": Array [
     "error",
     Object {
@@ -397,7 +398,7 @@ Object {
   "array-bracket-spacing": "off",
   "array-callback-return": "off",
   "array-element-newline": "off",
-  "arrow-body-style": 0,
+  "arrow-body-style": "off",
   "arrow-parens": "off",
   "arrow-spacing": "off",
   "block-scoped-var": "off",
@@ -661,6 +662,7 @@ Object {
   "no-unreachable-loop": "off",
   "no-unsafe-finally": "error",
   "no-unsafe-negation": "off",
+  "no-unsafe-optional-chaining": "off",
   "no-unused-expressions": "off",
   "no-unused-labels": "off",
   "no-unused-vars": "off",
@@ -767,7 +769,7 @@ Object {
     },
   ],
   "array-element-newline": "off",
-  "arrow-body-style": 0,
+  "arrow-body-style": "off",
   "arrow-parens": "off",
   "arrow-spacing": "off",
   "block-scoped-var": "off",
@@ -1031,6 +1033,7 @@ Object {
   "no-unreachable-loop": "off",
   "no-unsafe-finally": "error",
   "no-unsafe-negation": "warn",
+  "no-unsafe-optional-chaining": "error",
   "no-unused-expressions": Array [
     "error",
     Object {

@@ -817,6 +817,13 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
   'no-unmodified-loop-condition': 'error',
 
   /**
+   * disallows unsafe optional chaining
+   *
+   * @see https://github.com/eslint/eslint/blob/master/docs/rules/no-unsafe-optional-chaining.md
+   */
+  'no-unsafe-optional-chaining': hasTypeScript ? 'off' : 'error',
+
+  /**
    * @see https://eslint.org/docs/rules/no-unused-expression
    * @see @typescript-eslint/no-unused-expression
    */
