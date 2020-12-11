@@ -312,6 +312,63 @@ list, check out the source.
 - new line after all imports
 - group imports at the top
 
+# Examples
+
+## Custom TypeScript override to disable a rule
+
+```js
+const { createConfig } = require("eslint-config-galex/src/createConfig");
+const {
+  createTSOverride,
+} = require("eslint-config-galex/src/overrides/typescript");
+const packageJson = require("./package.json");
+
+// since `createTSOverride` is entirely configurable, we need to inform it about its environment
+const tsOverrideConfig = {
+  react: {
+    hasReact: true,
+  },
+  rules: {
+    "@typescript-eslint/ban-ts-comment": "off",
+  },
+  typescript: {
+    hasTypeScript: true,
+    // sync with package.json should you upgrade TS
+    version: packageJson.dependencies.typescript,
+  },
+};
+
+// solely an override for TS
+const tsOverride = createTSOverride(tsOverrideConfig);
+
+// pass it into createConfig as array as it will be merged with the other overrides
+module.exports = createConfig({ overrides: [tsOverride] });
+```
+
+## Custom Jest override changing included `files`:
+
+```js
+const {
+  createConfig,
+  getDependencies,
+} = require('eslint-config-galex/src/createConfig');
+const {
+  createJestOverride,
+} = require('eslint-config-galex/src/overrides/jest');
+
+/**
+ * override to enable jest globals for `/testUtils` folder
+ */
+const customJestLikeOverride = createJestOverride({
+  ...getDependencies(),
+  files: ['testUtils/*.ts?(x)'],
+});
+
+module.exports = createConfig({
+  overrides: [customJestLikeOverride],
+});
+```
+
 # Meta
 
 This project follows semver.
