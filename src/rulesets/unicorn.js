@@ -60,6 +60,13 @@ const getUnicornRules = ({
   'unicorn/custom-error-definition': 'warn',
 
   /**
+   * off because prettier territory
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/empty-brace-spaces.md
+   */
+  'unicorn/empty-brace-spaces': 'off',
+
+  /**
    * enforce passing a message value when throwing an built-in error
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/error-message.md
@@ -121,6 +128,7 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-abusive-eslint-disable.md
    */
   'unicorn/no-abusive-eslint-disable': 'error',
+
   /**
    * use `Array.isArray` instead of `instanceof Array`
    *
@@ -162,6 +170,14 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-keyword-prefix.md
    */
   'unicorn/no-keyword-prefix': hasReact ? 'off' : 'warn',
+
+  /**
+   * collapses nested ifs
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-lonely-if.md
+   * @see https://eslint.org/docs/rules/no-lonely-if
+   */
+  'unicorn/no-lonely-if': 'warn',
 
   /**
    * off because prettier takes care of it
@@ -280,6 +296,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-dataset.md
    */
   'unicorn/prefer-dataset': 'error',
+
+  /**
+   * prefer using `Date.now()` to get unix ms over other options
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-date-now.md
+   */
+  'unicorn/prefer-date-now': 'warn',
 
   /**
    * prefer event.key over event.keyCode

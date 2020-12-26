@@ -749,6 +749,13 @@ const getTypeScriptRules = ({
   '@typescript-eslint/no-var-requires': 'off',
 
   /**
+   * detects when `as` casts can be simplified to `!`
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/non-nullable-type-assertion-style.md
+   */
+  '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
+
+  /**
    * prefer using `as const` syntax over casting
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-as-const.md

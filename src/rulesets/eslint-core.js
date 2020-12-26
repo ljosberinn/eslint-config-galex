@@ -1437,8 +1437,9 @@ const getStylisticIssuesRules = ({ typescript: { hasTypeScript } }) => ({
    * prefer `else if` over `else { if (condition )}`
    *
    * @see https://eslint.org/docs/rules/no-lonely-if
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-lonely-if.md
    */
-  'no-lonely-if': 'warn',
+  'no-lonely-if': 'off',
 
   /**
    * @see https://eslint.org/docs/rules/no-mixed-operators
