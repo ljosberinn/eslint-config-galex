@@ -1092,7 +1092,9 @@ const getVariableRules = ({ typescript: { hasTypeScript } }) => ({
 /**
  * @see https://eslint.org/docs/rules/#stylistic-issues
  */
-const getStylisticIssuesRules = ({ typescript: { hasTypeScript } }) => ({
+const getStylisticIssuesRules = ({
+  typescript: { hasTypeScript, tsConfig },
+}) => ({
   /**
    * off because handled by prettier
    *
@@ -1390,7 +1392,12 @@ const getStylisticIssuesRules = ({ typescript: { hasTypeScript } }) => ({
    *
    * @see https://eslint.org/docs/rules/new-cap
    */
-  'new-cap': 'warn',
+  'new-cap':
+    tsConfig &&
+    tsConfig.compilerOptions &&
+    tsConfig.compilerOptions.experimentalDecorators
+      ? 'off'
+      : 'warn',
 
   /**
    * off because handled by prettier

@@ -21,6 +21,39 @@ describe('createEslintCoreRules', () => {
     expect(createEslintCoreRules(project)).toMatchSnapshot();
   });
 
+  test('disables certain rules based on tsConfig', () => {
+    const defaultProject = {
+      typescript: {
+        hasTypeScript: false,
+      },
+    };
+
+    const defaultEslintCoreRules = createEslintCoreRules(defaultProject);
+
+    const tsConfigWithDecorators = {
+      compilerOptions: {
+        experimentalDecorators: true,
+      },
+    };
+
+    const customProject = {
+      typescript: {
+        hasTypeScript: true,
+        tsConfig: tsConfigWithDecorators,
+      },
+    };
+
+    const customEslintCoreRules = createEslintCoreRules(customProject);
+
+    const divergingRules = ['new-cap'];
+
+    divergingRules.forEach(rule => {
+      expect(defaultEslintCoreRules[rule]).not.toBe(
+        customEslintCoreRules[rule]
+      );
+    });
+  });
+
   test('allows passing custom rules', () => {
     const rule = 'for-direction';
     const level = 'off';
