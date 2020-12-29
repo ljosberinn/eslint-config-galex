@@ -38,8 +38,8 @@ describe('createEslintCoreRules', () => {
 
     const customProject = {
       typescript: {
+        config: tsConfigWithDecorators,
         hasTypeScript: true,
-        tsConfig: tsConfigWithDecorators,
       },
     };
 
