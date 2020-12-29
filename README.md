@@ -164,7 +164,7 @@ criteria:
   [actively encouraged by the React core team](https://twitter.com/dan_abramov/status/1255229440860262400),
   you should probably consider using it.
 
-- improve code quality (such as `unicorn/prefer-flat-map`)
+- improve code quality (such as `unicorn/prefer-array-flat-map`)
 - only minor stylistic influence (such as `import/newline-after-import`)
 
 If you want to add support, please follow the detection logic in `index.js`.
@@ -317,11 +317,11 @@ list, check out the source.
 ## Custom TypeScript override to disable a rule
 
 ```js
-const { createConfig } = require("eslint-config-galex/src/createConfig");
+const { createConfig } = require('eslint-config-galex/src/createConfig');
 const {
   createTSOverride,
-} = require("eslint-config-galex/src/overrides/typescript");
-const packageJson = require("./package.json");
+} = require('eslint-config-galex/src/overrides/typescript');
+const packageJson = require('./package.json');
 
 // since `createTSOverride` is entirely configurable, we need to inform it about its environment
 const tsOverrideConfig = {
@@ -329,7 +329,7 @@ const tsOverrideConfig = {
     hasReact: true,
   },
   rules: {
-    "@typescript-eslint/ban-ts-comment": "off",
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
   typescript: {
     hasTypeScript: true,

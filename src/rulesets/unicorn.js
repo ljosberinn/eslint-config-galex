@@ -130,11 +130,18 @@ const getUnicornRules = ({
   'unicorn/no-abusive-eslint-disable': 'error',
 
   /**
-   * use `Array.isArray` instead of `instanceof Array`
+   * off because TS tells you where this is possible and where not
    *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-array-instanceof.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-array-callback-reference.md
    */
-  'unicorn/no-array-instanceof': 'error',
+  'unicorn/no-array-callback-reference': 'off',
+
+  /**
+   * off because bad take
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-array-reduce.md
+   */
+  'unicorn/no-array-reduce': 'off',
 
   /**
    * disallow leading/trailing space between console.log parameters
@@ -142,13 +149,6 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-console-spaces.md
    */
   'unicorn/no-console-spaces': 'error',
-
-  /**
-   * off because TS tells you where this is possible and where not
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-fn-reference-in-iterator.md
-   */
-  'unicorn/no-fn-reference-in-iterator': 'off',
 
   /**
    * no `for` loop when you can `for-of` instead
@@ -163,6 +163,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-hex-escape.md
    */
   'unicorn/no-hex-escape': 'error',
+
+  /**
+   * use `Array.isArray` instead of `instanceof Array`
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-array-instanceof.md
+   */
+  'unicorn/no-instanceof-array': 'error',
 
   /**
    * ensures not using keywords as variable prefix
@@ -215,13 +222,6 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-process-exit.md
    */
   'unicorn/no-process-exit': 'error',
-
-  /**
-   * off because bad take
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-reduce.md
-   */
-  'unicorn/no-reduce': 'off',
 
   /**
    * __EXPERIMENTAL__
@@ -291,11 +291,18 @@ const getUnicornRules = ({
   'unicorn/prefer-array-find': 'error',
 
   /**
-   * prefer element.dataset.foo over element.setAttribute('dataset-foo')
+   * prefer Array.flatMap over Array.flat().map() and similar
    *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-dataset.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-array-flat-map.md
    */
-  'unicorn/prefer-dataset': 'error',
+  'unicorn/prefer-array-flat-map': 'error',
+
+  /**
+   * prefer array.some when more appropriate than array.find
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-array-some.md
+   */
+  'unicorn/prefer-array-some': 'warn',
 
   /**
    * prefer using `Date.now()` to get unix ms over other options
@@ -305,18 +312,39 @@ const getUnicornRules = ({
   'unicorn/prefer-date-now': 'warn',
 
   /**
-   * prefer event.key over event.keyCode
+   * prefer using function default parameters in contrast to reassigning
    *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-event-key.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-default-parameters.md
    */
-  'unicorn/prefer-event-key': 'error',
+  'unicorn/prefer-default-parameters': 'warn',
 
   /**
-   * prefer Array.flatMap over Array.flat().map() and similar
+   * prefer using modern API
    *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-flat-map.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-dom-node-append.md
    */
-  'unicorn/prefer-flat-map': 'error',
+  'unicorn/prefer-dom-node-append': 'error',
+
+  /**
+   * prefer element.dataset.foo over element.setAttribute('dataset-foo')
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-dom-node-dataset.md
+   */
+  'unicorn/prefer-dom-node-dataset': 'error',
+
+  /**
+   * prefer using modern API
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-dom-node-remove.md
+   */
+  'unicorn/prefer-dom-node-remove': 'error',
+
+  /**
+   * use element.textContent over element.innerText
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-dom-node-text-content.md
+   */
+  'unicorn/prefer-dom-node-text-content': 'error',
 
   /**
    * prefer (Array|String).includes over (Array|String).indexOf
@@ -325,6 +353,13 @@ const getUnicornRules = ({
    * @see @typescript-eslint/prefer-includes
    */
   'unicorn/prefer-includes': hasTypeScript ? 'off' : 'warn',
+
+  /**
+   * prefer event.key over event.keyCode
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-keyboard-event-key.md
+   */
+  'unicorn/prefer-keyboard-event-key': 'error',
 
   /**
    * enforces usage of `Math.trunc()` over bitwise
@@ -346,20 +381,6 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-negative-index.md
    */
   'unicorn/prefer-negative-index': 'error',
-
-  /**
-   * prefer using modern API
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-node-append.md
-   */
-  'unicorn/prefer-node-append': 'error',
-
-  /**
-   * prefer using modern API
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-node-remove.md
-   */
-  'unicorn/prefer-node-remove': 'error',
 
   /**
    * use Number.* instead of * directly because of implicit differences
@@ -390,13 +411,6 @@ const getUnicornRules = ({
   'unicorn/prefer-reflect-apply': 'error',
 
   /**
-   * prefer String.replaceAll over global regex
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-replace-all.md
-   */
-  'unicorn/prefer-replace-all': 'error',
-
-  /**
    * prefer Set.has over Array.includes
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-set-has.md
@@ -411,12 +425,11 @@ const getUnicornRules = ({
   'unicorn/prefer-spread': 'error',
 
   /**
-   * use String.startsWith/.endsWith over String.indexOf or regex
+   * prefer String.replaceAll over global regex
    *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-starts-ends-with.md
-   * @see @typescript-eslint/prefer-string-starts-ends-with
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-string-replace-all.md
    */
-  'unicorn/prefer-starts-ends-with': hasTypeScript ? 'off' : 'error',
+  'unicorn/prefer-string-replace-all': 'error',
 
   /**
    * use String.slice over String.substr/.substring
@@ -426,27 +439,28 @@ const getUnicornRules = ({
   'unicorn/prefer-string-slice': 'error',
 
   /**
+   * use String.startsWith/.endsWith over String.indexOf or regex
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-string-starts-ends-with.md
+   * @see @typescript-eslint/prefer-string-starts-ends-with
+   */
+  'unicorn/prefer-string-starts-ends-with': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * use element.trimStart/element.trimEnd over
+   * elelment.trimLeft/elelment.trimRight
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-string-trim-start-end.md
+   */
+  'unicorn/prefer-string-trim-start-end': 'error',
+
+  /**
    * off as long as promises & generators are not excludable
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-ternary.md
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/issues/867
    */
   'unicorn/prefer-ternary': 'off',
-
-  /**
-   * use element.textContent over element.innerText
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-text-content.md
-   */
-  'unicorn/prefer-text-content': 'error',
-
-  /**
-   * use element.trimStart/element.trimEnd over
-   * elelment.trimLeft/elelment.trimRight
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-trim-start-end.md
-   */
-  'unicorn/prefer-trim-start-end': 'error',
 
   /**
    * be more explicit about the type of error you throw
