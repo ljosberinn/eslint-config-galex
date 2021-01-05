@@ -756,6 +756,13 @@ const getTypeScriptRules = ({
   '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
 
   /**
+   * sorts members of type union/intersection are sorted alphabetically
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/sort-type-union-intersection-members.md
+   */
+  '@typescript-eslint/sort-type-union-intersection-members': 'warn',
+
+  /**
    * prefer using `as const` syntax over casting
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-as-const.md
