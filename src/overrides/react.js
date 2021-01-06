@@ -310,7 +310,21 @@ const createReactRules = ({
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md
    */
-  'react/jsx-key': ['warn', { checkFragmentShorthand: true }],
+  'react/jsx-key': [
+    'warn',
+    {
+      checkFragmentShorthand: true,
+      /**
+       * only active with new React JSX transform
+       *
+       * @see https://github.com/facebook/react/issues/20031#issuecomment-710346866
+       * @see https://togithub.com/yannickcr/eslint-plugin-react/pull/2835
+       */
+      checkKeyMustBeforeSpread: fulfillsVersionRequirement(version, {
+        major: 17,
+      }),
+    },
+  ],
 
   /**
    * off because arbitrary
@@ -327,6 +341,15 @@ const createReactRules = ({
   'react/jsx-max-props-per-line': 'off',
 
   /**
+   * enforces new line after jsx elements and expressions
+   *
+   * off because opinionated
+   *
+   * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-newline.md
+   */
+  'react/jsx-newline': 'off',
+
+  /**
    * off because its nonsensical to enforce memoizing every function
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
@@ -339,6 +362,13 @@ const createReactRules = ({
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md
    */
   'react/jsx-no-comment-textnodes': 'warn',
+
+  /**
+   * prevents potential performance issues using React.createContext Provider
+   *
+   * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
+   */
+  'react/jsx-no-constructed-context-values': 'warn',
 
   /**
    * prevents duplicate props

@@ -257,7 +257,6 @@ list, check out the source.
 - `const { createNextJsRules } = require('eslint-config-galex/src/rulesets/next')`
 - `const { createPromiseRules } = require('eslint-config-galex/src/rulesets/promise')`
 - `const { createSonarjsRules } = require('eslint-config-galex/src/rulesets/sonarjs')`
-- `const { createSortKeysFixRules } = require('eslint-config-galex/src/rulesets/sort-keys-fix')`
 - `const { createUnicornRules } = require('eslint-config-galex/src/rulesets/unicorn')`
 
 # List of included opinions

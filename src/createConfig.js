@@ -42,7 +42,6 @@ const reactFlavours = ['react', 'preact', 'next'];
 
 const defaultPlugins = [
   'import',
-  'sort-keys-fix',
   'unicorn',
   'promise',
   'sonarjs',
