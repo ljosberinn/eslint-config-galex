@@ -758,9 +758,11 @@ const getTypeScriptRules = ({
   /**
    * sorts members of type union/intersection are sorted alphabetically
    *
+   * off because opinionated
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/sort-type-union-intersection-members.md
    */
-  '@typescript-eslint/sort-type-union-intersection-members': 'warn',
+  '@typescript-eslint/sort-type-union-intersection-members': 'off',
 
   /**
    * prefer using `as const` syntax over casting
