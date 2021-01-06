@@ -307,7 +307,6 @@ list, check out the source.
 ## General
 
 - sort your imports (this does not work when using absolute imports, sadly)
-- sort your object keys alphabetically
 - don't write unecessary code (e.g. `return undefined` or `if(condition === true)`)
 - new line after all imports
 - group imports at the top

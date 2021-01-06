@@ -14,7 +14,6 @@ const {
 } = require('./rulesets/inclusive-language');
 const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
-const { createSortKeysFixRules } = require('./rulesets/sort-keys-fix');
 const { createUnicornRules } = require('./rulesets/unicorn');
 
 /**
@@ -239,7 +238,6 @@ const createConfig = ({
     ...createUnicornRules(project),
     ...createPromiseRules(project),
     ...createImportRules(project),
-    ...createSortKeysFixRules(project),
     ...createSonarjsRules(project),
     ...createInclusiveLanguageRules(project),
     ...customRules,
