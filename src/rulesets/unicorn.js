@@ -46,6 +46,13 @@ const getUnicornRules = ({
   'unicorn/catch-error-name': 'error',
 
   /**
+   * enforces usage of destructured variables over re-accessing them
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-destructuring.md
+   */
+  'unicorn/consistent-destructuring': 'error',
+
+  /**
    * enforces placing functions as close to the top level as possible
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
@@ -194,6 +201,14 @@ const getUnicornRules = ({
   'unicorn/no-nested-ternary': 'off',
 
   /**
+   * disallows `new Array()`
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-new-array.md
+   * @see no-array-constructor
+   */
+  'unicorn/no-new-array': 'error',
+
+  /**
    * use Buffer.from/Buffer.alloc instead of new Buffer (deprecated)
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-new-buffer.md
@@ -296,6 +311,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-array-flat-map.md
    */
   'unicorn/prefer-array-flat-map': 'error',
+
+  /**
+   * use `.indexOf` where appropriate
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-array-index-of.md
+   */
+  'unicorn/prefer-array-index-of': 'warn',
 
   /**
    * prefer array.some when more appropriate than array.find
@@ -409,6 +431,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-reflect-apply.md
    */
   'unicorn/prefer-reflect-apply': 'error',
+
+  /**
+   * prefer the more performant, semantically clear method
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-regexp-test.md
+   */
+  'unicorn/prefer-regexp-test': 'error',
 
   /**
    * prefer Set.has over Array.includes

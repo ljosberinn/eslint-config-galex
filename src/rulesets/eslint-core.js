@@ -1416,6 +1416,7 @@ const getStylisticIssuesRules = ({
   /**
    * @see https://eslint.org/docs/rules/no-array-constructor
    * @see @typescript-eslint/no-array-constructor
+   * @see unicorn/no-new-array
    */
   'no-array-constructor': hasTypeScript ? 'off' : 'error',
 
