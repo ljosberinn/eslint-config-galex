@@ -1036,9 +1036,11 @@ const createJSXA11yRules = ({ react: { isNext, isCreateReactApp } }) => ({
   /**
    * prefer `onBlur` over `onChange`
    *
+   * off because deprecated
+   *
    * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-onchange.md
    */
-  'jsx-a11y/no-onchange': 'warn',
+  'jsx-a11y/no-onchange': 'off',
 
   /**
    * prevents roles on elements that already have the role implicitly
