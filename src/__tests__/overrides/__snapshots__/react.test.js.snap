@@ -6,6 +6,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -261,6 +262,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -509,6 +511,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -758,6 +761,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1010,6 +1014,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1265,6 +1270,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1511,6 +1517,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1760,6 +1767,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2012,6 +2020,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2267,6 +2276,7 @@ Object {
   "files": Array [
     "**/*.?(ts|js)?(x)",
   ],
+  "overrideType": "eslint-config-galex/react",
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {

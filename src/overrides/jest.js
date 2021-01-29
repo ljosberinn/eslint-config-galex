@@ -15,6 +15,7 @@ const defaultSettings = {
     version: 'detect',
   },
 };
+const overrideType = 'eslint-config-galex/jest';
 
 /**
  * @param {{
@@ -94,6 +95,7 @@ const createJestOverride = ({
     plugins,
     rules,
     settings,
+    overrideType,
   };
 };
 
@@ -695,4 +697,5 @@ module.exports = {
   jestRules,
   parserOptions: defaultParserOptions,
   settings: defaultSettings,
+  overrideType,
 };

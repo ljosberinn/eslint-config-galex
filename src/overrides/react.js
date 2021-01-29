@@ -25,6 +25,7 @@ const defaultSettings = {
     version: 'detect',
   },
 };
+const overrideType = 'eslint-config-galex/react';
 
 /**
  * @param {{
@@ -87,6 +88,7 @@ const createReactOverride = ({
     plugins,
     rules,
     settings,
+    overrideType,
   };
 };
 
@@ -1138,4 +1140,5 @@ module.exports = {
   plugins,
   prettierReactRules,
   settings: defaultParserOptions,
+  overrideType,
 };

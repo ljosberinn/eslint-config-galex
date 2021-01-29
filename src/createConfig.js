@@ -4,9 +4,18 @@ const { resolve } = require('path');
 const readPkgUp = require('read-pkg-up');
 const ts = require('typescript');
 
-const { createJestOverride } = require('./overrides/jest');
-const { createReactOverride } = require('./overrides/react');
-const { createTSOverride } = require('./overrides/typescript');
+const {
+  createJestOverride,
+  overrideType: jestOverrideType,
+} = require('./overrides/jest');
+const {
+  createReactOverride,
+  overrideType: reactOverrideType,
+} = require('./overrides/react');
+const {
+  createTSOverride,
+  overrideType: tsOverrideType,
+} = require('./overrides/typescript');
 const { createEslintCoreRules } = require('./rulesets/eslint-core');
 const { createImportRules } = require('./rulesets/import');
 const {
@@ -107,7 +116,7 @@ const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
 const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
-    /* istanbul ignore next line 101 is supposedly uncovered :shrug: */
+    /* istanbul ignore next line 124 is supposedly uncovered :shrug: */
     const {
       packageJson: {
         peerDependencies = {},
@@ -202,6 +211,71 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   }
 };
 
+const pseudoDeepMerge = (override, previous) => {
+  return Object.entries(override).reduce((carry, [key, value]) => {
+    /* istanbul ignore next line 217 is supposedly uncovered :shrug: */
+    if (carry[key]) {
+      if (Array.isArray(carry[key])) {
+        carry[key] = [...new Set(...carry[key], ...value)];
+        return carry;
+      }
+
+      if (typeof carry[key] === 'object') {
+        return {
+          ...carry,
+          [key]: {
+            ...carry[key],
+            ...value,
+          },
+        };
+      }
+
+      carry[key] = value;
+    }
+
+    return carry;
+  }, previous);
+};
+
+/**
+ * @param {object[]} overrides
+ */
+const mergeSortOverrides = overrides => {
+  const overrideOrder = {
+    [jestOverrideType]: 0,
+    [tsOverrideType]: 1,
+    [reactOverrideType]: 2,
+  };
+
+  return overrides
+    .filter(Boolean)
+    .reduce((carry, override) => {
+      const isInternalOverride = !!override.overrideType;
+
+      if (isInternalOverride) {
+        const previousDefaultOverrideTypeIndex = carry.findIndex(
+          o => o.overrideType === override.overrideType
+        );
+
+        if (previousDefaultOverrideTypeIndex > -1) {
+          return carry.map((dataset, index) =>
+            index === previousDefaultOverrideTypeIndex
+              ? pseudoDeepMerge(override, dataset)
+              : dataset
+          );
+        }
+      }
+
+      return [...carry, override];
+    }, [])
+    .sort((a, b) => {
+      const priorityA = a.overrideType ? overrideOrder[a.overrideType] : -1;
+      const priorityB = b.overrideType ? overrideOrder[b.overrideType] : -1;
+
+      return priorityB - priorityA;
+    });
+};
+
 /**
  * @param {{
  *  cwd?: string
@@ -211,7 +285,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
  *  env?: object;
  *  parserOptions?: object;
  *  tsConfigPath?: string
- * }} param
+ * }} config
  */
 const createConfig = ({
   cwd,
@@ -224,13 +298,13 @@ const createConfig = ({
 } = {}) => {
   const project = getDependencies({ cwd, tsConfigPath });
 
-  const overrides = [
+  const overrides = mergeSortOverrides([
     createReactOverride(project),
     createTSOverride(project),
     // order is important - test must come last, as it has overrides for e.g. ts
     createJestOverride(project),
     ...customOverrides,
-  ].filter(Boolean);
+  ]);
 
   const rules = {
     ...createEslintCoreRules(project),

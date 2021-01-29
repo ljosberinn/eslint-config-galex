@@ -6,6 +6,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -194,6 +195,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -382,6 +384,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -538,6 +541,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -706,6 +710,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -874,6 +879,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1038,6 +1044,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1214,6 +1221,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1390,6 +1398,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1554,6 +1563,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1730,6 +1740,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1906,6 +1917,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2070,6 +2082,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2246,6 +2259,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2422,6 +2436,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2589,6 +2604,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2768,6 +2784,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2947,6 +2964,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -3121,6 +3139,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -3307,6 +3326,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -3493,6 +3513,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -3668,6 +3689,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -3855,6 +3877,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -4042,6 +4065,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -4218,6 +4242,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -4406,6 +4431,7 @@ Object {
   "files": Array [
     "**/*.ts?(x)",
   ],
+  "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {

@@ -25,6 +25,7 @@ const defaultSettings = {
     version: 'detect',
   },
 };
+const overrideType = 'eslint-config-galex/typescript';
 
 /**
  * @param {{
@@ -88,6 +89,7 @@ const createTSOverride = ({
     plugins,
     rules,
     settings,
+    overrideType,
   };
 };
 
@@ -1021,4 +1023,5 @@ module.exports = {
   plugins,
   prettierTypeScriptRules,
   settings: defaultSettings,
+  overrideType,
 };

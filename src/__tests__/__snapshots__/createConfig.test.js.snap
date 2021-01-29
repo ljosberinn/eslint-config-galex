@@ -19,6 +19,7 @@ Object {
       "files": Array [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
+      "overrideType": "eslint-config-galex/jest",
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -694,6 +695,7 @@ Object {
       "files": Array [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
+      "overrideType": "eslint-config-galex/jest",
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -1370,6 +1372,7 @@ Object {
       "files": Array [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
+      "overrideType": "eslint-config-galex/jest",
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -2046,6 +2049,7 @@ Object {
       "files": Array [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
+      "overrideType": "eslint-config-galex/jest",
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -2722,6 +2726,7 @@ Object {
       "files": Array [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
+      "overrideType": "eslint-config-galex/jest",
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -3398,6 +3403,7 @@ Object {
       "files": Array [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
+      "overrideType": "eslint-config-galex/jest",
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },

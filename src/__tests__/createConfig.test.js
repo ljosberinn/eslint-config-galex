@@ -4,6 +4,13 @@ const readPkgUp = require('read-pkg-up');
 const ts = require('typescript');
 
 const { createConfig, getDependencies } = require('../createConfig');
+const {
+  overrideType: jestOverrideType,
+  createJestOverride,
+  jestRules,
+} = require('../overrides/jest');
+const { overrideType: reactOverrideType } = require('../overrides/react');
+const { overrideType: tsOverrideType } = require('../overrides/typescript');
 
 describe('getDependencies', () => {
   beforeEach(() => {
@@ -246,5 +253,169 @@ describe('createConfig', () => {
 
     expect(config.parserOptions[key]).toBe(value);
     expect(config).toMatchSnapshot();
+  });
+
+  describe('overrides', () => {
+    test('sorts default overrides correctly', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+        packageJson: {
+          dependencies: {
+            typescript: '1.0.0',
+            jest: '1.0.0',
+            react: '1.0.0',
+          },
+        },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      const key = 'foo';
+      const value = 'bar';
+
+      jest.spyOn(ts, 'convertToObject').mockReturnValueOnce({
+        compilerOptions: { [key]: value },
+      });
+
+      const { overrides } = createConfig();
+
+      expect(overrides[0].overrideType).toBe(reactOverrideType);
+      expect(overrides[1].overrideType).toBe(tsOverrideType);
+      expect(overrides[2].overrideType).toBe(jestOverrideType);
+    });
+
+    test('sorts overrides correctly given additional, external overrides', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+        packageJson: {
+          dependencies: {
+            typescript: '1.0.0',
+            jest: '1.0.0',
+            react: '1.0.0',
+          },
+        },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      const key = 'foo';
+      const value = 'bar';
+
+      jest.spyOn(ts, 'convertToObject').mockReturnValueOnce({
+        compilerOptions: { [key]: value },
+      });
+
+      const dummyOverride = {
+        files: ['src/pages/*.ts?(x)'],
+        rules: {
+          'import/no-default-export': 'off',
+        },
+      };
+
+      const { overrides } = createConfig({ overrides: [dummyOverride] });
+
+      expect(overrides[0].overrideType).toBe(reactOverrideType);
+      expect(overrides[1].overrideType).toBe(tsOverrideType);
+      expect(overrides[2].overrideType).toBe(jestOverrideType);
+      expect(overrides[3]).toBe(dummyOverride);
+    });
+
+    test('merges overrides correctly given additional, internal overrides', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValue({
+        packageJson: {
+          dependencies: {
+            react: '17.0.1',
+            typescript: '4.1.0',
+            jest: '26.0.0',
+          },
+        },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      jest.spyOn(ts, 'convertToObject').mockReturnValue({
+        compilerOptions: {},
+      });
+
+      const realJestRuleName = 'jest/consistent-test-it';
+      const mockRuleName = 'foo';
+      const mockRuleValue = 'bar';
+
+      const dummyOverride = createJestOverride({
+        ...getDependencies(),
+        files: ['testUtils/*.ts?(x)'],
+        rules: {
+          [mockRuleName]: mockRuleValue,
+          [realJestRuleName]: 'warn',
+        },
+      });
+
+      const { overrides } = createConfig({
+        overrides: [dummyOverride],
+      });
+
+      const finalJestOverride = overrides.find(
+        override => override.overrideType === jestOverrideType
+      );
+
+      // 4 overrides were given, 3 should be present due to merigng
+      expect(overrides).toHaveLength(3);
+
+      // order should be correct
+      expect(overrides[0].overrideType).toBe(reactOverrideType);
+      expect(overrides[1].overrideType).toBe(tsOverrideType);
+      expect(overrides[2].overrideType).toBe(jestOverrideType);
+
+      // given fourth should be merged into third
+      expect(finalJestOverride.rules[mockRuleName]).toBe(mockRuleValue);
+      expect(finalJestOverride.rules[realJestRuleName]).not.toBe(
+        jestRules[realJestRuleName]
+      );
+    });
+
+    test('always puts custom overrides last, maintaining regular order', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValue({
+        packageJson: {
+          dependencies: {
+            react: '17.0.1',
+            typescript: '4.1.0',
+            jest: '26.0.0',
+          },
+        },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      jest.spyOn(ts, 'convertToObject').mockReturnValue({
+        compilerOptions: {},
+      });
+
+      const dummyOverride1 = {
+        rules: {
+          foo: 'bar',
+        },
+      };
+
+      const dummyOverride2 = {
+        rules: {
+          bar: 'baz',
+        },
+      };
+
+      const { overrides } = createConfig({
+        overrides: [dummyOverride1, dummyOverride2],
+      });
+
+      expect(overrides).toHaveLength(5);
+
+      expect(overrides[0].overrideType).toBe(reactOverrideType);
+      expect(overrides[1].overrideType).toBe(tsOverrideType);
+      expect(overrides[2].overrideType).toBe(jestOverrideType);
+
+      expect(overrides[3]).toBe(dummyOverride1);
+      expect(overrides[4]).toBe(dummyOverride2);
+    });
   });
 });
