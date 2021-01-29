@@ -24,6 +24,7 @@ const {
 const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createUnicornRules } = require('./rulesets/unicorn');
+const { applyFlagFilters } = require('./utils/flagFilter');
 
 /**
  * @see https://www.npmjs.com/org/testing-library
@@ -211,13 +212,20 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   }
 };
 
-const pseudoDeepMerge = (override, previous) => {
-  return Object.entries(override).reduce((carry, [key, value]) => {
+const pseudoDeepMerge = (override, previous) =>
+  Object.entries(override).reduce((carry, [key, value]) => {
     /* istanbul ignore next line 217 is supposedly uncovered :shrug: */
     if (carry[key]) {
       if (Array.isArray(carry[key])) {
-        carry[key] = [...new Set(...carry[key], ...value)];
-        return carry;
+        return {
+          ...carry,
+          [key]: [
+            ...new Set([
+              ...carry[key],
+              ...(Array.isArray(value) ? value : [value]),
+            ]),
+          ],
+        };
       }
 
       if (typeof carry[key] === 'object') {
@@ -235,7 +243,6 @@ const pseudoDeepMerge = (override, previous) => {
 
     return carry;
   }, previous);
-};
 
 /**
  * @param {object[]} overrides
@@ -285,6 +292,7 @@ const mergeSortOverrides = overrides => {
  *  env?: object;
  *  parserOptions?: object;
  *  tsConfigPath?: string
+ *  convertToESLintInternals?: boolean
  * }} config
  */
 const createConfig = ({
@@ -295,26 +303,47 @@ const createConfig = ({
   plugins: customPlugins = [],
   env: customEnv = {},
   parserOptions: customParserOptions = {},
+  convertToESLintInternals = true,
 } = {}) => {
+  const flags = {
+    convertToESLintInternals,
+  };
+
   const project = getDependencies({ cwd, tsConfigPath });
 
   const overrides = mergeSortOverrides([
     createReactOverride(project),
     createTSOverride(project),
-    // order is important - test must come last, as it has overrides for e.g. ts
     createJestOverride(project),
     ...customOverrides,
-  ]);
+  ]).map(override => {
+    const { rules, ...rest } = override;
 
-  const rules = {
-    ...createEslintCoreRules(project),
-    ...createUnicornRules(project),
-    ...createPromiseRules(project),
-    ...createImportRules(project),
-    ...createSonarjsRules(project),
-    ...createInclusiveLanguageRules(project),
-    ...customRules,
-  };
+    const result = {
+      ...rest,
+      rules: applyFlagFilters(rules, flags),
+    };
+
+    // TODO: find a better way to purge overrideType; it throws an info log
+    if (process.env.NODE_ENV !== 'test') {
+      delete result.overrideType;
+    }
+
+    return result;
+  });
+
+  const rules = applyFlagFilters(
+    {
+      ...createEslintCoreRules(project),
+      ...createUnicornRules(project),
+      ...createPromiseRules(project),
+      ...createImportRules(project),
+      ...createSonarjsRules(project),
+      ...createInclusiveLanguageRules(project),
+      ...customRules,
+    },
+    flags
+  );
 
   const plugins = [...defaultPlugins, ...customPlugins];
 

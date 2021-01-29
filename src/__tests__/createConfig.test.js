@@ -209,11 +209,11 @@ describe('createConfig', () => {
 
   test('allows passing extra rules', () => {
     const rule = 'foo';
-    const value = 'bar';
+    const value = 'error';
 
     const config = createConfig({ rules: { [rule]: value } });
 
-    expect(config.rules[rule]).toBe(value);
+    expect(config.rules[rule]).toBe(2);
     expect(config).toMatchSnapshot();
   });
 
@@ -237,11 +237,14 @@ describe('createConfig', () => {
   });
 
   test('allows passing overrides', () => {
-    const plugin = 'galex';
+    const plugin = {
+      files: 'abc/def',
+      rules: {},
+    };
 
     const config = createConfig({ overrides: [plugin] });
 
-    expect(config.overrides).toContain(plugin);
+    expect(config.overrides[1]).toStrictEqual(plugin);
     expect(config).toMatchSnapshot();
   });
 
@@ -312,12 +315,16 @@ describe('createConfig', () => {
         },
       };
 
-      const { overrides } = createConfig({ overrides: [dummyOverride] });
+      const { overrides } = createConfig({
+        overrides: [dummyOverride],
+        stripDisabledRules: false,
+        convertToESLintInternals: false,
+      });
 
       expect(overrides[0].overrideType).toBe(reactOverrideType);
       expect(overrides[1].overrideType).toBe(tsOverrideType);
       expect(overrides[2].overrideType).toBe(jestOverrideType);
-      expect(overrides[3]).toBe(dummyOverride);
+      expect(overrides[3]).toStrictEqual(dummyOverride);
     });
 
     test('merges overrides correctly given additional, internal overrides', () => {
@@ -353,6 +360,8 @@ describe('createConfig', () => {
 
       const { overrides } = createConfig({
         overrides: [dummyOverride],
+        convertToESLintInternals: false,
+        stripDisabledRules: false,
       });
 
       const finalJestOverride = overrides.find(
@@ -394,18 +403,20 @@ describe('createConfig', () => {
 
       const dummyOverride1 = {
         rules: {
-          foo: 'bar',
+          foo: 'error',
         },
       };
 
       const dummyOverride2 = {
         rules: {
-          bar: 'baz',
+          bar: 'error',
         },
       };
 
       const { overrides } = createConfig({
         overrides: [dummyOverride1, dummyOverride2],
+        stripDisabledRules: false,
+        convertToESLintInternals: false,
       });
 
       expect(overrides).toHaveLength(5);
@@ -414,8 +425,8 @@ describe('createConfig', () => {
       expect(overrides[1].overrideType).toBe(tsOverrideType);
       expect(overrides[2].overrideType).toBe(jestOverrideType);
 
-      expect(overrides[3]).toBe(dummyOverride1);
-      expect(overrides[4]).toBe(dummyOverride2);
+      expect(overrides[3]).toStrictEqual(dummyOverride1);
+      expect(overrides[4]).toStrictEqual(dummyOverride2);
     });
   });
 });
