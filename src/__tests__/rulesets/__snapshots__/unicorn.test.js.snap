@@ -57,7 +57,12 @@ Object {
   "unicorn/prefer-math-trunc": "warn",
   "unicorn/prefer-modern-dom-apis": "error",
   "unicorn/prefer-negative-index": "error",
-  "unicorn/prefer-number-properties": "warn",
+  "unicorn/prefer-number-properties": Array [
+    "warn",
+    Object {
+      "checkInfinity": false,
+    },
+  ],
   "unicorn/prefer-optional-catch-binding": "error",
   "unicorn/prefer-query-selector": "error",
   "unicorn/prefer-reflect-apply": "error",
@@ -133,7 +138,12 @@ Object {
   "unicorn/prefer-math-trunc": "warn",
   "unicorn/prefer-modern-dom-apis": "error",
   "unicorn/prefer-negative-index": "error",
-  "unicorn/prefer-number-properties": "warn",
+  "unicorn/prefer-number-properties": Array [
+    "warn",
+    Object {
+      "checkInfinity": false,
+    },
+  ],
   "unicorn/prefer-optional-catch-binding": "error",
   "unicorn/prefer-query-selector": "error",
   "unicorn/prefer-reflect-apply": "error",
@@ -209,7 +219,12 @@ Object {
   "unicorn/prefer-math-trunc": "warn",
   "unicorn/prefer-modern-dom-apis": "error",
   "unicorn/prefer-negative-index": "error",
-  "unicorn/prefer-number-properties": "warn",
+  "unicorn/prefer-number-properties": Array [
+    "warn",
+    Object {
+      "checkInfinity": false,
+    },
+  ],
   "unicorn/prefer-optional-catch-binding": "error",
   "unicorn/prefer-query-selector": "error",
   "unicorn/prefer-reflect-apply": "error",
@@ -285,7 +300,12 @@ Object {
   "unicorn/prefer-math-trunc": "warn",
   "unicorn/prefer-modern-dom-apis": "error",
   "unicorn/prefer-negative-index": "error",
-  "unicorn/prefer-number-properties": "warn",
+  "unicorn/prefer-number-properties": Array [
+    "warn",
+    Object {
+      "checkInfinity": false,
+    },
+  ],
   "unicorn/prefer-optional-catch-binding": "error",
   "unicorn/prefer-query-selector": "error",
   "unicorn/prefer-reflect-apply": "error",
@@ -361,7 +381,12 @@ Object {
   "unicorn/prefer-math-trunc": "warn",
   "unicorn/prefer-modern-dom-apis": "error",
   "unicorn/prefer-negative-index": "error",
-  "unicorn/prefer-number-properties": "warn",
+  "unicorn/prefer-number-properties": Array [
+    "warn",
+    Object {
+      "checkInfinity": false,
+    },
+  ],
   "unicorn/prefer-optional-catch-binding": "error",
   "unicorn/prefer-query-selector": "error",
   "unicorn/prefer-reflect-apply": "error",

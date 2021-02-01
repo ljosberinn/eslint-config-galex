@@ -426,7 +426,7 @@ const getUnicornRules = ({
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-number-properties.md
    */
-  'unicorn/prefer-number-properties': 'warn',
+  'unicorn/prefer-number-properties': ['warn', { checkInfinity: false }],
 
   /**
    * handle error in try/catch or omit it

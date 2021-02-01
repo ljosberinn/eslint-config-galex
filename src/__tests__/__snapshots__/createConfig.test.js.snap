@@ -653,7 +653,12 @@ Object {
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
     "unicorn/prefer-negative-index": 2,
-    "unicorn/prefer-number-properties": 1,
+    "unicorn/prefer-number-properties": Array [
+      1,
+      Object {
+        "checkInfinity": false,
+      },
+    ],
     "unicorn/prefer-optional-catch-binding": 2,
     "unicorn/prefer-query-selector": 2,
     "unicorn/prefer-reflect-apply": 2,
@@ -1333,7 +1338,12 @@ Object {
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
     "unicorn/prefer-negative-index": 2,
-    "unicorn/prefer-number-properties": 1,
+    "unicorn/prefer-number-properties": Array [
+      1,
+      Object {
+        "checkInfinity": false,
+      },
+    ],
     "unicorn/prefer-optional-catch-binding": 2,
     "unicorn/prefer-query-selector": 2,
     "unicorn/prefer-reflect-apply": 2,
@@ -2016,7 +2026,12 @@ Object {
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
     "unicorn/prefer-negative-index": 2,
-    "unicorn/prefer-number-properties": 1,
+    "unicorn/prefer-number-properties": Array [
+      1,
+      Object {
+        "checkInfinity": false,
+      },
+    ],
     "unicorn/prefer-optional-catch-binding": 2,
     "unicorn/prefer-query-selector": 2,
     "unicorn/prefer-reflect-apply": 2,
@@ -2696,7 +2711,12 @@ Object {
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
     "unicorn/prefer-negative-index": 2,
-    "unicorn/prefer-number-properties": 1,
+    "unicorn/prefer-number-properties": Array [
+      1,
+      Object {
+        "checkInfinity": false,
+      },
+    ],
     "unicorn/prefer-optional-catch-binding": 2,
     "unicorn/prefer-query-selector": 2,
     "unicorn/prefer-reflect-apply": 2,
@@ -3376,7 +3396,12 @@ Object {
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
     "unicorn/prefer-negative-index": 2,
-    "unicorn/prefer-number-properties": 1,
+    "unicorn/prefer-number-properties": Array [
+      1,
+      Object {
+        "checkInfinity": false,
+      },
+    ],
     "unicorn/prefer-optional-catch-binding": 2,
     "unicorn/prefer-query-selector": 2,
     "unicorn/prefer-reflect-apply": 2,
@@ -4055,7 +4080,12 @@ Object {
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
     "unicorn/prefer-negative-index": 2,
-    "unicorn/prefer-number-properties": 1,
+    "unicorn/prefer-number-properties": Array [
+      1,
+      Object {
+        "checkInfinity": false,
+      },
+    ],
     "unicorn/prefer-optional-catch-binding": 2,
     "unicorn/prefer-query-selector": 2,
     "unicorn/prefer-reflect-apply": 2,
