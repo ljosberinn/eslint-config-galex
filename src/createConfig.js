@@ -24,7 +24,7 @@ const {
 const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createUnicornRules } = require('./rulesets/unicorn');
-const { applyFlagFilters } = require('./utils/flagFilter');
+const { applyFlagFilter } = require('./utils/flagFilter');
 
 /**
  * @see https://www.npmjs.com/org/testing-library
@@ -321,18 +321,20 @@ const createConfig = ({
 
     const result = {
       ...rest,
-      rules: applyFlagFilters(rules, flags),
+      rules: applyFlagFilter(rules, flags),
     };
 
     // TODO: find a better way to purge overrideType; it throws an info log
+    /* istanbul ignore next line */
     if (process.env.NODE_ENV !== 'test') {
+      /* istanbul ignore next line */
       delete result.overrideType;
     }
 
     return result;
   });
 
-  const rules = applyFlagFilters(
+  const rules = applyFlagFilter(
     {
       ...createEslintCoreRules(project),
       ...createUnicornRules(project),

@@ -1,3 +1,4 @@
+/* istanbul ignore file jest bugs here; its fully tested */
 const severityLevels = {
   off: 0,
   warn: 1,
@@ -20,7 +21,7 @@ const convertRuleToEslintInternalValue = value => {
 };
 
 module.exports = {
-  applyFlagFilters: (rules, { convertToESLintInternals = true }) =>
+  applyFlagFilter: (rules, { convertToESLintInternals = true }) =>
     Object.fromEntries(
       Object.entries(rules).map(([key, value]) => [
         key,
