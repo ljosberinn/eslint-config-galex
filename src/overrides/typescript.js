@@ -758,6 +758,14 @@ const getTypeScriptRules = ({
   '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
 
   /**
+   * off because handled by prettier
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/object-curly-spacing.md
+   * @see object-curly-spacing
+   */
+  '@typescript-elint/object-curly-spacing': 'off',
+
+  /**
    * sorts members of type union/intersection are sorted alphabetically
    *
    * off because opinionated

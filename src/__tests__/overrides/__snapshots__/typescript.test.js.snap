@@ -19,6 +19,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -209,6 +210,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -399,6 +401,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -557,6 +560,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -727,6 +731,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -897,6 +902,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -1063,6 +1069,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -1241,6 +1248,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -1419,6 +1427,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -1585,6 +1594,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -1763,6 +1773,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -1941,6 +1952,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -2107,6 +2119,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -2285,6 +2298,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -2463,6 +2477,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -2632,6 +2647,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -2813,6 +2829,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -2994,6 +3011,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -3170,6 +3188,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -3358,6 +3377,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -3546,6 +3566,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -3723,6 +3744,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -3912,6 +3934,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -4101,6 +4124,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -4279,6 +4303,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
@@ -4469,6 +4494,7 @@ Object {
     "@typescript-eslint",
   ],
   "rules": Object {
+    "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": Array [
       "warn",
