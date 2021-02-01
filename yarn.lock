@@ -30,7 +30,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/eslint-parser@^7.12.1":
+"@babel/eslint-parser@7.12.1":
   version "7.12.1"
   resolved "https://registry.yarnpkg.com/@babel/eslint-parser/-/eslint-parser-7.12.1.tgz#b3ae38e6174d2d0d2d00d2dcd919b4086b6bb8f0"
   integrity sha512-cc7WQHnHQY3++/bghgbDtPx+5bf6xTsokyGzV6Qzh65NLz/unv+mPQuACkQ9GFhIhcTFv6yqwNaEcfX7EkOEsg==
@@ -2579,14 +2579,6 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-ast-utils@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-ast-utils/-/eslint-ast-utils-1.1.0.tgz#3d58ba557801cfb1c941d68131ee9f8c34bd1586"
-  integrity sha512-otzzTim2/1+lVrlH19EfQQJEhVJSu0zOb9ygb3iapN6UlyaDtyRq4b5U1FuW0v1lRa9Fp/GJyHkSwm6NqABgCA==
-  dependencies:
-    lodash.get "^4.4.2"
-    lodash.zip "^4.2.0"
-
 eslint-config-prettier@7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.1.0.tgz#5402eb559aa94b894effd6bddfa0b1ca051c858f"
@@ -2716,21 +2708,20 @@ eslint-plugin-testing-library@3.10.1:
   dependencies:
     "@typescript-eslint/experimental-utils" "^3.10.1"
 
-eslint-plugin-unicorn@26.0.1:
-  version "26.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-26.0.1.tgz#65f476bb7624beb417066259dc14c7ebb21eb6fc"
-  integrity sha512-SWgF9sIVY74zqkkSN2dclSCqRfocWSUGD0haC0NX2oRfmdp9p8dQvJYkYSQePaCyssPUE/pqpsIEEZNTh8crUA==
+eslint-plugin-unicorn@27.0.0:
+  version "27.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-27.0.0.tgz#d12436409e399ab75c826bbb17b202846a276e5a"
+  integrity sha512-uUvlueTa4SpkvLjbkqx08JbB0tY6XxOAa8vlfwbTzITfVNy3go3QzPCus49fO5M/mfooOuraIDVkaqan/pLAHg==
   dependencies:
     ci-info "^2.0.0"
     clean-regexp "^1.0.0"
-    eslint-ast-utils "^1.1.0"
     eslint-template-visitor "^2.2.2"
     eslint-utils "^2.1.0"
     import-modules "^2.1.0"
     lodash "^4.17.20"
     pluralize "^8.0.0"
     read-pkg-up "^7.0.1"
-    regexp-tree "^0.1.21"
+    regexp-tree "^0.1.22"
     reserved-words "^0.1.2"
     safe-regex "^2.1.1"
     semver "^7.3.4"
@@ -4975,11 +4966,6 @@ lodash.escaperegexp@^4.1.2:
   resolved "https://registry.yarnpkg.com/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz#64762c48618082518ac3df4ccf5d5886dae20347"
   integrity sha1-ZHYsSGGAglGKw99Mz11YhtriA0c=
 
-lodash.get@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-
 lodash.ismatch@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.ismatch/-/lodash.ismatch-4.4.0.tgz#756cb5150ca3ba6f11085a78849645f188f85f37"
@@ -5024,11 +5010,6 @@ lodash.without@~4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
   integrity sha1-PNRXSgC2e643OpS3SHcmQFB7eqw=
-
-lodash.zip@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.zip/-/lodash.zip-4.2.0.tgz#ec6662e4896408ed4ab6c542a3990b72cc080020"
-  integrity sha1-7GZi5IlkCO1KtsVCo5kLcswIACA=
 
 lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.4:
   version "4.17.20"
@@ -6566,7 +6547,7 @@ regex-not@^1.0.0, regex-not@^1.0.2:
     extend-shallow "^3.0.2"
     safe-regex "^1.1.0"
 
-regexp-tree@^0.1.21, regexp-tree@~0.1.1:
+regexp-tree@^0.1.22, regexp-tree@~0.1.1:
   version "0.1.23"
   resolved "https://registry.yarnpkg.com/regexp-tree/-/regexp-tree-0.1.23.tgz#8a8ce1cc5e971acef62213a7ecdb1f6e18a1f1b2"
   integrity sha512-+7HWfb4Bvu8Rs2eQTUIpX9I/PlQkYOuTNbRpKLJlQpSgwSkzFYh+pUj0gtvglnOZLKB6YgnIgRuJ2/IlpL48qw==
