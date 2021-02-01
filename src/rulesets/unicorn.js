@@ -144,6 +144,20 @@ const getUnicornRules = ({
   'unicorn/no-array-callback-reference': 'off',
 
   /**
+   * off because nonsense
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md
+   */
+  'unicorn/no-array-for-each': 'off',
+
+  /**
+   * combines multiple array.push calls into one where possible
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md
+   */
+  'unicorn/no-array-push-push': 'warn',
+
+  /**
    * off because bad take
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-array-reduce.md
@@ -239,8 +253,13 @@ const getUnicornRules = ({
   'unicorn/no-process-exit': 'error',
 
   /**
-   * __EXPERIMENTAL__
+   * disallows reassigning `this` to another variable
    *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-this-assignment.md
+   */
+  'unicorn/no-this-assignment': 'warn',
+
+  /**
    * prevents abusive destructuring
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unreadable-array-destructuring.md
@@ -255,8 +274,6 @@ const getUnicornRules = ({
   'unicorn/no-unsafe-regex': 'error',
 
   /**
-   * __EXPERIMENTAL__
-   *
    * disallows unused properties on object constants
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unused-properties.md

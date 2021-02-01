@@ -1020,7 +1020,7 @@ const getVariableRules = ({ typescript: { hasTypeScript } }) => ({
    *
    * @see https://eslint.org/docs/rules/no-restricted-globals
    */
-  'no-restricted-globals': ['error'].concat(restrictedGlobals),
+  'no-restricted-globals': ['error', ...restrictedGlobals],
 
   /**
    * off because opinionated
