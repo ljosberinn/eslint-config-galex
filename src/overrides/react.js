@@ -1,6 +1,7 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 const { rules: prettierReactRules } = require('eslint-config-prettier/react');
 
+const { reactOverrideType: overrideType } = require('../utils/overrideTypes');
 const { fulfillsVersionRequirement } = require('../utils');
 
 const extendsConfigs = [];
@@ -22,7 +23,6 @@ const defaultSettings = {
     version: 'detect',
   },
 };
-const overrideType = 'eslint-config-galex/react';
 
 /**
  * @param {{

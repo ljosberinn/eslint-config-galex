@@ -1,6 +1,8 @@
-const { overrideType: jestOverrideType } = require('./overrides/jest');
-const { overrideType: reactOverrideType } = require('./overrides/react');
-const { overrideType: tsOverrideType } = require('./overrides/typescript');
+const {
+  jestOverrideType,
+  reactOverrideType,
+  tsOverrideType,
+} = require('./overrideTypes');
 
 const severityLevels = {
   off: 0,

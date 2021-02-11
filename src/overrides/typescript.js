@@ -3,6 +3,7 @@ const {
   rules: prettierTypeScriptRules,
 } = require('eslint-config-prettier/@typescript-eslint');
 
+const { tsOverrideType: overrideType } = require('../utils/overrideTypes');
 const { fulfillsVersionRequirement } = require('../utils');
 
 const extendsConfig = [];
@@ -23,7 +24,6 @@ const defaultSettings = {
     version: 'detect',
   },
 };
-const overrideType = 'eslint-config-galex/typescript';
 
 /**
  * @param {{
