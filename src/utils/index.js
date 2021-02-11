@@ -88,15 +88,18 @@ const fulfillsVersionRequirement = (
   }
 };
 
-const applyFlagFilter = (rules, { convertToESLintInternals = true }) =>
-  Object.fromEntries(
+const applyFlagFilter = (rules, { convertToESLintInternals = true }) => {
+  if (!convertToESLintInternals) {
+    return rules;
+  }
+
+  return Object.fromEntries(
     Object.entries(rules).map(([key, value]) => [
       key,
-      convertToESLintInternals
-        ? convertRuleToEslintInternalValue(value)
-        : value,
+      convertRuleToEslintInternalValue(value),
     ])
   );
+};
 
 const pseudoDeepMerge = (override, previous) =>
   Object.entries(override).reduce((carry, [key, value]) => {
