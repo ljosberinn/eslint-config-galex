@@ -3,9 +3,7 @@ const {
   rules: prettierTypeScriptRules,
 } = require('eslint-config-prettier/@typescript-eslint');
 
-const {
-  fulfillsVersionRequirement,
-} = require('../utils/fulfillsVersionRequirement');
+const { fulfillsVersionRequirement } = require('../utils');
 
 const extendsConfig = [];
 const files = ['**/*.ts?(x)'];
@@ -101,11 +99,6 @@ const getTypeScriptRules = ({
   typescript: { version, config },
   react: { isCreateReactApp },
 }) => ({
-  /**
-   * prevents loose overloads
-   *
-   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/adjacent-overload-signatures.md
-   */
   '@typescript-eslint/adjacent-overload-signatures': 'error',
   /**
    * prefer using `T[]` over `Array<T>`
@@ -377,7 +370,6 @@ const getTypeScriptRules = ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md
    */
-
   ...(isCreateReactApp
     ? null
     : { '@typescript-eslint/no-confusing-non-null-assertion': 'error' }),

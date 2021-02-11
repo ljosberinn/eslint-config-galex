@@ -1,6 +1,4 @@
-const {
-  fulfillsVersionRequirement,
-} = require('../../utils/fulfillsVersionRequirement');
+const { fulfillsVersionRequirement } = require('../../utils');
 
 describe('fulfillsVersionRequirement', () => {
   test.each([

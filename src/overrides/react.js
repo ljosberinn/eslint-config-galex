@@ -1,10 +1,7 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
-
 const { rules: prettierReactRules } = require('eslint-config-prettier/react');
 
-const {
-  fulfillsVersionRequirement,
-} = require('../utils/fulfillsVersionRequirement');
+const { fulfillsVersionRequirement } = require('../utils');
 
 const extendsConfigs = [];
 const plugins = [

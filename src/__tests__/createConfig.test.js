@@ -13,10 +13,6 @@ const { overrideType: reactOverrideType } = require('../overrides/react');
 const { overrideType: tsOverrideType } = require('../overrides/typescript');
 
 describe('getDependencies', () => {
-  beforeEach(() => {
-    jest.restoreAllMocks();
-  });
-
   test('matches snapshot', () => {
     expect(getDependencies()).toMatchSnapshot();
   });
@@ -178,10 +174,6 @@ describe('getDependencies', () => {
 });
 
 describe('createConfig', () => {
-  beforeEach(() => {
-    jest.restoreAllMocks();
-  });
-
   test('matches snapshot', () => {
     expect(createConfig()).toMatchSnapshot();
   });

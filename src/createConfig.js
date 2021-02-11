@@ -4,18 +4,9 @@ const { resolve } = require('path');
 const readPkgUp = require('read-pkg-up');
 const ts = require('typescript');
 
-const {
-  createJestOverride,
-  overrideType: jestOverrideType,
-} = require('./overrides/jest');
-const {
-  createReactOverride,
-  overrideType: reactOverrideType,
-} = require('./overrides/react');
-const {
-  createTSOverride,
-  overrideType: tsOverrideType,
-} = require('./overrides/typescript');
+const { createJestOverride } = require('./overrides/jest');
+const { createReactOverride } = require('./overrides/react');
+const { createTSOverride } = require('./overrides/typescript');
 const { createEslintCoreRules } = require('./rulesets/eslint-core');
 const { createImportRules } = require('./rulesets/import');
 const {
@@ -24,7 +15,7 @@ const {
 const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createUnicornRules } = require('./rulesets/unicorn');
-const { applyFlagFilter } = require('./utils/flagFilter');
+const { applyFlagFilter, mergeSortOverrides } = require('./utils');
 
 /**
  * @see https://www.npmjs.com/org/testing-library
@@ -117,7 +108,7 @@ const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
 const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
-    /* istanbul ignore next line 124 is supposedly uncovered :shrug: */
+    /* istanbul ignore next line 1240 is supposedly uncovered :shrug: */
     const {
       packageJson: {
         peerDependencies = {},
@@ -212,75 +203,9 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   }
 };
 
-const pseudoDeepMerge = (override, previous) =>
-  Object.entries(override).reduce((carry, [key, value]) => {
-    /* istanbul ignore next line 217 is supposedly uncovered :shrug: */
-    if (carry[key]) {
-      if (Array.isArray(carry[key])) {
-        return {
-          ...carry,
-          [key]: [
-            ...new Set([
-              ...carry[key],
-              ...(Array.isArray(value) ? value : [value]),
-            ]),
-          ],
-        };
-      }
-
-      if (typeof carry[key] === 'object') {
-        return {
-          ...carry,
-          [key]: {
-            ...carry[key],
-            ...value,
-          },
-        };
-      }
-
-      carry[key] = value;
-    }
-
-    return carry;
-  }, previous);
-
-/**
- * @param {object[]} overrides
- */
-const mergeSortOverrides = overrides => {
-  const overrideOrder = {
-    [jestOverrideType]: 0,
-    [tsOverrideType]: 1,
-    [reactOverrideType]: 2,
-  };
-
-  return overrides
-    .filter(Boolean)
-    .reduce((carry, override) => {
-      const isInternalOverride = !!override.overrideType;
-
-      if (isInternalOverride) {
-        const previousDefaultOverrideTypeIndex = carry.findIndex(
-          o => o.overrideType === override.overrideType
-        );
-
-        if (previousDefaultOverrideTypeIndex > -1) {
-          return carry.map((dataset, index) =>
-            index === previousDefaultOverrideTypeIndex
-              ? pseudoDeepMerge(override, dataset)
-              : dataset
-          );
-        }
-      }
-
-      return [...carry, override];
-    }, [])
-    .sort((a, b) => {
-      const priorityA = a.overrideType ? overrideOrder[a.overrideType] : -1;
-      const priorityB = b.overrideType ? overrideOrder[b.overrideType] : -1;
-
-      return priorityB - priorityA;
-    });
+const cache = {
+  createdAt: null,
+  config: null,
 };
 
 /**
@@ -293,6 +218,10 @@ const mergeSortOverrides = overrides => {
  *  parserOptions?: object;
  *  tsConfigPath?: string
  *  convertToESLintInternals?: boolean
+ *  cacheOptions?: {
+ *   enabled?: boolean;
+ *   expiresAfterMs?: number
+ *  }
  * }} config
  */
 const createConfig = ({
@@ -304,12 +233,27 @@ const createConfig = ({
   env: customEnv = {},
   parserOptions: customParserOptions = {},
   convertToESLintInternals = true,
+  cacheOptions = {
+    enabled: true,
+    expiresAfterMs: 10 * 60 * 1000,
+  },
 } = {}) => {
+  const now = Date.now();
+
+  const mustBustCache =
+    cacheOptions.enabled && cache.createdAt
+      ? now - cacheOptions.expiresAfterMs > cache.createdAt
+      : true;
+
+  if (!mustBustCache) {
+    return cache.config;
+  }
+
+  const project = getDependencies({ cwd, tsConfigPath });
+
   const flags = {
     convertToESLintInternals,
   };
-
-  const project = getDependencies({ cwd, tsConfigPath });
 
   const overrides = mergeSortOverrides([
     createReactOverride(project),
@@ -362,13 +306,20 @@ const createConfig = ({
   };
 
   // schema reference: https://github.com/eslint/eslint/blob/master/conf/config-schema.js
-  return {
+  const config = {
     env,
     overrides,
     parserOptions,
     plugins,
     rules,
   };
+
+  if (cacheOptions.enabled) {
+    cache.created = now;
+    cache.config = config;
+  }
+
+  return config;
 };
 
 module.exports = {
