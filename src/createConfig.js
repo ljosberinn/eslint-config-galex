@@ -206,6 +206,24 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
 const cache = {
   createdAt: null,
   config: null,
+  dependencies: null,
+};
+
+const mustBustCache = ({ now, dependencies }) => {
+  if (!dependencies.cacheOptions.enabled) {
+    return true;
+  }
+
+  const isExpired = cache.createdAt
+    ? now - dependencies.cacheOptions.expiresAfterMs > cache.createdAt
+    : true;
+
+  if (isExpired) {
+    return true;
+  }
+
+  // changed dependencies
+  return JSON.stringify(dependencies) !== cache.dependencies;
 };
 
 /**
@@ -239,13 +257,24 @@ const createConfig = ({
   },
 } = {}) => {
   const now = Date.now();
+  const dependencies = {
+    cwd,
+    tsConfigPath,
+    customRules,
+    customPlugins,
+    customOverrides,
+    customEnv,
+    customParserOptions,
+    convertToESLintInternals,
+    cacheOptions,
+  };
 
-  const mustBustCache =
-    cacheOptions.enabled && cache.createdAt
-      ? now - cacheOptions.expiresAfterMs > cache.createdAt
-      : true;
-
-  if (!mustBustCache) {
+  if (
+    !mustBustCache({
+      now,
+      dependencies,
+    })
+  ) {
     return cache.config;
   }
 
@@ -315,8 +344,9 @@ const createConfig = ({
   };
 
   if (cacheOptions.enabled) {
-    cache.created = now;
+    cache.createdAt = now;
     cache.config = config;
+    cache.dependencies = JSON.stringify(dependencies);
   }
 
   return config;

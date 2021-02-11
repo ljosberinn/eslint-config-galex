@@ -179,7 +179,8 @@ describe('createConfig', () => {
   });
 
   test('given typescript, determines env.node based on presence of tsconfig.json', () => {
-    const defaultConfig = createConfig();
+    const settings = { cacheOptions: { enabled: false } };
+    const defaultConfig = createConfig(settings);
 
     jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
       packageJson: {
@@ -193,7 +194,7 @@ describe('createConfig', () => {
     jest.spyOn(ts, 'parseJsonText').mockReturnValueOnce('');
     jest.spyOn(ts, 'convertToObject').mockReturnValueOnce({});
 
-    const config = createConfig();
+    const config = createConfig(settings);
 
     expect(config.env.node).toBeFalsy();
     expect(config.env.node).not.toBe(defaultConfig.env.node);
