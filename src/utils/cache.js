@@ -4,7 +4,7 @@ const cache = {
   dependencies: null,
 };
 
-const mustBustCache = ({ now, dependencies }) => {
+const mustInvalidate = ({ now, dependencies }) => {
   // neither enabled nor previously ran
   if (!dependencies.cacheOptions.enabled || !cache.config) {
     return true;
@@ -20,7 +20,7 @@ const mustBustCache = ({ now, dependencies }) => {
   return now - dependencies.cacheOptions.expiresAfterMs > cache.createdAt;
 };
 
-const setCache = ({ now, config, dependencies }) => {
+const set = ({ now, config, dependencies }) => {
   cache.createdAt = now;
   cache.config = config;
   cache.dependencies = JSON.stringify(dependencies);
@@ -29,10 +29,10 @@ const setCache = ({ now, config, dependencies }) => {
 /**
  * @returns {object | null}
  */
-const getCache = () => cache.config;
+const get = () => cache.config;
 
 module.exports = {
-  setCache,
-  mustBustCache,
-  getCache,
+  set,
+  mustInvalidate,
+  get,
 };

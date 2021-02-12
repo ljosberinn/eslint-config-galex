@@ -11,7 +11,7 @@ const {
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
 const { overrideType: tsOverrideType } = require('../overrides/typescript');
-const cacheUtils = require('../utils/cache');
+const cache = require('../utils/cache');
 
 describe('getDependencies', () => {
   test('matches snapshot', () => {
@@ -426,38 +426,38 @@ describe('createConfig', () => {
 
   describe('caching', () => {
     test('caches by default', () => {
-      jest.spyOn(cacheUtils, 'setCache');
+      jest.spyOn(cache, 'set');
 
       createConfig();
       createConfig();
 
-      expect(cacheUtils.setCache).toHaveBeenCalledTimes(1);
+      expect(cache.set).toHaveBeenCalledTimes(1);
     });
 
     test('does not cache given opt-out', () => {
-      jest.spyOn(cacheUtils, 'setCache');
+      jest.spyOn(cache, 'set');
       const settings = { cacheOptions: { enabled: false } };
 
       createConfig(settings);
       createConfig(settings);
 
-      expect(cacheUtils.setCache).not.toHaveBeenCalled();
+      expect(cache.set).not.toHaveBeenCalled();
     });
 
     test('busts cache given changed dependencies', () => {
-      jest.spyOn(cacheUtils, 'setCache');
-      jest.spyOn(cacheUtils, 'mustBustCache');
+      jest.spyOn(cache, 'set');
+      jest.spyOn(cache, 'mustInvalidate');
 
       createConfig();
       createConfig({ rules: { foo: 'bar' } });
 
-      expect(cacheUtils.mustBustCache).toHaveBeenCalledTimes(2);
+      expect(cache.mustInvalidate).toHaveBeenCalledTimes(2);
       // initially empty cache
-      expect(cacheUtils.mustBustCache.mock.results[0].value).toBe(true);
+      expect(cache.mustInvalidate.mock.results[0].value).toBe(true);
       // changed dependencies
-      expect(cacheUtils.mustBustCache.mock.results[1].value).toBe(true);
+      expect(cache.mustInvalidate.mock.results[1].value).toBe(true);
 
-      expect(cacheUtils.setCache).toHaveBeenCalledTimes(2);
+      expect(cache.set).toHaveBeenCalledTimes(2);
     });
   });
 });
