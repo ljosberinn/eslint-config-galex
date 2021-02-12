@@ -16,6 +16,7 @@ const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createUnicornRules } = require('./rulesets/unicorn');
 const { applyFlagFilter, mergeSortOverrides } = require('./utils');
+const cacheUtils = require('./utils/cache');
 
 /**
  * @see https://www.npmjs.com/org/testing-library
@@ -203,29 +204,6 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   }
 };
 
-const cache = {
-  createdAt: null,
-  config: null,
-  dependencies: null,
-};
-
-const mustBustCache = ({ now, dependencies }) => {
-  if (!dependencies.cacheOptions.enabled) {
-    return true;
-  }
-
-  const isExpired = cache.createdAt
-    ? now - dependencies.cacheOptions.expiresAfterMs > cache.createdAt
-    : true;
-
-  if (isExpired) {
-    return true;
-  }
-
-  // changed dependencies
-  return JSON.stringify(dependencies) !== cache.dependencies;
-};
-
 /**
  * @param {{
  *  cwd?: string
@@ -251,11 +229,16 @@ const createConfig = ({
   env: customEnv = {},
   parserOptions: customParserOptions = {},
   convertToESLintInternals = true,
-  cacheOptions = {
-    enabled: true,
-    expiresAfterMs: 10 * 60 * 1000,
-  },
+  cacheOptions: {
+    enabled: cachingEnabled = true,
+    expiresAfterMs: cachingExpiresAfterMs = 10 * 60 * 1000,
+  } = {},
 } = {}) => {
+  const cacheOptions = {
+    enabled: cachingEnabled,
+    expiresAfterMs: cachingExpiresAfterMs,
+  };
+
   const now = Date.now();
   const dependencies = {
     cwd,
@@ -270,12 +253,12 @@ const createConfig = ({
   };
 
   if (
-    !mustBustCache({
+    !cacheUtils.mustBustCache({
       now,
       dependencies,
     })
   ) {
-    return cache.config;
+    return cacheUtils.getCache();
   }
 
   const project = getDependencies({ cwd, tsConfigPath });
@@ -344,9 +327,7 @@ const createConfig = ({
   };
 
   if (cacheOptions.enabled) {
-    cache.createdAt = now;
-    cache.config = config;
-    cache.dependencies = JSON.stringify(dependencies);
+    cacheUtils.setCache({ now, config, dependencies });
   }
 
   return config;
