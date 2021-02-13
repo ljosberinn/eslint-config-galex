@@ -4266,7 +4266,7 @@ Object {
   "typescript": Object {
     "config": undefined,
     "hasTypeScript": false,
-    "version": "4.1.3",
+    "version": "4.1.5",
   },
 }
 `;

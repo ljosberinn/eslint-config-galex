@@ -745,9 +745,12 @@ const getTypeScriptRules = ({
   /**
    * detects when `as` casts can be simplified to `!`
    *
+   * off because it conflicts in some cases with `@typescript-eslint/no-non-null-assertion` which has priority
+   * @see https://github.com/ljosberinn/eslint-config-galex/issues/235
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/non-nullable-type-assertion-style.md
    */
-  '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
+  '@typescript-eslint/non-nullable-type-assertion-style': 'off',
 
   /**
    * off because handled by prettier
