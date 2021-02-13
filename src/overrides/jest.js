@@ -530,9 +530,11 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * enforces awaiting events
    *
+   * off because not supported by @testing-library/react
+   *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-fire-event.md
    */
-  'testing-library/await-fire-event': 'error',
+  'testing-library/await-fire-event': 'off',
 
   /**
    * enforces consistent naming based on regex pattern
@@ -684,6 +686,18 @@ const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
    * @see @typescript-eslint/no-empty-function
    */
   'no-empty-function': 'off',
+
+  /**
+   * off because test names may be duplicated across different describe blocks
+   * @see sonarjs/no-duplicate-string
+   */
+  'sonarjs/no-duplicate-string': 'off',
+
+  /**
+   * off because the same test implementation may reoccur across different describe blocks
+   * @see sonarjs/no-identical-function
+   */
+  'sonarjs/no-identical-functions': 'off',
 });
 
 module.exports = {

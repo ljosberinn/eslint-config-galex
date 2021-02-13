@@ -78,6 +78,8 @@ Object {
         "jest/valid-expect-in-promise": 2,
         "jest/valid-title": 1,
         "no-empty-function": 0,
+        "sonarjs/no-duplicate-string": 0,
+        "sonarjs/no-identical-functions": 0,
       },
       "settings": Object {
         "jest": Object {
@@ -762,6 +764,8 @@ Object {
         "jest/valid-expect-in-promise": 2,
         "jest/valid-title": 1,
         "no-empty-function": 0,
+        "sonarjs/no-duplicate-string": 0,
+        "sonarjs/no-identical-functions": 0,
       },
       "settings": Object {
         "jest": Object {
@@ -1447,6 +1451,8 @@ Object {
         "jest/valid-expect-in-promise": 2,
         "jest/valid-title": 1,
         "no-empty-function": 0,
+        "sonarjs/no-duplicate-string": 0,
+        "sonarjs/no-identical-functions": 0,
       },
       "settings": Object {
         "jest": Object {
@@ -2135,6 +2141,8 @@ Object {
         "jest/valid-expect-in-promise": 2,
         "jest/valid-title": 1,
         "no-empty-function": 0,
+        "sonarjs/no-duplicate-string": 0,
+        "sonarjs/no-identical-functions": 0,
       },
       "settings": Object {
         "jest": Object {
@@ -2820,6 +2828,8 @@ Object {
         "jest/valid-expect-in-promise": 2,
         "jest/valid-title": 1,
         "no-empty-function": 0,
+        "sonarjs/no-duplicate-string": 0,
+        "sonarjs/no-identical-functions": 0,
       },
       "settings": Object {
         "jest": Object {
@@ -3505,6 +3515,8 @@ Object {
         "jest/valid-expect-in-promise": 2,
         "jest/valid-title": 1,
         "no-empty-function": 0,
+        "sonarjs/no-duplicate-string": 0,
+        "sonarjs/no-identical-functions": 0,
       },
       "settings": Object {
         "jest": Object {

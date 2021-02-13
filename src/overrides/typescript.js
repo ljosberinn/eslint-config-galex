@@ -3,8 +3,8 @@ const {
   rules: prettierTypeScriptRules,
 } = require('eslint-config-prettier/@typescript-eslint');
 
-const { tsOverrideType: overrideType } = require('../utils/overrideTypes');
 const { fulfillsVersionRequirement } = require('../utils');
+const { tsOverrideType: overrideType } = require('../utils/overrideTypes');
 
 const extendsConfig = [];
 const files = ['**/*.ts?(x)'];
