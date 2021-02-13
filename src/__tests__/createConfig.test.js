@@ -11,12 +11,9 @@ const {
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
 const { overrideType: tsOverrideType } = require('../overrides/typescript');
+const { cache } = require('../utils/cache');
 
 describe('getDependencies', () => {
-  beforeEach(() => {
-    jest.restoreAllMocks();
-  });
-
   test('matches snapshot', () => {
     expect(getDependencies()).toMatchSnapshot();
   });
@@ -178,16 +175,13 @@ describe('getDependencies', () => {
 });
 
 describe('createConfig', () => {
-  beforeEach(() => {
-    jest.restoreAllMocks();
-  });
-
   test('matches snapshot', () => {
     expect(createConfig()).toMatchSnapshot();
   });
 
   test('given typescript, determines env.node based on presence of tsconfig.json', () => {
-    const defaultConfig = createConfig();
+    const settings = { cacheOptions: { enabled: false } };
+    const defaultConfig = createConfig(settings);
 
     jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
       packageJson: {
@@ -201,7 +195,7 @@ describe('createConfig', () => {
     jest.spyOn(ts, 'parseJsonText').mockReturnValueOnce('');
     jest.spyOn(ts, 'convertToObject').mockReturnValueOnce({});
 
-    const config = createConfig();
+    const config = createConfig(settings);
 
     expect(config.env.node).toBeFalsy();
     expect(config.env.node).not.toBe(defaultConfig.env.node);
@@ -427,6 +421,78 @@ describe('createConfig', () => {
 
       expect(overrides[3]).toStrictEqual(dummyOverride1);
       expect(overrides[4]).toStrictEqual(dummyOverride2);
+    });
+  });
+
+  describe('caching', () => {
+    beforeEach(() => {
+      Object.keys(cache.cache).forEach(key => {
+        cache[key] = null;
+      });
+    });
+
+    test('caches by default', () => {
+      jest.spyOn(cache, 'set');
+
+      createConfig();
+      createConfig();
+
+      expect(cache.set).toHaveBeenCalledTimes(1);
+    });
+
+    test('does not cache given opt-out', () => {
+      jest.spyOn(cache, 'set');
+      const settings = { cacheOptions: { enabled: false } };
+
+      createConfig(settings);
+      createConfig(settings);
+
+      expect(cache.set).not.toHaveBeenCalled();
+    });
+
+    test('busts cache given changed dependencies', () => {
+      jest.spyOn(cache, 'set');
+      jest.spyOn(cache, 'mustInvalidate');
+
+      createConfig();
+      createConfig({ rules: { foo: 'bar' } });
+
+      expect(cache.mustInvalidate).toHaveBeenCalledTimes(2);
+      // initially empty cache
+      expect(cache.mustInvalidate.mock.results[0].value).toBe(true);
+      // changed dependencies
+      expect(cache.mustInvalidate.mock.results[1].value).toBe(true);
+
+      expect(cache.set).toHaveBeenCalledTimes(2);
+    });
+
+    test('busts cache automatically after 10 minutes by default', () => {
+      jest.spyOn(cache, 'set');
+      jest.spyOn(cache, 'mustInvalidate');
+
+      jest.useFakeTimers('modern');
+
+      createConfig();
+
+      expect(cache.set).toHaveBeenCalledTimes(1);
+
+      createConfig();
+
+      expect(cache.set).toHaveBeenCalledTimes(1);
+
+      jest.setSystemTime(Date.now() + 5 * 60 * 1000);
+
+      createConfig();
+
+      expect(cache.set).toHaveBeenCalledTimes(1);
+
+      jest.setSystemTime(Date.now() + 10 * 60 * 1000 + 1);
+
+      createConfig();
+
+      expect(cache.set).toBeCalledTimes(2);
+
+      jest.useRealTimers();
     });
   });
 });

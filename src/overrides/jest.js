@@ -1,4 +1,5 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
+const { jestOverrideType: overrideType } = require('../utils/overrideTypes');
 
 const defaultEnv = {
   jest: true,
@@ -15,7 +16,6 @@ const defaultSettings = {
     version: 'detect',
   },
 };
-const overrideType = 'eslint-config-galex/jest';
 
 /**
  * @param {{

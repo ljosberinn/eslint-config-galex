@@ -77,8 +77,8 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "src/(overrides|rulesets|utils)/**/*.{js,jsx,ts,tsx}",
-      "src/createConfig.js"
+      "src/(overrides|rulesets)/**/*.{js,jsx,ts,tsx}",
+      "src/*.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -98,7 +98,10 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
+    ],
+    "clearMocks": true,
+    "restoreMocks": true,
+    "resetMocks": true
   },
   "release": {
     "plugins": [
