@@ -11,7 +11,7 @@ const {
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
 const { overrideType: tsOverrideType } = require('../overrides/typescript');
-const cache = require('../utils/cache');
+const { cache } = require('../utils/cache');
 
 describe('getDependencies', () => {
   test('matches snapshot', () => {
@@ -425,6 +425,12 @@ describe('createConfig', () => {
   });
 
   describe('caching', () => {
+    beforeEach(() => {
+      Object.keys(cache.cache).forEach(key => {
+        cache[key] = null;
+      });
+    });
+
     test('caches by default', () => {
       jest.spyOn(cache, 'set');
 
@@ -458,6 +464,35 @@ describe('createConfig', () => {
       expect(cache.mustInvalidate.mock.results[1].value).toBe(true);
 
       expect(cache.set).toHaveBeenCalledTimes(2);
+    });
+
+    test('busts cache automatically after 10 minutes by default', () => {
+      jest.spyOn(cache, 'set');
+      jest.spyOn(cache, 'mustInvalidate');
+
+      jest.useFakeTimers('modern');
+
+      createConfig();
+
+      expect(cache.set).toHaveBeenCalledTimes(1);
+
+      createConfig();
+
+      expect(cache.set).toHaveBeenCalledTimes(1);
+
+      jest.setSystemTime(Date.now() + 5 * 60 * 1000);
+
+      createConfig();
+
+      expect(cache.set).toHaveBeenCalledTimes(1);
+
+      jest.setSystemTime(Date.now() + 10 * 60 * 1000 + 1);
+
+      createConfig();
+
+      expect(cache.set).toBeCalledTimes(2);
+
+      jest.useRealTimers();
     });
   });
 });
