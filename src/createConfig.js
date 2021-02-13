@@ -16,7 +16,7 @@ const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createUnicornRules } = require('./rulesets/unicorn');
 const { applyFlagFilter, mergeSortOverrides } = require('./utils');
-const { cache } = require('./utils/cache');
+const cacheImpl = require('./utils/cache');
 
 /**
  * @see https://www.npmjs.com/org/testing-library
@@ -253,12 +253,12 @@ const createConfig = ({
   };
 
   if (
-    !cache.mustInvalidate(cache, {
+    !cacheImpl.mustInvalidate(cacheImpl.cache, {
       now,
       dependencies,
     })
   ) {
-    return cache.config;
+    return cacheImpl.cache.config;
   }
 
   const project = getDependencies({ cwd, tsConfigPath });
@@ -327,7 +327,7 @@ const createConfig = ({
   };
 
   if (cacheOptions.enabled) {
-    cache.set(cache, { now, config, dependencies });
+    cacheImpl.set(cacheImpl.cache, { now, config, dependencies });
   }
 
   return config;

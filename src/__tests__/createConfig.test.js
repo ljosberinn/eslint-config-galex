@@ -11,7 +11,7 @@ const {
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
 const { overrideType: tsOverrideType } = require('../overrides/typescript');
-const { cache } = require('../utils/cache');
+const cacheImpl = require('../utils/cache');
 
 describe('getDependencies', () => {
   test('matches snapshot', () => {
@@ -426,71 +426,71 @@ describe('createConfig', () => {
 
   describe('caching', () => {
     beforeEach(() => {
-      Object.keys(cache.cache).forEach(key => {
-        cache[key] = null;
+      Object.keys(cacheImpl.cache).forEach(key => {
+        cacheImpl.cache[key] = null;
       });
     });
 
     test('caches by default', () => {
-      jest.spyOn(cache, 'set');
+      const setSpy = jest.spyOn(cacheImpl, 'set');
 
       createConfig();
       createConfig();
 
-      expect(cache.set).toHaveBeenCalledTimes(1);
+      expect(setSpy).toHaveBeenCalledTimes(1);
     });
 
     test('does not cache given opt-out', () => {
-      jest.spyOn(cache, 'set');
+      const setSpy = jest.spyOn(cacheImpl, 'set');
       const settings = { cacheOptions: { enabled: false } };
 
       createConfig(settings);
       createConfig(settings);
 
-      expect(cache.set).not.toHaveBeenCalled();
+      expect(setSpy).not.toHaveBeenCalled();
     });
 
     test('busts cache given changed dependencies', () => {
-      jest.spyOn(cache, 'set');
-      jest.spyOn(cache, 'mustInvalidate');
+      const setSpy = jest.spyOn(cacheImpl, 'set');
+      const mustInvalidateSpy = jest.spyOn(cacheImpl, 'mustInvalidate');
 
       createConfig();
       createConfig({ rules: { foo: 'bar' } });
 
-      expect(cache.mustInvalidate).toHaveBeenCalledTimes(2);
+      expect(mustInvalidateSpy).toHaveBeenCalledTimes(2);
       // initially empty cache
-      expect(cache.mustInvalidate.mock.results[0].value).toBe(true);
+      expect(mustInvalidateSpy.mock.results[0].value).toBe(true);
       // changed dependencies
-      expect(cache.mustInvalidate.mock.results[1].value).toBe(true);
+      expect(mustInvalidateSpy.mock.results[1].value).toBe(true);
 
-      expect(cache.set).toHaveBeenCalledTimes(2);
+      expect(setSpy).toHaveBeenCalledTimes(2);
     });
 
     test('busts cache automatically after 10 minutes by default', () => {
-      jest.spyOn(cache, 'set');
-      jest.spyOn(cache, 'mustInvalidate');
+      const setSpy = jest.spyOn(cacheImpl, 'set');
+      jest.spyOn(cacheImpl, 'mustInvalidate');
 
       jest.useFakeTimers('modern');
 
       createConfig();
 
-      expect(cache.set).toHaveBeenCalledTimes(1);
+      expect(setSpy).toHaveBeenCalledTimes(1);
 
       createConfig();
 
-      expect(cache.set).toHaveBeenCalledTimes(1);
+      expect(setSpy).toHaveBeenCalledTimes(1);
 
       jest.setSystemTime(Date.now() + 5 * 60 * 1000);
 
       createConfig();
 
-      expect(cache.set).toHaveBeenCalledTimes(1);
+      expect(setSpy).toHaveBeenCalledTimes(1);
 
       jest.setSystemTime(Date.now() + 10 * 60 * 1000 + 1);
 
       createConfig();
 
-      expect(cache.set).toBeCalledTimes(2);
+      expect(setSpy).toBeCalledTimes(2);
 
       jest.useRealTimers();
     });
