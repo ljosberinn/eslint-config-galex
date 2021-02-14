@@ -6,6 +6,7 @@ const ts = require('typescript');
 
 const { createJestOverride } = require('./overrides/jest');
 const { createReactOverride } = require('./overrides/react');
+const { createNextJsOverride } = require('./overrides/next');
 const { createTSOverride } = require('./overrides/typescript');
 const { createEslintCoreRules } = require('./rulesets/eslint-core');
 const { createImportRules } = require('./rulesets/import');
@@ -270,6 +271,7 @@ const createConfig = ({
   const overrides = mergeSortOverrides([
     createReactOverride(project),
     createTSOverride(project),
+    createNextJsOverride(project),
     createJestOverride(project),
     ...customOverrides,
   ]).map(override => {

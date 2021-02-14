@@ -28,7 +28,6 @@ const defaultSettings = {
  * @param {{
  *  react: {
  *   hasReact: boolean;
- *   isNext: boolean;
  *   version: string;
  *  };
  *  rules?: Record<string, any>;
@@ -52,7 +51,6 @@ const createReactOverride = ({
       react,
       typescript,
     }),
-    ...createNextJsRules({ react }),
     ...prettierReactRules,
     ...createJSXA11yRules({ react }),
     ...hookRules,
@@ -113,7 +111,7 @@ const hookRules = {
  * @see https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
  */
 const createReactRules = ({
-  react: { isNext, version },
+  react: { version },
   typescript: { hasTypeScript },
 }) => ({
   /**
@@ -705,10 +703,9 @@ const createReactRules = ({
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
    */
-  'react/react-in-jsx-scope':
-    isNext || fulfillsVersionRequirement(version, { major: 17 })
-      ? 'off'
-      : 'error',
+  'react/react-in-jsx-scope': fulfillsVersionRequirement(version, { major: 17 })
+    ? 'off'
+    : 'error',
 
   /**
    * off because use function default arguments
@@ -784,7 +781,7 @@ const createReactRules = ({
 /**
  * @see https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
  */
-const createJSXA11yRules = ({ react: { isNext, isCreateReactApp } }) => ({
+const createJSXA11yRules = ({ react: { isCreateReactApp } }) => ({
   /**
    * off because deprecated
    *
@@ -824,10 +821,8 @@ const createJSXA11yRules = ({ react: { isNext, isCreateReactApp } }) => ({
   'jsx-a11y/anchor-is-valid': [
     'error',
     {
-      aspects: ['invalidHref', isNext ? null : 'noHref', 'preferButton'].filter(
-        Boolean
-      ),
-      components: isNext ? ['Link'] : [],
+      aspects: ['invalidHref', 'noHref', 'preferButton'],
+      components: [],
     },
   ],
 
@@ -1086,44 +1081,6 @@ const createJSXA11yRules = ({ react: { isNext, isCreateReactApp } }) => ({
    */
   'jsx-a11y/tabindex-no-positive': 'error',
 });
-
-const createNextJsRules = ({ react: { isNext } }) => {
-  if (!isNext) {
-    return null;
-  }
-
-  return {
-    '@next/next/missing-preload': 'warn',
-
-    /**
-     * should be imported directly
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-css-tags.js
-     */
-    '@next/next/no-css-tags': 'warn',
-
-    /**
-     * disallows regular <a> links
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-html-link-for-pages.js
-     */
-    '@next/next/no-html-link-for-pages': 'warn',
-
-    /**
-     * sync scripts can impact performance
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-sync-scripts.js
-     */
-    '@next/next/no-sync-scripts': 'warn',
-
-    /**
-     * disallow of polyfill.io in some cases
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-unwanted-polyfillio.js
-     */
-    '@next/next/no-unwanted-polyfillio': 'warn',
-  };
-};
 
 module.exports = {
   createJSXA11yRules,

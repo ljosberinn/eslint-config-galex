@@ -7,7 +7,6 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: false,
-        isNext: false,
         version: '',
       },
       typescript: {
@@ -22,22 +21,6 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
-        isNext: false,
-        version: '16.13.1',
-      },
-      typescript: {
-        hasTypeScript: false,
-      },
-    };
-
-    expect(createReactOverride(project)).toMatchSnapshot();
-  });
-
-  test('matches snapshot if react is < 17 with Next', () => {
-    const project = {
-      react: {
-        hasReact: true,
-        isNext: true,
         version: '16.13.1',
       },
       typescript: {
@@ -52,22 +35,6 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
-        isNext: false,
-        version: '16.13.1',
-      },
-      typescript: {
-        hasTypeScript: true,
-      },
-    };
-
-    expect(createReactOverride(project)).toMatchSnapshot();
-  });
-
-  test('matches snapshot if react is < 17 with Next & TS', () => {
-    const project = {
-      react: {
-        hasReact: true,
-        isNext: true,
         version: '16.13.1',
       },
       typescript: {
@@ -82,22 +49,6 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
-        isNext: false,
-        version: react17,
-      },
-      typescript: {
-        hasTypeScript: false,
-      },
-    };
-
-    expect(createReactOverride(project)).toMatchSnapshot();
-  });
-
-  test('matches snapshot if react is >= 17 with Next', () => {
-    const project = {
-      react: {
-        hasReact: true,
-        isNext: true,
         version: react17,
       },
       typescript: {
@@ -112,22 +63,6 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
-        isNext: false,
-        version: react17,
-      },
-      typescript: {
-        hasTypeScript: true,
-      },
-    };
-
-    expect(createReactOverride(project)).toMatchSnapshot();
-  });
-
-  test('matches snapshot if react is >= 17 with Next & TS', () => {
-    const project = {
-      react: {
-        hasReact: true,
-        isNext: true,
         version: react17,
       },
       typescript: {
@@ -145,7 +80,6 @@ describe('createReactOverride', () => {
       react: {
         hasReact: true,
         isCreateReactApp: true,
-        isNext: false,
         version: '16.13.1',
       },
       typescript: {
@@ -170,7 +104,6 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
-        isNext: true,
         version: '16.13.1',
       },
       rules: {

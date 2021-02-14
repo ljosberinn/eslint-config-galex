@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createNextJsOverride allows passing extra files 1`] = `
+Object {
+  "files": Array [
+    "src/pages/*.?(js|ts)?(x)",
+    "pages/*.?(js|ts)?(x)",
+    "*.*.js",
+  ],
+  "rules": Object {
+    "@next/next/missing-preload": "warn",
+    "@next/next/no-css-tags": "warn",
+    "@next/next/no-html-link-for-pages": "warn",
+    "@next/next/no-sync-scripts": "warn",
+    "@next/next/no-unwanted-polyfillio": "warn",
+    "import/no-default-export": "off",
+    "jsx-a11y/anchor-is-valid": Array [
+      "error",
+      Object {
+        "aspects": Array [
+          "invalidHref",
+        ],
+        "components": Array [
+          "Link",
+        ],
+      },
+    ],
+    "react/react-in-jsx-scope": "off",
+  },
+}
+`;
+
+exports[`createNextJsOverride allows passing extra rules 1`] = `
+Object {
+  "files": Array [
+    "src/pages/*.?(js|ts)?(x)",
+    "pages/*.?(js|ts)?(x)",
+  ],
+  "rules": Object {
+    "@next/next/missing-preload": "warn",
+    "@next/next/no-css-tags": "warn",
+    "@next/next/no-html-link-for-pages": "warn",
+    "@next/next/no-sync-scripts": "warn",
+    "@next/next/no-unwanted-polyfillio": "warn",
+    "import/no-default-export": "off",
+    "jsx-a11y/anchor-is-valid": Array [
+      "error",
+      Object {
+        "aspects": Array [
+          "invalidHref",
+        ],
+        "components": Array [
+          "Link",
+        ],
+      },
+    ],
+    "react/react-in-jsx-scope": "off",
+    "testing-library/no-manual-cleanup": "off",
+  },
+}
+`;
+
+exports[`createNextJsOverride matches snapshot with next 1`] = `
+Object {
+  "files": Array [
+    "src/pages/*.?(js|ts)?(x)",
+    "pages/*.?(js|ts)?(x)",
+  ],
+  "rules": Object {
+    "@next/next/missing-preload": "warn",
+    "@next/next/no-css-tags": "warn",
+    "@next/next/no-html-link-for-pages": "warn",
+    "@next/next/no-sync-scripts": "warn",
+    "@next/next/no-unwanted-polyfillio": "warn",
+    "import/no-default-export": "off",
+    "jsx-a11y/anchor-is-valid": Array [
+      "error",
+      Object {
+        "aspects": Array [
+          "invalidHref",
+        ],
+        "components": Array [
+          "Link",
+        ],
+      },
+    ],
+    "react/react-in-jsx-scope": "off",
+  },
+}
+`;
+
+exports[`createNextJsOverride matches snapshot without next 1`] = `null`;
