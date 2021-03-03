@@ -1,7 +1,10 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
-const {
-  rules: prettierUnicornRules,
-} = require('eslint-config-prettier/unicorn');
+
+const { rules: allPrettierRules } = require('eslint-config-prettier');
+
+const prettierUnicornRules = Object.fromEntries(
+  Object.entries(allPrettierRules).filter(([key]) => key.startsWith('unicorn/'))
+);
 
 /**
  * @param {{

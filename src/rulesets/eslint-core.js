@@ -1,7 +1,11 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
 
 const restrictedGlobals = require('confusing-browser-globals');
-const { rules: prettierRules } = require('eslint-config-prettier');
+const { rules: allPrettierRules } = require('eslint-config-prettier');
+
+const prettierRules = Object.fromEntries(
+  Object.entries(allPrettierRules).filter(([key]) => !key.includes('/'))
+);
 
 /**
  * @param {{

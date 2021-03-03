@@ -1,5 +1,9 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
-const { rules: prettierReactRules } = require('eslint-config-prettier/react');
+const { rules: allPrettierRules } = require('eslint-config-prettier');
+
+const prettierReactRules = Object.fromEntries(
+  Object.entries(allPrettierRules).filter(([key]) => key.startsWith('react/'))
+);
 
 const { fulfillsVersionRequirement } = require('../utils');
 const { reactOverrideType: overrideType } = require('../utils/overrideTypes');

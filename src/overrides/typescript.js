@@ -1,7 +1,11 @@
 /* eslint-disable inclusive-language/use-inclusive-words */
-const {
-  rules: prettierTypeScriptRules,
-} = require('eslint-config-prettier/@typescript-eslint');
+const { rules: allPrettierRules } = require('eslint-config-prettier');
+
+const prettierTypeScriptRules = Object.fromEntries(
+  Object.entries(allPrettierRules).filter(([key]) =>
+    key.startsWith('@typescript-eslint')
+  )
+);
 
 const { fulfillsVersionRequirement } = require('../utils');
 const { tsOverrideType: overrideType } = require('../utils/overrideTypes');
