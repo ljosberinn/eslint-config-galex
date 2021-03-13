@@ -16,7 +16,7 @@ const plugins = [
   '@next/eslint-plugin-next',
 ];
 const files = ['**/*.?(ts|js)?(x)'];
-const parser = 'babel-eslint';
+const parser = '@babel/eslint-parser';
 const defaultParserOptions = {
   ecmaFeatures: {
     jsx: true,

@@ -7,7 +7,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -263,7 +263,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -512,7 +512,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -762,7 +762,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -1015,7 +1015,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -1271,7 +1271,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -1518,7 +1518,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -1768,7 +1768,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -2021,7 +2021,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
@@ -2277,7 +2277,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
