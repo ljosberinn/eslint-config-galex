@@ -655,6 +655,10 @@ const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
    * @see @typescript-eslint/no-empty-function
    */
   ...(hasTypeScript ? { '@typescript-eslint/no-empty-function': 'off' } : null),
+  /**
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
+   */
+  ...(hasTypeScript ? { 'jest/unbound-method': 'warn' } : null),
 
   /**
    * off because its regularily done in tests
