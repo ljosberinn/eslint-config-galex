@@ -170,7 +170,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
-        isNext: true,
+        isNext: false,
         version: '16.13.1',
       },
       rules: {

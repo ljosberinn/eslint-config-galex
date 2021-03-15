@@ -7,6 +7,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -20,11 +21,6 @@ Object {
     "@next/eslint-plugin-next",
   ],
   "rules": Object {
-    "@next/next/missing-preload": "warn",
-    "@next/next/no-css-tags": "warn",
-    "@next/next/no-html-link-for-pages": "warn",
-    "@next/next/no-sync-scripts": "warn",
-    "@next/next/no-unwanted-polyfillio": "warn",
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
@@ -33,11 +29,10 @@ Object {
       Object {
         "aspects": Array [
           "invalidHref",
+          "noHref",
           "preferButton",
         ],
-        "components": Array [
-          "Link",
-        ],
+        "components": Array [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
@@ -233,7 +228,7 @@ Object {
     "react/prefer-read-only-props": "off",
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
+    "react/react-in-jsx-scope": "error",
     "react/require-default-props": "off",
     "react/require-optimization": "off",
     "react/require-render-return": "error",
@@ -263,6 +258,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -512,6 +508,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -762,6 +759,17 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "src/pages/**/*.?(t|j)s?(x)",
+        "pages/**/*.?(t|j)s?(x)",
+      ],
+      "rules": Object {
+        "import/no-default-export": "off",
+      },
+    },
+  ],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1015,6 +1023,17 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "src/pages/**/*.?(t|j)s?(x)",
+        "pages/**/*.?(t|j)s?(x)",
+      ],
+      "rules": Object {
+        "import/no-default-export": "off",
+      },
+    },
+  ],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1271,6 +1290,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1518,6 +1538,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -1768,6 +1789,17 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "src/pages/**/*.?(t|j)s?(x)",
+        "pages/**/*.?(t|j)s?(x)",
+      ],
+      "rules": Object {
+        "import/no-default-export": "off",
+      },
+    },
+  ],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2021,6 +2053,17 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "src/pages/**/*.?(t|j)s?(x)",
+        "pages/**/*.?(t|j)s?(x)",
+      ],
+      "rules": Object {
+        "import/no-default-export": "off",
+      },
+    },
+  ],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {
@@ -2277,6 +2320,7 @@ Object {
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
+  "overrides": Array [],
   "parser": "babel-eslint",
   "parserOptions": Object {
     "ecmaFeatures": Object {

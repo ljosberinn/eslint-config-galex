@@ -38,6 +38,7 @@ const defaultSettings = {
  *  rules?: Record<string, any>;
  *  settings?: object;
  *  parserOptions?: object;
+ *  overrides?: unknown[];
  * }} options
  */
 const createReactOverride = ({
@@ -46,6 +47,7 @@ const createReactOverride = ({
   rules: customRules = {},
   parserOptions: customParserOptions = {},
   settings: customSettings = {},
+  overrides: customOverrides = [],
 }) => {
   if (!react.hasReact) {
     return null;
@@ -81,6 +83,11 @@ const createReactOverride = ({
     },
   };
 
+  const overrides = [
+    createNextJsPagesOverride({ react }),
+    ...customOverrides,
+  ].filter(Boolean);
+
   return {
     extends: extendsConfigs,
     files,
@@ -90,6 +97,7 @@ const createReactOverride = ({
     rules,
     settings,
     overrideType,
+    overrides,
   };
 };
 
@@ -1097,6 +1105,11 @@ const createNextJsRules = ({ react: { isNext } }) => {
   }
 
   return {
+    /**
+     * ensure stylesheets are preloaded
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/missing-preload.js
+     */
     '@next/next/missing-preload': 'warn',
 
     /**
@@ -1129,6 +1142,27 @@ const createNextJsRules = ({ react: { isNext } }) => {
   };
 };
 
+// files within `pages/` and `/src/pages` require a default export
+const nextJsPagesOverrideFiles = [
+  'src/pages/**/*.?(t|j)s?(x)',
+  'pages/**/*.?(t|j)s?(x)',
+];
+
+const nextJsPagesRules = {
+  'import/no-default-export': 'off',
+};
+
+const createNextJsPagesOverride = ({ react: { isNext } }) => {
+  if (!isNext) {
+    return null;
+  }
+
+  return {
+    files: nextJsPagesOverrideFiles,
+    rules: nextJsPagesRules,
+  };
+};
+
 module.exports = {
   createJSXA11yRules,
   createReactOverride,
@@ -1142,4 +1176,7 @@ module.exports = {
   prettierReactRules,
   settings: defaultParserOptions,
   overrideType,
+  nextJsPagesOverrideFiles,
+  nextJsPagesRules,
+  createNextJsPagesOverride,
 };
