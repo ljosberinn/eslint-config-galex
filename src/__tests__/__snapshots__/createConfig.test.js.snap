@@ -4129,6 +4129,7 @@ Object {
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
@@ -4145,11 +4146,78 @@ Object {
 }
 `;
 
+exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/foo" 1`] = `
+Object {
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasStorybook": true,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": undefined,
+    "hasTypeScript": false,
+    "version": undefined,
+  },
+}
+`;
+
+exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/react" 1`] = `
+Object {
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasStorybook": true,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": undefined,
+    "hasTypeScript": false,
+    "version": undefined,
+  },
+}
+`;
+
+exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/vue" 1`] = `
+Object {
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasStorybook": true,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "hasReact": false,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": undefined,
+    "hasTypeScript": false,
+    "version": undefined,
+  },
+}
+`;
+
 exports[`getDependencies given CRA, forces jest to true 1`] = `
 Object {
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
@@ -4171,6 +4239,7 @@ Object {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
@@ -4196,6 +4265,7 @@ Object {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
@@ -4221,6 +4291,7 @@ Object {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
@@ -4242,6 +4313,7 @@ Object {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
@@ -4267,6 +4339,7 @@ Object {
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,
@@ -4288,6 +4361,7 @@ Object {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
+  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
     "hasReact": false,

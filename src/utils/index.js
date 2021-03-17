@@ -2,6 +2,7 @@ const {
   jestOverrideType,
   reactOverrideType,
   tsOverrideType,
+  storybookOverrideType,
 } = require('./overrideTypes');
 
 const severityLevels = {
@@ -137,6 +138,7 @@ const overrideOrder = {
   [jestOverrideType]: 0,
   [tsOverrideType]: 1,
   [reactOverrideType]: 2,
+  [storybookOverrideType]: 3,
 };
 
 /**

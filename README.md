@@ -150,6 +150,7 @@ All rules are commented and link to their docs.
 - [x] jest-dom
 - [x] @testing-library
 - [x] prettier
+- [o] storybook (experimental/WIP)
 
 ## What can you do?
 
@@ -192,6 +193,10 @@ interface Project {
    * whether any `@testing-library/<environment>` is present
    */
   hasTestingLibrary: boolean;
+  /**
+   * whether any `@storybook/<package>` is present
+   */
+  hasStorybook: boolean;
   typescript: {
     /**
      * whether `typescript` is present
@@ -246,6 +251,7 @@ list, check out the source.
 - `const { createTSOverride } = require('eslint-config-galex/src/overrides/typescript')`
 - `const { createReactOverride } = require('eslint-config-galex/src/overrides/react')`
 - `const { createJestOverride } = require('eslint-config-galex/src/overrides/jest')`
+- `const { createStorybookOverride } = require('eslint-config-galex/src/overrides/storybook')`
 
 > Please note that the test override should always come last.
 

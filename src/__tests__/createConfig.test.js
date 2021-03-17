@@ -10,6 +10,9 @@ const {
   jestRules,
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
+const {
+  overrideType: storybookOverrideType,
+} = require('../overrides/storybook');
 const { overrideType: tsOverrideType } = require('../overrides/typescript');
 const cacheImpl = require('../utils/cache');
 
@@ -172,6 +175,27 @@ describe('getDependencies', () => {
       expect(deps).toMatchSnapshot();
     });
   });
+
+  test.each(['@storybook/react', '@storybook/vue', '@storybook/foo'])(
+    'adds the storybook override given any @storybook/* dependency - "%s"',
+    dependency => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+        packageJson: {
+          dependencies: {
+            [dependency]: '6.0.1',
+          },
+        },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      const deps = getDependencies();
+
+      expect(deps.hasStorybook).toBeTruthy();
+      expect(deps).toMatchSnapshot();
+    }
+  );
 });
 
 describe('createConfig', () => {
@@ -260,6 +284,7 @@ describe('createConfig', () => {
             typescript: '1.0.0',
             jest: '1.0.0',
             react: '1.0.0',
+            '@storybook/react': '6.0.1',
           },
         },
       });
@@ -276,9 +301,10 @@ describe('createConfig', () => {
 
       const { overrides } = createConfig();
 
-      expect(overrides[0].overrideType).toBe(reactOverrideType);
-      expect(overrides[1].overrideType).toBe(tsOverrideType);
-      expect(overrides[2].overrideType).toBe(jestOverrideType);
+      expect(overrides[0].overrideType).toBe(storybookOverrideType);
+      expect(overrides[1].overrideType).toBe(reactOverrideType);
+      expect(overrides[2].overrideType).toBe(tsOverrideType);
+      expect(overrides[3].overrideType).toBe(jestOverrideType);
     });
 
     test('sorts overrides correctly given additional, external overrides', () => {
@@ -288,6 +314,7 @@ describe('createConfig', () => {
             typescript: '1.0.0',
             jest: '1.0.0',
             react: '1.0.0',
+            '@storybook/react': '6.0.1',
           },
         },
       });
@@ -315,10 +342,11 @@ describe('createConfig', () => {
         convertToESLintInternals: false,
       });
 
-      expect(overrides[0].overrideType).toBe(reactOverrideType);
-      expect(overrides[1].overrideType).toBe(tsOverrideType);
-      expect(overrides[2].overrideType).toBe(jestOverrideType);
-      expect(overrides[3]).toStrictEqual(dummyOverride);
+      expect(overrides[0].overrideType).toBe(storybookOverrideType);
+      expect(overrides[1].overrideType).toBe(reactOverrideType);
+      expect(overrides[2].overrideType).toBe(tsOverrideType);
+      expect(overrides[3].overrideType).toBe(jestOverrideType);
+      expect(overrides[4]).toStrictEqual(dummyOverride);
     });
 
     test('merges overrides correctly given additional, internal overrides', () => {
@@ -328,6 +356,7 @@ describe('createConfig', () => {
             react: '17.0.1',
             typescript: '4.1.0',
             jest: '26.0.0',
+            '@storybook/react': '6.0.1',
           },
         },
       });
@@ -362,13 +391,14 @@ describe('createConfig', () => {
         override => override.overrideType === jestOverrideType
       );
 
-      // 4 overrides were given, 3 should be present due to merigng
-      expect(overrides).toHaveLength(3);
+      // 5 overrides were given, 4 should be present due to merigng
+      expect(overrides).toHaveLength(4);
 
       // order should be correct
-      expect(overrides[0].overrideType).toBe(reactOverrideType);
-      expect(overrides[1].overrideType).toBe(tsOverrideType);
-      expect(overrides[2].overrideType).toBe(jestOverrideType);
+      expect(overrides[0].overrideType).toBe(storybookOverrideType);
+      expect(overrides[1].overrideType).toBe(reactOverrideType);
+      expect(overrides[2].overrideType).toBe(tsOverrideType);
+      expect(overrides[3].overrideType).toBe(jestOverrideType);
 
       // given fourth should be merged into third
       expect(finalJestOverride.rules[mockRuleName]).toBe(mockRuleValue);
@@ -384,6 +414,7 @@ describe('createConfig', () => {
             react: '17.0.1',
             typescript: '4.1.0',
             jest: '26.0.0',
+            '@storybook/react': '6.0.1',
           },
         },
       });
@@ -413,14 +444,15 @@ describe('createConfig', () => {
         convertToESLintInternals: false,
       });
 
-      expect(overrides).toHaveLength(5);
+      expect(overrides).toHaveLength(6);
 
-      expect(overrides[0].overrideType).toBe(reactOverrideType);
-      expect(overrides[1].overrideType).toBe(tsOverrideType);
-      expect(overrides[2].overrideType).toBe(jestOverrideType);
+      expect(overrides[0].overrideType).toBe(storybookOverrideType);
+      expect(overrides[1].overrideType).toBe(reactOverrideType);
+      expect(overrides[2].overrideType).toBe(tsOverrideType);
+      expect(overrides[3].overrideType).toBe(jestOverrideType);
 
-      expect(overrides[3]).toStrictEqual(dummyOverride1);
-      expect(overrides[4]).toStrictEqual(dummyOverride2);
+      expect(overrides[4]).toStrictEqual(dummyOverride1);
+      expect(overrides[5]).toStrictEqual(dummyOverride2);
     });
   });
 
