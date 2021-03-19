@@ -150,7 +150,7 @@ All rules are commented and link to their docs.
 - [x] jest-dom
 - [x] @testing-library
 - [x] prettier
-- [o] storybook (experimental/WIP)
+- [x] storybook
 
 ## What can you do?
 
