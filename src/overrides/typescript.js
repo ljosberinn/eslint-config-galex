@@ -216,6 +216,8 @@ const getTypeScriptRules = ({
     : null),
 
   /**
+   * off because too opinionated
+   *
    * prefer using types since interfaces:
    * - implicitly merged given multiple declarations of the same name
    * - aren't entirely as flexible as types
@@ -225,7 +227,7 @@ const getTypeScriptRules = ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
    */
-  '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+  '@typescript-eslint/consistent-type-definitions': 'off',
 
   /**
    *  enforces type-only imports when possible

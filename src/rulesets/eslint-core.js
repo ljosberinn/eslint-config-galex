@@ -1687,10 +1687,9 @@ const getStylisticIssuesRules = ({
   'semi-style': 'off',
 
   /**
-   * off because taken care of by sort-keys-fix
+   * off because opinionated
    *
    * @see https://eslint.org/docs/rules/sort-keys
-   * @see sort-keys-fix/sort-keys-fix
    */
   'sort-keys': 'off',
 

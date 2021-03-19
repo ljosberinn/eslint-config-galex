@@ -200,7 +200,7 @@ const jestRules = {
    *
    * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md
    */
-  'jest/no-focused-tests': 'error',
+  'jest/no-focused-tests': 'warn',
 
   /**
    * off because hooks are often needed
@@ -394,9 +394,11 @@ const jestRules = {
   /**
    * requires a top level describe wrapping everything
    *
+   * off due to https://kentcdodds.com/blog/avoid-nesting-when-youre-testing/
+   *
    * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-top-level-describe.md
    */
-  'jest/require-top-level-describe': 'error',
+  'jest/require-top-level-describe': 'off',
 
   /**
    * validates callback of `describe('something', () => {})`
