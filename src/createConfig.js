@@ -6,6 +6,7 @@ const ts = require('typescript');
 
 const { createJestOverride } = require('./overrides/jest');
 const { createReactOverride } = require('./overrides/react');
+const { createStorybookOverride } = require('./overrides/storybook');
 const { createTSOverride } = require('./overrides/typescript');
 const { createEslintCoreRules } = require('./rulesets/eslint-core');
 const { createImportRules } = require('./rulesets/import');
@@ -118,13 +119,13 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       },
     } = readPkgUp.sync({ cwd, normalize: true });
 
-    const deps = new Map(
-      Object.entries({
-        ...dependencies,
-        ...devDependencies,
-        ...peerDependencies,
-      })
-    );
+    const depsAsTuple = Object.entries({
+      ...dependencies,
+      ...devDependencies,
+      ...peerDependencies,
+    });
+
+    const deps = new Map(depsAsTuple);
 
     const hasReact = reactFlavours.some(pkg => deps.has(pkg));
 
@@ -166,6 +167,9 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
     const hasJest = react.isCreateReactApp ? true : deps.has('jest');
     const hasJestDom = deps.has('@testing-library/jest-dom');
     const hasNodeTypes = deps.has('@types/node');
+    const hasStorybook = depsAsTuple.some(([dep]) =>
+      dep.startsWith('@storybook/')
+    );
 
     const hasTestingLibrary = testingLibFamily.some(pkg =>
       deps.has(`@testing-library/${pkg}`)
@@ -176,6 +180,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       hasJestDom,
       hasNodeTypes,
       hasTestingLibrary,
+      hasStorybook,
       react,
       typescript,
     };
@@ -188,6 +193,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       hasJestDom: false,
       hasNodeTypes: false,
       hasTestingLibrary: false,
+      hasStorybook: false,
       react: {
         hasReact: false,
         isCreateReactApp: undefined,
@@ -271,6 +277,7 @@ const createConfig = ({
     createReactOverride(project),
     createTSOverride(project),
     createJestOverride(project),
+    createStorybookOverride(project),
     ...customOverrides,
   ]).map(override => {
     const { rules, ...rest } = override;

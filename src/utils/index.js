@@ -2,6 +2,7 @@ const {
   jestOverrideType,
   reactOverrideType,
   tsOverrideType,
+  storybookOverrideType,
 } = require('./overrideTypes');
 
 const severityLevels = {
@@ -133,8 +134,12 @@ const pseudoDeepMerge = (override, previous) =>
     return carry;
   }, previous);
 
+/**
+ * the lower number, the higher the priority of the override is
+ */
 const overrideOrder = {
   [jestOverrideType]: 0,
+  [storybookOverrideType]: 0,
   [tsOverrideType]: 1,
   [reactOverrideType]: 2,
 };

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createStorybookOverride matches snapshot if storybook is false 1`] = `null`;
+
+exports[`createStorybookOverride matches snapshot if storybook is present 1`] = `
+Object {
+  "files": Array [
+    "*.stories.*",
+  ],
+  "overrideType": "eslint-config-galex/storybook",
+  "rules": Object {
+    "import/no-anonymous-default-export": "off",
+    "import/no-default-export": "off",
+    "react/function-component-definition": "off",
+  },
+}
+`;
