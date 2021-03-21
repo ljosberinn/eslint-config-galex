@@ -256,6 +256,13 @@ const getUnicornRules = ({
   'unicorn/no-process-exit': 'error',
 
   /**
+   * forbid static-only classes, should be an object instead
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-static-only-class.md
+   */
+  'unicorn/no-static-only-class': 'error',
+
+  /**
    * disallows reassigning `this` to another variable
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-this-assignment.md
@@ -324,6 +331,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-array-find.md
    */
   'unicorn/prefer-array-find': 'error',
+
+  /**
+   * prefer using Array.flat over older alternatives
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md
+   */
+  'unicorn/prefer-array-flat': 'warn',
 
   /**
    * prefer Array.flatMap over Array.flat().map() and similar

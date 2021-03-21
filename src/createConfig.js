@@ -62,6 +62,8 @@ const defaultParserOptions = {
   sourceType: 'module',
 };
 
+const defaultIgnorePatterns = [];
+
 const defaultTsConfigName = 'tsconfig.json';
 
 /**
@@ -216,14 +218,15 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
  *  rules?: object;
  *  overrides?: unknown[];
  *  plugins?: string[];
+ *  ignorePatterns?: string[];
  *  env?: object;
  *  parserOptions?: object;
- *  tsConfigPath?: string
- *  convertToESLintInternals?: boolean
+ *  tsConfigPath?: string;
+ *  convertToESLintInternals?: boolean;
  *  cacheOptions?: {
  *   enabled?: boolean;
  *   expiresAfterMs?: number
- *  }
+ *  };
  * }} config
  */
 const createConfig = ({
@@ -234,7 +237,9 @@ const createConfig = ({
   plugins: customPlugins = [],
   env: customEnv = {},
   parserOptions: customParserOptions = {},
+  ignorePatterns: customIgnorePattenrs = [],
   convertToESLintInternals = true,
+  root,
   cacheOptions: {
     enabled: cachingEnabled = true,
     expiresAfterMs: cachingExpiresAfterMs = 10 * 60 * 1000,
@@ -324,6 +329,8 @@ const createConfig = ({
     ...customParserOptions,
   };
 
+  const ignorePatterns = [...defaultIgnorePatterns, ...customIgnorePattenrs];
+
   // schema reference: https://github.com/eslint/eslint/blob/master/conf/config-schema.js
   const config = {
     env,
@@ -331,6 +338,7 @@ const createConfig = ({
     parserOptions,
     plugins,
     rules,
+    ignorePatterns,
   };
 
   if (cacheOptions.enabled) {
@@ -348,4 +356,5 @@ module.exports = {
   parserOptions: defaultParserOptions,
   reactFlavours,
   testingLibFamily,
+  ignorePatterns: defaultIgnorePatterns,
 };

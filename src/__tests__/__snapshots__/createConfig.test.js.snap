@@ -8,6 +8,7 @@ Object {
     "foo": "bar",
     "node": true,
   },
+  "ignorePatterns": Array [],
   "overrides": Array [
     Object {
       "env": Object {
@@ -631,6 +632,7 @@ Object {
     "unicorn/no-null": 0,
     "unicorn/no-object-as-default-parameter": 1,
     "unicorn/no-process-exit": 2,
+    "unicorn/no-static-only-class": 2,
     "unicorn/no-this-assignment": 1,
     "unicorn/no-unreadable-array-destructuring": 1,
     "unicorn/no-unsafe-regex": 2,
@@ -641,6 +643,7 @@ Object {
     "unicorn/numeric-separators-style": 1,
     "unicorn/prefer-add-event-listener": 2,
     "unicorn/prefer-array-find": 2,
+    "unicorn/prefer-array-flat": 1,
     "unicorn/prefer-array-flat-map": 2,
     "unicorn/prefer-array-index-of": 1,
     "unicorn/prefer-array-some": 1,
@@ -694,6 +697,7 @@ Object {
     "es2021": true,
     "node": true,
   },
+  "ignorePatterns": Array [],
   "overrides": Array [
     Object {
       "env": Object {
@@ -1318,6 +1322,7 @@ Object {
     "unicorn/no-null": 0,
     "unicorn/no-object-as-default-parameter": 1,
     "unicorn/no-process-exit": 2,
+    "unicorn/no-static-only-class": 2,
     "unicorn/no-this-assignment": 1,
     "unicorn/no-unreadable-array-destructuring": 1,
     "unicorn/no-unsafe-regex": 2,
@@ -1328,6 +1333,7 @@ Object {
     "unicorn/numeric-separators-style": 1,
     "unicorn/prefer-add-event-listener": 2,
     "unicorn/prefer-array-find": 2,
+    "unicorn/prefer-array-flat": 1,
     "unicorn/prefer-array-flat-map": 2,
     "unicorn/prefer-array-index-of": 1,
     "unicorn/prefer-array-some": 1,
@@ -1381,6 +1387,7 @@ Object {
     "es2021": true,
     "node": true,
   },
+  "ignorePatterns": Array [],
   "overrides": Array [
     Object {
       "env": Object {
@@ -2008,6 +2015,7 @@ Object {
     "unicorn/no-null": 0,
     "unicorn/no-object-as-default-parameter": 1,
     "unicorn/no-process-exit": 2,
+    "unicorn/no-static-only-class": 2,
     "unicorn/no-this-assignment": 1,
     "unicorn/no-unreadable-array-destructuring": 1,
     "unicorn/no-unsafe-regex": 2,
@@ -2018,6 +2026,7 @@ Object {
     "unicorn/numeric-separators-style": 1,
     "unicorn/prefer-add-event-listener": 2,
     "unicorn/prefer-array-find": 2,
+    "unicorn/prefer-array-flat": 1,
     "unicorn/prefer-array-flat-map": 2,
     "unicorn/prefer-array-index-of": 1,
     "unicorn/prefer-array-some": 1,
@@ -2071,6 +2080,7 @@ Object {
     "es2021": true,
     "node": true,
   },
+  "ignorePatterns": Array [],
   "overrides": Array [
     Object {
       "env": Object {
@@ -2695,6 +2705,7 @@ Object {
     "unicorn/no-null": 0,
     "unicorn/no-object-as-default-parameter": 1,
     "unicorn/no-process-exit": 2,
+    "unicorn/no-static-only-class": 2,
     "unicorn/no-this-assignment": 1,
     "unicorn/no-unreadable-array-destructuring": 1,
     "unicorn/no-unsafe-regex": 2,
@@ -2705,6 +2716,7 @@ Object {
     "unicorn/numeric-separators-style": 1,
     "unicorn/prefer-add-event-listener": 2,
     "unicorn/prefer-array-find": 2,
+    "unicorn/prefer-array-flat": 1,
     "unicorn/prefer-array-flat-map": 2,
     "unicorn/prefer-array-index-of": 1,
     "unicorn/prefer-array-some": 1,
@@ -2758,6 +2770,7 @@ Object {
     "es2021": true,
     "node": true,
   },
+  "ignorePatterns": Array [],
   "overrides": Array [
     Object {
       "env": Object {
@@ -3382,6 +3395,7 @@ Object {
     "unicorn/no-null": 0,
     "unicorn/no-object-as-default-parameter": 1,
     "unicorn/no-process-exit": 2,
+    "unicorn/no-static-only-class": 2,
     "unicorn/no-this-assignment": 1,
     "unicorn/no-unreadable-array-destructuring": 1,
     "unicorn/no-unsafe-regex": 2,
@@ -3392,6 +3406,7 @@ Object {
     "unicorn/numeric-separators-style": 1,
     "unicorn/prefer-add-event-listener": 2,
     "unicorn/prefer-array-find": 2,
+    "unicorn/prefer-array-flat": 1,
     "unicorn/prefer-array-flat-map": 2,
     "unicorn/prefer-array-index-of": 1,
     "unicorn/prefer-array-some": 1,
@@ -3445,6 +3460,7 @@ Object {
     "es2021": true,
     "node": true,
   },
+  "ignorePatterns": Array [],
   "overrides": Array [
     Object {
       "env": Object {
@@ -4068,6 +4084,7 @@ Object {
     "unicorn/no-null": 0,
     "unicorn/no-object-as-default-parameter": 1,
     "unicorn/no-process-exit": 2,
+    "unicorn/no-static-only-class": 2,
     "unicorn/no-this-assignment": 1,
     "unicorn/no-unreadable-array-destructuring": 1,
     "unicorn/no-unsafe-regex": 2,
@@ -4078,6 +4095,7 @@ Object {
     "unicorn/numeric-separators-style": 1,
     "unicorn/prefer-add-event-listener": 2,
     "unicorn/prefer-array-find": 2,
+    "unicorn/prefer-array-flat": 1,
     "unicorn/prefer-array-flat-map": 2,
     "unicorn/prefer-array-index-of": 1,
     "unicorn/prefer-array-some": 1,
