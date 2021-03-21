@@ -81,4 +81,39 @@ describe('createUnicornRules', () => {
 
     expect(result).toMatchSnapshot();
   });
+
+  test('enables esnext rules given react', () => {
+    const project = {
+      react: {
+        hasReact: true,
+      },
+      typescript: {
+        hasTypeScript: false,
+      },
+    };
+
+    const result = createUnicornRules(project);
+
+    expect(result).toMatchSnapshot();
+    expect(result['unicorn/prefer-string-replace-all']).toBe('error');
+  });
+
+  test('enables esnext rules given typsecript with certain lib criteria', () => {
+    const project = {
+      react: {
+        hasReact: false,
+      },
+      typescript: {
+        hasTypeScript: true,
+        config: {
+          lib: ['eSnExT'],
+        },
+      },
+    };
+
+    const result = createUnicornRules(project);
+
+    expect(result).toMatchSnapshot();
+    expect(result['unicorn/prefer-string-replace-all']).toBe('error');
+  });
 });

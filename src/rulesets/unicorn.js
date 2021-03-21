@@ -31,7 +31,7 @@ const createUnicornRules = ({
  * @see https://github.com/sindresorhus/eslint-plugin-unicorn
  */
 const getUnicornRules = ({
-  typescript: { hasTypeScript },
+  typescript: { hasTypeScript, config = {} },
   react: { hasReact },
 }) => ({
   /**
@@ -492,7 +492,16 @@ const getUnicornRules = ({
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-string-replace-all.md
    */
-  'unicorn/prefer-string-replace-all': 'error',
+  'unicorn/prefer-string-replace-all':
+    // in TS projects, availability can be inferred based on tsConfig.lib containing anything ESNext related
+    (hasTypeScript &&
+      Array.isArray(config.lib) &&
+      config.lib.some(lib => lib.toLowerCase().startsWith('esnext'))) ||
+    // browsers support .replaceAll
+    hasReact
+      ? 'error'
+      : // Node only supports it v15+
+        'off',
 
   /**
    * use String.slice over String.substr/.substring
