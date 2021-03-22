@@ -100,6 +100,7 @@ Object {
     "sonarjs",
     "inclusive-language",
   ],
+  "reportUnusedDisableDirectives": true,
   "rules": Object {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
@@ -789,6 +790,7 @@ Object {
     "sonarjs",
     "inclusive-language",
   ],
+  "reportUnusedDisableDirectives": true,
   "rules": Object {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
@@ -1483,6 +1485,7 @@ Object {
     "sonarjs",
     "inclusive-language",
   ],
+  "reportUnusedDisableDirectives": true,
   "rules": Object {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
@@ -2173,6 +2176,7 @@ Object {
     "sonarjs",
     "inclusive-language",
   ],
+  "reportUnusedDisableDirectives": true,
   "rules": Object {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
@@ -2863,6 +2867,7 @@ Object {
     "inclusive-language",
     "galex",
   ],
+  "reportUnusedDisableDirectives": true,
   "rules": Object {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
@@ -3552,6 +3557,7 @@ Object {
     "sonarjs",
     "inclusive-language",
   ],
+  "reportUnusedDisableDirectives": true,
   "rules": Object {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,

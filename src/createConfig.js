@@ -339,6 +339,7 @@ const createConfig = ({
     plugins,
     rules,
     ignorePatterns,
+    reportUnusedDisableDirectives: true,
   };
 
   if (cacheOptions.enabled) {
