@@ -66,6 +66,8 @@ const defaultIgnorePatterns = [];
 
 const defaultTsConfigName = 'tsconfig.json';
 
+const defaultSettings = {};
+
 /**
  * @param {{
  *  cwd: string;
@@ -215,13 +217,14 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
 /**
  * @param {{
  *  cwd?: string
+ *  tsConfigPath?: string;
  *  rules?: object;
  *  overrides?: unknown[];
  *  plugins?: string[];
- *  ignorePatterns?: string[];
  *  env?: object;
  *  parserOptions?: object;
- *  tsConfigPath?: string;
+ *  ignorePatterns?: string[];
+ *  settings?: Record<string, any>;
  *  convertToESLintInternals?: boolean;
  *  cacheOptions?: {
  *   enabled?: boolean;
@@ -238,6 +241,7 @@ const createConfig = ({
   env: customEnv = {},
   parserOptions: customParserOptions = {},
   ignorePatterns: customIgnorePattenrs = [],
+  settings: customSettings = {},
   convertToESLintInternals = true,
   root,
   cacheOptions: {
@@ -331,6 +335,12 @@ const createConfig = ({
 
   const ignorePatterns = [...defaultIgnorePatterns, ...customIgnorePattenrs];
 
+  // in case `defaultSettings` should ever be filled, ensure these objects are merged deeply
+  const settings = {
+    ...defaultSettings,
+    ...customSettings,
+  };
+
   // schema reference: https://github.com/eslint/eslint/blob/master/conf/config-schema.js
   const config = {
     env,
@@ -340,6 +350,7 @@ const createConfig = ({
     rules,
     ignorePatterns,
     reportUnusedDisableDirectives: true,
+    settings,
   };
 
   if (cacheOptions.enabled) {
@@ -358,4 +369,5 @@ module.exports = {
   reactFlavours,
   testingLibFamily,
   ignorePatterns: defaultIgnorePatterns,
+  settings: defaultSettings,
 };

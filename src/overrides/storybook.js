@@ -8,7 +8,7 @@ const files = ['*.stories.*'];
  * @param {{
  *  hasStorybook: boolean;
  *  rules?: Record<string, any>;
- * files?: string[];
+ *  files?: string[];
  * }} options
  */
 const createStorybookOverride = ({

@@ -688,6 +688,7 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
+  "settings": Object {},
 }
 `;
 
@@ -1379,6 +1380,7 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
+  "settings": Object {},
 }
 `;
 
@@ -2073,6 +2075,7 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
+  "settings": Object {},
 }
 `;
 
@@ -2764,6 +2767,7 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
+  "settings": Object {},
 }
 `;
 
@@ -3455,6 +3459,7 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
+  "settings": Object {},
 }
 `;
 
@@ -4145,6 +4150,7 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
+  "settings": Object {},
 }
 `;
 
