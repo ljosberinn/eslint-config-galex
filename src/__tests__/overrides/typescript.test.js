@@ -24,6 +24,8 @@ describe('createTSOverride', () => {
     '3.8.0',
     '3.9.0',
     '4.0.0',
+    '4.1.0',
+    '4.2.0',
   ])('matches snapshot with TS %s', version => {
     const project = {
       react: {
@@ -47,6 +49,8 @@ describe('createTSOverride', () => {
     '3.8.0',
     '3.9.0',
     '4.0.0',
+    '4.1.0',
+    '4.2.0',
   ])('matches snapshot with TS %s & react', version => {
     const project = {
       react: {
@@ -70,6 +74,8 @@ describe('createTSOverride', () => {
     '3.8.0',
     '3.9.0',
     '4.0.0',
+    '4.1.0',
+    '4.2.0',
   ])('matches snapshot with TS %s & react & CRA', version => {
     const project = {
       react: {

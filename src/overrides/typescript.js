@@ -46,7 +46,7 @@ const defaultSettings = {
  */
 const createTSOverride = ({
   typescript: { hasTypeScript, version, config = {} },
-  react: { hasReact, isCreateReactApp },
+  react,
   rules: customRules = {},
   parserOptions: customParserOptions = {},
   settings: customSettings = {},
@@ -57,7 +57,7 @@ const createTSOverride = ({
 
   const rules = {
     ...getTypeScriptRules({
-      react: { isCreateReactApp },
+      react,
       typescript: { config, version },
     }),
     ...prettierTypeScriptRules,
@@ -70,7 +70,7 @@ const createTSOverride = ({
     ecmaFeatures: {
       ...defaultParserOptions.ecmaFeatures,
       ...customParserOptions.ecmaFeatures,
-      jsx: hasReact,
+      jsx: react.hasReact,
     },
   };
 
@@ -101,7 +101,7 @@ const createTSOverride = ({
  */
 const getTypeScriptRules = ({
   typescript: { version, config },
-  react: { isCreateReactApp },
+  react: { isCreateReactApp, hasReact },
 }) => ({
   '@typescript-eslint/adjacent-overload-signatures': 'error',
   /**
@@ -1008,9 +1008,11 @@ const getTypeScriptRules = ({
   /**
    * enforces unbound methods are called with their expected scope
    *
+   * off in react because it reports plenty of false positives with hooks
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unbound-method.md
    */
-  '@typescript-eslint/unbound-method': 'warn',
+  '@typescript-eslint/unbound-method': hasReact ? 'off' : 'warn',
 
   /**
    * prefer unions for function parameters instead of separate overloads
