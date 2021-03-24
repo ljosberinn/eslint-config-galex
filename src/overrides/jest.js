@@ -65,7 +65,7 @@ const createJestOverride = ({
     ...jestRules,
     ...(hasJestDom ? jestDomRules : null),
     ...(hasTestingLibrary ? getTestingLibraryRules({ react }) : null),
-    ...getTestOverrides({ typescript }),
+    ...getTestOverrides({ typescript, react }),
     ...customRules,
   };
 
@@ -631,7 +631,10 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   'testing-library/prefer-wait-for': 'warn',
 });
 
-const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
+const getTestOverrides = ({
+  typescript: { hasTypeScript },
+  react: { hasReact },
+}) => ({
   /**
    * off to allow non-null casting e.g. querySelector or .find() results
    *
@@ -702,6 +705,32 @@ const getTestOverrides = ({ typescript: { hasTypeScript } }) => ({
    * @see sonarjs/no-identical-function
    */
   'sonarjs/no-identical-functions': 'off',
+
+  /**
+   * off because not too relevant in tests
+   *
+   * @see require-unicode-regexp
+   */
+  'require-unicode-regexp': 'off',
+
+  /**
+   * off because may be situationally required in tests
+   */
+  'no-param-reassign': 'off',
+
+  /**
+   * off because irrelevant in tests
+   *
+   * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/button-has-type.md
+   */
+  ...(hasReact ? { 'react/button-has-type': 'off' } : null),
+
+  /**
+   * off because irrelevant in tests
+   *
+   * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md
+   */
+  ...(hasReact ? { 'jsx-a11y/control-has-associated-label': 'off' } : null),
 });
 
 module.exports = {
