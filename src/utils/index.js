@@ -109,12 +109,10 @@ const pseudoDeepMerge = (override, previous) =>
       if (Array.isArray(carry[key])) {
         return {
           ...carry,
-          [key]: [
-            ...new Set([
-              ...carry[key],
-              ...(Array.isArray(value) ? value : [value]),
-            ]),
-          ],
+          [key]: uniqueArrayEntries(
+            ...carry[key],
+            ...(Array.isArray(value) ? value : [value])
+          ),
         };
       }
 
@@ -177,8 +175,11 @@ const mergeSortOverrides = overrides => {
     });
 };
 
+const uniqueArrayEntries = (...args) => [...new Set(args)].filter(Boolean);
+
 module.exports = {
   applyFlagFilter,
   fulfillsVersionRequirement,
   mergeSortOverrides,
+  uniqueArrayEntries,
 };

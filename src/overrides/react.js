@@ -5,7 +5,7 @@ const prettierReactRules = Object.fromEntries(
   Object.entries(allPrettierRules).filter(([key]) => key.startsWith('react/'))
 );
 
-const { fulfillsVersionRequirement } = require('../utils');
+const { fulfillsVersionRequirement, uniqueArrayEntries } = require('../utils');
 const { reactOverrideType: overrideType } = require('../utils/overrideTypes');
 
 const extendsConfigs = [];
@@ -16,10 +16,15 @@ const plugins = [
   '@next/eslint-plugin-next',
 ];
 const files = ['**/*.?(ts|js)?(x)'];
-const parser = 'babel-eslint';
+const parser = '@babel/eslint-parser';
 const defaultParserOptions = {
+  requireConfigFile: false,
+  sourceType: 'module',
   ecmaFeatures: {
     jsx: true,
+  },
+  babelOptions: {
+    presets: [],
   },
 };
 const defaultSettings = {
@@ -45,7 +50,7 @@ const createReactOverride = ({
   react,
   typescript,
   rules: customRules = {},
-  parserOptions: customParserOptions = {},
+  parserOptions: customParserOptions = { babelOptions: { presets: [] } },
   settings: customSettings = {},
   overrides: customOverrides = [],
 }) => {
@@ -71,6 +76,13 @@ const createReactOverride = ({
     ecmaFeatures: {
       ...defaultParserOptions.ecmaFeatures,
       ...customParserOptions.ecmaFeatures,
+    },
+    babelOptions: {
+      presets: uniqueArrayEntries(
+        react.isNext && 'next/babel',
+        ...defaultParserOptions.babelOptions.presets,
+        ...customParserOptions.babelOptions.presets
+      ),
     },
   };
 

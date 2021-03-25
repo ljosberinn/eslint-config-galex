@@ -1,3 +1,4 @@
+const { uniqueArrayEntries } = require('../utils');
 const {
   storybookOverrideType: overrideType,
 } = require('../utils/overrideTypes');
@@ -25,7 +26,7 @@ const createStorybookOverride = ({
     ...customRules,
   };
 
-  const finalFiles = [...new Set([...customFiles, ...files])];
+  const finalFiles = uniqueArrayEntries(...customFiles, ...files);
 
   return {
     rules: finalRules,

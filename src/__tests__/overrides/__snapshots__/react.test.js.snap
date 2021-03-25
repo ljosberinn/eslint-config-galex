@@ -8,11 +8,16 @@ Object {
   ],
   "overrideType": "eslint-config-galex/react",
   "overrides": Array [],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -259,11 +264,16 @@ Object {
   ],
   "overrideType": "eslint-config-galex/react",
   "overrides": Array [],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -509,11 +519,16 @@ Object {
   ],
   "overrideType": "eslint-config-galex/react",
   "overrides": Array [],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -770,11 +785,18 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [
+        "next/babel",
+      ],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -1034,11 +1056,18 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [
+        "next/babel",
+      ],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -1291,11 +1320,16 @@ Object {
   ],
   "overrideType": "eslint-config-galex/react",
   "overrides": Array [],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -1539,11 +1573,16 @@ Object {
   ],
   "overrideType": "eslint-config-galex/react",
   "overrides": Array [],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -1800,11 +1839,18 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [
+        "next/babel",
+      ],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -2064,11 +2110,18 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [
+        "next/babel",
+      ],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
@@ -2321,11 +2374,16 @@ Object {
   ],
   "overrideType": "eslint-config-galex/react",
   "overrides": Array [],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
+    "babelOptions": Object {
+      "presets": Array [],
+    },
     "ecmaFeatures": Object {
       "jsx": true,
     },
+    "requireConfigFile": false,
+    "sourceType": "module",
   },
   "plugins": Array [
     "jsx-a11y",
