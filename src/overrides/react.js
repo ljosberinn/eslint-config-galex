@@ -79,6 +79,7 @@ const createReactOverride = ({
     },
     babelOptions: {
       presets: uniqueArrayEntries(
+        react.isCreateReactApp && '@babel/preset-react',
         react.isNext && 'next/babel',
         ...defaultParserOptions.babelOptions.presets,
         ...customParserOptions.babelOptions.presets
