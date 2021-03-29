@@ -37,17 +37,17 @@
   },
   "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "dependencies": {
-    "@babel/core": "7.13.10",
-    "@babel/eslint-parser": "7.13.10",
+    "@babel/core": "7.13.14",
+    "@babel/eslint-parser": "7.13.14",
     "@next/eslint-plugin-next": "10.1.1",
-    "@typescript-eslint/eslint-plugin": "4.19.0",
-    "@typescript-eslint/parser": "4.19.0",
+    "@typescript-eslint/eslint-plugin": "4.20.0",
+    "@typescript-eslint/parser": "4.20.0",
     "confusing-browser-globals": "1.0.10",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-inclusive-language": "2.1.1",
     "eslint-plugin-jest": "24.3.2",
-    "eslint-plugin-jest-dom": "3.6.5",
+    "eslint-plugin-jest-dom": "3.7.0",
     "eslint-plugin-jest-formatting": "2.0.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-promise": "4.3.1",
@@ -88,9 +88,6 @@
         "statements": 100
       }
     },
-    "transformIgnorePatterns": [
-      "/node_modules/"
-    ],
     "modulePaths": [
       "<rootDir>"
     ],
