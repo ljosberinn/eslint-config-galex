@@ -47,7 +47,7 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-inclusive-language": "2.1.1",
     "eslint-plugin-jest": "24.3.2",
-    "eslint-plugin-jest-dom": "3.6.5",
+    "eslint-plugin-jest-dom": "3.7.0",
     "eslint-plugin-jest-formatting": "2.0.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-promise": "4.3.1",
