@@ -4,12 +4,16 @@
   "description": "personal ESLint ruleset of galex",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint src",
     "lint:fix": "eslint . --fix && prettier --write .",
     "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "test:integration:cra-js": "cd examples/cra-js && yarn --frozen-lockfile && yarn lint",
+    "test:integration:cra-ts": "cd examples/cra-ts && yarn --frozen-lockfile && yarn lint",
+    "test:integration:next-js": "cd examples/next-js && yarn --frozen-lockfile && yarn lint",
+    "test:integration:next-ts": "cd examples/next-ts && yarn --frozen-lockfile && yarn lint",
     "semantic-release": "semantic-release"
   },
   "repository": {
