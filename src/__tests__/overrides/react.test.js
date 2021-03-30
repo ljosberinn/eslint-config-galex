@@ -1,6 +1,6 @@
 const { createReactOverride } = require('../../overrides/react');
 
-const react17 = '17.0.0.1.rc-1';
+const react17 = '17.0.2';
 
 describe('createReactOverride', () => {
   test('matches snapshot if react is false', () => {
@@ -19,6 +19,10 @@ describe('createReactOverride', () => {
   });
 
   test('matches snapshot if react is < 17', () => {
+    const consoleWarnSpy = jest
+      .spyOn(console, 'warn')
+      .mockImplementation(() => {});
+
     const project = {
       react: {
         hasReact: true,
@@ -31,6 +35,7 @@ describe('createReactOverride', () => {
     };
 
     expect(createReactOverride(project)).toMatchSnapshot();
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(2);
   });
 
   test('matches snapshot if react is < 17 with Next', () => {
@@ -49,6 +54,10 @@ describe('createReactOverride', () => {
   });
 
   test('matches snapshot if react is < 17 with TS', () => {
+    const consoleWarnSpy = jest
+      .spyOn(console, 'warn')
+      .mockImplementation(() => {});
+
     const project = {
       react: {
         hasReact: true,
@@ -61,6 +70,7 @@ describe('createReactOverride', () => {
     };
 
     expect(createReactOverride(project)).toMatchSnapshot();
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(2);
   });
 
   test('matches snapshot if react is < 17 with Next & TS', () => {
@@ -79,6 +89,10 @@ describe('createReactOverride', () => {
   });
 
   test('matches snapshot if react is >= 17', () => {
+    const consoleWarnSpy = jest
+      .spyOn(console, 'warn')
+      .mockImplementation(() => {});
+
     const project = {
       react: {
         hasReact: true,
@@ -91,6 +105,7 @@ describe('createReactOverride', () => {
     };
 
     expect(createReactOverride(project)).toMatchSnapshot();
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(2);
   });
 
   test('matches snapshot if react is >= 17 with Next', () => {
@@ -109,6 +124,10 @@ describe('createReactOverride', () => {
   });
 
   test('matches snapshot if react is >= 17 with TS', () => {
+    const consoleWarnSpy = jest
+      .spyOn(console, 'warn')
+      .mockImplementation(() => {});
+
     const project = {
       react: {
         hasReact: true,
@@ -121,6 +140,7 @@ describe('createReactOverride', () => {
     };
 
     expect(createReactOverride(project)).toMatchSnapshot();
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(2);
   });
 
   test('matches snapshot if react is >= 17 with Next & TS', () => {
@@ -139,6 +159,10 @@ describe('createReactOverride', () => {
   });
 
   test('disables jsx-a11y/autocomplete-valid given a CRA project', () => {
+    const consoleWarnSpy = jest
+      .spyOn(console, 'warn')
+      .mockImplementation(() => {});
+
     const rule = 'jsx-a11y/autocomplete-valid';
 
     const project = {
@@ -161,9 +185,14 @@ describe('createReactOverride', () => {
 
     expect(override.rules[rule]).not.toBe(result.rules[rule]);
     expect(result).toMatchSnapshot();
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(2);
   });
 
   test('allows passing extra rules', () => {
+    const consoleWarnSpy = jest
+      .spyOn(console, 'warn')
+      .mockImplementation(() => {});
+
     const rule = 'react/jsx-uses-react';
     const level = 'off';
 
@@ -188,5 +217,38 @@ describe('createReactOverride', () => {
     expect(result.rules[rule]).not.toBe(override.rules[rule]);
 
     expect(result).toMatchSnapshot();
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(4);
+  });
+
+  test('allows passing extra parserOptions', () => {
+    const consoleWarnSpy = jest
+      .spyOn(console, 'warn')
+      .mockImplementation(() => {});
+
+    const project = {
+      react: {
+        hasReact: true,
+        isCreateReactApp: false,
+        isNext: false,
+        version: '16.13.1',
+      },
+      typescript: {
+        hasTypeScript: false,
+      },
+      parserOptions: {
+        babelOptions: {
+          plugins: ['test'],
+          presets: ['foo'],
+        },
+      },
+    };
+
+    const result = createReactOverride(project);
+
+    expect(result).toMatchSnapshot();
+    expect(result.parserOptions.babelOptions).toStrictEqual(
+      project.babelOptions
+    );
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(2);
   });
 });

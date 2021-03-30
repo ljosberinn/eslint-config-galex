@@ -23,14 +23,37 @@ const defaultParserOptions = {
   ecmaFeatures: {
     jsx: true,
   },
-  babelOptions: {
-    presets: [],
-  },
 };
 const defaultSettings = {
   react: {
     version: 'detect',
   },
+};
+
+const getBabelOptions = ({
+  isNext,
+  isCreateReactApp,
+  babelOptions,
+  babelConfig,
+}) => {
+  if (babelConfig) {
+    return babelConfig;
+  }
+
+  if (isNext) {
+    return {
+      ...babelOptions,
+      presets: uniqueArrayEntries('next/babel', ...babelOptions.presets),
+    };
+  }
+
+  // via https://github.com/facebook/create-react-app/tree/master/packages/babel-preset-react-app
+  if (isCreateReactApp) {
+    return {
+      ...babelOptions,
+      presets: uniqueArrayEntries('react-app', ...babelOptions.presets),
+    };
+  }
 };
 
 /**
@@ -39,6 +62,8 @@ const defaultSettings = {
  *   hasReact: boolean;
  *   isNext: boolean;
  *   version: string;
+ *   isCreateReactApp: boolean;
+ *   babelConfig?: Record<string, { presets?: unknown[] }>
  *  };
  *  rules?: Record<string, any>;
  *  settings?: object;
@@ -70,6 +95,22 @@ const createReactOverride = ({
     ...customRules,
   };
 
+  const babelOptions = getBabelOptions({
+    ...react,
+    babelOptions: customParserOptions.babelOptions,
+  });
+
+  if (!babelOptions) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      '[eslint-config-galex] A custom React setup was detected, but no babel config file was found. `@babel/eslint-parser` needs to know about your babel presets.'
+    );
+    // eslint-disable-next-line no-console
+    console.warn(
+      '[eslint-config-galex] Please pass `{ babelConfig: YOUR_CONFIG_HERE }` to `createConfig`.'
+    );
+  }
+
   const parserOptions = {
     ...defaultParserOptions,
     ...customParserOptions,
@@ -77,13 +118,7 @@ const createReactOverride = ({
       ...defaultParserOptions.ecmaFeatures,
       ...customParserOptions.ecmaFeatures,
     },
-    babelOptions: {
-      presets: uniqueArrayEntries(
-        react.isNext && 'next/babel',
-        ...defaultParserOptions.babelOptions.presets,
-        ...customParserOptions.babelOptions.presets
-      ),
-    },
+    babelOptions,
   };
 
   const settings = {

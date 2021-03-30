@@ -3,7 +3,11 @@ const { join } = require('path');
 const readPkgUp = require('read-pkg-up');
 const ts = require('typescript');
 
-const { createConfig, getDependencies } = require('../createConfig');
+const {
+  createConfig,
+  getDependencies,
+  getBabelConfig,
+} = require('../createConfig');
 const {
   overrideType: jestOverrideType,
   createJestOverride,
@@ -42,24 +46,26 @@ describe('getDependencies', () => {
     expect(getDependencies({ cwd })).toMatchSnapshot();
   });
 
-  test('given CRA, forces jest to true', () => {
-    jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
-      packageJson: {
-        dependencies: {
-          'react-scripts': '3.4.1',
+  describe('CRA', () => {
+    test('forces jest to true', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+        packageJson: {
+          dependencies: {
+            'react-scripts': '3.4.1',
+          },
         },
-      },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      const deps = getDependencies();
+
+      expect(deps.hasJest).toBeTruthy();
+      expect(deps.react.isCreateReactApp).toBeTruthy();
+
+      expect(deps).toMatchSnapshot();
     });
-
-    jest.spyOn(fs, 'readFileSync').mockReturnValue('');
-    jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
-
-    const deps = getDependencies();
-
-    expect(deps.hasJest).toBeTruthy();
-    expect(deps.react.isCreateReactApp).toBeTruthy();
-
-    expect(deps).toMatchSnapshot();
   });
 
   describe('given typescript', () => {
@@ -203,26 +209,28 @@ describe('createConfig', () => {
     expect(createConfig()).toMatchSnapshot();
   });
 
-  test('given typescript, determines env.node based on presence of tsconfig.json', () => {
-    const settings = { cacheOptions: { enabled: false } };
-    const defaultConfig = createConfig(settings);
+  describe('typescript', () => {
+    test('determines `env.node` based on presence of `tsconfig.json`', () => {
+      const settings = { cacheOptions: { enabled: false } };
+      const defaultConfig = createConfig(settings);
 
-    jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
-      packageJson: {
-        dependencies: {
-          typescript: '1.0.0',
+      jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+        packageJson: {
+          dependencies: {
+            typescript: '1.0.0',
+          },
         },
-      },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValueOnce('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValueOnce('');
+      jest.spyOn(ts, 'convertToObject').mockReturnValueOnce({});
+
+      const config = createConfig(settings);
+
+      expect(config.env.node).toBeFalsy();
+      expect(config.env.node).not.toBe(defaultConfig.env.node);
     });
-
-    jest.spyOn(fs, 'readFileSync').mockReturnValueOnce('');
-    jest.spyOn(ts, 'parseJsonText').mockReturnValueOnce('');
-    jest.spyOn(ts, 'convertToObject').mockReturnValueOnce({});
-
-    const config = createConfig(settings);
-
-    expect(config.env.node).toBeFalsy();
-    expect(config.env.node).not.toBe(defaultConfig.env.node);
   });
 
   test('allows passing extra rules', () => {
@@ -299,7 +307,7 @@ describe('createConfig', () => {
         compilerOptions: { [key]: value },
       });
 
-      const { overrides } = createConfig();
+      const { overrides } = createConfig({ babelConfig: {} });
 
       expect(overrides[0].overrideType).toBe(reactOverrideType);
       expect(overrides[1].overrideType).toBe(tsOverrideType);
@@ -340,6 +348,7 @@ describe('createConfig', () => {
         overrides: [dummyOverride],
         stripDisabledRules: false,
         convertToESLintInternals: false,
+        babelConfig: {},
       });
 
       expect(overrides[0].overrideType).toBe(reactOverrideType);
@@ -385,6 +394,7 @@ describe('createConfig', () => {
         overrides: [dummyOverride],
         convertToESLintInternals: false,
         stripDisabledRules: false,
+        babelConfig: {},
       });
 
       const finalJestOverride = overrides.find(
@@ -442,6 +452,7 @@ describe('createConfig', () => {
         overrides: [dummyOverride1, dummyOverride2],
         stripDisabledRules: false,
         convertToESLintInternals: false,
+        babelConfig: {},
       });
 
       expect(overrides).toHaveLength(6);
@@ -525,6 +536,37 @@ describe('createConfig', () => {
       expect(setSpy).toBeCalledTimes(2);
 
       jest.useRealTimers();
+    });
+  });
+});
+
+describe('getBabelConfig', () => {
+  test('prefers passed `babelConfig` if given', () => {
+    const mockBabelConfig = { presets: ['foo'] };
+
+    const existsSyncSpy = jest.spyOn(fs, 'existsSync');
+    const readFileSyncSpy = jest.spyOn(fs, 'readFileSync');
+
+    const babelConfig = getBabelConfig({ babelConfig: mockBabelConfig });
+
+    expect(existsSyncSpy).not.toHaveBeenCalled();
+    expect(readFileSyncSpy).not.toHaveBeenCalled();
+    expect(babelConfig).toBe(mockBabelConfig);
+  });
+
+  test.each([
+    ['babel.config.json', 'babel-config-json', ['foo']],
+    ['babel.config.js', 'babel-config-js', ['foo']],
+    // presets for .babelrc.js must be empty because jest for some reason consumes it and looks for `babel-preset-foo`
+    ['.babelrc.js', 'babelrc-js', []],
+    ['.babelrc', 'babelrc', ['foo']],
+  ])(`reads "%s" if present`, (_, folder, presets) => {
+    const cwd = join(process.cwd(), 'src', '__mocks__', folder);
+
+    const babelConfig = getBabelConfig({ cwd });
+
+    expect(babelConfig).toStrictEqual({
+      presets,
     });
   });
 });

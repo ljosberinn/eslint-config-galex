@@ -4166,6 +4166,29 @@ Object {
 }
 `;
 
+exports[`getDependencies CRA forces jest to true 1`] = `
+Object {
+  "hasJest": true,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasStorybook": false,
+  "hasTestingLibrary": false,
+  "react": Object {
+    "babelConfig": undefined,
+    "hasReact": false,
+    "isCreateReactApp": true,
+    "isNext": false,
+    "isPreact": false,
+    "version": undefined,
+  },
+  "typescript": Object {
+    "config": undefined,
+    "hasTypeScript": false,
+    "version": undefined,
+  },
+}
+`;
+
 exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
 Object {
   "hasJest": true,
@@ -4174,6 +4197,7 @@ Object {
   "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4196,6 +4220,7 @@ Object {
   "hasStorybook": true,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4218,6 +4243,7 @@ Object {
   "hasStorybook": true,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4240,30 +4266,9 @@ Object {
   "hasStorybook": true,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
-    "isNext": false,
-    "isPreact": false,
-    "version": undefined,
-  },
-  "typescript": Object {
-    "config": undefined,
-    "hasTypeScript": false,
-    "version": undefined,
-  },
-}
-`;
-
-exports[`getDependencies given CRA, forces jest to true 1`] = `
-Object {
-  "hasJest": true,
-  "hasJestDom": false,
-  "hasNodeTypes": false,
-  "hasStorybook": false,
-  "hasTestingLibrary": false,
-  "react": Object {
-    "hasReact": false,
-    "isCreateReactApp": true,
     "isNext": false,
     "isPreact": false,
     "version": undefined,
@@ -4284,6 +4289,7 @@ Object {
   "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4310,6 +4316,7 @@ Object {
   "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4336,6 +4343,7 @@ Object {
   "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4358,6 +4366,7 @@ Object {
   "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4384,6 +4393,7 @@ Object {
   "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -4406,6 +4416,7 @@ Object {
   "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": Object {
+    "babelConfig": undefined,
     "hasReact": false,
     "isCreateReactApp": undefined,
     "isNext": false,

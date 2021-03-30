@@ -107,14 +107,57 @@ const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
 
 /**
  * @param {{
- *  cwd?: string;
- *  tsConfigPath?: string
+ *  cwd: string;
+ *  babelConfig?: Record<string, unknown>;
  * }} detectionOptions
  */
-const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
+const getBabelConfig = ({ cwd, babelConfig }) => {
+  if (babelConfig) {
+    return babelConfig;
+  }
+
+  const babelConfigJsonPath = resolve(cwd, 'babel.config.json');
+
+  if (fs.existsSync(babelConfigJsonPath)) {
+    return JSON.parse(fs.readFileSync(babelConfigJsonPath, 'utf-8'));
+  }
+
+  const babelConfigJsPath = resolve(cwd, 'babel.config.js');
+
+  if (fs.existsSync(babelConfigJsPath)) {
+    // eslint-disable-next-line import/no-dynamic-require
+    return require(babelConfigJsPath);
+  }
+
+  const babelRcJsPath = resolve(cwd, '.babelrc.js');
+
+  if (fs.existsSync(babelRcJsPath)) {
+    // eslint-disable-next-line import/no-dynamic-require
+    return require(babelRcJsPath);
+  }
+
+  const babelRcPath = resolve(cwd, '.babelrc');
+
+  if (fs.existsSync(babelRcPath)) {
+    return JSON.parse(fs.readFileSync(babelRcPath, 'utf-8'));
+  }
+};
+
+/**
+ * @param {{
+ *  cwd?: string;
+ *  tsConfigPath?: string
+ *  babelConfig?: Record<string, unknown>;
+ * }} detectionOptions
+ */
+const getDependencies = ({
+  cwd = process.cwd(),
+  tsConfigPath,
+  babelConfig,
+} = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
-    /* istanbul ignore next line 1240 is supposedly uncovered :shrug: */
+    /* istanbul ignore next line supposedly uncovered :shrug: */
     const {
       packageJson: {
         peerDependencies = {},
@@ -132,15 +175,30 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
     const deps = new Map(depsAsTuple);
 
     const hasReact = reactFlavours.some(pkg => deps.has(pkg));
+    const isNext = deps.has('next');
+    const isCreateReactApp = deps.has('react-scripts');
+
+    const babel = (() => {
+      if (!hasReact || isNext || isCreateReactApp) {
+        return;
+      }
+
+      try {
+        return getBabelConfig({ cwd, babelConfig });
+        // eslint-disable-next-line no-empty
+      } catch {}
+    })();
 
     const react = {
       hasReact,
-      isCreateReactApp: deps.has('react-scripts'),
-      isNext: deps.has('next'),
+      isCreateReactApp,
+      isNext,
       // no effect yet
       isPreact: deps.has('preact'),
       // might have to be adjusted for preact in the future
       version: deps.get('react'),
+      // required for @babel/eslint-parser
+      babelConfig: babel,
     };
 
     const hasTypeScriptDependency = deps.has('typescript');
@@ -155,8 +213,8 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       } catch (error) {
         /* istanbul ignore next warning aint that relevant */
         const info = tsConfigPath
-          ? `TypeScript found in \`package.json\`, but no config was found or is readable at "${tsConfigPath}":`
-          : 'TypeScript found in `package.json` but no `tsconfig.json` was found:';
+          ? `[eslint-config-galex] TypeScript found in \`package.json\`, but no config was found or is readable at "${tsConfigPath}":`
+          : '[eslint-config-galex] TypeScript found in `package.json` but no `tsconfig.json` was found:';
         // eslint-disable-next-line no-console
         console.info(info, error.message);
       }
@@ -190,7 +248,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
     };
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('error parsing `package.json`!', error);
+    console.error('[eslint-config-galex] error parsing `package.json`!', error);
 
     return {
       hasJest: false,
@@ -204,6 +262,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
         isNext: false,
         isPreact: false,
         version: undefined,
+        babelConfig: undefined,
       },
       typescript: {
         config: undefined,
@@ -230,6 +289,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
  *   enabled?: boolean;
  *   expiresAfterMs?: number
  *  };
+ *  babelConfig?: Record<string, unknown>;
  * }} config
  */
 const createConfig = ({
@@ -243,11 +303,11 @@ const createConfig = ({
   ignorePatterns: customIgnorePattenrs = [],
   settings: customSettings = {},
   convertToESLintInternals = true,
-  root,
   cacheOptions: {
     enabled: cachingEnabled = true,
     expiresAfterMs: cachingExpiresAfterMs = 10 * 60 * 1000,
   } = {},
+  babelConfig,
 } = {}) => {
   const cacheOptions = {
     enabled: cachingEnabled,
@@ -265,6 +325,7 @@ const createConfig = ({
     customParserOptions,
     convertToESLintInternals,
     cacheOptions,
+    babelConfig,
   };
 
   if (
@@ -276,7 +337,7 @@ const createConfig = ({
     return cacheImpl.cache.config;
   }
 
-  const project = getDependencies({ cwd, tsConfigPath });
+  const project = getDependencies({ cwd, tsConfigPath, babelConfig });
 
   const flags = {
     convertToESLintInternals,
@@ -370,4 +431,5 @@ module.exports = {
   testingLibFamily,
   ignorePatterns: defaultIgnorePatterns,
   settings: defaultSettings,
+  getBabelConfig,
 };
