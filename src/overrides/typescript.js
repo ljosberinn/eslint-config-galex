@@ -148,11 +148,11 @@ const getTypeScriptRules = ({
     : { '@typescript-eslint/ban-tslint-comment': 'error' }),
 
   /**
-   * off because not needed
+   * warn about ambiguous types that might not work as you'd think
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
    */
-  '@typescript-eslint/ban-types': 'off',
+  '@typescript-eslint/ban-types': 'warn',
 
   /**
    * off because prettier
