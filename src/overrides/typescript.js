@@ -670,6 +670,13 @@ const getTypeScriptRules = ({
   '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
 
   /**
+   * prevents accidental any leaking into your code
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-argument.md
+   */
+  '@typescript-eslint/no-unsafe-argument': 'warn',
+
+  /**
    * off because already handled
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
