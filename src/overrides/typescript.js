@@ -943,6 +943,7 @@ const getTypeScriptRules = ({
     'warn',
     {
       allowBoolean: true,
+      allowNumber: true,
     },
   ],
 
