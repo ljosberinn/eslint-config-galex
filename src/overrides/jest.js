@@ -680,6 +680,15 @@ const getTestOverrides = ({
     : null),
 
   /**
+   * off because irrelevant in tests and leads to false positives
+   *
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-argument.md
+   */
+  ...(hasTypeScript
+    ? { '@typescript-eslint/no-unsafe-argument': 'off' }
+    : null),
+
+  /**
    * off to allow spying on methods
    *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
