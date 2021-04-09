@@ -202,12 +202,7 @@ Object {
     "import/no-unassigned-import": 0,
     "import/no-unresolved": 1,
     "import/no-unused-modules": 1,
-    "import/no-useless-path-segments": Array [
-      2,
-      Object {
-        "noUselessIndex": true,
-      },
-    ],
+    "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
     "import/order": Array [
       1,
@@ -896,12 +891,7 @@ Object {
     "import/no-unassigned-import": 0,
     "import/no-unresolved": 1,
     "import/no-unused-modules": 1,
-    "import/no-useless-path-segments": Array [
-      2,
-      Object {
-        "noUselessIndex": true,
-      },
-    ],
+    "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
     "import/order": Array [
       1,
@@ -1593,12 +1583,7 @@ Object {
     "import/no-unassigned-import": 0,
     "import/no-unresolved": 1,
     "import/no-unused-modules": 1,
-    "import/no-useless-path-segments": Array [
-      2,
-      Object {
-        "noUselessIndex": true,
-      },
-    ],
+    "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
     "import/order": Array [
       1,
@@ -2287,12 +2272,7 @@ Object {
     "import/no-unassigned-import": 0,
     "import/no-unresolved": 1,
     "import/no-unused-modules": 1,
-    "import/no-useless-path-segments": Array [
-      2,
-      Object {
-        "noUselessIndex": true,
-      },
-    ],
+    "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
     "import/order": Array [
       1,
@@ -2981,12 +2961,7 @@ Object {
     "import/no-unassigned-import": 0,
     "import/no-unresolved": 1,
     "import/no-unused-modules": 1,
-    "import/no-useless-path-segments": Array [
-      2,
-      Object {
-        "noUselessIndex": true,
-      },
-    ],
+    "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
     "import/order": Array [
       1,
@@ -3674,12 +3649,7 @@ Object {
     "import/no-unassigned-import": 0,
     "import/no-unresolved": 1,
     "import/no-unused-modules": 1,
-    "import/no-useless-path-segments": Array [
-      2,
-      Object {
-        "noUselessIndex": true,
-      },
-    ],
+    "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
     "import/order": Array [
       1,

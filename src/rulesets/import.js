@@ -128,8 +128,6 @@ const getImportRules = ({
   /**
    * depects potential cyclical imports
    *
-   * __EXPERIMENTAL__
-   *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md
    */
   'import/no-cycle': isCreateReactApp
@@ -283,16 +281,11 @@ const getImportRules = ({
   'import/no-unused-modules': 'warn',
 
   /**
-   *
+   * off because its the slowest rule in this config
    *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-useless-path-segments.md
    */
-  'import/no-useless-path-segments': [
-    'error',
-    {
-      noUselessIndex: true,
-    },
-  ],
+  'import/no-useless-path-segments': 'off',
 
   /**
    * prevents using loader syntax in imports. use webpack config instead.

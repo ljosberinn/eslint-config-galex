@@ -43,12 +43,7 @@ Object {
   "import/no-unassigned-import": "off",
   "import/no-unresolved": "off",
   "import/no-unused-modules": "warn",
-  "import/no-useless-path-segments": Array [
-    "error",
-    Object {
-      "noUselessIndex": true,
-    },
-  ],
+  "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
     "warn",
@@ -114,12 +109,7 @@ Object {
   "import/no-unassigned-import": "off",
   "import/no-unresolved": "off",
   "import/no-unused-modules": "warn",
-  "import/no-useless-path-segments": Array [
-    "error",
-    Object {
-      "noUselessIndex": true,
-    },
-  ],
+  "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
     "warn",
@@ -185,12 +175,7 @@ Object {
   "import/no-unassigned-import": "off",
   "import/no-unresolved": "off",
   "import/no-unused-modules": "warn",
-  "import/no-useless-path-segments": Array [
-    "error",
-    Object {
-      "noUselessIndex": true,
-    },
-  ],
+  "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
     "warn",
@@ -262,12 +247,7 @@ Object {
   "import/no-unassigned-import": "off",
   "import/no-unresolved": "off",
   "import/no-unused-modules": "warn",
-  "import/no-useless-path-segments": Array [
-    "error",
-    Object {
-      "noUselessIndex": true,
-    },
-  ],
+  "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
     "warn",
@@ -339,12 +319,7 @@ Object {
   "import/no-unassigned-import": "off",
   "import/no-unresolved": "warn",
   "import/no-unused-modules": "warn",
-  "import/no-useless-path-segments": Array [
-    "error",
-    Object {
-      "noUselessIndex": true,
-    },
-  ],
+  "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
     "warn",
@@ -410,12 +385,7 @@ Object {
   "import/no-unassigned-import": "off",
   "import/no-unresolved": "warn",
   "import/no-unused-modules": "warn",
-  "import/no-useless-path-segments": Array [
-    "error",
-    Object {
-      "noUselessIndex": true,
-    },
-  ],
+  "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
     "warn",
