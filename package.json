@@ -2,20 +2,6 @@
   "name": "eslint-config-galex",
   "version": "2.13.11",
   "description": "personal ESLint ruleset of galex",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix && prettier --write .",
-    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "semantic-release": "semantic-release"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ljosberinn/eslint-config-galex.git"
-  },
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -26,37 +12,78 @@
     "typescript",
     "react",
     "nextjs",
-    "typescript",
     "jest",
     "testing-library"
   ],
-  "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
-  "license": "MIT",
+  "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "bugs": {
     "url": "https://github.com/ljosberinn/eslint-config-galex/issues"
   },
-  "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ljosberinn/eslint-config-galex.git"
+  },
+  "license": "MIT",
+  "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "semantic-release": "semantic-release"
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ],
+  "jest": {
+    "clearMocks": true,
+    "collectCoverageFrom": [
+      "src/(overrides|rulesets)/**/*.{js,jsx,ts,tsx}",
+      "src/*.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "resetMocks": true,
+    "restoreMocks": true,
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
+  },
   "dependencies": {
     "@babel/core": "7.13.15",
     "@babel/eslint-parser": "7.13.14",
     "@next/eslint-plugin-next": "10.1.3",
-    "@typescript-eslint/eslint-plugin": "4.21.0",
-    "@typescript-eslint/parser": "4.21.0",
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
     "confusing-browser-globals": "1.0.10",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-inclusive-language": "2.1.1",
-    "eslint-plugin-jest": "24.3.4",
+    "eslint-plugin-jest": "24.3.5",
     "eslint-plugin-jest-dom": "3.8.0",
     "eslint-plugin-jest-formatting": "2.0.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-promise": "5.0.0",
+    "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-react": "7.23.2",
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-sonarjs": "0.6.0",
-    "eslint-plugin-testing-library": "3.10.2",
+    "eslint-plugin-testing-library": "4.0.0",
     "eslint-plugin-unicorn": "29.0.0",
-    "read-pkg-up": "7.0.1",
+    "read-pkg-up": "7.0.0",
     "typescript": "4.2.4"
   },
   "devDependencies": {
@@ -71,34 +98,6 @@
   },
   "peerDependencies": {
     "eslint": ">=7.15.0"
-  },
-  "eslintIgnore": [
-    "node_modules"
-  ],
-  "jest": {
-    "collectCoverageFrom": [
-      "src/(overrides|rulesets)/**/*.{js,jsx,ts,tsx}",
-      "src/*.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "modulePaths": [
-      "<rootDir>"
-    ],
-    "coverageDirectory": "coverage",
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ],
-    "clearMocks": true,
-    "restoreMocks": true,
-    "resetMocks": true
   },
   "release": {
     "plugins": [

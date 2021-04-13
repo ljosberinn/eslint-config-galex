@@ -560,6 +560,13 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   'testing-library/no-await-sync-query': 'error',
 
   /**
+   * disallows use of `container`
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-container.md
+   */
+  'testing-library/no-container': 'warn',
+
+  /**
    * hints the use of `screen.debug()`
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-debug.md
@@ -574,11 +581,25 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   'testing-library/no-dom-import': hasReact ? ['warn', 'react'] : 'off',
 
   /**
+   * prefer usage of `@testing-library/$framework` tools to access nodes
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-node-access.md
+   */
+  'testing-library/no-node-access': 'error',
+
+  /**
    * hints on `cleanup` not being necessary
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-manual-cleanup.md
    */
   'testing-library/no-manual-cleanup': 'error',
+
+  /**
+   * disalllows the use of promises passed to a `fireEvent` method
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-promise-in-fire-event.md
+   */
+  'testing-library/no-promise-in-fire-event': 'error',
 
   /**
    * off because too opinionated
@@ -593,6 +614,27 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-wait-for-empty-callback.md
    */
   'testing-library/no-wait-for-empty-callback': 'error',
+
+  /**
+   * disallows use of multiple expect inside of `waitFor`
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-wait-for-multiple-assertions.md
+   */
+  'testing-library/no-wait-for-multiple-assertions': 'error',
+
+  /**
+   * disallows the use of sideeffects inside of `waitFor`
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-wait-for-side-effects.md
+   */
+  'testing-library/no-wait-for-side-effects': 'error',
+
+  /**
+   * disallows snapshot generation within waitFor
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-wait-for-snapshot.md
+   */
+  'testing-library/no-wait-for-snapshot': 'error',
 
   /**
    * use `expect(getByText('foo').tobeInTheDocument()` instead of
@@ -624,11 +666,25 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   'testing-library/prefer-screen-queries': 'error',
 
   /**
+   * suggest using `@testing-library/user-event` over `fireEvent` from `@testing-library/$framework`
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-user-event.md
+   */
+  'testing-library/prefer-user-event': 'error',
+
+  /**
    * prefer `waitFor` instead of deprecated `wait` and similar
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-wait-for.md
    */
   'testing-library/prefer-wait-for': 'warn',
+
+  /**
+   * enforces a valid naming for return value from render
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/render-result-naming-convention.md
+   */
+  'testing-library/render-result-naming-convention': 'error',
 });
 
 const getTestOverrides = ({

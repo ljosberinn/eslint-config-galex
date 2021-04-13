@@ -879,9 +879,11 @@ const getTypeScriptRules = ({
   /**
    * use RegExp#exec over String#match because performance
    *
+   * warn because autofixeable since 4.22.0
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-regexp-exec.md
    */
-  '@typescript-eslint/prefer-regexp-exec': 'error',
+  '@typescript-eslint/prefer-regexp-exec': 'warn',
 
   /**
    * use String.startsWith/.endsWith over String.indexOf or regex
