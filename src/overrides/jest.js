@@ -585,7 +585,7 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-node-access.md
    */
-  'testing-library/no-node-access': 'error',
+  'testing-library/no-node-access': 'warn',
 
   /**
    * hints on `cleanup` not being necessary
@@ -682,9 +682,11 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * enforces a valid naming for return value from render
    *
+   * off because opinionated
+   *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/render-result-naming-convention.md
    */
-  'testing-library/render-result-naming-convention': 'error',
+  'testing-library/render-result-naming-convention': 'off',
 });
 
 const getTestOverrides = ({
