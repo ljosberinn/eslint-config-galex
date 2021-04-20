@@ -24,6 +24,7 @@ const defaultSettings = {
  *  hasTestingLibrary: boolean;
  *  react: {
  *    hasReact: boolean;
+ *    isNext: boolean;
  *  };
  *  typescript: {
  *    hasTypeScript: boolean;
@@ -76,6 +77,7 @@ const createJestOverride = ({
 
   const settings = {
     ...defaultSettings,
+    ...getTestingLibrarySettings({ react, hasTestingLibrary }),
     ...customSettings,
   };
 
@@ -800,6 +802,27 @@ const getTestOverrides = ({
   ...(hasReact ? { 'jsx-a11y/control-has-associated-label': 'off' } : null),
 });
 
+/**
+ * @see https://github.com/testing-library/eslint-plugin-testing-library#testing-librarycustom-renders
+ */
+const getTestingLibrarySettings = ({
+  hasTestingLibrary,
+  react: { isNext, hasReact },
+}) => {
+  if (!hasTestingLibrary || !hasReact) {
+    return null;
+  }
+
+  return {
+    'testing-library/custom-renders': [
+      // allows usage of ReactDOM.renderToStaticMarkup in test files
+      'renderToStaticMarkup',
+      // allows usage of Document.renderDocument in test files
+      isNext && 'renderDocument',
+    ].filter(Boolean),
+  };
+};
+
 module.exports = {
   createJestOverride,
   env: defaultEnv,
@@ -812,4 +835,5 @@ module.exports = {
   parserOptions: defaultParserOptions,
   settings: defaultSettings,
   overrideType,
+  getTestingLibrarySettings,
 };

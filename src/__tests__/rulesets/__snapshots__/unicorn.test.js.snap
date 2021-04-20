@@ -75,6 +75,12 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
+  "unicorn/prefer-switch": Array [
+    "error",
+    Object {
+      "emptyDefaultCase": "no-default-comment",
+    },
+  ],
   "unicorn/prefer-ternary": "off",
   "unicorn/prefer-type-error": "error",
   "unicorn/prevent-abbreviations": "off",
@@ -158,6 +164,12 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "error",
   "unicorn/prefer-string-trim-start-end": "error",
+  "unicorn/prefer-switch": Array [
+    "error",
+    Object {
+      "emptyDefaultCase": "no-default-comment",
+    },
+  ],
   "unicorn/prefer-ternary": "off",
   "unicorn/prefer-type-error": "error",
   "unicorn/prevent-abbreviations": "off",
@@ -241,6 +253,12 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
+  "unicorn/prefer-switch": Array [
+    "error",
+    Object {
+      "emptyDefaultCase": "no-default-comment",
+    },
+  ],
   "unicorn/prefer-ternary": "off",
   "unicorn/prefer-type-error": "error",
   "unicorn/prevent-abbreviations": "off",
@@ -324,6 +342,12 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "error",
   "unicorn/prefer-string-trim-start-end": "error",
+  "unicorn/prefer-switch": Array [
+    "error",
+    Object {
+      "emptyDefaultCase": "no-default-comment",
+    },
+  ],
   "unicorn/prefer-ternary": "off",
   "unicorn/prefer-type-error": "error",
   "unicorn/prevent-abbreviations": "off",
@@ -407,6 +431,12 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
+  "unicorn/prefer-switch": Array [
+    "error",
+    Object {
+      "emptyDefaultCase": "no-default-comment",
+    },
+  ],
   "unicorn/prefer-ternary": "off",
   "unicorn/prefer-type-error": "error",
   "unicorn/prevent-abbreviations": "off",
@@ -490,6 +520,12 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
+  "unicorn/prefer-switch": Array [
+    "error",
+    Object {
+      "emptyDefaultCase": "no-default-comment",
+    },
+  ],
   "unicorn/prefer-ternary": "off",
   "unicorn/prefer-type-error": "error",
   "unicorn/prevent-abbreviations": "off",
@@ -573,6 +609,12 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "error",
   "unicorn/prefer-string-trim-start-end": "error",
+  "unicorn/prefer-switch": Array [
+    "error",
+    Object {
+      "emptyDefaultCase": "no-default-comment",
+    },
+  ],
   "unicorn/prefer-ternary": "off",
   "unicorn/prefer-type-error": "error",
   "unicorn/prevent-abbreviations": "off",

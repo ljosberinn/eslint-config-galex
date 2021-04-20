@@ -6,6 +6,10 @@ describe('createEslintCoreRules', () => {
       typescript: {
         hasTypeScript: false,
       },
+      react: {
+        isNext: false,
+        isCreateReactApp: false,
+      },
     };
 
     expect(createEslintCoreRules(project)).toMatchSnapshot();
@@ -16,6 +20,10 @@ describe('createEslintCoreRules', () => {
       typescript: {
         hasTypeScript: true,
       },
+      react: {
+        isNext: false,
+        isCreateReactApp: false,
+      },
     };
 
     expect(createEslintCoreRules(project)).toMatchSnapshot();
@@ -25,6 +33,10 @@ describe('createEslintCoreRules', () => {
     const defaultProject = {
       typescript: {
         hasTypeScript: false,
+      },
+      react: {
+        isNext: false,
+        isCreateReactApp: false,
       },
     };
 
@@ -41,6 +53,10 @@ describe('createEslintCoreRules', () => {
         config: tsConfigWithDecorators,
         hasTypeScript: true,
       },
+      react: {
+        isNext: false,
+        isCreateReactApp: false,
+      },
     };
 
     const customEslintCoreRules = createEslintCoreRules(customProject);
@@ -54,6 +70,34 @@ describe('createEslintCoreRules', () => {
     });
   });
 
+  test('matches snapshot with ts & cra', () => {
+    const project = {
+      typescript: {
+        hasTypeScript: true,
+      },
+      react: {
+        isNext: false,
+        isCreateReactApp: true,
+      },
+    };
+
+    expect(createEslintCoreRules(project)).toMatchSnapshot();
+  });
+
+  test('matches snapshot with ts & next', () => {
+    const project = {
+      typescript: {
+        hasTypeScript: true,
+      },
+      react: {
+        isNext: true,
+        isCreateReactApp: false,
+      },
+    };
+
+    expect(createEslintCoreRules(project)).toMatchSnapshot();
+  });
+
   test('allows passing custom rules', () => {
     const rule = 'for-direction';
     const level = 'off';
@@ -64,6 +108,10 @@ describe('createEslintCoreRules', () => {
       },
       typescript: {
         hasTypeScript: false,
+      },
+      react: {
+        isNext: false,
+        isCreateReactApp: false,
       },
     };
 

@@ -193,6 +193,23 @@ describe('createJestOverride', () => {
     expect(createJestOverride(project)).toMatchSnapshot();
   });
 
+  test('matches snapshot with jest & jest-dom & testing-lib & next & ts', () => {
+    const project = {
+      hasJest: true,
+      hasJestDom: true,
+      hasTestingLibrary: true,
+      react: {
+        hasReact: true,
+        isNext: true,
+      },
+      typescript: {
+        hasTypeScript: true,
+      },
+    };
+
+    expect(createJestOverride(project)).toMatchSnapshot();
+  });
+
   test('allows passing extra rules', () => {
     const rule = 'testing-library/no-manual-cleanup';
     const level = 'off';

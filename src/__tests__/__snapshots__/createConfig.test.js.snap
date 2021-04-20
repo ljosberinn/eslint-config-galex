@@ -592,6 +592,7 @@ Object {
     "spaced-comment": Array [
       1,
       "always",
+      Object {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -672,6 +673,12 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
+    "unicorn/prefer-switch": Array [
+      2,
+      Object {
+        "emptyDefaultCase": "no-default-comment",
+      },
+    ],
     "unicorn/prefer-ternary": 0,
     "unicorn/prefer-type-error": 2,
     "unicorn/prevent-abbreviations": 0,
@@ -1281,6 +1288,7 @@ Object {
     "spaced-comment": Array [
       1,
       "always",
+      Object {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -1361,6 +1369,12 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
+    "unicorn/prefer-switch": Array [
+      2,
+      Object {
+        "emptyDefaultCase": "no-default-comment",
+      },
+    ],
     "unicorn/prefer-ternary": 0,
     "unicorn/prefer-type-error": 2,
     "unicorn/prevent-abbreviations": 0,
@@ -1973,6 +1987,7 @@ Object {
     "spaced-comment": Array [
       1,
       "always",
+      Object {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -2053,6 +2068,12 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
+    "unicorn/prefer-switch": Array [
+      2,
+      Object {
+        "emptyDefaultCase": "no-default-comment",
+      },
+    ],
     "unicorn/prefer-ternary": 0,
     "unicorn/prefer-type-error": 2,
     "unicorn/prevent-abbreviations": 0,
@@ -2662,6 +2683,7 @@ Object {
     "spaced-comment": Array [
       1,
       "always",
+      Object {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -2742,6 +2764,12 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
+    "unicorn/prefer-switch": Array [
+      2,
+      Object {
+        "emptyDefaultCase": "no-default-comment",
+      },
+    ],
     "unicorn/prefer-ternary": 0,
     "unicorn/prefer-type-error": 2,
     "unicorn/prevent-abbreviations": 0,
@@ -3351,6 +3379,7 @@ Object {
     "spaced-comment": Array [
       1,
       "always",
+      Object {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -3431,6 +3460,12 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
+    "unicorn/prefer-switch": Array [
+      2,
+      Object {
+        "emptyDefaultCase": "no-default-comment",
+      },
+    ],
     "unicorn/prefer-ternary": 0,
     "unicorn/prefer-type-error": 2,
     "unicorn/prevent-abbreviations": 0,
@@ -4039,6 +4074,7 @@ Object {
     "spaced-comment": Array [
       1,
       "always",
+      Object {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -4119,6 +4155,12 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
+    "unicorn/prefer-switch": Array [
+      2,
+      Object {
+        "emptyDefaultCase": "no-default-comment",
+      },
+    ],
     "unicorn/prefer-ternary": 0,
     "unicorn/prefer-type-error": 2,
     "unicorn/prevent-abbreviations": 0,

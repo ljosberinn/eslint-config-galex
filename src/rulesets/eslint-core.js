@@ -12,15 +12,23 @@ const prettierRules = Object.fromEntries(
  *  typescript: {
  *    hasTypeScript: boolean;
  *  };
+ *  react: {
+ *    isNext: boolean;
+ *    isCreateReactApp: boolean;
+ *  };
  *  rules?: Record<string, string | [string, string | object];
  * }} options
  */
-const createEslintCoreRules = ({ typescript, rules: customRules = {} }) => ({
+const createEslintCoreRules = ({
+  typescript,
+  react,
+  rules: customRules = {},
+}) => ({
   ...getPossibleErrorRules({ typescript }),
   ...getBestPractices({ typescript }),
   ...strictModeRules,
   ...getVariableRules({ typescript }),
-  ...getStylisticIssuesRules({ typescript }),
+  ...getStylisticIssuesRules({ typescript, react }),
   ...getES6Rules({ typescript }),
   ...prettierRules,
   ...safePrettierOverrides,
@@ -1098,6 +1106,7 @@ const getVariableRules = ({ typescript: { hasTypeScript } }) => ({
  */
 const getStylisticIssuesRules = ({
   typescript: { hasTypeScript, config },
+  react: { isCreateReactApp, isNext },
 }) => ({
   /**
    * off because handled by prettier
@@ -1740,8 +1749,18 @@ const getStylisticIssuesRules = ({
   /**
    * @see https://eslint.org/docs/rules/spaced-comment
    */
-  'spaced-comment': ['warn', 'always'],
-
+  'spaced-comment': [
+    'warn',
+    'always',
+    /**
+     * next and create-react-app have `...d.ts` files using old
+     * `reference types="..."`
+     * syntax which gets reported otherwise
+     *
+     * @see https://github.com/ljosberinn/eslint-config-galex/issues/315
+     */
+    hasTypeScript && (isCreateReactApp || isNext) ? { markers: ['/'] } : {},
+  ],
   /**
    * off because handled by prettier
    *
