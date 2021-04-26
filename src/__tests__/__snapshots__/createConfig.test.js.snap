@@ -656,7 +656,9 @@ Object {
     "unicorn/prefer-keyboard-event-key": 2,
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
+    "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
+    "unicorn/prefer-node-protocol": 0,
     "unicorn/prefer-number-properties": Array [
       1,
       Object {
@@ -1352,7 +1354,9 @@ Object {
     "unicorn/prefer-keyboard-event-key": 2,
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
+    "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
+    "unicorn/prefer-node-protocol": 0,
     "unicorn/prefer-number-properties": Array [
       1,
       Object {
@@ -2051,7 +2055,9 @@ Object {
     "unicorn/prefer-keyboard-event-key": 2,
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
+    "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
+    "unicorn/prefer-node-protocol": 0,
     "unicorn/prefer-number-properties": Array [
       1,
       Object {
@@ -2747,7 +2753,9 @@ Object {
     "unicorn/prefer-keyboard-event-key": 2,
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
+    "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
+    "unicorn/prefer-node-protocol": 0,
     "unicorn/prefer-number-properties": Array [
       1,
       Object {
@@ -3443,7 +3451,9 @@ Object {
     "unicorn/prefer-keyboard-event-key": 2,
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
+    "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
+    "unicorn/prefer-node-protocol": 0,
     "unicorn/prefer-number-properties": Array [
       1,
       Object {
@@ -4138,7 +4148,9 @@ Object {
     "unicorn/prefer-keyboard-event-key": 2,
     "unicorn/prefer-math-trunc": 1,
     "unicorn/prefer-modern-dom-apis": 2,
+    "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
+    "unicorn/prefer-node-protocol": 0,
     "unicorn/prefer-number-properties": Array [
       1,
       Object {

@@ -430,11 +430,30 @@ const getUnicornRules = ({
   'unicorn/prefer-modern-dom-apis': 'error',
 
   /**
+   * off because we cannot reliably detect being in a pure Node.js context
+   * with TS it would be off anyways
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md
+   * @see import/no-commonjs
+   */
+  'unicorn/prefer-module': 'off',
+
+  /**
    * prefer negative index over .length - index
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-negative-index.md
    */
   'unicorn/prefer-negative-index': 'error',
+
+  /**
+   * off because we cannot reliably detect being in a pure Node.js context
+   * which also supports Node 16+
+   *
+   * @todo check specifically in Next.js context; in 04/2021 it's not supported
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md
+   */
+  'unicorn/prefer-node-protocol': 'off',
 
   /**
    * use Number.* instead of * directly because of implicit differences
