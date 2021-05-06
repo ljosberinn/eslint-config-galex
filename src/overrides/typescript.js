@@ -672,9 +672,11 @@ const getTypeScriptRules = ({
   /**
    * prevents accidental any leaking into your code
    *
+   * off because lots of false positives
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-argument.md
    */
-  '@typescript-eslint/no-unsafe-argument': 'warn',
+  '@typescript-eslint/no-unsafe-argument': 'off',
 
   /**
    * off because already handled
