@@ -173,6 +173,13 @@ const getUnicornRules = ({
   'unicorn/no-console-spaces': 'error',
 
   /**
+   * disallow direct manipulation of document.cookie
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-document-cookie.md
+   */
+  'unicorn/no-document-cookie': 'warn',
+
+  /**
    * no `for` loop when you can `for-of` instead
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md
