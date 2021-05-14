@@ -178,6 +178,16 @@ const getImportRules = ({
   'import/no-extraneous-dependencies': 'warn',
 
   /**
+   * forbids mixing module.exports with import syntax
+   *
+   * off because it crashes in this repo
+   * @see https://github.com/benmosher/eslint-plugin-import/issues/2062
+   *
+   * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-import-module-exports.md
+   */
+  'import/no-import-module-exports': 'off',
+
+  /**
    * off because intended by some packages, e.g. `react-icons`, `next`, `msw`
    *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-internal-modules.md
@@ -234,6 +244,13 @@ const getImportRules = ({
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules.md
    */
   'import/no-nodejs-modules': 'off',
+
+  /**
+   * off because workspace sensitive
+   *
+   * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-relative-packages.md
+   */
+  'import/no-relative-packages': 'off',
 
   /**
    * prevents imports from parent folders
