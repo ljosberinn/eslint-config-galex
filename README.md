@@ -126,7 +126,7 @@ Couldn't this be easier?
   Learn more on customizing [here](#customization).
 
 - This one is brand new with a _heavy_ focus on code quality, best practices and
-  tries to omit opinions. We're using a subset at work too, and it has exclusively
+  tries to omit opinions. We're using a fork at work too, and it has exclusively
   detected overseen/undetected bugs and reasonable improvements.
 
   Feedback so far has been generally positive. The only rule that raised eyebrows
@@ -137,7 +137,7 @@ Couldn't this be easier?
 
 ## What's included?
 
-Everything is dynamically included based on your `package.json`.
+Everything is dynamically included based on your `package.json` and when using TypeScript, your `tsconfig.json`.
 Rules are selectively applied based on file name patterns.
 
 All rules are commented and link to their docs.
