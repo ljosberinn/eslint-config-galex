@@ -64,8 +64,8 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "7.14.0",
-    "@babel/eslint-parser": "7.13.14",
+    "@babel/core": "7.14.2",
+    "@babel/eslint-parser": "7.14.2",
     "@next/eslint-plugin-next": "10.2.0",
     "@typescript-eslint/eslint-plugin": "4.23.0",
     "@typescript-eslint/parser": "4.23.0",
