@@ -518,14 +518,14 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * enforces awaiting async queries (find*)
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-query.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/await-async-query.md
    */
   'testing-library/await-async-query': 'error',
 
   /**
    * enforces awaiting async utils (waitFor)
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-utils.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/await-async-utils.md
    */
   'testing-library/await-async-utils': 'error',
 
@@ -534,7 +534,7 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
    *
    * off because not supported by @testing-library/react
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-fire-event.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/await-fire-event.md
    */
   'testing-library/await-fire-event': 'off',
 
@@ -543,21 +543,21 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
    *
    * off because opinionated
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/consistent-data-testid.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/consistent-data-testid.md
    */
   'testing-library/consistent-data-testid': 'off',
 
   /**
    * ensures sync events are not awaited unnecessarily
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-await-sync-events.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-await-sync-events.md
    */
   'testing-library/no-await-sync-events': 'error',
 
   /**
    * no unecessary `await` for non-async queries
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-await-sync-query.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-await-sync-query.md
    */
   'testing-library/no-await-sync-query': 'error',
 
@@ -571,14 +571,14 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * hints the use of `screen.debug()`
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-debug.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-debug.md
    */
   'testing-library/no-debug': 'error',
 
   /**
    * disallows direct imports from `@testing-library/dom` in react
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-dom-import.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-dom-import.md
    */
   'testing-library/no-dom-import': hasReact ? ['warn', 'react'] : 'off',
 
@@ -592,7 +592,7 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * hints on `cleanup` not being necessary
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-manual-cleanup.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-manual-cleanup.md
    */
   'testing-library/no-manual-cleanup': 'error',
 
@@ -606,14 +606,21 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * off because too opinionated
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-render-in-setup.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-render-in-setup.md
    */
   'testing-library/no-render-in-setup': 'off',
 
   /**
+   * disallows unnecessary act() calls
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-unnecessary-act.md
+   */
+  'testing-library/no-unnecessary-act': 'error',
+
+  /**
    * no empty `waitFor` or `waitForElementToBeRemoved`
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/no-wait-for-empty-callback.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-wait-for-empty-callback.md
    */
   'testing-library/no-wait-for-empty-callback': 'error',
 
@@ -642,28 +649,28 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
    * use `expect(getByText('foo').tobeInTheDocument()` instead of
    * `getByText('foo')` expecting it not to throw
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-explicit-assert.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-explicit-assert.md
    */
   'testing-library/prefer-explicit-assert': 'warn',
 
   /**
    * use `findBy*` instead of `waitFor` + `getBy*`
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-find-by.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-find-by.md
    */
   'testing-library/prefer-find-by': 'warn',
 
   /**
    * ensure more specific queries to check element presence
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-presence-queries.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-presence-queries.md
    */
   'testing-library/prefer-presence-queries': 'error',
 
   /**
    * suggest using `screen` over destructured methods
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-screen-queries.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
    */
   'testing-library/prefer-screen-queries': 'error',
 
@@ -677,7 +684,7 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * prefer `waitFor` instead of deprecated `wait` and similar
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-wait-for.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-wait-for.md
    */
   'testing-library/prefer-wait-for': 'warn',
 
@@ -698,7 +705,7 @@ const getTestOverrides = ({
   /**
    * off to allow non-null casting e.g. querySelector or .find() results
    *
-   * @see https://github.com/typescript-eslint/typescript-eslint/blob/v3.9.0/packages/eslint-plugin/docs/rules/no-non-null-assertion.md
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-non-null-assertion.md
    */
   ...(hasTypeScript
     ? { '@typescript-eslint/no-non-null-assertion': 'off' }
