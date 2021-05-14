@@ -180,9 +180,11 @@ const getImportRules = ({
   /**
    * forbids mixing module.exports with import syntax
    *
+   * off because randomly breaks
+   *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-import-module-exports.md
    */
-  'import/no-import-module-exports': 'error',
+  'import/no-import-module-exports': 'off',
 
   /**
    * off because intended by some packages, e.g. `react-icons`, `next`, `msw`
