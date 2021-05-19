@@ -9,12 +9,7 @@ const { fulfillsVersionRequirement, uniqueArrayEntries } = require('../utils');
 const { reactOverrideType: overrideType } = require('../utils/overrideTypes');
 
 const extendsConfigs = [];
-const plugins = [
-  'jsx-a11y',
-  'react-hooks',
-  'react',
-  '@next/eslint-plugin-next',
-];
+const plugins = ['jsx-a11y', 'react-hooks', 'react', '@next/next'];
 const files = ['**/*.?(ts|js)?(x)'];
 const parser = '@babel/eslint-parser';
 const defaultParserOptions = {
@@ -1150,7 +1145,7 @@ const createNextJsRules = ({ react: { isNext } }) => {
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-document-import-in-page.js
      */
-    '@next/next/no-document-import-in-pages': 'error',
+    '@next/next/no-document-import-in-page': 'error',
 
     /**
      * disallow importing `next/head` in pages/document.js
