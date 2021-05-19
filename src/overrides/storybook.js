@@ -45,6 +45,10 @@ const rules = {
    * allow typing template components with Storybook's `Story` type
    */
   'react/function-component-definition': 'off',
+  /**
+   * disable return type requirement
+   */
+  '@typescript-eslint/explicit-module-boundary-types': 'off',
 };
 
 module.exports = {

@@ -9,6 +9,7 @@ Object {
   ],
   "overrideType": "eslint-config-galex/storybook",
   "rules": Object {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/no-anonymous-default-export": "off",
     "import/no-default-export": "off",
     "react/function-component-definition": "off",
