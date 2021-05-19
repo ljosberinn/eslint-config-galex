@@ -1118,11 +1118,25 @@ const createNextJsRules = ({ react: { isNext } }) => {
 
   return {
     /**
-     * ensure stylesheets are preloaded
+     * ensure correct font-display property is assigned for Google Fonts
      *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/missing-preload.js
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/google-font-display.js
      */
-    '@next/next/missing-preload': 'warn',
+    '@next/next/google-font-display': 'warn',
+
+    /**
+     * ensures preconnect is used with Google Fonts
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/google-font-preconnect.js
+     */
+    '@next/next/google-font-preconnect': 'error',
+
+    /**
+     * ensure `passHref` is assigned if child of `Link` component is a custom component
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/link-passhref.js
+     */
+    '@next/next/link-passhref': 'error',
 
     /**
      * should be imported directly
@@ -1132,6 +1146,20 @@ const createNextJsRules = ({ react: { isNext } }) => {
     '@next/next/no-css-tags': 'warn',
 
     /**
+     * disallow importing `next/document` outside of pages/document.js
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-document-import-in-page.js
+     */
+    '@next/next/no-document-import-in-pages': 'error',
+
+    /**
+     * disallow importing `next/head` in pages/document.js
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-import-in-document.js
+     */
+    '@next/next/no-head-import-in-document': 'error',
+
+    /**
      * disallows regular <a> links
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-html-link-for-pages.js
@@ -1139,11 +1167,34 @@ const createNextJsRules = ({ react: { isNext } }) => {
     '@next/next/no-html-link-for-pages': 'warn',
 
     /**
+     * prohibit usage of HTML <img> element
+     *
+     * off because project dependant; incompatible with next export etc.
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-img-element.js
+     */
+    '@next/next/no-img-element': 'off',
+
+    /**
+     * recommend adding custom font in a custom document and not in a specific page
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-page-custom-font.js
+     */
+    '@next/next/no-page-custom-font': 'warn',
+
+    /**
      * sync scripts can impact performance
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-sync-scripts.js
      */
     '@next/next/no-sync-scripts': 'warn',
+
+    /**
+     * disallow using <title> with `Head` from `next/document`
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-title-in-document-head.js
+     */
+    '@next/next/no-title-in-document-head': 'warn',
 
     /**
      * disallow of polyfill.io in some cases
