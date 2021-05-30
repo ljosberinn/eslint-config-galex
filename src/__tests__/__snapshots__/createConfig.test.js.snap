@@ -4225,7 +4225,7 @@ Object {
   "typescript": Object {
     "config": undefined,
     "hasTypeScript": false,
-    "version": "4.2.4",
+    "version": "4.3.2",
   },
 }
 `;
@@ -4435,7 +4435,7 @@ Object {
   "typescript": Object {
     "config": undefined,
     "hasTypeScript": false,
-    "version": "4.2.4",
+    "version": "4.3.2",
   },
 }
 `;
