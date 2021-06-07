@@ -470,6 +470,13 @@ const getUnicornRules = ({
   'unicorn/prefer-number-properties': ['warn', { checkInfinity: false }],
 
   /**
+   * prefer Object.hasOwn over Object.prototype.hasOwnProperty.call
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-has-own.md
+   */
+  'unicorn/prefer-object-has-own': 'warn',
+
+  /**
    * handle error in try/catch or omit it
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md
@@ -482,6 +489,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-query-selector.md
    */
   'unicorn/prefer-query-selector': 'error',
+
+  /**
+   * prefer borrowing methods from prototype instead of an instance
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md
+   */
+  'unicorn/prefer-prototype-methods': 'warn',
 
   /**
    * use Reflect.apply(fn) over Function.prototype.apply.call(fn)
@@ -581,6 +595,20 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md
    */
   'unicorn/prevent-abbreviations': 'off',
+
+  /**
+   * enforces using a separator argument when using Array.join()
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md
+   */
+  'unicorn/require-array-join-separator': 'warn',
+
+  /**
+   * enforces using an argument when using Number.toFixed()
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md
+   */
+  'unicorn/require-number-to-fixed-digits-argument': 'warn',
 
   /**
    * off because no need
