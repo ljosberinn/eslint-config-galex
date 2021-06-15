@@ -94,7 +94,7 @@
     "jest": "27.0.4",
     "jest-watch-typeahead": "0.6.4",
     "prettier": "2.3.1",
-    "semantic-release": "17.4.3"
+    "semantic-release": "17.4.4"
   },
   "peerDependencies": {
     "eslint": ">=7.15.0"
