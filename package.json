@@ -82,7 +82,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-sonarjs": "0.7.0",
     "eslint-plugin-testing-library": "4.6.0",
-    "eslint-plugin-unicorn": "33.0.1",
+    "eslint-plugin-unicorn": "34.0.1",
     "read-pkg-up": "7.0.1",
     "typescript": "4.3.4"
   },
