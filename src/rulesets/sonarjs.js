@@ -27,6 +27,13 @@ const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
   'sonarjs/cognitive-complexity': 'warn',
 
   /**
+   * requires exhaustive elseif-else
+   *
+   * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/elseif-without-else.md
+   */
+  'sonarjs/elseif-without-else': 'warn',
+
+  /**
    * prevents endless switches. consider alternative approach. limit upped to 15.
    *
    * @default 15
@@ -79,6 +86,15 @@ const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
   'sonarjs/no-element-overwrite': 'error',
 
   /**
+   * prevents accessing empty collections
+   *
+   * off with TS as it handles this itself
+   *
+   * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-empty-collection.md
+   */
+  'sonarjs/no-empty-collection': hasTypeScript ? 'off' : 'warn',
+
+  /**
    * prevents unecessary arguments
    *
    * off when using typescript, already taken care of
@@ -86,6 +102,15 @@ const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-extra-arguments.md
    */
   'sonarjs/no-extra-arguments': hasTypeScript ? 'off' : 'error',
+
+  /**
+   * Boolean expressions should not be gratuitous
+   *
+   * off because taken care of by `unicorn/no-lonely-if`
+   *
+   * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-gratuitous-expressions.md
+   */
+  'sonarjs/no-gratuitous-expressions': 'off',
 
   /**
    * prevents duplicate branches
@@ -109,11 +134,34 @@ const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
   'sonarjs/no-identical-functions': 'error',
 
   /**
+   * Return values from functions without side effects should not be ignored
+   *
+   * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-ignored-return.md
+   */
+  'sonarjs/no-ignored-return': 'warn',
+
+  /**
    * prevents unecessary complexity
    *
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-inverted-boolean-check.md
    */
   'sonarjs/no-inverted-boolean-check': 'error',
+
+  /**
+   * prefer not nesting switch
+   *
+   * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-nested-switch.md
+   */
+  'sonarjs/no-nested-switch': 'warn',
+
+  /**
+   * prevents nesting templ literals
+   *
+   * off because opinitonated. not exactly a nice thing to do but... not terribly bad either
+   *
+   * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-nested-template-literals.md
+   */
+  'sonarjs/no-nested-template-literals': 'off',
 
   /**
    * prevents unecessary loops
@@ -170,6 +218,13 @@ const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-useless-catch.md
    */
   'sonarjs/no-useless-catch': 'error',
+
+  /**
+   * prevents usage of possibly unintended "operators"
+   *
+   * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/non-existent-operator.md
+   */
+  'sonarjs/non-existent-operator': 'warn',
 
   /**
    * prevents unecessary code
