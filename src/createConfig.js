@@ -114,7 +114,7 @@ const getTopLevelTsConfig = ({ cwd, tsConfigPath }) => {
 const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
   // adapted from https://github.com/kentcdodds/eslint-config-kentcdodds/blob/master/jest.js
   try {
-    /* istanbul ignore next line 1240 is supposedly uncovered :shrug: */
+    /* istanbul ignore next line 123 is supposedly uncovered :shrug: */
     const {
       packageJson: {
         peerDependencies = {},
