@@ -668,6 +668,13 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   'testing-library/prefer-presence-queries': 'error',
 
   /**
+   * prefer using queryBy* queries when waiting for disappearance
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-query-by-disappearance.md
+   */
+  'testing-library/prefer-query-by-disappearance': 'error',
+
+  /**
    * suggest using `screen` over destructured methods
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
