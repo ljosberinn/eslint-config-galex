@@ -152,6 +152,13 @@ const getUnicornRules = ({
   'unicorn/no-array-for-each': 'off',
 
   /**
+   * Disallow using the this argument in array methods
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-method-this-argument.md
+   */
+  'unicorn/no-array-method-this-argument': 'warn',
+
+  /**
    * combines multiple array.push calls into one where possible
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md
@@ -364,6 +371,15 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md
    */
   'unicorn/prefer-array-some': 'warn',
+
+  /**
+   * Prefer .at() method for index access and String#charAt()
+   *
+   * off because currently barely supported
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md
+   */
+  'unicorn/prefer-at': 'off',
 
   /**
    * prefer using `Date.now()` to get unix ms over other options
@@ -583,6 +599,13 @@ const getUnicornRules = ({
   'unicorn/prefer-ternary': 'off',
 
   /**
+   * Prefer top-level await over top-level promises and async function calls
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-top-level-await.md
+   */
+  'unicorn/prefer-top-level-await': 'warn',
+
+  /**
    * be more explicit about the type of error you throw
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md
@@ -609,6 +632,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md
    */
   'unicorn/require-number-to-fixed-digits-argument': 'warn',
+
+  /**
+   * Enforce using the targetOrigin argument with `window.postMessage()`
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-post-message-target-origin.md
+   */
+  'unicorn/require-post-message-target-origin': 'error',
 
   /**
    * off because no need
