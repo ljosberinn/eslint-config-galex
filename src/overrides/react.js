@@ -1148,6 +1148,13 @@ const createNextJsRules = ({ react: { isNext } }) => {
     '@next/next/no-document-import-in-page': 'error',
 
     /**
+     * enforces singular usage of <Head> in _document
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-duplicate-head.js
+     */
+    '@next/next/no-duplicate-head': 'error',
+
+    /**
      * disallow importing `next/head` in pages/document.js
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-import-in-document.js
@@ -1190,6 +1197,13 @@ const createNextJsRules = ({ react: { isNext } }) => {
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-title-in-document-head.js
      */
     '@next/next/no-title-in-document-head': 'warn',
+
+    /**
+     * tries to correct typos for page-related exports
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-typos.js
+     */
+    '@next/next/no-typos': 'warn',
 
     /**
      * disallow of polyfill.io in some cases
