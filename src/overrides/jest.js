@@ -130,6 +130,13 @@ const jestRules = {
   'jest/lowercase-name': 'off',
 
   /**
+   * off because unlikely to be needed
+   *
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/max-nested-describe.md
+   */
+  'jest/max-nested-describe': 'off',
+
+  /**
    * off because if something was to change with those, jest would
    * console.log or eslint would fix it
    *
