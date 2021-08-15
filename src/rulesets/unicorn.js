@@ -296,11 +296,25 @@ const getUnicornRules = ({
   'unicorn/no-unsafe-regex': 'error',
 
   /**
+   * does exactly what the name says
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md
+   */
+  'unicorn/no-useless-length-check': 'error',
+
+  /**
    * disallows unused properties on object constants
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unused-properties.md
    */
   'unicorn/no-unused-properties': 'warn',
+
+  /**
+   * disallows useless spreads
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md
+   */
+  'unicorn/no-useless-spread': 'error',
 
   /**
    * disallows useless undefined
@@ -484,6 +498,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md
    */
   'unicorn/prefer-number-properties': ['warn', { checkInfinity: false }],
+
+  /**
+   * suggests using Object.fromEntries where detected
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md
+   */
+  'unicorn/prefer-object-from-entries': 'error',
 
   /**
    * prefer Object.hasOwn over Object.prototype.hasOwnProperty.call
