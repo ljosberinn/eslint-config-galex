@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-galex",
-  "version": "2.16.7",
+  "version": "2.16.8",
   "description": "personal ESLint ruleset of galex",
   "keywords": [
     "eslint",
@@ -94,7 +94,7 @@
     "jest": "27.0.6",
     "jest-watch-typeahead": "0.6.4",
     "prettier": "2.3.2",
-    "semantic-release": "17.4.4"
+    "semantic-release": "17.4.5"
   },
   "peerDependencies": {
     "eslint": ">=7.15.0"
