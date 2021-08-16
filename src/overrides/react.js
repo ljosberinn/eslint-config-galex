@@ -1143,9 +1143,11 @@ const createNextJsRules = ({ react: { isNext } }) => {
     /**
      * disallow importing `next/document` outside of pages/document.js
      *
+     * off until https://github.com/vercel/next.js/issues/28169 is resolved
+     *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-document-import-in-page.js
      */
-    '@next/next/no-document-import-in-page': 'error',
+    '@next/next/no-document-import-in-page': 'off',
 
     /**
      * enforces singular usage of <Head> in _document
