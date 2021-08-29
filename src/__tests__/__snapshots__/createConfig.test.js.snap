@@ -4339,7 +4339,7 @@ Object {
   "typescript": Object {
     "config": undefined,
     "hasTypeScript": false,
-    "version": "4.3.5",
+    "version": "4.4.2",
   },
 }
 `;
@@ -4549,7 +4549,7 @@ Object {
   "typescript": Object {
     "config": undefined,
     "hasTypeScript": false,
-    "version": "4.3.5",
+    "version": "4.4.2",
   },
 }
 `;
