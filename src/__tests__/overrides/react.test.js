@@ -7,6 +7,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: false,
+        isCreateReactApp: false,
         isNext: false,
         version: '',
       },
@@ -22,6 +23,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: false,
         version: '16.13.1',
       },
@@ -37,6 +39,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: true,
         version: '16.13.1',
       },
@@ -52,6 +55,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: false,
         version: '16.13.1',
       },
@@ -67,6 +71,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: true,
         version: '16.13.1',
       },
@@ -82,6 +87,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: false,
         version: react17,
       },
@@ -97,6 +103,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: true,
         version: react17,
       },
@@ -112,6 +119,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: false,
         version: react17,
       },
@@ -127,6 +135,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: true,
         version: react17,
       },
@@ -163,6 +172,42 @@ describe('createReactOverride', () => {
     expect(result).toMatchSnapshot();
   });
 
+  test('matches snapshot with CRA and JS', () => {
+    delete process.env.NODE_ENV;
+
+    const project = {
+      react: {
+        hasReact: true,
+        isCreateReactApp: true,
+        isNext: false,
+        version: react17,
+      },
+      typescript: {
+        hasTypeScript: false,
+      },
+    };
+
+    expect(createReactOverride(project)).toMatchSnapshot();
+
+    process.env.NODE_ENV = 'test';
+  });
+
+  test('matches snapshot with CRA and TS', () => {
+    const project = {
+      react: {
+        hasReact: true,
+        isCreateReactApp: true,
+        isNext: false,
+        version: react17,
+      },
+      typescript: {
+        hasTypeScript: true,
+      },
+    };
+
+    expect(createReactOverride(project)).toMatchSnapshot();
+  });
+
   test('allows passing extra rules', () => {
     const rule = 'react/jsx-uses-react';
     const level = 'off';
@@ -170,6 +215,7 @@ describe('createReactOverride', () => {
     const project = {
       react: {
         hasReact: true,
+        isCreateReactApp: false,
         isNext: false,
         version: '16.13.1',
       },
