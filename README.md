@@ -14,15 +14,26 @@ yarn add -D eslint-config-galex eslint
 npm install --save-dev eslint-config-galex eslint
 ```
 
-> If you're using `create-react-app` with TypeScript, you will need to separately
-> install `@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin` too.
+## Usage with create-react-app
 
-> If you're using Next.js, unless you set [`eslint.ignoreDuringBuilds`](https://nextjs.org/docs/api-reference/next.config.js/ignoring-eslint) to `true`
-> in your `next.config.js`, you will have to install `eslint-config-next`
-> separately as otherwise the build will fail due to their hard dependency
-> on `eslint-config-next`.
-> I _actively recommend enabling_ `eslint.ignoreDuringBuilds` as the Next.js
-> internal eslint-config contains less features and is far less strict.
+Due to notoriously outdated dependencies within `create-react-app` core dependency `react-scripts`, you'll have to install several dependencies on top:
+
+- `eslint-plugin-testing-library`
+
+### Without TypeScript
+
+- `@babel/eslint-parser`
+
+### With TypeScript
+
+- `@typescript-eslint/parser`
+- `@typescript-eslint/eslint-plugin`
+
+## Usage with Next.js
+
+Unless you set [`eslint.ignoreDuringBuilds`](https://nextjs.org/docs/api-reference/next.config.js/ignoring-eslint) to `true` in your `next.config.js`, you will have to install `eslint-config-next` separately. Otherwise, the build will fail due to their hard dependency on `eslint-config-next`.
+
+I _heavily recommend_ doing so, as the Next.js internal eslint-config contains less features and is far less strict.
 
 ```js
 // .eslintrc.js

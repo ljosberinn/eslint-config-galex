@@ -31,6 +31,7 @@ const defaultSettings = {
 /**
  * @param {{
  *  react: {
+ *   isCreateReactApp: boolean;
  *   hasReact: boolean;
  *   isNext: boolean;
  *   version: string;
@@ -51,6 +52,16 @@ const createReactOverride = ({
 }) => {
   if (!react.hasReact) {
     return null;
+  }
+
+  // required for `babel-preset-react-app`
+  if (
+    react.isCreateReactApp &&
+    !process.env.NODE_ENV &&
+    // would be using `@typescript-eslint/parser` with ts anyways
+    !typescript.hasTypeScript
+  ) {
+    process.env.NODE_ENV = 'development';
   }
 
   const rules = {
@@ -75,6 +86,7 @@ const createReactOverride = ({
     babelOptions: {
       presets: uniqueArrayEntries(
         react.isNext && 'next/babel',
+        react.isCreateReactApp && 'react-app',
         ...defaultParserOptions.babelOptions.presets,
         ...customParserOptions.babelOptions.presets
       ),

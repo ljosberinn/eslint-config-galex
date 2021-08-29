@@ -267,7 +267,9 @@ Object {
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "babelOptions": Object {
-      "presets": Array [],
+      "presets": Array [
+        "react-app",
+      ],
     },
     "ecmaFeatures": Object {
       "jsx": true,
