@@ -57,9 +57,7 @@ const createReactOverride = ({
   // required for `babel-preset-react-app`
   if (
     react.isCreateReactApp &&
-    !process.env.NODE_ENV &&
-    // would be using `@typescript-eslint/parser` with ts anyways
-    !typescript.hasTypeScript
+    !process.env.NODE_ENV
   ) {
     process.env.NODE_ENV = 'development';
   }

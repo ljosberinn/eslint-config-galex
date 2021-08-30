@@ -35,6 +35,8 @@ Unless you set [`eslint.ignoreDuringBuilds`](https://nextjs.org/docs/api-referen
 
 I _heavily recommend_ doing so, as the Next.js internal eslint-config contains less features and is far less strict.
 
+# Setup
+
 ```js
 // .eslintrc.js
 module.exports = {
