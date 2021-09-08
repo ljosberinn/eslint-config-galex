@@ -124,9 +124,9 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
     } = readPkgUp.sync({ cwd, normalize: true });
 
     const depsAsTuple = Object.entries({
+      ...peerDependencies,
       ...dependencies,
       ...devDependencies,
-      ...peerDependencies,
     });
 
     const deps = new Map(depsAsTuple);
