@@ -2579,10 +2579,10 @@ eslint-plugin-inclusive-language@2.1.1:
   dependencies:
     humps "^2.0.1"
 
-eslint-plugin-jest-dom@3.9.1:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-dom/-/eslint-plugin-jest-dom-3.9.1.tgz#86e06121cf147ac8679eab447cb3c63250db86b3"
-  integrity sha512-7BAz7+L9XOJ3L9+1J8LwWSxlZKYHYP9YG5jjd9v3rsLk+cdSPoGWG6yzkdp8rrb8eSNaNjeFILboKCGGCuPukg==
+eslint-plugin-jest-dom@3.9.2:
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-dom/-/eslint-plugin-jest-dom-3.9.2.tgz#2cc200cabb17d1f5535afad9b49d0ca41b2f05eb"
+  integrity sha512-DKNW6nxYkBvwv36WcYFxapCalGjOGSWUu5PREpDVuXGbEns3S5jhr+mZ5W2N6MxbOWw/2U61C1JVLH31gwVjOQ==
   dependencies:
     "@babel/runtime" "^7.9.6"
     "@testing-library/dom" "^7.28.1"
