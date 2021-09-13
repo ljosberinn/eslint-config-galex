@@ -55,10 +55,7 @@ const createReactOverride = ({
   }
 
   // required for `babel-preset-react-app`
-  if (
-    react.isCreateReactApp &&
-    !process.env.NODE_ENV
-  ) {
+  if (react.isCreateReactApp && !process.env.NODE_ENV) {
     process.env.NODE_ENV = 'development';
   }
 
@@ -1137,11 +1134,25 @@ const createNextJsRules = ({ react: { isNext } }) => {
     '@next/next/google-font-preconnect': 'error',
 
     /**
+     * next/script components with inline content must specify an `id` attribute
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/inline-script-id.js
+     */
+    '@next/next/inline-script-id': 'error',
+
+    /**
      * ensure `passHref` is assigned if child of `Link` component is a custom component
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/link-passhref.js
      */
     '@next/next/link-passhref': 'error',
+
+    /**
+     * use next/script component for loading third party scripts
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/next-script-for-ga.js
+     */
+    '@next/next/next-script-for-ga': 'warn',
 
     /**
      * should be imported directly
@@ -1195,6 +1206,13 @@ const createNextJsRules = ({ react: { isNext } }) => {
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-page-custom-font.js
      */
     '@next/next/no-page-custom-font': 'warn',
+
+    /**
+     * disallow importing `next/script` inside `pages/_document`
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-script-in-document.js
+     */
+    '@next/next/no-script-in-document': 'error',
 
     /**
      * sync scripts can impact performance
