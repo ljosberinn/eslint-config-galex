@@ -137,5 +137,23 @@ describe('createUnicornRules', () => {
 
     expect(result).toMatchSnapshot();
     expect(result['unicorn/prefer-top-level-await']).toBe('error');
+
+    const project2 = {
+      ...project,
+      typescript: {
+        ...project.typescript,
+        config: {
+          compilerOptions: {
+            ...project.typescript.config.compilerOptions,
+            target: 'es3',
+          },
+        },
+      },
+    };
+
+    const result2 = createUnicornRules(project2);
+
+    expect(result2).toMatchSnapshot();
+    expect(result2['unicorn/prefer-top-level-await']).toBe('off');
   });
 });

@@ -706,24 +706,14 @@ const detectPreferTopLevelAwait = ({ hasTypeScript, config }) => {
     return 'off';
   }
 
-  try {
-    const isValidModule = ['esnext', 'system'].includes(
-      config.compilerOptions.module.toLowerCase()
-    );
+  const isValidModule = ['esnext', 'system'].includes(
+    config.compilerOptions.module.toLowerCase()
+  );
 
-    const targetsAtLeastES2017 = config.compilerOptions.target.startsWith('es')
-      ? Number.parseInt(config.compilerOptions.target.slice(2)) > 2017
-      : false;
+  const targetsAtLeastES2017 =
+    Number.parseInt(config.compilerOptions.target.slice(2)) > 2017;
 
-    return isValidModule && targetsAtLeastES2017 ? 'error' : 'off';
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(
-      '[eslint-config-galex] feature detection for "unicorn/prefer-top-level-await" failed:',
-      error.message
-    );
-    return 'off';
-  }
+  return isValidModule && targetsAtLeastES2017 ? 'error' : 'off';
 };
 
 module.exports = {
