@@ -208,6 +208,13 @@ const getUnicornRules = ({
   'unicorn/no-instanceof-array': 'error',
 
   /**
+   * prevents calling `removeEventListener` with the result of an expression
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-invalid-remove-event-listener.md
+   */
+  'unicorn/no-invalid-remove-event-listener': 'error',
+
+  /**
    * ensures not using keywords as variable prefix
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-keyword-prefix.md
@@ -308,6 +315,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unused-properties.md
    */
   'unicorn/no-unused-properties': 'warn',
+
+  /**
+   * prevents unnecessary spreading
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md
+   */
+  'unicorn/no-useless-fallback-in-spread': 'warn',
 
   /**
    * disallows useless spreads
@@ -622,9 +636,14 @@ const getUnicornRules = ({
   /**
    * Prefer top-level await over top-level promises and async function calls
    *
+   * disabled unless it can be safely detected
+   *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-top-level-await.md
    */
-  'unicorn/prefer-top-level-await': 'warn',
+  'unicorn/prefer-top-level-await': detectPreferTopLevelAwait({
+    hasTypeScript,
+    config,
+  }),
 
   /**
    * be more explicit about the type of error you throw
@@ -675,6 +694,37 @@ const getUnicornRules = ({
    */
   'unicorn/throw-new-error': 'error',
 });
+
+const detectPreferTopLevelAwait = ({ hasTypeScript, config }) => {
+  if (
+    !hasTypeScript ||
+    !config ||
+    !config.compilerOptions ||
+    !config.compilerOptions.module ||
+    !config.compilerOptions.target
+  ) {
+    return 'off';
+  }
+
+  try {
+    const isValidModule = ['esnext', 'system'].includes(
+      config.compilerOptions.module.toLowerCase()
+    );
+
+    const targetsAtLeastES2017 = config.compilerOptions.target.startsWith('es')
+      ? Number.parseInt(config.compilerOptions.target.slice(2)) > 2017
+      : false;
+
+    return isValidModule && targetsAtLeastES2017 ? 'error' : 'off';
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(
+      '[eslint-config-galex] feature detection for "unicorn/prefer-top-level-await" failed:',
+      error.message
+    );
+    return 'off';
+  }
+};
 
 module.exports = {
   createUnicornRules,

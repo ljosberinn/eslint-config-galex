@@ -116,4 +116,26 @@ describe('createUnicornRules', () => {
     expect(result).toMatchSnapshot();
     expect(result['unicorn/prefer-string-replace-all']).toBe('error');
   });
+
+  test('enables prefer-top-level-await if certain tsConfig settings are given', () => {
+    const project = {
+      react: {
+        hasReact: false,
+      },
+      typescript: {
+        hasTypeScript: true,
+        config: {
+          compilerOptions: {
+            module: 'system',
+            target: 'es2018',
+          },
+        },
+      },
+    };
+
+    const result = createUnicornRules(project);
+
+    expect(result).toMatchSnapshot();
+    expect(result['unicorn/prefer-top-level-await']).toBe('error');
+  });
 });
