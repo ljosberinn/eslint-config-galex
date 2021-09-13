@@ -20,6 +20,9 @@ describe('fulfillsVersionRequirement', () => {
     ['16.13.1', { major: 17 }, false],
     ['16.13.1', { major: 17, minor: 14 }, false],
     ['16.13.1', { major: 17, minor: 13, patch: 2 }, false],
+    ['>=16', { major: 16 }, true],
+    ['>=17', { major: 16 }, true],
+    ['>=17', { major: 18 }, false],
   ])('fulfillsVersionRequirement(%s, %s)', (version, required, result) => {
     expect(fulfillsVersionRequirement(version, required)).toBe(result);
     expect(fulfillsVersionRequirement(version, required)).toMatchSnapshot();
@@ -40,7 +43,7 @@ describe('fulfillsVersionRequirement', () => {
 
     expect(consoleErrorSpy).toHaveBeenCalledTimes(2);
     expect(consoleErrorSpy).toHaveBeenLastCalledWith(
-      "Error parsing version: Cannot read property 'split' of undefined"
+      'Error parsing version: no version given'
     );
 
     // eslint-disable-next-line no-console

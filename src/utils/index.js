@@ -41,7 +41,15 @@ const fulfillsVersionRequirement = (
   { major, minor = 0, patch = 0 }
 ) => {
   try {
-    const [depMajor, depMinor, depPatch] = version
+    if (!version) {
+      throw new Error('no version given');
+    }
+
+    // consider using `node-semver` in the future instead
+    const isGreaterThanOrEqual = version.startsWith('>=');
+    const sanitizedVersion = isGreaterThanOrEqual ? version.slice(2) : version;
+
+    const [depMajor, depMinor = 0, depPatch = 0] = sanitizedVersion
       .split('.')
       .map(str => Number.parseInt(str));
 
