@@ -612,7 +612,14 @@ const createReactRules = ({
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
    */
-  'react/no-multi-com': 'off',
+  'react/no-multi-comp': 'off',
+
+  /**
+   * forbids usage of namespaces
+   *
+   * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-namespace.md
+   */
+  'react/no-namespace': 'error',
 
   /**
    * prevents use of `shouldComponentUpdate` in `PureComponent`
