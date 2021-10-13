@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-galex",
-  "version": "2.16.13",
+  "version": "3.0.0",
   "description": "personal ESLint ruleset of galex",
   "keywords": [
     "eslint",
