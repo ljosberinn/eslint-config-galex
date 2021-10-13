@@ -1,5 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
-
 const restrictedGlobals = require('confusing-browser-globals');
 const { rules: allPrettierRules } = require('eslint-config-prettier');
 

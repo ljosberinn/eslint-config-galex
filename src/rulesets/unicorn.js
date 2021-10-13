@@ -688,6 +688,13 @@ const getUnicornRules = ({
   'unicorn/string-content': 'off',
 
   /**
+   * __EXPERIMENTAL__ - lets see how well it works
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md
+   */
+  'unicorn/template-indent': 'warn',
+
+  /**
    * be explicit about thrown error
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md

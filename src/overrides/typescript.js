@@ -1,4 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
 const { rules: allPrettierRules } = require('eslint-config-prettier');
 
 const prettierTypeScriptRules = Object.fromEntries(
@@ -717,18 +716,11 @@ const getTypeScriptRules = ({
   '@typescript-eslint/no-unused-expressions': 'error',
 
   /**
-   * off because typescript itself already does this
+   * adds support for TS features, e.g. types
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
    */
-  '@typescript-eslint/no-unused-vars': 'off',
-
-  /**
-   * off because experimental and stale, apparently
-   *
-   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars-experimental.md
-   */
-  '@typescript-eslint/no-unused-vars-experimental': 'off',
+  '@typescript-eslint/no-unused-vars': 'warn',
 
   /**
    * blocked because false positives

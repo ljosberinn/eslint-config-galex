@@ -1,4 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
 const { rules: allPrettierRules } = require('eslint-config-prettier');
 
 const prettierReactRules = Object.fromEntries(

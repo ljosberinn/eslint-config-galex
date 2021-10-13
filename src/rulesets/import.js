@@ -1,5 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
-
 /**
  * @param {{
  *  typescript: {

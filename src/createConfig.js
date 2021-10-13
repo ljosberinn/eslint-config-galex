@@ -1,4 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
 const fs = require('fs');
 const { resolve } = require('path');
 const readPkgUp = require('read-pkg-up');
@@ -10,9 +9,6 @@ const { createStorybookOverride } = require('./overrides/storybook');
 const { createTSOverride } = require('./overrides/typescript');
 const { createEslintCoreRules } = require('./rulesets/eslint-core');
 const { createImportRules } = require('./rulesets/import');
-const {
-  createInclusiveLanguageRules,
-} = require('./rulesets/inclusive-language');
 const { createPromiseRules } = require('./rulesets/promise');
 const { createSonarjsRules } = require('./rulesets/sonarjs');
 const { createUnicornRules } = require('./rulesets/unicorn');
@@ -43,13 +39,7 @@ const testingLibFamily = [
 
 const reactFlavours = ['react', 'preact', 'next'];
 
-const defaultPlugins = [
-  'import',
-  'unicorn',
-  'promise',
-  'sonarjs',
-  'inclusive-language',
-];
+const defaultPlugins = ['import', 'unicorn', 'promise', 'sonarjs'];
 
 const defaultEnv = {
   browser: false,
@@ -313,7 +303,6 @@ const createConfig = ({
       ...createPromiseRules(project),
       ...createImportRules(project),
       ...createSonarjsRules(project),
-      ...createInclusiveLanguageRules(project),
       ...customRules,
     },
     flags
