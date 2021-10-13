@@ -279,7 +279,6 @@ list, check out the source.
 
 - `const { createEslintCoreRules } = require('eslint-config-galex/src/rulesets/eslint-core')`
 - `const { createImportRules } = require('eslint-config-galex/src/rulesets/import')`
-- `const { createInclusiveLanguageRules } = require('eslint-config-galex/src/rulesets/inclusive-language')`
 - `const { createNextJsRules } = require('eslint-config-galex/src/rulesets/next')`
 - `const { createPromiseRules } = require('eslint-config-galex/src/rulesets/promise')`
 - `const { createSonarjsRules } = require('eslint-config-galex/src/rulesets/sonarjs')`
