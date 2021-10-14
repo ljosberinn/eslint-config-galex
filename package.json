@@ -73,7 +73,7 @@
     "confusing-browser-globals": "1.0.10",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.25.2",
-    "eslint-plugin-jest": "25.1.0",
+    "eslint-plugin-jest": "25.2.0",
     "eslint-plugin-jest-dom": "3.9.2",
     "eslint-plugin-jest-formatting": "3.0.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
