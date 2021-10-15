@@ -100,7 +100,7 @@
     "eslint": ">=8.0.0"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14.17"
   },
   "release": {
     "plugins": [
