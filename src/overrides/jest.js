@@ -57,14 +57,14 @@ const createJestOverride = ({
   const plugins = [
     'jest',
     hasJestDom && 'jest-dom',
-    hasTestingLibrary && 'testing-library',
+    // hasTestingLibrary && 'testing-library',
     ...customPlugins,
   ].filter(Boolean);
 
   const rules = {
     ...jestRules,
     ...(hasJestDom ? jestDomRules : null),
-    ...(hasTestingLibrary ? getTestingLibraryRules({ react }) : null),
+    // ...(hasTestingLibrary ? getTestingLibraryRules({ react }) : null),
     ...getTestOverrides({ typescript, react }),
     ...customRules,
   };
