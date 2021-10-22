@@ -266,6 +266,12 @@ describe('createConfig', () => {
     expect(config).toMatchSnapshot();
   });
 
+  test('allows passing root', () => {
+    const config = createConfig({ root: true });
+
+    expect(config.root).toBe(true);
+  });
+
   test('allows passing parserOptions', () => {
     const key = 'foo';
     const value = 'bar';
