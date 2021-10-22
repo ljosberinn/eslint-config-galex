@@ -136,7 +136,7 @@ const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
    *
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-ignored-return.md
    */
-  'sonarjs/no-ignored-return': 'warn',
+  'sonarjs/no-ignored-return': 'error',
 
   /**
    * prevents unecessary complexity
