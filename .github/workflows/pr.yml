@@ -53,8 +53,19 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - name: Installing dependencies
+      - name: Installing top level dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
+      - name: Installing example dependencies
+        run: >
+          cd examples/cra-js && 
+          yarn --frozen-lockfile &&
+          cd ../examples/cra-ts &&
+          yarn --frozen-lockfile &&
+          cd ../examples/next-js &&
+          yarn --frozen-lockfile &&
+          cd ../examples/next-ts &&
+          yarn --frozen-lockfile
+      
       - name: Run tests
         run: yarn test:coverage --ci
