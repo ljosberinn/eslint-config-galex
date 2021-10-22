@@ -45,6 +45,9 @@
       "src/(overrides|rulesets)/**/*.{js,jsx,ts,tsx}",
       "src/*.js"
     ],
+    "modulePathIgnorePatterns": [
+      "examples"
+    ],
     "coverageDirectory": "coverage",
     "coverageThreshold": {
       "global": {

@@ -1,2 +1,9 @@
 src/__tests__
 coverage
+examples
+.github
+.vscode
+.eslintignore
+.mergify.yml
+.prettierrc
+renovate.json

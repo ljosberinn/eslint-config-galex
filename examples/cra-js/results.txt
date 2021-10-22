@@ -1,0 +1,79 @@
+TAP version 13
+1..5
+ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\App.js
+  ---
+  message: Prefer named exports.
+  severity: warning
+  data:
+    line: 25
+    column: 1
+    ruleId: import/no-default-export
+  ...
+not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\App.test.js
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 1
+    column: 1
+    ruleId: import/order
+  messages:
+    - message: All test cases must be wrapped in a describe block.
+      severity: error
+      data:
+        line: 4
+        column: 1
+        ruleId: jest/require-top-level-describe
+    - message: Expected blank line before this statement.
+      severity: error
+      data:
+        line: 7
+        column: 3
+        ruleId: jest-formatting/padding-around-all
+  ...
+not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\index.js
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 2
+    column: 1
+    ruleId: import/order
+  messages:
+    - message: Prefer `.querySelector()` over `.getElementById()`.
+      severity: error
+      data:
+        line: 11
+        column: 12
+        ruleId: unicorn/prefer-query-selector
+  ...
+not ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\reportWebVitals.js
+  ---
+  message: Expected catch() or return
+  severity: error
+  data:
+    line: 3
+    column: 5
+    ruleId: promise/catch-or-return
+  messages:
+    - message: dynamic imports require a leading comment with the webpack chunkname
+      severity: warning
+      data:
+        line: 3
+        column: 5
+        ruleId: import/dynamic-import-chunkname
+    - message: Prefer await to then()/catch()/finally().
+      severity: warning
+      data:
+        line: 3
+        column: 26
+        ruleId: promise/prefer-await-to-then
+    - message: Prefer named exports.
+      severity: warning
+      data:
+        line: 13
+        column: 1
+        ruleId: import/no-default-export
+  ...
+ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\setupTests.js
+

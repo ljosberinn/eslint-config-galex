@@ -7,7 +7,7 @@ const { createConfig, getDependencies } = require('../createConfig');
 const {
   overrideType: jestOverrideType,
   createJestOverride,
-  jestRules,
+  createJestRules,
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
 const {
@@ -403,7 +403,11 @@ describe('createConfig', () => {
       // given fourth should be merged into third
       expect(finalJestOverride.rules[mockRuleName]).toBe(mockRuleValue);
       expect(finalJestOverride.rules[realJestRuleName]).not.toBe(
-        jestRules[realJestRuleName]
+        createJestRules({
+          react: {
+            isCreateReactApp: false,
+          },
+        })[realJestRuleName]
       );
     });
 

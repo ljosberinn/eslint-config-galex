@@ -62,7 +62,7 @@ const createJestOverride = ({
   ].filter(Boolean);
 
   const rules = {
-    ...jestRules,
+    ...createJestRules({ react }),
     ...(hasJestDom ? jestDomRules : null),
     // ...(hasTestingLibrary ? getTestingLibraryRules({ react }) : null),
     ...getTestOverrides({ typescript, react }),
@@ -103,336 +103,344 @@ const createJestOverride = ({
 /**
  * @see https://github.com/jest-community/eslint-plugin-jest
  */
-const jestRules = {
-  /**
-   * off because `test`/`it` are different things and convey meaning
-   * - use `test` for unit tests
-   * - use `it` for components
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/consistent-test-it.md
-   */
-  'jest/consistent-test-it': 'off',
+const createJestRules = ({ react: { isCreateReactApp } }) => {
+  return {
+    /**
+     * off because `test`/`it` are different things and convey meaning
+     * - use `test` for unit tests
+     * - use `it` for components
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/consistent-test-it.md
+     */
+    'jest/consistent-test-it': 'off',
 
-  /**
-   * off because smoketests are fire-and-forget
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/expect-expect.md
-   */
-  'jest/expect-expect': 'off',
+    /**
+     * off because smoketests are fire-and-forget
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/expect-expect.md
+     */
+    'jest/expect-expect': 'off',
 
-  /**
-   * off because seems arbitrary, usually names are indeed lowercase but some tests
-   * might very well begin with an uppercase character
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/lowercase-name.md
-   */
-  'jest/lowercase-name': 'off',
+    /**
+     * off because seems arbitrary, usually names are indeed lowercase but some tests
+     * might very well begin with an uppercase character
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/lowercase-name.md
+     */
+    'jest/lowercase-name': 'off',
 
-  /**
-   * off because unlikely to be needed
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/max-nested-describe.md
-   */
-  'jest/max-nested-describe': 'off',
+    /**
+     * off because unlikely to be needed
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/max-nested-describe.md
+     */
+    'jest/max-nested-describe': 'off',
 
-  /**
-   * off because if something was to change with those, jest would
-   * console.log or eslint would fix it
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md
-   */
-  'jest/no-alias-methods': 'off',
+    /**
+     * off because if something was to change with those, jest would
+     * console.log or eslint would fix it
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md
+     */
+    'jest/no-alias-methods': 'off',
 
-  /**
-   * disallows commented out tests
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md
-   */
-  'jest/no-commented-out-tests': 'warn',
+    /**
+     * disallows commented out tests
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md
+     */
+    'jest/no-commented-out-tests': 'warn',
 
-  /**
-   * ensures assertions are non-conditional which leads to less complex
-   * tests
-   *
-   * @see jest/no-if
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-conditional-expect.md
-   */
-  'jest/no-conditional-expect': 'error',
+    /**
+     * ensures assertions are non-conditional which leads to less complex
+     * tests
+     *
+     * @see jest/no-if
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-conditional-expect.md
+     */
+    'jest/no-conditional-expect': 'error',
 
-  /**
-   * avoids using jest debt
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md
-   */
-  'jest/no-deprecated-functions': 'error',
+    /**
+     * avoids using jest debt
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md
+     */
+    'jest/no-deprecated-functions': 'error',
 
-  /**
-   * avoids having permanently disabled tests. either remove them, fix
-   * them or re-enable them.
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md
-   */
-  'jest/no-disabled-tests': 'warn',
+    /**
+     * avoids having permanently disabled tests. either remove them, fix
+     * them or re-enable them.
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md
+     */
+    'jest/no-disabled-tests': 'warn',
 
-  /**
-   * ensures `done` callback is awaited or in try/catch
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-done-callback.md
-   */
-  'jest/no-done-callback': 'error',
+    /**
+     * ensures `done` callback is awaited or in try/catch
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-done-callback.md
+     */
+    'jest/no-done-callback': 'error',
 
-  /**
-   * ensures each hook is only called once per describe
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-duplicate-hooks.md
-   */
-  'jest/no-duplicate-hooks': 'warn',
+    /**
+     * ensures each hook is only called once per describe
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-duplicate-hooks.md
+     */
+    'jest/no-duplicate-hooks': 'warn',
 
-  /**
-   * off because superseded by `jest/no-restricted-matchers`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-expect-resolves.md
-   */
-  'jest/no-expect-resolves': 'off',
+    /**
+     * off because superseded by `jest/no-restricted-matchers`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-expect-resolves.md
+     */
+    'jest/no-expect-resolves': 'off',
 
-  /**
-   * tests shouldn't export something
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md
-   */
-  'jest/no-export': 'error',
+    /**
+     * tests shouldn't export something
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md
+     */
+    'jest/no-export': 'error',
 
-  /**
-   * avoids having accidentally skipped tests. either remove the others,
-   * fix them or re-enable them.
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md
-   */
-  'jest/no-focused-tests': 'error',
+    /**
+     * avoids having accidentally skipped tests. either remove the others,
+     * fix them or re-enable them.
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md
+     */
+    'jest/no-focused-tests': 'error',
 
-  /**
-   * off because hooks are often needed
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-hooks.md
-   */
-  'jest/no-hooks': 'off',
+    /**
+     * off because hooks are often needed
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-hooks.md
+     */
+    'jest/no-hooks': 'off',
 
-  /**
-   * ensures unique test titles
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-identical-title.md
-   */
-  'jest/no-identical-title': 'error',
+    /**
+     * ensures unique test titles
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-identical-title.md
+     */
+    'jest/no-identical-title': 'error',
 
-  /**
-   * ensures less complex tests
-   *
-   * @see jest/no-conditional-expect
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-if.md
-   */
-  'jest/no-if': 'error',
+    /**
+     * ensures less complex tests
+     *
+     * @see jest/no-conditional-expect
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-if.md
+     */
+    'jest/no-if': 'error',
 
-  /**
-   * ensures snapshots can be updated
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-interpolation-in-snapshots.md
-   */
-  'jest/no-interpolation-in-snapshots': 'error',
+    /**
+     * ensures snapshots can be updated
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-interpolation-in-snapshots.md
+     */
+    'jest/no-interpolation-in-snapshots': 'error',
 
-  /**
-   * prevents use of jasmine globals
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jasmine-globals.md
-   */
-  'jest/no-jasmine-globals': 'error',
+    /**
+     * prevents use of jasmine globals
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jasmine-globals.md
+     */
+    'jest/no-jasmine-globals': 'error',
 
-  /**
-   * disallows importing jest
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jest-import.md
-   */
-  'jest/no-jest-import': 'error',
+    /**
+     * disallows importing jest
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jest-import.md
+     */
+    'jest/no-jest-import': 'error',
 
-  /**
-   * ensures snapshots stay reasonable in size
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-large-snapshots.md
-   */
-  'jest/no-large-snapshots': ['warn', { maxSize: 300 }],
+    /**
+     * ensures snapshots stay reasonable in size
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-large-snapshots.md
+     */
+    'jest/no-large-snapshots': ['warn', { maxSize: 300 }],
 
-  /**
-   * disallows importing from `__mocks__`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md
-   */
-  'jest/no-mocks-import': 'error',
+    /**
+     * disallows importing from `__mocks__`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md
+     */
+    'jest/no-mocks-import': 'error',
 
-  /**
-   * off because nothing is restricted
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-restricted-matchers.md
-   */
-  'jest/no-restricted-matchers': 'off',
+    /**
+     * off because nothing is restricted
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-restricted-matchers.md
+     */
+    'jest/no-restricted-matchers': 'off',
 
-  /**
-   * ensures `expect` is used within `it`/`test` blocks
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md
-   */
-  'jest/no-standalone-expect': 'off',
+    /**
+     * ensures `expect` is used within `it`/`test` blocks
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md
+     */
+    'jest/no-standalone-expect': 'off',
 
-  /**
-   * disallows `f`/`x` prefixes for `it`/`test`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/maste`f`/`d`ocs/rules/`no`-test-prefixes.md
-   */
-  'jest/no-test-prefixes': 'error',
+    /**
+     * disallows `f`/`x` prefixes for `it`/`test`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/maste`f`/`d`ocs/rules/`no`-test-prefixes.md
+     */
+    'jest/no-test-prefixes': 'error',
 
-  /**
-   * ensures `return` isn't used in tests. if promises are involved, use
-   * async/await
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-return-statement.md
-   */
-  'jest/no-test-return-statement': 'error',
+    /**
+     * ensures `return` isn't used in tests. if promises are involved, use
+     * async/await
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-return-statement.md
+     */
+    'jest/no-test-return-statement': 'error',
 
-  /**
-   * off because superseded in favor of `jest/no-restricted-matchers`
-   *
-   * @see jest/no-restricted-matchers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-truthy-falsy.md
-   */
-  'jest/no-truthy-falsy': 'off',
+    /**
+     * off because superseded in favor of `jest/no-restricted-matchers`
+     *
+     * @see jest/no-restricted-matchers
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-truthy-falsy.md
+     */
+    'jest/no-truthy-falsy': 'off',
 
-  /**
-   * off because superseded by `jest/no-conditional-expect`
-   *
-   * @see jest/no-conditional-expect
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-try-expect.md
-   */
-  'jest/no-try-expect': 'off',
+    /**
+     * off because superseded by `jest/no-conditional-expect`
+     *
+     * @see jest/no-conditional-expect
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-try-expect.md
+     */
+    'jest/no-try-expect': 'off',
 
-  /**
-   * suggests `toBeCalledWith`/`toHaveBeenCalledWith` over `toBeCalled`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-called-with.md
-   */
-  'jest/prefer-called-with': 'error',
+    /**
+     * suggests `toBeCalledWith`/`toHaveBeenCalledWith` over `toBeCalled`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-called-with.md
+     */
+    'jest/prefer-called-with': 'error',
 
-  /**
-   * off because should be either globally defined or not at all
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-expect-assertions.md
-   */
-  'jest/prefer-expect-assertions': 'off',
+    /**
+     * off because should be either globally defined or not at all
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-expect-assertions.md
+     */
+    'jest/prefer-expect-assertions': 'off',
 
-  /**
-   * prefer await expect().resolves over awaiting within expect
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-expect-resolves.md
-   */
-  'jest/prefer-expect-resolves': 'warn',
+    /**
+     * prefer await expect().resolves over awaiting within expect
+     *
+     * can be enabled once create-react-app uses eslint-plugin-jest v24.5.0
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-expect-resolves.md
+     */
+    ...(isCreateReactApp ? null : { 'jest/prefer-expect-resolves': 'warn' }),
 
-  /**
-   * ensures hooks are defined before tests
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-hooks-on-top.md
-   */
-  'jest/prefer-hooks-on-top': 'error',
+    /**
+     * ensures hooks are defined before tests
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-hooks-on-top.md
+     */
+    'jest/prefer-hooks-on-top': 'error',
 
-  /**
-   * off because superseded in favor of `jest/no-restricted-matchers`
-   *          *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-inline-snapshots.md
-   */
-  'jest/prefer-inline-snapshots': 'off',
+    /**
+     * off because superseded in favor of `jest/no-restricted-matchers`
+     *          *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-inline-snapshots.md
+     */
+    'jest/prefer-inline-snapshots': 'off',
 
-  /**
-   * prefer spying instead of copying to avoid having to cleanup
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md
-   */
-  'jest/prefer-spy-on': 'warn',
+    /**
+     * prefer spying instead of copying to avoid having to cleanup
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md
+     */
+    'jest/prefer-spy-on': 'warn',
 
-  /**
-   * suggests preferring `toStrictEqual` over `toEqual`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-strict-equal.md
-   */
-  'jest/prefer-strict-equal': 'warn',
+    /**
+     * suggests preferring `toStrictEqual` over `toEqual`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-strict-equal.md
+     */
+    'jest/prefer-strict-equal': 'warn',
 
-  /**
-   * prefer toBe over toEqual
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-to-be.md
-   */
-  'jest/prefer-to-be': 'warn',
+    /**
+     * prefer toBe over toEqual
+     *
+     * can be enabled once create-react-app uses eslint-plugin-jest v25.0.0
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-to-be.md
+     */
+    ...(isCreateReactApp ? null : { 'jest/prefer-to-be': 'warn' }),
 
-  /**
-   * use `[]).toContain(foo)` instead of `[].includes(foo)).tobe(true)`
-   * and its variants
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-contain.md
-   */
-  'jest/prefer-to-contain': 'warn',
+    /**
+     * use `[]).toContain(foo)` instead of `[].includes(foo)).tobe(true)`
+     * and its variants
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-contain.md
+     */
+    'jest/prefer-to-contain': 'warn',
 
-  /**
-   * use `[]).toHaveLength(x)` instead of `[].lenth)).toBe(x)`
-   * and its variants
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-have-length.md
-   */
-  'jest/prefer-to-have-length': 'warn',
+    /**
+     * use `[]).toHaveLength(x)` instead of `[].lenth)).toBe(x)`
+     * and its variants
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-have-length.md
+     */
+    'jest/prefer-to-have-length': 'warn',
 
-  /**
-   * marks empty test cases as `test.todo`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-todo.md
-   */
-  'jest/prefer-todo': 'warn',
+    /**
+     * marks empty test cases as `test.todo`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-todo.md
+     */
+    'jest/prefer-todo': 'warn',
 
-  /**
-   * off because often it's cumbersome to inline the error message with
-   * the same formatting as jest expects it to be
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-to-throw-message.md
-   */
-  'jest/require-to-throw-message': 'off',
+    /**
+     * off because often it's cumbersome to inline the error message with
+     * the same formatting as jest expects it to be
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-to-throw-message.md
+     */
+    'jest/require-to-throw-message': 'off',
 
-  /**
-   * requires a top level describe wrapping everything
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-top-level-describe.md
-   */
-  'jest/require-top-level-describe': 'error',
+    /**
+     * requires a top level describe wrapping everything
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-top-level-describe.md
+     */
+    'jest/require-top-level-describe': 'error',
 
-  /**
-   * validates callback of `describe('something', () => {})`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-describe-callback.md
-   */
-  'jest/valid-describe-callback': 'error',
+    /**
+     * validates callback of `describe('something', () => {})`
+     *
+     * can be enabled once create-react-app uses eslint-plugin-jest v24.5.0
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-describe-callback.md
+     */
+    ...(isCreateReactApp ? null : { 'jest/valid-describe-callback': 'error' }),
 
-  /**
-   * validates params of `expect`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect.md
-   */
-  'jest/valid-expect': 'error',
+    /**
+     * validates params of `expect`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect.md
+     */
+    'jest/valid-expect': 'error',
 
-  /**
-   * ensures promise return when not using async/await
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md
-   */
-  'jest/valid-expect-in-promise': 'error',
+    /**
+     * ensures promise return when not using async/await
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md
+     */
+    'jest/valid-expect-in-promise': 'error',
 
-  /**
-   * ensures valid title for `describe`/`xit`/`it`/`test`/`xtest`
-   *
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-title.md
-   */
-  'jest/valid-title': 'warn',
+    /**
+     * ensures valid title for `describe`/`xit`/`it`/`test`/`xtest`
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-title.md
+     */
+    'jest/valid-title': 'warn',
+  };
 };
 
 /**
@@ -713,7 +721,7 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
 
 const getTestOverrides = ({
   typescript: { hasTypeScript },
-  react: { hasReact },
+  react: { hasReact, isCreateReactApp },
 }) => ({
   /**
    * off to allow non-null casting e.g. querySelector or .find() results
@@ -738,10 +746,17 @@ const getTestOverrides = ({
    * @see @typescript-eslint/no-empty-function
    */
   ...(hasTypeScript ? { '@typescript-eslint/no-empty-function': 'off' } : null),
+
   /**
+   * enforces unbound methods are called with their expected scope
+   *
+   * can be enabled once CRA uses eslint-plugin-jest v24.3.0
+   *
    * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
    */
-  ...(hasTypeScript ? { 'jest/unbound-method': 'warn' } : null),
+  ...(hasTypeScript && !isCreateReactApp
+    ? { 'jest/unbound-method': 'warn' }
+    : null),
 
   /**
    * off because its regularily done in tests
@@ -851,7 +866,7 @@ module.exports = {
   getTestOverrides,
   getTestingLibraryRules,
   jestDomRules,
-  jestRules,
+  createJestRules,
   parserOptions: defaultParserOptions,
   settings: defaultSettings,
   overrideType,

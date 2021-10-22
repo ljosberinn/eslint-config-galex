@@ -462,10 +462,14 @@ const getTypeScriptRules = ({
   /**
    * prevents unhandled promises
    *
+   * can be enabled in CRA once they support ESLint v8
+   *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
    * @see promise/catch-or-return
    */
-  '@typescript-eslint/no-floating-promises': 'error',
+  ...(isCreateReactApp
+    ? null
+    : { '@typescript-eslint/no-floating-promises': 'error' }),
 
   /**
    * prevents potentially unintended loops
