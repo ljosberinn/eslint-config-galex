@@ -1,3 +1,5 @@
+yarn run v1.22.10
+$ C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\next-js\node_modules\.bin\eslint pages --format=tap
 TAP version 13
 1..3
 ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\next-js\pages\_app.js
@@ -12,3 +14,4 @@ ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\next-js\pages\i
     ruleId: import/order
   ...
 
+Done in 3.06s.

@@ -1,3 +1,5 @@
+yarn run v1.22.10
+$ C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\node_modules\.bin\eslint src --format=tap
 TAP version 13
 1..5
 ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\App.js
@@ -77,3 +79,4 @@ not ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\
   ...
 ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-js\src\setupTests.js
 
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

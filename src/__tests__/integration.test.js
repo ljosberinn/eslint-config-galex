@@ -17,8 +17,8 @@ describe('cra', () => {
 
         // since eslint stores absolute
         return data.replaceAll(
-          `C:\\Users\\gerr.it\\Desktop\\dev\\eslint-config-galex\\examples\\cra-${type}\\src`,
-          resolve(`examples\\cra-${type}\\src`)
+          `C:\\Users\\gerr.it\\Desktop\\dev\\eslint-config-galex\\examples\\cra-${type}`,
+          resolve(`examples\\cra-${type}`)
         );
       } catch {
         return null;
@@ -28,12 +28,10 @@ describe('cra', () => {
     const snapshot = readSnapshot();
 
     try {
-      execSync(
-        `cd examples/cra-${type} && node_modules/.bin/eslint src --format=tap > results.txt`,
-        {
-          env,
-        }
-      );
+      execSync(`yarn eslint src --format=tap > results.txt`, {
+        env,
+        cwd: `./examples/cra-${type}`,
+      });
     } catch {
       if (snapshot) {
         expect(snapshot).toStrictEqual(readSnapshot());
@@ -63,12 +61,10 @@ describe('next', () => {
     const snapshot = readSnapshot();
 
     try {
-      execSync(
-        `cd examples/next-${type} && node_modules/.bin/eslint pages --format=tap > results.txt`,
-        {
-          env,
-        }
-      );
+      execSync(`yarn eslint pages --format=tap > results.txt`, {
+        env,
+        cwd: `./examples/next-${type}`,
+      });
     } catch {
       if (snapshot) {
         expect(snapshot).toStrictEqual(readSnapshot());
