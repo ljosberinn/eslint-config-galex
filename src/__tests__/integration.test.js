@@ -64,7 +64,7 @@ describe('next', () => {
 
     try {
       execSync(
-        `cd examples/next-${type} && && node_modules/.bin/eslint pages --format=tap > results.txt`,
+        `cd examples/next-${type} && node_modules/.bin/eslint pages --format=tap > results.txt`,
         {
           env,
         }
