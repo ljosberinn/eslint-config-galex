@@ -29,7 +29,7 @@ describe('cra', () => {
 
     try {
       execSync(
-        `cd examples/cra-${type} && eslint src --format=tap > results.txt`,
+        `cd examples/cra-${type} && node_modules/.bin/eslint src --format=tap > results.txt`,
         {
           env,
         }
@@ -64,7 +64,7 @@ describe('next', () => {
 
     try {
       execSync(
-        `cd examples/next-${type} && eslint pages --format=tap > results.txt`,
+        `cd examples/next-${type} && && node_modules/.bin/eslint pages --format=tap > results.txt`,
         {
           env,
         }
