@@ -138,7 +138,7 @@ const hookRules = {
  * @see https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
  */
 const createReactRules = ({
-  react: { isNext, version },
+  react: { isNext, version, isCreateReactApp },
   typescript: { hasTypeScript },
 }) => ({
   /**
@@ -616,9 +616,11 @@ const createReactRules = ({
   /**
    * forbids usage of namespaces
    *
+   * can be enabled once CRA uses eslint-plugin-react v7.26.0
+   *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-namespace.md
    */
-  'react/no-namespace': 'error',
+  ...(isCreateReactApp ? null : { 'react/no-namespace': 'error' }),
 
   /**
    * prevents use of `shouldComponentUpdate` in `PureComponent`

@@ -220,6 +220,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
  *   enabled?: boolean;
  *   expiresAfterMs?: number
  *  };
+ * root?: boolean
  * }} config
  */
 const createConfig = ({
@@ -341,6 +342,10 @@ const createConfig = ({
     reportUnusedDisableDirectives: true,
     settings,
   };
+
+  if (root) {
+    config.root = true;
+  }
 
   if (cacheOptions.enabled) {
     cacheImpl.set(cacheImpl.cache, { now, config, dependencies });

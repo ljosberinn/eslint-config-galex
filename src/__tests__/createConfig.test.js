@@ -7,7 +7,7 @@ const { createConfig, getDependencies } = require('../createConfig');
 const {
   overrideType: jestOverrideType,
   createJestOverride,
-  jestRules,
+  createJestRules,
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
 const {
@@ -266,6 +266,12 @@ describe('createConfig', () => {
     expect(config).toMatchSnapshot();
   });
 
+  test('allows passing root', () => {
+    const config = createConfig({ root: true });
+
+    expect(config.root).toBe(true);
+  });
+
   test('allows passing parserOptions', () => {
     const key = 'foo';
     const value = 'bar';
@@ -403,7 +409,11 @@ describe('createConfig', () => {
       // given fourth should be merged into third
       expect(finalJestOverride.rules[mockRuleName]).toBe(mockRuleValue);
       expect(finalJestOverride.rules[realJestRuleName]).not.toBe(
-        jestRules[realJestRuleName]
+        createJestRules({
+          react: {
+            isCreateReactApp: false,
+          },
+        })[realJestRuleName]
       );
     });
 

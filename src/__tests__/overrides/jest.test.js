@@ -1,4 +1,7 @@
-const { createJestOverride } = require('../../overrides/jest');
+const {
+  createJestOverride,
+  getTestingLibraryRules,
+} = require('../../overrides/jest');
 
 describe('createJestOverride', () => {
   test('matches snapshot without jest', () => {
@@ -210,6 +213,24 @@ describe('createJestOverride', () => {
     expect(createJestOverride(project)).toMatchSnapshot();
   });
 
+  test('matches snapshot with jest & jest-dom & testing-lib & cra & ts', () => {
+    const project = {
+      hasJest: true,
+      hasJestDom: true,
+      hasTestingLibrary: true,
+      react: {
+        hasReact: true,
+        isNext: false,
+        isCreateReactApp: true,
+      },
+      typescript: {
+        hasTypeScript: true,
+      },
+    };
+
+    expect(createJestOverride(project)).toMatchSnapshot();
+  });
+
   test('allows passing extra rules', () => {
     const rule = 'testing-library/no-manual-cleanup';
     const level = 'off';
@@ -262,5 +283,23 @@ describe('createJestOverride', () => {
     expect(result.extends).toBe(customExtends);
 
     expect(result).toMatchSnapshot();
+  });
+});
+
+describe('getTestingLibraryRules', () => {
+  test('matches snapshot given react', () => {
+    const react = {
+      hasReact: true,
+    };
+
+    expect(getTestingLibraryRules({ react })).toMatchSnapshot();
+  });
+
+  test('matches snapshot without react', () => {
+    const react = {
+      hasReact: false,
+    };
+
+    expect(getTestingLibraryRules({ react })).toMatchSnapshot();
   });
 });
