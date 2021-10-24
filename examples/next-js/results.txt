@@ -14,4 +14,4 @@ ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\next-js\pages\i
     ruleId: import/order
   ...
 
-Done in 3.06s.
+Done in 3.05s.

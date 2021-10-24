@@ -66,7 +66,7 @@ const createReactOverride = ({
     ...createNextJsRules({ react }),
     ...prettierReactRules,
     ...createJSXA11yRules({ react }),
-    ...hookRules,
+    // ...hookRules,
     ...customRules,
   };
 
