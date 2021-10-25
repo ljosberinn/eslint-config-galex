@@ -286,6 +286,7 @@ Object {
     },
   ],
   "no-unused-labels": "off",
+  "no-unused-private-class-members": "warn",
   "no-unused-vars": Array [
     "warn",
     Object {
@@ -666,6 +667,7 @@ Object {
   "no-unsafe-optional-chaining": "off",
   "no-unused-expressions": "off",
   "no-unused-labels": "off",
+  "no-unused-private-class-members": "off",
   "no-unused-vars": "off",
   "no-use-before-define": "off",
   "no-useless-backreference": "warn",
@@ -1037,6 +1039,7 @@ Object {
   "no-unsafe-optional-chaining": "off",
   "no-unused-expressions": "off",
   "no-unused-labels": "off",
+  "no-unused-private-class-members": "off",
   "no-unused-vars": "off",
   "no-use-before-define": "off",
   "no-useless-backreference": "warn",
@@ -1408,6 +1411,7 @@ Object {
   "no-unsafe-optional-chaining": "off",
   "no-unused-expressions": "off",
   "no-unused-labels": "off",
+  "no-unused-private-class-members": "off",
   "no-unused-vars": "off",
   "no-use-before-define": "off",
   "no-useless-backreference": "warn",
@@ -1787,6 +1791,7 @@ Object {
     },
   ],
   "no-unused-labels": "off",
+  "no-unused-private-class-members": "warn",
   "no-unused-vars": Array [
     "warn",
     Object {

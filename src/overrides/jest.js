@@ -57,14 +57,14 @@ const createJestOverride = ({
   const plugins = [
     'jest',
     hasJestDom && 'jest-dom',
-    // hasTestingLibrary && 'testing-library',
+    hasTestingLibrary && 'testing-library',
     ...customPlugins,
   ].filter(Boolean);
 
   const rules = {
     ...createJestRules({ react }),
     ...(hasJestDom ? jestDomRules : null),
-    // ...(hasTestingLibrary ? getTestingLibraryRules({ react }) : null),
+    ...(hasTestingLibrary ? getTestingLibraryRules({ react }) : null),
     ...getTestOverrides({ typescript, react }),
     ...customRules,
   };
@@ -585,9 +585,9 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * hints the use of `screen.debug()`
    *
-   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-debug.md
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-debugging-utils.md
    */
-  'testing-library/no-debug': 'error',
+  'testing-library/no-debugging-utils': 'error',
 
   /**
    * disallows direct imports from `@testing-library/dom` in react
@@ -629,7 +629,12 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-unnecessary-act.md
    */
-  'testing-library/no-unnecessary-act': 'error',
+  'testing-library/no-unnecessary-act': [
+    'error',
+    {
+      isStrict: true,
+    },
+  ],
 
   /**
    * no empty `waitFor` or `waitForElementToBeRemoved`

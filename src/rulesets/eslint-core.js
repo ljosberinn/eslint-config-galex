@@ -859,6 +859,11 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
   'no-unused-labels': 'off',
 
   /**
+   * @see https://github.com/eslint/eslint/blob/main/docs/rules/no-unused-private-class-members.md
+   */
+  'no-unused-private-class-members': hasTypeScript ? 'off' : 'warn',
+
+  /**
    * call functions directly
    *
    * @see https://eslint.org/docs/rules/no-useless-call

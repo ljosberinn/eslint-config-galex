@@ -457,6 +457,7 @@ Object {
       },
     ],
     "no-unused-labels": 0,
+    "no-unused-private-class-members": 1,
     "no-unused-vars": Array [
       1,
       Object {
@@ -1178,6 +1179,7 @@ Object {
       },
     ],
     "no-unused-labels": 0,
+    "no-unused-private-class-members": 1,
     "no-unused-vars": Array [
       1,
       Object {
@@ -1902,6 +1904,7 @@ Object {
       },
     ],
     "no-unused-labels": 0,
+    "no-unused-private-class-members": 1,
     "no-unused-vars": Array [
       1,
       Object {
@@ -2623,6 +2626,7 @@ Object {
       },
     ],
     "no-unused-labels": 0,
+    "no-unused-private-class-members": 1,
     "no-unused-vars": Array [
       1,
       Object {
@@ -3344,6 +3348,7 @@ Object {
       },
     ],
     "no-unused-labels": 0,
+    "no-unused-private-class-members": 1,
     "no-unused-vars": Array [
       1,
       Object {
@@ -4064,6 +4069,7 @@ Object {
       },
     ],
     "no-unused-labels": 0,
+    "no-unused-private-class-members": 1,
     "no-unused-vars": Array [
       1,
       Object {
