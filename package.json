@@ -84,7 +84,7 @@
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-sonarjs": "0.10.0",
-    "eslint-plugin-testing-library": "4.12.4",
+    "eslint-plugin-testing-library": "5.0.0",
     "eslint-plugin-unicorn": "37.0.1",
     "read-pkg-up": "7.0.1",
     "typescript": "4.4.4"
