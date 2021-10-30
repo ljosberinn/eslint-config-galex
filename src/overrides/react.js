@@ -48,6 +48,7 @@ const createReactOverride = ({
   parserOptions: customParserOptions = { babelOptions: { presets: [] } },
   settings: customSettings = {},
   overrides: customOverrides = [],
+  files: customFiles,
 }) => {
   if (!react.hasReact) {
     return null;
@@ -101,9 +102,11 @@ const createReactOverride = ({
     ...customOverrides,
   ].filter(Boolean);
 
+  const finalFiles = customFiles || files;
+
   return {
     extends: extendsConfigs,
-    files,
+    files: finalFiles,
     parser,
     parserOptions,
     plugins,

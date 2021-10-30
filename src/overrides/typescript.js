@@ -49,6 +49,7 @@ const createTSOverride = ({
   rules: customRules = {},
   parserOptions: customParserOptions = {},
   settings: customSettings = {},
+  files: customFiles,
 }) => {
   if (!hasTypeScript) {
     return null;
@@ -82,9 +83,11 @@ const createTSOverride = ({
     },
   };
 
+  const finalFiles = customFiles || files;
+
   return {
     extends: extendsConfig,
-    files,
+    files: finalFiles,
     parser,
     parserOptions,
     plugins,
