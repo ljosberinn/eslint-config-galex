@@ -165,6 +165,15 @@ const mergeSortOverrides = overrides => {
         );
 
         if (previousDefaultOverrideTypeIndex > -1) {
+          const previousDefaultOverrideTypeFiles = new Set(override.files);
+          const hasIdenticalFilesArr = carry[
+            previousDefaultOverrideTypeIndex
+          ].files.every(file => previousDefaultOverrideTypeFiles.has(file));
+
+          if (!hasIdenticalFilesArr) {
+            return [...carry, override];
+          }
+
           return carry.map((dataset, index) =>
             index === previousDefaultOverrideTypeIndex
               ? pseudoDeepMerge(override, dataset)

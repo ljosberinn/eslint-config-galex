@@ -355,7 +355,7 @@ describe('createConfig', () => {
       expect(overrides[4]).toStrictEqual(dummyOverride);
     });
 
-    test('merges overrides correctly given additional, internal overrides', () => {
+    test('merges overrides correctly given additional, internal overrides with custom files', () => {
       jest.spyOn(readPkgUp, 'sync').mockReturnValue({
         packageJson: {
           dependencies: {
@@ -381,6 +381,67 @@ describe('createConfig', () => {
       const dummyOverride = createJestOverride({
         ...getDependencies(),
         files: ['testUtils/*.ts?(x)'],
+        rules: {
+          [mockRuleName]: mockRuleValue,
+          [realJestRuleName]: 'warn',
+        },
+      });
+
+      const { overrides } = createConfig({
+        overrides: [dummyOverride],
+        convertToESLintInternals: false,
+        stripDisabledRules: false,
+      });
+
+      const finalJestOverride = overrides.find(
+        override => override.overrideType === jestOverrideType
+      );
+
+      // 5 overrides were given, 5 should be present due to merigng
+      expect(overrides).toHaveLength(5);
+
+      // order should be correct
+      expect(overrides[0].overrideType).toBe(reactOverrideType);
+      expect(overrides[1].overrideType).toBe(tsOverrideType);
+      expect(overrides[2].overrideType).toBe(jestOverrideType);
+      expect(overrides[3].overrideType).toBe(storybookOverrideType);
+
+      // given fourth should not be merged into third
+      expect(finalJestOverride.rules[mockRuleName]).not.toBe(mockRuleValue);
+      expect(finalJestOverride.rules[realJestRuleName]).toBe(
+        createJestRules({
+          react: {
+            isCreateReactApp: false,
+          },
+        })[realJestRuleName]
+      );
+    });
+
+    test('merges overrides correctly given additional, internal overrides with identical files', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValue({
+        packageJson: {
+          dependencies: {
+            react: '17.0.1',
+            typescript: '4.1.0',
+            jest: '26.0.0',
+            '@storybook/react': '6.0.1',
+          },
+        },
+      });
+
+      jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+      jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+      jest.spyOn(ts, 'convertToObject').mockReturnValue({
+        compilerOptions: {},
+      });
+
+      const realJestRuleName = 'jest/consistent-test-it';
+      const mockRuleName = 'foo';
+      const mockRuleValue = 'bar';
+
+      const dummyOverride = createJestOverride({
+        ...getDependencies(),
         rules: {
           [mockRuleName]: mockRuleValue,
           [realJestRuleName]: 'warn',
