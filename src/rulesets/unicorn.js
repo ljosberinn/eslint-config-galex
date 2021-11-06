@@ -187,6 +187,13 @@ const getUnicornRules = ({
   'unicorn/no-document-cookie': 'warn',
 
   /**
+   * disallows empty files. off because fairly redundant.
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-empty-file.md
+   */
+  'unicorn/no-empty-file': 'off',
+
+  /**
    * no `for` loop when you can `for-of` instead
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md
@@ -458,6 +465,14 @@ const getUnicornRules = ({
    * @see @typescript-eslint/prefer-includes
    */
   'unicorn/prefer-includes': hasTypeScript ? 'off' : 'warn',
+
+  /**
+   * prefer export...from when re-exporting instead of separately importing,
+   * then exporting
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-export-from.md#prefer-exportfrom-when-re-exporting
+   */
+  'unicorn/prefer-export-from': 'warn',
 
   /**
    * prefer event.key over event.keyCode

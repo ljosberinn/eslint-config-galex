@@ -56,17 +56,17 @@ jobs:
       - name: Installing top level dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
-      - name: Installing example dependencies 1/4
-        working-directory: ./examples/cra-js
+      - name: Installing integration dependencies 1/4
+        working-directory: ./integration/cra-js
         run: yarn --frozen-lockfile
-      - name: Installing example dependencies 2/4
-        working-directory: ./examples/cra-ts
+      - name: Installing integrationdependencies 2/4
+        working-directory: ./integration/cra-ts
         run: yarn --frozen-lockfile
-      - name: Installing example dependencies 3/4
-        working-directory: ./examples/next-js
+      - name: Installing integrationdependencies 3/4
+        working-directory: ./integration/next-js
         run: yarn --frozen-lockfile
-      - name: Installing example dependencies 4/4
-        working-directory: ./examples/next-ts
+      - name: Installing integrationdependencies 4/4
+        working-directory: ./integration/next-ts
         run: yarn --frozen-lockfile
       - name: Run tests
         run: yarn test:coverage --ci

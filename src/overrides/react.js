@@ -35,6 +35,9 @@ const defaultSettings = {
  *   isNext: boolean;
  *   version: string;
  *  };
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  }
  *  rules?: Record<string, any>;
  *  settings?: object;
  *  parserOptions?: object;
