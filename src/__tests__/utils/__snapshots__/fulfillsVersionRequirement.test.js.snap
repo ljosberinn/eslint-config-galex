@@ -8,6 +8,8 @@ exports[`fulfillsVersionRequirement fulfillsVersionRequirement(>=17, { major: 18
 
 exports[`fulfillsVersionRequirement fulfillsVersionRequirement(^16.13.1, { major: 16, minor: 13, patch: 2 }) 1`] = `false`;
 
+exports[`fulfillsVersionRequirement fulfillsVersionRequirement(^17.0.0, { major: 17 }) 1`] = `true`;
+
 exports[`fulfillsVersionRequirement fulfillsVersionRequirement(16.13.1, { major: 16 }) 1`] = `true`;
 
 exports[`fulfillsVersionRequirement fulfillsVersionRequirement(16.13.1, { major: 16 }) 2`] = `true`;

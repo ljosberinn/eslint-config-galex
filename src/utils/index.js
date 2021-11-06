@@ -46,8 +46,14 @@ const fulfillsVersionRequirement = (
     }
 
     // consider using `node-semver` in the future instead
-    const isGreaterThanOrEqual = version.startsWith('>=');
-    const sanitizedVersion = isGreaterThanOrEqual ? version.slice(2) : version;
+    const isWildcardWithinMajor = version.startsWith('^');
+    const isGreaterThanOrEqual = isWildcardWithinMajor
+      ? false
+      : version.startsWith('>=');
+    const sanitizedVersion =
+      isGreaterThanOrEqual || isWildcardWithinMajor
+        ? version.slice(isWildcardWithinMajor ? 1 : 2)
+        : version;
 
     const [depMajor, depMinor = 0, depPatch = 0] = sanitizedVersion
       .split('.')

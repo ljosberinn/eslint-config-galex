@@ -23,6 +23,7 @@ describe('fulfillsVersionRequirement', () => {
     ['>=16', { major: 16 }, true],
     ['>=17', { major: 16 }, true],
     ['>=17', { major: 18 }, false],
+    ['^17.0.0', { major: 17 }, true],
   ])('fulfillsVersionRequirement(%s, %s)', (version, required, result) => {
     expect(fulfillsVersionRequirement(version, required)).toBe(result);
     expect(fulfillsVersionRequirement(version, required)).toMatchSnapshot();
