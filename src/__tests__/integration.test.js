@@ -7,67 +7,35 @@ const env = {
   env: 'production',
 };
 
-describe('cra', () => {
-  test.each(['js', 'ts'])('%s', type => {
-    const readSnapshot = () => {
-      try {
-        const data = readFileSync(`examples/cra-${type}/results.txt`, {
-          encoding: 'utf-8',
-        });
+const readSnapshot = folder => {
+  try {
+    const data = readFileSync(`integration/${folder}/results.txt`, {
+      encoding: 'utf-8',
+    });
 
-        // since eslint stores absolute
-        return data.replaceAll(
-          `C:\\Users\\gerr.it\\Desktop\\dev\\eslint-config-galex\\examples\\cra-${type}`,
-          resolve(`examples\\cra-${type}`)
-        );
-      } catch {
-        return null;
-      }
-    };
+    // since eslint stores absolute
+    return data.replaceAll(
+      `C:\\Users\\gerr.it\\Desktop\\dev\\eslint-config-galex\\integration\\${folder}`,
+      resolve(`integration\\${folder}`)
+    );
+  } catch {
+    return null;
+  }
+};
 
-    const snapshot = readSnapshot();
+describe('integration tests', () => {
+  test.each(['cra-js', 'cra-ts', 'next-js', 'next-ts'])('%s', folder => {
+    const snapshot = readSnapshot(folder);
+    const cwd = resolve('integration', folder);
 
     try {
-      execSync(`yarn eslint src --format=tap > results.txt`, {
+      execSync('yarn lint:integration', {
         env,
-        cwd: `./examples/cra-${type}`,
+        cwd,
       });
     } catch {
       if (snapshot) {
-        expect(snapshot).toStrictEqual(readSnapshot());
-      }
-    }
-  });
-});
-
-describe('next', () => {
-  test.each(['js', 'ts'])('%s', type => {
-    const readSnapshot = () => {
-      try {
-        const data = readFileSync(`examples/next-${type}/results.txt`, {
-          encoding: 'utf-8',
-        });
-
-        // since eslint stores absolute
-        return data.replaceAll(
-          `C:\\Users\\gerr.it\\Desktop\\dev\\eslint-config-galex\\examples\\next-${type}`,
-          resolve(`examples\\next-${type}`)
-        );
-      } catch {
-        return null;
-      }
-    };
-
-    const snapshot = readSnapshot();
-
-    try {
-      execSync(`yarn eslint pages --format=tap > results.txt`, {
-        env,
-        cwd: `./examples/next-${type}`,
-      });
-    } catch {
-      if (snapshot) {
-        expect(snapshot).toStrictEqual(readSnapshot());
+        expect(snapshot).toStrictEqual(readSnapshot(folder));
       }
     }
   });

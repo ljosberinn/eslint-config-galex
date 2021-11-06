@@ -1,8 +1,6 @@
-yarn run v1.22.10
-$ C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\node_modules\.bin\eslint src --format=tap
 TAP version 13
 1..6
-not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\App.test.tsx
+not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\App.test.tsx
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -30,7 +28,7 @@ not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\
         column: 3
         ruleId: jest-formatting/padding-around-all
   ...
-not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\App.tsx
+not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\App.tsx
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -52,7 +50,7 @@ not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\
         column: 1
         ruleId: import/no-default-export
   ...
-not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\index.tsx
+not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\index.tsx
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -68,16 +66,22 @@ not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\
         column: 12
         ruleId: unicorn/prefer-query-selector
   ...
-ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\react-app-env.d.ts
-not ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\reportWebVitals.ts
+ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\react-app-env.d.ts
+not ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\reportWebVitals.ts
   ---
-  message: Missing return type on function.
-  severity: error
+  message: All imports in the declaration are only used as types. Use `import type`.
+  severity: warning
   data:
-    line: 3
-    column: 25
-    ruleId: '@typescript-eslint/explicit-module-boundary-types'
+    line: 1
+    column: 1
+    ruleId: '@typescript-eslint/consistent-type-imports'
   messages:
+    - message: Missing return type on function.
+      severity: error
+      data:
+        line: 3
+        column: 25
+        ruleId: '@typescript-eslint/explicit-module-boundary-types'
     - message: dynamic imports require a leading comment with the webpack chunkname
       severity: warning
       data:
@@ -97,6 +101,5 @@ not ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\
         column: 1
         ruleId: import/no-default-export
   ...
-ok 6 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\examples\cra-ts\src\setupTests.ts
+ok 6 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\setupTests.ts
 
-info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

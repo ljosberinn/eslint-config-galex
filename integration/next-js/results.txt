@@ -1,0 +1,15 @@
+$ C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-js\node_modules\.bin\eslint pages --format=tap
+TAP version 13
+1..3
+ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-js\pages\_app.js
+ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-js\pages\api\hello.js
+ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-js\pages\index.js
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 2
+    column: 1
+    ruleId: import/order
+  ...
+

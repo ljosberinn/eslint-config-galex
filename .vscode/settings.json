@@ -1,0 +1,25 @@
+{
+  "editor.fontLigatures": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "editor.suggestSelection": "first",
+  "references.preferredLocation": "view",
+  "editor.rulers": [80],
+  "editor.formatOnSave": true,
+  "eslint.packageManager": "yarn",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/yarn.lock": true,
+    "**/coverage": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "editor.bracketPairColorization.enabled": true,
+  "files.exclude": {
+    "**/node_modules": true
+  }
+}
