@@ -34,6 +34,7 @@ const defaultSettings = {
  *  parseroOptions?: object;
  *  settings?: object;
  *  extends?: string[];
+ *  overrides?: unknown[]
  * }} options
  */
 const createJestOverride = ({
@@ -49,6 +50,7 @@ const createJestOverride = ({
   parserOptions: customParserOptions,
   settings: customSettings,
   plugins: customPlugins = [],
+  overrides: customOverrides = [],
 }) => {
   if (!hasJest) {
     return null;
@@ -88,6 +90,11 @@ const createJestOverride = ({
   const files = customFiles || defaultFiles;
   const finalExtends = customExtends.length > 0 ? customExtends : extendsConfig;
 
+  const overrides = [
+    createJestConfigOverride({ hasJest }),
+    ...customOverrides,
+  ].filter(Boolean);
+
   return {
     env,
     extends: finalExtends,
@@ -97,6 +104,7 @@ const createJestOverride = ({
     rules,
     settings,
     overrideType,
+    overrides,
   };
 };
 
@@ -863,6 +871,21 @@ const getTestingLibrarySettings = ({
   };
 };
 
+const jestConfigPattern = ['jest.config.js', 'jest.config.ts'];
+
+const createJestConfigOverride = ({ hasJest }) => {
+  if (!hasJest) {
+    return null;
+  }
+
+  return {
+    files: jestConfigPattern,
+    rules: {
+      'import/no-default-export': 'off',
+    },
+  };
+};
+
 module.exports = {
   createJestOverride,
   env: defaultEnv,
@@ -876,4 +899,6 @@ module.exports = {
   settings: defaultSettings,
   overrideType,
   getTestingLibrarySettings,
+  createJestConfigOverride,
+  jestConfigPattern,
 };

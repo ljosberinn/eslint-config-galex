@@ -1,6 +1,7 @@
 const {
   createJestOverride,
   getTestingLibraryRules,
+  createJestConfigOverride,
 } = require('../../overrides/jest');
 
 describe('createJestOverride', () => {
@@ -301,5 +302,15 @@ describe('getTestingLibraryRules', () => {
     };
 
     expect(getTestingLibraryRules({ react })).toMatchSnapshot();
+  });
+});
+
+describe('createJestConfigOverride', () => {
+  test('matches snapshot given jest', () => {
+    expect(createJestConfigOverride({ hasJest: true })).toMatchSnapshot();
+  });
+
+  test('matches snapshot without jest', () => {
+    expect(createJestConfigOverride({ hasJest: false })).toMatchSnapshot();
   });
 });

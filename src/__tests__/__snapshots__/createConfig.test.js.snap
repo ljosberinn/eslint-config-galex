@@ -21,6 +21,17 @@ Object {
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
+      "overrides": Array [
+        Object {
+          "files": Array [
+            "jest.config.js",
+            "jest.config.ts",
+          ],
+          "rules": Object {
+            "import/no-default-export": "off",
+          },
+        },
+      ],
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -744,6 +755,17 @@ Object {
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
+      "overrides": Array [
+        Object {
+          "files": Array [
+            "jest.config.js",
+            "jest.config.ts",
+          ],
+          "rules": Object {
+            "import/no-default-export": "off",
+          },
+        },
+      ],
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -1468,6 +1490,17 @@ Object {
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
+      "overrides": Array [
+        Object {
+          "files": Array [
+            "jest.config.js",
+            "jest.config.ts",
+          ],
+          "rules": Object {
+            "import/no-default-export": "off",
+          },
+        },
+      ],
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -2195,6 +2228,17 @@ Object {
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
+      "overrides": Array [
+        Object {
+          "files": Array [
+            "jest.config.js",
+            "jest.config.ts",
+          ],
+          "rules": Object {
+            "import/no-default-export": "off",
+          },
+        },
+      ],
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -2919,6 +2963,17 @@ Object {
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
+      "overrides": Array [
+        Object {
+          "files": Array [
+            "jest.config.js",
+            "jest.config.ts",
+          ],
+          "rules": Object {
+            "import/no-default-export": "off",
+          },
+        },
+      ],
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },
@@ -3643,6 +3698,17 @@ Object {
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
+      "overrides": Array [
+        Object {
+          "files": Array [
+            "jest.config.js",
+            "jest.config.ts",
+          ],
+          "rules": Object {
+            "import/no-default-export": "off",
+          },
+        },
+      ],
       "parserOptions": Object {
         "ecmaVersion": 2020,
       },

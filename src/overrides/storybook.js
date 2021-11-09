@@ -9,10 +9,18 @@ const files = ['*.stories.*'];
  *  hasStorybook: boolean;
  *  rules?: Record<string, any>;
  *  files?: string[];
+ *  react: {
+ *    hasReact: boolean;
+ *  };
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
  * }} options
  */
 const createStorybookOverride = ({
   hasStorybook,
+  react,
+  typescript,
   rules: customRules = {},
   files: customFiles,
 }) => {
@@ -21,7 +29,7 @@ const createStorybookOverride = ({
   }
 
   const finalRules = {
-    ...rules,
+    ...createStorybookRules({ react, typescript }),
     ...customRules,
   };
 
@@ -34,7 +42,10 @@ const createStorybookOverride = ({
   };
 };
 
-const rules = {
+const createStorybookRules = ({
+  react: { hasReact },
+  typescript: { hasTypeScript },
+}) => ({
   'import/no-default-export': 'off',
   /**
    * allow exporting anonymous config object
@@ -43,16 +54,22 @@ const rules = {
   /**
    * allow typing template components with Storybook's `Story` type
    */
-  'react/function-component-definition': 'off',
+  ...(hasReact ? { 'react/function-component-definition': 'off' } : null),
   /**
    * disable return type requirement
    */
-  '@typescript-eslint/explicit-module-boundary-types': 'off',
-};
+  ...(hasTypeScript
+    ? { '@typescript-eslint/explicit-module-boundary-types': 'off' }
+    : null),
+  /**
+   * allow dummy functions satisfying
+   */
+  ...(hasTypeScript ? { '@typescript-eslint/no-empty-function': 'off' } : null),
+});
 
 module.exports = {
   createStorybookOverride,
   files,
-  rules,
+  createStorybookRules,
   overrideType,
 };

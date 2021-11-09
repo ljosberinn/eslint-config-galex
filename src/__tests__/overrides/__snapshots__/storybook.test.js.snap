@@ -10,9 +10,23 @@ Object {
   "overrideType": "eslint-config-galex/storybook",
   "rules": Object {
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "import/no-anonymous-default-export": "off",
     "import/no-default-export": "off",
     "react/function-component-definition": "off",
+  },
+}
+`;
+
+exports[`createStorybookOverride matches snapshot if storybook is present, without react and ts 1`] = `
+Object {
+  "files": Array [
+    "*.stories.*",
+  ],
+  "overrideType": "eslint-config-galex/storybook",
+  "rules": Object {
+    "import/no-anonymous-default-export": "off",
+    "import/no-default-export": "off",
   },
 }
 `;
