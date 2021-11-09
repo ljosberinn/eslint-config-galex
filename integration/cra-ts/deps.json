@@ -1,0 +1,38 @@
+{
+  "hasJest": true,
+  "hasJestDom": true,
+  "hasNodeTypes": true,
+  "hasTestingLibrary": true,
+  "hasStorybook": false,
+  "react": {
+    "hasReact": true,
+    "isCreateReactApp": true,
+    "isNext": false,
+    "isPreact": false,
+    "version": "^17.0.2"
+  },
+  "typescript": {
+    "config": {
+      "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx"
+      },
+      "include": ["src"]
+    },
+    "hasTypeScript": true,
+    "version": "^4.1.2"
+  }
+}

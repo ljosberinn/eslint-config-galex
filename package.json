@@ -35,7 +35,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "semantic-release": "semantic-release",
-    "install:integration": "rimraf integration/**/node_modules integration/**/yarn.lock && cd integration/cra-js && yarn && cd ../cra-ts && yarn && cd ../next-js && yarn && cd ../next-ts && yarn"
+    "install:integration": "rimraf integration/**/node_modules integration/**/yarn.lock && cd integration/cra-js && yarn --frozen-lockfile && cd ../cra-ts && yarn --frozen-lockfile && cd ../next-js && yarn --frozen-lockfile && cd ../next-ts && yarn --frozen-lockfile"
   },
   "eslintIgnore": [
     "node_modules"
@@ -46,8 +46,8 @@
       "src/(overrides|rulesets)/**/*.{js,jsx,ts,tsx}",
       "src/*.js"
     ],
-    "modulePathIgnorePatterns": [
-      "integration"
+    "testPathIgnorePatterns": [
+      "<rootDir>/integration"
     ],
     "coverageDirectory": "coverage",
     "coverageThreshold": {
@@ -83,7 +83,7 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-promise": "5.1.1",
     "eslint-plugin-react": "7.26.1",
-    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-sonarjs": "0.10.0",
     "eslint-plugin-testing-library": "5.0.0",
     "eslint-plugin-unicorn": "38.0.1",

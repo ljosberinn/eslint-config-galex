@@ -54,19 +54,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: Installing top level dependencies
+      - name: Installing top level dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
-      - name: Installing integration dependencies 1/4
-        working-directory: ./integration/cra-js
-        run: yarn --frozen-lockfile
-      - name: Installing integrationdependencies 2/4
-        working-directory: ./integration/cra-ts
-        run: yarn --frozen-lockfile
-      - name: Installing integrationdependencies 3/4
-        working-directory: ./integration/next-js
-        run: yarn --frozen-lockfile
-      - name: Installing integrationdependencies 4/4
-        working-directory: ./integration/next-ts
-        run: yarn --frozen-lockfile
+      - name: Installing integration dependencies
+        run: yarn install:integration
       - name: Run tests
         run: yarn test:coverage --ci

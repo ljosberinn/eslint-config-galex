@@ -1,0 +1,15 @@
+{
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "hasStorybook": false,
+  "react": {
+    "hasReact": true,
+    "isCreateReactApp": false,
+    "isNext": true,
+    "isPreact": false,
+    "version": "17.0.2"
+  },
+  "typescript": { "hasTypeScript": false }
+}

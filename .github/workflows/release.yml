@@ -56,18 +56,8 @@ jobs:
       - name: Installing top level dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
-      - name: Installing integration dependencies 1/4
-        working-directory: ./integration/cra-js
-        run: yarn --frozen-lockfile
-      - name: Installing integration dependencies 2/4
-        working-directory: ./integration/cra-ts
-        run: yarn --frozen-lockfile
-      - name: Installing integration dependencies 3/4
-        working-directory: ./integration/next-js
-        run: yarn --frozen-lockfile
-      - name: Installing integration dependencies 4/4
-        working-directory: ./integration/next-ts
-        run: yarn --frozen-lockfile
+      - name: Installing integration dependencies
+        run: yarn install:integration
       - name: Test & Upload coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
