@@ -1,3 +1,5 @@
+yarn run v1.22.15
+$ eslint pages --max-warnings=0 --format=tap
 writing deps to  /eslint-config-galex/integration/next-js/deps.json
 writing config cache to  /eslint-config-galex/integration/next-js/eslint-config.json
 TAP version 13
@@ -14,3 +16,4 @@ ok 3 - /eslint-config-galex/integration/next-js/pages/index.js
     ruleId: import/order
   ...
 
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

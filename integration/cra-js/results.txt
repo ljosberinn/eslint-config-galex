@@ -1,3 +1,5 @@
+yarn run v1.22.15
+$ eslint src --max-warnings=0 --format=tap
 writing deps to  /eslint-config-galex/integration/cra-js/deps.json
 writing config cache to  /eslint-config-galex/integration/cra-js/eslint-config.json
 TAP version 13
@@ -79,3 +81,4 @@ not ok 4 - /eslint-config-galex/integration/cra-js/src/reportWebVitals.js
   ...
 ok 5 - /eslint-config-galex/integration/cra-js/src/setupTests.js
 
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
