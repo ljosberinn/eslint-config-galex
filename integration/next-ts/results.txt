@@ -1,40 +1,39 @@
-$ eslint pages --max-warnings=0 --format=tap
-writing deps to /eslint-config-galex/integration/next-ts/deps.json
-writing config cache to /eslint-config-galex/integration/next-ts/eslint-config.json
+writing deps to  C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-ts\deps.json
+writing config cache to  C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-ts\eslint-config.json
 TAP version 13
 1..3
-not ok 1 - /eslint-config-galex/integration/next-ts/pages/_app.tsx
- ---
- message: Missing return type on function.
- severity: error
- data:
-  line: 4
-  column: 1
-  ruleId: '@typescript-eslint/explicit-module-boundary-types'
- ...
-not ok 2 - /eslint-config-galex/integration/next-ts/pages/api/hello.ts
- ---
- message: Missing return type on function.
- severity: error
- data:
-  line: 8
-  column: 16
-  ruleId: '@typescript-eslint/explicit-module-boundary-types'
- ...
-ok 3 - /eslint-config-galex/integration/next-ts/pages/index.tsx
- ---
- message: There should be at least one empty line between import groups
- severity: warning
- data:
-  line: 3
-  column: 1
-  ruleId: import/order
- messages:
-  - message: Function component is not a function declaration
-   severity: warning
-   data:
-    line: 6
-    column: 24
-    ruleId: react/function-component-definition
- ...
+not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-ts\pages\_app.tsx
+  ---
+  message: Missing return type on function.
+  severity: error
+  data:
+    line: 4
+    column: 1
+    ruleId: '@typescript-eslint/explicit-module-boundary-types'
+  ...
+not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-ts\pages\api\hello.ts
+  ---
+  message: Missing return type on function.
+  severity: error
+  data:
+    line: 8
+    column: 16
+    ruleId: '@typescript-eslint/explicit-module-boundary-types'
+  ...
+ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\next-ts\pages\index.tsx
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 3
+    column: 1
+    ruleId: import/order
+  messages:
+    - message: Function component is not a function declaration
+      severity: warning
+      data:
+        line: 6
+        column: 24
+        ruleId: react/function-component-definition
+  ...
 

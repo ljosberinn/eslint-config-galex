@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:integration": "eslint"
+    "lint:integration": "eslint src --max-warnings=0 --format=tap > results.txt"
   },
   "browserslist": {
     "production": [

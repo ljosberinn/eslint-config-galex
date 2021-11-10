@@ -1,108 +1,107 @@
-$ eslint src --max-warnings=0 --format=tap
-writing deps to /eslint-config-galex/integration/cra-ts/deps.json
-writing config cache to /eslint-config-galex/integration/cra-ts/eslint-config.json
+writing deps to  C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\deps.json
+writing config cache to  C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\eslint-config.json
 TAP version 13
 1..6
-not ok 1 - /eslint-config-galex/integration/cra-ts/src/App.test.tsx
- ---
- message: There should be at least one empty line between import groups
- severity: warning
- data:
-  line: 2
-  column: 1
-  ruleId: import/order
- messages:
-  - message: '`@testing-library/react` import should occur before import of `react`'
-   severity: warning
-   data:
+not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\App.test.tsx
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
     line: 2
     column: 1
     ruleId: import/order
-  - message: All test cases must be wrapped in a describe block.
-   severity: error
-   data:
-    line: 5
+  messages:
+    - message: '`@testing-library/react` import should occur before import of `react`'
+      severity: warning
+      data:
+        line: 2
+        column: 1
+        ruleId: import/order
+    - message: All test cases must be wrapped in a describe block.
+      severity: error
+      data:
+        line: 5
+        column: 1
+        ruleId: jest/require-top-level-describe
+    - message: Expected blank line before this statement.
+      severity: error
+      data:
+        line: 8
+        column: 3
+        ruleId: jest-formatting/padding-around-all
+  ...
+not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\App.tsx
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 1
     column: 1
-    ruleId: jest/require-top-level-describe
-  - message: Expected blank line before this statement.
-   severity: error
-   data:
-    line: 8
-    column: 3
-    ruleId: jest-formatting/padding-around-all
- ...
-not ok 2 - /eslint-config-galex/integration/cra-ts/src/App.tsx
- ---
- message: There should be at least one empty line between import groups
- severity: warning
- data:
-  line: 1
-  column: 1
-  ruleId: import/order
- messages:
-  - message: Missing return type on function.
-   severity: error
-   data:
-    line: 5
+    ruleId: import/order
+  messages:
+    - message: Missing return type on function.
+      severity: error
+      data:
+        line: 5
+        column: 1
+        ruleId: '@typescript-eslint/explicit-module-boundary-types'
+    - message: Prefer named exports.
+      severity: warning
+      data:
+        line: 26
+        column: 1
+        ruleId: import/no-default-export
+  ...
+not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\index.tsx
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 2
     column: 1
-    ruleId: '@typescript-eslint/explicit-module-boundary-types'
-  - message: Prefer named exports.
-   severity: warning
-   data:
-    line: 26
+    ruleId: import/order
+  messages:
+    - message: Prefer `.querySelector()` over `.getElementById()`.
+      severity: error
+      data:
+        line: 11
+        column: 12
+        ruleId: unicorn/prefer-query-selector
+  ...
+ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\react-app-env.d.ts
+not ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\reportWebVitals.ts
+  ---
+  message: All imports in the declaration are only used as types. Use `import type`.
+  severity: warning
+  data:
+    line: 1
     column: 1
-    ruleId: import/no-default-export
- ...
-not ok 3 - /eslint-config-galex/integration/cra-ts/src/index.tsx
- ---
- message: There should be at least one empty line between import groups
- severity: warning
- data:
-  line: 2
-  column: 1
-  ruleId: import/order
- messages:
-  - message: Prefer `.querySelector()` over `.getElementById()`.
-   severity: error
-   data:
-    line: 11
-    column: 12
-    ruleId: unicorn/prefer-query-selector
- ...
-ok 4 - /eslint-config-galex/integration/cra-ts/src/react-app-env.d.ts
-not ok 5 - /eslint-config-galex/integration/cra-ts/src/reportWebVitals.ts
- ---
- message: All imports in the declaration are only used as types. Use `import type`.
- severity: warning
- data:
-  line: 1
-  column: 1
-  ruleId: '@typescript-eslint/consistent-type-imports'
- messages:
-  - message: Missing return type on function.
-   severity: error
-   data:
-    line: 3
-    column: 25
-    ruleId: '@typescript-eslint/explicit-module-boundary-types'
-  - message: dynamic imports require a leading comment with the webpack chunkname
-   severity: warning
-   data:
-    line: 5
-    column: 5
-    ruleId: import/dynamic-import-chunkname
-  - message: Prefer await to then()/catch()/finally().
-   severity: warning
-   data:
-    line: 5
-    column: 26
-    ruleId: promise/prefer-await-to-then
-  - message: Prefer named exports.
-   severity: warning
-   data:
-    line: 15
-    column: 1
-    ruleId: import/no-default-export
- ...
-ok 6 - /eslint-config-galex/integration/cra-ts/src/setupTests.ts
+    ruleId: '@typescript-eslint/consistent-type-imports'
+  messages:
+    - message: Missing return type on function.
+      severity: error
+      data:
+        line: 3
+        column: 25
+        ruleId: '@typescript-eslint/explicit-module-boundary-types'
+    - message: dynamic imports require a leading comment with the webpack chunkname
+      severity: warning
+      data:
+        line: 5
+        column: 5
+        ruleId: import/dynamic-import-chunkname
+    - message: Prefer await to then()/catch()/finally().
+      severity: warning
+      data:
+        line: 5
+        column: 26
+        ruleId: promise/prefer-await-to-then
+    - message: Prefer named exports.
+      severity: warning
+      data:
+        line: 15
+        column: 1
+        ruleId: import/no-default-export
+  ...
+ok 6 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\setupTests.ts
 
