@@ -35,7 +35,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "semantic-release": "semantic-release",
-    "install:integration": "rimraf integration/**/node_modules integration/**/yarn.lock && cd integration/cra-js && yarn --frozen-lockfile && cd ../cra-ts && yarn --frozen-lockfile && cd ../next-js && yarn --frozen-lockfile && cd ../next-ts && yarn --frozen-lockfile"
+    "install:integration": "cd integration/cra-js && yarn --frozen-lockfile && cd ../cra-ts && yarn --frozen-lockfile && cd ../next-js && yarn --frozen-lockfile && cd ../next-ts && yarn --frozen-lockfile",
+    "install:integration:clean": "rimraf integration/**/node_modules integration/**/yarn.lock && cd integration/cra-js && yarn && cd ../cra-ts && yarn && cd ../next-js && yarn && cd ../next-ts && yarn"
   },
   "eslintIgnore": [
     "node_modules"
