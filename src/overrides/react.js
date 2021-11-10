@@ -549,6 +549,14 @@ const createReactRules = ({
   'react/no-array-index-key': 'warn',
 
   /**
+   * off because function components are preferred anyways and theres little
+   * reason to prevent this anyways
+   *
+   * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-arrow-function-lifecycle.md
+   */
+  'react/no-arrow-function-lifecycle': 'off',
+
+  /**
    * use children as intended
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
@@ -604,6 +612,13 @@ const createReactRules = ({
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md
    */
   'react/no-find-dom-node': 'error',
+
+  /**
+   * disallows improper use of html attributes
+   *
+   * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-invalid-html-attribute.md
+   */
+  'react/no-invalid-html-attribute': hasTypeScript ? 'off' : 'warn',
 
   /**
    * prevents deprecated use if `isMounted()`
