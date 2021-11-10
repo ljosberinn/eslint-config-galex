@@ -24,8 +24,8 @@ const readSnapshots = cwd => {
       results: readFileSync(resolve(cwd, 'results.txt'), {
         encoding: 'utf-8',
       }),
-      config: require(resolve(cwd, `eslint-config.json`)),
-      deps: require(resolve(cwd, `deps.json`)),
+      config: require(resolve(cwd, 'eslint-config.json')),
+      deps: require(resolve(cwd, 'deps.json')),
     };
   } catch {
     return {
@@ -52,6 +52,10 @@ const normalizeSnapshot = cwd => {
     })
       // iterate each line in results.txt
       .split('\n')
+      // skip yarn start/end
+      .filter(
+        line => !line.startsWith('yarn run') && !line.startsWith('info Visit')
+      )
       .map(line =>
         // and in each line that includes a path
         line.includes(variablePathDelimiter)
@@ -67,6 +71,8 @@ const normalizeSnapshot = cwd => {
           : line
       )
       .join('\n')
+      .replaceAll('  ', ' ')
+      .replaceAll('\\', '/')
   );
 };
 
