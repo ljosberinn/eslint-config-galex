@@ -1244,6 +1244,15 @@ const createNextJsRules = ({ react: { isNext } }) => {
     '@next/next/no-script-in-document': 'error',
 
     /**
+     * disallows importing next/server outside of _middleware
+     *
+     * off as its not currently registered. see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/index.js
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-server-import-in-page.js
+     */
+    // '@next/next/no-server-import-in-page': 'error',
+
+    /**
      * sync scripts can impact performance
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-sync-scripts.js

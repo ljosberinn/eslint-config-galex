@@ -173,6 +173,13 @@ const getUnicornRules = ({
   'unicorn/no-array-reduce': 'off',
 
   /**
+   * disallows directly accessing awaited promises
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md
+   */
+  'unicorn/no-await-expression-member': 'error',
+
+  /**
    * disallow leading/trailing space between console.log parameters
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-console-spaces.md
@@ -415,6 +422,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md
    */
   'unicorn/prefer-at': 'off',
+
+  /**
+   * prefer using unicode-save string method
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-code-point.md
+   */
+  'unicorn/prefer-code-point': 'warn',
 
   /**
    * prefer using `Date.now()` to get unix ms over other options
