@@ -85,7 +85,7 @@
     "eslint-plugin-promise": "5.1.1",
     "eslint-plugin-react": "7.27.1",
     "eslint-plugin-react-hooks": "4.3.0",
-    "eslint-plugin-sonarjs": "0.10.0",
+    "eslint-plugin-sonarjs": "0.11.0",
     "eslint-plugin-testing-library": "5.0.0",
     "eslint-plugin-unicorn": "39.0.0",
     "read-pkg-up": "7.0.1",
