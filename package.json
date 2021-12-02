@@ -96,7 +96,7 @@
     "@semantic-release/git": "10.0.1",
     "@types/jest": "27.0.3",
     "eslint": "8.3.0",
-    "jest": "27.4.2",
+    "jest": "27.4.3",
     "jest-watch-typeahead": "0.6.5",
     "prettier": "2.5.0",
     "rimraf": "3.0.2",
