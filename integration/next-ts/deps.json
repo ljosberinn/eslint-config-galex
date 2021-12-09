@@ -32,6 +32,6 @@
       "exclude": ["node_modules"]
     },
     "hasTypeScript": true,
-    "version": "4.4.4"
+    "version": "4.5.2"
   }
 }
