@@ -906,7 +906,7 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
    *
    * @see https://eslint.org/docs/rules/no-void
    */
-  'no-void': 'warn',
+  'no-void': 'off',
 
   /**
    * off because opinionated

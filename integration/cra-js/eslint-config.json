@@ -428,7 +428,7 @@
     "no-useless-concat": 2,
     "no-useless-escape": 1,
     "no-useless-return": 1,
-    "no-void": 1,
+    "no-void": 0,
     "no-warning-comments": 0,
     "no-with": 2,
     "prefer-named-capture-group": 0,
