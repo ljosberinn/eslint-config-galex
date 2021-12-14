@@ -82,7 +82,7 @@ Couldn't this be easier?
 
 ## What makes this different than all the other configs out there?
 
-- All internals, literally everything, is re-exported.Don't like some
+- All internals, literally everything, is re-exported. Don't like some
   decision? Rules too weak? Want to add custom rules? Everything is covered!
 
   This hopefully prevents the need of having to migrate between configs every
