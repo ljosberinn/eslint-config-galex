@@ -75,7 +75,7 @@
     "@next/eslint-plugin-next": "12.0.7",
     "@typescript-eslint/eslint-plugin": "5.6.0",
     "@typescript-eslint/parser": "5.6.0",
-    "confusing-browser-globals": "1.0.10",
+    "confusing-browser-globals": "1.0.11",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-jest": "25.3.0",
