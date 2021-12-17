@@ -103,15 +103,44 @@ const fulfillsVersionRequirement = (
   }
 };
 
-const applyFlagFilter = (rules, { convertToESLintInternals = true }) => {
-  if (!convertToESLintInternals) {
+const incrementalAdoptionRuleDowngrade = value => {
+  const valueToForward =
+    typeof value === 'number' || typeof value === 'string' ? value : value[0];
+
+  if (typeof valueToForward === 'string') {
+    if (valueToForward === 'error') {
+      return 'warn';
+    }
+
+    return 'off';
+  }
+
+  if (valueToForward === 2) {
+    return 1;
+  }
+
+  return valueToForward === 2 ? 1 : 0;
+};
+
+const applyFlagFilter = (
+  rules,
+  { convertToESLintInternals = true, incrementalAdoption = false }
+) => {
+  const hasFlags = convertToESLintInternals || incrementalAdoption;
+
+  if (!hasFlags) {
     return rules;
   }
+
+  const fnsToApply = [
+    convertToESLintInternals && convertRuleToEslintInternalValue,
+    incrementalAdoption && incrementalAdoptionRuleDowngrade,
+  ].filter(Boolean);
 
   return Object.fromEntries(
     Object.entries(rules).map(([key, value]) => [
       key,
-      convertRuleToEslintInternalValue(value),
+      fnsToApply.reduce((acc, fn) => fn(acc), value),
     ])
   );
 };

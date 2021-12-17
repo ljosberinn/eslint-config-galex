@@ -64,7 +64,7 @@ litters the code.
 You begin disabling rules altogether. Maybe because you don't know better, or
 because the rule is actually bad for your situation. You begin to wonder.
 
-You check npm and see there are 2.8k+ (August 2020) `eslint-plugin-*` packages
+You check npm and see there are ~~2.8k+ (August 2020)~~ _4.1k+ (December 2021)_ `eslint-plugin-*` packages
 out there. And even worse - 10k+ `eslint-config-*` packages. Which to choose?
 You sort by popularity and see some familiar faces. Time to install!
 
@@ -81,6 +81,22 @@ Setting up ESLint _properly_ wasn't that easy after all.
 Couldn't this be easier?
 
 ## What makes this different than all the other configs out there?
+
+- It's incrementally adoptable! Usually you pick a config at one point in time:
+  when starting a fresh project, or at least early on. Migrating later on,
+  especially when working in teams with lots of code movement, you'd run into
+  merging conflicts real quick.
+
+  Good news: you can use `createConfig({ incrementalAdoption: true })` to
+  _downgrade all errors to warnings, and disable all warnings_!
+
+  This allows you to introduce the config at an arbitrary point in time, while
+  still profiting of it from minute one and still allows you to continue. Most
+  urgent issues won't break the build - the best of both worlds!
+
+  Once you feel comfortable raising the reporting level, simply set
+  `incrementalAdoption` to false or remove it from the arguments passed to
+  `createConfig`.
 
 - All internals, literally everything, is re-exported. Don't like some
   decision? Rules too weak? Want to add custom rules? Everything is covered!

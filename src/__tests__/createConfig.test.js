@@ -525,6 +525,48 @@ describe('createConfig', () => {
       expect(overrides[4]).toStrictEqual(dummyOverride1);
       expect(overrides[5]).toStrictEqual(dummyOverride2);
     });
+
+    test('applies incrementalAdoption as intended', () => {
+      jest.spyOn(readPkgUp, 'sync').mockReturnValue({
+        packageJson: {
+          dependencies: {
+            'react-scripts': '3.4.1',
+            react: '^17.0.1',
+          },
+        },
+      });
+
+      const defaultConfig = createConfig({
+        cacheOptions: {
+          enabled: false,
+        },
+      });
+
+      const firstDefaultErrorRule = Object.entries(defaultConfig.rules).find(
+        ([, value]) => {
+          return value === 2;
+        }
+      );
+
+      expect(firstDefaultErrorRule).toBeDefined();
+
+      const withIncrementalAdoption = createConfig({
+        incrementalAdoption: true,
+        cacheOptions: {
+          enabled: false,
+        },
+      });
+
+      const match = Object.entries(withIncrementalAdoption.rules).find(
+        ([key]) => key === firstDefaultErrorRule[0]
+      );
+
+      expect(match).toBeDefined();
+
+      expect(match[1]).not.toBe(firstDefaultErrorRule[1]);
+
+      expect(withIncrementalAdoption).toMatchSnapshot();
+    });
   });
 
   describe('caching', () => {

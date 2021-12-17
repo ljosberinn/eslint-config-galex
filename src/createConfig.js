@@ -210,7 +210,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
  * @param {{
  *  cwd?: string
  *  tsConfigPath?: string;
- *  rules?: object;
+ *  rules?: Record<string, 0 | 1 | 2 | [0 | 1 | 2 | "off" | "error" | "warn", unknown] | "off" | "error" | "warn";
  *  overrides?: unknown[];
  *  plugins?: string[];
  *  env?: object;
@@ -218,6 +218,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
  *  ignorePatterns?: string[];
  *  settings?: Record<string, any>;
  *  convertToESLintInternals?: boolean;
+ *  incrementalAdoption?: boolean;
  *  cacheOptions?: {
  *   enabled?: boolean;
  *   expiresAfterMs?: number
@@ -236,6 +237,7 @@ const createConfig = ({
   ignorePatterns: customIgnorePattenrs = [],
   settings: customSettings = {},
   convertToESLintInternals = true,
+  incrementalAdoption = false,
   root,
   cacheOptions: {
     enabled: cachingEnabled = true,
@@ -273,6 +275,7 @@ const createConfig = ({
 
   const flags = {
     convertToESLintInternals,
+    incrementalAdoption,
   };
 
   const overrides = mergeSortOverrides([
