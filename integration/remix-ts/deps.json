@@ -1,0 +1,45 @@
+{
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "hasStorybook": false,
+  "react": {
+    "hasReact": true,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isRemix": true,
+    "isPreact": false,
+    "version": "^17.0.2"
+  },
+  "typescript": {
+    "config": {
+      "include": [
+        "remix.env.d.ts",
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "compilerOptions": {
+        "lib": [
+          "DOM",
+          "DOM.Iterable",
+          "ES2019"
+        ],
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "target": "ES2019",
+        "strict": true,
+        "paths": {
+          "~/*": [
+            "./app/*"
+          ]
+        },
+        "noEmit": true
+      }
+    },
+    "hasTypeScript": true,
+    "version": "^4.1.2"
+  }
+}

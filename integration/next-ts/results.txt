@@ -1,5 +1,5 @@
-writing deps to  /workspaces/eslint-config-galex/integration/next-ts/deps.json
-writing config cache to  /workspaces/eslint-config-galex/integration/next-ts/eslint-config.json
+writing deps to /workspaces/eslint-config-galex/integration/next-ts/deps.json
+writing config cache to /workspaces/eslint-config-galex/integration/next-ts/eslint-config.json
 TAP version 13
 1..3
 not ok 1 - /workspaces/eslint-config-galex/integration/next-ts/pages/_app.tsx

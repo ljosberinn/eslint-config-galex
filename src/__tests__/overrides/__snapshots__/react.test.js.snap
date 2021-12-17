@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`createReactOverride adds import resolver config to settings given remix without typescript 1`] = `
+Object {
+  "import/resolver": Object {
+    "jsconfig": Object {
+      "config": "jsconfig.json",
+    },
+  },
+  "react": Object {
+    "version": "detect",
+  },
+}
+`;
+
 exports[`createReactOverride allows passing extra rules 1`] = `
 Object {
   "extends": Array [],
@@ -11,7 +24,9 @@ Object {
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "babelOptions": Object {
-      "presets": Array [],
+      "presets": Array [
+        "@babel/preset-react",
+      ],
     },
     "ecmaFeatures": Object {
       "jsx": true,
@@ -23,7 +38,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -284,7 +298,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -529,7 +542,9 @@ Object {
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "babelOptions": Object {
-      "presets": Array [],
+      "presets": Array [
+        "@babel/preset-react",
+      ],
     },
     "ecmaFeatures": Object {
       "jsx": true,
@@ -541,7 +556,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -1375,7 +1389,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -1619,7 +1632,9 @@ Object {
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "babelOptions": Object {
-      "presets": Array [],
+      "presets": Array [
+        "@babel/preset-react",
+      ],
     },
     "ecmaFeatures": Object {
       "jsx": true,
@@ -1631,7 +1646,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -2465,7 +2479,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -2725,7 +2738,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",
@@ -2984,7 +2996,6 @@ Object {
     "jsx-a11y",
     "react-hooks",
     "react",
-    "@next/next",
   ],
   "rules": Object {
     "jsx-a11y/accessible-emoji": "off",

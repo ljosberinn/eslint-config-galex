@@ -164,6 +164,7 @@ All rules are commented and link to their docs.
 
 - [x] React
 - [x] Next.js
+- [x] Remix Run
 - [x] TypeScript
 - [x] Node.js
 - [x] jest
@@ -240,6 +241,10 @@ interface Project {
      * whether `next` is present
      */
     isNext: boolean;
+    /**
+     *  whether `@remix-run/react` is present
+     */
+    isRemix: boolean;
     /**
      * whether `preact` is present
      * currently without effect

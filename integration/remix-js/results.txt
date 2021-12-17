@@ -1,0 +1,311 @@
+writing deps to /workspaces/eslint-config-galex/integration/remix-js/deps.json
+writing config cache to /workspaces/eslint-config-galex/integration/remix-js/eslint-config.json
+TAP version 13
+1..12
+ok 1 - /workspaces/eslint-config-galex/integration/remix-js/app/entry.client.jsx
+ok 2 - /workspaces/eslint-config-galex/integration/remix-js/app/entry.server.jsx
+  ---
+  message: '''markup'' is never reassigned. Use ''const'' instead.'
+  severity: warning
+  data:
+    line: 10
+    column: 7
+    ruleId: prefer-const
+  messages:
+    - message: Unexpected string concatenation.
+      severity: warning
+      data:
+        line: 16
+        column: 23
+        ruleId: prefer-template
+  ...
+not ok 3 - /workspaces/eslint-config-galex/integration/remix-js/app/root.jsx
+  ---
+  message: '`~/styles/dark.css` import should occur before import of `~/styles/global.css`'
+  severity: warning
+  data:
+    line: 13
+    column: 1
+    ruleId: import/order
+  messages:
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 16
+        column: 8
+        ruleId: import/no-mutable-exports
+    - message: '''links'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 16
+        column: 12
+        ruleId: prefer-const
+    - message: Unexpected console statement.
+      severity: warning
+      data:
+        line: 41
+        column: 3
+        ruleId: no-console
+    - message: '''caught'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 61
+        column: 7
+        ruleId: prefer-const
+  ...
+not ok 4 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/about.jsx
+  ---
+  message: Exporting mutable 'let' binding, use 'const' instead.
+  severity: error
+  data:
+    line: 5
+    column: 8
+    ruleId: import/no-mutable-exports
+  messages:
+    - message: '''meta'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 5
+        column: 12
+        ruleId: prefer-const
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 11
+        column: 8
+        ruleId: import/no-mutable-exports
+    - message: '''links'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 11
+        column: 12
+        ruleId: prefer-const
+  ...
+ok 5 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/about/index.jsx
+ok 6 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/about/whoa.jsx
+not ok 7 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/actions.jsx
+  ---
+  message: Exporting mutable 'let' binding, use 'const' instead.
+  severity: error
+  data:
+    line: 11
+    column: 8
+    ruleId: import/no-mutable-exports
+  messages:
+    - message: '''action'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 11
+        column: 12
+        ruleId: prefer-const
+    - message: '''formData'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 12
+        column: 7
+        ruleId: prefer-const
+    - message: '''answer'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 13
+        column: 7
+        ruleId: prefer-const
+    - message: '''actionMessage'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 36
+        column: 7
+        ruleId: prefer-const
+    - message: '''answerRef'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 37
+        column: 7
+        ruleId: prefer-const
+    - message: A control must be associated with a text label.
+      severity: warning
+      data:
+        line: 64
+        column: 13
+        ruleId: jsx-a11y/control-has-associated-label
+    - message: Missing an explicit type attribute for button
+      severity: error
+      data:
+        line: 67
+        column: 13
+        ruleId: react/button-has-type
+  ...
+ok 8 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/correct.jsx
+ok 9 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/params.jsx
+  ---
+  message: '''useCatch'' is defined but never used.'
+  severity: warning
+  data:
+    line: 1
+    column: 10
+    ruleId: no-unused-vars
+  messages:
+    - message: '''json'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 26
+        ruleId: no-unused-vars
+    - message: '''useLoaderData'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 32
+        ruleId: no-unused-vars
+  ...
+not ok 10 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/params/$id.jsx
+  ---
+  message: '''Link'' is defined but never used.'
+  severity: warning
+  data:
+    line: 1
+    column: 20
+    ruleId: no-unused-vars
+  messages:
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 6
+        column: 8
+        ruleId: import/no-mutable-exports
+    - message: '''loader'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 6
+        column: 12
+        ruleId: prefer-const
+    - message: Async arrow function has no 'await' expression.
+      severity: error
+      data:
+        line: 6
+        column: 40
+        ruleId: require-await
+    - message: '''lol'' is not defined.'
+      severity: error
+      data:
+        line: 30
+        column: 5
+        ruleId: no-undef
+    - message: '''data'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 40
+        column: 7
+        ruleId: prefer-const
+    - message: '''caught'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 52
+        column: 7
+        ruleId: prefer-const
+    - message: Expected a 'break' statement before 'case'.
+      severity: warning
+      data:
+        line: 63
+        column: 5
+        ruleId: no-fallthrough
+    - message: Expected a 'break' statement before 'default'.
+      severity: warning
+      data:
+        line: 67
+        column: 5
+        ruleId: no-fallthrough
+    - message: Unexpected console statement.
+      severity: warning
+      data:
+        line: 92
+        column: 3
+        ruleId: no-console
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 105
+        column: 8
+        ruleId: import/no-mutable-exports
+    - message: '''meta'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 105
+        column: 12
+        ruleId: prefer-const
+  ...
+ok 11 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/params/index.jsx
+  ---
+  message: '''useCatch'' is defined but never used.'
+  severity: warning
+  data:
+    line: 1
+    column: 10
+    ruleId: no-unused-vars
+  messages:
+    - message: '''Link'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 20
+        ruleId: no-unused-vars
+    - message: '''json'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 26
+        ruleId: no-unused-vars
+    - message: '''useLoaderData'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 32
+        ruleId: no-unused-vars
+    - message: '''Outlet'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 47
+        ruleId: no-unused-vars
+  ...
+not ok 12 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/index.jsx
+  ---
+  message: Exporting mutable 'let' binding, use 'const' instead.
+  severity: error
+  data:
+    line: 7
+    column: 8
+    ruleId: import/no-mutable-exports
+  messages:
+    - message: '''loader'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 7
+        column: 12
+        ruleId: prefer-const
+    - message: '''data'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 8
+        column: 7
+        ruleId: prefer-const
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 44
+        column: 8
+        ruleId: import/no-mutable-exports
+    - message: '''meta'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 44
+        column: 12
+        ruleId: prefer-const
+    - message: '''data'' is never reassigned. Use ''const'' instead.'
+      severity: warning
+      data:
+        line: 53
+        column: 7
+        ruleId: prefer-const
+  ...
+

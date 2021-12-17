@@ -33,6 +33,7 @@ const defaultSettings = {
  *   isCreateReactApp: boolean;
  *   hasReact: boolean;
  *   isNext: boolean;
+ *   isRemix: boolean;
  *   version: string;
  *  };
  *  typescript: {
@@ -83,8 +84,11 @@ const createReactOverride = ({
     },
     babelOptions: {
       presets: uniqueArrayEntries(
-        react.isNext && 'next/babel',
-        react.isCreateReactApp && 'react-app',
+        react.isNext
+          ? 'next/babel'
+          : react.isCreateReactApp
+          ? 'react-app'
+          : !typescript.hasTypeScript && '@babel/preset-react',
         ...defaultParserOptions.babelOptions.presets,
         ...customParserOptions.babelOptions.presets
       ),
@@ -98,21 +102,30 @@ const createReactOverride = ({
       ...defaultSettings.react,
       ...customSettings.react,
     },
+    ...createRemixJsImportResolverSettings({ react, typescript }),
   };
 
   const overrides = [
     createNextJsPagesOverride({ react }),
+    createRemixRunOverride({ react }),
     ...customOverrides,
   ].filter(Boolean);
 
   const finalFiles = customFiles || files;
+  const finalPlugins = plugins.filter(plugin => {
+    if (plugin === '@next/next' && !react.isNext) {
+      return false;
+    }
+
+    return true;
+  });
 
   return {
     extends: extendsConfigs,
     files: finalFiles,
     parser,
     parserOptions,
-    plugins,
+    plugins: finalPlugins,
     rules,
     settings,
     overrideType,
@@ -1303,6 +1316,37 @@ const createNextJsPagesOverride = ({ react: { isNext } }) => {
   };
 };
 
+const remixRunOverrideFiles = ['app/**/*.?(t|j)s?(x)'];
+
+const remixRules = {
+  'import/no-default-export': 'off',
+};
+
+const createRemixRunOverride = ({ react: { isRemix } }) => {
+  if (!isRemix) {
+    return null;
+  }
+
+  return {
+    files: remixRunOverrideFiles,
+    rules: remixRules,
+  };
+};
+
+const createRemixJsImportResolverSettings = ({ react, typescript }) => {
+  if (typescript.hasTypeScript || !react.isRemix) {
+    return null;
+  }
+
+  return {
+    'import/resolver': {
+      jsconfig: {
+        config: 'jsconfig.json',
+      },
+    },
+  };
+};
+
 module.exports = {
   createJSXA11yRules,
   createReactOverride,
@@ -1319,4 +1363,8 @@ module.exports = {
   nextJsPagesOverrideFiles,
   nextJsPagesRules,
   createNextJsPagesOverride,
+  createRemixRunOverride,
+  remixRunOverrideFiles,
+  remixRules,
+  createRemixJsImportResolverSettings,
 };

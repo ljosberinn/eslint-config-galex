@@ -37,7 +37,7 @@ const testingLibFamily = [
   'vue',
 ];
 
-const reactFlavours = ['react', 'preact', 'next'];
+const reactFlavours = ['react', 'preact', 'next', '@remix-run/react'];
 
 const defaultPlugins = ['import', 'unicorn', 'promise', 'sonarjs'];
 
@@ -48,7 +48,7 @@ const defaultEnv = {
 };
 
 const defaultParserOptions = {
-  ecmaVersion: 2021,
+  ecmaVersion: 'latest',
   sourceType: 'module',
 };
 
@@ -127,6 +127,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       hasReact,
       isCreateReactApp: deps.has('react-scripts'),
       isNext: deps.has('next'),
+      isRemix: deps.has('@remix-run/react'),
       // no effect yet
       isPreact: deps.has('preact'),
       // might have to be adjusted for preact in the future
@@ -192,6 +193,7 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
         hasReact: false,
         isCreateReactApp: undefined,
         isNext: false,
+        isRemix: false,
         isPreact: false,
         version: undefined,
       },

@@ -14,7 +14,8 @@
     "nextjs",
     "jest",
     "testing-library",
-    "storybook"
+    "storybook",
+    "remix-run"
   ],
   "homepage": "https://github.com/ljosberinn/eslint-config-galex#readme",
   "bugs": {
@@ -36,7 +37,7 @@
     "test:coverage": "jest --coverage",
     "semantic-release": "semantic-release",
     "install:integration": "cd integration/cra-js && yarn --frozen-lockfile && cd ../cra-ts && yarn --frozen-lockfile && cd ../next-js && yarn --frozen-lockfile && cd ../next-ts && yarn --frozen-lockfile",
-    "install:integration:clean": "rimraf integration/**/node_modules integration/**/yarn.lock && cd integration/cra-js && yarn && cd ../cra-ts && yarn && cd ../next-js && yarn && cd ../next-ts && yarn"
+    "install:integration:clean": "rimraf integration/**/node_modules integration/**/yarn.lock && cd integration/cra-js && yarn && cd ../cra-ts && yarn && cd ../next-js && yarn && cd ../next-ts && yarn && cd ../remix-js && yarn && cd ../remix-ts && yarn"
   },
   "eslintIgnore": [
     "node_modules"
@@ -72,11 +73,13 @@
   "dependencies": {
     "@babel/core": "7.16.5",
     "@babel/eslint-parser": "7.16.5",
+    "@babel/preset-react": "7.16.5",
     "@next/eslint-plugin-next": "12.0.7",
     "@typescript-eslint/eslint-plugin": "5.7.0",
     "@typescript-eslint/parser": "5.7.0",
     "confusing-browser-globals": "1.0.11",
     "eslint-config-prettier": "8.3.0",
+    "eslint-import-resolver-jsconfig": "1.1.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-jest": "25.3.0",
     "eslint-plugin-jest-dom": "3.9.2",

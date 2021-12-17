@@ -235,4 +235,31 @@ describe('createReactOverride', () => {
 
     expect(result).toMatchSnapshot();
   });
+
+  test('adds import resolver config to settings given remix without typescript', () => {
+    const project = {
+      react: {
+        hasReact: true,
+        isCreateReactApp: false,
+        isRemix: true,
+        isNext: false,
+        version: '16.13.1',
+      },
+      typescript: {
+        hasTypeScript: false,
+      },
+    };
+
+    const defaultOverride = createReactOverride({
+      ...project,
+      react: { ...project.react, isRemix: false },
+    });
+
+    expect(defaultOverride.settings['import/resolver']).toBeUndefined();
+
+    const override = createReactOverride(project);
+
+    expect(override.settings['import/resolver']).toBeDefined();
+    expect(override.settings).toMatchSnapshot();
+  });
 });

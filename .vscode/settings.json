@@ -21,5 +21,14 @@
   "editor.bracketPairColorization.enabled": true,
   "files.exclude": {
     "**/node_modules": true
-  }
+  },
+  "eslint.workingDirectories": [
+    "./integration/cra-js",
+    "./integration/cra-ts",
+    "./integration/next-js",
+    "./integration/next-ts",
+    "./integration/remix-js",
+    "./integration/remix-ts",
+    "./"
+  ]
 }

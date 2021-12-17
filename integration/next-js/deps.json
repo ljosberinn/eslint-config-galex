@@ -8,8 +8,11 @@
     "hasReact": true,
     "isCreateReactApp": false,
     "isNext": true,
+    "isRemix": false,
     "isPreact": false,
     "version": "17.0.2"
   },
-  "typescript": { "hasTypeScript": false }
+  "typescript": {
+    "hasTypeScript": false
+  }
 }

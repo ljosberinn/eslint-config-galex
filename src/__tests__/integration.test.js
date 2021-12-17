@@ -5,10 +5,6 @@ const { execSync } = require('child_process');
 const { readFileSync } = require('fs');
 const { resolve } = require('path');
 
-const env = {
-  env: 'production',
-};
-
 /**
  *
  * @param {string} cwd
@@ -77,6 +73,8 @@ const cases = [
   { name: 'create-react-app typescript', type: 'cra', lng: 'ts' },
   { name: 'create-next-app javascript', type: 'next', lng: 'js' },
   { name: 'create-next-app typescript', type: 'next', lng: 'ts' },
+  { name: 'create-remix javascript', type: 'remix', lng: 'js' },
+  { name: 'create-remix typescript', type: 'remix', lng: 'ts' },
 ];
 
 describe.each(cases)('$case.name', ({ type, name, lng }) => {
@@ -85,7 +83,13 @@ describe.each(cases)('$case.name', ({ type, name, lng }) => {
 
   test(`${name}`, () => {
     try {
-      execSync('yarn lint:integration', { cwd, env });
+      execSync('yarn lint:integration', {
+        cwd,
+        env: {
+          NODE_ENV: 'production',
+          PUBLIC_URL: '',
+        },
+      });
     } catch {
       const updatedSnapshots = readSnapshots(cwd);
 
@@ -94,8 +98,6 @@ describe.each(cases)('$case.name', ({ type, name, lng }) => {
         expect(config).toStrictEqual(updatedSnapshots.config);
         expect(deps).toStrictEqual(updatedSnapshots.deps);
       }
-    } finally {
-      execSync('prettier --write *.json', { cwd });
     }
   });
 });

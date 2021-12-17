@@ -104,7 +104,7 @@ Object {
     },
   ],
   "parserOptions": Object {
-    "ecmaVersion": 2021,
+    "ecmaVersion": "latest",
     "sourceType": "module",
   },
   "plugins": Array [
@@ -840,7 +840,7 @@ Object {
     },
   ],
   "parserOptions": Object {
-    "ecmaVersion": 2021,
+    "ecmaVersion": "latest",
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1581,7 +1581,7 @@ Object {
     },
   ],
   "parserOptions": Object {
-    "ecmaVersion": 2021,
+    "ecmaVersion": "latest",
     "sourceType": "module",
   },
   "plugins": Array [
@@ -2317,7 +2317,7 @@ Object {
     },
   ],
   "parserOptions": Object {
-    "ecmaVersion": 2021,
+    "ecmaVersion": "latest",
     "foo": "bar",
     "sourceType": "module",
   },
@@ -3054,7 +3054,7 @@ Object {
     },
   ],
   "parserOptions": Object {
-    "ecmaVersion": 2021,
+    "ecmaVersion": "latest",
     "sourceType": "module",
   },
   "plugins": Array [
@@ -3791,7 +3791,7 @@ Object {
     },
   ],
   "parserOptions": Object {
-    "ecmaVersion": 2021,
+    "ecmaVersion": "latest",
     "sourceType": "module",
   },
   "plugins": Array [
@@ -4436,6 +4436,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4458,6 +4459,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4480,6 +4482,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4502,6 +4505,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4524,6 +4528,7 @@ Object {
     "isCreateReactApp": true,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4546,6 +4551,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4572,6 +4578,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4598,6 +4605,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4620,6 +4628,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4646,6 +4655,7 @@ Object {
     "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
@@ -4668,6 +4678,7 @@ Object {
     "isCreateReactApp": undefined,
     "isNext": false,
     "isPreact": false,
+    "isRemix": false,
     "version": undefined,
   },
   "typescript": Object {
