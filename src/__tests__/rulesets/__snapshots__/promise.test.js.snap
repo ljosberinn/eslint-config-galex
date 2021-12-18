@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createPromiseRules allows passing custom rules 1`] = `
-Object {
+{
   "promise/always-return": "error",
   "promise/avoid-new": "off",
   "promise/catch-or-return": "off",
@@ -20,7 +20,7 @@ Object {
 `;
 
 exports[`createPromiseRules matches snapshot with typescript 1`] = `
-Object {
+{
   "promise/always-return": "off",
   "promise/avoid-new": "off",
   "promise/catch-or-return": "off",
@@ -39,12 +39,12 @@ Object {
 `;
 
 exports[`createPromiseRules matches snapshot without typescript 1`] = `
-Object {
+{
   "promise/always-return": "off",
   "promise/avoid-new": "off",
-  "promise/catch-or-return": Array [
+  "promise/catch-or-return": [
     "error",
-    Object {
+    {
       "allowFinally": true,
       "allowThen": true,
     },

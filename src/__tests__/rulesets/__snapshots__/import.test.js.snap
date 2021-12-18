@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createImportRules allows passing custom rules 1`] = `
-Object {
+{
   "import/default": "off",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "off",
@@ -17,9 +17,9 @@ Object {
   "import/no-amd": "error",
   "import/no-anonymous-default-export": "error",
   "import/no-commonjs": "off",
-  "import/no-cycle": Array [
+  "import/no-cycle": [
     "warn",
-    Object {
+    {
       "ignoreExternal": true,
       "maxDepth": 5,
     },
@@ -47,19 +47,19 @@ Object {
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": Array [
+  "import/order": [
     "warn",
-    Object {
-      "alphabetize": Object {
+    {
+      "alphabetize": {
         "order": "asc",
       },
-      "groups": Array [
-        Array [
+      "groups": [
+        [
           "builtin",
           "external",
           "internal",
         ],
-        Array [
+        [
           "unknown",
           "parent",
           "sibling",
@@ -75,7 +75,7 @@ Object {
 `;
 
 exports[`createImportRules disables import/no-cycle options given a CRA project 1`] = `
-Object {
+{
   "import/default": "warn",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "off",
@@ -115,19 +115,19 @@ Object {
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": Array [
+  "import/order": [
     "warn",
-    Object {
-      "alphabetize": Object {
+    {
+      "alphabetize": {
         "order": "asc",
       },
-      "groups": Array [
-        Array [
+      "groups": [
+        [
           "builtin",
           "external",
           "internal",
         ],
-        Array [
+        [
           "unknown",
           "parent",
           "sibling",
@@ -143,7 +143,7 @@ Object {
 `;
 
 exports[`createImportRules matches snapshot with typescript & CRA 1`] = `
-Object {
+{
   "import/default": "warn",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "off",
@@ -183,19 +183,19 @@ Object {
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": Array [
+  "import/order": [
     "warn",
-    Object {
-      "alphabetize": Object {
+    {
+      "alphabetize": {
         "order": "asc",
       },
-      "groups": Array [
-        Array [
+      "groups": [
+        [
           "builtin",
           "external",
           "internal",
         ],
-        Array [
+        [
           "unknown",
           "parent",
           "sibling",
@@ -211,7 +211,7 @@ Object {
 `;
 
 exports[`createImportRules matches snapshot with typescript 1`] = `
-Object {
+{
   "import/default": "warn",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "off",
@@ -227,9 +227,9 @@ Object {
   "import/no-amd": "error",
   "import/no-anonymous-default-export": "error",
   "import/no-commonjs": "off",
-  "import/no-cycle": Array [
+  "import/no-cycle": [
     "warn",
-    Object {
+    {
       "ignoreExternal": true,
       "maxDepth": 5,
     },
@@ -257,19 +257,19 @@ Object {
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": Array [
+  "import/order": [
     "warn",
-    Object {
-      "alphabetize": Object {
+    {
+      "alphabetize": {
         "order": "asc",
       },
-      "groups": Array [
-        Array [
+      "groups": [
+        [
           "builtin",
           "external",
           "internal",
         ],
-        Array [
+        [
           "unknown",
           "parent",
           "sibling",
@@ -285,7 +285,7 @@ Object {
 `;
 
 exports[`createImportRules matches snapshot without typescript & CRA 1`] = `
-Object {
+{
   "import/default": "warn",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "error",
@@ -301,9 +301,9 @@ Object {
   "import/no-amd": "error",
   "import/no-anonymous-default-export": "error",
   "import/no-commonjs": "off",
-  "import/no-cycle": Array [
+  "import/no-cycle": [
     "warn",
-    Object {
+    {
       "ignoreExternal": true,
       "maxDepth": 5,
     },
@@ -331,19 +331,19 @@ Object {
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": Array [
+  "import/order": [
     "warn",
-    Object {
-      "alphabetize": Object {
+    {
+      "alphabetize": {
         "order": "asc",
       },
-      "groups": Array [
-        Array [
+      "groups": [
+        [
           "builtin",
           "external",
           "internal",
         ],
-        Array [
+        [
           "unknown",
           "parent",
           "sibling",
@@ -359,7 +359,7 @@ Object {
 `;
 
 exports[`createImportRules matches snapshot without typescript & with CRA 1`] = `
-Object {
+{
   "import/default": "warn",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "error",
@@ -399,19 +399,19 @@ Object {
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": Array [
+  "import/order": [
     "warn",
-    Object {
-      "alphabetize": Object {
+    {
+      "alphabetize": {
         "order": "asc",
       },
-      "groups": Array [
-        Array [
+      "groups": [
+        [
           "builtin",
           "external",
           "internal",
         ],
-        Array [
+        [
           "unknown",
           "parent",
           "sibling",

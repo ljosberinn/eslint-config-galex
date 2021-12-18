@@ -3,12 +3,12 @@
 exports[`createStorybookOverride matches snapshot if storybook is false 1`] = `null`;
 
 exports[`createStorybookOverride matches snapshot if storybook is present 1`] = `
-Object {
-  "files": Array [
+{
+  "files": [
     "*.stories.*",
   ],
   "overrideType": "eslint-config-galex/storybook",
-  "rules": Object {
+  "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "off",
     "import/no-anonymous-default-export": "off",
@@ -19,12 +19,12 @@ Object {
 `;
 
 exports[`createStorybookOverride matches snapshot if storybook is present, without react and ts 1`] = `
-Object {
-  "files": Array [
+{
+  "files": [
     "*.stories.*",
   ],
   "overrideType": "eslint-config-galex/storybook",
-  "rules": Object {
+  "rules": {
     "import/no-anonymous-default-export": "off",
     "import/no-default-export": "off",
   },

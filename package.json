@@ -68,7 +68,10 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
+    ],
+    "snapshotFormat": {
+      "printBasicPrototype": false
+    }
   },
   "dependencies": {
     "@babel/core": "7.16.5",

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createJestConfigOverride matches snapshot given jest 1`] = `
-Object {
-  "files": Array [
+{
+  "files": [
     "jest.config.js",
     "jest.config.ts",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-default-export": "off",
   },
 }
@@ -15,36 +15,36 @@ Object {
 exports[`createJestConfigOverride matches snapshot without jest 1`] = `null`;
 
 exports[`createJestOverride allows passing extra extends 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "foo",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest/consistent-test-it": "off",
     "jest/expect-expect": "off",
@@ -66,9 +66,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -114,9 +114,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -133,8 +133,8 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -142,36 +142,36 @@ Object {
 `;
 
 exports[`createJestOverride allows passing extra rules 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest/consistent-test-it": "off",
     "jest/expect-expect": "off",
@@ -193,9 +193,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -241,9 +241,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -260,8 +260,8 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -269,36 +269,36 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & react 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest-dom/prefer-checked": "warn",
     "jest-dom/prefer-empty": "warn",
@@ -331,9 +331,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -369,8 +369,8 @@ Object {
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-identical-functions": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -378,37 +378,37 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib & cra & ts 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -446,9 +446,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -488,7 +488,7 @@ Object {
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-container": "warn",
     "testing-library/no-debugging-utils": "error",
-    "testing-library/no-dom-import": Array [
+    "testing-library/no-dom-import": [
       "warn",
       "react",
     ],
@@ -496,9 +496,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -515,11 +515,11 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
-    "testing-library/custom-renders": Array [
+    "testing-library/custom-renders": [
       "renderToStaticMarkup",
     ],
   },
@@ -527,37 +527,37 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib & next & ts 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -595,9 +595,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -641,7 +641,7 @@ Object {
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-container": "warn",
     "testing-library/no-debugging-utils": "error",
-    "testing-library/no-dom-import": Array [
+    "testing-library/no-dom-import": [
       "warn",
       "react",
     ],
@@ -649,9 +649,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -668,11 +668,11 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
-    "testing-library/custom-renders": Array [
+    "testing-library/custom-renders": [
       "renderToStaticMarkup",
       "renderDocument",
     ],
@@ -681,37 +681,37 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib & react & ts 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -749,9 +749,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -795,7 +795,7 @@ Object {
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-container": "warn",
     "testing-library/no-debugging-utils": "error",
-    "testing-library/no-dom-import": Array [
+    "testing-library/no-dom-import": [
       "warn",
       "react",
     ],
@@ -803,9 +803,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -822,11 +822,11 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
-    "testing-library/custom-renders": Array [
+    "testing-library/custom-renders": [
       "renderToStaticMarkup",
     ],
   },
@@ -834,37 +834,37 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib & react 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest-dom/prefer-checked": "warn",
     "jest-dom/prefer-empty": "warn",
@@ -897,9 +897,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -942,7 +942,7 @@ Object {
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-container": "warn",
     "testing-library/no-debugging-utils": "error",
-    "testing-library/no-dom-import": Array [
+    "testing-library/no-dom-import": [
       "warn",
       "react",
     ],
@@ -950,9 +950,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -969,11 +969,11 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
-    "testing-library/custom-renders": Array [
+    "testing-library/custom-renders": [
       "renderToStaticMarkup",
     ],
   },
@@ -981,37 +981,37 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib & ts 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -1049,9 +1049,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1098,9 +1098,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -1117,8 +1117,8 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1126,37 +1126,37 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest-dom/prefer-checked": "warn",
     "jest-dom/prefer-empty": "warn",
@@ -1189,9 +1189,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1237,9 +1237,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -1256,8 +1256,8 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1265,36 +1265,36 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom & ts 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -1332,9 +1332,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1369,8 +1369,8 @@ Object {
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-identical-functions": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1378,36 +1378,36 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & jest-dom 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "jest-dom",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest-dom/prefer-checked": "warn",
     "jest-dom/prefer-empty": "warn",
@@ -1440,9 +1440,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1476,8 +1476,8 @@ Object {
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-identical-functions": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1485,35 +1485,35 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & react 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest/consistent-test-it": "off",
     "jest/expect-expect": "off",
@@ -1535,9 +1535,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1573,8 +1573,8 @@ Object {
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-identical-functions": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1582,36 +1582,36 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & testing-lib 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
     "testing-library",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest/consistent-test-it": "off",
     "jest/expect-expect": "off",
@@ -1633,9 +1633,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1681,9 +1681,9 @@ Object {
     "testing-library/no-node-access": "warn",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-setup": "off",
-    "testing-library/no-unnecessary-act": Array [
+    "testing-library/no-unnecessary-act": [
       "error",
-      Object {
+      {
         "isStrict": true,
       },
     ],
@@ -1700,8 +1700,8 @@ Object {
     "testing-library/prefer-wait-for": "warn",
     "testing-library/render-result-naming-convention": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1709,35 +1709,35 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest & ts 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -1764,9 +1764,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1801,8 +1801,8 @@ Object {
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-identical-functions": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1810,35 +1810,35 @@ Object {
 `;
 
 exports[`createJestOverride matches snapshot with jest 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "jest": true,
   },
-  "extends": Array [
+  "extends": [
     "plugin:jest-formatting/strict",
   ],
-  "files": Array [
+  "files": [
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "jest.config.js",
         "jest.config.ts",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": 2020,
   },
-  "plugins": Array [
+  "plugins": [
     "jest",
   ],
-  "rules": Object {
+  "rules": {
     "import/no-namespace": "off",
     "jest/consistent-test-it": "off",
     "jest/expect-expect": "off",
@@ -1860,9 +1860,9 @@ Object {
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
     "jest/no-jest-import": "error",
-    "jest/no-large-snapshots": Array [
+    "jest/no-large-snapshots": [
       "warn",
-      Object {
+      {
         "maxSize": 300,
       },
     ],
@@ -1896,8 +1896,8 @@ Object {
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-identical-functions": "off",
   },
-  "settings": Object {
-    "jest": Object {
+  "settings": {
+    "jest": {
       "version": "detect",
     },
   },
@@ -1907,7 +1907,7 @@ Object {
 exports[`createJestOverride matches snapshot without jest 1`] = `null`;
 
 exports[`getTestingLibraryRules matches snapshot given react 1`] = `
-Object {
+{
   "testing-library/await-async-query": "error",
   "testing-library/await-async-utils": "error",
   "testing-library/await-fire-event": "off",
@@ -1916,7 +1916,7 @@ Object {
   "testing-library/no-await-sync-query": "error",
   "testing-library/no-container": "warn",
   "testing-library/no-debugging-utils": "error",
-  "testing-library/no-dom-import": Array [
+  "testing-library/no-dom-import": [
     "warn",
     "react",
   ],
@@ -1924,9 +1924,9 @@ Object {
   "testing-library/no-node-access": "warn",
   "testing-library/no-promise-in-fire-event": "error",
   "testing-library/no-render-in-setup": "off",
-  "testing-library/no-unnecessary-act": Array [
+  "testing-library/no-unnecessary-act": [
     "error",
-    Object {
+    {
       "isStrict": true,
     },
   ],
@@ -1946,7 +1946,7 @@ Object {
 `;
 
 exports[`getTestingLibraryRules matches snapshot without react 1`] = `
-Object {
+{
   "testing-library/await-async-query": "error",
   "testing-library/await-async-utils": "error",
   "testing-library/await-fire-event": "off",
@@ -1960,9 +1960,9 @@ Object {
   "testing-library/no-node-access": "warn",
   "testing-library/no-promise-in-fire-event": "error",
   "testing-library/no-render-in-setup": "off",
-  "testing-library/no-unnecessary-act": Array [
+  "testing-library/no-unnecessary-act": [
     "error",
-    Object {
+    {
       "isStrict": true,
     },
   ],

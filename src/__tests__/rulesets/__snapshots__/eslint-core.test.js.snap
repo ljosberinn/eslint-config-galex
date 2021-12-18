@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createEslintCoreRules allows passing custom rules 1`] = `
-Object {
+{
   "accessor-pairs": "off",
   "array-bracket-newline": "off",
   "array-bracket-spacing": "off",
-  "array-callback-return": Array [
+  "array-callback-return": [
     "error",
-    Object {
+    {
       "checkForEach": true,
     },
   ],
@@ -29,7 +29,7 @@ Object {
   "consistent-return": "off",
   "consistent-this": "off",
   "constructor-super": "error",
-  "curly": Array [
+  "curly": [
     "warn",
     "all",
   ],
@@ -43,7 +43,7 @@ Object {
   "for-direction": "off",
   "func-call-spacing": "off",
   "func-name-matching": "off",
-  "func-names": Array [
+  "func-names": [
     "warn",
     "as-needed",
   ],
@@ -94,7 +94,7 @@ Object {
   "no-class-assign": "error",
   "no-comma-dangle": "off",
   "no-compare-neg-zero": "error",
-  "no-cond-assign": Array [
+  "no-cond-assign": [
     "warn",
     "except-parens",
   ],
@@ -132,9 +132,9 @@ Object {
   "no-floating-decimal": "off",
   "no-func-assign": "warn",
   "no-global-assign": "warn",
-  "no-implicit-coercion": Array [
+  "no-implicit-coercion": [
     "warn",
-    Object {
+    {
       "boolean": false,
       "number": true,
       "string": true,
@@ -183,7 +183,7 @@ Object {
   "no-regex-spaces": "warn",
   "no-reserved-keys": "off",
   "no-restricted-exports": "off",
-  "no-restricted-globals": Array [
+  "no-restricted-globals": [
     "error",
     "addEventListener",
     "blur",
@@ -277,9 +277,9 @@ Object {
   "no-unsafe-finally": "error",
   "no-unsafe-negation": "warn",
   "no-unsafe-optional-chaining": "error",
-  "no-unused-expressions": Array [
+  "no-unused-expressions": [
     "error",
-    Object {
+    {
       "allowShortCircuit": true,
       "allowTaggedTemplates": true,
       "allowTernary": true,
@@ -287,16 +287,16 @@ Object {
   ],
   "no-unused-labels": "off",
   "no-unused-private-class-members": "warn",
-  "no-unused-vars": Array [
+  "no-unused-vars": [
     "warn",
-    Object {
+    {
       "args": "none",
       "ignoreRestSiblings": true,
     },
   ],
-  "no-use-before-define": Array [
+  "no-use-before-define": [
     "warn",
-    Object {
+    {
       "classes": false,
       "functions": false,
       "variables": false,
@@ -322,12 +322,12 @@ Object {
   "object-curly-spacing": "off",
   "object-property-newline": "off",
   "object-shorthand": "warn",
-  "one-var": Array [
+  "one-var": [
     "warn",
     "never",
   ],
   "one-var-declaration-per-line": "off",
-  "operator-assignment": Array [
+  "operator-assignment": [
     "warn",
     "always",
   ],
@@ -372,10 +372,10 @@ Object {
   "space-return-throw-case": "off",
   "space-unary-ops": "off",
   "space-unary-word-ops": "off",
-  "spaced-comment": Array [
+  "spaced-comment": [
     "warn",
     "always",
-    Object {},
+    {},
   ],
   "strict": "off",
   "switch-colon-spacing": "off",
@@ -394,7 +394,7 @@ Object {
 `;
 
 exports[`createEslintCoreRules matches snapshot with ts & cra 1`] = `
-Object {
+{
   "accessor-pairs": "off",
   "array-bracket-newline": "off",
   "array-bracket-spacing": "off",
@@ -417,7 +417,7 @@ Object {
   "consistent-return": "off",
   "consistent-this": "off",
   "constructor-super": "off",
-  "curly": Array [
+  "curly": [
     "warn",
     "all",
   ],
@@ -431,7 +431,7 @@ Object {
   "for-direction": "error",
   "func-call-spacing": "off",
   "func-name-matching": "off",
-  "func-names": Array [
+  "func-names": [
     "warn",
     "as-needed",
   ],
@@ -482,7 +482,7 @@ Object {
   "no-class-assign": "error",
   "no-comma-dangle": "off",
   "no-compare-neg-zero": "error",
-  "no-cond-assign": Array [
+  "no-cond-assign": [
     "warn",
     "except-parens",
   ],
@@ -520,9 +520,9 @@ Object {
   "no-floating-decimal": "off",
   "no-func-assign": "off",
   "no-global-assign": "warn",
-  "no-implicit-coercion": Array [
+  "no-implicit-coercion": [
     "warn",
-    Object {
+    {
       "boolean": false,
       "number": true,
       "string": true,
@@ -571,7 +571,7 @@ Object {
   "no-regex-spaces": "warn",
   "no-reserved-keys": "off",
   "no-restricted-exports": "off",
-  "no-restricted-globals": Array [
+  "no-restricted-globals": [
     "error",
     "addEventListener",
     "blur",
@@ -690,12 +690,12 @@ Object {
   "object-curly-spacing": "off",
   "object-property-newline": "off",
   "object-shorthand": "warn",
-  "one-var": Array [
+  "one-var": [
     "warn",
     "never",
   ],
   "one-var-declaration-per-line": "off",
-  "operator-assignment": Array [
+  "operator-assignment": [
     "warn",
     "always",
   ],
@@ -740,11 +740,11 @@ Object {
   "space-return-throw-case": "off",
   "space-unary-ops": "off",
   "space-unary-word-ops": "off",
-  "spaced-comment": Array [
+  "spaced-comment": [
     "warn",
     "always",
-    Object {
-      "markers": Array [
+    {
+      "markers": [
         "/",
       ],
     },
@@ -766,7 +766,7 @@ Object {
 `;
 
 exports[`createEslintCoreRules matches snapshot with ts & next 1`] = `
-Object {
+{
   "accessor-pairs": "off",
   "array-bracket-newline": "off",
   "array-bracket-spacing": "off",
@@ -789,7 +789,7 @@ Object {
   "consistent-return": "off",
   "consistent-this": "off",
   "constructor-super": "off",
-  "curly": Array [
+  "curly": [
     "warn",
     "all",
   ],
@@ -803,7 +803,7 @@ Object {
   "for-direction": "error",
   "func-call-spacing": "off",
   "func-name-matching": "off",
-  "func-names": Array [
+  "func-names": [
     "warn",
     "as-needed",
   ],
@@ -854,7 +854,7 @@ Object {
   "no-class-assign": "error",
   "no-comma-dangle": "off",
   "no-compare-neg-zero": "error",
-  "no-cond-assign": Array [
+  "no-cond-assign": [
     "warn",
     "except-parens",
   ],
@@ -892,9 +892,9 @@ Object {
   "no-floating-decimal": "off",
   "no-func-assign": "off",
   "no-global-assign": "warn",
-  "no-implicit-coercion": Array [
+  "no-implicit-coercion": [
     "warn",
-    Object {
+    {
       "boolean": false,
       "number": true,
       "string": true,
@@ -943,7 +943,7 @@ Object {
   "no-regex-spaces": "warn",
   "no-reserved-keys": "off",
   "no-restricted-exports": "off",
-  "no-restricted-globals": Array [
+  "no-restricted-globals": [
     "error",
     "addEventListener",
     "blur",
@@ -1062,12 +1062,12 @@ Object {
   "object-curly-spacing": "off",
   "object-property-newline": "off",
   "object-shorthand": "warn",
-  "one-var": Array [
+  "one-var": [
     "warn",
     "never",
   ],
   "one-var-declaration-per-line": "off",
-  "operator-assignment": Array [
+  "operator-assignment": [
     "warn",
     "always",
   ],
@@ -1112,11 +1112,11 @@ Object {
   "space-return-throw-case": "off",
   "space-unary-ops": "off",
   "space-unary-word-ops": "off",
-  "spaced-comment": Array [
+  "spaced-comment": [
     "warn",
     "always",
-    Object {
-      "markers": Array [
+    {
+      "markers": [
         "/",
       ],
     },
@@ -1138,7 +1138,7 @@ Object {
 `;
 
 exports[`createEslintCoreRules matches snapshot with typescript 1`] = `
-Object {
+{
   "accessor-pairs": "off",
   "array-bracket-newline": "off",
   "array-bracket-spacing": "off",
@@ -1161,7 +1161,7 @@ Object {
   "consistent-return": "off",
   "consistent-this": "off",
   "constructor-super": "off",
-  "curly": Array [
+  "curly": [
     "warn",
     "all",
   ],
@@ -1175,7 +1175,7 @@ Object {
   "for-direction": "error",
   "func-call-spacing": "off",
   "func-name-matching": "off",
-  "func-names": Array [
+  "func-names": [
     "warn",
     "as-needed",
   ],
@@ -1226,7 +1226,7 @@ Object {
   "no-class-assign": "error",
   "no-comma-dangle": "off",
   "no-compare-neg-zero": "error",
-  "no-cond-assign": Array [
+  "no-cond-assign": [
     "warn",
     "except-parens",
   ],
@@ -1264,9 +1264,9 @@ Object {
   "no-floating-decimal": "off",
   "no-func-assign": "off",
   "no-global-assign": "warn",
-  "no-implicit-coercion": Array [
+  "no-implicit-coercion": [
     "warn",
-    Object {
+    {
       "boolean": false,
       "number": true,
       "string": true,
@@ -1315,7 +1315,7 @@ Object {
   "no-regex-spaces": "warn",
   "no-reserved-keys": "off",
   "no-restricted-exports": "off",
-  "no-restricted-globals": Array [
+  "no-restricted-globals": [
     "error",
     "addEventListener",
     "blur",
@@ -1434,12 +1434,12 @@ Object {
   "object-curly-spacing": "off",
   "object-property-newline": "off",
   "object-shorthand": "warn",
-  "one-var": Array [
+  "one-var": [
     "warn",
     "never",
   ],
   "one-var-declaration-per-line": "off",
-  "operator-assignment": Array [
+  "operator-assignment": [
     "warn",
     "always",
   ],
@@ -1484,10 +1484,10 @@ Object {
   "space-return-throw-case": "off",
   "space-unary-ops": "off",
   "space-unary-word-ops": "off",
-  "spaced-comment": Array [
+  "spaced-comment": [
     "warn",
     "always",
-    Object {},
+    {},
   ],
   "strict": "off",
   "switch-colon-spacing": "off",
@@ -1506,13 +1506,13 @@ Object {
 `;
 
 exports[`createEslintCoreRules matches snapshot without typescript 1`] = `
-Object {
+{
   "accessor-pairs": "off",
   "array-bracket-newline": "off",
   "array-bracket-spacing": "off",
-  "array-callback-return": Array [
+  "array-callback-return": [
     "error",
-    Object {
+    {
       "checkForEach": true,
     },
   ],
@@ -1534,7 +1534,7 @@ Object {
   "consistent-return": "off",
   "consistent-this": "off",
   "constructor-super": "error",
-  "curly": Array [
+  "curly": [
     "warn",
     "all",
   ],
@@ -1548,7 +1548,7 @@ Object {
   "for-direction": "error",
   "func-call-spacing": "off",
   "func-name-matching": "off",
-  "func-names": Array [
+  "func-names": [
     "warn",
     "as-needed",
   ],
@@ -1599,7 +1599,7 @@ Object {
   "no-class-assign": "error",
   "no-comma-dangle": "off",
   "no-compare-neg-zero": "error",
-  "no-cond-assign": Array [
+  "no-cond-assign": [
     "warn",
     "except-parens",
   ],
@@ -1637,9 +1637,9 @@ Object {
   "no-floating-decimal": "off",
   "no-func-assign": "warn",
   "no-global-assign": "warn",
-  "no-implicit-coercion": Array [
+  "no-implicit-coercion": [
     "warn",
-    Object {
+    {
       "boolean": false,
       "number": true,
       "string": true,
@@ -1688,7 +1688,7 @@ Object {
   "no-regex-spaces": "warn",
   "no-reserved-keys": "off",
   "no-restricted-exports": "off",
-  "no-restricted-globals": Array [
+  "no-restricted-globals": [
     "error",
     "addEventListener",
     "blur",
@@ -1782,9 +1782,9 @@ Object {
   "no-unsafe-finally": "error",
   "no-unsafe-negation": "warn",
   "no-unsafe-optional-chaining": "error",
-  "no-unused-expressions": Array [
+  "no-unused-expressions": [
     "error",
-    Object {
+    {
       "allowShortCircuit": true,
       "allowTaggedTemplates": true,
       "allowTernary": true,
@@ -1792,16 +1792,16 @@ Object {
   ],
   "no-unused-labels": "off",
   "no-unused-private-class-members": "warn",
-  "no-unused-vars": Array [
+  "no-unused-vars": [
     "warn",
-    Object {
+    {
       "args": "none",
       "ignoreRestSiblings": true,
     },
   ],
-  "no-use-before-define": Array [
+  "no-use-before-define": [
     "warn",
-    Object {
+    {
       "classes": false,
       "functions": false,
       "variables": false,
@@ -1827,12 +1827,12 @@ Object {
   "object-curly-spacing": "off",
   "object-property-newline": "off",
   "object-shorthand": "warn",
-  "one-var": Array [
+  "one-var": [
     "warn",
     "never",
   ],
   "one-var-declaration-per-line": "off",
-  "operator-assignment": Array [
+  "operator-assignment": [
     "warn",
     "always",
   ],
@@ -1877,10 +1877,10 @@ Object {
   "space-return-throw-case": "off",
   "space-unary-ops": "off",
   "space-unary-word-ops": "off",
-  "spaced-comment": Array [
+  "spaced-comment": [
     "warn",
     "always",
-    Object {},
+    {},
   ],
   "strict": "off",
   "switch-colon-spacing": "off",

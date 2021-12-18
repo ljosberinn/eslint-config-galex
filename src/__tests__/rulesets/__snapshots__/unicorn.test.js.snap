@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createUnicornRules allows passing custom rules 1`] = `
-Object {
+{
   "unicorn/better-regex": "off",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -72,9 +72,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -91,9 +91,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -111,7 +111,7 @@ Object {
 `;
 
 exports[`createUnicornRules enables esnext rules given react 1`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -182,9 +182,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -201,9 +201,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "error",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -221,7 +221,7 @@ Object {
 `;
 
 exports[`createUnicornRules enables esnext rules given typsecript with certain lib criteria 1`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -292,9 +292,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -311,9 +311,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -331,7 +331,7 @@ Object {
 `;
 
 exports[`createUnicornRules enables prefer-top-level-await if certain tsConfig settings are given 1`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -402,9 +402,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -421,9 +421,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -441,7 +441,7 @@ Object {
 `;
 
 exports[`createUnicornRules enables prefer-top-level-await if certain tsConfig settings are given 2`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -512,9 +512,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -531,9 +531,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -551,7 +551,7 @@ Object {
 `;
 
 exports[`createUnicornRules matches snapshot with react, without typescript 1`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -622,9 +622,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -641,9 +641,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "error",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -661,7 +661,7 @@ Object {
 `;
 
 exports[`createUnicornRules matches snapshot with typescript & react 1`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -732,9 +732,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -751,9 +751,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -771,7 +771,7 @@ Object {
 `;
 
 exports[`createUnicornRules matches snapshot with typescript, without react 1`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -842,9 +842,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -861,9 +861,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "off",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],
@@ -881,7 +881,7 @@ Object {
 `;
 
 exports[`createUnicornRules matches snapshot without typescript & react 1`] = `
-Object {
+{
   "unicorn/better-regex": "error",
   "unicorn/catch-error-name": "error",
   "unicorn/consistent-destructuring": "error",
@@ -952,9 +952,9 @@ Object {
   "unicorn/prefer-module": "off",
   "unicorn/prefer-negative-index": "error",
   "unicorn/prefer-node-protocol": "off",
-  "unicorn/prefer-number-properties": Array [
+  "unicorn/prefer-number-properties": [
     "warn",
-    Object {
+    {
       "checkInfinity": false,
     },
   ],
@@ -971,9 +971,9 @@ Object {
   "unicorn/prefer-string-slice": "error",
   "unicorn/prefer-string-starts-ends-with": "error",
   "unicorn/prefer-string-trim-start-end": "error",
-  "unicorn/prefer-switch": Array [
+  "unicorn/prefer-switch": [
     "error",
-    Object {
+    {
       "emptyDefaultCase": "no-default-comment",
     },
   ],

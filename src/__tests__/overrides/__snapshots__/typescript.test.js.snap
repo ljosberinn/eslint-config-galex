@@ -1,36 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createTSOverride allows passing custom rules 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -44,20 +44,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -101,9 +101,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -113,17 +113,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -164,9 +164,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -184,8 +184,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -193,36 +193,36 @@ Object {
 `;
 
 exports[`createTSOverride conditionally toggles rules depending on config passed 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -236,20 +236,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -293,9 +293,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -305,17 +305,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -356,9 +356,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -376,8 +376,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -385,36 +385,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.3.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -427,7 +427,7 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -465,9 +465,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -476,9 +476,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -515,9 +515,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -535,8 +535,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -544,36 +544,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.3.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -587,7 +587,7 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -629,9 +629,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -640,17 +640,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -687,9 +687,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -707,8 +707,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -716,36 +716,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.3.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -759,7 +759,7 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -801,9 +801,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -812,17 +812,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -859,9 +859,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -879,8 +879,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -888,36 +888,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.4.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -930,14 +930,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -975,9 +975,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -986,9 +986,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -1026,9 +1026,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -1046,8 +1046,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1055,36 +1055,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.4.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -1098,14 +1098,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -1147,9 +1147,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -1158,17 +1158,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -1206,9 +1206,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -1226,8 +1226,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1235,36 +1235,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.4.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -1278,14 +1278,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -1327,9 +1327,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -1338,17 +1338,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -1386,9 +1386,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -1406,8 +1406,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1415,36 +1415,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.5.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -1457,14 +1457,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -1502,9 +1502,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -1513,9 +1513,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -1553,9 +1553,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -1573,8 +1573,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1582,36 +1582,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.5.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -1625,14 +1625,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -1674,9 +1674,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -1685,17 +1685,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -1733,9 +1733,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -1753,8 +1753,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1762,36 +1762,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.5.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -1805,14 +1805,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -1854,9 +1854,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -1865,17 +1865,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -1913,9 +1913,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -1933,8 +1933,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1942,36 +1942,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.6.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -1984,14 +1984,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -2029,9 +2029,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -2040,9 +2040,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -2080,9 +2080,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -2100,8 +2100,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2109,36 +2109,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.6.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -2152,14 +2152,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -2201,9 +2201,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -2212,17 +2212,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -2260,9 +2260,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -2280,8 +2280,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2289,36 +2289,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.6.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -2332,14 +2332,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -2381,9 +2381,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -2392,17 +2392,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -2440,9 +2440,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -2460,8 +2460,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2469,36 +2469,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.7.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -2511,14 +2511,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -2556,9 +2556,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -2568,9 +2568,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -2610,9 +2610,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -2630,8 +2630,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2639,36 +2639,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.7.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -2682,14 +2682,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -2731,9 +2731,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -2743,17 +2743,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -2793,9 +2793,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -2813,8 +2813,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2822,36 +2822,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.7.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -2865,14 +2865,14 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
@@ -2914,9 +2914,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -2926,17 +2926,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -2976,9 +2976,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -2996,8 +2996,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -3005,36 +3005,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.8.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -3047,20 +3047,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -3099,9 +3099,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -3111,9 +3111,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -3153,9 +3153,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -3173,8 +3173,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -3182,36 +3182,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.8.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -3225,20 +3225,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -3281,9 +3281,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -3293,17 +3293,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -3343,9 +3343,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -3363,8 +3363,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -3372,36 +3372,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.8.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -3415,20 +3415,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -3471,9 +3471,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -3483,17 +3483,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -3533,9 +3533,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -3553,8 +3553,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -3562,36 +3562,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.9.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -3604,20 +3604,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -3656,9 +3656,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -3668,9 +3668,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -3711,9 +3711,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -3731,8 +3731,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -3740,36 +3740,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.9.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -3783,20 +3783,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -3839,9 +3839,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -3851,17 +3851,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -3902,9 +3902,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -3922,8 +3922,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -3931,36 +3931,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 3.9.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -3974,20 +3974,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -4030,9 +4030,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -4042,17 +4042,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -4093,9 +4093,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -4113,8 +4113,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -4122,36 +4122,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.0.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -4164,20 +4164,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -4217,9 +4217,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -4229,9 +4229,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -4272,9 +4272,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -4292,8 +4292,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -4301,36 +4301,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.0.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -4344,20 +4344,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -4401,9 +4401,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -4413,17 +4413,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -4464,9 +4464,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -4484,8 +4484,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -4493,36 +4493,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.0.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -4536,20 +4536,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -4593,9 +4593,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -4605,17 +4605,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -4656,9 +4656,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -4676,8 +4676,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -4685,36 +4685,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.1.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -4727,20 +4727,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -4780,9 +4780,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -4792,9 +4792,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -4835,9 +4835,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -4855,8 +4855,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -4864,36 +4864,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.1.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -4907,20 +4907,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -4964,9 +4964,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -4976,17 +4976,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -5027,9 +5027,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -5047,8 +5047,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -5056,36 +5056,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.1.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -5099,20 +5099,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -5156,9 +5156,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -5168,17 +5168,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -5219,9 +5219,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -5239,8 +5239,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -5248,36 +5248,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.2.0 & react & CRA 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -5290,20 +5290,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -5343,9 +5343,9 @@ Object {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -5355,9 +5355,9 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
@@ -5398,9 +5398,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -5418,8 +5418,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -5427,36 +5427,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.2.0 & react 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -5470,20 +5470,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -5527,9 +5527,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -5539,17 +5539,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -5590,9 +5590,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -5610,8 +5610,8 @@ Object {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -5619,36 +5619,36 @@ Object {
 `;
 
 exports[`createTSOverride matches snapshot with TS 4.2.0 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.ts?(x)",
   ],
   "overrideType": "eslint-config-galex/typescript",
   "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": false,
     },
     "project": "./tsconfig.json",
     "warnOnUnsupportedTypeScriptVersion": false,
   },
-  "plugins": Array [
+  "plugins": [
     "@typescript-eslint",
   ],
-  "rules": Object {
+  "rules": {
     "@typescript-elint/object-curly-spacing": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": Array [
+    "@typescript-eslint/array-type": [
       "warn",
-      Object {
+      {
         "default": "array",
       },
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-comment": Array [
+    "@typescript-eslint/ban-ts-comment": [
       "error",
-      Object {
+      {
         "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -5662,20 +5662,20 @@ Object {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
-    "@typescript-eslint/consistent-type-assertions": Array [
+    "@typescript-eslint/consistent-type-assertions": [
       "error",
-      Object {
+      {
         "assertionStyle": "as",
         "objectLiteralTypeAssertions": "never",
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": Array [
+    "@typescript-eslint/consistent-type-definitions": [
       "error",
       "type",
     ],
-    "@typescript-eslint/consistent-type-imports": Array [
+    "@typescript-eslint/consistent-type-imports": [
       "warn",
-      Object {
+      {
         "disallowTypeAnnotations": true,
         "prefer": "type-imports",
       },
@@ -5719,9 +5719,9 @@ Object {
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-magic-numbers": "off",
     "@typescript-eslint/no-misused-new": "off",
-    "@typescript-eslint/no-misused-promises": Array [
+    "@typescript-eslint/no-misused-promises": [
       "warn",
-      Object {
+      {
         "checksConditionals": true,
         "checksVoidReturn": true,
       },
@@ -5731,17 +5731,17 @@ Object {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": Array [
+    "@typescript-eslint/no-this-alias": [
       "error",
-      Object {
+      {
         "allowDestructuring": true,
       },
     ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
       "warn",
-      Object {
+      {
         "allowComparingNullableBooleansToFalse": false,
         "allowComparingNullableBooleansToTrue": false,
       },
@@ -5782,9 +5782,9 @@ Object {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/require-array-sort-compare": "warn",
     "@typescript-eslint/restrict-plus-operands": "warn",
-    "@typescript-eslint/restrict-template-expressions": Array [
+    "@typescript-eslint/restrict-template-expressions": [
       "warn",
-      Object {
+      {
         "allowBoolean": true,
         "allowNumber": true,
       },
@@ -5802,8 +5802,8 @@ Object {
     "@typescript-eslint/unbound-method": "warn",
     "@typescript-eslint/unified-signatures": "warn",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },

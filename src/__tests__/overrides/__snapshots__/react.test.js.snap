@@ -1,65 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createReactOverride adds import resolver config to settings given remix without typescript 1`] = `
-Object {
-  "import/resolver": Object {
-    "jsconfig": Object {
+{
+  "import/resolver": {
+    "jsconfig": {
       "config": "jsconfig.json",
     },
   },
-  "react": Object {
+  "react": {
     "version": "detect",
   },
 }
 `;
 
 exports[`createReactOverride allows passing extra rules 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "@babel/preset-react",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -82,17 +82,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -101,13 +101,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -131,23 +131,23 @@ Object {
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "off",
-    "react/destructuring-assignment": Array [
+    "react/destructuring-assignment": [
       "error",
       "always",
     ],
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -156,9 +156,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -168,13 +168,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -182,9 +182,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": false,
       },
@@ -202,11 +202,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -258,15 +258,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -274,52 +274,52 @@ Object {
 `;
 
 exports[`createReactOverride disables jsx-a11y/autocomplete-valid given a CRA project 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "react-app",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -341,17 +341,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -360,13 +360,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -390,23 +390,23 @@ Object {
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "off",
-    "react/destructuring-assignment": Array [
+    "react/destructuring-assignment": [
       "error",
       "always",
     ],
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -415,9 +415,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -427,13 +427,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -441,9 +441,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": false,
       },
@@ -461,11 +461,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -516,15 +516,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -532,52 +532,52 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is < 17 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "@babel/preset-react",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -600,17 +600,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -619,13 +619,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -649,23 +649,23 @@ Object {
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "off",
-    "react/destructuring-assignment": Array [
+    "react/destructuring-assignment": [
       "error",
       "always",
     ],
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -674,9 +674,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -686,13 +686,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -700,9 +700,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": false,
       },
@@ -720,11 +720,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -776,15 +776,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -792,43 +792,43 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is < 17 with Next & TS 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "next/babel",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
     "@next/next",
   ],
-  "rules": Object {
+  "rules": {
     "@next/next/google-font-display": "warn",
     "@next/next/google-font-preconnect": "error",
     "@next/next/inline-script-id": "error",
@@ -849,14 +849,14 @@ Object {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "preferButton",
         ],
-        "components": Array [
+        "components": [
           "Link",
         ],
       },
@@ -864,9 +864,9 @@ Object {
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -889,17 +889,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -908,13 +908,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -942,16 +942,16 @@ Object {
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -960,9 +960,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -972,13 +972,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -986,9 +986,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": false,
       },
@@ -1006,11 +1006,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -1062,15 +1062,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1078,43 +1078,43 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is < 17 with Next 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "next/babel",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
     "@next/next",
   ],
-  "rules": Object {
+  "rules": {
     "@next/next/google-font-display": "warn",
     "@next/next/google-font-preconnect": "error",
     "@next/next/inline-script-id": "error",
@@ -1135,14 +1135,14 @@ Object {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "preferButton",
         ],
-        "components": Array [
+        "components": [
           "Link",
         ],
       },
@@ -1150,9 +1150,9 @@ Object {
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -1175,17 +1175,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -1194,13 +1194,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -1224,23 +1224,23 @@ Object {
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "off",
-    "react/destructuring-assignment": Array [
+    "react/destructuring-assignment": [
       "error",
       "always",
     ],
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -1249,9 +1249,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -1261,13 +1261,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -1275,9 +1275,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": false,
       },
@@ -1295,11 +1295,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -1351,15 +1351,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1367,50 +1367,50 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is < 17 with TS 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [],
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -1433,17 +1433,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -1452,13 +1452,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -1486,16 +1486,16 @@ Object {
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -1504,9 +1504,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -1516,13 +1516,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -1530,9 +1530,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": false,
       },
@@ -1550,11 +1550,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -1606,15 +1606,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1622,52 +1622,52 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is >= 17 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "@babel/preset-react",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -1690,17 +1690,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -1709,13 +1709,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -1739,23 +1739,23 @@ Object {
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "off",
-    "react/destructuring-assignment": Array [
+    "react/destructuring-assignment": [
       "error",
       "always",
     ],
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -1764,9 +1764,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -1776,13 +1776,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -1790,9 +1790,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": true,
       },
@@ -1810,11 +1810,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -1866,15 +1866,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -1882,43 +1882,43 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is >= 17 with Next & TS 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "next/babel",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
     "@next/next",
   ],
-  "rules": Object {
+  "rules": {
     "@next/next/google-font-display": "warn",
     "@next/next/google-font-preconnect": "error",
     "@next/next/inline-script-id": "error",
@@ -1939,14 +1939,14 @@ Object {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "preferButton",
         ],
-        "components": Array [
+        "components": [
           "Link",
         ],
       },
@@ -1954,9 +1954,9 @@ Object {
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -1979,17 +1979,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -1998,13 +1998,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -2032,16 +2032,16 @@ Object {
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -2050,9 +2050,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -2062,13 +2062,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -2076,9 +2076,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": true,
       },
@@ -2096,11 +2096,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -2152,15 +2152,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2168,43 +2168,43 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is >= 17 with Next 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [
-    Object {
-      "files": Array [
+  "overrides": [
+    {
+      "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-default-export": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "next/babel",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
     "@next/next",
   ],
-  "rules": Object {
+  "rules": {
     "@next/next/google-font-display": "warn",
     "@next/next/google-font-preconnect": "error",
     "@next/next/inline-script-id": "error",
@@ -2225,14 +2225,14 @@ Object {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "preferButton",
         ],
-        "components": Array [
+        "components": [
           "Link",
         ],
       },
@@ -2240,9 +2240,9 @@ Object {
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -2265,17 +2265,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -2284,13 +2284,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -2314,23 +2314,23 @@ Object {
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "off",
-    "react/destructuring-assignment": Array [
+    "react/destructuring-assignment": [
       "error",
       "always",
     ],
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -2339,9 +2339,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -2351,13 +2351,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -2365,9 +2365,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": true,
       },
@@ -2385,11 +2385,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -2441,15 +2441,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2457,50 +2457,50 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot if react is >= 17 with TS 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [],
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -2523,17 +2523,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -2542,13 +2542,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -2576,16 +2576,16 @@ Object {
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -2594,9 +2594,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -2606,13 +2606,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -2620,9 +2620,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": true,
       },
@@ -2640,11 +2640,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -2696,15 +2696,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2714,52 +2714,52 @@ Object {
 exports[`createReactOverride matches snapshot if react is false 1`] = `null`;
 
 exports[`createReactOverride matches snapshot with CRA and JS 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "react-app",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -2781,17 +2781,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -2800,13 +2800,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -2830,23 +2830,23 @@ Object {
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "off",
-    "react/destructuring-assignment": Array [
+    "react/destructuring-assignment": [
       "error",
       "always",
     ],
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -2855,9 +2855,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -2867,13 +2867,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -2881,9 +2881,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": true,
       },
@@ -2901,11 +2901,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -2956,15 +2956,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },
@@ -2972,52 +2972,52 @@ Object {
 `;
 
 exports[`createReactOverride matches snapshot with CRA and TS 1`] = `
-Object {
-  "extends": Array [],
-  "files": Array [
+{
+  "extends": [],
+  "files": [
     "**/*.?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/react",
-  "overrides": Array [],
+  "overrides": [],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
-    "babelOptions": Object {
-      "presets": Array [
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
         "react-app",
       ],
     },
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "requireConfigFile": false,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "jsx-a11y",
     "react-hooks",
     "react",
   ],
-  "rules": Object {
+  "rules": {
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": Array [
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      Object {
-        "aspects": Array [
+      {
+        "aspects": [
           "invalidHref",
           "noHref",
           "preferButton",
         ],
-        "components": Array [],
+        "components": [],
       },
     ],
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": Array [
+    "jsx-a11y/aria-role": [
       "warn",
-      Object {
+      {
         "ignoreNonDOM": true,
       },
     ],
@@ -3039,17 +3039,17 @@ Object {
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
     "jsx-a11y/no-noninteractive-element-interactions": "error",
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": Array [
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
-      Object {
-        "li": Array [
+      {
+        "li": [
           "menuitem",
           "option",
           "row",
           "tab",
           "treeitem",
         ],
-        "ol": Array [
+        "ol": [
           "listbox",
           "menu",
           "menubar",
@@ -3058,13 +3058,13 @@ Object {
           "tree",
           "treegrid",
         ],
-        "table": Array [
+        "table": [
           "grid",
         ],
-        "td": Array [
+        "td": [
           "gridcell",
         ],
-        "ul": Array [
+        "ul": [
           "listbox",
           "menu",
           "menubar",
@@ -3092,16 +3092,16 @@ Object {
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
-    "react/forbid-foreign-prop-types": Array [
+    "react/forbid-foreign-prop-types": [
       "warn",
-      Object {
+      {
         "allowInPropTypes": true,
       },
     ],
     "react/forbid-prop-types": "off",
-    "react/function-component-definition": Array [
+    "react/function-component-definition": [
       "warn",
-      Object {
+      {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function",
       },
@@ -3110,9 +3110,9 @@ Object {
     "react/jsx-child-element-spacing": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-curly-brace-presence": Array [
+    "react/jsx-curly-brace-presence": [
       "warn",
-      Object {
+      {
         "children": "never",
         "props": "never",
       },
@@ -3122,13 +3122,13 @@ Object {
     "react/jsx-equals-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": "off",
-    "react/jsx-fragments": Array [
+    "react/jsx-fragments": [
       "warn",
       "syntax",
     ],
-    "react/jsx-handler-names": Array [
+    "react/jsx-handler-names": [
       "warn",
-      Object {
+      {
         "checkLocalVariables": false,
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on",
@@ -3136,9 +3136,9 @@ Object {
     ],
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-key": Array [
+    "react/jsx-key": [
       "warn",
-      Object {
+      {
         "checkFragmentShorthand": true,
         "checkKeyMustBeforeSpread": true,
       },
@@ -3156,11 +3156,11 @@ Object {
     "react/jsx-no-undef": "off",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-pascal-case": Array [
+    "react/jsx-pascal-case": [
       "warn",
-      Object {
+      {
         "allowAllCaps": true,
-        "ignore": Array [],
+        "ignore": [],
       },
     ],
     "react/jsx-props-no-multi-spaces": "off",
@@ -3211,15 +3211,15 @@ Object {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": "off",
-    "react/static-property-placement": Array [
+    "react/static-property-placement": [
       "error",
       "static public field",
     ],
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "error",
   },
-  "settings": Object {
-    "react": Object {
+  "settings": {
+    "react": {
       "version": "detect",
     },
   },

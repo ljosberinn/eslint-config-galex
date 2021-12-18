@@ -1,44 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createConfig allows passing env 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": false,
     "es2021": true,
     "foo": "bar",
     "node": true,
   },
-  "ignorePatterns": Array [],
-  "overrides": Array [
-    Object {
-      "env": Object {
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "env": {
         "jest": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest-formatting/strict",
       ],
-      "files": Array [
+      "files": [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": Array [
-        Object {
-          "files": Array [
+      "overrides": [
+        {
+          "files": [
             "jest.config.js",
             "jest.config.ts",
           ],
-          "rules": Object {
+          "rules": {
             "import/no-default-export": "off",
           },
         },
       ],
-      "parserOptions": Object {
+      "parserOptions": {
         "ecmaVersion": 2020,
       },
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-namespace": 0,
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -60,9 +60,9 @@ Object {
         "jest/no-interpolation-in-snapshots": 2,
         "jest/no-jasmine-globals": 2,
         "jest/no-jest-import": 2,
-        "jest/no-large-snapshots": Array [
+        "jest/no-large-snapshots": [
           1,
-          Object {
+          {
             "maxSize": 300,
           },
         ],
@@ -96,31 +96,31 @@ Object {
         "sonarjs/no-duplicate-string": 0,
         "sonarjs/no-identical-functions": 0,
       },
-      "settings": Object {
-        "jest": Object {
+      "settings": {
+        "jest": {
           "version": "detect",
         },
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "import",
     "unicorn",
     "promise",
     "sonarjs",
   ],
   "reportUnusedDisableDirectives": true,
-  "rules": Object {
+  "rules": {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
-    "array-callback-return": Array [
+    "array-callback-return": [
       2,
-      Object {
+      {
         "checkForEach": true,
       },
     ],
@@ -142,7 +142,7 @@ Object {
     "consistent-return": 0,
     "consistent-this": 0,
     "constructor-super": 2,
-    "curly": Array [
+    "curly": [
       1,
       "all",
     ],
@@ -156,7 +156,7 @@ Object {
     "for-direction": 2,
     "func-call-spacing": 0,
     "func-name-matching": 0,
-    "func-names": Array [
+    "func-names": [
       1,
       "as-needed",
     ],
@@ -187,9 +187,9 @@ Object {
     "import/no-amd": 2,
     "import/no-anonymous-default-export": 2,
     "import/no-commonjs": 0,
-    "import/no-cycle": Array [
+    "import/no-cycle": [
       1,
-      Object {
+      {
         "ignoreExternal": true,
         "maxDepth": 5,
       },
@@ -217,19 +217,19 @@ Object {
     "import/no-unused-modules": 1,
     "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
-    "import/order": Array [
+    "import/order": [
       1,
-      Object {
-        "alphabetize": Object {
+      {
+        "alphabetize": {
           "order": "asc",
         },
-        "groups": Array [
-          Array [
+        "groups": [
+          [
             "builtin",
             "external",
             "internal",
           ],
-          Array [
+          [
             "unknown",
             "parent",
             "sibling",
@@ -276,7 +276,7 @@ Object {
     "no-class-assign": 2,
     "no-comma-dangle": 0,
     "no-compare-neg-zero": 2,
-    "no-cond-assign": Array [
+    "no-cond-assign": [
       1,
       "except-parens",
     ],
@@ -314,9 +314,9 @@ Object {
     "no-floating-decimal": 0,
     "no-func-assign": 1,
     "no-global-assign": 1,
-    "no-implicit-coercion": Array [
+    "no-implicit-coercion": [
       1,
-      Object {
+      {
         "boolean": false,
         "number": true,
         "string": true,
@@ -365,7 +365,7 @@ Object {
     "no-regex-spaces": 1,
     "no-reserved-keys": 0,
     "no-restricted-exports": 0,
-    "no-restricted-globals": Array [
+    "no-restricted-globals": [
       2,
       "addEventListener",
       "blur",
@@ -459,9 +459,9 @@ Object {
     "no-unsafe-finally": 2,
     "no-unsafe-negation": 1,
     "no-unsafe-optional-chaining": 2,
-    "no-unused-expressions": Array [
+    "no-unused-expressions": [
       2,
-      Object {
+      {
         "allowShortCircuit": true,
         "allowTaggedTemplates": true,
         "allowTernary": true,
@@ -469,16 +469,16 @@ Object {
     ],
     "no-unused-labels": 0,
     "no-unused-private-class-members": 1,
-    "no-unused-vars": Array [
+    "no-unused-vars": [
       1,
-      Object {
+      {
         "args": "none",
         "ignoreRestSiblings": true,
       },
     ],
-    "no-use-before-define": Array [
+    "no-use-before-define": [
       1,
-      Object {
+      {
         "classes": false,
         "functions": false,
         "variables": false,
@@ -504,12 +504,12 @@ Object {
     "object-curly-spacing": 0,
     "object-property-newline": 0,
     "object-shorthand": 1,
-    "one-var": Array [
+    "one-var": [
       1,
       "never",
     ],
     "one-var-declaration-per-line": 0,
-    "operator-assignment": Array [
+    "operator-assignment": [
       1,
       "always",
     ],
@@ -530,9 +530,9 @@ Object {
     "prefer-template": 1,
     "promise/always-return": 0,
     "promise/avoid-new": 0,
-    "promise/catch-or-return": Array [
+    "promise/catch-or-return": [
       2,
-      Object {
+      {
         "allowFinally": true,
         "allowThen": true,
       },
@@ -561,7 +561,7 @@ Object {
     "semi-style": 0,
     "sonarjs/cognitive-complexity": 1,
     "sonarjs/elseif-without-else": 1,
-    "sonarjs/max-switch-cases": Array [
+    "sonarjs/max-switch-cases": [
       2,
       15,
     ],
@@ -609,10 +609,10 @@ Object {
     "space-return-throw-case": 0,
     "space-unary-ops": 0,
     "space-unary-word-ops": 0,
-    "spaced-comment": Array [
+    "spaced-comment": [
       1,
       "always",
-      Object {},
+      {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -690,9 +690,9 @@ Object {
     "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
     "unicorn/prefer-node-protocol": 0,
-    "unicorn/prefer-number-properties": Array [
+    "unicorn/prefer-number-properties": [
       1,
-      Object {
+      {
         "checkInfinity": false,
       },
     ],
@@ -709,9 +709,9 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
-    "unicorn/prefer-switch": Array [
+    "unicorn/prefer-switch": [
       2,
-      Object {
+      {
         "emptyDefaultCase": "no-default-comment",
       },
     ],
@@ -733,48 +733,48 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
-  "settings": Object {},
+  "settings": {},
 }
 `;
 
 exports[`createConfig allows passing extra rules 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": false,
     "es2021": true,
     "node": true,
   },
-  "ignorePatterns": Array [],
-  "overrides": Array [
-    Object {
-      "env": Object {
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "env": {
         "jest": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest-formatting/strict",
       ],
-      "files": Array [
+      "files": [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": Array [
-        Object {
-          "files": Array [
+      "overrides": [
+        {
+          "files": [
             "jest.config.js",
             "jest.config.ts",
           ],
-          "rules": Object {
+          "rules": {
             "import/no-default-export": "off",
           },
         },
       ],
-      "parserOptions": Object {
+      "parserOptions": {
         "ecmaVersion": 2020,
       },
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-namespace": 0,
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -796,9 +796,9 @@ Object {
         "jest/no-interpolation-in-snapshots": 2,
         "jest/no-jasmine-globals": 2,
         "jest/no-jest-import": 2,
-        "jest/no-large-snapshots": Array [
+        "jest/no-large-snapshots": [
           1,
-          Object {
+          {
             "maxSize": 300,
           },
         ],
@@ -832,31 +832,31 @@ Object {
         "sonarjs/no-duplicate-string": 0,
         "sonarjs/no-identical-functions": 0,
       },
-      "settings": Object {
-        "jest": Object {
+      "settings": {
+        "jest": {
           "version": "detect",
         },
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "import",
     "unicorn",
     "promise",
     "sonarjs",
   ],
   "reportUnusedDisableDirectives": true,
-  "rules": Object {
+  "rules": {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
-    "array-callback-return": Array [
+    "array-callback-return": [
       2,
-      Object {
+      {
         "checkForEach": true,
       },
     ],
@@ -878,7 +878,7 @@ Object {
     "consistent-return": 0,
     "consistent-this": 0,
     "constructor-super": 2,
-    "curly": Array [
+    "curly": [
       1,
       "all",
     ],
@@ -893,7 +893,7 @@ Object {
     "for-direction": 2,
     "func-call-spacing": 0,
     "func-name-matching": 0,
-    "func-names": Array [
+    "func-names": [
       1,
       "as-needed",
     ],
@@ -924,9 +924,9 @@ Object {
     "import/no-amd": 2,
     "import/no-anonymous-default-export": 2,
     "import/no-commonjs": 0,
-    "import/no-cycle": Array [
+    "import/no-cycle": [
       1,
-      Object {
+      {
         "ignoreExternal": true,
         "maxDepth": 5,
       },
@@ -954,19 +954,19 @@ Object {
     "import/no-unused-modules": 1,
     "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
-    "import/order": Array [
+    "import/order": [
       1,
-      Object {
-        "alphabetize": Object {
+      {
+        "alphabetize": {
           "order": "asc",
         },
-        "groups": Array [
-          Array [
+        "groups": [
+          [
             "builtin",
             "external",
             "internal",
           ],
-          Array [
+          [
             "unknown",
             "parent",
             "sibling",
@@ -1013,7 +1013,7 @@ Object {
     "no-class-assign": 2,
     "no-comma-dangle": 0,
     "no-compare-neg-zero": 2,
-    "no-cond-assign": Array [
+    "no-cond-assign": [
       1,
       "except-parens",
     ],
@@ -1051,9 +1051,9 @@ Object {
     "no-floating-decimal": 0,
     "no-func-assign": 1,
     "no-global-assign": 1,
-    "no-implicit-coercion": Array [
+    "no-implicit-coercion": [
       1,
-      Object {
+      {
         "boolean": false,
         "number": true,
         "string": true,
@@ -1102,7 +1102,7 @@ Object {
     "no-regex-spaces": 1,
     "no-reserved-keys": 0,
     "no-restricted-exports": 0,
-    "no-restricted-globals": Array [
+    "no-restricted-globals": [
       2,
       "addEventListener",
       "blur",
@@ -1196,9 +1196,9 @@ Object {
     "no-unsafe-finally": 2,
     "no-unsafe-negation": 1,
     "no-unsafe-optional-chaining": 2,
-    "no-unused-expressions": Array [
+    "no-unused-expressions": [
       2,
-      Object {
+      {
         "allowShortCircuit": true,
         "allowTaggedTemplates": true,
         "allowTernary": true,
@@ -1206,16 +1206,16 @@ Object {
     ],
     "no-unused-labels": 0,
     "no-unused-private-class-members": 1,
-    "no-unused-vars": Array [
+    "no-unused-vars": [
       1,
-      Object {
+      {
         "args": "none",
         "ignoreRestSiblings": true,
       },
     ],
-    "no-use-before-define": Array [
+    "no-use-before-define": [
       1,
-      Object {
+      {
         "classes": false,
         "functions": false,
         "variables": false,
@@ -1241,12 +1241,12 @@ Object {
     "object-curly-spacing": 0,
     "object-property-newline": 0,
     "object-shorthand": 1,
-    "one-var": Array [
+    "one-var": [
       1,
       "never",
     ],
     "one-var-declaration-per-line": 0,
-    "operator-assignment": Array [
+    "operator-assignment": [
       1,
       "always",
     ],
@@ -1267,9 +1267,9 @@ Object {
     "prefer-template": 1,
     "promise/always-return": 0,
     "promise/avoid-new": 0,
-    "promise/catch-or-return": Array [
+    "promise/catch-or-return": [
       2,
-      Object {
+      {
         "allowFinally": true,
         "allowThen": true,
       },
@@ -1298,7 +1298,7 @@ Object {
     "semi-style": 0,
     "sonarjs/cognitive-complexity": 1,
     "sonarjs/elseif-without-else": 1,
-    "sonarjs/max-switch-cases": Array [
+    "sonarjs/max-switch-cases": [
       2,
       15,
     ],
@@ -1346,10 +1346,10 @@ Object {
     "space-return-throw-case": 0,
     "space-unary-ops": 0,
     "space-unary-word-ops": 0,
-    "spaced-comment": Array [
+    "spaced-comment": [
       1,
       "always",
-      Object {},
+      {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -1427,9 +1427,9 @@ Object {
     "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
     "unicorn/prefer-node-protocol": 0,
-    "unicorn/prefer-number-properties": Array [
+    "unicorn/prefer-number-properties": [
       1,
-      Object {
+      {
         "checkInfinity": false,
       },
     ],
@@ -1446,9 +1446,9 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
-    "unicorn/prefer-switch": Array [
+    "unicorn/prefer-switch": [
       2,
-      Object {
+      {
         "emptyDefaultCase": "no-default-comment",
       },
     ],
@@ -1470,48 +1470,48 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
-  "settings": Object {},
+  "settings": {},
 }
 `;
 
 exports[`createConfig allows passing overrides 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": false,
     "es2021": true,
     "node": true,
   },
-  "ignorePatterns": Array [],
-  "overrides": Array [
-    Object {
-      "env": Object {
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "env": {
         "jest": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest-formatting/strict",
       ],
-      "files": Array [
+      "files": [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": Array [
-        Object {
-          "files": Array [
+      "overrides": [
+        {
+          "files": [
             "jest.config.js",
             "jest.config.ts",
           ],
-          "rules": Object {
+          "rules": {
             "import/no-default-export": "off",
           },
         },
       ],
-      "parserOptions": Object {
+      "parserOptions": {
         "ecmaVersion": 2020,
       },
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-namespace": 0,
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -1533,9 +1533,9 @@ Object {
         "jest/no-interpolation-in-snapshots": 2,
         "jest/no-jasmine-globals": 2,
         "jest/no-jest-import": 2,
-        "jest/no-large-snapshots": Array [
+        "jest/no-large-snapshots": [
           1,
-          Object {
+          {
             "maxSize": 300,
           },
         ],
@@ -1569,35 +1569,35 @@ Object {
         "sonarjs/no-duplicate-string": 0,
         "sonarjs/no-identical-functions": 0,
       },
-      "settings": Object {
-        "jest": Object {
+      "settings": {
+        "jest": {
           "version": "detect",
         },
       },
     },
-    Object {
+    {
       "files": "abc/def",
-      "rules": Object {},
+      "rules": {},
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "import",
     "unicorn",
     "promise",
     "sonarjs",
   ],
   "reportUnusedDisableDirectives": true,
-  "rules": Object {
+  "rules": {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
-    "array-callback-return": Array [
+    "array-callback-return": [
       2,
-      Object {
+      {
         "checkForEach": true,
       },
     ],
@@ -1619,7 +1619,7 @@ Object {
     "consistent-return": 0,
     "consistent-this": 0,
     "constructor-super": 2,
-    "curly": Array [
+    "curly": [
       1,
       "all",
     ],
@@ -1633,7 +1633,7 @@ Object {
     "for-direction": 2,
     "func-call-spacing": 0,
     "func-name-matching": 0,
-    "func-names": Array [
+    "func-names": [
       1,
       "as-needed",
     ],
@@ -1664,9 +1664,9 @@ Object {
     "import/no-amd": 2,
     "import/no-anonymous-default-export": 2,
     "import/no-commonjs": 0,
-    "import/no-cycle": Array [
+    "import/no-cycle": [
       1,
-      Object {
+      {
         "ignoreExternal": true,
         "maxDepth": 5,
       },
@@ -1694,19 +1694,19 @@ Object {
     "import/no-unused-modules": 1,
     "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
-    "import/order": Array [
+    "import/order": [
       1,
-      Object {
-        "alphabetize": Object {
+      {
+        "alphabetize": {
           "order": "asc",
         },
-        "groups": Array [
-          Array [
+        "groups": [
+          [
             "builtin",
             "external",
             "internal",
           ],
-          Array [
+          [
             "unknown",
             "parent",
             "sibling",
@@ -1753,7 +1753,7 @@ Object {
     "no-class-assign": 2,
     "no-comma-dangle": 0,
     "no-compare-neg-zero": 2,
-    "no-cond-assign": Array [
+    "no-cond-assign": [
       1,
       "except-parens",
     ],
@@ -1791,9 +1791,9 @@ Object {
     "no-floating-decimal": 0,
     "no-func-assign": 1,
     "no-global-assign": 1,
-    "no-implicit-coercion": Array [
+    "no-implicit-coercion": [
       1,
-      Object {
+      {
         "boolean": false,
         "number": true,
         "string": true,
@@ -1842,7 +1842,7 @@ Object {
     "no-regex-spaces": 1,
     "no-reserved-keys": 0,
     "no-restricted-exports": 0,
-    "no-restricted-globals": Array [
+    "no-restricted-globals": [
       2,
       "addEventListener",
       "blur",
@@ -1936,9 +1936,9 @@ Object {
     "no-unsafe-finally": 2,
     "no-unsafe-negation": 1,
     "no-unsafe-optional-chaining": 2,
-    "no-unused-expressions": Array [
+    "no-unused-expressions": [
       2,
-      Object {
+      {
         "allowShortCircuit": true,
         "allowTaggedTemplates": true,
         "allowTernary": true,
@@ -1946,16 +1946,16 @@ Object {
     ],
     "no-unused-labels": 0,
     "no-unused-private-class-members": 1,
-    "no-unused-vars": Array [
+    "no-unused-vars": [
       1,
-      Object {
+      {
         "args": "none",
         "ignoreRestSiblings": true,
       },
     ],
-    "no-use-before-define": Array [
+    "no-use-before-define": [
       1,
-      Object {
+      {
         "classes": false,
         "functions": false,
         "variables": false,
@@ -1981,12 +1981,12 @@ Object {
     "object-curly-spacing": 0,
     "object-property-newline": 0,
     "object-shorthand": 1,
-    "one-var": Array [
+    "one-var": [
       1,
       "never",
     ],
     "one-var-declaration-per-line": 0,
-    "operator-assignment": Array [
+    "operator-assignment": [
       1,
       "always",
     ],
@@ -2007,9 +2007,9 @@ Object {
     "prefer-template": 1,
     "promise/always-return": 0,
     "promise/avoid-new": 0,
-    "promise/catch-or-return": Array [
+    "promise/catch-or-return": [
       2,
-      Object {
+      {
         "allowFinally": true,
         "allowThen": true,
       },
@@ -2038,7 +2038,7 @@ Object {
     "semi-style": 0,
     "sonarjs/cognitive-complexity": 1,
     "sonarjs/elseif-without-else": 1,
-    "sonarjs/max-switch-cases": Array [
+    "sonarjs/max-switch-cases": [
       2,
       15,
     ],
@@ -2086,10 +2086,10 @@ Object {
     "space-return-throw-case": 0,
     "space-unary-ops": 0,
     "space-unary-word-ops": 0,
-    "spaced-comment": Array [
+    "spaced-comment": [
       1,
       "always",
-      Object {},
+      {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -2167,9 +2167,9 @@ Object {
     "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
     "unicorn/prefer-node-protocol": 0,
-    "unicorn/prefer-number-properties": Array [
+    "unicorn/prefer-number-properties": [
       1,
-      Object {
+      {
         "checkInfinity": false,
       },
     ],
@@ -2186,9 +2186,9 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
-    "unicorn/prefer-switch": Array [
+    "unicorn/prefer-switch": [
       2,
-      Object {
+      {
         "emptyDefaultCase": "no-default-comment",
       },
     ],
@@ -2210,48 +2210,48 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
-  "settings": Object {},
+  "settings": {},
 }
 `;
 
 exports[`createConfig allows passing parserOptions 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": false,
     "es2021": true,
     "node": true,
   },
-  "ignorePatterns": Array [],
-  "overrides": Array [
-    Object {
-      "env": Object {
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "env": {
         "jest": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest-formatting/strict",
       ],
-      "files": Array [
+      "files": [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": Array [
-        Object {
-          "files": Array [
+      "overrides": [
+        {
+          "files": [
             "jest.config.js",
             "jest.config.ts",
           ],
-          "rules": Object {
+          "rules": {
             "import/no-default-export": "off",
           },
         },
       ],
-      "parserOptions": Object {
+      "parserOptions": {
         "ecmaVersion": 2020,
       },
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-namespace": 0,
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -2273,9 +2273,9 @@ Object {
         "jest/no-interpolation-in-snapshots": 2,
         "jest/no-jasmine-globals": 2,
         "jest/no-jest-import": 2,
-        "jest/no-large-snapshots": Array [
+        "jest/no-large-snapshots": [
           1,
-          Object {
+          {
             "maxSize": 300,
           },
         ],
@@ -2309,32 +2309,32 @@ Object {
         "sonarjs/no-duplicate-string": 0,
         "sonarjs/no-identical-functions": 0,
       },
-      "settings": Object {
-        "jest": Object {
+      "settings": {
+        "jest": {
           "version": "detect",
         },
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "foo": "bar",
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "import",
     "unicorn",
     "promise",
     "sonarjs",
   ],
   "reportUnusedDisableDirectives": true,
-  "rules": Object {
+  "rules": {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
-    "array-callback-return": Array [
+    "array-callback-return": [
       2,
-      Object {
+      {
         "checkForEach": true,
       },
     ],
@@ -2356,7 +2356,7 @@ Object {
     "consistent-return": 0,
     "consistent-this": 0,
     "constructor-super": 2,
-    "curly": Array [
+    "curly": [
       1,
       "all",
     ],
@@ -2370,7 +2370,7 @@ Object {
     "for-direction": 2,
     "func-call-spacing": 0,
     "func-name-matching": 0,
-    "func-names": Array [
+    "func-names": [
       1,
       "as-needed",
     ],
@@ -2401,9 +2401,9 @@ Object {
     "import/no-amd": 2,
     "import/no-anonymous-default-export": 2,
     "import/no-commonjs": 0,
-    "import/no-cycle": Array [
+    "import/no-cycle": [
       1,
-      Object {
+      {
         "ignoreExternal": true,
         "maxDepth": 5,
       },
@@ -2431,19 +2431,19 @@ Object {
     "import/no-unused-modules": 1,
     "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
-    "import/order": Array [
+    "import/order": [
       1,
-      Object {
-        "alphabetize": Object {
+      {
+        "alphabetize": {
           "order": "asc",
         },
-        "groups": Array [
-          Array [
+        "groups": [
+          [
             "builtin",
             "external",
             "internal",
           ],
-          Array [
+          [
             "unknown",
             "parent",
             "sibling",
@@ -2490,7 +2490,7 @@ Object {
     "no-class-assign": 2,
     "no-comma-dangle": 0,
     "no-compare-neg-zero": 2,
-    "no-cond-assign": Array [
+    "no-cond-assign": [
       1,
       "except-parens",
     ],
@@ -2528,9 +2528,9 @@ Object {
     "no-floating-decimal": 0,
     "no-func-assign": 1,
     "no-global-assign": 1,
-    "no-implicit-coercion": Array [
+    "no-implicit-coercion": [
       1,
-      Object {
+      {
         "boolean": false,
         "number": true,
         "string": true,
@@ -2579,7 +2579,7 @@ Object {
     "no-regex-spaces": 1,
     "no-reserved-keys": 0,
     "no-restricted-exports": 0,
-    "no-restricted-globals": Array [
+    "no-restricted-globals": [
       2,
       "addEventListener",
       "blur",
@@ -2673,9 +2673,9 @@ Object {
     "no-unsafe-finally": 2,
     "no-unsafe-negation": 1,
     "no-unsafe-optional-chaining": 2,
-    "no-unused-expressions": Array [
+    "no-unused-expressions": [
       2,
-      Object {
+      {
         "allowShortCircuit": true,
         "allowTaggedTemplates": true,
         "allowTernary": true,
@@ -2683,16 +2683,16 @@ Object {
     ],
     "no-unused-labels": 0,
     "no-unused-private-class-members": 1,
-    "no-unused-vars": Array [
+    "no-unused-vars": [
       1,
-      Object {
+      {
         "args": "none",
         "ignoreRestSiblings": true,
       },
     ],
-    "no-use-before-define": Array [
+    "no-use-before-define": [
       1,
-      Object {
+      {
         "classes": false,
         "functions": false,
         "variables": false,
@@ -2718,12 +2718,12 @@ Object {
     "object-curly-spacing": 0,
     "object-property-newline": 0,
     "object-shorthand": 1,
-    "one-var": Array [
+    "one-var": [
       1,
       "never",
     ],
     "one-var-declaration-per-line": 0,
-    "operator-assignment": Array [
+    "operator-assignment": [
       1,
       "always",
     ],
@@ -2744,9 +2744,9 @@ Object {
     "prefer-template": 1,
     "promise/always-return": 0,
     "promise/avoid-new": 0,
-    "promise/catch-or-return": Array [
+    "promise/catch-or-return": [
       2,
-      Object {
+      {
         "allowFinally": true,
         "allowThen": true,
       },
@@ -2775,7 +2775,7 @@ Object {
     "semi-style": 0,
     "sonarjs/cognitive-complexity": 1,
     "sonarjs/elseif-without-else": 1,
-    "sonarjs/max-switch-cases": Array [
+    "sonarjs/max-switch-cases": [
       2,
       15,
     ],
@@ -2823,10 +2823,10 @@ Object {
     "space-return-throw-case": 0,
     "space-unary-ops": 0,
     "space-unary-word-ops": 0,
-    "spaced-comment": Array [
+    "spaced-comment": [
       1,
       "always",
-      Object {},
+      {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -2904,9 +2904,9 @@ Object {
     "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
     "unicorn/prefer-node-protocol": 0,
-    "unicorn/prefer-number-properties": Array [
+    "unicorn/prefer-number-properties": [
       1,
-      Object {
+      {
         "checkInfinity": false,
       },
     ],
@@ -2923,9 +2923,9 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
-    "unicorn/prefer-switch": Array [
+    "unicorn/prefer-switch": [
       2,
-      Object {
+      {
         "emptyDefaultCase": "no-default-comment",
       },
     ],
@@ -2947,48 +2947,48 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
-  "settings": Object {},
+  "settings": {},
 }
 `;
 
 exports[`createConfig allows passing plugins 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": false,
     "es2021": true,
     "node": true,
   },
-  "ignorePatterns": Array [],
-  "overrides": Array [
-    Object {
-      "env": Object {
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "env": {
         "jest": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest-formatting/strict",
       ],
-      "files": Array [
+      "files": [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": Array [
-        Object {
-          "files": Array [
+      "overrides": [
+        {
+          "files": [
             "jest.config.js",
             "jest.config.ts",
           ],
-          "rules": Object {
+          "rules": {
             "import/no-default-export": "off",
           },
         },
       ],
-      "parserOptions": Object {
+      "parserOptions": {
         "ecmaVersion": 2020,
       },
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-namespace": 0,
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -3010,9 +3010,9 @@ Object {
         "jest/no-interpolation-in-snapshots": 2,
         "jest/no-jasmine-globals": 2,
         "jest/no-jest-import": 2,
-        "jest/no-large-snapshots": Array [
+        "jest/no-large-snapshots": [
           1,
-          Object {
+          {
             "maxSize": 300,
           },
         ],
@@ -3046,18 +3046,18 @@ Object {
         "sonarjs/no-duplicate-string": 0,
         "sonarjs/no-identical-functions": 0,
       },
-      "settings": Object {
-        "jest": Object {
+      "settings": {
+        "jest": {
           "version": "detect",
         },
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "import",
     "unicorn",
     "promise",
@@ -3065,13 +3065,13 @@ Object {
     "galex",
   ],
   "reportUnusedDisableDirectives": true,
-  "rules": Object {
+  "rules": {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
-    "array-callback-return": Array [
+    "array-callback-return": [
       2,
-      Object {
+      {
         "checkForEach": true,
       },
     ],
@@ -3093,7 +3093,7 @@ Object {
     "consistent-return": 0,
     "consistent-this": 0,
     "constructor-super": 2,
-    "curly": Array [
+    "curly": [
       1,
       "all",
     ],
@@ -3107,7 +3107,7 @@ Object {
     "for-direction": 2,
     "func-call-spacing": 0,
     "func-name-matching": 0,
-    "func-names": Array [
+    "func-names": [
       1,
       "as-needed",
     ],
@@ -3138,9 +3138,9 @@ Object {
     "import/no-amd": 2,
     "import/no-anonymous-default-export": 2,
     "import/no-commonjs": 0,
-    "import/no-cycle": Array [
+    "import/no-cycle": [
       1,
-      Object {
+      {
         "ignoreExternal": true,
         "maxDepth": 5,
       },
@@ -3168,19 +3168,19 @@ Object {
     "import/no-unused-modules": 1,
     "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
-    "import/order": Array [
+    "import/order": [
       1,
-      Object {
-        "alphabetize": Object {
+      {
+        "alphabetize": {
           "order": "asc",
         },
-        "groups": Array [
-          Array [
+        "groups": [
+          [
             "builtin",
             "external",
             "internal",
           ],
-          Array [
+          [
             "unknown",
             "parent",
             "sibling",
@@ -3227,7 +3227,7 @@ Object {
     "no-class-assign": 2,
     "no-comma-dangle": 0,
     "no-compare-neg-zero": 2,
-    "no-cond-assign": Array [
+    "no-cond-assign": [
       1,
       "except-parens",
     ],
@@ -3265,9 +3265,9 @@ Object {
     "no-floating-decimal": 0,
     "no-func-assign": 1,
     "no-global-assign": 1,
-    "no-implicit-coercion": Array [
+    "no-implicit-coercion": [
       1,
-      Object {
+      {
         "boolean": false,
         "number": true,
         "string": true,
@@ -3316,7 +3316,7 @@ Object {
     "no-regex-spaces": 1,
     "no-reserved-keys": 0,
     "no-restricted-exports": 0,
-    "no-restricted-globals": Array [
+    "no-restricted-globals": [
       2,
       "addEventListener",
       "blur",
@@ -3410,9 +3410,9 @@ Object {
     "no-unsafe-finally": 2,
     "no-unsafe-negation": 1,
     "no-unsafe-optional-chaining": 2,
-    "no-unused-expressions": Array [
+    "no-unused-expressions": [
       2,
-      Object {
+      {
         "allowShortCircuit": true,
         "allowTaggedTemplates": true,
         "allowTernary": true,
@@ -3420,16 +3420,16 @@ Object {
     ],
     "no-unused-labels": 0,
     "no-unused-private-class-members": 1,
-    "no-unused-vars": Array [
+    "no-unused-vars": [
       1,
-      Object {
+      {
         "args": "none",
         "ignoreRestSiblings": true,
       },
     ],
-    "no-use-before-define": Array [
+    "no-use-before-define": [
       1,
-      Object {
+      {
         "classes": false,
         "functions": false,
         "variables": false,
@@ -3455,12 +3455,12 @@ Object {
     "object-curly-spacing": 0,
     "object-property-newline": 0,
     "object-shorthand": 1,
-    "one-var": Array [
+    "one-var": [
       1,
       "never",
     ],
     "one-var-declaration-per-line": 0,
-    "operator-assignment": Array [
+    "operator-assignment": [
       1,
       "always",
     ],
@@ -3481,9 +3481,9 @@ Object {
     "prefer-template": 1,
     "promise/always-return": 0,
     "promise/avoid-new": 0,
-    "promise/catch-or-return": Array [
+    "promise/catch-or-return": [
       2,
-      Object {
+      {
         "allowFinally": true,
         "allowThen": true,
       },
@@ -3512,7 +3512,7 @@ Object {
     "semi-style": 0,
     "sonarjs/cognitive-complexity": 1,
     "sonarjs/elseif-without-else": 1,
-    "sonarjs/max-switch-cases": Array [
+    "sonarjs/max-switch-cases": [
       2,
       15,
     ],
@@ -3560,10 +3560,10 @@ Object {
     "space-return-throw-case": 0,
     "space-unary-ops": 0,
     "space-unary-word-ops": 0,
-    "spaced-comment": Array [
+    "spaced-comment": [
       1,
       "always",
-      Object {},
+      {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -3641,9 +3641,9 @@ Object {
     "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
     "unicorn/prefer-node-protocol": 0,
-    "unicorn/prefer-number-properties": Array [
+    "unicorn/prefer-number-properties": [
       1,
-      Object {
+      {
         "checkInfinity": false,
       },
     ],
@@ -3660,9 +3660,9 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
-    "unicorn/prefer-switch": Array [
+    "unicorn/prefer-switch": [
       2,
-      Object {
+      {
         "emptyDefaultCase": "no-default-comment",
       },
     ],
@@ -3684,48 +3684,48 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
-  "settings": Object {},
+  "settings": {},
 }
 `;
 
 exports[`createConfig matches snapshot 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": false,
     "es2021": true,
     "node": true,
   },
-  "ignorePatterns": Array [],
-  "overrides": Array [
-    Object {
-      "env": Object {
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "env": {
         "jest": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest-formatting/strict",
       ],
-      "files": Array [
+      "files": [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": Array [
-        Object {
-          "files": Array [
+      "overrides": [
+        {
+          "files": [
             "jest.config.js",
             "jest.config.ts",
           ],
-          "rules": Object {
+          "rules": {
             "import/no-default-export": "off",
           },
         },
       ],
-      "parserOptions": Object {
+      "parserOptions": {
         "ecmaVersion": 2020,
       },
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-namespace": 0,
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -3747,9 +3747,9 @@ Object {
         "jest/no-interpolation-in-snapshots": 2,
         "jest/no-jasmine-globals": 2,
         "jest/no-jest-import": 2,
-        "jest/no-large-snapshots": Array [
+        "jest/no-large-snapshots": [
           1,
-          Object {
+          {
             "maxSize": 300,
           },
         ],
@@ -3783,31 +3783,31 @@ Object {
         "sonarjs/no-duplicate-string": 0,
         "sonarjs/no-identical-functions": 0,
       },
-      "settings": Object {
-        "jest": Object {
+      "settings": {
+        "jest": {
           "version": "detect",
         },
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "import",
     "unicorn",
     "promise",
     "sonarjs",
   ],
   "reportUnusedDisableDirectives": true,
-  "rules": Object {
+  "rules": {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
-    "array-callback-return": Array [
+    "array-callback-return": [
       2,
-      Object {
+      {
         "checkForEach": true,
       },
     ],
@@ -3829,7 +3829,7 @@ Object {
     "consistent-return": 0,
     "consistent-this": 0,
     "constructor-super": 2,
-    "curly": Array [
+    "curly": [
       1,
       "all",
     ],
@@ -3843,7 +3843,7 @@ Object {
     "for-direction": 2,
     "func-call-spacing": 0,
     "func-name-matching": 0,
-    "func-names": Array [
+    "func-names": [
       1,
       "as-needed",
     ],
@@ -3874,9 +3874,9 @@ Object {
     "import/no-amd": 2,
     "import/no-anonymous-default-export": 2,
     "import/no-commonjs": 0,
-    "import/no-cycle": Array [
+    "import/no-cycle": [
       1,
-      Object {
+      {
         "ignoreExternal": true,
         "maxDepth": 5,
       },
@@ -3904,19 +3904,19 @@ Object {
     "import/no-unused-modules": 1,
     "import/no-useless-path-segments": 0,
     "import/no-webpack-loader-syntax": 2,
-    "import/order": Array [
+    "import/order": [
       1,
-      Object {
-        "alphabetize": Object {
+      {
+        "alphabetize": {
           "order": "asc",
         },
-        "groups": Array [
-          Array [
+        "groups": [
+          [
             "builtin",
             "external",
             "internal",
           ],
-          Array [
+          [
             "unknown",
             "parent",
             "sibling",
@@ -3963,7 +3963,7 @@ Object {
     "no-class-assign": 2,
     "no-comma-dangle": 0,
     "no-compare-neg-zero": 2,
-    "no-cond-assign": Array [
+    "no-cond-assign": [
       1,
       "except-parens",
     ],
@@ -4001,9 +4001,9 @@ Object {
     "no-floating-decimal": 0,
     "no-func-assign": 1,
     "no-global-assign": 1,
-    "no-implicit-coercion": Array [
+    "no-implicit-coercion": [
       1,
-      Object {
+      {
         "boolean": false,
         "number": true,
         "string": true,
@@ -4052,7 +4052,7 @@ Object {
     "no-regex-spaces": 1,
     "no-reserved-keys": 0,
     "no-restricted-exports": 0,
-    "no-restricted-globals": Array [
+    "no-restricted-globals": [
       2,
       "addEventListener",
       "blur",
@@ -4146,9 +4146,9 @@ Object {
     "no-unsafe-finally": 2,
     "no-unsafe-negation": 1,
     "no-unsafe-optional-chaining": 2,
-    "no-unused-expressions": Array [
+    "no-unused-expressions": [
       2,
-      Object {
+      {
         "allowShortCircuit": true,
         "allowTaggedTemplates": true,
         "allowTernary": true,
@@ -4156,16 +4156,16 @@ Object {
     ],
     "no-unused-labels": 0,
     "no-unused-private-class-members": 1,
-    "no-unused-vars": Array [
+    "no-unused-vars": [
       1,
-      Object {
+      {
         "args": "none",
         "ignoreRestSiblings": true,
       },
     ],
-    "no-use-before-define": Array [
+    "no-use-before-define": [
       1,
-      Object {
+      {
         "classes": false,
         "functions": false,
         "variables": false,
@@ -4191,12 +4191,12 @@ Object {
     "object-curly-spacing": 0,
     "object-property-newline": 0,
     "object-shorthand": 1,
-    "one-var": Array [
+    "one-var": [
       1,
       "never",
     ],
     "one-var-declaration-per-line": 0,
-    "operator-assignment": Array [
+    "operator-assignment": [
       1,
       "always",
     ],
@@ -4217,9 +4217,9 @@ Object {
     "prefer-template": 1,
     "promise/always-return": 0,
     "promise/avoid-new": 0,
-    "promise/catch-or-return": Array [
+    "promise/catch-or-return": [
       2,
-      Object {
+      {
         "allowFinally": true,
         "allowThen": true,
       },
@@ -4248,7 +4248,7 @@ Object {
     "semi-style": 0,
     "sonarjs/cognitive-complexity": 1,
     "sonarjs/elseif-without-else": 1,
-    "sonarjs/max-switch-cases": Array [
+    "sonarjs/max-switch-cases": [
       2,
       15,
     ],
@@ -4296,10 +4296,10 @@ Object {
     "space-return-throw-case": 0,
     "space-unary-ops": 0,
     "space-unary-word-ops": 0,
-    "spaced-comment": Array [
+    "spaced-comment": [
       1,
       "always",
-      Object {},
+      {},
     ],
     "strict": 0,
     "switch-colon-spacing": 0,
@@ -4377,9 +4377,9 @@ Object {
     "unicorn/prefer-module": 0,
     "unicorn/prefer-negative-index": 2,
     "unicorn/prefer-node-protocol": 0,
-    "unicorn/prefer-number-properties": Array [
+    "unicorn/prefer-number-properties": [
       1,
-      Object {
+      {
         "checkInfinity": false,
       },
     ],
@@ -4396,9 +4396,9 @@ Object {
     "unicorn/prefer-string-slice": 2,
     "unicorn/prefer-string-starts-ends-with": 2,
     "unicorn/prefer-string-trim-start-end": 2,
-    "unicorn/prefer-switch": Array [
+    "unicorn/prefer-switch": [
       2,
-      Object {
+      {
         "emptyDefaultCase": "no-default-comment",
       },
     ],
@@ -4420,45 +4420,45 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 1,
   },
-  "settings": Object {},
+  "settings": {},
 }
 `;
 
 exports[`createConfig overrides applies incrementalAdoption as intended 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
     "es2021": true,
     "node": true,
   },
-  "ignorePatterns": Array [],
-  "overrides": Array [
-    Object {
-      "extends": Array [],
-      "files": Array [
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "extends": [],
+      "files": [
         "**/*.?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/react",
-      "overrides": Array [],
+      "overrides": [],
       "parser": "@babel/eslint-parser",
-      "parserOptions": Object {
-        "babelOptions": Object {
-          "presets": Array [
+      "parserOptions": {
+        "babelOptions": {
+          "presets": [
             "react-app",
           ],
         },
-        "ecmaFeatures": Object {
+        "ecmaFeatures": {
           "jsx": true,
         },
         "requireConfigFile": false,
         "sourceType": "module",
       },
-      "plugins": Array [
+      "plugins": [
         "jsx-a11y",
         "react-hooks",
         "react",
       ],
-      "rules": Object {
+      "rules": {
         "jsx-a11y/accessible-emoji": 0,
         "jsx-a11y/alt-text": 1,
         "jsx-a11y/anchor-has-content": 1,
@@ -4587,41 +4587,41 @@ Object {
         "react/style-prop-object": 0,
         "react/void-dom-elements-no-children": 1,
       },
-      "settings": Object {
-        "react": Object {
+      "settings": {
+        "react": {
           "version": "detect",
         },
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "jest": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest-formatting/strict",
       ],
-      "files": Array [
+      "files": [
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": Array [
-        Object {
-          "files": Array [
+      "overrides": [
+        {
+          "files": [
             "jest.config.js",
             "jest.config.ts",
           ],
-          "rules": Object {
+          "rules": {
             "import/no-default-export": "off",
           },
         },
       ],
-      "parserOptions": Object {
+      "parserOptions": {
         "ecmaVersion": 2020,
       },
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-namespace": 0,
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -4673,25 +4673,25 @@ Object {
         "sonarjs/no-duplicate-string": 0,
         "sonarjs/no-identical-functions": 0,
       },
-      "settings": Object {
-        "jest": Object {
+      "settings": {
+        "jest": {
           "version": "detect",
         },
       },
     },
   ],
-  "parserOptions": Object {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "import",
     "unicorn",
     "promise",
     "sonarjs",
   ],
   "reportUnusedDisableDirectives": true,
-  "rules": Object {
+  "rules": {
     "accessor-pairs": 0,
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
@@ -5153,18 +5153,18 @@ Object {
     "yield-star-spacing": 0,
     "yoda": 0,
   },
-  "settings": Object {},
+  "settings": {},
 }
 `;
 
 exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
-Object {
+{
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5172,7 +5172,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": "4.5.4",
@@ -5181,13 +5181,13 @@ Object {
 `;
 
 exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/foo" 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": true,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5195,7 +5195,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": undefined,
@@ -5204,13 +5204,13 @@ Object {
 `;
 
 exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/react" 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": true,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5218,7 +5218,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": undefined,
@@ -5227,13 +5227,13 @@ Object {
 `;
 
 exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/vue" 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": true,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5241,7 +5241,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": undefined,
@@ -5250,13 +5250,13 @@ Object {
 `;
 
 exports[`getDependencies given CRA, forces jest to true 1`] = `
-Object {
+{
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": true,
     "isNext": false,
@@ -5264,7 +5264,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": undefined,
@@ -5273,13 +5273,13 @@ Object {
 `;
 
 exports[`getDependencies given typescript allows passing an alternative tsConfigPath which has priority 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5287,9 +5287,9 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
-    "config": Object {
-      "compilerOptions": Object {
+  "typescript": {
+    "config": {
+      "compilerOptions": {
         "foo": "bar",
       },
     },
@@ -5300,13 +5300,13 @@ Object {
 `;
 
 exports[`getDependencies given typescript bails on the first config found with compilerOptions 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5314,9 +5314,9 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
-    "config": Object {
-      "compilerOptions": Object {
+  "typescript": {
+    "config": {
+      "compilerOptions": {
         "foo": "bar",
       },
     },
@@ -5327,13 +5327,13 @@ Object {
 `;
 
 exports[`getDependencies given typescript does not check tsconfig.json if no ts dependency was found 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5341,7 +5341,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": undefined,
@@ -5350,13 +5350,13 @@ Object {
 `;
 
 exports[`getDependencies given typescript recursively reads extends property and retrieves next 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5364,9 +5364,9 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
-    "config": Object {
-      "compilerOptions": Object {
+  "typescript": {
+    "config": {
+      "compilerOptions": {
         "foo": "bar",
       },
     },
@@ -5377,13 +5377,13 @@ Object {
 `;
 
 exports[`getDependencies matches snapshot 1`] = `
-Object {
+{
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": false,
     "isNext": false,
@@ -5391,7 +5391,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": "4.5.4",
@@ -5400,13 +5400,13 @@ Object {
 `;
 
 exports[`getDependencies matches snapshot when erroring 1`] = `
-Object {
+{
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasStorybook": false,
   "hasTestingLibrary": false,
-  "react": Object {
+  "react": {
     "hasReact": false,
     "isCreateReactApp": undefined,
     "isNext": false,
@@ -5414,7 +5414,7 @@ Object {
     "isRemix": false,
     "version": undefined,
   },
-  "typescript": Object {
+  "typescript": {
     "config": undefined,
     "hasTypeScript": false,
     "version": undefined,
