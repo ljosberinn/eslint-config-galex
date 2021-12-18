@@ -98,7 +98,7 @@
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
     "@types/jest": "27.0.3",
-    "eslint": "8.4.1",
+    "eslint": "8.5.0",
     "jest": "27.4.5",
     "jest-watch-typeahead": "0.6.5",
     "prettier": "2.5.1",
