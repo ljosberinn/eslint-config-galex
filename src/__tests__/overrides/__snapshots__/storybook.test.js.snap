@@ -7,6 +7,9 @@ exports[`createStorybookOverride matches snapshot if both storybook and but stor
     "*.story.*",
   ],
   "overrideType": "eslint-config-galex/storybook",
+  "plugins": [
+    "storybook",
+  ],
   "rules": {
     "import/no-anonymous-default-export": "off",
     "import/no-default-export": "off",
@@ -38,6 +41,9 @@ exports[`createStorybookOverride matches snapshot if storybook is present 1`] = 
     "*.story.*",
   ],
   "overrideType": "eslint-config-galex/storybook",
+  "plugins": [
+    "storybook",
+  ],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "off",
@@ -66,6 +72,9 @@ exports[`createStorybookOverride matches snapshot if storybook is present, witho
     "*.story.*",
   ],
   "overrideType": "eslint-config-galex/storybook",
+  "plugins": [
+    "storybook",
+  ],
   "rules": {
     "import/no-anonymous-default-export": "off",
     "import/no-default-export": "off",

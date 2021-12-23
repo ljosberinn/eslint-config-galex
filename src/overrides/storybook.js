@@ -3,6 +3,7 @@ const {
 } = require('../utils/overrideTypes');
 
 const files = ['*.stories.*', '*.story.*'];
+const plugins = ['storybook'];
 
 /**
  * @param {{
@@ -41,6 +42,7 @@ const createStorybookOverride = ({
   return {
     rules: finalRules,
     files: finalFiles,
+    plugins,
     overrideType,
   };
 };
@@ -145,7 +147,7 @@ const createStorybookRules = ({
   /**
    * use `@storybook/testing-library` wrapper over `@testing-library/react` for
    * interactions
-   * 
+   *
    * active even if the wrapper is not present to raise awareness
    *
    * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md
@@ -185,4 +187,5 @@ module.exports = {
   files,
   createStorybookRules,
   overrideType,
+  plugins,
 };
