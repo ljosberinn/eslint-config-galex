@@ -162,20 +162,25 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
     const hasJest = react.isCreateReactApp ? true : deps.has('jest');
     const hasJestDom = deps.has('@testing-library/jest-dom');
     const hasNodeTypes = deps.has('@types/node');
-    const hasStorybook = depsAsTuple.some(([dep]) =>
-      dep.startsWith('@storybook/')
-    );
 
     const hasTestingLibrary = testingLibFamily.some(pkg =>
       deps.has(`@testing-library/${pkg}`)
     );
+
+    const storybook = {
+      hasStorybook: depsAsTuple.some(
+        ([dep]) =>
+          dep.startsWith('@storybook/') && dep !== '@storybook/testing-library'
+      ),
+      hasStorybookTestingLibrary: deps.has('@storybook/testing-library'),
+    };
 
     return {
       hasJest,
       hasJestDom,
       hasNodeTypes,
       hasTestingLibrary,
-      hasStorybook,
+      storybook,
       react,
       typescript,
     };
@@ -188,7 +193,10 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       hasJestDom: false,
       hasNodeTypes: false,
       hasTestingLibrary: false,
-      hasStorybook: false,
+      storybook: {
+        hasStorybook: false,
+        hasStorybookTestingLibrary: false,
+      },
       react: {
         hasReact: false,
         isCreateReactApp: undefined,

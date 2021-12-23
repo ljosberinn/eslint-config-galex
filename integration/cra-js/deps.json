@@ -3,7 +3,10 @@
   "hasJestDom": true,
   "hasNodeTypes": false,
   "hasTestingLibrary": true,
-  "hasStorybook": false,
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false
+  },
   "react": {
     "hasReact": true,
     "isCreateReactApp": true,

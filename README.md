@@ -187,7 +187,7 @@ All rules are commented and link to their docs.
 - [x] jest-dom
 - [x] @testing-library
 - [x] prettier
-- [x] storybook
+- [x] storybook & storybook/testing-library
 
 ## What can you do?
 
@@ -230,10 +230,16 @@ interface Project {
    * whether any `@testing-library/<environment>` is present
    */
   hasTestingLibrary: boolean;
-  /**
-   * whether any `@storybook/<package>` is present
-   */
-  hasStorybook: boolean;
+  storybook: {
+    /**
+     * whether any `@storybook/` is present that is not `@storybook/testing-library`
+     */
+    hasStorybook: boolean;
+    /**
+     * whether `@storybook/testing-library` is present
+     */
+    hasStorybookTestingLibrary: boolean;
+  };
   typescript: {
     /**
      * whether `typescript` is present

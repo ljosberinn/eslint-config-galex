@@ -5169,7 +5169,6 @@ exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5178,6 +5177,10 @@ exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": undefined,
@@ -5187,12 +5190,11 @@ exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
 }
 `;
 
-exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/foo" 1`] = `
+exports[`getDependencies adds the storybook override given a non @storybook/testing-library dependency - "@storybook/foo" 1`] = `
 {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": true,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5201,6 +5203,10 @@ exports[`getDependencies adds the storybook override given any @storybook/* depe
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": true,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": undefined,
@@ -5210,12 +5216,11 @@ exports[`getDependencies adds the storybook override given any @storybook/* depe
 }
 `;
 
-exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/react" 1`] = `
+exports[`getDependencies adds the storybook override given a non @storybook/testing-library dependency - "@storybook/react" 1`] = `
 {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": true,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5224,6 +5229,10 @@ exports[`getDependencies adds the storybook override given any @storybook/* depe
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": true,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": undefined,
@@ -5233,12 +5242,11 @@ exports[`getDependencies adds the storybook override given any @storybook/* depe
 }
 `;
 
-exports[`getDependencies adds the storybook override given any @storybook/* dependency - "@storybook/vue" 1`] = `
+exports[`getDependencies adds the storybook override given a non @storybook/testing-library dependency - "@storybook/vue" 1`] = `
 {
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": true,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5247,6 +5255,10 @@ exports[`getDependencies adds the storybook override given any @storybook/* depe
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": true,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": undefined,
@@ -5261,7 +5273,6 @@ exports[`getDependencies given CRA, forces jest to true 1`] = `
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5270,6 +5281,10 @@ exports[`getDependencies given CRA, forces jest to true 1`] = `
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": undefined,
@@ -5284,7 +5299,6 @@ exports[`getDependencies given typescript allows passing an alternative tsConfig
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5293,6 +5307,10 @@ exports[`getDependencies given typescript allows passing an alternative tsConfig
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": {
@@ -5311,7 +5329,6 @@ exports[`getDependencies given typescript bails on the first config found with c
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5320,6 +5337,10 @@ exports[`getDependencies given typescript bails on the first config found with c
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": {
@@ -5338,7 +5359,6 @@ exports[`getDependencies given typescript does not check tsconfig.json if no ts 
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5347,6 +5367,10 @@ exports[`getDependencies given typescript does not check tsconfig.json if no ts 
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": undefined,
@@ -5361,7 +5385,6 @@ exports[`getDependencies given typescript recursively reads extends property and
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5370,6 +5393,10 @@ exports[`getDependencies given typescript recursively reads extends property and
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": {
@@ -5388,7 +5415,6 @@ exports[`getDependencies matches snapshot 1`] = `
   "hasJest": true,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5397,6 +5423,10 @@ exports[`getDependencies matches snapshot 1`] = `
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
   },
   "typescript": {
     "config": undefined,
@@ -5411,7 +5441,6 @@ exports[`getDependencies matches snapshot when erroring 1`] = `
   "hasJest": false,
   "hasJestDom": false,
   "hasNodeTypes": false,
-  "hasStorybook": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
@@ -5420,6 +5449,36 @@ exports[`getDependencies matches snapshot when erroring 1`] = `
     "isPreact": false,
     "isRemix": false,
     "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false,
+  },
+  "typescript": {
+    "config": undefined,
+    "hasTypeScript": false,
+    "version": undefined,
+  },
+}
+`;
+
+exports[`getDependencies sets hasStorybookTestingLibrary to true given its presence 1`] = `
+{
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "react": {
+    "hasReact": false,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isPreact": false,
+    "isRemix": false,
+    "version": undefined,
+  },
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": true,
   },
   "typescript": {
     "config": undefined,

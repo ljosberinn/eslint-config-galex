@@ -177,7 +177,7 @@ describe('getDependencies', () => {
   });
 
   test.each(['@storybook/react', '@storybook/vue', '@storybook/foo'])(
-    'adds the storybook override given any @storybook/* dependency - "%s"',
+    'adds the storybook override given a non @storybook/testing-library dependency - "%s"',
     dependency => {
       jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
         packageJson: {
@@ -192,10 +192,30 @@ describe('getDependencies', () => {
 
       const deps = getDependencies();
 
-      expect(deps.hasStorybook).toBeTruthy();
+      expect(deps.storybook.hasStorybook).toBe(true);
+      expect(deps.storybook.hasStorybookTestingLibrary).toBe(false);
       expect(deps).toMatchSnapshot();
     }
   );
+
+  test('sets hasStorybookTestingLibrary to true given its presence', () => {
+    jest.spyOn(readPkgUp, 'sync').mockReturnValueOnce({
+      packageJson: {
+        dependencies: {
+          '@storybook/testing-library': '6.0.1',
+        },
+      },
+    });
+
+    jest.spyOn(fs, 'readFileSync').mockReturnValue('');
+    jest.spyOn(ts, 'parseJsonText').mockReturnValue('');
+
+    const deps = getDependencies();
+
+    expect(deps.storybook.hasStorybook).toBe(false);
+    expect(deps.storybook.hasStorybookTestingLibrary).toBe(true);
+    expect(deps).toMatchSnapshot();
+  });
 });
 
 describe('createConfig', () => {
