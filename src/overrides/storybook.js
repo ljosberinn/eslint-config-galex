@@ -75,7 +75,7 @@ const createStorybookRules = ({
    *
    * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/csf-component.md
    */
-  'storybook/cs-component': 'error',
+  'storybook/csf-component': 'error',
 
   /**
    * enforces having a default export.
