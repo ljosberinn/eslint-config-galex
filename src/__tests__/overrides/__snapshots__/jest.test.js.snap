@@ -3,9 +3,9 @@
 exports[`createJestConfigOverride matches snapshot given jest 1`] = `
 {
   "files": [
-    "jest.config.js",
-    "jest.config.ts",
+    "jest.config.(js|ts)",
   ],
+  "overrideType": "eslint-config-galex/jest-config",
   "rules": {
     "import/no-default-export": "off",
   },
@@ -26,17 +26,7 @@ exports[`createJestOverride allows passing extra extends 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -153,17 +143,7 @@ exports[`createJestOverride allows passing extra rules 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -280,17 +260,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & react 1`] = 
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -389,17 +359,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib 
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -538,17 +498,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib 
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -692,17 +642,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib 
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -845,17 +785,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib 
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -992,17 +922,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib 
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -1137,17 +1057,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & testing-lib 
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -1276,17 +1186,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom & ts 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -1389,17 +1289,7 @@ exports[`createJestOverride matches snapshot with jest & jest-dom 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -1496,17 +1386,7 @@ exports[`createJestOverride matches snapshot with jest & react 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -1593,17 +1473,7 @@ exports[`createJestOverride matches snapshot with jest & testing-lib 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -1720,17 +1590,7 @@ exports[`createJestOverride matches snapshot with jest & ts 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },
@@ -1821,17 +1681,7 @@ exports[`createJestOverride matches snapshot with jest 1`] = `
     "**/*.?(test|spec).?(ts|js)?(x)",
   ],
   "overrideType": "eslint-config-galex/jest",
-  "overrides": [
-    {
-      "files": [
-        "jest.config.js",
-        "jest.config.ts",
-      ],
-      "rules": {
-        "import/no-default-export": "off",
-      },
-    },
-  ],
+  "overrides": [],
   "parserOptions": {
     "ecmaVersion": 2020,
   },

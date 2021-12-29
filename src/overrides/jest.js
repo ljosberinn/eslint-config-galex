@@ -1,4 +1,7 @@
-const { jestOverrideType: overrideType } = require('../utils/overrideTypes');
+const {
+  jestOverrideType: overrideType,
+  jestConfigOverrideType,
+} = require('../utils/overrideTypes');
 
 const defaultEnv = {
   jest: true,
@@ -90,10 +93,7 @@ const createJestOverride = ({
   const files = customFiles || defaultFiles;
   const finalExtends = customExtends.length > 0 ? customExtends : extendsConfig;
 
-  const overrides = [
-    createJestConfigOverride({ hasJest }),
-    ...customOverrides,
-  ].filter(Boolean);
+  const overrides = [...customOverrides].filter(Boolean);
 
   return {
     env,
@@ -871,7 +871,7 @@ const getTestingLibrarySettings = ({
   };
 };
 
-const jestConfigPattern = ['jest.config.js', 'jest.config.ts'];
+const jestConfigPattern = ['jest.config.(js|ts)'];
 
 const createJestConfigOverride = ({ hasJest }) => {
   if (!hasJest) {
@@ -883,6 +883,7 @@ const createJestConfigOverride = ({ hasJest }) => {
     rules: {
       'import/no-default-export': 'off',
     },
+    overrideType: jestConfigOverrideType,
   };
 };
 
@@ -901,4 +902,5 @@ module.exports = {
   getTestingLibrarySettings,
   createJestConfigOverride,
   jestConfigPattern,
+  jestConfigOverrideType,
 };

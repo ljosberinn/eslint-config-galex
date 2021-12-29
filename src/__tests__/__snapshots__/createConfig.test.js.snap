@@ -21,17 +21,7 @@ exports[`createConfig allows passing env 1`] = `
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts",
-          ],
-          "rules": {
-            "import/no-default-export": "off",
-          },
-        },
-      ],
+      "overrides": [],
       "parserOptions": {
         "ecmaVersion": 2020,
       },
@@ -100,6 +90,15 @@ exports[`createConfig allows passing env 1`] = `
         "jest": {
           "version": "detect",
         },
+      },
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)",
+      ],
+      "overrideType": "eslint-config-galex/jest-config",
+      "rules": {
+        "import/no-default-export": 0,
       },
     },
   ],
@@ -758,17 +757,7 @@ exports[`createConfig allows passing extra rules 1`] = `
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts",
-          ],
-          "rules": {
-            "import/no-default-export": "off",
-          },
-        },
-      ],
+      "overrides": [],
       "parserOptions": {
         "ecmaVersion": 2020,
       },
@@ -837,6 +826,15 @@ exports[`createConfig allows passing extra rules 1`] = `
         "jest": {
           "version": "detect",
         },
+      },
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)",
+      ],
+      "overrideType": "eslint-config-galex/jest-config",
+      "rules": {
+        "import/no-default-export": 0,
       },
     },
   ],
@@ -1496,17 +1494,7 @@ exports[`createConfig allows passing overrides 1`] = `
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts",
-          ],
-          "rules": {
-            "import/no-default-export": "off",
-          },
-        },
-      ],
+      "overrides": [],
       "parserOptions": {
         "ecmaVersion": 2020,
       },
@@ -1575,6 +1563,15 @@ exports[`createConfig allows passing overrides 1`] = `
         "jest": {
           "version": "detect",
         },
+      },
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)",
+      ],
+      "overrideType": "eslint-config-galex/jest-config",
+      "rules": {
+        "import/no-default-export": 0,
       },
     },
     {
@@ -2237,17 +2234,7 @@ exports[`createConfig allows passing parserOptions 1`] = `
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts",
-          ],
-          "rules": {
-            "import/no-default-export": "off",
-          },
-        },
-      ],
+      "overrides": [],
       "parserOptions": {
         "ecmaVersion": 2020,
       },
@@ -2316,6 +2303,15 @@ exports[`createConfig allows passing parserOptions 1`] = `
         "jest": {
           "version": "detect",
         },
+      },
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)",
+      ],
+      "overrideType": "eslint-config-galex/jest-config",
+      "rules": {
+        "import/no-default-export": 0,
       },
     },
   ],
@@ -2975,17 +2971,7 @@ exports[`createConfig allows passing plugins 1`] = `
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts",
-          ],
-          "rules": {
-            "import/no-default-export": "off",
-          },
-        },
-      ],
+      "overrides": [],
       "parserOptions": {
         "ecmaVersion": 2020,
       },
@@ -3054,6 +3040,15 @@ exports[`createConfig allows passing plugins 1`] = `
         "jest": {
           "version": "detect",
         },
+      },
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)",
+      ],
+      "overrideType": "eslint-config-galex/jest-config",
+      "rules": {
+        "import/no-default-export": 0,
       },
     },
   ],
@@ -3713,17 +3708,7 @@ exports[`createConfig matches snapshot 1`] = `
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts",
-          ],
-          "rules": {
-            "import/no-default-export": "off",
-          },
-        },
-      ],
+      "overrides": [],
       "parserOptions": {
         "ecmaVersion": 2020,
       },
@@ -3792,6 +3777,15 @@ exports[`createConfig matches snapshot 1`] = `
         "jest": {
           "version": "detect",
         },
+      },
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)",
+      ],
+      "overrideType": "eslint-config-galex/jest-config",
+      "rules": {
+        "import/no-default-export": 0,
       },
     },
   ],
@@ -4610,17 +4604,7 @@ exports[`createConfig overrides applies incrementalAdoption as intended 1`] = `
         "**/*.?(test|spec).?(ts|js)?(x)",
       ],
       "overrideType": "eslint-config-galex/jest",
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts",
-          ],
-          "rules": {
-            "import/no-default-export": "off",
-          },
-        },
-      ],
+      "overrides": [],
       "parserOptions": {
         "ecmaVersion": 2020,
       },
@@ -4683,6 +4667,15 @@ exports[`createConfig overrides applies incrementalAdoption as intended 1`] = `
         "jest": {
           "version": "detect",
         },
+      },
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)",
+      ],
+      "overrideType": "eslint-config-galex/jest-config",
+      "rules": {
+        "import/no-default-export": 0,
       },
     },
   ],

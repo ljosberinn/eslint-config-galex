@@ -3,7 +3,7 @@ const { resolve } = require('path');
 const readPkgUp = require('read-pkg-up');
 const ts = require('typescript');
 
-const { createJestOverride } = require('./overrides/jest');
+const { createJestOverride, createJestConfigOverride } = require('./overrides/jest');
 const { createReactOverride } = require('./overrides/react');
 const { createStorybookOverride } = require('./overrides/storybook');
 const { createTSOverride } = require('./overrides/typescript');
@@ -291,6 +291,7 @@ const createConfig = ({
     createTSOverride(project),
     createJestOverride(project),
     createStorybookOverride(project),
+    createJestConfigOverride(project),
     ...customOverrides,
   ]).map(override => {
     const { rules, ...rest } = override;

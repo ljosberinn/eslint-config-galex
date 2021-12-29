@@ -457,17 +457,7 @@
           "renderToStaticMarkup"
         ]
       },
-      "overrides": [
-        {
-          "files": [
-            "jest.config.js",
-            "jest.config.ts"
-          ],
-          "rules": {
-            "import/no-default-export": "off"
-          }
-        }
-      ],
+      "overrides": [],
       "rules": {
         "jest/consistent-test-it": 0,
         "jest/expect-expect": 0,
@@ -574,6 +564,14 @@
         "no-param-reassign": 0,
         "react/button-has-type": 0,
         "jsx-a11y/control-has-associated-label": 0
+      }
+    },
+    {
+      "files": [
+        "jest.config.(js|ts)"
+      ],
+      "rules": {
+        "import/no-default-export": 0
       }
     }
   ],

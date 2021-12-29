@@ -8,6 +8,7 @@ const {
   overrideType: jestOverrideType,
   createJestOverride,
   createJestRules,
+  jestConfigOverrideType,
 } = require('../overrides/jest');
 const { overrideType: reactOverrideType } = require('../overrides/react');
 const {
@@ -282,7 +283,7 @@ describe('createConfig', () => {
 
     const config = createConfig({ overrides: [plugin] });
 
-    expect(config.overrides[1]).toStrictEqual(plugin);
+    expect(config.overrides[2]).toStrictEqual(plugin);
     expect(config).toMatchSnapshot();
   });
 
@@ -372,7 +373,8 @@ describe('createConfig', () => {
       expect(overrides[1].overrideType).toBe(tsOverrideType);
       expect(overrides[2].overrideType).toBe(jestOverrideType);
       expect(overrides[3].overrideType).toBe(storybookOverrideType);
-      expect(overrides[4]).toStrictEqual(dummyOverride);
+      expect(overrides[4].overrideType).toBe(jestConfigOverrideType);
+      expect(overrides[5]).toStrictEqual(dummyOverride);
     });
 
     test('merges overrides correctly given additional, internal overrides with custom files', () => {
@@ -417,8 +419,8 @@ describe('createConfig', () => {
         override => override.overrideType === jestOverrideType
       );
 
-      // 5 overrides were given, 5 should be present due to merigng
-      expect(overrides).toHaveLength(5);
+      // 6 overrides were given, 6 should be present due to merigng
+      expect(overrides).toHaveLength(6);
 
       // order should be correct
       expect(overrides[0].overrideType).toBe(reactOverrideType);
@@ -478,8 +480,8 @@ describe('createConfig', () => {
         override => override.overrideType === jestOverrideType
       );
 
-      // 5 overrides were given, 4 should be present due to merigng
-      expect(overrides).toHaveLength(4);
+      // 6 overrides were given, 5 should be present due to merigng
+      expect(overrides).toHaveLength(5);
 
       // order should be correct
       expect(overrides[0].overrideType).toBe(reactOverrideType);
@@ -535,15 +537,16 @@ describe('createConfig', () => {
         convertToESLintInternals: false,
       });
 
-      expect(overrides).toHaveLength(6);
+      expect(overrides).toHaveLength(7);
 
       expect(overrides[0].overrideType).toBe(reactOverrideType);
       expect(overrides[1].overrideType).toBe(tsOverrideType);
       expect(overrides[2].overrideType).toBe(jestOverrideType);
       expect(overrides[3].overrideType).toBe(storybookOverrideType);
+      expect(overrides[4].overrideType).toBe(jestConfigOverrideType);
 
-      expect(overrides[4]).toStrictEqual(dummyOverride1);
-      expect(overrides[5]).toStrictEqual(dummyOverride2);
+      expect(overrides[5]).toStrictEqual(dummyOverride1);
+      expect(overrides[6]).toStrictEqual(dummyOverride2);
     });
 
     test('applies incrementalAdoption as intended', () => {
