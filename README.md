@@ -16,26 +16,17 @@ npm install --save-dev eslint-config-galex eslint
 
 ## Usage with create-react-app
 
-Due to notoriously outdated dependencies within `create-react-app` core dependency `react-scripts`, you'll have to install several dependencies on top:
-
-- `eslint-plugin-testing-library`
-
-### Without TypeScript
-
-- `@babel/eslint-parser`
-
-### With TypeScript
-
-- `@typescript-eslint/parser`
-- `@typescript-eslint/eslint-plugin`
+As of January 2021 / due to CRA v5, currently no additional steps are required! 🎉
 
 ## Usage with Next.js
 
-Unless you set [`eslint.ignoreDuringBuilds`](https://nextjs.org/docs/api-reference/next.config.js/ignoring-eslint) to `true` in your `next.config.js`, you will have to install `eslint-config-next` separately. Otherwise, the build will fail due to their hard dependency on `eslint-config-next`.
+In your `next.config.js`, I heavily recommend setting [`eslint.ignoreDuringBuilds`](https://nextjs.org/docs/api-reference/next.config.js/ignoring-eslint) to `true`. Otherwise, you'll have to install `eslint-config-next` separately and won't benefit of this config and your customization on top.
 
-I _heavily recommend_ doing so, as the Next.js internal eslint-config contains less features and is far less strict.
+## Usage with Remix Run
 
-# Setup
+Remix does not come with ESLint as (dev)dependency, so you'll need to install that additionally to the config itself.
+
+# Basic Setup
 
 ```js
 // .eslintrc.js
