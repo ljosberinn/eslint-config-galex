@@ -296,6 +296,13 @@ const getUnicornRules = ({
   'unicorn/no-static-only-class': 'error',
 
   /**
+   * disallows custom objects with .then property
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-thenable.md
+   */
+  'unicorn/no-thenable': 'warn',
+
+  /**
    * disallows reassigning `this` to another variable
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-this-assignment.md
@@ -336,6 +343,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md
    */
   'unicorn/no-useless-fallback-in-spread': 'warn',
+
+  /**
+   * disallow returning/yielding Promise.resolve/reject() in async functions or promise callbacks
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md
+   */
+  'unicorn/no-useless-promise-resolve-reject': 'warn',
 
   /**
    * disallows useless spreads
@@ -481,6 +495,13 @@ const getUnicornRules = ({
   'unicorn/prefer-includes': hasTypeScript ? 'off' : 'warn',
 
   /**
+   * prefer reading a JSON file as a buffer
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md
+   */
+  'unicorn/prefer-json-parse-buffer': 'warn',
+
+  /**
    * prefer export...from when re-exporting instead of separately importing,
    * then exporting
    *
@@ -548,13 +569,6 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md
    */
   'unicorn/prefer-object-from-entries': 'error',
-
-  /**
-   * prefer Object.hasOwn over Object.prototype.hasOwnProperty.call
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-has-own.md
-   */
-  'unicorn/prefer-object-has-own': 'warn',
 
   /**
    * handle error in try/catch or omit it
@@ -687,6 +701,13 @@ const getUnicornRules = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md
    */
   'unicorn/prevent-abbreviations': 'off',
+
+  /**
+   * disallows use of relative paths passed to `new URL()`
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md
+   */
+  'unicorn/relative-url-style': 'warn',
 
   /**
    * enforces using a separator argument when using Array.join()

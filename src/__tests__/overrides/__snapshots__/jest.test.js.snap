@@ -3,7 +3,7 @@
 exports[`createJestConfigOverride matches snapshot given jest 1`] = `
 {
   "files": [
-    "jest.config.(js|ts)",
+    "jest.config.?(js|ts)",
   ],
   "overrideType": "eslint-config-galex/jest-config",
   "rules": {

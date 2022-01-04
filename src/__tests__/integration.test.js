@@ -69,16 +69,17 @@ const normalizeSnapshot = content => {
 };
 
 const cases = [
-  { name: 'create-react-app javascript', type: 'cra', lng: 'js' },
-  { name: 'create-react-app typescript', type: 'cra', lng: 'ts' },
-  { name: 'create-next-app javascript', type: 'next', lng: 'js' },
-  { name: 'create-next-app typescript', type: 'next', lng: 'ts' },
-  { name: 'create-remix javascript', type: 'remix', lng: 'js' },
-  { name: 'create-remix typescript', type: 'remix', lng: 'ts' },
+  { name: 'create-react-app javascript', path: 'cra-js' },
+  { name: 'create-react-app typescript', path: 'cra-ts' },
+  { name: 'create-next-app javascript', path: 'next-js' },
+  { name: 'create-next-app typescript', path: 'next-ts' },
+  { name: 'create-remix javascript', path: 'remix-js' },
+  { name: 'create-remix typescript', path: 'remix-ts' },
+  { name: 'jest', path: 'jest' },
 ];
 
-describe.each(cases)('$case.name', ({ type, name, lng }) => {
-  const cwd = resolve('integration', `${type}-${lng}`);
+describe.each(cases)('$case.name', ({ path, name }) => {
+  const cwd = resolve('integration', path);
   const { results, config, deps } = readSnapshots(cwd);
 
   test(`${name}`, () => {

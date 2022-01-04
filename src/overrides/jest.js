@@ -871,7 +871,7 @@ const getTestingLibrarySettings = ({
   };
 };
 
-const jestConfigPattern = ['jest.config.(js|ts)'];
+const jestConfigPattern = ['jest.config.?(js|ts)'];
 
 const createJestConfigOverride = ({ hasJest }) => {
   if (!hasJest) {

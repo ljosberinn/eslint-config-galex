@@ -8,7 +8,7 @@ ok 1 - /workspaces/eslint-config-galex/integration/cra-js/src/App.js
   severity: warning
   data:
     line: 25
-    column: 1
+    column: 8
     ruleId: import/no-default-export
   ...
 not ok 2 - /workspaces/eslint-config-galex/integration/cra-js/src/App.test.js
@@ -74,7 +74,7 @@ not ok 4 - /workspaces/eslint-config-galex/integration/cra-js/src/reportWebVital
       severity: warning
       data:
         line: 13
-        column: 1
+        column: 8
         ruleId: import/no-default-export
   ...
 ok 5 - /workspaces/eslint-config-galex/integration/cra-js/src/setupTests.js

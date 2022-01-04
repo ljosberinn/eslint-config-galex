@@ -1659,12 +1659,9 @@ const getStylisticIssuesRules = ({
   /**
    * prefer Object.hasOwn over Object.prototype.hasOwnproperty.call()
    *
-   * enable once https://github.com/sindresorhus/eslint-plugin-unicorn/issues/1644 is closed
-   * and remove `unicorn/prefer-object-has-own`
-   *
    * @see https://eslint.org/docs/rules/prefer-object-has-own
    */
-  'prefer-object-has-own': 'off',
+  'prefer-object-has-own': 'warn',
 
   /**
    * prefer spreading over Object.assign

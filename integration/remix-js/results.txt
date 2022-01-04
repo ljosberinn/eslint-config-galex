@@ -21,13 +21,21 @@ ok 2 - /workspaces/eslint-config-galex/integration/remix-js/app/entry.server.jsx
   ...
 not ok 3 - /workspaces/eslint-config-galex/integration/remix-js/app/root.jsx
   ---
-  message: '`~/styles/dark.css` import should occur before import of `~/styles/global.css`'
+  message: There should be no empty line within import group
   severity: warning
   data:
-    line: 13
+    line: 1
     column: 1
     ruleId: import/order
   messages:
+    - message: >-
+        `~/styles/dark.css` import should occur before import of
+        `~/styles/global.css`
+      severity: warning
+      data:
+        line: 13
+        column: 1
+        ruleId: import/order
     - message: Exporting mutable 'let' binding, use 'const' instead.
       severity: error
       data:
@@ -55,13 +63,19 @@ not ok 3 - /workspaces/eslint-config-galex/integration/remix-js/app/root.jsx
   ...
 not ok 4 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/about.jsx
   ---
-  message: Exporting mutable 'let' binding, use 'const' instead.
-  severity: error
+  message: There should be no empty line within import group
+  severity: warning
   data:
-    line: 5
-    column: 8
-    ruleId: import/no-mutable-exports
+    line: 1
+    column: 1
+    ruleId: import/order
   messages:
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 5
+        column: 8
+        ruleId: import/no-mutable-exports
     - message: '''meta'' is never reassigned. Use ''const'' instead.'
       severity: warning
       data:

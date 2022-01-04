@@ -49,7 +49,7 @@ not ok 2 - /workspaces/eslint-config-galex/integration/cra-ts/src/App.tsx
       severity: warning
       data:
         line: 26
-        column: 1
+        column: 8
         ruleId: import/no-default-export
   ...
 not ok 3 - /workspaces/eslint-config-galex/integration/cra-ts/src/index.tsx
@@ -100,7 +100,7 @@ not ok 5 - /workspaces/eslint-config-galex/integration/cra-ts/src/reportWebVital
       severity: warning
       data:
         line: 15
-        column: 1
+        column: 8
         ruleId: import/no-default-export
   ...
 ok 6 - /workspaces/eslint-config-galex/integration/cra-ts/src/setupTests.ts
