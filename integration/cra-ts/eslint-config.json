@@ -493,6 +493,7 @@
         "jest/no-truthy-falsy": 0,
         "jest/no-try-expect": 0,
         "jest/prefer-called-with": 2,
+        "jest/prefer-comparison-matcher": 1,
         "jest/prefer-expect-assertions": 0,
         "jest/prefer-hooks-on-top": 2,
         "jest/prefer-inline-snapshots": 0,

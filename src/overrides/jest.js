@@ -329,6 +329,13 @@ const createJestRules = ({ react: { isCreateReactApp } }) => {
     'jest/prefer-called-with': 'error',
 
     /**
+     * suggests using builtin comparison matchers
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-comparison-matcher.md
+     */
+    'jest/prefer-comparison-matcher': 'warn',
+
+    /**
      * off because should be either globally defined or not at all
      *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-expect-assertions.md
