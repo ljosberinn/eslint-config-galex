@@ -1220,6 +1220,13 @@ const createNextJsRules = ({ react: { isNext } }) => {
     '@next/next/no-duplicate-head': 'error',
 
     /**
+     * prohibits usage of HTML <head> element
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-element.js
+     */
+    '@next/next/no-head-element': 'error',
+
+    /**
      * disallow importing `next/head` in pages/document.js
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-import-in-document.js
