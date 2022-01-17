@@ -29,6 +29,8 @@
     "./integration/next-ts",
     "./integration/remix-js",
     "./integration/remix-ts",
+    "./integration/jest",
+    "./integration/nest-ts",
     "./"
   ]
 }
