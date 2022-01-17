@@ -474,7 +474,7 @@ exports[`createTSOverride matches snapshot with TS & Nest.js 1`] = `
     "@typescript-eslint/no-extra-non-null-assertion": "error",
     "@typescript-eslint/no-extra-parens": "off",
     "@typescript-eslint/no-extra-semi": "off",
-    "@typescript-eslint/no-extraneous-class": "error",
+    "@typescript-eslint/no-extraneous-class": "off",
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-for-in-array": "warn",
     "@typescript-eslint/no-implicit-any-catch": "off",
