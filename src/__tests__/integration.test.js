@@ -76,6 +76,7 @@ const cases = [
   { name: 'create-remix javascript', path: 'remix-js' },
   { name: 'create-remix typescript', path: 'remix-ts' },
   { name: 'jest', path: 'jest' },
+  { name: 'nest typescript', path: 'next-ts' },
 ];
 
 describe.each(cases)('$case.name', ({ path, name }) => {

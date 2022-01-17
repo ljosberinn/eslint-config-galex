@@ -5189,6 +5189,7 @@ exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
 {
   "hasJest": true,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5215,6 +5216,7 @@ exports[`getDependencies adds the storybook override given a non @storybook/test
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5241,6 +5243,7 @@ exports[`getDependencies adds the storybook override given a non @storybook/test
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5267,6 +5270,7 @@ exports[`getDependencies adds the storybook override given a non @storybook/test
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5293,6 +5297,7 @@ exports[`getDependencies given CRA, forces jest to true 1`] = `
 {
   "hasJest": true,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5319,6 +5324,7 @@ exports[`getDependencies given typescript allows passing an alternative tsConfig
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5349,6 +5355,7 @@ exports[`getDependencies given typescript bails on the first config found with c
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5379,6 +5386,7 @@ exports[`getDependencies given typescript does not check tsconfig.json if no ts 
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5405,6 +5413,7 @@ exports[`getDependencies given typescript recursively reads extends property and
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5435,6 +5444,7 @@ exports[`getDependencies matches snapshot 1`] = `
 {
   "hasJest": true,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
@@ -5461,11 +5471,12 @@ exports[`getDependencies matches snapshot when erroring 1`] = `
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {
     "hasReact": false,
-    "isCreateReactApp": undefined,
+    "isCreateReactApp": false,
     "isNext": false,
     "isPreact": false,
     "isRemix": false,
@@ -5487,6 +5498,7 @@ exports[`getDependencies sets hasStorybookTestingLibrary to true given its prese
 {
   "hasJest": false,
   "hasJestDom": false,
+  "hasNest": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
   "react": {

@@ -179,6 +179,7 @@ All rules are commented and link to their docs.
 - [x] @testing-library
 - [x] prettier
 - [x] storybook & storybook/testing-library
+- [x] NestJS (with TypeScript)
 
 ## What can you do?
 
@@ -221,6 +222,10 @@ interface Project {
    * whether any `@testing-library/<environment>` is present
    */
   hasTestingLibrary: boolean;
+  /**
+   * whether `@nestjs/core` is present
+   */
+  hasNest: boolean;
   storybook: {
     /**
      * whether any `@storybook/` is present that is not `@storybook/testing-library`

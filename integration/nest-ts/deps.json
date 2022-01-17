@@ -1,0 +1,38 @@
+{
+  "hasJest": true,
+  "hasJestDom": false,
+  "hasNodeTypes": true,
+  "hasTestingLibrary": false,
+  "hasNest": true,
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false
+  },
+  "react": {
+    "hasReact": false,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isRemix": false,
+    "isPreact": false
+  },
+  "typescript": {
+    "config": {
+      "compilerOptions": {
+        "module": "commonjs",
+        "declaration": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es2017",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "baseUrl": "./",
+        "incremental": true,
+        "skipLibCheck": true
+      }
+    },
+    "hasTypeScript": true,
+    "version": "^4.4.4"
+  }
+}

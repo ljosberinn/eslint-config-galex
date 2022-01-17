@@ -1,0 +1,93 @@
+writing deps to /workspaces/eslint-config-galex/integration/nest-ts/deps.json
+writing config cache to /workspaces/eslint-config-galex/integration/nest-ts/eslint-config.json
+TAP version 13
+1..5
+not ok 1 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.controller.spec.ts
+  ---
+  message: Import "TestingModule" is only used as types.
+  severity: warning
+  data:
+    line: 1
+    column: 1
+    ruleId: '@typescript-eslint/consistent-type-imports'
+  messages:
+    - message: There should be at least one empty line between import groups
+      severity: warning
+      data:
+        line: 1
+        column: 1
+        ruleId: import/order
+    - message: Expected blank line before this statement.
+      severity: error
+      data:
+        line: 18
+        column: 7
+        ruleId: jest-formatting/padding-around-all
+  ...
+not ok 2 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.controller.ts
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 1
+    column: 1
+    ruleId: import/order
+  messages:
+    - message: Missing accessibility modifier on method definition constructor.
+      severity: error
+      data:
+        line: 6
+        column: 3
+        ruleId: '@typescript-eslint/explicit-member-accessibility'
+    - message: Missing accessibility modifier on method definition getHello.
+      severity: error
+      data:
+        line: 8
+        column: 3
+        ruleId: '@typescript-eslint/explicit-member-accessibility'
+  ...
+not ok 3 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.module.ts
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 1
+    column: 1
+    ruleId: import/order
+  messages:
+    - message: Unexpected empty class.
+      severity: error
+      data:
+        line: 10
+        column: 14
+        ruleId: '@typescript-eslint/no-extraneous-class'
+  ...
+not ok 4 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.service.ts
+  ---
+  message: Missing accessibility modifier on method definition getHello.
+  severity: error
+  data:
+    line: 5
+    column: 3
+    ruleId: '@typescript-eslint/explicit-member-accessibility'
+  ...
+not ok 5 - /workspaces/eslint-config-galex/integration/nest-ts/src/main.ts
+  ---
+  message: There should be at least one empty line between import groups
+  severity: warning
+  data:
+    line: 1
+    column: 1
+    ruleId: import/order
+  messages:
+    - message: >-
+        Promises must be awaited, end with a call to .catch, end with a call to
+        .then with a rejection handler or be explicitly marked as ignored with the
+        `void` operator.
+      severity: error
+      data:
+        line: 8
+        column: 1
+        ruleId: '@typescript-eslint/no-floating-promises'
+  ...
+

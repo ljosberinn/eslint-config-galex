@@ -3,7 +3,10 @@ const { resolve } = require('path');
 const readPkgUp = require('read-pkg-up');
 const ts = require('typescript');
 
-const { createJestOverride, createJestConfigOverride } = require('./overrides/jest');
+const {
+  createJestOverride,
+  createJestConfigOverride,
+} = require('./overrides/jest');
 const { createReactOverride } = require('./overrides/react');
 const { createStorybookOverride } = require('./overrides/storybook');
 const { createTSOverride } = require('./overrides/typescript');
@@ -175,11 +178,14 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       hasStorybookTestingLibrary: deps.has('@storybook/testing-library'),
     };
 
+    const hasNest = deps.has('@nestjs/core');
+
     return {
       hasJest,
       hasJestDom,
       hasNodeTypes,
       hasTestingLibrary,
+      hasNest,
       storybook,
       react,
       typescript,
@@ -193,13 +199,14 @@ const getDependencies = ({ cwd = process.cwd(), tsConfigPath } = {}) => {
       hasJestDom: false,
       hasNodeTypes: false,
       hasTestingLibrary: false,
+      hasNest: false,
       storybook: {
         hasStorybook: false,
         hasStorybookTestingLibrary: false,
       },
       react: {
         hasReact: false,
-        isCreateReactApp: undefined,
+        isCreateReactApp: false,
         isNext: false,
         isRemix: false,
         isPreact: false,
@@ -328,7 +335,9 @@ const createConfig = ({
   const env = {
     ...defaultEnv,
     browser: project.react.hasReact,
-    node: project.typescript.hasTypeScript ? project.hasNodeTypes : true,
+    node: project.typescript.hasTypeScript
+      ? project.hasNest || project.hasNodeTypes
+      : true,
     ...customEnv,
   };
 

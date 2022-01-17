@@ -91,6 +91,30 @@ describe('createTSOverride', () => {
     expect(createTSOverride(project)).toMatchSnapshot();
   });
 
+  test('matches snapshot with TS & Nest.js', () => {
+    const project = {
+      typescript: { hasTypeScript: true, version: '4.4.4' },
+      react: {
+        hasReact: false,
+        isNext: false,
+        isCreateReactApp: false,
+      },
+      hasNest: true,
+    };
+
+    expect(createTSOverride(project)).toMatchSnapshot();
+  });
+
+  test('defaults parserOptions.jsx to false if no useful react object is passed', () => {
+    const project = {
+      typescript: { hasTypeScript: true, version: '4.4.4' },
+    };
+
+    const override = createTSOverride(project);
+
+    expect('jsx' in override.parserOptions).toBe(false);
+  });
+
   test('conditionally toggles rules depending on config passed', () => {
     const project = {
       react: {

@@ -3,6 +3,7 @@
   "hasJestDom": false,
   "hasNodeTypes": false,
   "hasTestingLibrary": false,
+  "hasNest": false,
   "storybook": {
     "hasStorybook": false,
     "hasStorybookTestingLibrary": false
