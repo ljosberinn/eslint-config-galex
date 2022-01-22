@@ -27,8 +27,9 @@
   },
   "license": "MIT",
   "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix && prettier --write .",
     "install:clean": "rimraf node_modules yarn.lock && yarn",
@@ -101,7 +102,11 @@
   "devDependencies": {
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
+    "@types/confusing-browser-globals": "1.0.0",
+    "@types/eslint": "8.4.0",
+    "@types/eslint-config-prettier": "6.11.0",
     "@types/jest": "27.4.0",
+    "@types/node": "17.0.10",
     "eslint": "8.7.0",
     "jest": "27.4.7",
     "jest-watch-typeahead": "0.6.5",
@@ -131,5 +136,11 @@
         }
       ]
     ]
-  }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "LICENSE"
+  ]
 }

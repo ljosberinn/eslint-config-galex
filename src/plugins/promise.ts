@@ -1,20 +1,19 @@
-/**
- * @param {{
- *  typescript: {
- *    hasTypeScript: boolean;
- *  };
- *  rules?: Record<string, string | [string, string | object];
- * }} options
- */
-const createPromiseRules = ({ typescript, rules: customRules = {} }) => ({
-  ...getPromiseRules({ typescript }),
+import { RulesCreator, RulesetCreator } from '../types';
+
+export const createPromiseRules: RulesetCreator = ({
+  rules: customRules = {},
+  ...dependencies
+}) => ({
+  ...getPromiseRules(dependencies),
   ...customRules,
 });
 
 /**
  * @see https://github.com/xjamundx/eslint-plugin-promise
  */
-const getPromiseRules = ({ typescript: { hasTypeScript } }) => ({
+export const getPromiseRules: RulesCreator = ({
+  typescript: { hasTypeScript },
+}) => ({
   /**
    * off because superseded by `promise/catch-or-return`
    *
@@ -122,8 +121,3 @@ const getPromiseRules = ({ typescript: { hasTypeScript } }) => ({
    */
   'promise/valid-params': hasTypeScript ? 'off' : 'error',
 });
-
-module.exports = {
-  createPromiseRules,
-  getPromiseRules,
-};

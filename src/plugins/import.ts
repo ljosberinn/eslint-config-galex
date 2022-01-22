@@ -1,16 +1,10 @@
-/**
- * @param {{
- *  typescript: {
- *    hasTypeScript: boolean;
- *  };
- *  react: {
- *    isCreateReactApp: boolean;
- *  }
- *  rules?: Record<string, string | [string, string | object];
- * }} options
- */
-const createImportRules = ({ typescript, react, rules: customRules = {} }) => ({
-  ...getImportRules({ react, typescript }),
+import { RulesetCreator } from '../types';
+
+export const createImportRules: RulesetCreator = ({
+  rules: customRules = {},
+  ...dependencies
+}) => ({
+  ...getImportRules(dependencies),
   ...customRules,
 });
 
@@ -18,7 +12,7 @@ const createImportRules = ({ typescript, react, rules: customRules = {} }) => ({
  * @see https://github.com/benmosher/eslint-plugin-import
  *
  */
-const getImportRules = ({
+export const getImportRules: RulesetCreator = ({
   typescript: { hasTypeScript },
   react: { isCreateReactApp },
 }) => ({
@@ -348,8 +342,3 @@ const getImportRules = ({
    */
   'import/unambiguous': 'off',
 });
-
-module.exports = {
-  createImportRules,
-  getImportRules,
-};
