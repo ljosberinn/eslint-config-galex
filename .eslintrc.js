@@ -1,3 +1,6 @@
-const { createConfig } = require('./src/createConfig');
+const { createConfig } = require('./dist/createConfig');
 
-module.exports = createConfig();
+const config = createConfig();
+console.log(config);
+
+module.exports = config;
