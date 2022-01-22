@@ -1,15 +1,26 @@
-import { rules as allPrettierRules } from 'eslint-config-prettier';
-import { Dependencies, RulesCreator, RulesetCreator } from '../types';
+const { rules: allPrettierRules } = require('eslint-config-prettier');
 
 const prettierUnicornRules = Object.fromEntries(
   Object.entries(allPrettierRules).filter(([key]) => key.startsWith('unicorn/'))
 );
 
-export const createUnicornRules: RulesetCreator = ({
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  react: {
+ *    hasReact: boolean;
+ *  }
+ *  rules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createUnicornRules = ({
+  typescript,
+  react,
   rules: customRules = {},
-  ...dependencies
 }) => ({
-  ...getUnicornRules(dependencies),
+  ...getUnicornRules({ react, typescript }),
   ...prettierUnicornRules,
   ...customRules,
 });
@@ -17,7 +28,7 @@ export const createUnicornRules: RulesetCreator = ({
 /**
  * @see https://github.com/sindresorhus/eslint-plugin-unicorn
  */
-export const getUnicornRules: RulesCreator = ({
+const getUnicornRules = ({
   typescript: { hasTypeScript, config = {} },
   react: { hasReact },
 }) => ({
@@ -615,11 +626,9 @@ export const getUnicornRules: RulesCreator = ({
    */
   'unicorn/prefer-string-replace-all':
     // in TS projects, availability can be inferred based on tsConfig.lib containing anything ESNext related
-    (config.compilerOptions?.lib &&
-      Array.isArray(config.compilerOptions.lib) &&
-      config.compilerOptions.lib.some(lib =>
-        lib.toLowerCase().startsWith('esnext')
-      )) ||
+    (hasTypeScript &&
+      Array.isArray(config.lib) &&
+      config.lib.some(lib => lib.toLowerCase().startsWith('esnext'))) ||
     // browsers support .replaceAll
     hasReact
       ? 'error'
@@ -743,10 +752,7 @@ export const getUnicornRules: RulesCreator = ({
   'unicorn/throw-new-error': 'error',
 });
 
-const detectPreferTopLevelAwait = ({
-  hasTypeScript,
-  config,
-}: Omit<Dependencies['typescript'], 'version'>) => {
+const detectPreferTopLevelAwait = ({ hasTypeScript, config }) => {
   if (
     !hasTypeScript ||
     !config ||
@@ -757,15 +763,18 @@ const detectPreferTopLevelAwait = ({
     return 'off';
   }
 
-  const isValidModule = config?.compilerOptions?.module
-    ? // @ts-expect-error since tsConfig is parsed as JSON, its fine
-      ['esnext', 'system'].includes(config.compilerOptions.module.toLowerCase())
-    : false;
+  const isValidModule = ['esnext', 'system'].includes(
+    config.compilerOptions.module.toLowerCase()
+  );
 
-  const targetsAtLeastES2017 = config.compilerOptions.target
-    ? // @ts-expect-error since tsConfig is parsed as JSON, its fine
-      Number.parseInt(config.compilerOptions.target.slice(2)) > 2017
-    : false;
+  const targetsAtLeastES2017 =
+    Number.parseInt(config.compilerOptions.target.slice(2)) > 2017;
 
   return isValidModule && targetsAtLeastES2017 ? 'error' : 'off';
+};
+
+module.exports = {
+  createUnicornRules,
+  getUnicornRules,
+  prettierUnicornRules,
 };

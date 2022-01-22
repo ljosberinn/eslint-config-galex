@@ -1,19 +1,20 @@
-import { RulesCreator, RulesetCreator } from '../types';
-
-export const createSonarjsRules: RulesetCreator = ({
-  rules: customRules = {},
-  ...dependencies
-}) => ({
-  ...getSonarJsRules(dependencies),
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  rules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createSonarjsRules = ({ typescript, rules: customRules = {} }) => ({
+  ...getSonarJsRules({ typescript }),
   ...customRules,
 });
 
 /**
  * @see https://github.com/SonarSource/eslint-plugin-sonarjs
  */
-export const getSonarJsRules: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+const getSonarJsRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * prevents creeping complexity. consider alternative approach.
    *
@@ -34,6 +35,7 @@ export const getSonarJsRules: RulesCreator = ({
    * prevents endless switches. consider alternative approach. limit upped to 15.
    *
    * @default 15
+   * @default 10
    *
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/max-switch-cases.md
    */
@@ -252,3 +254,8 @@ export const getSonarJsRules: RulesCreator = ({
    */
   'sonarjs/prefer-while': 'error',
 });
+
+module.exports = {
+  createSonarjsRules,
+  getSonarJsRules,
+};

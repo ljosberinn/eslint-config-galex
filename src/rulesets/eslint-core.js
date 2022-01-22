@@ -1,35 +1,42 @@
-import restrictedGlobals from 'confusing-browser-globals';
-import { Linter } from 'eslint';
-import { rules as allPrettierRules } from 'eslint-config-prettier';
-import { RulesCreator, RulesetCreator } from '../types';
+const restrictedGlobals = require('confusing-browser-globals');
+const { rules: allPrettierRules } = require('eslint-config-prettier');
 
 const prettierRules = Object.fromEntries(
   Object.entries(allPrettierRules).filter(([key]) => !key.includes('/'))
 );
 
-export const createEslintCoreRules: RulesetCreator = ({
+/**
+ * @param {{
+ *  typescript: {
+ *    hasTypeScript: boolean;
+ *  };
+ *  react: {
+ *    isNext: boolean;
+ *    isCreateReactApp: boolean;
+ *  };
+ *  rules?: Record<string, string | [string, string | object];
+ * }} options
+ */
+const createEslintCoreRules = ({
+  typescript,
+  react,
   rules: customRules = {},
-  ...dependencies
-}) => {
-  return {
-    ...getPossibleErrorRules(dependencies),
-    ...getBestPractices(dependencies),
-    ...strictModeRules,
-    ...getVariableRules(dependencies),
-    ...getStylisticIssuesRules(dependencies),
-    ...getES6Rules(dependencies),
-    ...prettierRules,
-    ...safePrettierOverrides,
-    ...customRules,
-  };
-};
+}) => ({
+  ...getPossibleErrorRules({ typescript }),
+  ...getBestPractices({ typescript }),
+  ...strictModeRules,
+  ...getVariableRules({ typescript }),
+  ...getStylisticIssuesRules({ typescript, react }),
+  ...getES6Rules({ typescript }),
+  ...prettierRules,
+  ...safePrettierOverrides,
+  ...customRules,
+});
 
 /**
  * @see https://eslint.org/docs/rules/#possible-errors
  */
-export const getPossibleErrorRules: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+const getPossibleErrorRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * @see https://eslint.org/docs/rules/for-direction
    */
@@ -357,14 +364,10 @@ export const getPossibleErrorRules: RulesCreator = ({
   'valid-typeof': hasTypeScript ? 'off' : 'warn',
 });
 
-const curly: Linter.RuleEntry = ['warn', 'all'];
-
 /**
  * @see https://eslint.org/docs/rules/#best-practices
  */
-export const getBestPractices: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because opinionated
    *
@@ -423,7 +426,7 @@ export const getBestPractices: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/curly
    */
-  curly: curly,
+  curly: ['warn', 'all'],
 
   /**
    * avoids unexpected side effects of switches without default
@@ -988,7 +991,7 @@ export const getBestPractices: RulesCreator = ({
   yoda: 'warn',
 });
 
-export const strictModeRules: Linter.RulesRecord = {
+const strictModeRules = {
   /**
    * enables/disables strict mode
    *
@@ -1002,9 +1005,7 @@ export const strictModeRules: Linter.RulesRecord = {
 /**
  * @see https://eslint.org/docs/rules/#variables
  */
-export const getVariableRules: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+const getVariableRules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because required to escape scope
    *
@@ -1106,7 +1107,7 @@ export const getVariableRules: RulesCreator = ({
 /**
  * @see https://eslint.org/docs/rules/#stylistic-issues
  */
-export const getStylisticIssuesRules: RulesCreator = ({
+const getStylisticIssuesRules = ({
   typescript: { hasTypeScript, config },
   react: { isCreateReactApp, isNext },
 }) => ({
@@ -1407,7 +1408,12 @@ export const getStylisticIssuesRules: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/new-cap
    */
-  'new-cap': config?.compilerOptions?.experimentalDecorators ? 'off' : 'warn',
+  'new-cap':
+    config &&
+    config.compilerOptions &&
+    config.compilerOptions.experimentalDecorators
+      ? 'off'
+      : 'warn',
 
   /**
    * off because handled by prettier
@@ -1806,9 +1812,7 @@ export const getStylisticIssuesRules: RulesCreator = ({
 /**
  * @see https://eslint.org/docs/rules/#ecmascript-6
  */
-export const getES6Rules: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+const getES6Rules = ({ typescript: { hasTypeScript } }) => ({
   /**
    * off because handled by prettier
    *
@@ -2048,11 +2052,11 @@ export const getES6Rules: RulesCreator = ({
   'yield-star-spacing': 'off',
 });
 
-export const safePrettierOverrides: Linter.RulesRecord = {
+const safePrettierOverrides = {
   /**
    * @see https://eslint.org/docs/rules/curly
    */
-  curly: curly,
+  curly: getBestPractices({ typescript: { hasTypeScript: false } }).curly,
 
   /**
    * off because handled by prettier
@@ -2060,4 +2064,17 @@ export const safePrettierOverrides: Linter.RulesRecord = {
    * @see https://eslint.org/docs/rules/prefer-arrow-callback
    */
   'prefer-arrow-callback': 'warn',
+};
+
+module.exports = {
+  createEslintCoreRules,
+  getBestPractices,
+  getES6Rules,
+  getPossibleErrorRules,
+  getStylisticIssuesRules,
+  getVariableRules,
+  prettierRules,
+  restrictedGlobals,
+  safePrettierOverrides,
+  strictModeRules,
 };
