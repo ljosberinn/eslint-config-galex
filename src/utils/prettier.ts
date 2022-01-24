@@ -1,15 +1,36 @@
 import { rules as allPrettierRules } from 'eslint-config-prettier';
 
-export const prettierTypeScriptRules = Object.fromEntries(
-  Object.entries(allPrettierRules).filter(([key]) =>
-    key.startsWith('@typescript-eslint')
-  )
-);
+const { prettierTypeScriptRules, prettierRules, prettierReactRules } =
+  Object.entries(allPrettierRules).reduce<{
+    prettierTypeScriptRules: typeof allPrettierRules;
+    prettierReactRules: typeof allPrettierRules;
+    prettierRules: typeof allPrettierRules;
+  }>(
+    (acc, rule) => {
+      const [key, value] = rule;
 
-export const prettierRules = Object.fromEntries(
-  Object.entries(allPrettierRules).filter(([key]) => !key.includes('/'))
-);
+      if (!key.includes('/')) {
+        acc.prettierRules[key] = value;
+        return acc;
+      }
 
-export const prettierReactRules = Object.fromEntries(
-  Object.entries(allPrettierRules).filter(([key]) => key.startsWith('react/'))
-);
+      if (key.startsWith('react/')) {
+        acc.prettierReactRules[key] = value;
+        return acc;
+      }
+
+      if (key.startsWith('@typescript-eslint')) {
+        acc.prettierTypeScriptRules[key] = value;
+        return acc;
+      }
+
+      return acc;
+    },
+    {
+      prettierTypeScriptRules: {},
+      prettierRules: {},
+      prettierReactRules: {},
+    }
+  );
+
+export { prettierTypeScriptRules, prettierRules, prettierReactRules };
