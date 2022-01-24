@@ -48,18 +48,60 @@ export type TopLevelESLintConfig = ESLintConfig & {
   ignorePatterns?: string | string[];
 };
 
-export type OverrideESlintConfig = ESLintConfig & {
+export type OverrideESLintConfig = Omit<
+  ESLintConfig,
+  'root' | 'reportUnusedDisableDirectives'
+> & {
   excludedFiles?: string | string[];
   files: string | string[];
 };
 
+/**
+ * a _non-override_ function creating rules, e.g. everything within the plugins
+ * folder
+ *
+ * e.g. createUnicornRules
+ */
 export type RulesetCreator = (
   args: Dependencies & {
     rules?: Linter.RulesRecord;
   }
 ) => Linter.RulesRecord;
 
-export type RulesCreator = (dependencies: Dependencies) => Linter.RulesRecord;
+/**
+ * internal type including the custom `overrideType` property
+ */
+export type WithOverrideType<Override extends OverrideESLintConfig> =
+  Override & {
+    overrideType: string;
+  };
+
+/**
+ * type of primary functions within the overrides folder
+ *
+ * e.g. createReactOverride, createTypeScriptOverride, etc.
+ */
+export type OverrideCreator = (
+  args: Dependencies & Partial<OverrideESLintConfig>
+) => WithOverrideType<OverrideESLintConfig> | null;
+
+/**
+ * type of functions overriding overrides within the overrides folder
+ *
+ * e.g. nextjs, remix, etc.
+ */
+export type OverrideInternalOverride = (
+  args: Dependencies
+) => OverrideESLintConfig | null;
+
+/**
+ * type of function conditionally creating rules
+ *
+ * e.g. createJSXA11yRules
+ */
+export type RulesCreator = (
+  dependencies: Dependencies
+) => Linter.RulesRecord | null;
 
 export type Flags = {
   convertToESLintInternals?: boolean;

@@ -1,11 +1,7 @@
 import restrictedGlobals from 'confusing-browser-globals';
 import { Linter } from 'eslint';
-import { rules as allPrettierRules } from 'eslint-config-prettier';
 import { RulesCreator, RulesetCreator } from '../types';
-
-const prettierRules = Object.fromEntries(
-  Object.entries(allPrettierRules).filter(([key]) => !key.includes('/'))
-);
+import { prettierRules } from '../utils/prettier';
 
 export const createEslintCoreRules: RulesetCreator = ({
   rules: customRules = {},

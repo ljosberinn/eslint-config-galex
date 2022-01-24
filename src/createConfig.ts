@@ -1,5 +1,9 @@
 import { Linter } from 'eslint';
-import { getDependencies, GetDepsArgs } from './getDependendencies';
+
+import { getDependencies, GetDepsArgs } from './getDependencies';
+import { createReactOverride } from './overrides/react';
+import { createStorybookOverride } from './overrides/storybook';
+import { createTypeScriptOverride } from './overrides/typescript';
 import { createEslintCoreRules } from './plugins/eslint-core';
 import { createImportRules } from './plugins/import';
 import { createPromiseRules } from './plugins/promise';
@@ -9,7 +13,9 @@ import {
   Dependencies,
   ESLintConfig,
   Flags,
+  OverrideESLintConfig,
   TopLevelESLintConfig,
+  WithOverrideType,
 } from './types';
 import { uniqueArrayEntries } from './utils/array';
 import {
@@ -17,6 +23,7 @@ import {
   parserOptions as defaultParserOptions,
 } from './utils/defaultsAndDetection';
 import { applyFlags } from './utils/flags';
+import { dropOverrideType } from './utils/overrideType';
 
 type CreateConfigArgs = GetDepsArgs &
   Flags & {
@@ -71,7 +78,17 @@ export const createConfig = ({
 
   const dependencies = getDependencies({ cwd, tsConfigPath });
 
-  const finalOverrides = [...(overrides ?? [])];
+  const finalOverrides = [
+    createReactOverride(dependencies),
+    createTypeScriptOverride(dependencies),
+    createStorybookOverride(dependencies),
+    ...(overrides ?? []),
+  ]
+    .filter(
+      (override): override is WithOverrideType<OverrideESLintConfig> =>
+        override !== null
+    )
+    .map(dropOverrideType);
 
   const finalRules = applyFlags(
     {

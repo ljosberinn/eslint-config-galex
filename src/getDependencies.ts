@@ -36,7 +36,7 @@ const fallbackDependencies: Dependencies = {
   },
 };
 
-const detectReact = (
+export const detectReact = (
   dependencies: Map<string, string>
 ): Dependencies['react'] => {
   const hasReact = reactFlavours.some(pkg => dependencies.has(pkg));
@@ -53,7 +53,7 @@ const detectReact = (
   };
 };
 
-const detectTypescript = (
+export const detectTypescript = (
   dependencies: Map<string, string>,
   { cwd, tsConfigPath }: GetTopLevelTsConfigArgs
 ): Dependencies['typescript'] => {
@@ -85,25 +85,25 @@ const detectTypescript = (
   };
 };
 
-const detectJest = (
+export const detectJest = (
   dependencies: Map<string, string>
 ): Dependencies['hasJest'] => {
   return dependencies.has('react-scripts') ? true : dependencies.has('jest');
 };
 
-const detectJestDom = (
+export const detectJestDom = (
   dependencies: Map<string, string>
 ): Dependencies['hasJestDom'] => {
   return dependencies.has('@testing-library/jest-dom');
 };
 
-const detectNodeTypes = (
+export const detectNodeTypes = (
   dependencies: Map<string, string>
 ): Dependencies['hasNodeTypes'] => {
   return dependencies.has('@types/node');
 };
 
-const detectTestingLibrary = (
+export const detectTestingLibrary = (
   dependencies: Map<string, string>
 ): Dependencies['hasTestingLibrary'] => {
   return testingLibFamily.some(pkg =>
@@ -111,7 +111,7 @@ const detectTestingLibrary = (
   );
 };
 
-const detectStorybook = (
+export const detectStorybook = (
   dependencies: Map<string, string>
 ): Dependencies['storybook'] => {
   const hasStorybook = [...dependencies.keys()].some(
@@ -129,7 +129,7 @@ const detectStorybook = (
   };
 };
 
-const detectNest = (
+export const detectNest = (
   dependencies: Map<string, string>
 ): Dependencies['hasNest'] => {
   return dependencies.has('@nestjs/core');
