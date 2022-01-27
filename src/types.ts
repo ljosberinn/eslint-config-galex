@@ -103,6 +103,10 @@ export type RulesCreator = (
   dependencies: Dependencies
 ) => Linter.RulesRecord | null;
 
+export type SettingsCreator = (
+  Dependencies: Dependencies
+) => OverrideESLintConfig['settings'] | null;
+
 export type Flags = {
   convertToESLintInternals?: boolean;
   incrementalAdoption?: boolean;

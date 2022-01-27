@@ -1,4 +1,5 @@
-import { Linter } from '@typescript-eslint/utils/dist/ts-eslint';
+import type { Linter } from 'eslint';
+
 import {
   Dependencies,
   OverrideCreator,
@@ -61,24 +62,7 @@ export const createReactOverride: OverrideCreator = ({
 
   const finalFiles = customFiles || files;
 
-  const parserOptions = {
-    ...defaultParserOptions,
-    ...customParserOptions,
-    ecmaFeatures: {
-      ...defaultParserOptions.ecmaFeatures,
-      ...customParserOptions?.ecmaFeatures,
-    },
-    babelOptions: {
-      presets: uniqueArrayEntries([
-        dependencies.react.isNext
-          ? 'next/babel'
-          : dependencies.react.isCreateReactApp
-          ? 'react-app'
-          : !dependencies.typescript.hasTypeScript && '@babel/preset-react',
-        ...customParserOptions?.babelOptions?.presets,
-      ]),
-    },
-  };
+  const parserOptions = createParserOptions(dependencies, customParserOptions);
 
   const settings = {
     ...defaultSettings,
@@ -98,7 +82,7 @@ export const createReactOverride: OverrideCreator = ({
   return {
     rules,
     files: finalFiles,
-    parserOptions: parserOptions,
+    parserOptions,
     plugins: finalPlugins,
     overrideType: reactOverrideType,
     parser,
@@ -106,6 +90,34 @@ export const createReactOverride: OverrideCreator = ({
     extends: customExtends,
     globals: customGlobals,
     overrides: customOverrides,
+    excludedFiles: customExcludedFiles,
+    env: customEnv,
+  };
+};
+
+const createParserOptions = (
+  dependencies: Dependencies,
+  customParserOptions?: OverrideESLintConfig['parserOptions']
+): OverrideESLintConfig['parserOptions'] => {
+  const presets = uniqueArrayEntries([
+    dependencies.react.isNext
+      ? 'next/babel'
+      : dependencies.react.isCreateReactApp
+      ? 'react-app'
+      : !dependencies.typescript.hasTypeScript && '@babel/preset-react',
+    ...customParserOptions?.babelOptions?.presets,
+  ]);
+
+  return {
+    ...defaultParserOptions,
+    ...customParserOptions,
+    ecmaFeatures: {
+      ...defaultParserOptions.ecmaFeatures,
+      ...customParserOptions?.ecmaFeatures,
+    },
+    babelOptions: {
+      presets,
+    },
   };
 };
 

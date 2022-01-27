@@ -1,6 +1,7 @@
 import { Linter } from 'eslint';
 
 import { getDependencies, GetDepsArgs } from './getDependencies';
+import { createJestConfigOverride, createJestOverride } from './overrides/jest';
 import { createReactOverride } from './overrides/react';
 import { createStorybookOverride } from './overrides/storybook';
 import { createTypeScriptOverride } from './overrides/typescript';
@@ -81,7 +82,9 @@ export const createConfig = ({
   const finalOverrides = [
     createReactOverride(dependencies),
     createTypeScriptOverride(dependencies),
+    createJestOverride(dependencies),
     createStorybookOverride(dependencies),
+    createJestConfigOverride(dependencies),
     ...(overrides ?? []),
   ]
     .filter(
