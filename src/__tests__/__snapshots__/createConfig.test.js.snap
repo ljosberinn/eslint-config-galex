@@ -5207,7 +5207,7 @@ exports[`getDependencies accepts alternative tsDefaultConfig path 1`] = `
   "typescript": {
     "config": undefined,
     "hasTypeScript": false,
-    "version": "4.5.4",
+    "version": "4.5.5",
   },
 }
 `;
@@ -5462,7 +5462,7 @@ exports[`getDependencies matches snapshot 1`] = `
   "typescript": {
     "config": undefined,
     "hasTypeScript": false,
-    "version": "4.5.4",
+    "version": "4.5.5",
   },
 }
 `;
