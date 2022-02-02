@@ -718,9 +718,11 @@ const getTestingLibraryRules = ({ react: { hasReact } }) => ({
   /**
    * suggest using `@testing-library/user-event` over `fireEvent` from `@testing-library/$framework`
    *
+   * has some false positives, hence warn
+   *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-user-event.md
    */
-  'testing-library/prefer-user-event': 'error',
+  'testing-library/prefer-user-event': 'warn',
 
   /**
    * prefer `waitFor` instead of deprecated `wait` and similar

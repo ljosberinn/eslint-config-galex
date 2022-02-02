@@ -377,7 +377,7 @@
         "testing-library/prefer-presence-queries": 2,
         "testing-library/prefer-query-by-disappearance": 2,
         "testing-library/prefer-screen-queries": 2,
-        "testing-library/prefer-user-event": 2,
+        "testing-library/prefer-user-event": 1,
         "testing-library/prefer-wait-for": 1,
         "testing-library/render-result-naming-convention": 0,
         "import/no-namespace": 0,
