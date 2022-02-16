@@ -16,7 +16,11 @@ npm install --save-dev eslint-config-galex eslint
 
 ## Usage with create-react-app
 
-As of January 2021 / due to CRA v5, currently no additional steps are required! 🎉
+~~As of January 2021 / due to CRA v5, currently no additional steps are required! 🎉~~
+
+Beginning with `eslint-config-galex` `v3.6.5` or newer, until this disclaimer is removed you need to install the following dependencies additionally:
+
+- `"eslint-plugin-jest": "26.1.1"`
 
 ## Usage with Next.js
 

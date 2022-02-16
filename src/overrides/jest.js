@@ -169,6 +169,12 @@ const createJestRules = ({ react: { isCreateReactApp } }) => {
     'jest/no-conditional-expect': 'error',
 
     /**
+     * @see no-if
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-in-test.md
+     */
+    'jest/no-conditional-in-test': 'error',
+
+    /**
      * avoids using jest debt
      *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md
@@ -236,10 +242,12 @@ const createJestRules = ({ react: { isCreateReactApp } }) => {
     /**
      * ensures less complex tests
      *
+     * @deprecated in favor of `no-conditional-in-test`
+     *
      * @see jest/no-conditional-expect
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-if.md
      */
-    'jest/no-if': 'error',
+    // 'jest/no-if': 'off',
 
     /**
      * ensures snapshots can be updated
@@ -364,6 +372,15 @@ const createJestRules = ({ react: { isCreateReactApp } }) => {
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-inline-snapshots.md
      */
     'jest/prefer-inline-snapshots': 'off',
+
+    /**
+     * requires adding snapshot hints for external snapshot matchers
+     *
+     * off because deemed unnecessary
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-snapshot-hint.md
+     */
+    'jest/prefer-snapshot-hint': 'off',
 
     /**
      * prefer spying instead of copying to avoid having to cleanup
