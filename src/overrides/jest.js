@@ -172,7 +172,7 @@ const createJestRules = ({ react: { isCreateReactApp } }) => {
      * @see no-if
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-in-test.md
      */
-    'jest/no-conditional-in-test': 'error',
+    'jest/no-conditional-in-test': 'warn',
 
     /**
      * avoids using jest debt

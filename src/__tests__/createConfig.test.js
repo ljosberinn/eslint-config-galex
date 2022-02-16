@@ -122,6 +122,7 @@ describe('getDependencies', () => {
       let i = 0;
 
       jest.spyOn(ts, 'convertToObject').mockImplementation(() => {
+        // eslint-disable-next-line jest/no-conditional-in-test
         if (i === 0) {
           i++;
           return {
