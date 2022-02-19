@@ -90,7 +90,7 @@ const createOverrides = (
   const remixOverride = createRemixRunOverride(dependencies);
 
   return [nextJsOverride, remixOverride, ...customOverrides].filter(
-    (dataset): dataset is Required<OverrideESLintConfig>['overrides'][number] =>
+    (dataset): dataset is Linter.ConfigOverride =>
       dataset !== null && typeof dataset === 'object'
   );
 };
@@ -136,7 +136,7 @@ const createParserOptions = (
       ? 'react-app'
       : !dependencies.typescript.hasTypeScript && '@babel/preset-react',
     ...(customParserOptions
-      ? customParserOptions.babeloptions?.presets ?? []
+      ? customParserOptions.babelOptions?.presets ?? []
       : []),
   ]);
 

@@ -1,13 +1,13 @@
-const cache = new Map<string, number[]>();
+const cache = new Map<string, [number, number, number]>();
 
-const toNumbers = (str: string) => {
+const toNumbers = (str: string): [number, number, number] => {
   const maybeCached = cache.get(str);
 
   if (maybeCached) {
     return maybeCached;
   }
 
-  const result = str
+  const [major = 0, minor = 0, patch = 0] = str
     .split('.')
     .map(str =>
       [...str]
@@ -17,9 +17,11 @@ const toNumbers = (str: string) => {
     )
     .map(char => Number.parseInt(char));
 
-  cache.set(str, result);
+  const sane: [number, number, number] = [major, minor, patch];
 
-  return result;
+  cache.set(str, sane);
+
+  return sane;
 };
 
 export const fulfillsVersionRequirement = ({
