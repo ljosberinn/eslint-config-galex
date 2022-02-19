@@ -1,4 +1,4 @@
-import { RulesCreator, RulesetCreator } from '../types';
+import type { RulesCreator, RulesetCreator } from '../types';
 
 export const createPromiseRules: RulesetCreator = ({
   rules: customRules = {},

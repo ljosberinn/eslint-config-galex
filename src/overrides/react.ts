@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 
-import {
+import type {
   Dependencies,
   OverrideCreator,
   OverrideESLintConfig,
@@ -60,11 +60,46 @@ export const createReactOverride: OverrideCreator = ({
     ...customRules,
   };
 
-  const finalFiles = customFiles || files;
-
+  const finalFiles = customFiles ?? files;
+  const finalOverrides = createOverrides(dependencies, customOverrides);
   const parserOptions = createParserOptions(dependencies, customParserOptions);
+  const settings = createSettings(dependencies, customSettings);
+  const finalPlugins = determinePlugins(dependencies, customPlugins);
 
-  const settings = {
+  return {
+    extends: customExtends,
+    files: finalFiles,
+    parser,
+    parserOptions,
+    plugins: finalPlugins,
+    settings,
+    overrides: finalOverrides,
+    rules,
+    overrideType: reactOverrideType,
+    globals: customGlobals,
+    excludedFiles: customExcludedFiles,
+    env: customEnv,
+  };
+};
+
+const createOverrides = (
+  dependencies: Dependencies,
+  customOverrides: OverrideESLintConfig['overrides'] = []
+): OverrideESLintConfig['overrides'] => {
+  const nextJsOverride = createNextJsPagesOverride(dependencies);
+  const remixOverride = createRemixRunOverride(dependencies);
+
+  return [nextJsOverride, remixOverride, ...customOverrides].filter(
+    (dataset): dataset is Required<OverrideESLintConfig>['overrides'][number] =>
+      dataset !== null && typeof dataset === 'object'
+  );
+};
+
+const createSettings = (
+  dependencies: Dependencies,
+  customSettings: OverrideESLintConfig['settings']
+): OverrideESLintConfig['settings'] => {
+  return {
     ...defaultSettings,
     ...customSettings,
     react: {
@@ -73,26 +108,21 @@ export const createReactOverride: OverrideCreator = ({
     },
     ...createRemixJsImportResolverSettings(dependencies),
   };
+};
 
-  const finalPlugins = uniqueArrayEntries([
-    ...plugins,
-    ...(customPlugins ?? []),
-  ]);
+const determinePlugins = (
+  dependencies: Dependencies,
+  customPlugins?: OverrideESLintConfig['plugins']
+): OverrideESLintConfig['plugins'] => {
+  const allPlugins = uniqueArrayEntries([...plugins, ...(customPlugins ?? [])]);
 
-  return {
-    rules,
-    files: finalFiles,
-    parserOptions,
-    plugins: finalPlugins,
-    overrideType: reactOverrideType,
-    parser,
-    settings,
-    extends: customExtends,
-    globals: customGlobals,
-    overrides: customOverrides,
-    excludedFiles: customExcludedFiles,
-    env: customEnv,
-  };
+  if (!dependencies.react.isNext) {
+    return allPlugins.filter(plugin => {
+      return plugin !== '@next/next';
+    });
+  }
+
+  return allPlugins;
 };
 
 const createParserOptions = (
@@ -105,7 +135,9 @@ const createParserOptions = (
       : dependencies.react.isCreateReactApp
       ? 'react-app'
       : !dependencies.typescript.hasTypeScript && '@babel/preset-react',
-    ...customParserOptions?.babelOptions?.presets,
+    ...(customParserOptions
+      ? customParserOptions.babeloptions?.presets ?? []
+      : []),
   ]);
 
   return {

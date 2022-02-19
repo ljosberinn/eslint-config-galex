@@ -1,9 +1,9 @@
-writing deps to /workspaces/eslint-config-galex/integration/remix-js/deps.json
-writing config cache to /workspaces/eslint-config-galex/integration/remix-js/eslint-config.json
+writing deps to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\deps.json
+writing config cache to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\eslint-config.json
 TAP version 13
 1..12
-ok 1 - /workspaces/eslint-config-galex/integration/remix-js/app/entry.client.jsx
-ok 2 - /workspaces/eslint-config-galex/integration/remix-js/app/entry.server.jsx
+ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\entry.client.jsx
+ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\entry.server.jsx
   ---
   message: '''markup'' is never reassigned. Use ''const'' instead.'
   severity: warning
@@ -19,7 +19,7 @@ ok 2 - /workspaces/eslint-config-galex/integration/remix-js/app/entry.server.jsx
         column: 23
         ruleId: prefer-template
   ...
-not ok 3 - /workspaces/eslint-config-galex/integration/remix-js/app/root.jsx
+not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\root.jsx
   ---
   message: There should be no empty line within import group
   severity: warning
@@ -61,7 +61,7 @@ not ok 3 - /workspaces/eslint-config-galex/integration/remix-js/app/root.jsx
         column: 7
         ruleId: prefer-const
   ...
-not ok 4 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/about.jsx
+not ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\about.jsx
   ---
   message: There should be no empty line within import group
   severity: warning
@@ -95,9 +95,9 @@ not ok 4 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos
         column: 12
         ruleId: prefer-const
   ...
-ok 5 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/about/index.jsx
-ok 6 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/about/whoa.jsx
-not ok 7 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/actions.jsx
+ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\about\index.jsx
+ok 6 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\about\whoa.jsx
+not ok 7 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\actions.jsx
   ---
   message: Exporting mutable 'let' binding, use 'const' instead.
   severity: error
@@ -149,8 +149,8 @@ not ok 7 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos
         column: 13
         ruleId: react/button-has-type
   ...
-ok 8 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/correct.jsx
-ok 9 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/params.jsx
+ok 8 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\correct.jsx
+ok 9 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\params.jsx
   ---
   message: '''useCatch'' is defined but never used.'
   severity: warning
@@ -172,7 +172,7 @@ ok 9 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/par
         column: 32
         ruleId: no-unused-vars
   ...
-not ok 10 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/params/$id.jsx
+not ok 10 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\params\$id.jsx
   ---
   message: '''Link'' is defined but never used.'
   severity: warning
@@ -248,7 +248,7 @@ not ok 10 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demo
         column: 12
         ruleId: prefer-const
   ...
-ok 11 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/params/index.jsx
+ok 11 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\params\index.jsx
   ---
   message: '''useCatch'' is defined but never used.'
   severity: warning
@@ -282,7 +282,7 @@ ok 11 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/demos/pa
         column: 47
         ruleId: no-unused-vars
   ...
-not ok 12 - /workspaces/eslint-config-galex/integration/remix-js/app/routes/index.jsx
+not ok 12 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\index.jsx
   ---
   message: Exporting mutable 'let' binding, use 'const' instead.
   severity: error

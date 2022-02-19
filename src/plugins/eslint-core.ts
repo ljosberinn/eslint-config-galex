@@ -1,6 +1,7 @@
 import restrictedGlobals from 'confusing-browser-globals';
-import { Linter } from 'eslint';
-import { RulesCreator, RulesetCreator } from '../types';
+import type { Linter } from 'eslint';
+
+import type { RulesCreator, RulesetCreator } from '../types';
 import { prettierRules } from '../utils/prettier';
 
 export const createEslintCoreRules: RulesetCreator = ({
@@ -419,7 +420,7 @@ export const getBestPractices: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/curly
    */
-  curly: curly,
+  curly,
 
   /**
    * avoids unexpected side effects of switches without default
@@ -2048,7 +2049,7 @@ export const safePrettierOverrides: Linter.RulesRecord = {
   /**
    * @see https://eslint.org/docs/rules/curly
    */
-  curly: curly,
+  curly,
 
   /**
    * off because handled by prettier

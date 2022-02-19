@@ -1,6 +1,7 @@
-import { Linter } from 'eslint';
+import type { Linter } from 'eslint';
 
-import { getDependencies, GetDepsArgs } from './getDependencies';
+import type { GetDepsArgs } from './getDependencies';
+import { getDependencies } from './getDependencies';
 import { createJestConfigOverride, createJestOverride } from './overrides/jest';
 import { createReactOverride } from './overrides/react';
 import { createStorybookOverride } from './overrides/storybook';
@@ -10,7 +11,7 @@ import { createImportRules } from './plugins/import';
 import { createPromiseRules } from './plugins/promise';
 import { createSonarjsRules } from './plugins/sonarjs';
 import { createUnicornRules } from './plugins/unicorn';
-import {
+import type {
   Dependencies,
   ESLintConfig,
   Flags,
@@ -32,31 +33,17 @@ type CreateConfigArgs = GetDepsArgs &
 
     rules?: Linter.RulesRecord;
     root?: boolean;
-    cacheOptions?: {
-      enabled: boolean;
-      expiresAfterMs: number;
-    };
   } & Pick<
     ESLintConfig,
     'env' | 'overrides' | 'parserOptions' | 'plugins' | 'settings'
   >;
 
-// const mergeCacheOptions = (
-//   options?: CreateConfigArgs['cacheOptions']
-// ): Required<CreateConfigArgs['cacheOptions']> => {
-//   return {
-//     enabled: options?.enabled ?? true,
-//     expiresAfterMs: options?.expiresAfterMs ?? 10 * 60 * 1000,
-//   };
-// };
-
 export const createConfig = ({
   cwd,
   tsConfigPath,
-  //   cacheOptions,
-  convertToESLintInternals,
+  convertToESLintInternals = false,
+  incrementalAdoption = false,
   root,
-  incrementalAdoption,
   ignorePatterns,
   env,
   overrides,
@@ -65,19 +52,12 @@ export const createConfig = ({
   plugins,
   settings,
 }: CreateConfigArgs = {}): TopLevelESLintConfig => {
-  //   const finalCacheOptions = mergeCacheOptions(cacheOptions);
-
-  //   const now = Date.now();
-
-  //   const cacheDependencies = {
-  //     cwd,
-  //     tsConfigPath,
-  //     finalCacheOptions,
-  //     convertToESLintInternals,
-  //     incrementalAdoption,
-  //   };
-
   const dependencies = getDependencies({ cwd, tsConfigPath });
+
+  const flags = {
+    convertToESLintInternals,
+    incrementalAdoption,
+  };
 
   const finalOverrides = [
     createReactOverride(dependencies),
@@ -91,7 +71,13 @@ export const createConfig = ({
       (override): override is WithOverrideType<OverrideESLintConfig> =>
         override !== null
     )
-    .map(dropOverrideType);
+    .map(dropOverrideType)
+    .map(override => {
+      return {
+        ...override,
+        rules: applyFlags(override.rules, flags),
+      };
+    });
 
   const finalRules = applyFlags(
     {
@@ -102,10 +88,7 @@ export const createConfig = ({
       ...createSonarjsRules(dependencies),
       ...rules,
     },
-    {
-      convertToESLintInternals,
-      incrementalAdoption,
-    }
+    flags
   );
 
   const finalPlugins = uniqueArrayEntries([
@@ -116,20 +99,18 @@ export const createConfig = ({
   const finalEnv = detectEnv(dependencies, env);
   const finalParserOptions = detectParserOptions(parserOptions);
 
-  const config: TopLevelESLintConfig = {
-    reportUnusedDisableDirectives: true,
-    rules: finalRules,
+  return {
     env: finalEnv,
-    plugins: finalPlugins,
     overrides: finalOverrides,
     parserOptions: finalParserOptions,
+    plugins: finalPlugins,
+    rules: finalRules,
+    ignorePatterns,
+    reportUnusedDisableDirectives: true,
+    settings,
     // omission defaults to true, otherwise forward
     root: typeof root === 'undefined' ? true : root,
-    settings,
-    ignorePatterns,
   };
-
-  return config;
 };
 
 const detectEnv = (

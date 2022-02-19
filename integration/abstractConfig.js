@@ -5,7 +5,8 @@ if (!process.argv.some(arg => arg.includes('vscode-eslint'))) {
   const { resolve } = require('path');
   const { format } = require('prettier');
 
-  const { createConfig, getDependencies } = require('../src/createConfig');
+  const { createConfig } = require('../dist/createConfig');
+  const { getDependencies } = require('../dist/getDependencies');
 
   const cwd = '.';
   const prettierOptions = {

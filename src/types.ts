@@ -31,7 +31,7 @@ export type Dependencies = {
     version: undefined | string;
   };
   typescript: {
-    config: undefined | TSConfig;
+    config: null | TSConfig;
     hasTypeScript: boolean;
     version: undefined | string;
   };
@@ -39,9 +39,10 @@ export type Dependencies = {
 
 export type ESLintConfig = Omit<
   Linter.BaseConfig,
-  '$schema' | 'parser' | 'noInlineConfig' | 'processor'
+  '$schema' | 'parser' | 'noInlineConfig' | 'processor' | 'rules'
 > & {
   root?: boolean;
+  rules: Linter.RulesRecord;
 };
 
 export type TopLevelESLintConfig = ESLintConfig & {

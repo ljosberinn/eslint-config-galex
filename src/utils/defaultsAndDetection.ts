@@ -1,7 +1,6 @@
 import type { Linter } from 'eslint';
 
 export const plugins = ['import', 'unicorn', 'promise', 'sonarjs'];
-export const reactFlavours = ['react', 'preact', 'next', '@remix-run/react'];
 
 /**
  * @see https://www.npmjs.com/org/testing-library

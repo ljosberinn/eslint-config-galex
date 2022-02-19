@@ -1,5 +1,6 @@
-import { Linter } from 'eslint';
-import { ESLintConfig, Flags } from '../types';
+import type { Linter } from 'eslint';
+
+import type { ESLintConfig, Flags } from '../types';
 
 const severityLevels: Record<
   Exclude<Linter.RuleLevel, Linter.Severity>,

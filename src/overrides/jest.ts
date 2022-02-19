@@ -1,6 +1,6 @@
-import { Linter } from 'eslint';
+import type { Linter } from 'eslint';
 
-import {
+import type {
   Dependencies,
   OverrideCreator,
   OverrideESLintConfig,
@@ -67,7 +67,7 @@ export const createJestOverride: OverrideCreator = ({
     ...customEnv,
   };
 
-  const finalFiles = customFiles || files;
+  const finalFiles = customFiles ?? files;
 
   const finalPlugins = createPlugins(dependencies, customPlugins);
 
@@ -83,17 +83,17 @@ export const createJestOverride: OverrideCreator = ({
   };
 
   return {
-    plugins: finalPlugins,
-    rules,
-    parserOptions: finalParserOptions,
     env: finalEnv,
-    files: finalFiles,
     extends: finalExtends,
-    excludedFiles: customExcludedFiles,
-    overrides: customOverrides,
-    globals: customGlobals,
+    files: finalFiles,
+    parserOptions: finalParserOptions,
+    plugins: finalPlugins,
     settings: finalSettings,
+    rules,
     overrideType: jestOverrideType,
+    overrides: customOverrides,
+    excludedFiles: customExcludedFiles,
+    globals: customGlobals,
   };
 };
 
@@ -106,7 +106,7 @@ export const createPlugins = (
     dependencies.hasJestDom && 'jest-dom',
     dependencies.hasTestingLibrary && 'testing-library',
     ...(customPlugins ?? []),
-  ]).filter((maybeStr): maybeStr is string => maybeStr !== false);
+  ]);
 };
 
 /**
@@ -170,6 +170,12 @@ export const createJestRules: RulesCreator = ({
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-conditional-expect.md
      */
     'jest/no-conditional-expect': 'error',
+
+    /**
+     * @see no-if
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-in-test.md
+     */
+    'jest/no-conditional-in-test': 'warn',
 
     /**
      * avoids using jest debt
@@ -239,10 +245,12 @@ export const createJestRules: RulesCreator = ({
     /**
      * ensures less complex tests
      *
+     * @deprecated in favor of `no-conditional-in-test`
+     *
      * @see jest/no-conditional-expect
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-if.md
      */
-    'jest/no-if': 'error',
+    // 'jest/no-if': 'off',
 
     /**
      * ensures snapshots can be updated
@@ -367,6 +375,15 @@ export const createJestRules: RulesCreator = ({
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-inline-snapshots.md
      */
     'jest/prefer-inline-snapshots': 'off',
+
+    /**
+     * requires adding snapshot hints for external snapshot matchers
+     *
+     * off because deemed unnecessary
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-snapshot-hint.md
+     */
+    'jest/prefer-snapshot-hint': 'off',
 
     /**
      * prefer spying instead of copying to avoid having to cleanup
@@ -723,9 +740,11 @@ export const getTestingLibraryRules: RulesCreator = ({
   /**
    * suggest using `@testing-library/user-event` over `fireEvent` from `@testing-library/$framework`
    *
+   * has some false positives, hence warn
+   *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-user-event.md
    */
-  'testing-library/prefer-user-event': 'error',
+  'testing-library/prefer-user-event': 'warn',
 
   /**
    * prefer `waitFor` instead of deprecated `wait` and similar

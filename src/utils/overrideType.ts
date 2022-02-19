@@ -1,4 +1,4 @@
-import { OverrideESLintConfig, WithOverrideType } from '../types';
+import type { OverrideESLintConfig, WithOverrideType } from '../types';
 
 const createOverrideType = (type: string) => `eslint-config-galex/${type}`;
 

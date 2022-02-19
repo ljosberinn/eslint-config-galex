@@ -1,10 +1,9 @@
 import { sync } from 'read-pkg-up';
-import {
-  getTopLevelTsConfig,
-  GetTopLevelTsConfigArgs,
-} from './getToplevelTsConfig';
+
+import type { GetTopLevelTsConfigArgs } from './getToplevelTsConfig';
+import { getTopLevelTsConfig } from './getToplevelTsConfig';
 import type { Dependencies } from './types';
-import { reactFlavours, testingLibFamily } from './utils/defaultsAndDetection';
+import { testingLibFamily } from './utils/defaultsAndDetection';
 
 export type GetDepsArgs = {
   cwd?: string;
@@ -30,7 +29,7 @@ const fallbackDependencies: Dependencies = {
     version: undefined,
   },
   typescript: {
-    config: undefined,
+    config: null,
     hasTypeScript: false,
     version: undefined,
   },
@@ -39,13 +38,13 @@ const fallbackDependencies: Dependencies = {
 export const detectReact = (
   dependencies: Map<string, string>
 ): Dependencies['react'] => {
-  const hasReact = reactFlavours.some(pkg => dependencies.has(pkg));
+  const hasReact = dependencies.has('react');
 
   return {
     hasReact,
-    isCreateReactApp: dependencies.has('react-scripts'),
-    isNext: dependencies.has('next'),
-    isRemix: dependencies.has('@remix-run/react'),
+    isCreateReactApp: hasReact && dependencies.has('react-scripts'),
+    isNext: hasReact && dependencies.has('next'),
+    isRemix: hasReact && dependencies.has('@remix-run/react'),
     // no effect yet
     isPreact: dependencies.has('preact'),
     // might have to be adjusted for preact in the future
@@ -61,7 +60,7 @@ export const detectTypescript = (
 
   const tsConfig = (() => {
     if (!hasTypeScriptDependency) {
-      return;
+      return null;
     }
 
     try {
@@ -75,6 +74,8 @@ export const detectTypescript = (
         // eslint-disable-next-line no-console
         console.info(info, error.message);
       }
+
+      return null;
     }
   })();
 
@@ -138,7 +139,7 @@ export const detectNest = (
 export const getDependencies = ({
   cwd = process.cwd(),
   tsConfigPath,
-}: GetDepsArgs): Dependencies => {
+}: GetDepsArgs = {}): Dependencies => {
   try {
     const result = sync({ cwd, normalize: true });
 

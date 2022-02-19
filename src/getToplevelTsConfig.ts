@@ -1,6 +1,7 @@
-import { resolve } from 'path';
 import { readFileSync } from 'fs';
+import { resolve } from 'path';
 import { convertToObject, parseJsonText } from 'typescript';
+
 import type { TSConfig } from './types';
 
 const defaultTsConfigName = 'tsconfig.json';

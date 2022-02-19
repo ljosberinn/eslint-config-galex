@@ -1,4 +1,4 @@
-import { OverrideCreator, RulesCreator } from '../types';
+import type { OverrideCreator, RulesCreator } from '../types';
 import { uniqueArrayEntries } from '../utils/array';
 import { storybookOverrideType } from '../utils/overrideType';
 
@@ -27,7 +27,7 @@ export const createStorybookOverride: OverrideCreator = ({
     ...customRules,
   };
 
-  const finalFiles = customFiles || files;
+  const finalFiles = customFiles ?? files;
   const finalPlugins = uniqueArrayEntries([
     ...plugins,
     ...(customPlugins ?? []),

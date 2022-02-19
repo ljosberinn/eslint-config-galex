@@ -1,5 +1,10 @@
 import { rules as allPrettierRules } from 'eslint-config-prettier';
-import { OverrideCreator, OverrideESLintConfig, RulesCreator } from '../types';
+
+import type {
+  OverrideCreator,
+  OverrideESLintConfig,
+  RulesCreator,
+} from '../types';
 import { tsOverrideType } from '../utils/overrideType';
 import { fulfillsVersionRequirement } from '../utils/version';
 
@@ -16,8 +21,7 @@ const defaultParserOptions = {
     jsx: false,
   },
   project: './tsconfig.json',
-  // using false here because I'm almost always on nightly TS
-  warnOnUnsupportedTypeScriptVersion: false,
+  warnOnUnsupportedTypeScriptVersion: true,
 };
 
 const plugins = ['@typescript-eslint'];
@@ -43,13 +47,13 @@ export const createTypeScriptOverride: OverrideCreator = ({
     ...customRules,
   };
 
-  const finalFiles = customFiles || files;
+  const finalFiles = customFiles ?? files;
 
   const parserOptions: OverrideESLintConfig['parserOptions'] = {
     ...defaultParserOptions,
     ecmaFeatures: {
       ...defaultParserOptions.ecmaFeatures,
-      ...(dependencies.react ? { jsx: !!dependencies.react.hasReact } : null),
+      ...(dependencies.react ? { jsx: dependencies.react.hasReact } : null),
     },
   };
 
@@ -61,12 +65,12 @@ export const createTypeScriptOverride: OverrideCreator = ({
   };
 
   return {
-    rules,
     files: finalFiles,
-    parserOptions,
-    settings,
     parser,
+    parserOptions,
     plugins,
+    settings,
+    rules,
     overrideType: tsOverrideType,
   };
 };

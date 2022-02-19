@@ -1,5 +1,6 @@
 import { rules as allPrettierRules } from 'eslint-config-prettier';
-import { Dependencies, RulesCreator, RulesetCreator } from '../types';
+
+import type { Dependencies, RulesCreator, RulesetCreator } from '../types';
 
 const prettierUnicornRules = Object.fromEntries(
   Object.entries(allPrettierRules).filter(([key]) => key.startsWith('unicorn/'))
@@ -18,7 +19,7 @@ export const createUnicornRules: RulesetCreator = ({
  * @see https://github.com/sindresorhus/eslint-plugin-unicorn
  */
 export const getUnicornRules: RulesCreator = ({
-  typescript: { hasTypeScript, config = {} },
+  typescript: { hasTypeScript, config },
   react: { hasReact },
 }) => ({
   /**
@@ -615,7 +616,7 @@ export const getUnicornRules: RulesCreator = ({
    */
   'unicorn/prefer-string-replace-all':
     // in TS projects, availability can be inferred based on tsConfig.lib containing anything ESNext related
-    (config.compilerOptions?.lib &&
+    (config?.compilerOptions?.lib &&
       Array.isArray(config.compilerOptions.lib) &&
       config.compilerOptions.lib.some(lib =>
         lib.toLowerCase().startsWith('esnext')
