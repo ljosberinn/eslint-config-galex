@@ -141,7 +141,7 @@ export const getSonarJsRules: RulesCreator = ({
    *
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-inverted-boolean-check.md
    */
-  'sonarjs/no-inverted-boolean-check': 'error',
+  'sonarjs/no-inverted-boolean-check': 'off',
 
   /**
    * prefer not nesting switch

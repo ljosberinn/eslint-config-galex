@@ -737,6 +737,13 @@ export const getUnicornRules: RulesCreator = ({
   'unicorn/template-indent': 'warn',
 
   /**
+   * enforces consistent case for text encoding identifiers
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md
+   */
+  'unicorn/text-encoding-identifier-case': hasTypeScript ? 'off' : 'warn',
+
+  /**
    * be explicit about thrown error
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md

@@ -60,6 +60,12 @@ not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js
         line: 61
         column: 7
         ruleId: prefer-const
+    - message: Prefer `utf8` over `utf-8`.
+      severity: warning
+      data:
+        line: 99
+        column: 23
+        ruleId: unicorn/text-encoding-identifier-case
   ...
 not ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\remix-js\app\routes\demos\about.jsx
   ---
