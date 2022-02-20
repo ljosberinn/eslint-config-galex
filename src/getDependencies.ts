@@ -10,31 +10,6 @@ export type GetDepsArgs = {
   tsConfigPath?: string;
 };
 
-const fallbackDependencies: Dependencies = {
-  hasJest: false,
-  hasJestDom: false,
-  hasNodeTypes: false,
-  hasTestingLibrary: false,
-  hasNest: false,
-  storybook: {
-    hasStorybook: false,
-    hasStorybookTestingLibrary: false,
-  },
-  react: {
-    hasReact: false,
-    isCreateReactApp: false,
-    isNext: false,
-    isRemix: false,
-    isPreact: false,
-    version: undefined,
-  },
-  typescript: {
-    config: null,
-    hasTypeScript: false,
-    version: undefined,
-  },
-};
-
 export const detectReact = (
   dependencies: Map<string, string>
 ): Dependencies['react'] => {
@@ -181,6 +156,29 @@ export const getDependencies = ({
     // eslint-disable-next-line no-console
     console.error('error parsing `package.json`!', error);
 
-    return fallbackDependencies;
+    return {
+      hasJest: false,
+      hasJestDom: false,
+      hasNodeTypes: false,
+      hasTestingLibrary: false,
+      hasNest: false,
+      storybook: {
+        hasStorybook: false,
+        hasStorybookTestingLibrary: false,
+      },
+      react: {
+        hasReact: false,
+        isCreateReactApp: false,
+        isNext: false,
+        isRemix: false,
+        isPreact: false,
+        version: undefined,
+      },
+      typescript: {
+        config: null,
+        hasTypeScript: false,
+        version: undefined,
+      },
+    };
   }
 };
