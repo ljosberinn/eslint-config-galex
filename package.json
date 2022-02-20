@@ -29,7 +29,7 @@
   "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf dist && tsc -b tsconfig.build.json",
+    "build": "rimraf dist && tsc -b tsconfig.build.json && node scripts/monkey-patch-default-export.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix && prettier --write .",
     "install:clean": "rimraf node_modules yarn.lock && yarn",
