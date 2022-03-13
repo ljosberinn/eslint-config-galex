@@ -5,6 +5,7 @@ import type {
   OverrideESLintConfig,
   RulesCreator,
 } from '../types';
+import { uniqueArrayEntries } from '../utils/array';
 import { tsOverrideType } from '../utils/overrideType';
 import { fulfillsVersionRequirement } from '../utils/version';
 
@@ -34,6 +35,14 @@ const defaultSettings = {
 export const createTypeScriptOverride: OverrideCreator = ({
   rules: customRules,
   files: customFiles,
+  parserOptions: customParserOptions,
+  settings: customSettings,
+  env: customEnv,
+  excludedFiles: customExcludedFiles,
+  globals: customGlobals,
+  plugins: customPlugins,
+  extends: customExtends,
+  overrides: customOverrides,
   ...dependencies
 }) => {
   if (!dependencies.typescript.hasTypeScript) {
@@ -41,26 +50,39 @@ export const createTypeScriptOverride: OverrideCreator = ({
   }
 
   const rules = {
-    ...getTypeScriptRules(dependencies),
-    ...getNestJsRules(dependencies),
+    ...createTypeScriptRules(dependencies),
+    ...createNestJsRules(dependencies),
     ...prettierTypeScriptRules,
     ...customRules,
   };
 
   const finalFiles = customFiles ?? files;
+  const finalEnv = customEnv;
+  const finalExcludedFiles = customExcludedFiles;
+  const finalGlobals = customGlobals;
+  const finalPlugins = uniqueArrayEntries([
+    ...plugins,
+    ...(customPlugins ?? []),
+  ]);
+  const finalExtends = customExtends;
+  const finalOverrides = customOverrides;
 
   const parserOptions: OverrideESLintConfig['parserOptions'] = {
     ...defaultParserOptions,
+    ...customParserOptions,
     ecmaFeatures: {
       ...defaultParserOptions.ecmaFeatures,
-      ...(dependencies.react ? { jsx: dependencies.react.hasReact } : null),
+      ...customParserOptions?.ecmaFeatures,
+      jsx: dependencies.react.hasReact,
     },
   };
 
   const settings: OverrideESLintConfig['settings'] = {
     ...defaultSettings,
+    ...customSettings,
     react: {
       ...defaultSettings.react,
+      ...customSettings?.react,
     },
   };
 
@@ -68,10 +90,15 @@ export const createTypeScriptOverride: OverrideCreator = ({
     files: finalFiles,
     parser,
     parserOptions,
-    plugins,
+    plugins: finalPlugins,
     settings,
     rules,
     overrideType: tsOverrideType,
+    env: finalEnv,
+    excludedFiles: finalExcludedFiles,
+    globals: finalGlobals,
+    extends: finalExtends,
+    overrides: finalOverrides,
   };
 };
 
@@ -79,9 +106,9 @@ export const createTypeScriptOverride: OverrideCreator = ({
  * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/README.md
  *
  */
-export const getTypeScriptRules: RulesCreator = ({
+export const createTypeScriptRules: RulesCreator = ({
   typescript: { version, config, hasTypeScript },
-  react: { isCreateReactApp = false, hasReact = false } = {},
+  react: { isCreateReactApp, hasReact },
 }) => {
   if (!hasTypeScript || !version) {
     return null;
@@ -642,10 +669,11 @@ export const getTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
      */
-    '@typescript-eslint/no-unnecessary-condition': config?.compilerOptions
-      ?.strictNullChecks
-      ? 'warn'
-      : 'off',
+    '@typescript-eslint/no-unnecessary-condition':
+      config?.compilerOptions?.strictNullChecks ||
+      config?.compilerOptions?.strict
+        ? 'warn'
+        : 'off',
 
     /**
      * prevents using unmecessary qualifier
@@ -1049,7 +1077,7 @@ export const getTypeScriptRules: RulesCreator = ({
 /**
  * @see https://github.com/nestjs/typescript-starter/blob/master/.eslintrc.js
  */
-export const getNestJsRules: RulesCreator = ({ hasNest }) => {
+export const createNestJsRules: RulesCreator = ({ hasNest }) => {
   if (!hasNest) {
     return null;
   }

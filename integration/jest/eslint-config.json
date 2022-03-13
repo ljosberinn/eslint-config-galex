@@ -134,7 +134,7 @@
             "allowComparingNullableBooleansToTrue": false
           }
         ],
-        "@typescript-eslint/no-unnecessary-condition": "off",
+        "@typescript-eslint/no-unnecessary-condition": "warn",
         "@typescript-eslint/no-unnecessary-qualifier": "error",
         "@typescript-eslint/no-unnecessary-type-arguments": "error",
         "@typescript-eslint/no-unnecessary-type-assertion": "warn",

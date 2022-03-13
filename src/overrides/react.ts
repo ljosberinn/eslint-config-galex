@@ -65,9 +65,13 @@ export const createReactOverride: OverrideCreator = ({
   const parserOptions = createParserOptions(dependencies, customParserOptions);
   const settings = createSettings(dependencies, customSettings);
   const finalPlugins = determinePlugins(dependencies, customPlugins);
+  const finalExtends = customExtends;
+  const finalExcludedFiles = customExcludedFiles;
+  const finalGlobals = customGlobals;
+  const finalEnv = customEnv;
 
   return {
-    extends: customExtends,
+    extends: finalExtends,
     files: finalFiles,
     parser,
     parserOptions,
@@ -76,9 +80,9 @@ export const createReactOverride: OverrideCreator = ({
     overrides: finalOverrides,
     rules,
     overrideType: reactOverrideType,
-    globals: customGlobals,
-    excludedFiles: customExcludedFiles,
-    env: customEnv,
+    globals: finalGlobals,
+    excludedFiles: finalExcludedFiles,
+    env: finalEnv,
   };
 };
 
@@ -156,22 +160,37 @@ const createParserOptions = (
 /**
  * @see https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
  */
-export const createHookRules: RulesCreator = () => ({
-  /**
-   * elevated to error because you either want all deps or you have to explicitly
-   * disable the rule anyways
-   *
-   * @see https://reactjs.org/docs/hooks-rules.html
-   */
-  'react-hooks/exhaustive-deps': 'error',
+export const createHookRules: RulesCreator = ({
+  react: { hasReact, version },
+}) => {
+  if (
+    !hasReact ||
+    !version ||
+    !fulfillsVersionRequirement({
+      given: version,
+      expected: '16.8.0',
+    })
+  ) {
+    return null;
+  }
 
-  /**
-   * prevents invalid hook calls (after early return e.g.)
-   *
-   * @see https://reactjs.org/docs/hooks-rules.html
-   */
-  'react-hooks/rules-of-hooks': 'error',
-});
+  return {
+    /**
+     * elevated to error because you either want all deps or you have to explicitly
+     * disable the rule anyways
+     *
+     * @see https://reactjs.org/docs/hooks-rules.html
+     */
+    'react-hooks/exhaustive-deps': 'error',
+
+    /**
+     * prevents invalid hook calls (after early return e.g.)
+     *
+     * @see https://reactjs.org/docs/hooks-rules.html
+     */
+    'react-hooks/rules-of-hooks': 'error',
+  };
+};
 
 /**
  * @see https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules

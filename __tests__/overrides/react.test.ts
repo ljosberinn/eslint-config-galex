@@ -1,4 +1,5 @@
 import {
+  createHookRules,
   createReactOverride,
   createReactRules,
 } from '../../src/overrides/react';
@@ -10,6 +11,7 @@ const reactDefaultProject: Parameters<OverrideCreator>[0] = {
   react: {
     ...defaultProject.react,
     hasReact: true,
+    version: '16.8.0',
   },
 };
 
@@ -175,18 +177,6 @@ describe('override snapshots', () => {
     process.env.NODE_ENV = initialEnv;
   });
 
-  test('with react 16.8', () => {
-    expect(
-      createReactOverride({
-        ...reactDefaultProject,
-        react: {
-          ...reactDefaultProject.react,
-          version: '16.8.0',
-        },
-      })
-    ).toMatchSnapshot();
-  });
-
   test('with react 17', () => {
     expect(
       createReactOverride({
@@ -293,6 +283,18 @@ describe('createReactRules', () => {
     },
   };
 
+  test('without version', () => {
+    expect(
+      createReactRules({
+        ...defaultProject,
+        react: {
+          ...defaultProject.react,
+          version: undefined,
+        },
+      })
+    ).toMatchSnapshot();
+  });
+
   test('default', () => {
     expect(createReactRules(withReact17)).toMatchSnapshot();
   });
@@ -332,6 +334,36 @@ describe('createReactRules', () => {
         typescript: {
           ...withReact17.typescript,
           hasTypeScript: true,
+        },
+      })
+    ).toMatchSnapshot();
+  });
+});
+
+describe('createHookRules', () => {
+  test('without react', () => {
+    expect(createHookRules(defaultProject)).toMatchSnapshot();
+  });
+
+  test('without version', () => {
+    expect(
+      createHookRules({
+        ...defaultProject,
+        react: {
+          ...defaultProject.react,
+          version: undefined,
+        },
+      })
+    ).toMatchSnapshot();
+  });
+
+  test('with old version', () => {
+    expect(
+      createHookRules({
+        ...defaultProject,
+        react: {
+          ...defaultProject.react,
+          version: '16.0.0',
         },
       })
     ).toMatchSnapshot();
