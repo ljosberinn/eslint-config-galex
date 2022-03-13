@@ -243,7 +243,7 @@ export const getSonarJsRules: RulesCreator = ({
    *
    * @see https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/prefer-single-boolean-return.md
    */
-  'sonarjs/prefer-single-boolean-return': 'error',
+  'sonarjs/prefer-single-boolean-return': 'warn',
 
   /**
    * prefers `while` over `for` for "infinite" loops

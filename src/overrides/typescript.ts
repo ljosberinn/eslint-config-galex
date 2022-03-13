@@ -577,6 +577,20 @@ export const getTypeScriptRules: RulesCreator = ({
     '@typescript-eslint/no-parameter-properties': 'off',
 
     /**
+     * prevents partially subtle var redeclaring issues
+     *
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redeclare.md
+     */
+    '@typescript-eslint/no-redeclare': 'warn',
+
+    /**
+     * prevents redundant code
+     *
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redundant-type-constituents.md
+     */
+    '@typescript-eslint/no-redundant-type-constituents': 'warn',
+
+    /**
      * use import instead of require
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-require-imports.md
@@ -734,6 +748,13 @@ export const getTypeScriptRules: RulesCreator = ({
      * @see no-useless-constructor
      */
     '@typescript-eslint/no-useless-constructor': 'error',
+
+    /**
+     * prevents redundant code
+     *
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-useless-empty-export.md
+     */
+    '@typescript-eslint/no-useless-empty-export': 'error',
 
     /**
      * off because already handled
@@ -953,6 +974,13 @@ export const getTypeScriptRules: RulesCreator = ({
      * @see semi
      */
     '@typescript-eslint/semi': 'off',
+
+    /**
+     * off because handled by prettier
+     *
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/space-before-blocks.md
+     */
+    '@typescript-eslint/space-before-blocks': 'off',
 
     /**
      * off because handled by prettier

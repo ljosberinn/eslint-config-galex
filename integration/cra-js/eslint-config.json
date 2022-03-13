@@ -1023,7 +1023,7 @@
     "sonarjs/non-existent-operator": "warn",
     "sonarjs/prefer-immediate-return": "warn",
     "sonarjs/prefer-object-literal": "error",
-    "sonarjs/prefer-single-boolean-return": "error",
+    "sonarjs/prefer-single-boolean-return": "warn",
     "sonarjs/prefer-while": "error"
   },
   "reportUnusedDisableDirectives": true,

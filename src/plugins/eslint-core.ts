@@ -752,6 +752,7 @@ export const getBestPractices: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/no-redeclare
    * @see ts(2451)
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redeclare.md
    */
   'no-redeclare': hasTypeScript ? 'off' : 'error',
 
@@ -1716,6 +1717,7 @@ export const getStylisticIssuesRules: RulesCreator = ({
    * off because handled by prettier
    *
    * @see https://eslint.org/docs/rules/space-before-blocks
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/space-before-blocks.md
    */
   'space-before-blocks': 'off',
 
