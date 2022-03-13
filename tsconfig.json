@@ -34,6 +34,6 @@
     "importsNotUsedAsValues": "error",
     "checkJs": true
   },
-  "include": ["src", "__tests__"],
+  "include": ["src", "__tests__/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,3 @@
-import type { Linter } from 'eslint';
-
 import type {
   Dependencies,
   OverrideCreator,
@@ -49,11 +47,11 @@ export const createJestOverride: OverrideCreator = ({
 
   const rules: OverrideESLintConfig['rules'] = {
     ...createJestRules(dependencies),
-    ...(dependencies.hasJestDom ? jestDomRules : null),
+    ...(dependencies.hasJestDom ? createJestDomRules(dependencies) : null),
     ...(dependencies.hasTestingLibrary
-      ? getTestingLibraryRules(dependencies)
+      ? createTestingLibraryRules(dependencies)
       : null),
-    ...getTestOverrides(dependencies),
+    ...createTestOverrides(dependencies),
     ...customRules,
   };
 
@@ -78,7 +76,7 @@ export const createJestOverride: OverrideCreator = ({
 
   const finalSettings = {
     ...settings,
-    ...getTestingLibrarySettings(dependencies),
+    ...createTestingLibrarySettings(dependencies),
     ...customSettings,
   };
 
@@ -114,6 +112,7 @@ export const createPlugins = (
  */
 export const createJestRules: RulesCreator = ({
   react: { isCreateReactApp },
+  typescript: { hasTypeScript },
 }) => {
   return {
     /**
@@ -442,9 +441,11 @@ export const createJestRules: RulesCreator = ({
     /**
      * requires a top level describe wrapping everything
      *
+     * off because opinionated
+     *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-top-level-describe.md
      */
-    'jest/require-top-level-describe': 'error',
+    'jest/require-top-level-describe': 'off',
 
     /**
      * validates callback of `describe('something', () => {})`
@@ -474,14 +475,14 @@ export const createJestRules: RulesCreator = ({
      *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-title.md
      */
-    'jest/valid-title': 'warn',
+    'jest/valid-title': hasTypeScript ? 'off' : 'warn',
   };
 };
 
 /**
  * @see https://github.com/testing-library/eslint-plugin-jest-dom
  */
-export const jestDomRules: Linter.RulesRecord = {
+export const createJestDomRules: RulesCreator = () => ({
   /**
    * prefer toBeChecked over checking attributes
    *
@@ -558,12 +559,12 @@ export const jestDomRules: Linter.RulesRecord = {
    * @see https://github.com/testing-library/eslint-plugin-jest-dom/blob/master/docs/rules/prefer-to-have-value.md
    */
   'jest-dom/prefer-to-have-value': 'warn',
-};
+});
 
 /**
  * @see https://github.com/testing-library/eslint-plugin-testing-library
  */
-export const getTestingLibraryRules: RulesCreator = ({
+export const createTestingLibraryRules: RulesCreator = ({
   react: { hasReact },
 }) => ({
   /**
@@ -763,9 +764,9 @@ export const getTestingLibraryRules: RulesCreator = ({
   'testing-library/render-result-naming-convention': 'off',
 });
 
-export const getTestOverrides: RulesCreator = ({
+export const createTestOverrides: RulesCreator = ({
   typescript: { hasTypeScript },
-  react: { hasReact, isCreateReactApp },
+  react: { hasReact },
 }) => ({
   /**
    * off to allow non-null casting e.g. querySelector or .find() results
@@ -777,11 +778,12 @@ export const getTestOverrides: RulesCreator = ({
     : null),
 
   /**
-   * off because its regularily done in tests
+   * enforces unbound methods are called with their expected scope
    *
-   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
+   * @see jest/unbound-method below
+   * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/unbound-method.md
    */
-  ...(hasTypeScript ? { '@typescript-eslint/unbound-method': 'off' } : null),
+  ...(hasTypeScript ? { '@typescript-eslint/unbound-method': 'warn' } : null),
 
   /**
    * off to allow silent mocks, e.g. for console
@@ -794,13 +796,9 @@ export const getTestOverrides: RulesCreator = ({
   /**
    * enforces unbound methods are called with their expected scope
    *
-   * can be enabled once CRA uses eslint-plugin-jest v24.3.0
-   *
    * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
    */
-  ...(hasTypeScript && !isCreateReactApp
-    ? { 'jest/unbound-method': 'warn' }
-    : null),
+  ...(hasTypeScript ? null : { 'jest/unbound-method': 'warn' }),
 
   /**
    * off because its regularily done in tests
@@ -884,7 +882,7 @@ export const getTestOverrides: RulesCreator = ({
 /**
  * @see https://github.com/testing-library/eslint-plugin-testing-library#testing-librarycustom-renders
  */
-export const getTestingLibrarySettings: SettingsCreator = ({
+export const createTestingLibrarySettings: SettingsCreator = ({
   hasTestingLibrary,
   react: { isNext, hasReact },
 }) => {

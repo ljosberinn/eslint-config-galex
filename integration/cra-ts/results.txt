@@ -17,12 +17,6 @@ not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\s
         line: 2
         column: 1
         ruleId: import/order
-    - message: All test cases must be wrapped in a describe block.
-      severity: error
-      data:
-        line: 5
-        column: 1
-        ruleId: jest/require-top-level-describe
     - message: Expected blank line before this statement.
       severity: error
       data:
