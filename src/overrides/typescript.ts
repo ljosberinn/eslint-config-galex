@@ -94,12 +94,7 @@ export const getTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md
      */
-    '@typescript-eslint/array-type': [
-      'warn',
-      {
-        default: 'array',
-      },
-    ],
+    '@typescript-eslint/array-type': ['warn', { default: 'array' }],
 
     /**
      * disallows awaiting a value that is not thenable

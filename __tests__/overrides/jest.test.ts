@@ -150,10 +150,6 @@ describe('override snapshots', () => {
     expect(createJestOverride(defaultProject)).toMatchSnapshot();
   });
 
-  test('default', () => {
-    expect(createJestOverride(jestDefaultProject)).toMatchSnapshot();
-  });
-
   test('with jest-dom', () => {
     expect(
       createJestOverride({ ...jestDefaultProject, hasJestDom: true })
@@ -163,16 +159,6 @@ describe('override snapshots', () => {
   test('with testing-lib', () => {
     expect(
       createJestOverride({ ...jestDefaultProject, hasTestingLibrary: true })
-    ).toMatchSnapshot();
-  });
-
-  test('with jest-dom and testing-lib', () => {
-    expect(
-      createJestOverride({
-        ...jestDefaultProject,
-        hasJestDom: true,
-        hasTestingLibrary: true,
-      })
     ).toMatchSnapshot();
   });
 });
@@ -206,23 +192,6 @@ describe('createJestRules', () => {
       })
     ).toMatchSnapshot();
   });
-
-  test('with create-react-app and typescript', () => {
-    expect(
-      createJestOverride({
-        ...jestDefaultProject,
-        react: {
-          ...jestDefaultProject.react,
-          hasReact: true,
-          isCreateReactApp: true,
-        },
-        typescript: {
-          ...jestDefaultProject.typescript,
-          hasTypeScript: true,
-        },
-      })
-    ).toMatchSnapshot();
-  });
 });
 
 describe('createJestDomRules', () => {
@@ -232,10 +201,6 @@ describe('createJestDomRules', () => {
 });
 
 describe('createTestingLibraryRules', () => {
-  test('default', () => {
-    expect(createTestingLibraryRules(jestDefaultProject)).toMatchSnapshot();
-  });
-
   test('with react', () => {
     expect(
       createTestingLibraryRules({
@@ -250,10 +215,6 @@ describe('createTestingLibraryRules', () => {
 });
 
 describe('createTestOverrides', () => {
-  test('default', () => {
-    expect(createTestOverrides(jestDefaultProject)).toMatchSnapshot();
-  });
-
   test('with react', () => {
     expect(
       createTestOverrides({
@@ -277,51 +238,9 @@ describe('createTestOverrides', () => {
       })
     ).toMatchSnapshot();
   });
-
-  test('with react and typescript', () => {
-    expect(
-      createTestOverrides({
-        ...jestDefaultProject,
-        react: {
-          ...jestDefaultProject.react,
-          hasReact: true,
-        },
-        typescript: {
-          ...jestDefaultProject.typescript,
-          hasTypeScript: true,
-        },
-      })
-    ).toMatchSnapshot();
-  });
 });
 
 describe('createTestingLibrarySettings', () => {
-  test('default', () => {
-    expect(createTestingLibrarySettings(defaultProject)).toMatchSnapshot();
-  });
-
-  test('with testing-lib and without react', () => {
-    expect(
-      createTestingLibrarySettings({
-        ...defaultProject,
-        hasTestingLibrary: true,
-      })
-    ).toMatchSnapshot();
-  });
-
-  test('with react and without testing-lib', () => {
-    expect(
-      createTestingLibrarySettings({
-        ...defaultProject,
-        react: {
-          ...defaultProject.react,
-
-          hasReact: true,
-        },
-      })
-    ).toMatchSnapshot();
-  });
-
   test('with react and testing-lib', () => {
     expect(
       createTestingLibrarySettings({

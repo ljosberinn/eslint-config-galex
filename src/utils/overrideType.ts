@@ -11,7 +11,11 @@ export const storybookOverrideType = createOverrideType('storybook');
 export const dropOverrideType = (
   override: WithOverrideType<OverrideESLintConfig>
 ): OverrideESLintConfig => {
-  const { overrideType, ...rest } = override;
+  const copy: Omit<typeof override, 'overrideType'> & {
+    overrideType?: string;
+  } = { ...override };
 
-  return rest;
+  delete copy.overrideType;
+
+  return copy;
 };

@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "eslint-config-galex",
   "version": "3.6.2",
   "description": "personal ESLint ruleset of galex",
@@ -52,7 +53,8 @@
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/integration",
-      "<rootDir>/dist"
+      "<rootDir>/dist",
+      "<rootDir>/__tests__/shared"
     ],
     "coverageDirectory": "coverage",
     "coverageThreshold": {

@@ -138,6 +138,7 @@
         "react/no-invalid-html-attribute": "warn",
         "react/no-is-mounted": "error",
         "react/no-multi-comp": "off",
+        "react/no-namespace": "error",
         "react/no-redundant-should-component-update": "error",
         "react/no-render-return-value": "off",
         "react/no-set-state": "off",

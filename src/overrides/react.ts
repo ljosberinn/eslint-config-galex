@@ -56,7 +56,7 @@ export const createReactOverride: OverrideCreator = ({
     ...createNextJsRules(dependencies),
     ...prettierReactRules,
     ...createJSXA11yRules(dependencies),
-    ...hookRules,
+    ...createHookRules(dependencies),
     ...customRules,
   };
 
@@ -156,7 +156,7 @@ const createParserOptions = (
 /**
  * @see https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
  */
-export const hookRules: Linter.RulesRecord = {
+export const createHookRules: RulesCreator = () => ({
   /**
    * elevated to error because you either want all deps or you have to explicitly
    * disable the rule anyways
@@ -171,13 +171,13 @@ export const hookRules: Linter.RulesRecord = {
    * @see https://reactjs.org/docs/hooks-rules.html
    */
   'react-hooks/rules-of-hooks': 'error',
-};
+});
 
 /**
  * @see https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
  */
 export const createReactRules: RulesCreator = ({
-  react: { isNext, version, isCreateReactApp },
+  react: { isNext, version },
   typescript: { hasTypeScript },
 }) => {
   if (!version) {
@@ -678,11 +678,9 @@ export const createReactRules: RulesCreator = ({
     /**
      * forbids usage of namespaces
      *
-     * can be enabled once CRA uses eslint-plugin-react v7.26.0
-     *
      * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-namespace.md
      */
-    ...(isCreateReactApp ? null : { 'react/no-namespace': 'error' }),
+    'react/no-namespace': 'error',
 
     /**
      * prevents use of `shouldComponentUpdate` in `PureComponent`
