@@ -40,15 +40,21 @@ const incrementalAdoptionRuleDowngrade: FlagProcessor = value => {
   return valueToForward === 2 ? 1 : 0;
 };
 
+const blankSlateDowngrade: FlagProcessor = () => {
+  return 'off';
+};
+
 type FlagProcessor = (value: Linter.RuleEntry) => Linter.RuleEntry;
 
 const createFlagFilterArray = ({
   convertToESLintInternals,
   incrementalAdoption,
+  blankSlate,
 }: Required<Flags>): FlagProcessor[] => {
   return [
     convertToESLintInternals && convertRuleToEslintInternalValue,
     incrementalAdoption && incrementalAdoptionRuleDowngrade,
+    blankSlate && blankSlateDowngrade,
   ].filter((fn): fn is FlagProcessor => fn !== false);
 };
 
@@ -58,14 +64,17 @@ export const applyFlags = (
 ): ESLintConfig['rules'] => {
   const convertToESLintInternals = flags.convertToESLintInternals ?? false;
   const incrementalAdoption = flags.incrementalAdoption ?? false;
+  const blankSlate = flags.blankSlate ?? false;
 
-  const hasFlags = convertToESLintInternals || incrementalAdoption;
+  const hasFlags =
+    convertToESLintInternals || incrementalAdoption || blankSlate;
 
   if (!hasFlags) {
     return rules;
   }
 
   const fnsToApply = createFlagFilterArray({
+    blankSlate,
     convertToESLintInternals,
     incrementalAdoption,
   });

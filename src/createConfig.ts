@@ -43,6 +43,7 @@ export const createConfig = ({
   tsConfigPath,
   convertToESLintInternals = false,
   incrementalAdoption = false,
+  blankSlate = false,
   root,
   ignorePatterns,
   env,
@@ -54,9 +55,10 @@ export const createConfig = ({
 }: CreateConfigArgs = {}): TopLevelESLintConfig => {
   const dependencies = getDependencies({ cwd, tsConfigPath });
 
-  const flags = {
+  const flags: Flags = {
     convertToESLintInternals,
     incrementalAdoption,
+    blankSlate,
   };
 
   const finalOverrides = [
@@ -71,8 +73,9 @@ export const createConfig = ({
       (override): override is WithOverrideType<OverrideESLintConfig> =>
         override !== null
     )
-    .map(dropOverrideType)
-    .map(override => {
+    .map(overrideWithType => {
+      const override = dropOverrideType(overrideWithType);
+
       return {
         ...override,
         rules: applyFlags(override.rules, flags),

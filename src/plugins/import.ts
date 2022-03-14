@@ -1,10 +1,10 @@
 import type { RulesetCreator } from '../types';
 
-export const createImportRules: RulesetCreator = ({
+export const createImportPlugin: RulesetCreator = ({
   rules: customRules = {},
   ...dependencies
 }) => ({
-  ...getImportRules(dependencies),
+  ...createImportRules(dependencies),
   ...customRules,
 });
 
@@ -12,7 +12,7 @@ export const createImportRules: RulesetCreator = ({
  * @see https://github.com/benmosher/eslint-plugin-import
  *
  */
-export const getImportRules: RulesetCreator = ({
+export const createImportRules: RulesetCreator = ({
   typescript: { hasTypeScript },
   react: { isCreateReactApp },
 }) => ({

@@ -128,6 +128,17 @@ History: prior to v4, `eslint-config-galex` shipped with internal caching. Sadly
 </details>
 
 <details>
+  <summary>Starting with a blank slate</summary>
+
+You like all the features `eslint-config-galex` ships with but you heavily disagree with many rule settings?
+
+Say no more. Simply pass `{ blankSlate: true }` to `createConfig` and you still benefit from automatic dependency detection, the general override setup based on file patterns, but **every rule will be set to `off`**.
+
+This way, you can customize it entirely to your likings without having to create n overrides for rules and or rulesets.
+
+</details>
+
+<details>
   <summary>Disabling a specific @typescript-eslint rule</summary>
 
 ```js

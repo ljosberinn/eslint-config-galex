@@ -74,7 +74,7 @@ export type RulesetCreator = (
  */
 export type WithOverrideType<Override extends OverrideESLintConfig> =
   Override & {
-    overrideType: string;
+    overrideType?: string;
   };
 
 /**
@@ -111,4 +111,5 @@ export type SettingsCreator = (
 export type Flags = {
   convertToESLintInternals?: boolean;
   incrementalAdoption?: boolean;
+  blankSlate?: boolean;
 };

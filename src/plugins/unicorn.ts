@@ -1,16 +1,11 @@
-import { rules as allPrettierRules } from 'eslint-config-prettier';
-
 import type { Dependencies, RulesCreator, RulesetCreator } from '../types';
+import { prettierUnicornRules } from '../utils/prettier';
 
-const prettierUnicornRules = Object.fromEntries(
-  Object.entries(allPrettierRules).filter(([key]) => key.startsWith('unicorn/'))
-);
-
-export const createUnicornRules: RulesetCreator = ({
+export const createUnicornPlugin: RulesetCreator = ({
   rules: customRules = {},
   ...dependencies
 }) => ({
-  ...getUnicornRules(dependencies),
+  ...createUnicornRules(dependencies),
   ...prettierUnicornRules,
   ...customRules,
 });
@@ -18,7 +13,7 @@ export const createUnicornRules: RulesetCreator = ({
 /**
  * @see https://github.com/sindresorhus/eslint-plugin-unicorn
  */
-export const getUnicornRules: RulesCreator = ({
+export const createUnicornRules: RulesCreator = ({
   typescript: { hasTypeScript, config },
   react: { hasReact },
 }) => ({
@@ -765,15 +760,23 @@ const detectPreferTopLevelAwait = ({
     return 'off';
   }
 
-  const isValidModule = config?.compilerOptions?.module
-    ? // @ts-expect-error since tsConfig is parsed as JSON, its fine
-      ['esnext', 'system'].includes(config.compilerOptions.module.toLowerCase())
-    : false;
+  const moduleValue =
+    typeof config.compilerOptions.module === 'string'
+      ? // @ts-expect-error it can be both since its either raw json or parsed
+        config.compilerOptions.module.toLowerCase()
+      : [4, 99].includes(config.compilerOptions.module);
 
-  const targetsAtLeastES2017 = config.compilerOptions.target
-    ? // @ts-expect-error since tsConfig is parsed as JSON, its fine
-      Number.parseInt(config.compilerOptions.target.slice(2)) > 2017
-    : false;
+  if (!['esnext', 'system'].includes(moduleValue)) {
+    return 'off';
+  }
 
-  return isValidModule && targetsAtLeastES2017 ? 'error' : 'off';
+  if (
+    typeof config.compilerOptions.target === 'string' &&
+    // @ts-expect-error it can be both since its either raw json or parsed
+    Number.parseInt(config.compilerOptions.target.slice(2)) < 2017
+  ) {
+    return 'off';
+  }
+
+  return config.compilerOptions.target < 4 ? 'off' : 'error';
 };

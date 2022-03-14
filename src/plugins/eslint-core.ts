@@ -5,16 +5,16 @@ import type { RulesCreator, RulesetCreator } from '../types';
 import { prettierRules } from '../utils/prettier';
 
 export const createEslintCoreRules: RulesetCreator = ({
-  rules: customRules = {},
+  rules: customRules,
   ...dependencies
 }) => {
   return {
-    ...getPossibleErrorRules(dependencies),
-    ...getBestPractices(dependencies),
-    ...strictModeRules,
-    ...getVariableRules(dependencies),
-    ...getStylisticIssuesRules(dependencies),
-    ...getES6Rules(dependencies),
+    ...createPossibleErrorRules(dependencies),
+    ...createBestPractices(dependencies),
+    ...createStrictModeRules(dependencies),
+    ...createVariableRules(dependencies),
+    ...createStylisticIssuesRules(dependencies),
+    ...createES6Rules(dependencies),
     ...prettierRules,
     ...safePrettierOverrides,
     ...customRules,
@@ -24,7 +24,7 @@ export const createEslintCoreRules: RulesetCreator = ({
 /**
  * @see https://eslint.org/docs/rules/#possible-errors
  */
-export const getPossibleErrorRules: RulesCreator = ({
+export const createPossibleErrorRules: RulesCreator = ({
   typescript: { hasTypeScript },
 }) => ({
   /**
@@ -359,7 +359,7 @@ const curly: Linter.RuleEntry = ['warn', 'all'];
 /**
  * @see https://eslint.org/docs/rules/#best-practices
  */
-export const getBestPractices: RulesCreator = ({
+export const createBestPractices: RulesCreator = ({
   typescript: { hasTypeScript },
 }) => ({
   /**
@@ -986,7 +986,7 @@ export const getBestPractices: RulesCreator = ({
   yoda: 'warn',
 });
 
-export const strictModeRules: Linter.RulesRecord = {
+export const createStrictModeRules: RulesCreator = () => ({
   /**
    * enables/disables strict mode
    *
@@ -995,12 +995,12 @@ export const strictModeRules: Linter.RulesRecord = {
    * @see https://eslint.org/docs/rules/strict
    */
   strict: 'off',
-};
+});
 
 /**
  * @see https://eslint.org/docs/rules/#variables
  */
-export const getVariableRules: RulesCreator = ({
+export const createVariableRules: RulesCreator = ({
   typescript: { hasTypeScript },
 }) => ({
   /**
@@ -1104,7 +1104,7 @@ export const getVariableRules: RulesCreator = ({
 /**
  * @see https://eslint.org/docs/rules/#stylistic-issues
  */
-export const getStylisticIssuesRules: RulesCreator = ({
+export const createStylisticIssuesRules: RulesCreator = ({
   typescript: { hasTypeScript, config },
   react: { isCreateReactApp, isNext },
 }) => ({
@@ -1805,7 +1805,7 @@ export const getStylisticIssuesRules: RulesCreator = ({
 /**
  * @see https://eslint.org/docs/rules/#ecmascript-6
  */
-export const getES6Rules: RulesCreator = ({
+export const createES6Rules: RulesCreator = ({
   typescript: { hasTypeScript },
 }) => ({
   /**

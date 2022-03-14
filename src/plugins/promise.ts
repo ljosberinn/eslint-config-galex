@@ -1,17 +1,17 @@
 import type { RulesCreator, RulesetCreator } from '../types';
 
-export const createPromiseRules: RulesetCreator = ({
+export const createPromisePlugin: RulesetCreator = ({
   rules: customRules = {},
   ...dependencies
 }) => ({
-  ...getPromiseRules(dependencies),
+  ...createPromiseRules(dependencies),
   ...customRules,
 });
 
 /**
  * @see https://github.com/xjamundx/eslint-plugin-promise
  */
-export const getPromiseRules: RulesCreator = ({
+export const createPromiseRules: RulesCreator = ({
   typescript: { hasTypeScript },
 }) => ({
   /**

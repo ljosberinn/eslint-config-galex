@@ -1,17 +1,17 @@
 import type { RulesCreator, RulesetCreator } from '../types';
 
-export const createSonarjsRules: RulesetCreator = ({
+export const createSonarjsPlugin: RulesetCreator = ({
   rules: customRules = {},
   ...dependencies
 }) => ({
-  ...getSonarJsRules(dependencies),
+  ...createSonarjsRules(dependencies),
   ...customRules,
 });
 
 /**
  * @see https://github.com/SonarSource/eslint-plugin-sonarjs
  */
-export const getSonarJsRules: RulesCreator = ({
+export const createSonarjsRules: RulesCreator = ({
   typescript: { hasTypeScript },
 }) => ({
   /**
