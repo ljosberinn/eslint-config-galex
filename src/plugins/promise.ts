@@ -1,7 +1,7 @@
 import type { RulesCreator, RulesetCreator } from '../types';
 
 export const createPromisePlugin: RulesetCreator = ({
-  rules: customRules = {},
+  rules: customRules,
   ...dependencies
 }) => ({
   ...createPromiseRules(dependencies),

@@ -1,7 +1,7 @@
 import type { RulesetCreator } from '../types';
 
 export const createImportPlugin: RulesetCreator = ({
-  rules: customRules = {},
+  rules: customRules,
   ...dependencies
 }) => ({
   ...createImportRules(dependencies),

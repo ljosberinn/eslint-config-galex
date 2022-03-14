@@ -1,7 +1,7 @@
 import type { RulesCreator, RulesetCreator } from '../types';
 
 export const createSonarjsPlugin: RulesetCreator = ({
-  rules: customRules = {},
+  rules: customRules,
   ...dependencies
 }) => ({
   ...createSonarjsRules(dependencies),

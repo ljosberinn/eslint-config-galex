@@ -1,3 +1,5 @@
+import { ModuleKind } from 'typescript';
+
 import type { Dependencies, RulesCreator, RulesetCreator } from '../types';
 import { prettierUnicornRules } from '../utils/prettier';
 
@@ -610,14 +612,14 @@ export const createUnicornRules: RulesCreator = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md
    */
   'unicorn/prefer-string-replace-all':
+    // browsers support .replaceAll
+    hasReact ||
     // in TS projects, availability can be inferred based on tsConfig.lib containing anything ESNext related
     (config?.compilerOptions?.lib &&
       Array.isArray(config.compilerOptions.lib) &&
       config.compilerOptions.lib.some(lib =>
         lib.toLowerCase().startsWith('esnext')
-      )) ||
-    // browsers support .replaceAll
-    hasReact
+      ))
       ? 'error'
       : // Node only supports it v15+
         'off',
@@ -760,23 +762,27 @@ const detectPreferTopLevelAwait = ({
     return 'off';
   }
 
-  const moduleValue =
-    typeof config.compilerOptions.module === 'string'
-      ? // @ts-expect-error it can be both since its either raw json or parsed
-        config.compilerOptions.module.toLowerCase()
-      : [4, 99].includes(config.compilerOptions.module);
-
-  if (!['esnext', 'system'].includes(moduleValue)) {
-    return 'off';
-  }
-
   if (
-    typeof config.compilerOptions.target === 'string' &&
-    // @ts-expect-error it can be both since its either raw json or parsed
-    Number.parseInt(config.compilerOptions.target.slice(2)) < 2017
+    !(typeof config.compilerOptions.module === 'string'
+      ? ['esnext', 'system'].includes(
+          // @ts-expect-error it can be both since its either raw json or parsed
+          config.compilerOptions.module.toLowerCase()
+        )
+      : [ModuleKind.System, ModuleKind.ESNext].includes(
+          config.compilerOptions.module
+        ))
   ) {
     return 'off';
   }
 
-  return config.compilerOptions.target < 4 ? 'off' : 'error';
+  if (
+    (typeof config.compilerOptions.target === 'string' &&
+      // @ts-expect-error it can be both since its either raw json or parsed
+      Number.parseInt(config.compilerOptions.target.slice(2)) < 2017) ||
+    config.compilerOptions.target < 4
+  ) {
+    return 'off';
+  }
+
+  return 'error';
 };
