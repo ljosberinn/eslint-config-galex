@@ -28,12 +28,12 @@ export type Dependencies = {
     isNext: boolean;
     isRemix: boolean;
     isPreact: boolean;
-    version: undefined | string;
+    version: null | string;
   };
   typescript: {
     config: null | TSConfig;
     hasTypeScript: boolean;
-    version: undefined | string;
+    version: null | string;
   };
 };
 
