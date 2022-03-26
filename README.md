@@ -23,12 +23,12 @@ npm install --save-dev eslint-config-galex eslint
 
 Beginning with `eslint-config-galex` `v3.6.5` or newer, until this disclaimer is removed you need to install the following dependencies additionally:
 
-- `"eslint-plugin-jest": "26.1.1"`
+- `"eslint-plugin-jest": "26.1.3"`
 
 ```sh
-npm i --save-dev eslint-plugin-jest@26.1.1
+npm i --save-dev eslint-plugin-jest@26.1.3
 
-yarn add -D eslint-plugin-jest@26.1.1
+yarn add -D eslint-plugin-jest@26.1.3
 ```
 
 </details>
