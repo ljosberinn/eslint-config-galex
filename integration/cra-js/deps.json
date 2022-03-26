@@ -18,6 +18,7 @@
   },
   "typescript": {
     "config": null,
-    "hasTypeScript": false
+    "hasTypeScript": false,
+    "version": null
   }
 }

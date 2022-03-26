@@ -269,14 +269,14 @@ describe('detectTypeScript', () => {
 
     expect(detectTypeScript(map, { cwd: process.cwd() }))
       .toMatchInlineSnapshot(`
-      {
-        "config": {
-          "exclude": [],
-        },
-        "hasTypeScript": true,
-        "version": "1.0.0",
-      }
-    `);
+        {
+          "config": {
+            "exclude": [],
+          },
+          "hasTypeScript": true,
+          "version": "1.0.0",
+        }
+      `);
   });
 
   test('allows passing an alternative tsConfigPath which is prioritized', () => {

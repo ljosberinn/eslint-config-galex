@@ -13,7 +13,8 @@
     "isCreateReactApp": false,
     "isNext": false,
     "isRemix": false,
-    "isPreact": false
+    "isPreact": false,
+    "version": null
   },
   "typescript": {
     "config": {
