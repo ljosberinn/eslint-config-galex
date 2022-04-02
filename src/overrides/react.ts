@@ -168,7 +168,7 @@ export const createHookRules: RulesCreator = ({
     !version ||
     !fulfillsVersionRequirement({
       given: version,
-      expected: '16.8.0',
+      expected: '^16.8.0',
     })
   ) {
     return null;
@@ -411,7 +411,7 @@ export const createReactRules: RulesCreator = ({
          */
         checkKeyMustBeforeSpread: fulfillsVersionRequirement({
           given: version,
-          expected: '17.0.0',
+          expected: '^17.0.0',
         }),
       },
     ],
@@ -820,7 +820,7 @@ export const createReactRules: RulesCreator = ({
      */
     'react/react-in-jsx-scope':
       isNext ||
-      fulfillsVersionRequirement({ given: version, expected: '17.0.0' })
+      fulfillsVersionRequirement({ given: version, expected: '^17.0.0' })
         ? 'off'
         : 'error',
 

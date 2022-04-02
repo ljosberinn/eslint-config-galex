@@ -52,9 +52,9 @@ const createFlagFilterArray = ({
   blankSlate,
 }: Required<Flags>): FlagProcessor[] => {
   return [
-    convertToESLintInternals && convertRuleToEslintInternalValue,
     incrementalAdoption && incrementalAdoptionRuleDowngrade,
     blankSlate && blankSlateDowngrade,
+    convertToESLintInternals && convertRuleToEslintInternalValue,
   ].filter((fn): fn is FlagProcessor => fn !== false);
 };
 

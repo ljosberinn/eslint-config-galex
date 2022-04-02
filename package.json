@@ -48,8 +48,7 @@
   "jest": {
     "clearMocks": true,
     "collectCoverageFrom": [
-      "src/(overrides|plugins)/**/*.{ts,ts}",
-      "src/*.ts",
+      "src/**/*.ts",
       "!src/generateStandalone.ts"
     ],
     "testPathIgnorePatterns": [

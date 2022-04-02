@@ -214,7 +214,7 @@ export const createTypeScriptRules: RulesCreator = ({
      */
     ...(fulfillsVersionRequirement({
       given: version,
-      expected: '3.4.0',
+      expected: '^3.4.0',
     })
       ? {
           '@typescript-eslint/consistent-type-assertions': [
@@ -244,7 +244,7 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '3.8.0' })
+    ...(fulfillsVersionRequirement({ given: version, expected: '^3.8.0' })
       ? {
           '@typescript-eslint/consistent-type-imports': [
             'warn',
@@ -496,7 +496,7 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '4.0.0' })
+    ...(fulfillsVersionRequirement({ given: version, expected: '^4.0.0' })
       ? { '@typescript-eslint/no-implicit-any-catch': 'off' }
       : null),
 
@@ -580,7 +580,7 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-non-null-asserted-optional-chain.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '3.7.0' })
+    ...(fulfillsVersionRequirement({ given: version, expected: '^3.7.0' })
       ? { '@typescript-eslint/no-non-null-asserted-optional-chain': 'error' }
       : null),
 
@@ -819,7 +819,7 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-as-const.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '3.4.0' })
+    ...(fulfillsVersionRequirement({ given: version, expected: '^3.4.0' })
       ? { '@typescript-eslint/prefer-as-const': 'error' }
       : null),
 
@@ -874,7 +874,7 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '3.7.0' })
+    ...(fulfillsVersionRequirement({ given: version, expected: '^3.7.0' })
       ? { '@typescript-eslint/prefer-nullish-coalescing': 'error' }
       : null),
 
@@ -883,7 +883,7 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-optional-chain.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '3.7.0' })
+    ...(fulfillsVersionRequirement({ given: version, expected: '^3.7.0' })
       ? { '@typescript-eslint/prefer-optional-chain': 'error' }
       : null),
 
@@ -931,7 +931,7 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '3.9.0' })
+    ...(fulfillsVersionRequirement({ given: version, expected: '^3.9.0' })
       ? { '@typescript-eslint/prefer-ts-expect-error': 'error' }
       : null),
 

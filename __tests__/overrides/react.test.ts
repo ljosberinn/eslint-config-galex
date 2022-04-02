@@ -283,13 +283,25 @@ describe('createReactRules', () => {
     },
   };
 
+  test('with react 16', () => {
+    expect(
+      createReactRules({
+        ...defaultProject,
+        react: {
+          ...defaultProject.react,
+          version: '16.4.0',
+        },
+      })
+    ).toMatchSnapshot();
+  });
+
   test('without version', () => {
     expect(
       createReactRules({
         ...defaultProject,
         react: {
           ...defaultProject.react,
-          version: undefined,
+          version: null,
         },
       })
     ).toMatchSnapshot();
@@ -351,7 +363,7 @@ describe('createHookRules', () => {
         ...defaultProject,
         react: {
           ...defaultProject.react,
-          version: undefined,
+          version: null,
         },
       })
     ).toMatchSnapshot();

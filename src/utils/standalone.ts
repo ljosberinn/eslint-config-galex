@@ -28,8 +28,10 @@ export const loadPrettier = async (): Promise<typeof format> => {
     const prettier = await import('prettier');
     return prettier.format;
   } catch {
+    /* istanbul ignore next cant mock import */
     log(`unable to load prettier, generated json won't be formatted`);
 
+    /* istanbul ignore next cant mock import */
     return (source: string) => {
       return source;
     };
@@ -88,6 +90,7 @@ export async function generateStandalone(): Promise<void> {
 
     log(`wrote ".eslintrc.json" to "${targetPath}"`);
   } catch (error) {
+    /* istanbul ignore next only throwing errors so... */
     if (error instanceof Error) {
       log(`error -- ${error.message}`);
     }

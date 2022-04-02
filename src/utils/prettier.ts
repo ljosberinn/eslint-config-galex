@@ -29,7 +29,7 @@ const {
       return acc;
     }
 
-    if (key.startsWith('/unicorn')) {
+    if (key.startsWith('unicorn/')) {
       acc.prettierUnicornRules[key] = value;
     }
 
