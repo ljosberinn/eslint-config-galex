@@ -304,6 +304,13 @@ export const createUnicornRules: RulesCreator = ({
   'unicorn/no-unreadable-array-destructuring': 'warn',
 
   /**
+   * disallows iifes with implicit returns due to readability
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-iife.md
+   */
+  'unicorn/no-unreadable-iife': 'warn',
+
+  /**
    * disallows potentially very slow regex
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unsafe-regex.md
@@ -344,6 +351,13 @@ export const createUnicornRules: RulesCreator = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md
    */
   'unicorn/no-useless-spread': 'error',
+
+  /**
+   * disallows redundant switch
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-switch-case.md
+   */
+  'unicorn/no-useless-switch-case': 'warn',
 
   /**
    * disallows useless undefined
@@ -518,6 +532,13 @@ export const createUnicornRules: RulesCreator = ({
   'unicorn/prefer-modern-dom-apis': 'error',
 
   /**
+   * prefer modern Math.* APIs over manual calculation
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md
+   */
+  'unicorn/prefer-modern-math-apis': 'warn',
+
+  /**
    * off because we cannot reliably detect being in a pure Node.js context
    * with TS it would be off anyways
    *
@@ -525,6 +546,13 @@ export const createUnicornRules: RulesCreator = ({
    * @see import/no-commonjs
    */
   'unicorn/prefer-module': 'off',
+
+  /**
+   * disallows recreating String, Number, Boolean, etc.
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-native-coercion-functions.md
+   */
+  'unicorn/prefer-native-coercion-functions': 'error',
 
   /**
    * prefer negative index over .length - index
@@ -727,8 +755,6 @@ export const createUnicornRules: RulesCreator = ({
   'unicorn/string-content': 'off',
 
   /**
-   * __EXPERIMENTAL__ - lets see how well it works
-   *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md
    */
   'unicorn/template-indent': 'warn',

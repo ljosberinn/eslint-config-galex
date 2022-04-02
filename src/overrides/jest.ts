@@ -635,6 +635,13 @@ export const createTestingLibraryRules: RulesCreator = ({
   'testing-library/no-dom-import': hasReact ? ['warn', 'react'] : 'off',
 
   /**
+   * disallows /g regex flags in queries as they may lead to false positives
+   *
+   * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-global-regexp-flag-in-query.md
+   */
+  'testing-library/no-global-regex-flag-in-query': 'warn',
+
+  /**
    * prefer usage of `@testing-library/$framework` tools to access nodes
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-node-access.md
