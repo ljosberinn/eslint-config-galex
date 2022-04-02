@@ -12,7 +12,7 @@ export const defaultProject: Parameters<OverrideCreator>[0] = {
     isNext: false,
     isPreact: false,
     isRemix: false,
-    version: undefined,
+    version: null,
   },
   storybook: {
     hasStorybook: false,
@@ -21,6 +21,6 @@ export const defaultProject: Parameters<OverrideCreator>[0] = {
   typescript: {
     config: null,
     hasTypeScript: false,
-    version: undefined,
+    version: null,
   },
 };
