@@ -12,7 +12,6 @@ import { createPromiseRules } from './plugins/promise';
 import { createSonarjsRules } from './plugins/sonarjs';
 import { createUnicornRules } from './plugins/unicorn';
 import type {
-  Dependencies,
   ESLintConfig,
   Flags,
   OverrideESLintConfig,
@@ -21,13 +20,14 @@ import type {
 } from './types';
 import { uniqueArrayEntries } from './utils/array';
 import {
+  detectEnv,
+  detectParserOptions,
   plugins as defaultPlugins,
-  parserOptions as defaultParserOptions,
 } from './utils/defaultsAndDetection';
 import { applyFlags } from './utils/flags';
-import { dropOverrideType } from './utils/overrideType';
+import { dropOverrideType, mergeSortOverrides } from './utils/overrideType';
 
-type CreateConfigArgs = GetDepsArgs &
+export type CreateConfigArgs = GetDepsArgs &
   Flags & {
     ignorePatterns?: string[];
 
@@ -44,7 +44,7 @@ export const createConfig = ({
   convertToESLintInternals = false,
   incrementalAdoption = false,
   blankSlate = false,
-  root,
+  root = true,
   ignorePatterns,
   env,
   overrides,
@@ -61,26 +61,26 @@ export const createConfig = ({
     blankSlate,
   };
 
-  const finalOverrides = [
-    createReactOverride(dependencies),
-    createTypeScriptOverride(dependencies),
-    createJestOverride(dependencies),
-    createStorybookOverride(dependencies),
-    createJestConfigOverride(dependencies),
-    ...(overrides ?? []),
-  ]
-    .filter(
+  const finalOverrides = mergeSortOverrides(
+    [
+      createReactOverride(dependencies),
+      createTypeScriptOverride(dependencies),
+      createJestOverride(dependencies),
+      createStorybookOverride(dependencies),
+      createJestConfigOverride(dependencies),
+      ...(overrides ?? []),
+    ].filter(
       (override): override is WithOverrideType<OverrideESLintConfig> =>
         override !== null
     )
-    .map(overrideWithType => {
-      const override = dropOverrideType(overrideWithType);
+  ).map(overrideWithType => {
+    const override = dropOverrideType(overrideWithType);
 
-      return {
-        ...override,
-        rules: applyFlags(override.rules, flags),
-      };
-    });
+    return {
+      ...override,
+      rules: applyFlags(override.rules, flags),
+    };
+  });
 
   const finalRules = applyFlags(
     {
@@ -111,43 +111,6 @@ export const createConfig = ({
     ignorePatterns,
     reportUnusedDisableDirectives: true,
     settings,
-    // omission defaults to true, otherwise forward
-    root: typeof root === 'undefined' ? true : root,
-  };
-};
-
-const detectEnv = (
-  dependencies: Dependencies,
-  customEnv?: CreateConfigArgs['env']
-): Required<TopLevelESLintConfig['env']> => {
-  const browser = dependencies.react.hasReact;
-  const node = dependencies.typescript.hasTypeScript
-    ? dependencies.hasNest || dependencies.hasNodeTypes
-    : true;
-
-  return {
-    browser,
-    node,
-    ...customEnv,
-  };
-};
-
-const detectParserOptions = (
-  parserOptions: CreateConfigArgs['parserOptions']
-): Required<TopLevelESLintConfig['parserOptions']> => {
-  const ecmaVersion =
-    parserOptions?.ecmaVersion ?? defaultParserOptions.ecmaVersion;
-  const sourceType =
-    parserOptions?.sourceType ?? defaultParserOptions.sourceType;
-
-  const ecmaFeatures = {
-    ...parserOptions?.ecmaFeatures,
-    ...defaultParserOptions.ecmaFeatures,
-  };
-
-  return {
-    ecmaVersion,
-    sourceType,
-    ecmaFeatures,
+    root,
   };
 };
