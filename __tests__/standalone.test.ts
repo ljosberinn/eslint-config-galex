@@ -112,6 +112,8 @@ test('backupExistingEslintrc creates a scoped & formatted backup', () => {
 
   expect(writeFileSyncMock).toHaveBeenCalledTimes(1);
 
+  console.log(writeFileSyncMock.mock.calls);
+
   const [[path, string]] = writeFileSyncMock.mock.calls;
 
   const [prefix, timestamp, suffix] = path.split('\\').pop().split('-');
