@@ -116,14 +116,9 @@ test('backupExistingEslintrc creates a scoped & formatted backup', () => {
 
   const [prefix, timestamp, suffix] = path.split('\\').pop().split('-');
 
-  expect([prefix, suffix]).toMatchInlineSnapshot(`
-    [
-      ".eslintrc",
-      "bak.json",
-    ]
-  `);
+  expect(prefix).toBe('.eslintrc');
+  expect(suffix).toBe('bak.json');
   expect(Number.parseInt(timestamp)).toBeLessThan(Date.now());
-
   expect(string).toMatchInlineSnapshot(`
     "{
       \\"foo\\": \\"bar\\"
@@ -169,7 +164,7 @@ describe('generateStandalone', () => {
 
     const [[path, config]] = writeFileSyncSpy.mock.calls;
 
-    expect(path.split('\\').pop()).toMatchInlineSnapshot(`".eslintrc.json"`);
+    expect(path.split('\\').pop()).toContain('.eslintrc.json');
     expect(JSON.parse(config)).toMatchObject(mockConfig);
   });
 
