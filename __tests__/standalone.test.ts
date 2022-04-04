@@ -112,15 +112,15 @@ test('backupExistingEslintrc creates a scoped & formatted backup', () => {
 
   expect(writeFileSyncMock).toHaveBeenCalledTimes(1);
 
-  console.log(writeFileSyncMock.mock.calls);
-
   const [[path, string]] = writeFileSyncMock.mock.calls;
 
-  const [prefix, timestamp, suffix] = path.split('\\').pop().split('-');
+  const parts = path.split('\\').pop().split('-');
+  const { length } = parts;
 
-  expect(prefix).toBe('.eslintrc');
-  expect(suffix).toBe('bak.json');
-  expect(Number.parseInt(timestamp)).toBeLessThan(Date.now());
+  expect(parts[length - 3]).toContain('.eslintrc');
+  expect(Number.parseInt(parts[length - 2])).toBeLessThan(Date.now());
+  expect(parts[length - 1]).toContain('bak.json');
+
   expect(string).toMatchInlineSnapshot(`
     "{
       \\"foo\\": \\"bar\\"
