@@ -86,6 +86,7 @@ describe.each(cases)('$case.name', ({ path, name }) => {
     } catch {
       const updatedSnapshots = readSnapshots(cwd);
 
+      // eslint-disable-next-line jest/no-conditional-in-test
       if (results) {
         expect(results).toStrictEqual(updatedSnapshots.results);
         expect(config).toStrictEqual(updatedSnapshots.config);
