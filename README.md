@@ -51,7 +51,7 @@ No additional setup is required! 🎉
 
 ## Basic
 
-Just like any other config. You profit automatically of automatic dependency and feature detection. Due to the nature of ESLint configs however this approach is significantly harder to customize.
+You profit automatically of automatic dependency and feature detection. Due to the nature of ESLint configs however this approach is significantly harder to customize.
 
 ```js
 // .eslintrc.js
@@ -62,6 +62,8 @@ module.exports = {
 
 ## Advanced
 
+This showcases the required setup to begin with customizing your config on an advanced level. Please check out the `Examples` section below for more details.
+
 ```js
 // .eslintrc.js
 const { createConfig } from 'eslint-config-galex/src/createConfig';
@@ -69,7 +71,7 @@ const { createConfig } from 'eslint-config-galex/src/createConfig';
 module.exports = createConfig();
 ```
 
-## Examples
+# Features
 
 <details>
   <summary>Incremental Adoption</summary>
@@ -137,6 +139,8 @@ Say no more. Simply pass `{ blankSlate: true }` to `createConfig` and you still 
 This way, you can customize it entirely to your likings without having to create n overrides for rules and or rulesets.
 
 </details>
+
+# Examples
 
 <details>
   <summary>Disabling a specific @typescript-eslint rule</summary>
