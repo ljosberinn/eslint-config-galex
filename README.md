@@ -14,35 +14,251 @@ yarn add -D eslint-config-galex eslint
 npm install --save-dev eslint-config-galex eslint
 ```
 
-## Usage with create-react-app
+# Compatibility
+
+<details>
+  <summary>Usage with create-react-app</summary>
 
 ~~As of January 2021 / due to CRA v5, currently no additional steps are required! 🎉~~
 
 Beginning with `eslint-config-galex` `v3.6.5` or newer, until this disclaimer is removed you need to install the following dependencies additionally:
 
-- `"eslint-plugin-jest": "26.1.1"`
+- `"eslint-plugin-jest": "26.1.3"`
 
-## Usage with Next.js
+```sh
+npm i --save-dev eslint-plugin-jest@26.1.3
+
+yarn add -D eslint-plugin-jest@26.1.3
+```
+
+</details>
+
+<details>
+  <summary>Usage with Next.js</summary>
 
 In your `next.config.js`, I heavily recommend setting [`eslint.ignoreDuringBuilds`](https://nextjs.org/docs/api-reference/next.config.js/ignoring-eslint) to `true`. Otherwise, you'll have to install `eslint-config-next` separately and won't benefit of this config and your customization on top.
 
-## Usage with Remix Run
+</details>
 
-Remix does not come with ESLint as (dev)dependency, so you'll need to install that additionally to the config itself.
+<details>
+  <summary>Usage with Remix Run</summary>
 
-# Basic Setup
+No additional setup is required! 🎉
+
+</details>
+
+# Setup
+
+## Basic
+
+You profit automatically of automatic dependency and feature detection. Due to the nature of ESLint configs however this approach is significantly harder to customize.
 
 ```js
 // .eslintrc.js
 module.exports = {
   extends: 'galex',
 };
+```
 
-// or .eslintrc
+## Advanced
+
+This showcases the required setup to begin with customizing your config on an advanced level. Please check out the `Examples` section below for more details.
+
+```js
+// .eslintrc.js
+const { createConfig } from 'eslint-config-galex/src/createConfig';
+
+module.exports = createConfig();
+```
+
+# Features
+
+<details>
+  <summary>Incremental Adoption</summary>
+
+```js
+// .eslintrc.js
+const { createConfig } from 'eslint-config-galex/src/createConfig';
+
+module.exports = createConfig({
+  incrementalAdoption: true
+});
+```
+
+</details>
+
+<details>
+  <summary>Standalone Generation</summary>
+
+By default, `eslint-config-galex` reads your `package.json` as well as, if present, `tsconfig.json` to determine feature availability. On weaker machines however, this turned out to be a performance bottleneck. Realistically, neither your dependencies nor your tsconfig change _that_ often.
+
+To generate a static config based on your _current_ dependencies & tsconfig, use:
+
+```js
+node eslint-config-galex/src/generateStandalone
+```
+
+which will create a `.eslintrc--generated.json` in your root directory.
+
+**How do I pass settings for `createConfig` to standalone generation?**
+
+Simple! Have a `eslint-galex-settings.json` file in your root directory and it will be picked up.
+
+An example would look like this:
+
+```js
+// eslint-galex-settings.json (remove this comment as its invalid json)
 {
-  "extends": "galex"
+  "incrementalAdoption": true
 }
 ```
+
+**Important**: to keep this in sync with your dependencies, I recommend adding a `postinstall` step to your scripts:
+
+```js
+// package.json
+"scripts": {
+  // other scripts
+  "postinstall": "node eslint-config-galex/src/generateStandalone"
+}
+```
+
+**Remember to re-run this command whenever you make feature-availability-relevant changes to your `tsconfig.json` as well, such as `module`, `target` or `lib`.**
+
+History: prior to v4, `eslint-config-galex` shipped with internal caching. Sadly, this prove to be both a maintenance overhead as well as not as useful as it initially promised to be for various reasons (e.g. VSCode ESLint apparently restarting the process when switching files which cachebusted due to a different process).
+
+</details>
+
+<details>
+  <summary>Starting with a blank slate</summary>
+
+You like all the features `eslint-config-galex` ships with but you heavily disagree with many rule settings?
+
+Say no more. Simply pass `{ blankSlate: true }` to `createConfig` and you still benefit from automatic dependency detection, the general override setup based on file patterns, but **every rule will be set to `off`**.
+
+This way, you can customize it entirely to your likings without having to create n overrides for rules and or rulesets.
+
+</details>
+
+# Examples
+
+<details>
+  <summary>Disabling a specific @typescript-eslint rule</summary>
+
+```js
+const { createConfig } = require('eslint-config-galex/src/createConfig');
+const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const {
+  createTypescriptOverride,
+} = require('eslint-config-galex/src/overrides/typescript');
+
+const dependencies = getDependencies();
+
+const customTypescriptOverride = createTypescriptOverride({
+  ...dependencies,
+  rules: {
+    // here goes anything that applies **exclusively** to typescript files based on the `files` glob pattern also exported from ../overrides/typescript
+    '@typescript-eslint/explicit-module-boundary-types': 'warn', // downgrading the default from "error" to "warn"
+  },
+});
+
+module.exports = createConfig({
+  overrides: [customTypescriptOverride],
+});
+```
+
+</details>
+
+<details>
+  <summary>Changing a eslint-plugin-unicorn rule specifically for React files</summary>
+
+```js
+const { createConfig } = require('eslint-config-galex/src/createConfig');
+const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const {
+  createReactOverride,
+} = require('eslint-config-galex/src/overrides/react');
+
+const dependencies = getDependencies();
+
+const customReactOverride = createReactOverride({
+  ...dependencies,
+  rules: {
+    'unicorn/no-abusive-eslint-disable': 'off',
+  },
+});
+
+module.exports = createConfig({
+  overrides: [customReactOverride],
+});
+```
+
+</details>
+
+<details>
+  <summary>Adding plugins to any override</summary>
+
+```js
+const { createConfig } = require('eslint-config-galex/src/createConfig');
+const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const {
+  createReactOverride,
+} = require('eslint-config-galex/src/overrides/react');
+
+const dependencies = getDependencies();
+
+const customReactOverride = createReactOverride({
+  ...dependencies,
+  plugins: ['my-fancy-plugin'],
+  rules: {
+    'plugin/foo': 'warn',
+    'plugin/bar': 'error',
+    'plugin/baz': 'off',
+  },
+});
+
+module.exports = createConfig({
+  overrides: [customReactOverride],
+});
+```
+
+</details>
+
+<details>
+  <summary>Building your own config with the available exports</summary>
+
+```js
+const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const {
+  files,
+  parser,
+  defaultSettings,
+} = require('eslint-config-galex/src/overrides/react');
+
+const dependencies = getDependencies();
+
+const myReactOverride = {
+  // using the internal react glob pattern
+  files,
+  // using the internal default react parser
+  parser,
+  // defining your custom rules
+  rules: {
+    'react/react-in-jsx-scope': 'warn',
+  },
+  // using the default settings
+  settings: defaultSettings,
+};
+
+module.exports = {
+  overrides: [myReactOverride],
+  rules: {
+    'no-await-in-loop': 'warn',
+  },
+};
+```
+
+</details>
 
 # I went through 30+ eslint-plugins so you don't have to.
 
@@ -93,6 +309,8 @@ Couldn't this be easier?
   `incrementalAdoption` to false or remove it from the arguments passed to
   `createConfig`.
 
+- Integration tests for all cases.
+
 - All internals, literally everything, is re-exported. Don't like some
   decision? Rules too weak? Want to add custom rules? Everything is covered!
 
@@ -101,70 +319,8 @@ Couldn't this be easier?
   entire overhead related to that. Dependency injection, just for an eslint
   config!
 
-  > The following examples are not exhaustive - there's a lot more. Check out
-  > the source!
-
-  ```js
-  // .eslintrc.js
-
-  // customize the config as-is:
-  const { createConfig } = require('eslint-config-galex/src/createConfig');
-
-  module.exports = createConfig();
-
-  // pass in your own rules
-  module.exports = createConfig({ rules: myCustomRules });
-  // or plugins
-  module.exports = createConfig({ plugins: myCustomPluginArray });
-
-  // package.json / tsconfig.json in other directories?
-  module.exports = createConfig({ cwd: 'path/to/file' });
-
-  // only use the TS override:
-  const {
-    createTSOverride,
-  } = require('eslint-config-galex/src/overrides/typescript');
-
-  // then compose with e.g. other overrides and createConfig
-  const override = createTSOverride({
-    react: {
-      hasReact: true,
-      // might also be a good idea to `require('./package.json') and reference
-      // `packageJson.dependencies.react`
-      version: '17.0.0-rc.1',
-      isCreateReactApp: false,
-    },
-    typescript: {
-      hasTypeScript: true,
-      version: '4.0.2',
-    },
-    rules: {
-      // typescript specific rules go here
-    },
-  });
-
-  // only use the glob pattern for TS files:
-  const { files } = require('eslint-config-galex/src/overrides/typescript');
-
-  // only use testing-library rules:
-  const {
-    getTestingLibraryRules,
-  } = require('eslint-config-galex/src/overrides/jest');
-
-  const testingLibRules = getTestingLibraryRules({ hasReact: boolean });
-  ```
-
-  Learn more on customizing [here](#customization).
-
-- This one is brand new with a _heavy_ focus on code quality, best practices and
-  tries to omit opinions. We're using a fork at work too, and it has exclusively
-  detected overseen/undetected bugs and reasonable improvements.
-
-  Feedback so far has been generally positive. The only rule that raised eyebrows
-  was `import/order` because it leads to a huge git diff when applied on existing
-  projects.
-
-- You may of course just use it as is!
+- This config has a _heavy_ focus on code quality, best practices and
+  tries to omit opinions.
 
 ## What's included?
 
@@ -184,24 +340,6 @@ All rules are commented and link to their docs.
 - [x] prettier
 - [x] storybook & storybook/testing-library
 - [x] NestJS (with TypeScript)
-
-## What can you do?
-
-Contribute! I've been searching for months to find only the best and in my
-opinion most relevant plugins. I'll happily add more if they match the following
-criteria:
-
-- actively maintained
-- follow best practices in their domain
-
-  how can you find out? if a rule such as `no-anonymous-default-exports` is
-  [actively encouraged by the React core team](https://twitter.com/dan_abramov/status/1255229440860262400),
-  you should probably consider using it.
-
-- improve code quality (such as `unicorn/prefer-array-flat-map`)
-- only minor stylistic influence (such as `import/newline-after-import`)
-
-If you want to add support, please follow the detection logic in `index.js`.
 
 # Customization
 
@@ -310,57 +448,6 @@ list, check out the source.
 - `const { createPromiseRules } = require('eslint-config-galex/src/rulesets/promise')`
 - `const { createSonarjsRules } = require('eslint-config-galex/src/rulesets/sonarjs')`
 - `const { createUnicornRules } = require('eslint-config-galex/src/rulesets/unicorn')`
-
-# List of included opinions
-
-## TypeScript:
-
-- let inference work where possible:
-
-  - only strongly type exports (enforced via `@typescript-eslint/explicit-module-boundary-types`)
-
-  - strongly type complex return types (currently not enforceable)
-
-- prefer using `type` over `interface`
-
-## JavaScript
-
-- `null` is not forbidden, as it conveys meaning. Enjoy debugging code which
-  does not differentiate between intentional `undefined` and unintentional
-  `undefined`.
-
-- `prefer-const`
-
-- `curly`: prefer
-
-  ```js
-  if (true) {
-    doSomething();
-  }
-  ```
-
-  over
-
-  ```js
-  if (true) doSomething();
-  ```
-
-## Tests
-
-- use new lines between test blocks & `expect` and non-`expect`-code
-
-  stylistic choice that can't be enforced by prettier
-
-- use describe blocks
-
-  [considered best practice](https://github.com/jest-community/eslint-plugin-jest/blob/master/src/rules/require-top-level-describe.ts#L8) by `eslint-plugin-jest`
-
-## General
-
-- sort your imports (this does not work when using absolute imports, sadly)
-- don't write unecessary code (e.g. `return undefined` or `if(condition === true)`)
-- new line after all imports
-- group imports at the top
 
 # Examples
 

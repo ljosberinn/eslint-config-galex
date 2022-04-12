@@ -1,6 +1,7 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "eslint-config-galex",
-  "version": "3.6.5",
+  "version": "3.6.2",
   "description": "personal ESLint ruleset of galex",
   "keywords": [
     "eslint",
@@ -27,14 +28,16 @@
   },
   "license": "MIT",
   "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "rimraf dist && tsc -b tsconfig.build.json && node scripts/monkey-patch-default-export.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix && prettier --write .",
     "install:clean": "rimraf node_modules yarn.lock && yarn",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "types": "tsc --noEmit",
     "semantic-release": "semantic-release",
     "install:integration": "cd integration/cra-js && yarn --frozen-lockfile && cd ../cra-ts && yarn --frozen-lockfile && cd ../next-js && yarn --frozen-lockfile && cd ../next-ts && yarn --frozen-lockfile",
     "install:integration:clean": "rimraf integration/**/node_modules integration/**/yarn.lock && cd integration/cra-js && yarn && cd ../cra-ts && yarn && cd ../next-js && yarn && cd ../next-ts && yarn && cd ../remix-js && yarn && cd ../remix-ts && yarn && cd ../jest && yarn && cd ../nest-ts && yarn"
@@ -45,11 +48,13 @@
   "jest": {
     "clearMocks": true,
     "collectCoverageFrom": [
-      "src/(overrides|rulesets)/**/*.{js,jsx,ts,tsx}",
-      "src/*.js"
+      "src/**/*.ts",
+      "!src/generateStandalone.ts"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>/integration"
+      "<rootDir>/integration",
+      "<rootDir>/dist",
+      "<rootDir>/__tests__/shared"
     ],
     "coverageDirectory": "coverage",
     "coverageThreshold": {
@@ -69,43 +74,61 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ],
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": [
+        "babel-jest",
+        {
+          "presets": [
+            "next/babel"
+          ]
+        }
+      ]
+    },
     "snapshotFormat": {
       "printBasicPrototype": false
     }
   },
   "dependencies": {
-    "@babel/core": "7.17.4",
+    "@babel/core": "7.17.9",
     "@babel/eslint-parser": "7.17.0",
     "@babel/preset-react": "7.16.7",
-    "@next/eslint-plugin-next": "12.0.10",
-    "@typescript-eslint/eslint-plugin": "5.12.0",
-    "@typescript-eslint/parser": "5.12.0",
+    "@next/eslint-plugin-next": "12.1.4",
+    "@typescript-eslint/eslint-plugin": "5.19.0",
+    "@typescript-eslint/parser": "5.19.0",
     "confusing-browser-globals": "1.0.11",
-    "eslint-config-prettier": "8.3.0",
+    "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-jsconfig": "1.1.0",
-    "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jest": "26.1.1",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "26.1.4",
     "eslint-plugin-jest-dom": "4.0.1",
     "eslint-plugin-jest-formatting": "3.1.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-promise": "6.0.0",
-    "eslint-plugin-react": "7.28.0",
-    "eslint-plugin-react-hooks": "4.3.0",
-    "eslint-plugin-sonarjs": "0.11.0",
-    "eslint-plugin-storybook": "0.5.6",
-    "eslint-plugin-testing-library": "5.0.5",
-    "eslint-plugin-unicorn": "40.1.0",
+    "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-react-hooks": "4.4.0",
+    "eslint-plugin-sonarjs": "0.13.0",
+    "eslint-plugin-storybook": "0.5.8",
+    "eslint-plugin-testing-library": "5.3.0",
+    "eslint-plugin-unicorn": "42.0.0",
+    "lodash.merge": "4.6.2",
     "read-pkg-up": "7.0.1",
-    "typescript": "4.5.5"
+    "typescript": "4.6.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
-    "@types/jest": "27.4.0",
-    "eslint": "8.9.0",
+    "@types/confusing-browser-globals": "1.0.0",
+    "@types/eslint": "8.4.1",
+    "@types/eslint-config-prettier": "6.11.0",
+    "@types/jest": "27.4.1",
+    "@types/lodash.merge": "4.6.6",
+    "@types/node": "17.0.23",
+    "babel-jest": "27.5.1",
+    "eslint": "8.13.0",
     "jest": "27.5.1",
     "jest-watch-typeahead": "0.6.5",
-    "prettier": "2.5.1",
+    "next": "12.1.4",
+    "prettier": "2.6.2",
     "rimraf": "3.0.2",
     "semantic-release": "19.0.2"
   },
@@ -131,5 +154,11 @@
         }
       ]
     ]
-  }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "LICENSE"
+  ]
 }

@@ -18,6 +18,8 @@ jobs:
           cache-dependency-path: 'integration/**/yarn.lock'
       - name: Install dependencies    
         run: yarn --frozen-lockfile && yarn install:integration
+      - name: Build
+        run: yarn build
       - name: Lint
         run: yarn lint
       - name: Test & Coverage Report

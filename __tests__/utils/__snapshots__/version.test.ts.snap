@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fulfillsVersionRequirement(., 4.1.2) 1`] = `false`;
+
+exports[`fulfillsVersionRequirement(3, 4.1.2) 1`] = `false`;
+
+exports[`fulfillsVersionRequirement(3.0, 4.1.2) 1`] = `false`;
+
+exports[`fulfillsVersionRequirement(3.0.0, 4.1.2) 1`] = `false`;
+
+exports[`fulfillsVersionRequirement(4.1.2, ^3.7.0) 1`] = `true`;
+
+exports[`fulfillsVersionRequirement(4.1.2, ^4.1.2) 1`] = `true`;
+
+exports[`fulfillsVersionRequirement(4.1.2, ^4.2.0) 1`] = `false`;

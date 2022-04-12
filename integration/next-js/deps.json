@@ -17,6 +17,8 @@
     "version": "17.0.2"
   },
   "typescript": {
-    "hasTypeScript": false
+    "config": null,
+    "hasTypeScript": false,
+    "version": null
   }
 }

@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`override snapshots with react 1`] = `
+{
+  "env": undefined,
+  "excludedFiles": undefined,
+  "extends": undefined,
+  "files": [
+    "*.stories.*",
+    "*.story.*",
+  ],
+  "globals": undefined,
+  "overrideType": "eslint-config-galex/storybook",
+  "overrides": undefined,
+  "parserOptions": undefined,
+  "plugins": [
+    "storybook",
+  ],
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "import/no-default-export": "off",
+    "react/function-component-definition": "off",
+    "storybook/csf-component": "error",
+    "storybook/default-exports": "off",
+    "storybook/hierarchy-separator": "warn",
+    "storybook/meta-inline-properties": "warn",
+    "storybook/no-redundant-story-name": "warn",
+    "storybook/no-stories-of": "error",
+    "storybook/no-title-property-in-meta": "warn",
+    "storybook/prefer-pascal-case": "warn",
+    "storybook/story-exports": "warn",
+    "storybook/use-storybook-expect": "error",
+    "storybook/use-storybook-testing-library": "error",
+  },
+  "settings": undefined,
+}
+`;
+
+exports[`override snapshots with storybook-testing-lib 1`] = `
+{
+  "env": undefined,
+  "excludedFiles": undefined,
+  "extends": undefined,
+  "files": [
+    "*.stories.*",
+    "*.story.*",
+  ],
+  "globals": undefined,
+  "overrideType": "eslint-config-galex/storybook",
+  "overrides": undefined,
+  "parserOptions": undefined,
+  "plugins": [
+    "storybook",
+  ],
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "import/no-default-export": "off",
+    "storybook/await-interactions": "error",
+    "storybook/context-in-play-function": "error",
+    "storybook/csf-component": "error",
+    "storybook/default-exports": "off",
+    "storybook/hierarchy-separator": "warn",
+    "storybook/meta-inline-properties": "warn",
+    "storybook/no-redundant-story-name": "warn",
+    "storybook/no-stories-of": "error",
+    "storybook/no-title-property-in-meta": "warn",
+    "storybook/prefer-pascal-case": "warn",
+    "storybook/story-exports": "warn",
+    "storybook/use-storybook-expect": "error",
+    "storybook/use-storybook-testing-library": "error",
+  },
+  "settings": undefined,
+}
+`;
+
+exports[`override snapshots with typescript 1`] = `
+{
+  "env": undefined,
+  "excludedFiles": undefined,
+  "extends": undefined,
+  "files": [
+    "*.stories.*",
+    "*.story.*",
+  ],
+  "globals": undefined,
+  "overrideType": "eslint-config-galex/storybook",
+  "overrides": undefined,
+  "parserOptions": undefined,
+  "plugins": [
+    "storybook",
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "import/no-anonymous-default-export": "off",
+    "import/no-default-export": "off",
+    "storybook/csf-component": "error",
+    "storybook/default-exports": "off",
+    "storybook/hierarchy-separator": "warn",
+    "storybook/meta-inline-properties": "warn",
+    "storybook/no-redundant-story-name": "warn",
+    "storybook/no-stories-of": "error",
+    "storybook/no-title-property-in-meta": "warn",
+    "storybook/prefer-pascal-case": "warn",
+    "storybook/story-exports": "warn",
+    "storybook/use-storybook-expect": "error",
+    "storybook/use-storybook-testing-library": "error",
+  },
+  "settings": undefined,
+}
+`;
+
+exports[`override snapshots without storybook 1`] = `null`;

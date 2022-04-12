@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src"
+  },
+  "include": [
+    "src/createConfig.ts",
+    "src/getDependencies.ts",
+    "src/generateStandalone.ts",
+    "src/getToplevelTsConfig.ts",
+    "src/index.ts",
+    "src/types.ts",
+    "src/overrides/**/*.ts",
+    "src/plugins/**/*.ts",
+    "src/utils/**/*.ts"
+  ]
+}
