@@ -95,7 +95,7 @@ By default, `eslint-config-galex` reads your `package.json` as well as, if prese
 To generate a static config based on your _current_ dependencies & tsconfig, use:
 
 ```js
-node eslint-config-galex/dist/generateStandalone
+node node_modules/eslint-config-galex/dist/generateStandalone
 ```
 
 which will create a `.eslintrc--generated.json` in your root directory.
@@ -119,7 +119,7 @@ An example would look like this:
 // package.json
 "scripts": {
   // other scripts
-  "postinstall": "node eslint-config-galex/dist/generateStandalone"
+  "postinstall": "node node_modules/eslint-config-galex/dist/generateStandalone"
 }
 ```
 
