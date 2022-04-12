@@ -66,7 +66,7 @@ This showcases the required setup to begin with customizing your config on an ad
 
 ```js
 // .eslintrc.js
-const { createConfig } from 'eslint-config-galex/src/createConfig';
+const { createConfig } from 'eslint-config-galex/dist/createConfig';
 
 module.exports = createConfig();
 ```
@@ -78,7 +78,7 @@ module.exports = createConfig();
 
 ```js
 // .eslintrc.js
-const { createConfig } from 'eslint-config-galex/src/createConfig';
+const { createConfig } from 'eslint-config-galex/dist/createConfig';
 
 module.exports = createConfig({
   incrementalAdoption: true
@@ -95,7 +95,7 @@ By default, `eslint-config-galex` reads your `package.json` as well as, if prese
 To generate a static config based on your _current_ dependencies & tsconfig, use:
 
 ```js
-node eslint-config-galex/src/generateStandalone
+node eslint-config-galex/dist/generateStandalone
 ```
 
 which will create a `.eslintrc--generated.json` in your root directory.
@@ -119,7 +119,7 @@ An example would look like this:
 // package.json
 "scripts": {
   // other scripts
-  "postinstall": "node eslint-config-galex/src/generateStandalone"
+  "postinstall": "node eslint-config-galex/dist/generateStandalone"
 }
 ```
 
@@ -146,15 +146,15 @@ This way, you can customize it entirely to your likings without having to create
   <summary>Disabling a specific @typescript-eslint rule</summary>
 
 ```js
-const { createConfig } = require('eslint-config-galex/src/createConfig');
-const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
+const { getDependencies } = require('eslint-config-galex/dist/getDependencies');
 const {
-  createTypescriptOverride,
-} = require('eslint-config-galex/src/overrides/typescript');
+  createTypeScriptOverride,
+} = require('eslint-config-galex/dist/overrides/typescript');
 
 const dependencies = getDependencies();
 
-const customTypescriptOverride = createTypescriptOverride({
+const customTypescriptOverride = createTypeScriptOverride({
   ...dependencies,
   rules: {
     // here goes anything that applies **exclusively** to typescript files based on the `files` glob pattern also exported from ../overrides/typescript
@@ -173,11 +173,11 @@ module.exports = createConfig({
   <summary>Changing a eslint-plugin-unicorn rule specifically for React files</summary>
 
 ```js
-const { createConfig } = require('eslint-config-galex/src/createConfig');
-const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
+const { getDependencies } = require('eslint-config-galex/dist/getDependencies');
 const {
   createReactOverride,
-} = require('eslint-config-galex/src/overrides/react');
+} = require('eslint-config-galex/dist/overrides/react');
 
 const dependencies = getDependencies();
 
@@ -199,11 +199,11 @@ module.exports = createConfig({
   <summary>Adding plugins to any override</summary>
 
 ```js
-const { createConfig } = require('eslint-config-galex/src/createConfig');
-const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
+const { getDependencies } = require('eslint-config-galex/dist/getDependencies');
 const {
   createReactOverride,
-} = require('eslint-config-galex/src/overrides/react');
+} = require('eslint-config-galex/dist/overrides/react');
 
 const dependencies = getDependencies();
 
@@ -228,12 +228,12 @@ module.exports = createConfig({
   <summary>Building your own config with the available exports</summary>
 
 ```js
-const { getDependencies } = require('eslint-config-galex/src/getDependencies');
+const { getDependencies } = require('eslint-config-galex/dist/getDependencies');
 const {
   files,
   parser,
   defaultSettings,
-} = require('eslint-config-galex/src/overrides/react');
+} = require('eslint-config-galex/dist/overrides/react');
 
 const dependencies = getDependencies();
 
@@ -433,31 +433,31 @@ list, check out the source.
 
 ### Overrides
 
-- `const { createTSOverride } = require('eslint-config-galex/src/overrides/typescript')`
-- `const { createReactOverride } = require('eslint-config-galex/src/overrides/react')`
-- `const { createJestOverride } = require('eslint-config-galex/src/overrides/jest')`
-- `const { createStorybookOverride } = require('eslint-config-galex/src/overrides/storybook')`
+- `const { createTSOverride } = require('eslint-config-galex/dist/overrides/typescript')`
+- `const { createReactOverride } = require('eslint-config-galex/dist/overrides/react')`
+- `const { createJestOverride } = require('eslint-config-galex/dist/overrides/jest')`
+- `const { createStorybookOverride } = require('eslint-config-galex/dist/overrides/storybook')`
 
 > Please note that the test override should always come last.
 
 ### Rulesets
 
-- `const { createEslintCoreRules } = require('eslint-config-galex/src/rulesets/eslint-core')`
-- `const { createImportRules } = require('eslint-config-galex/src/rulesets/import')`
-- `const { createNextJsRules } = require('eslint-config-galex/src/rulesets/next')`
-- `const { createPromiseRules } = require('eslint-config-galex/src/rulesets/promise')`
-- `const { createSonarjsRules } = require('eslint-config-galex/src/rulesets/sonarjs')`
-- `const { createUnicornRules } = require('eslint-config-galex/src/rulesets/unicorn')`
+- `const { createEslintCoreRules } = require('eslint-config-galex/dist/rulesets/eslint-core')`
+- `const { createImportRules } = require('eslint-config-galex/dist/rulesets/import')`
+- `const { createNextJsRules } = require('eslint-config-galex/dist/rulesets/next')`
+- `const { createPromiseRules } = require('eslint-config-galex/dist/rulesets/promise')`
+- `const { createSonarjsRules } = require('eslint-config-galex/dist/rulesets/sonarjs')`
+- `const { createUnicornRules } = require('eslint-config-galex/dist/rulesets/unicorn')`
 
 # Examples
 
 ## Custom TypeScript override to disable a rule
 
 ```js
-const { createConfig } = require('eslint-config-galex/src/createConfig');
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
 const {
   createTSOverride,
-} = require('eslint-config-galex/src/overrides/typescript');
+} = require('eslint-config-galex/dist/overrides/typescript');
 const packageJson = require('./package.json');
 
 // since `createTSOverride` is entirely configurable, we need to inform it about its environment
@@ -488,10 +488,10 @@ module.exports = createConfig({ overrides: [tsOverride] });
 const {
   createConfig,
   getDependencies,
-} = require('eslint-config-galex/src/createConfig');
+} = require('eslint-config-galex/dist/createConfig');
 const {
   createJestOverride,
-} = require('eslint-config-galex/src/overrides/jest');
+} = require('eslint-config-galex/dist/overrides/jest');
 
 /**
  * override to enable jest globals for `/testUtils` folder

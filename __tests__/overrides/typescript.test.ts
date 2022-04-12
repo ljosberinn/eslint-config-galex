@@ -165,7 +165,7 @@ describe('createTypeScriptRules', () => {
         ...typescriptDefaultProject,
         typescript: {
           ...typescriptDefaultProject.typescript,
-          version: undefined,
+          version: null,
         },
       })
     ).toMatchSnapshot();

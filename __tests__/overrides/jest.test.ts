@@ -212,6 +212,19 @@ describe('createTestingLibraryRules', () => {
       })
     ).toMatchSnapshot();
   });
+
+  test('with CRA', () => {
+    expect(
+      createTestingLibraryRules({
+        ...jestDefaultProject,
+        react: {
+          ...jestDefaultProject.react,
+          hasReact: true,
+          isCreateReactApp: true,
+        },
+      })
+    ).toMatchSnapshot();
+  });
 });
 
 describe('createTestOverrides', () => {

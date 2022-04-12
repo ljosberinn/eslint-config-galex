@@ -565,7 +565,7 @@ export const createJestDomRules: RulesCreator = () => ({
  * @see https://github.com/testing-library/eslint-plugin-testing-library
  */
 export const createTestingLibraryRules: RulesCreator = ({
-  react: { hasReact },
+  react: { hasReact, isCreateReactApp },
 }) => ({
   /**
    * enforces awaiting async queries (find*)
@@ -639,7 +639,11 @@ export const createTestingLibraryRules: RulesCreator = ({
    *
    * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-global-regexp-flag-in-query.md
    */
-  'testing-library/no-global-regex-flag-in-query': 'warn',
+  ...(isCreateReactApp
+    ? null
+    : {
+        'testing-library/no-global-regex-flag-in-query': 'warn',
+      }),
 
   /**
    * prefer usage of `@testing-library/$framework` tools to access nodes

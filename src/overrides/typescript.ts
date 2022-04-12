@@ -107,7 +107,7 @@ export const createTypeScriptOverride: OverrideCreator = ({
  *
  */
 export const createTypeScriptRules: RulesCreator = ({
-  typescript: { version, config, hasTypeScript },
+  typescript: { version, hasTypeScript },
   react: { isCreateReactApp, hasReact },
 }) => {
   if (!hasTypeScript || !version) {
@@ -667,13 +667,15 @@ export const createTypeScriptRules: RulesCreator = ({
     /**
      * prevents unecessary checks
      *
+     * off, as its bugged
+     *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
      */
-    '@typescript-eslint/no-unnecessary-condition':
-      config?.compilerOptions?.strictNullChecks ||
-      config?.compilerOptions?.strict
-        ? 'warn'
-        : 'off',
+    '@typescript-eslint/no-unnecessary-condition': 'off',
+    // config?.compilerOptions?.strictNullChecks ||
+    // config?.compilerOptions?.strict
+    //   ? 'warn'
+    //   : 'off',
 
     /**
      * prevents using unmecessary qualifier
