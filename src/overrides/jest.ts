@@ -642,7 +642,7 @@ export const createTestingLibraryRules: RulesCreator = ({
   ...(isCreateReactApp
     ? null
     : {
-        'testing-library/no-global-regex-flag-in-query': 'warn',
+        'testing-library/no-global-regexp-flag-in-query': 'warn',
       }),
 
   /**
