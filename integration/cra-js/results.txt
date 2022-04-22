@@ -1,8 +1,8 @@
-writing deps to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\deps.json
-writing config cache to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\eslint-config.json
+writing deps to /workspaces/eslint-config-galex/integration/cra-js/deps.json
+writing config cache to /workspaces/eslint-config-galex/integration/cra-js/eslint-config.json
 TAP version 13
 1..5
-ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\src\App.js
+ok 1 - /workspaces/eslint-config-galex/integration/cra-js/src/App.js
   ---
   message: Prefer named exports.
   severity: warning
@@ -11,7 +11,7 @@ ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\src\A
     column: 8
     ruleId: import/no-default-export
   ...
-not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\src\App.test.js
+not ok 2 - /workspaces/eslint-config-galex/integration/cra-js/src/App.test.js
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -27,7 +27,7 @@ not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\s
         column: 3
         ruleId: jest-formatting/padding-around-all
   ...
-not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\src\index.js
+not ok 3 - /workspaces/eslint-config-galex/integration/cra-js/src/index.js
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -43,7 +43,7 @@ not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\s
         column: 12
         ruleId: unicorn/prefer-query-selector
   ...
-not ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\src\reportWebVitals.js
+not ok 4 - /workspaces/eslint-config-galex/integration/cra-js/src/reportWebVitals.js
   ---
   message: Expected catch() or return
   severity: error
@@ -71,5 +71,5 @@ not ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\s
         column: 8
         ruleId: import/no-default-export
   ...
-ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-js\src\setupTests.js
+ok 5 - /workspaces/eslint-config-galex/integration/cra-js/src/setupTests.js
 

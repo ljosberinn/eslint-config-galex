@@ -1,6 +1,6 @@
-writing deps to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\jest\deps.json
-writing config cache to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\jest\eslint-config.json
+writing deps to /workspaces/eslint-config-galex/integration/jest/deps.json
+writing config cache to /workspaces/eslint-config-galex/integration/jest/eslint-config.json
 TAP version 13
 1..1
-ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\jest\jest.config.ts
+ok 1 - /workspaces/eslint-config-galex/integration/jest/jest.config.ts
 

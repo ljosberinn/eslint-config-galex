@@ -1,8 +1,8 @@
-writing deps to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\deps.json
-writing config cache to C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\eslint-config.json
+writing deps to /workspaces/eslint-config-galex/integration/cra-ts/deps.json
+writing config cache to /workspaces/eslint-config-galex/integration/cra-ts/eslint-config.json
 TAP version 13
 1..6
-not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\App.test.tsx
+not ok 1 - /workspaces/eslint-config-galex/integration/cra-ts/src/App.test.tsx
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -24,7 +24,7 @@ not ok 1 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\s
         column: 3
         ruleId: jest-formatting/padding-around-all
   ...
-not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\App.tsx
+not ok 2 - /workspaces/eslint-config-galex/integration/cra-ts/src/App.tsx
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -46,7 +46,7 @@ not ok 2 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\s
         column: 8
         ruleId: import/no-default-export
   ...
-not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\index.tsx
+not ok 3 - /workspaces/eslint-config-galex/integration/cra-ts/src/index.tsx
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -62,8 +62,8 @@ not ok 3 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\s
         column: 12
         ruleId: unicorn/prefer-query-selector
   ...
-ok 4 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\react-app-env.d.ts
-not ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\reportWebVitals.ts
+ok 4 - /workspaces/eslint-config-galex/integration/cra-ts/src/react-app-env.d.ts
+not ok 5 - /workspaces/eslint-config-galex/integration/cra-ts/src/reportWebVitals.ts
   ---
   message: All imports in the declaration are only used as types. Use `import type`.
   severity: warning
@@ -97,5 +97,5 @@ not ok 5 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\s
         column: 8
         ruleId: import/no-default-export
   ...
-ok 6 - C:\Users\gerr.it\Desktop\dev\eslint-config-galex\integration\cra-ts\src\setupTests.ts
+ok 6 - /workspaces/eslint-config-galex/integration/cra-ts/src/setupTests.ts
 
