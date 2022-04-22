@@ -28,11 +28,34 @@
       ],
       "settings": {
         "react": {
-          "version": "detect"
+          "version": "detect",
+          "formComponents": [
+            "Form"
+          ],
+          "linkComponents": [
+            {
+              "name": "Link",
+              "linkAttribute": "to"
+            },
+            {
+              "name": "NavLink",
+              "linkAttribute": "to"
+            }
+          ]
         },
+        "import/ignore": [
+          "node_modules",
+          "\\.(css|md|svg|json)$"
+        ],
         "import/resolver": {
           "jsconfig": {
             "config": "jsconfig.json"
+          },
+          "node": {
+            "extensions": [
+              ".js",
+              ".jsx"
+            ]
           }
         }
       },
@@ -43,7 +66,18 @@
           ],
           "rules": {
             "import/no-default-export": "off"
-          }
+          },
+          "overrides": [
+            {
+              "files": [
+                "**/routes/**/*.js?(x)",
+                "**/routes/**/*.tsx"
+              ],
+              "rules": {
+                "react/display-name": "off"
+              }
+            }
+          ]
         }
       ],
       "rules": {
@@ -185,7 +219,15 @@
         "react/void-dom-elements-no-children": "error",
         "jsx-a11y/accessible-emoji": "off",
         "jsx-a11y/alt-text": "error",
-        "jsx-a11y/anchor-has-content": "error",
+        "jsx-a11y/anchor-has-content": [
+          "error",
+          {
+            "components": [
+              "Link",
+              "NavLink"
+            ]
+          }
+        ],
         "jsx-a11y/anchor-is-valid": [
           "error",
           {

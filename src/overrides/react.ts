@@ -108,6 +108,7 @@ const createSettings = (
     ...customSettings,
     react: {
       ...defaultSettings.react,
+      ...createRemixEslintPluginReactSettings(dependencies),
       ...customSettings?.react,
     },
     ...createRemixJsImportResolverSettings(dependencies),
@@ -900,7 +901,7 @@ export const createReactRules: RulesCreator = ({
  * @see https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
  */
 export const createJSXA11yRules: RulesCreator = ({
-  react: { isNext, isCreateReactApp },
+  react: { isNext, isCreateReactApp, isRemix },
 }) => {
   return {
     /**
@@ -921,8 +922,16 @@ export const createJSXA11yRules: RulesCreator = ({
      * enforces `children` in `a`
      *
      * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md
+     * @see https://github.com/remix-run/remix/blob/main/packages/remix-eslint-config/rules/jsx-a11y.js#L8
      */
-    'jsx-a11y/anchor-has-content': 'error',
+    'jsx-a11y/anchor-has-content': isRemix
+      ? [
+          'error',
+          {
+            components: ['Link', 'NavLink'],
+          },
+        ]
+      : 'error',
 
     /**
      * ensures core `a` attributes are valid
@@ -1394,21 +1403,80 @@ export const createRemixRunOverride: OverrideInternalOverride =
     return {
       files: remixRunOverrideFiles,
       rules: remixRules,
+      // see https://github.com/remix-run/remix/blob/main/packages/remix-eslint-config/index.js#L82
+      overrides: [
+        {
+          files: ['**/routes/**/*.js?(x)', '**/routes/**/*.tsx'],
+          rules: {
+            'react/display-name': 'off',
+          },
+        },
+      ],
     };
   };
 
 export const createRemixJsImportResolverSettings = (
   dependencies: Dependencies
 ): OverrideESLintConfig['settings'] | null => {
-  if (dependencies.typescript.hasTypeScript || !dependencies.react.isRemix) {
+  if (!dependencies.react.isRemix) {
     return null;
   }
 
   return {
+    // see https://github.com/remix-run/remix/blob/main/packages/remix-eslint-config/settings/import.js
+    'import/ignore': ['node_modules', '\\.(css|md|svg|json)$'],
+    ...(dependencies.typescript.hasTypeScript
+      ? {
+          'import/parsers': {
+            '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
+          },
+        }
+      : null),
     'import/resolver': {
-      jsconfig: {
-        config: 'jsconfig.json',
+      ...(dependencies.typescript.hasTypeScript
+        ? {
+            typescript: {
+              alwaysTryTypes: true,
+            },
+          }
+        : {
+            jsconfig: {
+              config: 'jsconfig.json',
+            },
+          }),
+      node: {
+        extensions: [
+          '.js',
+          '.jsx',
+          ...(dependencies.typescript.hasTypeScript ? ['.ts', '.tsx'] : []),
+        ],
       },
     },
+  };
+};
+
+/**
+ * @see https://github.com/remix-run/remix/blob/main/packages/remix-eslint-config/settings/react.js#L4
+ */
+export const createRemixEslintPluginReactSettings = (
+  dependendencies: Dependencies
+): OverrideESLintConfig['settings'] | null => {
+  if (!dependendencies.react.isRemix) {
+    return null;
+  }
+
+  return {
+    // detect is already covered in default settings
+    formComponents: ['Form'],
+    linkComponents: [
+      {
+        name: 'Link',
+        linkAttribute: 'to',
+      },
+      {
+        name: 'NavLink',
+        linkAttribute: 'to',
+      },
+    ],
   };
 };
