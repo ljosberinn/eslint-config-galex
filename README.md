@@ -66,7 +66,7 @@ This showcases the required setup to begin with customizing your config on an ad
 
 ```js
 // .eslintrc.js
-const { createConfig } from 'eslint-config-galex/dist/createConfig';
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
 
 module.exports = createConfig();
 ```
@@ -78,7 +78,7 @@ module.exports = createConfig();
 
 ```js
 // .eslintrc.js
-const { createConfig } from 'eslint-config-galex/dist/createConfig';
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
 
 module.exports = createConfig({
   incrementalAdoption: true
