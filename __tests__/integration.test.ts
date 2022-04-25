@@ -1,4 +1,4 @@
-/* eslint-disable jest/no-conditional-expect, import/no-dynamic-require, @typescript-eslint/no-require-imports, jest/no-conditional-in-test */
+/* eslint-disable jest/no-conditional-expect, import/no-dynamic-require, @typescript-eslint/no-require-imports */
 import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';

@@ -1866,6 +1866,11 @@ export const createES6Rules: RulesCreator = ({
   'no-const-assign': hasTypeScript ? 'off' : 'error',
 
   /**
+   * @see https://eslint.org/docs/rules/no-constant-binary-expression
+   */
+  'no-constant-binary-expression': 'warn',
+
+  /**
    * @see https://eslint.org/docs/rules/no-dupe-class-members
    * @see @typescript-eslint/no-dupe-class-members
    * @see ts(2393)

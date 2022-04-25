@@ -8,6 +8,12 @@ if (!process.argv.some(arg => arg.includes('vscode-eslint'))) {
   const { createConfig } = require('../dist/createConfig');
   const { getDependencies } = require('../dist/getDependencies');
 
+  const eslintPackageJson = require(resolve(
+    'node_modules/eslint/package.json'
+  ));
+
+  console.log(`ESLint v${eslintPackageJson.version}`);
+
   const cwd = '.';
   const prettierOptions = {
     parser: 'json-stringify',
@@ -16,9 +22,6 @@ if (!process.argv.some(arg => arg.includes('vscode-eslint'))) {
   const config = createConfig({
     root: true,
     cwd,
-    cacheOptions: {
-      enabled: false,
-    },
   });
 
   const depsPath = resolve('deps.json');
