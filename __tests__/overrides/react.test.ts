@@ -2,6 +2,7 @@ import {
   createHookRules,
   createReactOverride,
   createReactRules,
+  createRemixRoutesOverride,
 } from '../../src/overrides/react';
 import type { OverrideCreator } from '../../src/types';
 import { defaultProject } from '../shared';
@@ -379,5 +380,11 @@ describe('createHookRules', () => {
         },
       })
     ).toMatchSnapshot();
+  });
+});
+
+describe('createRemixRoutesOverride', () => {
+  test('nulls without remix', () => {
+    expect(createRemixRoutesOverride(defaultProject)).toBeNull();
   });
 });

@@ -406,6 +406,13 @@ export const createTypeScriptRules: RulesCreator = ({
     '@typescript-eslint/no-dupe-class-members': 'error',
 
     /**
+     * disallows defining an enum with multiple members initialized to the same value
+     *
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicate-enum-values.md
+     */
+    '@typescript-eslint/no-duplicate-enum-values': 'error',
+
+    /**
      * prevents duplicate type imports too, on top of the default rule
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-duplicate-imports.md
@@ -597,7 +604,6 @@ export const createTypeScriptRules: RulesCreator = ({
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-parameter-properties.md
      */
     '@typescript-eslint/no-parameter-properties': 'off',
-
     /**
      * prevents partially subtle var redeclaring issues
      *
@@ -815,6 +821,19 @@ export const createTypeScriptRules: RulesCreator = ({
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/sort-type-union-intersection-members.md
      */
     '@typescript-eslint/sort-type-union-intersection-members': 'off',
+
+    /**
+     * off because the use of modern language features, esp. if already present
+     * in other languages, should be encouraged
+     *
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-parameter-properties.md
+     */
+    '@typescript-eslint/parameter-properties': [
+      'warn',
+      {
+        prefer: 'parameter-property',
+      },
+    ],
 
     /**
      * prefer using `as const` syntax over casting

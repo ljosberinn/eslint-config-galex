@@ -1,4 +1,4 @@
-ESLint v8.14.0
+ESLint v8.15.0
 writing deps to /workspaces/eslint-config-galex/integration/remix-js/deps.json
 writing config cache to /workspaces/eslint-config-galex/integration/remix-js/eslint-config.json
 TAP version 13

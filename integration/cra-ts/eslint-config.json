@@ -334,6 +334,7 @@
         "@typescript-eslint/no-base-to-string": "error",
         "@typescript-eslint/consistent-indexed-object-style": "off",
         "@typescript-eslint/no-dupe-class-members": "error",
+        "@typescript-eslint/no-duplicate-enum-values": "error",
         "@typescript-eslint/no-duplicate-imports": "warn",
         "@typescript-eslint/no-dynamic-delete": "warn",
         "@typescript-eslint/no-empty-function": "error",
@@ -393,6 +394,12 @@
         "@typescript-eslint/non-nullable-type-assertion-style": "off",
         "@typescript-elint/object-curly-spacing": "off",
         "@typescript-eslint/sort-type-union-intersection-members": "off",
+        "@typescript-eslint/parameter-properties": [
+          "warn",
+          {
+            "prefer": "parameter-property"
+          }
+        ],
         "@typescript-eslint/prefer-as-const": "error",
         "@typescript-eslint/prefer-for-of": "warn",
         "@typescript-eslint/prefer-function-type": "off",

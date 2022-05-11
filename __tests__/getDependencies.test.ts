@@ -498,7 +498,7 @@ describe('getDependencies', () => {
             ],
           },
           "hasTypeScript": true,
-          "version": "4.6.3",
+          "version": "4.6.4",
         },
       }
     `);

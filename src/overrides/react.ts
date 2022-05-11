@@ -1224,41 +1224,6 @@ export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
 
   return {
     /**
-     * ensure correct font-display property is assigned for Google Fonts
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/google-font-display.js
-     */
-    '@next/next/google-font-display': 'warn',
-
-    /**
-     * ensures preconnect is used with Google Fonts
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/google-font-preconnect.js
-     */
-    '@next/next/google-font-preconnect': 'error',
-
-    /**
-     * next/script components with inline content must specify an `id` attribute
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/inline-script-id.js
-     */
-    '@next/next/inline-script-id': 'error',
-
-    /**
-     * ensure `passHref` is assigned if child of `Link` component is a custom component
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/link-passhref.js
-     */
-    '@next/next/link-passhref': 'error',
-
-    /**
-     * use next/script component for loading third party scripts
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/next-script-for-ga.js
-     */
-    '@next/next/next-script-for-ga': 'warn',
-
-    /**
      * should be imported directly
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-css-tags.js
@@ -1266,34 +1231,11 @@ export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
     '@next/next/no-css-tags': 'warn',
 
     /**
-     * disallow importing `next/document` outside of pages/document.js
+     * sync scripts can impact performance
      *
-     * off until https://github.com/vercel/next.js/issues/28169 is resolved
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-document-import-in-page.js
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-sync-scripts.js
      */
-    '@next/next/no-document-import-in-page': 'off',
-
-    /**
-     * enforces singular usage of <Head> in _document
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-duplicate-head.js
-     */
-    '@next/next/no-duplicate-head': 'error',
-
-    /**
-     * prohibits usage of HTML <head> element
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-element.js
-     */
-    '@next/next/no-head-element': 'error',
-
-    /**
-     * disallow importing `next/head` in pages/document.js
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-import-in-document.js
-     */
-    '@next/next/no-head-import-in-document': 'error',
+    '@next/next/no-sync-scripts': 'warn',
 
     /**
      * disallows regular <a> links
@@ -1312,34 +1254,25 @@ export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
     '@next/next/no-img-element': 'off',
 
     /**
+     * prohibits usage of HTML <head> element
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-element.js
+     */
+    '@next/next/no-head-element': 'error',
+
+    /**
+     * disallow of polyfill.io in some cases
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-unwanted-polyfillio.js
+     */
+    '@next/next/no-unwanted-polyfillio': 'warn',
+
+    /**
      * recommend adding custom font in a custom document and not in a specific page
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-page-custom-font.js
      */
     '@next/next/no-page-custom-font': 'warn',
-
-    /**
-     * disallow importing `next/script` inside `pages/_document`
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-script-in-document.js
-     */
-    '@next/next/no-script-in-document': 'error',
-
-    /**
-     * disallows importing next/server outside of _middleware
-     *
-     * off as its not currently registered. see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/index.js
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-server-import-in-page.js
-     */
-    // '@next/next/no-server-import-in-page': 'error',
-
-    /**
-     * sync scripts can impact performance
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-sync-scripts.js
-     */
-    '@next/next/no-sync-scripts': 'warn',
 
     /**
      * disallow using <title> with `Head` from `next/document`
@@ -1349,6 +1282,52 @@ export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
     '@next/next/no-title-in-document-head': 'warn',
 
     /**
+     * ensure correct font-display property is assigned for Google Fonts
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/google-font-display.js
+     */
+    '@next/next/google-font-display': 'warn',
+
+    /**
+     * ensures preconnect is used with Google Fonts
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/google-font-preconnect.js
+     */
+    '@next/next/google-font-preconnect': 'error',
+
+    /**
+     * disallow importing `next/document` outside of pages/document.js
+     *
+     * off until https://github.com/vercel/next.js/issues/28169 is resolved
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-document-import-in-page.js
+     */
+    '@next/next/no-document-import-in-page': 'off',
+
+    /**
+     * disallow importing `next/head` in pages/document.js
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-head-import-in-document.js
+     */
+    '@next/next/no-head-import-in-document': 'error',
+
+    /**
+     * disallow importing `next/script` inside `next/head`
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-script-component-in-head.js
+     */
+    '@next/next/no-script-component-in-head': 'error',
+
+    /**
+     * disallows importing next/server outside of _middleware
+     *
+     * off as its not currently registered. see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/index.js
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-server-import-in-page.js
+     */
+    '@next/next/no-server-import-in-page': 'error',
+
+    /**
      * tries to correct typos for page-related exports
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-typos.js
@@ -1356,11 +1335,25 @@ export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
     '@next/next/no-typos': 'warn',
 
     /**
-     * disallow of polyfill.io in some cases
+     * enforces singular usage of <Head> in _document
      *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-unwanted-polyfillio.js
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-duplicate-head.js
      */
-    '@next/next/no-unwanted-polyfillio': 'warn',
+    '@next/next/no-duplicate-head': 'error',
+
+    /**
+     * next/script components with inline content must specify an `id` attribute
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/inline-script-id.js
+     */
+    '@next/next/inline-script-id': 'error',
+
+    /**
+     * use next/script component for loading third party scripts
+     *
+     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/next-script-for-ga.js
+     */
+    '@next/next/next-script-for-ga': 'warn',
   };
 };
 
@@ -1394,6 +1387,28 @@ const remixRules: OverrideESLintConfig['rules'] = {
   'import/no-default-export': 'off',
 };
 
+/**
+ *
+ * @param dependencies see https://github.com/remix-run/remix/blob/main/packages/remix-eslint-config/index.js#L82
+ */
+export const createRemixRoutesOverride: OverrideInternalOverride =
+  dependencies => {
+    if (!dependencies.react.isRemix) {
+      return null;
+    }
+
+    return {
+      files: ['**/routes/**/*.js?(x)', '**/routes/**/*.tsx'],
+      rules: {
+        'react/display-name': 'off',
+        // recommended practice is to `trow new Response` in e.g. `LoaderFunctions`
+        ...(dependencies.typescript.hasTypeScript
+          ? { '@typescript-eslint/no-throw-literal': 'off' }
+          : null),
+      },
+    };
+  };
+
 export const createRemixRunOverride: OverrideInternalOverride =
   dependencies => {
     if (!dependencies.react.isRemix) {
@@ -1403,15 +1418,9 @@ export const createRemixRunOverride: OverrideInternalOverride =
     return {
       files: remixRunOverrideFiles,
       rules: remixRules,
-      // see https://github.com/remix-run/remix/blob/main/packages/remix-eslint-config/index.js#L82
-      overrides: [
-        {
-          files: ['**/routes/**/*.js?(x)', '**/routes/**/*.tsx'],
-          rules: {
-            'react/display-name': 'off',
-          },
-        },
-      ],
+      overrides: [createRemixRoutesOverride(dependencies)].filter(
+        (override): override is OverrideESLintConfig => override !== null
+      ),
     };
   };
 
