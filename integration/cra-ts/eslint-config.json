@@ -438,7 +438,8 @@
         "@typescript-eslint/unbound-method": "off",
         "@typescript-eslint/unified-signatures": "warn",
         "@typescript-eslint/object-curly-spacing": "off"
-      }
+      },
+      "overrides": []
     },
     {
       "env": {

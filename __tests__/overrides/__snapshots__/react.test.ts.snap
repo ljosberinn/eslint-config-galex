@@ -3244,7 +3244,6 @@ exports[`override snapshots with remix and typescript 1`] = `
             "**/routes/**/*.tsx",
           ],
           "rules": {
-            "@typescript-eslint/no-throw-literal": "off",
             "react/display-name": "off",
           },
         },

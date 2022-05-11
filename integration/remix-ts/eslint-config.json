@@ -81,8 +81,7 @@
                 "**/routes/**/*.tsx"
               ],
               "rules": {
-                "react/display-name": "off",
-                "@typescript-eslint/no-throw-literal": "off"
+                "react/display-name": "off"
               }
             }
           ]
@@ -516,7 +515,18 @@
         "@typescript-eslint/unbound-method": "off",
         "@typescript-eslint/unified-signatures": "warn",
         "@typescript-eslint/object-curly-spacing": "off"
-      }
+      },
+      "overrides": [
+        {
+          "files": [
+            "**/routes/**/*.js?(x)",
+            "**/routes/**/*.tsx"
+          ],
+          "rules": {
+            "@typescript-eslint/no-throw-literal": "off"
+          }
+        }
+      ]
     }
   ],
   "parserOptions": {

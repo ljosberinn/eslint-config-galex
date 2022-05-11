@@ -258,18 +258,6 @@ not ok 10 - /workspaces/eslint-config-galex/integration/remix-ts/app/routes/demo
         line: 7
         column: 12
         ruleId: prefer-const
-    - message: Expected an error object to be thrown.
-      severity: error
-      data:
-        line: 14
-        column: 11
-        ruleId: '@typescript-eslint/no-throw-literal'
-    - message: Expected an error object to be thrown.
-      severity: error
-      data:
-        line: 25
-        column: 11
-        ruleId: '@typescript-eslint/no-throw-literal'
     - message: Missing return type on function.
       severity: error
       data:

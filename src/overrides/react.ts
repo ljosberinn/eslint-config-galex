@@ -1379,16 +1379,24 @@ export const createNextJsPagesOverride: OverrideInternalOverride =
     };
   };
 
-const remixRunOverrideFiles: OverrideESLintConfig['files'] = [
+export const remixRunOverrideFiles: OverrideESLintConfig['files'] = [
   'app/**/*.?(t|j)s?(x)',
 ];
 
-const remixRules: OverrideESLintConfig['rules'] = {
+export const remixRules: OverrideESLintConfig['rules'] = {
   'import/no-default-export': 'off',
 };
 
+export const remixRunRoutesOverrideFiles: OverrideESLintConfig['files'] = [
+  '**/routes/**/*.js?(x)',
+  '**/routes/**/*.tsx',
+];
+
+export const remixRunRoutesOverrideRules: OverrideESLintConfig['rules'] = {
+  'react/display-name': 'off',
+};
+
 /**
- *
  * @param dependencies see https://github.com/remix-run/remix/blob/main/packages/remix-eslint-config/index.js#L82
  */
 export const createRemixRoutesOverride: OverrideInternalOverride =
@@ -1398,14 +1406,8 @@ export const createRemixRoutesOverride: OverrideInternalOverride =
     }
 
     return {
-      files: ['**/routes/**/*.js?(x)', '**/routes/**/*.tsx'],
-      rules: {
-        'react/display-name': 'off',
-        // recommended practice is to `trow new Response` in e.g. `LoaderFunctions`
-        ...(dependencies.typescript.hasTypeScript
-          ? { '@typescript-eslint/no-throw-literal': 'off' }
-          : null),
-      },
+      files: remixRunRoutesOverrideFiles,
+      rules: remixRunRoutesOverrideRules,
     };
   };
 

@@ -12,6 +12,18 @@ exports[`createNestJsRules with nest 1`] = `
 
 exports[`createNestJsRules without nest 1`] = `null`;
 
+exports[`createRemixTypeScriptOverride with remix and typescript 1`] = `
+{
+  "files": [
+    "**/routes/**/*.js?(x)",
+    "**/routes/**/*.tsx",
+  ],
+  "rules": {
+    "@typescript-eslint/no-throw-literal": "off",
+  },
+}
+`;
+
 exports[`createTypeScriptRules with create-react-app 1`] = `
 {
   "@typescript-elint/object-curly-spacing": "off",

@@ -3,6 +3,7 @@ import {
   createTypeScriptOverride,
   createTypeScriptRules,
   createNestJsRules,
+  createRemixTypeScriptOverride,
 } from '../../src/overrides/typescript';
 import type { OverrideCreator } from '../../src/types';
 import tsConfig from '../../tsconfig.json';
@@ -311,6 +312,20 @@ describe('createNestJsRules', () => {
       createNestJsRules({
         ...typescriptDefaultProject,
         hasNest: true,
+      })
+    ).toMatchSnapshot();
+  });
+});
+
+describe('createRemixTypeScriptOverride', () => {
+  test('with remix and typescript', () => {
+    expect(
+      createRemixTypeScriptOverride({
+        ...typescriptDefaultProject,
+        react: {
+          ...typescriptDefaultProject.react,
+          isRemix: true,
+        },
       })
     ).toMatchSnapshot();
   });

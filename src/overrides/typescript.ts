@@ -1,13 +1,17 @@
+import type { Linter } from 'eslint';
 import { rules as allPrettierRules } from 'eslint-config-prettier';
 
 import type {
+  Dependencies,
   OverrideCreator,
   OverrideESLintConfig,
+  OverrideInternalOverride,
   RulesCreator,
 } from '../types';
 import { uniqueArrayEntries } from '../utils/array';
 import { tsOverrideType } from '../utils/overrideType';
 import { fulfillsVersionRequirement } from '../utils/version';
+import { remixRunRoutesOverrideFiles } from './react';
 
 const prettierTypeScriptRules = Object.fromEntries(
   Object.entries(allPrettierRules).filter(([key]) =>
@@ -65,7 +69,7 @@ export const createTypeScriptOverride: OverrideCreator = ({
     ...(customPlugins ?? []),
   ]);
   const finalExtends = customExtends;
-  const finalOverrides = customOverrides;
+  const finalOverrides = createOverrides(dependencies, customOverrides);
 
   const parserOptions: OverrideESLintConfig['parserOptions'] = {
     ...defaultParserOptions,
@@ -100,6 +104,18 @@ export const createTypeScriptOverride: OverrideCreator = ({
     extends: finalExtends,
     overrides: finalOverrides,
   };
+};
+
+const createOverrides = (
+  dependencies: Dependencies,
+  customOverrides: OverrideESLintConfig['overrides'] = []
+): OverrideESLintConfig['overrides'] => {
+  const remixOverride = createRemixTypeScriptOverride(dependencies);
+
+  return [remixOverride, ...customOverrides].filter(
+    (dataset): dataset is Linter.ConfigOverride =>
+      dataset !== null && typeof dataset === 'object'
+  );
 };
 
 /**
@@ -1111,3 +1127,18 @@ export const createNestJsRules: RulesCreator = ({ hasNest }) => {
     '@typescript-eslint/no-extraneous-class': 'off',
   };
 };
+
+export const createRemixTypeScriptOverride: OverrideInternalOverride =
+  dependencies => {
+    if (!dependencies.react.isRemix || !dependencies.typescript.hasTypeScript) {
+      return null;
+    }
+
+    return {
+      files: remixRunRoutesOverrideFiles,
+      rules: {
+        // recommended practice is to `trow new Response` in e.g. `LoaderFunctions`
+        '@typescript-eslint/no-throw-literal': 'off',
+      },
+    };
+  };
