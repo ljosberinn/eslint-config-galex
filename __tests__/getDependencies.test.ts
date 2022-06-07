@@ -432,7 +432,7 @@ describe('getDependencies', () => {
   });
 
   test('matches snapshot', () => {
-    expect(getDependencies()).toMatchInlineSnapshot(`
+    expect(getDependencies()).toMatchObject(
       {
         "hasJest": true,
         "hasJestDom": false,
@@ -498,9 +498,9 @@ describe('getDependencies', () => {
             ],
           },
           "hasTypeScript": true,
-          "version": "4.6.4",
+          "version": ts.version,
         },
       }
-    `);
+    );
   });
 });
