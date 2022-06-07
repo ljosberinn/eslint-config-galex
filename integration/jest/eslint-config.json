@@ -262,6 +262,7 @@
         "jest/prefer-comparison-matcher": "warn",
         "jest/prefer-expect-assertions": "off",
         "jest/prefer-expect-resolves": "warn",
+        "jest/prefer-hooks-in-order": "warn",
         "jest/prefer-hooks-on-top": "error",
         "jest/prefer-inline-snapshots": "off",
         "jest/prefer-snapshot-hint": "off",

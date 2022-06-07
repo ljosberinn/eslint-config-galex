@@ -362,6 +362,13 @@ export const createJestRules: RulesCreator = ({
     ...(isCreateReactApp ? null : { 'jest/prefer-expect-resolves': 'warn' }),
 
     /**
+     * ensures hooks are called in the order jest calls them aswell
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-hooks-in-order.md
+     */
+    ...(isCreateReactApp ? null : { 'jest/prefer-hooks-in-order': 'warn' }),
+
+    /**
      * ensures hooks are defined before tests
      *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-hooks-on-top.md
