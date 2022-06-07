@@ -402,7 +402,6 @@
         "@typescript-eslint/consistent-indexed-object-style": "off",
         "@typescript-eslint/no-dupe-class-members": "error",
         "@typescript-eslint/no-duplicate-enum-values": "error",
-        "@typescript-eslint/no-duplicate-imports": "warn",
         "@typescript-eslint/no-dynamic-delete": "warn",
         "@typescript-eslint/no-empty-function": "error",
         "@typescript-eslint/no-empty-interface": "off",

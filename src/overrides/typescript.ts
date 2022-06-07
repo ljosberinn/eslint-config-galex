@@ -429,15 +429,6 @@ export const createTypeScriptRules: RulesCreator = ({
     '@typescript-eslint/no-duplicate-enum-values': 'error',
 
     /**
-     * prevents duplicate type imports too, on top of the default rule
-     *
-     * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-duplicate-imports.md
-     * @see no-duplicate-imports
-     * @see import/no-duplicates
-     */
-    '@typescript-eslint/no-duplicate-imports': 'warn',
-
-    /**
      * warns when trying to dynamically delete a property
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dynamic-delete.md
