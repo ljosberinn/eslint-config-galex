@@ -433,7 +433,7 @@ list, check out the source.
 
 ### Overrides
 
-- `const { createTSOverride } = require('eslint-config-galex/dist/overrides/typescript')`
+- `const { createTypeScriptOverride } = require('eslint-config-galex/dist/overrides/typescript')`
 - `const { createReactOverride } = require('eslint-config-galex/dist/overrides/react')`
 - `const { createJestOverride } = require('eslint-config-galex/dist/overrides/jest')`
 - `const { createStorybookOverride } = require('eslint-config-galex/dist/overrides/storybook')`
@@ -456,11 +456,11 @@ list, check out the source.
 ```js
 const { createConfig } = require('eslint-config-galex/dist/createConfig');
 const {
-  createTSOverride,
+  createTypeScriptOverride,
 } = require('eslint-config-galex/dist/overrides/typescript');
 const packageJson = require('./package.json');
 
-// since `createTSOverride` is entirely configurable, we need to inform it about its environment
+// since `createTypeScriptOverride` is entirely configurable, we need to inform it about its environment
 const tsOverrideConfig = {
   react: {
     hasReact: true,
@@ -476,7 +476,7 @@ const tsOverrideConfig = {
 };
 
 // solely an override for TS
-const tsOverride = createTSOverride(tsOverrideConfig);
+const tsOverride = createTypeScriptOverride(tsOverrideConfig);
 
 // pass it into createConfig as array as it will be merged with the other overrides
 module.exports = createConfig({ overrides: [tsOverride] });
@@ -485,10 +485,8 @@ module.exports = createConfig({ overrides: [tsOverride] });
 ## Custom Jest override changing included `files`:
 
 ```js
-const {
-  createConfig,
-  getDependencies,
-} = require('eslint-config-galex/dist/createConfig');
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
+const { getDependencies } = require('eslint-config-galex/dist/getDependencies');
 const {
   createJestOverride,
 } = require('eslint-config-galex/dist/overrides/jest');
