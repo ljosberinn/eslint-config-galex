@@ -939,7 +939,13 @@
     "no-var": "error",
     "object-shorthand": "warn",
     "prefer-const": "error",
-    "prefer-destructuring": "warn",
+    "prefer-destructuring": [
+      "warn",
+      {
+        "object": true,
+        "array": false
+      }
+    ],
     "prefer-numeric-literals": "warn",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
@@ -977,7 +983,6 @@
     "unicorn/expiring-todo-comments": "off",
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
-    "unicorn/import-index": "error",
     "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
@@ -1034,8 +1039,10 @@
     "unicorn/prefer-dom-node-text-content": "error",
     "unicorn/prefer-includes": "off",
     "unicorn/prefer-json-parse-buffer": "warn",
+    "unicorn/prefer-event-target": "warn",
     "unicorn/prefer-export-from": "warn",
     "unicorn/prefer-keyboard-event-key": "error",
+    "unicorn/prefer-logical-operator-over-ternary": "warn",
     "unicorn/prefer-math-trunc": "warn",
     "unicorn/prefer-modern-dom-apis": "error",
     "unicorn/prefer-modern-math-apis": "warn",

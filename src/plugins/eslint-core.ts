@@ -1974,7 +1974,13 @@ export const createES6Rules: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/prefer-destructuring
    */
-  'prefer-destructuring': 'warn',
+  'prefer-destructuring': [
+    'warn',
+    {
+      object: true,
+      array: false,
+    },
+  ],
 
   /**
    * disallow parseInting certain values

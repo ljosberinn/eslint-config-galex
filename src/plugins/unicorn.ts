@@ -18,6 +18,7 @@ export const createUnicornPlugin: RulesetCreator = ({
 export const createUnicornRules: RulesCreator = ({
   typescript: { hasTypeScript, config },
   react: { hasReact },
+  hasNodeTypes,
 }) => ({
   /**
    * improves regex
@@ -95,13 +96,6 @@ export const createUnicornRules: RulesCreator = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md
    */
   'unicorn/filename-case': 'off',
-
-  /**
-   * enforce importing index files with .
-   *
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/import-index.md
-   */
-  'unicorn/import-index': 'error',
 
   /**
    * off because situational
@@ -502,6 +496,17 @@ export const createUnicornRules: RulesCreator = ({
    */
   'unicorn/prefer-json-parse-buffer': 'warn',
 
+  ...(hasNodeTypes
+    ? {
+        /**
+         * prefer EventTarget over EventEmitter
+         *
+         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-event-target.md
+         */
+        'unicorn/prefer-event-target': 'warn',
+      }
+    : null),
+
   /**
    * prefer export...from when re-exporting instead of separately importing,
    * then exporting
@@ -516,6 +521,13 @@ export const createUnicornRules: RulesCreator = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md
    */
   'unicorn/prefer-keyboard-event-key': 'error',
+
+  /**
+   * prohibit ternary if simpler version exists
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-logical-operator-over-ternary.md
+   */
+  'unicorn/prefer-logical-operator-over-ternary': 'warn',
 
   /**
    * enforces usage of `Math.trunc()` over bitwise

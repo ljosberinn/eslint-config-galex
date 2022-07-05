@@ -1217,7 +1217,10 @@ export const createJSXA11yRules: RulesCreator = ({
   };
 };
 
-export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
+export const createNextJsRules: RulesCreator = ({
+  react: { isNext },
+  // typescript: { hasTypeScript },
+}) => {
   if (!isNext) {
     return null;
   }
@@ -1319,15 +1322,6 @@ export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
     '@next/next/no-script-component-in-head': 'error',
 
     /**
-     * disallows importing next/server outside of _middleware
-     *
-     * off as its not currently registered. see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/index.js
-     *
-     * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-server-import-in-page.js
-     */
-    '@next/next/no-server-import-in-page': 'error',
-
-    /**
      * tries to correct typos for page-related exports
      *
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-typos.js
@@ -1354,6 +1348,17 @@ export const createNextJsRules: RulesCreator = ({ react: { isNext } }) => {
      * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/next-script-for-ga.js
      */
     '@next/next/next-script-for-ga': 'warn',
+
+    // ...(hasTypeScript
+    //   ? null
+    //   : {
+    //       /**
+    //        * prevents reassigning the variable `module`
+    //        *
+    //        * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-assign-module-variable.js
+    //        */
+    //       '@next/next/no-assign-module-variable': 'warn',
+    //     }),
   };
 };
 

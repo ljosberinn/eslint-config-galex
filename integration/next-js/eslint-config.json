@@ -193,7 +193,6 @@
         "@next/next/no-document-import-in-page": "off",
         "@next/next/no-head-import-in-document": "error",
         "@next/next/no-script-component-in-head": "error",
-        "@next/next/no-server-import-in-page": "error",
         "@next/next/no-typos": "warn",
         "@next/next/no-duplicate-head": "error",
         "@next/next/inline-script-id": "error",
@@ -665,7 +664,13 @@
     "no-var": "error",
     "object-shorthand": "warn",
     "prefer-const": "warn",
-    "prefer-destructuring": "warn",
+    "prefer-destructuring": [
+      "warn",
+      {
+        "object": true,
+        "array": false
+      }
+    ],
     "prefer-numeric-literals": "warn",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
@@ -703,7 +708,6 @@
     "unicorn/expiring-todo-comments": "off",
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": "off",
-    "unicorn/import-index": "error",
     "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
@@ -762,6 +766,7 @@
     "unicorn/prefer-json-parse-buffer": "warn",
     "unicorn/prefer-export-from": "warn",
     "unicorn/prefer-keyboard-event-key": "error",
+    "unicorn/prefer-logical-operator-over-ternary": "warn",
     "unicorn/prefer-math-trunc": "warn",
     "unicorn/prefer-modern-dom-apis": "error",
     "unicorn/prefer-modern-math-apis": "warn",

@@ -337,7 +337,13 @@ exports[`with create-react-app 1`] = `
   "padding-line-between-statements": "off",
   "prefer-arrow-callback": "warn",
   "prefer-const": "warn",
-  "prefer-destructuring": "warn",
+  "prefer-destructuring": [
+    "warn",
+    {
+      "array": false,
+      "object": true,
+    },
+  ],
   "prefer-exponentiation-operator": "warn",
   "prefer-named-capture-group": "off",
   "prefer-numeric-literals": "warn",
@@ -732,7 +738,13 @@ exports[`with next 1`] = `
   "padding-line-between-statements": "off",
   "prefer-arrow-callback": "warn",
   "prefer-const": "warn",
-  "prefer-destructuring": "warn",
+  "prefer-destructuring": [
+    "warn",
+    {
+      "array": false,
+      "object": true,
+    },
+  ],
   "prefer-exponentiation-operator": "warn",
   "prefer-named-capture-group": "off",
   "prefer-numeric-literals": "warn",
@@ -1102,7 +1114,13 @@ exports[`with typescript 1`] = `
   "padding-line-between-statements": "off",
   "prefer-arrow-callback": "warn",
   "prefer-const": "error",
-  "prefer-destructuring": "warn",
+  "prefer-destructuring": [
+    "warn",
+    {
+      "array": false,
+      "object": true,
+    },
+  ],
   "prefer-exponentiation-operator": "warn",
   "prefer-named-capture-group": "off",
   "prefer-numeric-literals": "warn",
@@ -1472,7 +1490,13 @@ exports[`with typescript and create-react-app 1`] = `
   "padding-line-between-statements": "off",
   "prefer-arrow-callback": "warn",
   "prefer-const": "error",
-  "prefer-destructuring": "warn",
+  "prefer-destructuring": [
+    "warn",
+    {
+      "array": false,
+      "object": true,
+    },
+  ],
   "prefer-exponentiation-operator": "warn",
   "prefer-named-capture-group": "off",
   "prefer-numeric-literals": "warn",
@@ -1846,7 +1870,13 @@ exports[`with typescript and experimentalDecorators 1`] = `
   "padding-line-between-statements": "off",
   "prefer-arrow-callback": "warn",
   "prefer-const": "error",
-  "prefer-destructuring": "warn",
+  "prefer-destructuring": [
+    "warn",
+    {
+      "array": false,
+      "object": true,
+    },
+  ],
   "prefer-exponentiation-operator": "warn",
   "prefer-named-capture-group": "off",
   "prefer-numeric-literals": "warn",
@@ -2216,7 +2246,13 @@ exports[`with typescript and next 1`] = `
   "padding-line-between-statements": "off",
   "prefer-arrow-callback": "warn",
   "prefer-const": "error",
-  "prefer-destructuring": "warn",
+  "prefer-destructuring": [
+    "warn",
+    {
+      "array": false,
+      "object": true,
+    },
+  ],
   "prefer-exponentiation-operator": "warn",
   "prefer-named-capture-group": "off",
   "prefer-numeric-literals": "warn",

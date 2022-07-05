@@ -33,6 +33,15 @@ test('with typescript', () => {
   ).toMatchSnapshot();
 });
 
+test('with @types/node', () => {
+  expect(
+    createUnicornPlugin({
+      ...defaultProject,
+      hasNodeTypes: true
+    })
+  ).toMatchSnapshot();
+});
+
 describe('String.prototype.replaceAll detection', () => {
   test('with both criteria', () => {
     expect(

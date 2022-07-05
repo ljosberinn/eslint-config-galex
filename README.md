@@ -81,7 +81,7 @@ module.exports = createConfig();
 const { createConfig } = require('eslint-config-galex/dist/createConfig');
 
 module.exports = createConfig({
-  incrementalAdoption: true
+  incrementalAdoption: true,
 });
 ```
 
@@ -98,7 +98,7 @@ To generate a static config based on your _current_ dependencies & tsconfig, use
 node node_modules/eslint-config-galex/dist/generateStandalone
 ```
 
-which will create a `.eslintrc--generated.json` in your root directory.
+which will create a `.eslintrc.json` in your root directory.
 
 **How do I pass settings for `createConfig` to standalone generation?**
 
