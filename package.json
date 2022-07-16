@@ -122,7 +122,7 @@
     "@types/confusing-browser-globals": "1.0.0",
     "@types/eslint": "8.4.5",
     "@types/eslint-config-prettier": "6.11.0",
-    "@types/jest": "28.1.5",
+    "@types/jest": "28.1.6",
     "@types/lodash.merge": "4.6.7",
     "@types/node": "18.0.1",
     "babel-jest": "28.1.3",
