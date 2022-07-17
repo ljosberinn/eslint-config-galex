@@ -99,7 +99,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-jsconfig": "1.1.0",
     "eslint-import-resolver-node": "0.3.6",
-    "eslint-import-resolver-typescript": "3.2.5",
+    "eslint-import-resolver-typescript": "3.2.7",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest": "26.5.3",
     "eslint-plugin-jest-dom": "4.0.2",
