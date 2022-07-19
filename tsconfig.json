@@ -5,7 +5,7 @@
     "isolatedModules": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "declaration": false,
+    "declaration": true,
     "declarationMap": false,
     "esModuleInterop": true,
     "module": "commonjs",

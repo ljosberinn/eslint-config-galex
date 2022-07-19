@@ -29,6 +29,7 @@
   "license": "MIT",
   "author": "Gerrit Alex <admin@gerritalex.de> (https://gerritalex.de)",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc -b tsconfig.build.json && node scripts/monkey-patch-default-export.js",
     "lint": "eslint .",
