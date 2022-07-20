@@ -33,10 +33,8 @@ export type CreateConfigArgs = GetDepsArgs &
 
     rules?: Linter.RulesRecord;
     root?: boolean;
-  } & Pick<
-    ESLintConfig,
-    'env' | 'overrides' | 'parserOptions' | 'plugins' | 'settings'
-  >;
+    overrides?: (Linter.ConfigOverride | null)[];
+  } & Pick<ESLintConfig, 'env' | 'parserOptions' | 'plugins' | 'settings'>;
 
 export const createConfig = ({
   cwd,
