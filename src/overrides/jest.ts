@@ -132,6 +132,15 @@ export const createJestRules: RulesCreator = ({
     'jest/expect-expect': 'off',
 
     /**
+     * enforces a maximum number assertion calls in a test body
+     *
+     * off because subjective
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/max-expects.md
+     */
+    'jest/max-expects': 'off',
+
+    /**
      * off because seems arbitrary, usually names are indeed lowercase but some tests
      * might very well begin with an uppercase character
      *
