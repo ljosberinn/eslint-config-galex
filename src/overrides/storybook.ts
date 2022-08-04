@@ -126,6 +126,13 @@ export const createStorybookRules: RulesCreator = ({
     'storybook/no-title-property-in-meta': 'warn',
 
     /**
+     * verifies whether addons registered in .storybook/main.js are present in package.json
+     *
+     * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-uninstalled-addons.md
+     */
+    'storybook/no-uninstalled-addons': 'warn',
+
+    /**
      * prefer PascalCase for named exports
      *
      * @see https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md
