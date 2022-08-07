@@ -458,7 +458,6 @@ describe('getDependencies', () => {
             allowUnreachableCode: false,
             allowUnusedLabels: false,
             alwaysStrict: true,
-            checkJs: true,
             declaration: true,
             declarationMap: false,
             esModuleInterop: true,

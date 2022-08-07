@@ -1,6 +1,6 @@
 /* eslint-disable jest/no-conditional-expect, import/no-dynamic-require, @typescript-eslint/no-require-imports */
 import { execSync } from 'child_process';
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 
 type Snaphot = {
@@ -33,29 +33,30 @@ const variablePathDelimiter = 'eslint-config-galex';
 
 const normalizeSnapshot = (content: string) => {
   return (
-    content // iterate each line in results.txt
+    content
+      // iterate each line in results.txt
       .split('\n')
       // skip yarn start/end
       .filter(
         line => !line.startsWith('yarn run') && !line.startsWith('info Visit')
       )
-      .map(line =>
-        // and in each line that includes a path
-        line.includes(variablePathDelimiter)
-          ? line
-              .split(' ')
-              .map(word =>
-                // remove anything in front of the path to normalize across envs
-                word.includes(variablePathDelimiter)
-                  ? word.slice(word.indexOf(variablePathDelimiter) - 1)
-                  : word
-              )
-              .join(' ')
-          : line
-      )
+      .map(line => {
+        if (!line.includes(variablePathDelimiter)) {
+          return line;
+        }
+
+        return line
+          .split(' ')
+          .map(word => {
+            if (!word.includes(variablePathDelimiter)) {
+              return word;
+            }
+
+            return word.slice(word.indexOf(variablePathDelimiter));
+          })
+          .join(' ');
+      })
       .join('\n')
-      .replaceAll('  ', ' ')
-      .replaceAll('\\', '/')
   );
 };
 
@@ -68,6 +69,14 @@ const cases = [
   { name: 'create-remix typescript', path: 'remix-ts' },
   { name: 'jest', path: 'jest' },
   { name: 'nest typescript', path: 'next-ts' },
+  {
+    name: 'js ts migration mix checkJs off',
+    path: 'js-ts-migration-mix-checkJs-off',
+  },
+  {
+    name: 'js ts migration mix checkJs on',
+    path: 'js-ts-migration-mix-checkJs-on',
+  },
 ];
 
 describe.each(cases)('$case.name', ({ path, name }) => {
@@ -92,6 +101,10 @@ describe.each(cases)('$case.name', ({ path, name }) => {
         expect(config).toStrictEqual(updatedSnapshots.config);
         expect(deps).toStrictEqual(updatedSnapshots.deps);
       }
+    } finally {
+      const results = readFileSync(resolve(cwd, 'results.txt'), 'utf-8');
+      const normalizedResults = normalizeSnapshot(results);
+      writeFileSync(resolve(cwd, 'results.txt'), normalizedResults);
     }
   });
 });

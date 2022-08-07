@@ -1,0 +1,50 @@
+{
+  "hasJest": false,
+  "hasJestDom": false,
+  "hasNodeTypes": false,
+  "hasTestingLibrary": false,
+  "hasNest": false,
+  "storybook": {
+    "hasStorybook": false,
+    "hasStorybookTestingLibrary": false
+  },
+  "react": {
+    "hasReact": false,
+    "isCreateReactApp": false,
+    "isNext": false,
+    "isRemix": false,
+    "isPreact": false,
+    "version": null
+  },
+  "typescript": {
+    "config": {
+      "compilerOptions": {
+        "target": "es5",
+        "lib": [
+          "dom",
+          "dom.iterable",
+          "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "checkJs": false
+      },
+      "include": [
+        "src"
+      ],
+      "exclude": [
+        "node_modules"
+      ]
+    },
+    "hasTypeScript": true,
+    "version": "4.6.4"
+  }
+}

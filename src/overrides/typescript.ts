@@ -19,7 +19,7 @@ const prettierTypeScriptRules = Object.fromEntries(
   )
 );
 
-const files = ['**/*.ts?(x)'];
+export const files = ['**/*.ts?(x)'];
 const parser = '@typescript-eslint/parser';
 const defaultParserOptions = {
   ecmaFeatures: {

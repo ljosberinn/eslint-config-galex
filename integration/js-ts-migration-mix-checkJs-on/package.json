@@ -1,0 +1,11 @@
+{
+  "name": "js-ts-migration-mix",
+  "private": true,
+  "scripts": {
+    "lint:integration": "eslint src --max-warnings=0 --format=tap > results.txt"
+  },
+  "devDependencies": {
+    "typescript": "4.6.4",
+    "eslint": ">=8.14.0"
+  }
+}

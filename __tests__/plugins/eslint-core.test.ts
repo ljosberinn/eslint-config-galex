@@ -1,9 +1,17 @@
 import packageJson from '../../package.json';
-import { createEslintCoreRules } from '../../src/plugins/eslint-core';
+import {
+  createEslintCoreRules,
+  eslintDefaultRulesTypeScriptOverride,
+  createES6TypeScriptRules,
+  createVariableTypeScriptRules,
+  createPossibleTypeScriptErrorRules,
+  createBestPracticesTypescriptRules,
+  createStylisticIssuesTypeScriptRules,
+} from '../../src/plugins/eslint-core';
 import tsConfig from '../../tsconfig.json';
 import { defaultProject } from '../shared';
 
-test('allwos passing rules', () => {
+test('allows passing rules', () => {
   const ruleName = 'foo';
   const ruleValue = 'off';
 
@@ -17,97 +25,134 @@ test('allwos passing rules', () => {
   expect(result[ruleName]).toBe(ruleValue);
 });
 
-test('with typescript', () => {
-  expect(
-    createEslintCoreRules({
-      ...defaultProject,
-      typescript: {
-        hasTypeScript: true,
-        version: packageJson.dependencies.typescript,
-        // @ts-expect-error false positive
-        config: tsConfig,
-      },
-    })
-  ).toMatchSnapshot();
+[
+  createES6TypeScriptRules,
+  createVariableTypeScriptRules,
+  createPossibleTypeScriptErrorRules,
+  createBestPracticesTypescriptRules,
+  createStylisticIssuesTypeScriptRules,
+].forEach(fn => {
+  test(`${fn.name} does nothing without typescript`, () => {
+    expect(fn(defaultProject)).toBeNull();
+  });
 });
 
-test('with create-react-app', () => {
-  expect(
-    createEslintCoreRules({
-      ...defaultProject,
-      react: {
-        ...defaultProject.react,
-        hasReact: true,
-        isCreateReactApp: true,
-      },
-    })
-  ).toMatchSnapshot();
+describe('createEslintCoreRules', () => {
+  test('defaults', () => {
+    expect(createEslintCoreRules(defaultProject)).toMatchSnapshot();
+  });
 });
 
-test('with next', () => {
-  expect(
-    createEslintCoreRules({
-      ...defaultProject,
-      react: {
-        ...defaultProject.react,
-        hasReact: true,
-        isNext: true,
-      },
-    })
-  ).toMatchSnapshot();
-});
+describe('eslintDefaultRulesTypeScriptOverride', () => {
+  test('with typescript', () => {
+    expect(
+      eslintDefaultRulesTypeScriptOverride({
+        ...defaultProject,
+        typescript: {
+          hasTypeScript: true,
+          version: packageJson.dependencies.typescript,
+          // @ts-expect-error false positive
+          config: tsConfig,
+        },
+      })
+    ).toMatchSnapshot();
+  });
 
-test('with typescript and create-react-app', () => {
-  expect(
-    createEslintCoreRules({
-      ...defaultProject,
-      typescript: {
-        hasTypeScript: true,
-        version: packageJson.dependencies.typescript,
-        // @ts-expect-error false positive
-        config: tsConfig,
-      },
-      react: {
-        ...defaultProject.react,
-        hasReact: true,
-        isCreateReactApp: true,
-      },
-    })
-  ).toMatchSnapshot();
-});
+  test('with create-react-app', () => {
+    expect(
+      eslintDefaultRulesTypeScriptOverride({
+        ...defaultProject,
+        react: {
+          ...defaultProject.react,
+          hasReact: true,
+          isCreateReactApp: true,
+        },
+      })
+    ).toMatchSnapshot();
+  });
 
-test('with typescript and next', () => {
-  expect(
-    createEslintCoreRules({
-      ...defaultProject,
-      typescript: {
-        hasTypeScript: true,
-        version: packageJson.dependencies.typescript,
-        // @ts-expect-error false positive
-        config: tsConfig,
-      },
-      react: {
-        ...defaultProject.react,
-        hasReact: true,
-        isNext: true,
-      },
-    })
-  ).toMatchSnapshot();
-});
+  test('with next', () => {
+    expect(
+      eslintDefaultRulesTypeScriptOverride({
+        ...defaultProject,
+        react: {
+          ...defaultProject.react,
+          hasReact: true,
+          isNext: true,
+        },
+      })
+    ).toMatchSnapshot();
+  });
 
-test('with typescript and experimentalDecorators', () => {
-  expect(
-    createEslintCoreRules({
-      ...defaultProject,
-      typescript: {
-        hasTypeScript: true,
-        version: packageJson.dependencies.typescript,
-        config: {
-          compilerOptions: {
-            experimentalDecorators: true,
+  test('with typescript and create-react-app', () => {
+    expect(
+      eslintDefaultRulesTypeScriptOverride({
+        ...defaultProject,
+        typescript: {
+          hasTypeScript: true,
+          version: packageJson.dependencies.typescript,
+          // @ts-expect-error false positive
+          config: tsConfig,
+        },
+        react: {
+          ...defaultProject.react,
+          hasReact: true,
+          isCreateReactApp: true,
+        },
+      })
+    ).toMatchSnapshot();
+  });
+
+  test('with typescript and next', () => {
+    expect(
+      eslintDefaultRulesTypeScriptOverride({
+        ...defaultProject,
+        typescript: {
+          hasTypeScript: true,
+          version: packageJson.dependencies.typescript,
+          // @ts-expect-error false positive
+          config: tsConfig,
+        },
+        react: {
+          ...defaultProject.react,
+          hasReact: true,
+          isNext: true,
+        },
+      })
+    ).toMatchSnapshot();
+  });
+
+  test('with typescript and experimentalDecorators', () => {
+    expect(
+      eslintDefaultRulesTypeScriptOverride({
+        ...defaultProject,
+        typescript: {
+          hasTypeScript: true,
+          version: packageJson.dependencies.typescript,
+          config: {
+            compilerOptions: {
+              experimentalDecorators: true,
+            },
           },
         },
-      },
-    })
-  ).toMatchSnapshot();
+      })
+    ).toMatchSnapshot();
+  });
+
+  test('with typescript and checkJs', () => {
+    expect(
+      eslintDefaultRulesTypeScriptOverride({
+        ...defaultProject,
+        typescript: {
+          hasTypeScript: true,
+          version: packageJson.dependencies.typescript,
+          config: {
+            compilerOptions: {
+              checkJs: true,
+            },
+          },
+        },
+      })
+    ).toMatchSnapshot();
+  });
 });

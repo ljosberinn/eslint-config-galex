@@ -1,7 +1,8 @@
 import restrictedGlobals from 'confusing-browser-globals';
 import type { Linter } from 'eslint';
 
-import type { RulesCreator, RulesetCreator } from '../types';
+import { files as typeScriptFilesPattern } from '../overrides/typescript';
+import type { OverrideCreator, RulesCreator, RulesetCreator } from '../types';
 import { prettierRules } from '../utils/prettier';
 
 export const createEslintCoreRules: RulesetCreator = ({
@@ -21,12 +22,112 @@ export const createEslintCoreRules: RulesetCreator = ({
   };
 };
 
+export const createPossibleTypeScriptErrorRules: RulesCreator = ({
+  typescript: { hasTypeScript },
+}) => {
+  if (!hasTypeScript) {
+    return null;
+  }
+
+  return {
+    /**
+     * @see https://eslint.org/docs/rules/getter-return
+     * @see ts(2378)
+     */
+    'getter-return': 'off',
+
+    /**
+     * prevents duplicate function arg names
+     *
+     * @see https://eslint.org/docs/rules/
+     * @see ts(2300)
+     */
+
+    'no-dupe-args': 'off',
+
+    /**
+     * prevents duplicate keys in object
+     *
+     * @see https://eslint.org/docs/rules/
+     * @see ts(1117)
+     */
+    'no-dupe-keys': 'off',
+
+    /**
+     * prevents overwriting functions declared via `function` syntax
+     *
+     * @see https://eslint.org/docs/rules/no-func-assign
+     * @see ts(2539)
+     */
+    'no-func-assign': 'off',
+
+    /**
+     * disallows trying to overwrite imports
+     *
+     * @see https://eslint.org/docs/rules/no-import-assign
+     * @see ts(2539)
+     * @see ts(2540)
+     */
+    'no-import-assign': 'off',
+
+    /**
+     * disallows the use of number literals that immediately lose precision at
+     * runtime due to 64-bit floating-point rounding
+     *
+     * @see https://eslint.org/docs/rules/no-loss-of-precision
+     * @see @typescript-eslint/no-loss-of-precision
+     */
+    'no-loss-of-precision': 'off',
+
+    /**
+     * prevents calling certain native objects as function or class
+     *
+     * @see https://eslint.org/docs/rules/no-obj-calls
+     * @see ts(2349)
+     */
+    'no-obj-calls': 'off',
+
+    /**
+     * disallow return on setters as its nonsensical
+     *
+     * @see https://eslint.org/docs/rules/
+     * @see ts(2408)
+     */
+    'no-setter-return': 'off',
+
+    /**
+     * prevents unreachable code
+     *
+     * @see https://eslint.org/docs/rules/no-unreachable
+     * @see ts(7027)
+     */
+    'no-unreachable': 'off',
+
+    /**
+     * prevents cases of unsafe negation
+     *
+     * @see https://eslint.org/docs/rules/no-unsafe-negation
+     * @see ts(2365)
+     * @see ts(2360)
+     * @see ts(2358)
+     */
+    'no-unsafe-negation': 'off',
+
+    /**
+     * prevents typos when comparing to types
+     *
+     * @see https://eslint.org/docs/rules/valid-typeof
+     *
+     * @see ts(2367)
+     */
+    'valid-typeof': 'off',
+  };
+};
+
 /**
  * @see https://eslint.org/docs/rules/#possible-errors
  */
-export const createPossibleErrorRules: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+export const createPossibleErrorRules: RulesCreator = () => ({
   /**
    * @see https://eslint.org/docs/rules/for-direction
    */
@@ -36,7 +137,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/getter-return
    * @see ts(2378)
    */
-  'getter-return': hasTypeScript ? 'off' : 'warn',
+  'getter-return': 'warn',
 
   /**
    * prevents usage of async within `new Promise`
@@ -103,7 +204,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/
    * @see ts(2300)
    */
-  'no-dupe-args': hasTypeScript ? 'off' : 'error',
+  'no-dupe-args': 'error',
 
   /**
    * prevents identical branches
@@ -118,7 +219,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/
    * @see ts(1117)
    */
-  'no-dupe-keys': hasTypeScript ? 'off' : 'warn',
+  'no-dupe-keys': 'warn',
 
   /**
    * prevens duplicate cases in switches
@@ -175,7 +276,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-func-assign
    * @see ts(2539)
    */
-  'no-func-assign': hasTypeScript ? 'off' : 'warn',
+  'no-func-assign': 'warn',
 
   /**
    * disallows trying to overwrite imports
@@ -184,7 +285,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see ts(2539)
    * @see ts(2540)
    */
-  'no-import-assign': hasTypeScript ? 'off' : 'error',
+  'no-import-assign': 'error',
 
   /**
    * disallows variable or `function` declaration in nested blocks
@@ -214,7 +315,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-loss-of-precision
    * @see @typescript-eslint/no-loss-of-precision
    */
-  'no-loss-of-precision': hasTypeScript ? 'off' : 'error',
+  'no-loss-of-precision': 'error',
 
   /**
    * prevents the use of multiple code point characters in regexp
@@ -229,7 +330,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-obj-calls
    * @see ts(2349)
    */
-  'no-obj-calls': hasTypeScript ? 'off' : 'error',
+  'no-obj-calls': 'error',
 
   /**
    * prevents returning from within a promise executor
@@ -258,7 +359,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/
    * @see ts(2408)
    */
-  'no-setter-return': hasTypeScript ? 'off' : 'error',
+  'no-setter-return': 'error',
 
   /**
    * prevents accidental holes in arrays
@@ -287,7 +388,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-unreachable
    * @see ts(7027)
    */
-  'no-unreachable': hasTypeScript ? 'off' : 'warn',
+  'no-unreachable': 'warn',
 
   /**
    * off because taken care of by sonarjs/no-one-iteration-loop
@@ -312,7 +413,7 @@ export const createPossibleErrorRules: RulesCreator = ({
    * @see ts(2360)
    * @see ts(2358)
    */
-  'no-unsafe-negation': hasTypeScript ? 'off' : 'warn',
+  'no-unsafe-negation': 'warn',
 
   /**
    * prevents self-repeating regexp
@@ -351,17 +452,126 @@ export const createPossibleErrorRules: RulesCreator = ({
    *
    * @see ts(2367)
    */
-  'valid-typeof': hasTypeScript ? 'off' : 'warn',
+  'valid-typeof': 'warn',
 });
 
 const curly: Linter.RuleEntry = ['warn', 'all'];
 
+export const createBestPracticesTypescriptRules: RulesCreator = ({
+  typescript: { hasTypeScript },
+}) => {
+  if (!hasTypeScript) {
+    return null;
+  }
+
+  return {
+    /**
+     * enforces consistent return in array methods
+     *
+     * @see https://eslint.org/docs/rules/array-callback-return
+     */
+    'array-callback-return': 'off',
+
+    /**
+     * avoids unexpected side effects of switches without default
+     *
+     * @see https://eslint.org/docs/rules/default-case
+     */
+    'default-case': 'off',
+
+    /**
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
+     * @see @typescript-eslint/default-param-last
+     */
+    'default-param-last': 'off',
+
+    /**
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
+     * @see @typescript-eslint/dot-notation
+     */
+    'dot-notation': 'off',
+
+    /**
+     * disallows returning in constructors
+     *
+     * @see https://eslint.org/docs/rules/no-constructor-return
+     */
+    'no-constructor-return': 'off',
+
+    /**
+     * @see https://eslint.org/docs/rules/no-empty-function
+     * @see @typescript-eslint/no-empty-function
+     */
+    'no-empty-function': 'off',
+    /**
+     * disallows this outside of classes/class-like objects
+     *
+     * @see https://eslint.org/docs/rules/no-invalid-this
+     */
+    'no-invalid-this': 'off',
+    /**
+     * disallow function creation in loops
+     *
+     * @see https://eslint.org/docs/rules/no-loop-func
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md
+     */
+    'no-loop-func': 'off',
+    /**
+     * disallows reassigning a variable
+     *
+     * @see https://eslint.org/docs/rules/no-redeclare
+     * @see ts(2451)
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redeclare.md
+     */
+    'no-redeclare': 'off',
+
+    /**
+     * @see https://eslint.org/docs/rules/no-return-await
+     * @see @typescript-eslint/no-return-await
+     */
+    'no-return-await': 'off',
+
+    /**
+     * disallows throwing anything but errors
+     *
+     * off because handled by @typescript-eslint/no-throw-literal
+     *
+     * @see https://eslint.org/docs/rules/no-throw-literal
+     * @see @typescript-eslint/no-throw-literal
+     */
+    'no-throw-literal': 'off',
+
+    /**
+     * disallows unsafe optional chaining
+     *
+     * @see https://github.com/eslint/eslint/blob/master/docs/rules/no-unsafe-optional-chaining.md
+     */
+    'no-unsafe-optional-chaining': 'off',
+
+    /**
+     * @see https://eslint.org/docs/rules/no-unused-expression
+     * @see @typescript-eslint/no-unused-expression
+     */
+    'no-unused-expressions': 'off',
+
+    /**
+     * @see https://github.com/eslint/eslint/blob/main/docs/rules/no-unused-private-class-members.md
+     */
+    'no-unused-private-class-members': 'off',
+    /**
+     * prevents using `async` without `await`
+     *
+     * @see https://eslint.org/docs/rules/require-await
+     * @see @typescript-eslint/require-await
+     */
+    'require-await': 'off',
+  };
+};
+
 /**
  * @see https://eslint.org/docs/rules/#best-practices
  */
-export const createBestPractices: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+export const createBestPractices: RulesCreator = () => ({
   /**
    * off because opinionated
    *
@@ -374,14 +584,12 @@ export const createBestPractices: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/array-callback-return
    */
-  'array-callback-return': hasTypeScript
-    ? 'off'
-    : [
-        'error',
-        {
-          checkForEach: true,
-        },
-      ],
+  'array-callback-return': [
+    'error',
+    {
+      checkForEach: true,
+    },
+  ],
 
   /**
    * off because prefer-const
@@ -427,7 +635,7 @@ export const createBestPractices: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/default-case
    */
-  'default-case': hasTypeScript ? 'off' : 'error',
+  'default-case': 'error',
 
   /**
    * prevents uncommon ways of writing switch
@@ -440,7 +648,7 @@ export const createBestPractices: RulesCreator = ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
    * @see @typescript-eslint/default-param-last
    */
-  'default-param-last': hasTypeScript ? 'off' : 'error',
+  'default-param-last': 'error',
 
   /**
    * off because prettier territory
@@ -453,7 +661,7 @@ export const createBestPractices: RulesCreator = ({
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
    * @see @typescript-eslint/dot-notation
    */
-  'dot-notation': hasTypeScript ? 'off' : 'warn',
+  'dot-notation': 'warn',
 
   /**
    * prevents unsafe comparison
@@ -510,7 +718,7 @@ export const createBestPractices: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/no-constructor-return
    */
-  'no-constructor-return': hasTypeScript ? 'off' : 'error',
+  'no-constructor-return': 'error',
 
   /**
    * requires regex literals to escape division operators
@@ -530,7 +738,7 @@ export const createBestPractices: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-empty-function
    * @see @typescript-eslint/no-empty-function
    */
-  'no-empty-function': hasTypeScript ? 'off' : 'error',
+  'no-empty-function': 'error',
 
   /**
    * disallows empty destructuring
@@ -631,7 +839,7 @@ export const createBestPractices: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/no-invalid-this
    */
-  'no-invalid-this': hasTypeScript ? 'off' : 'error',
+  'no-invalid-this': 'error',
 
   /**
    * disallows __iterator__ property
@@ -664,7 +872,7 @@ export const createBestPractices: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-loop-func
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md
    */
-  'no-loop-func': hasTypeScript ? 'off' : 'error',
+  'no-loop-func': 'error',
 
   /**
    * always off because it expects literally every number to be assigned to
@@ -754,7 +962,7 @@ export const createBestPractices: RulesCreator = ({
    * @see ts(2451)
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redeclare.md
    */
-  'no-redeclare': hasTypeScript ? 'off' : 'error',
+  'no-redeclare': 'error',
 
   /**
    * off because indivudal
@@ -774,7 +982,7 @@ export const createBestPractices: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-return-await
    * @see @typescript-eslint/no-return-await
    */
-  'no-return-await': hasTypeScript ? 'off' : 'error',
+  'no-return-await': 'error',
 
   /**
    * disallow inline javascript in urls
@@ -812,7 +1020,7 @@ export const createBestPractices: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-throw-literal
    * @see @typescript-eslint/no-throw-literal
    */
-  'no-throw-literal': hasTypeScript ? 'off' : 'error',
+  'no-throw-literal': 'error',
 
   /**
    * disallow infinite loops
@@ -826,22 +1034,20 @@ export const createBestPractices: RulesCreator = ({
    *
    * @see https://github.com/eslint/eslint/blob/master/docs/rules/no-unsafe-optional-chaining.md
    */
-  'no-unsafe-optional-chaining': hasTypeScript ? 'off' : 'error',
+  'no-unsafe-optional-chaining': 'error',
 
   /**
    * @see https://eslint.org/docs/rules/no-unused-expression
    * @see @typescript-eslint/no-unused-expression
    */
-  'no-unused-expressions': hasTypeScript
-    ? 'off'
-    : [
-        'error',
-        {
-          allowShortCircuit: true,
-          allowTaggedTemplates: true,
-          allowTernary: true,
-        },
-      ],
+  'no-unused-expressions': [
+    'error',
+    {
+      allowShortCircuit: true,
+      allowTaggedTemplates: true,
+      allowTernary: true,
+    },
+  ],
 
   /**
    * removes unused labels
@@ -856,7 +1062,7 @@ export const createBestPractices: RulesCreator = ({
   /**
    * @see https://github.com/eslint/eslint/blob/main/docs/rules/no-unused-private-class-members.md
    */
-  'no-unused-private-class-members': hasTypeScript ? 'off' : 'warn',
+  'no-unused-private-class-members': 'warn',
 
   /**
    * call functions directly
@@ -955,7 +1161,7 @@ export const createBestPractices: RulesCreator = ({
    * @see https://eslint.org/docs/rules/require-await
    * @see @typescript-eslint/require-await
    */
-  'require-await': hasTypeScript ? 'off' : 'error',
+  'require-await': 'error',
 
   /**
    * enforces u flag on regexp. mostly here for the 2nd reason: find errors early
@@ -997,12 +1203,39 @@ export const createStrictModeRules: RulesCreator = () => ({
   strict: 'off',
 });
 
+export const createVariableTypeScriptRules: RulesCreator = ({
+  typescript: { hasTypeScript },
+}) => {
+  if (!hasTypeScript) {
+    return null;
+  }
+
+  return {
+    /**
+     * disallow using undefined variables
+     *
+     * @see https://eslint.org/docs/rules/no-undef
+     * @see ts(2304)
+     */
+    'no-undef': 'off',
+    /**
+     * @see https://eslint.org/docs/rules/no-unused-vars
+     * @see @typescript-eslint/no-unused-vars
+     */
+    'no-unused-vars': 'off',
+
+    /**
+     * @see https://eslint.org/docs/rules/no-use-before-define
+     * @see @typescript-eslint/no-use-before-define
+     */
+    'no-use-before-define': 'off',
+  };
+};
+
 /**
  * @see https://eslint.org/docs/rules/#variables
  */
-export const createVariableRules: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+export const createVariableRules: RulesCreator = () => ({
   /**
    * off because required to escape scope
    *
@@ -1054,7 +1287,7 @@ export const createVariableRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-undef
    * @see ts(2304)
    */
-  'no-undef': hasTypeScript ? 'off' : 'error',
+  'no-undef': 'error',
 
   /**
    * disallows declaring new variables with `undefined` as explicit value
@@ -1075,39 +1308,81 @@ export const createVariableRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-unused-vars
    * @see @typescript-eslint/no-unused-vars
    */
-  'no-unused-vars': hasTypeScript
-    ? 'off'
-    : [
-        'warn',
-        {
-          args: 'none',
-          ignoreRestSiblings: true,
-        },
-      ],
+  'no-unused-vars': [
+    'warn',
+    {
+      args: 'none',
+      ignoreRestSiblings: true,
+    },
+  ],
 
   /**
    * @see https://eslint.org/docs/rules/no-use-before-define
    * @see @typescript-eslint/no-use-before-define
    */
-  'no-use-before-define': hasTypeScript
-    ? 'off'
-    : [
-        'warn',
-        {
-          classes: false,
-          functions: false,
-          variables: false,
-        },
-      ],
+  'no-use-before-define': [
+    'warn',
+    {
+      classes: false,
+      functions: false,
+      variables: false,
+    },
+  ],
 });
+
+export const createStylisticIssuesTypeScriptRules: RulesCreator = ({
+  typescript: { hasTypeScript, config },
+  react: { isCreateReactApp, isNext },
+}) => {
+  if (!hasTypeScript) {
+    return null;
+  }
+
+  return {
+    /**
+     * ensures proper spacing between class members
+     *
+     * @see https://eslint.org/docs/rules/lines-between-class-members
+     * @see @typescript-eslint/lines-between-class-members
+     */
+    'lines-between-class-members': 'off',
+
+    /**
+     * expects instance creations to begin with a capital letter
+     *
+     * @see https://eslint.org/docs/rules/new-cap
+     */
+    'new-cap': config?.compilerOptions?.experimentalDecorators ? 'off' : 'warn',
+
+    /**
+     * @see https://eslint.org/docs/rules/no-array-constructor
+     * @see @typescript-eslint/no-array-constructor
+     * @see unicorn/no-new-array
+     */
+    'no-array-constructor': 'off',
+
+    /**
+     * @see https://eslint.org/docs/rules/spaced-comment
+     */
+    'spaced-comment': [
+      'warn',
+      'always',
+      /**
+       * next and create-react-app have `...d.ts` files using old
+       * `reference types="..."`
+       * syntax which gets reported otherwise
+       *
+       * @see https://github.com/ljosberinn/eslint-config-galex/issues/315
+       */
+      isCreateReactApp || isNext ? { markers: ['/'] } : {},
+    ],
+  };
+};
 
 /**
  * @see https://eslint.org/docs/rules/#stylistic-issues
  */
-export const createStylisticIssuesRules: RulesCreator = ({
-  typescript: { hasTypeScript, config },
-  react: { isCreateReactApp, isNext },
-}) => ({
+export const createStylisticIssuesRules: RulesCreator = () => ({
   /**
    * off because handled by prettier
    *
@@ -1328,7 +1603,7 @@ export const createStylisticIssuesRules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/lines-between-class-members
    * @see @typescript-eslint/lines-between-class-members
    */
-  'lines-between-class-members': hasTypeScript ? 'off' : 'warn',
+  'lines-between-class-members': 'warn',
 
   /**
    * off because opinionated
@@ -1405,7 +1680,7 @@ export const createStylisticIssuesRules: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/new-cap
    */
-  'new-cap': config?.compilerOptions?.experimentalDecorators ? 'off' : 'warn',
+  'new-cap': 'warn',
 
   /**
    * off because handled by prettier
@@ -1426,7 +1701,7 @@ export const createStylisticIssuesRules: RulesCreator = ({
    * @see @typescript-eslint/no-array-constructor
    * @see unicorn/no-new-array
    */
-  'no-array-constructor': hasTypeScript ? 'off' : 'error',
+  'no-array-constructor': 'error',
 
   /**
    * prevents accidental uses of bitwise operators
@@ -1752,18 +2027,8 @@ export const createStylisticIssuesRules: RulesCreator = ({
   /**
    * @see https://eslint.org/docs/rules/spaced-comment
    */
-  'spaced-comment': [
-    'warn',
-    'always',
-    /**
-     * next and create-react-app have `...d.ts` files using old
-     * `reference types="..."`
-     * syntax which gets reported otherwise
-     *
-     * @see https://github.com/ljosberinn/eslint-config-galex/issues/315
-     */
-    hasTypeScript && (isCreateReactApp || isNext) ? { markers: ['/'] } : {},
-  ],
+  'spaced-comment': ['warn', 'always', {}],
+
   /**
    * off because handled by prettier
    *
@@ -1802,12 +2067,65 @@ export const createStylisticIssuesRules: RulesCreator = ({
   'wrap-regex': 'off',
 });
 
+export const createES6TypeScriptRules: RulesCreator = ({
+  typescript: { hasTypeScript },
+}) => {
+  if (!hasTypeScript) {
+    return null;
+  }
+
+  return {
+    /**
+     * @see https://eslint.org/docs/rules/
+     * @see ts(2335)
+     * @see ts(2377)
+     */
+    'constructor-super': 'off',
+
+    /**
+     * disallows trying to overwrite a constant
+     *
+     * @see https://eslint.org/docs/rules/no-const-assign
+     * @see ts(2588)
+     */
+    'no-const-assign': 'off',
+    /**
+     * @see https://eslint.org/docs/rules/no-dupe-class-members
+     * @see @typescript-eslint/no-dupe-class-members
+     * @see ts(2393)
+     * @see ts(2300)
+     */
+    'no-dupe-class-members': 'off',
+
+    /**
+     * prevents using `this` before calling `super`
+     *
+     * @see https://eslint.org/docs/rules/no-this-before-super
+     * @see ts(2376)
+     */
+    'no-this-before-super': 'off',
+    /**
+     * prevents empty/useless constructors
+     *
+     * @see https://eslint.org/docs/rules/no-useless-constructor
+     * @see @typescript-eslint/no-useless-constructor
+     */
+    'no-useless-constructor': 'off',
+    /**
+     * does this really need a comment?
+     *
+     * ts provides better types with const
+     *
+     * @see https://eslint.org/docs/rules/prefer-const
+     */
+    'prefer-const': 'error',
+  };
+};
+
 /**
  * @see https://eslint.org/docs/rules/#ecmascript-6
  */
-export const createES6Rules: RulesCreator = ({
-  typescript: { hasTypeScript },
-}) => ({
+export const createES6Rules: RulesCreator = () => ({
   /**
    * off because handled by prettier
    *
@@ -1834,7 +2152,7 @@ export const createES6Rules: RulesCreator = ({
    * @see ts(2335)
    * @see ts(2377)
    */
-  'constructor-super': hasTypeScript ? 'off' : 'error',
+  'constructor-super': 'error',
 
   /**
    * off because handled by prettier
@@ -1863,7 +2181,7 @@ export const createES6Rules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-const-assign
    * @see ts(2588)
    */
-  'no-const-assign': hasTypeScript ? 'off' : 'error',
+  'no-const-assign': 'error',
 
   /**
    * @see https://eslint.org/docs/rules/no-constant-binary-expression
@@ -1876,7 +2194,7 @@ export const createES6Rules: RulesCreator = ({
    * @see ts(2393)
    * @see ts(2300)
    */
-  'no-dupe-class-members': hasTypeScript ? 'off' : 'error',
+  'no-dupe-class-members': 'error',
 
   /**
    * off because handled by import/no-duplicates
@@ -1917,7 +2235,7 @@ export const createES6Rules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-this-before-super
    * @see ts(2376)
    */
-  'no-this-before-super': hasTypeScript ? 'off' : 'error',
+  'no-this-before-super': 'error',
 
   /**
    * disallows unnecessary usage of computed property keys
@@ -1932,7 +2250,7 @@ export const createES6Rules: RulesCreator = ({
    * @see https://eslint.org/docs/rules/no-useless-constructor
    * @see @typescript-eslint/no-useless-constructor
    */
-  'no-useless-constructor': hasTypeScript ? 'off' : 'warn',
+  'no-useless-constructor': 'warn',
 
   /**
    * prevents useless renames in imports/exports/destructuring assignments
@@ -1967,7 +2285,7 @@ export const createES6Rules: RulesCreator = ({
    *
    * @see https://eslint.org/docs/rules/prefer-const
    */
-  'prefer-const': hasTypeScript ? 'error' : 'warn',
+  'prefer-const': 'warn',
 
   /**
    * prefer destructuring :shrug:
@@ -2071,3 +2389,28 @@ export const safePrettierOverrides: Linter.RulesRecord = {
    */
   'prefer-arrow-callback': 'warn',
 };
+
+export const eslintDefaultRulesTypeScriptOverride: OverrideCreator =
+  dependencies => {
+    if (!dependencies.typescript.hasTypeScript) {
+      return null;
+    }
+
+    const files = [
+      ...typeScriptFilesPattern,
+      ...(dependencies.typescript.config?.compilerOptions?.checkJs
+        ? []
+        : ['**/*.js?(x)']),
+    ];
+
+    return {
+      files,
+      rules: {
+        ...createStylisticIssuesTypeScriptRules(dependencies),
+        ...createBestPracticesTypescriptRules(dependencies),
+        ...createPossibleTypeScriptErrorRules(dependencies),
+        ...createVariableTypeScriptRules(dependencies),
+        ...createES6TypeScriptRules(dependencies),
+      },
+    };
+  };

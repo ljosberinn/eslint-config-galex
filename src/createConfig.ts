@@ -6,7 +6,10 @@ import { createJestConfigOverride, createJestOverride } from './overrides/jest';
 import { createReactOverride } from './overrides/react';
 import { createStorybookOverride } from './overrides/storybook';
 import { createTypeScriptOverride } from './overrides/typescript';
-import { createEslintCoreRules } from './plugins/eslint-core';
+import {
+  createEslintCoreRules,
+  eslintDefaultRulesTypeScriptOverride,
+} from './plugins/eslint-core';
 import { createImportRules } from './plugins/import';
 import { createPromiseRules } from './plugins/promise';
 import { createSonarjsRules } from './plugins/sonarjs';
@@ -66,6 +69,7 @@ export const createConfig = ({
       createJestOverride(dependencies),
       createStorybookOverride(dependencies),
       createJestConfigOverride(dependencies),
+      eslintDefaultRulesTypeScriptOverride(dependencies),
       ...(overrides ?? []),
     ].filter(
       (override): override is WithOverrideType<OverrideESLintConfig> =>

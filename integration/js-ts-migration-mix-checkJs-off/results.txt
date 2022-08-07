@@ -1,0 +1,18 @@
+ESLint v8.21.0
+writing deps to eslint-config-galex\integration\js-ts-migration-mix-checkJs-off\deps.json
+writing config cache to eslint-config-galex\integration\js-ts-migration-mix-checkJs-off\eslint-config.json
+TAP version 13
+1..2
+ok 1 - eslint-config-galex\integration\js-ts-migration-mix-checkJs-off\src\javascript.js
+ok 2 - eslint-config-galex\integration\js-ts-migration-mix-checkJs-off\src\typescript.ts
+  ---
+  message: >-
+    Operands of '+' operation with any is possible only with string, number,
+    bigint or any
+  severity: warning
+  data:
+    line: 2
+    column: 20
+    ruleId: '@typescript-eslint/restrict-plus-operands'
+  ...
+
