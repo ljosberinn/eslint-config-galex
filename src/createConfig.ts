@@ -37,6 +37,7 @@ export type CreateConfigArgs = GetDepsArgs &
     rules?: Linter.RulesRecord;
     root?: boolean;
     overrides?: (Linter.ConfigOverride | null)[];
+    enableJavaScriptSpecificRulesInTypeScriptProject?: boolean;
   } & Pick<ESLintConfig, 'env' | 'parserOptions' | 'plugins' | 'settings'>;
 
 export const createConfig = ({
@@ -45,6 +46,7 @@ export const createConfig = ({
   convertToESLintInternals = false,
   incrementalAdoption = false,
   blankSlate = false,
+  enableJavaScriptSpecificRulesInTypeScriptProject = false,
   root = true,
   ignorePatterns,
   env,
@@ -69,7 +71,10 @@ export const createConfig = ({
       createJestOverride(dependencies),
       createStorybookOverride(dependencies),
       createJestConfigOverride(dependencies),
-      eslintDefaultRulesTypeScriptOverride(dependencies),
+      eslintDefaultRulesTypeScriptOverride(
+        dependencies,
+        enableJavaScriptSpecificRulesInTypeScriptProject
+      ),
       ...(overrides ?? []),
     ].filter(
       (override): override is WithOverrideType<OverrideESLintConfig> =>

@@ -140,6 +140,28 @@ This way, you can customize it entirely to your likings without having to create
 
 </details>
 
+<details>
+  <summary>Migrating a codebase to TypeScript</summary>
+
+While in the process of migration, you may end up in a situation where you cannot turn on `compilerOptions.checkJs` from TypeScript itself due to e.g. builds breaking. However, by default certain rules will be disabled for JavaScript files because they are technically shadowed by TypeScript itself, e.g. `no-undef`.
+
+You can opt out of this behaviour by either:
+
+- passing `enableJavaScriptSpecificRulesInTypeScriptProject` as `true` to `createConfig`
+- enabling `compilerOptions.checkJs` once you're there
+
+Example:
+
+```js
+const { createConfig } = require('eslint-config-galex/dist/createConfig');
+
+module.exports = createConfig({
+  enableJavaScriptSpecificRulesInTypeScriptProject: true,
+});
+```
+
+</details>
+
 # Examples
 
 <details>

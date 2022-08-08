@@ -77,6 +77,10 @@ const cases = [
     name: 'js ts migration mix checkJs on',
     path: 'js-ts-migration-mix-checkJs-on',
   },
+  {
+    name: 'js ts migration force js linting in ts',
+    path: 'js-ts-migration-mix-force-js-linting',
+  },
 ];
 
 describe.each(cases)('$case.name', ({ path, name }) => {

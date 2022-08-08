@@ -2,7 +2,13 @@ import restrictedGlobals from 'confusing-browser-globals';
 import type { Linter } from 'eslint';
 
 import { files as typeScriptFilesPattern } from '../overrides/typescript';
-import type { OverrideCreator, RulesCreator, RulesetCreator } from '../types';
+import type {
+  Dependencies,
+  OverrideESLintConfig,
+  RulesCreator,
+  RulesetCreator,
+  WithOverrideType,
+} from '../types';
 import { prettierRules } from '../utils/prettier';
 
 export const createEslintCoreRules: RulesetCreator = ({
@@ -2390,27 +2396,30 @@ export const safePrettierOverrides: Linter.RulesRecord = {
   'prefer-arrow-callback': 'warn',
 };
 
-export const eslintDefaultRulesTypeScriptOverride: OverrideCreator =
-  dependencies => {
-    if (!dependencies.typescript.hasTypeScript) {
-      return null;
-    }
+export const eslintDefaultRulesTypeScriptOverride = (
+  dependencies: Dependencies,
+  enableJavaScriptSpecificRulesInTypeScriptProject = false
+): WithOverrideType<OverrideESLintConfig> | null => {
+  if (!dependencies.typescript.hasTypeScript) {
+    return null;
+  }
 
-    const files = [
-      ...typeScriptFilesPattern,
-      ...(dependencies.typescript.config?.compilerOptions?.checkJs
-        ? []
-        : ['**/*.js?(x)']),
-    ];
+  const files = [
+    ...typeScriptFilesPattern,
+    ...(enableJavaScriptSpecificRulesInTypeScriptProject ||
+    Boolean(dependencies.typescript.config?.compilerOptions?.checkJs)
+      ? []
+      : ['**/*.js?(x)']),
+  ];
 
-    return {
-      files,
-      rules: {
-        ...createStylisticIssuesTypeScriptRules(dependencies),
-        ...createBestPracticesTypescriptRules(dependencies),
-        ...createPossibleTypeScriptErrorRules(dependencies),
-        ...createVariableTypeScriptRules(dependencies),
-        ...createES6TypeScriptRules(dependencies),
-      },
-    };
+  return {
+    files,
+    rules: {
+      ...createStylisticIssuesTypeScriptRules(dependencies),
+      ...createBestPracticesTypescriptRules(dependencies),
+      ...createPossibleTypeScriptErrorRules(dependencies),
+      ...createVariableTypeScriptRules(dependencies),
+      ...createES6TypeScriptRules(dependencies),
+    },
   };
+};

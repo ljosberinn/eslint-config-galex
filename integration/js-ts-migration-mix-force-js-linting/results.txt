@@ -1,0 +1,40 @@
+ESLint v8.21.0
+running createConfig with extra arguments: {"enableJavaScriptSpecificRulesInTypeScriptProject":true}
+writing deps to eslint-config-galex\integration\js-ts-migration-mix-force-js-linting\deps.json
+writing config cache to eslint-config-galex\integration\js-ts-migration-mix-force-js-linting\eslint-config.json
+TAP version 13
+1..2
+not ok 1 - eslint-config-galex\integration\js-ts-migration-mix-force-js-linting\src\javascript.js
+  ---
+  message: '''someFunction'' is not defined.'
+  severity: error
+  data:
+    line: 1
+    column: 13
+    ruleId: no-undef
+  messages:
+    - message: '''a'' is not defined.'
+      severity: error
+      data:
+        line: 2
+        column: 13
+        ruleId: no-undef
+    - message: '''module'' is not defined.'
+      severity: error
+      data:
+        line: 4
+        column: 1
+        ruleId: no-undef
+  ...
+ok 2 - eslint-config-galex\integration\js-ts-migration-mix-force-js-linting\src\typescript.ts
+  ---
+  message: >-
+    Operands of '+' operation with any is possible only with string, number,
+    bigint or any
+  severity: warning
+  data:
+    line: 2
+    column: 20
+    ruleId: '@typescript-eslint/restrict-plus-operands'
+  ...
+

@@ -19,9 +19,20 @@ if (!process.argv.some(arg => arg.includes('vscode-eslint'))) {
     parser: 'json-stringify',
   };
 
+  let extraArgs = {};
+
+  if (process.env.createConfigArgs) {
+    extraArgs = JSON.parse(process.env.createConfigArgs);
+
+    console.log(
+      `running createConfig with extra arguments: ${process.env.createConfigArgs}`
+    );
+  }
+
   const config = createConfig({
     root: true,
     cwd,
+    ...extraArgs,
   });
 
   const depsPath = resolve('deps.json');
