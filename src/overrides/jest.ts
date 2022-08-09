@@ -17,7 +17,7 @@ export const env: OverrideESLintConfig['env'] = {
 };
 
 export const extendsConfig = ['plugin:jest-formatting/strict'];
-export const files = ['**/*.?(test|spec).?(ts|js)?(x)'];
+export const files = ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'];
 export const parserOptions: OverrideESLintConfig['parserOptions'] = {
   ecmaVersion: 2020,
 };
