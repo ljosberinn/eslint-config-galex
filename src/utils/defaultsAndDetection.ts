@@ -40,6 +40,7 @@ export const detectEnv = (
   return {
     browser,
     node,
+    es6: true,
     ...customEnv,
   };
 };
