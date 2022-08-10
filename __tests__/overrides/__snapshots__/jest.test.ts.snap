@@ -99,7 +99,8 @@ exports[`createJestRules with create-react-app 1`] = `
     "plugin:jest-formatting/strict",
   ],
   "files": [
-    "**/*.?(test|spec).?(ts|js)?(x)",
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)",
   ],
   "globals": undefined,
   "overrideType": "eslint-config-galex/jest",
@@ -189,7 +190,8 @@ exports[`createJestRules with typescript 1`] = `
     "plugin:jest-formatting/strict",
   ],
   "files": [
-    "**/*.?(test|spec).?(ts|js)?(x)",
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)",
   ],
   "globals": undefined,
   "overrideType": "eslint-config-galex/jest",
@@ -411,7 +413,8 @@ exports[`override snapshots with jest-dom 1`] = `
     "plugin:jest-formatting/strict",
   ],
   "files": [
-    "**/*.?(test|spec).?(ts|js)?(x)",
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)",
   ],
   "globals": undefined,
   "overrideType": "eslint-config-galex/jest",
@@ -515,7 +518,8 @@ exports[`override snapshots with testing-lib 1`] = `
     "plugin:jest-formatting/strict",
   ],
   "files": [
-    "**/*.?(test|spec).?(ts|js)?(x)",
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)",
   ],
   "globals": undefined,
   "overrideType": "eslint-config-galex/jest",
