@@ -133,7 +133,7 @@
     "next": "12.2.4",
     "prettier": "2.7.1",
     "rimraf": "3.0.2",
-    "semantic-release": "19.0.3"
+    "semantic-release": "19.0.5"
   },
   "peerDependencies": {
     "eslint": ">=8.14.0"
