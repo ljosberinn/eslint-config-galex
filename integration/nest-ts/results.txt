@@ -1,8 +1,9 @@
-writing deps to /workspaces/eslint-config-galex/integration/nest-ts/deps.json
-writing config cache to /workspaces/eslint-config-galex/integration/nest-ts/eslint-config.json
+ESLint v8.23.0
+writing deps to eslint-config-galex\integration\nest-ts\deps.json
+writing config cache to eslint-config-galex\integration\nest-ts\eslint-config.json
 TAP version 13
 1..5
-not ok 1 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.controller.spec.ts
+not ok 1 - eslint-config-galex\integration\nest-ts\src\app.controller.spec.ts
   ---
   message: Import "TestingModule" is only used as types.
   severity: warning
@@ -24,7 +25,7 @@ not ok 1 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.controlle
         column: 7
         ruleId: jest-formatting/padding-around-all
   ...
-not ok 2 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.controller.ts
+not ok 2 - eslint-config-galex\integration\nest-ts\src\app.controller.ts
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -46,7 +47,7 @@ not ok 2 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.controlle
         column: 3
         ruleId: '@typescript-eslint/explicit-member-accessibility'
   ...
-not ok 3 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.module.ts
+ok 3 - eslint-config-galex\integration\nest-ts\src\app.module.ts
   ---
   message: There should be at least one empty line between import groups
   severity: warning
@@ -54,15 +55,8 @@ not ok 3 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.module.ts
     line: 1
     column: 1
     ruleId: import/order
-  messages:
-    - message: Unexpected empty class.
-      severity: error
-      data:
-        line: 10
-        column: 14
-        ruleId: '@typescript-eslint/no-extraneous-class'
   ...
-not ok 4 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.service.ts
+not ok 4 - eslint-config-galex\integration\nest-ts\src\app.service.ts
   ---
   message: Missing accessibility modifier on method definition getHello.
   severity: error
@@ -71,7 +65,7 @@ not ok 4 - /workspaces/eslint-config-galex/integration/nest-ts/src/app.service.t
     column: 3
     ruleId: '@typescript-eslint/explicit-member-accessibility'
   ...
-not ok 5 - /workspaces/eslint-config-galex/integration/nest-ts/src/main.ts
+not ok 5 - eslint-config-galex\integration\nest-ts\src\main.ts
   ---
   message: There should be at least one empty line between import groups
   severity: warning

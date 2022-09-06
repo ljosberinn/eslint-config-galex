@@ -52,7 +52,10 @@ const normalizeSnapshot = (content: string) => {
               return word;
             }
 
-            return word.slice(word.indexOf(variablePathDelimiter));
+            // in codespaces, its /
+            const sanitized = word.split('/').join('\\');
+
+            return sanitized.slice(sanitized.indexOf(variablePathDelimiter));
           })
           .join(' ');
       })
@@ -63,12 +66,17 @@ const normalizeSnapshot = (content: string) => {
 const cases = [
   { name: 'create-react-app javascript', path: 'cra-js' },
   { name: 'create-react-app typescript', path: 'cra-ts' },
+
   { name: 'create-next-app javascript', path: 'next-js' },
   { name: 'create-next-app typescript', path: 'next-ts' },
+
   { name: 'create-remix javascript', path: 'remix-js' },
   { name: 'create-remix typescript', path: 'remix-ts' },
+
   { name: 'jest', path: 'jest' },
-  { name: 'nest typescript', path: 'next-ts' },
+
+  { name: 'nest typescript', path: 'nest-ts' },
+
   {
     name: 'js ts migration mix checkJs off',
     path: 'js-ts-migration-mix-checkJs-off',

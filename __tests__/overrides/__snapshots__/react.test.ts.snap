@@ -3185,7 +3185,7 @@ exports[`override snapshots with remix 1`] = `
   "settings": {
     "import/ignore": [
       "node_modules",
-      "\\\\.(css|md|svg|json)$",
+      "\\.(css|md|svg|json)$",
     ],
     "import/resolver": {
       "jsconfig": {
@@ -3499,7 +3499,7 @@ exports[`override snapshots with remix and typescript 1`] = `
   "settings": {
     "import/ignore": [
       "node_modules",
-      "\\\\.(css|md|svg|json)$",
+      "\\.(css|md|svg|json)$",
     ],
     "import/parsers": {
       "@typescript-eslint/parser": [

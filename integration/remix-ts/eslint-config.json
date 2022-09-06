@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "node": false
+    "node": false,
+    "es6": true
   },
   "overrides": [
     {

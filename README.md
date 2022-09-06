@@ -21,14 +21,14 @@ npm install --save-dev eslint-config-galex eslint
 
 ~~As of January 2021 / due to CRA v5, currently no additional steps are required! 🎉~~
 
-Beginning with `eslint-config-galex` `v3.6.5` or newer, until this disclaimer is removed you need to install the following dependencies additionally:
+Beginning with `eslint-config-galex` `v4.2.2` or newer, until this disclaimer is removed you need to install the following dependencies additionally:
 
-- `"eslint-plugin-jest": "26.1.3"`
+- `"eslint-plugin-jest": "27.0.1"`
 
 ```sh
-npm i --save-dev eslint-plugin-jest@26.1.3
+npm i --save-dev eslint-plugin-jest@27.0.1
 
-yarn add -D eslint-plugin-jest@26.1.3
+yarn add -D eslint-plugin-jest@27.0.1
 ```
 
 </details>

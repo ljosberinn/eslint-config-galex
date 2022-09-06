@@ -121,12 +121,9 @@ test('backupExistingEslintrc creates a scoped & formatted backup', () => {
   expect(Number.parseInt(parts[length - 2])).toBeLessThan(Date.now());
   expect(parts[length - 1]).toContain('bak.json');
 
-  expect(string).toMatchInlineSnapshot(`
-    "{
-      \\"foo\\": \\"bar\\"
-    }
-    "
-  `);
+  expect(JSON.parse(string)).toMatchObject({
+    foo: 'bar',
+  });
 });
 
 describe('generateStandalone', () => {

@@ -52,7 +52,6 @@ exports[`createJestRules default 1`] = `
   "jest/no-identical-title": "error",
   "jest/no-interpolation-in-snapshots": "error",
   "jest/no-jasmine-globals": "error",
-  "jest/no-jest-import": "error",
   "jest/no-large-snapshots": [
     "warn",
     {
@@ -68,6 +67,7 @@ exports[`createJestRules default 1`] = `
   "jest/no-try-expect": "off",
   "jest/prefer-called-with": "error",
   "jest/prefer-comparison-matcher": "warn",
+  "jest/prefer-each": "warn",
   "jest/prefer-expect-assertions": "off",
   "jest/prefer-expect-resolves": "warn",
   "jest/prefer-hooks-in-order": "warn",
@@ -133,7 +133,6 @@ exports[`createJestRules with create-react-app 1`] = `
     "jest/no-identical-title": "error",
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
-    "jest/no-jest-import": "error",
     "jest/no-large-snapshots": [
       "warn",
       {
@@ -149,6 +148,7 @@ exports[`createJestRules with create-react-app 1`] = `
     "jest/no-try-expect": "off",
     "jest/prefer-called-with": "error",
     "jest/prefer-comparison-matcher": "warn",
+    "jest/prefer-each": "warn",
     "jest/prefer-expect-assertions": "off",
     "jest/prefer-hooks-on-top": "error",
     "jest/prefer-inline-snapshots": "off",
@@ -160,7 +160,6 @@ exports[`createJestRules with create-react-app 1`] = `
     "jest/prefer-todo": "warn",
     "jest/require-to-throw-message": "off",
     "jest/require-top-level-describe": "off",
-    "jest/unbound-method": "warn",
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "warn",
@@ -229,7 +228,6 @@ exports[`createJestRules with typescript 1`] = `
     "jest/no-identical-title": "error",
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
-    "jest/no-jest-import": "error",
     "jest/no-large-snapshots": [
       "warn",
       {
@@ -245,6 +243,7 @@ exports[`createJestRules with typescript 1`] = `
     "jest/no-try-expect": "off",
     "jest/prefer-called-with": "error",
     "jest/prefer-comparison-matcher": "warn",
+    "jest/prefer-each": "warn",
     "jest/prefer-expect-assertions": "off",
     "jest/prefer-expect-resolves": "warn",
     "jest/prefer-hooks-in-order": "warn",
@@ -259,6 +258,7 @@ exports[`createJestRules with typescript 1`] = `
     "jest/prefer-todo": "warn",
     "jest/require-to-throw-message": "off",
     "jest/require-top-level-describe": "off",
+    "jest/unbound-method": "warn",
     "jest/valid-describe-callback": "error",
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
@@ -280,7 +280,6 @@ exports[`createJestRules with typescript 1`] = `
 exports[`createTestOverrides with react 1`] = `
 {
   "import/no-namespace": "off",
-  "jest/unbound-method": "warn",
   "jsx-a11y/control-has-associated-label": "off",
   "no-empty-function": "off",
   "no-param-reassign": "off",
@@ -299,6 +298,7 @@ exports[`createTestOverrides with typescript 1`] = `
   "@typescript-eslint/no-unsafe-argument": "off",
   "@typescript-eslint/unbound-method": "off",
   "import/no-namespace": "off",
+  "jest/unbound-method": "warn",
   "no-empty-function": "off",
   "no-param-reassign": "off",
   "require-unicode-regexp": "off",
@@ -459,7 +459,6 @@ exports[`override snapshots with jest-dom 1`] = `
     "jest/no-identical-title": "error",
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
-    "jest/no-jest-import": "error",
     "jest/no-large-snapshots": [
       "warn",
       {
@@ -475,6 +474,7 @@ exports[`override snapshots with jest-dom 1`] = `
     "jest/no-try-expect": "off",
     "jest/prefer-called-with": "error",
     "jest/prefer-comparison-matcher": "warn",
+    "jest/prefer-each": "warn",
     "jest/prefer-expect-assertions": "off",
     "jest/prefer-expect-resolves": "warn",
     "jest/prefer-hooks-in-order": "warn",
@@ -489,7 +489,6 @@ exports[`override snapshots with jest-dom 1`] = `
     "jest/prefer-todo": "warn",
     "jest/require-to-throw-message": "off",
     "jest/require-top-level-describe": "off",
-    "jest/unbound-method": "warn",
     "jest/valid-describe-callback": "error",
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
@@ -553,7 +552,6 @@ exports[`override snapshots with testing-lib 1`] = `
     "jest/no-identical-title": "error",
     "jest/no-interpolation-in-snapshots": "error",
     "jest/no-jasmine-globals": "error",
-    "jest/no-jest-import": "error",
     "jest/no-large-snapshots": [
       "warn",
       {
@@ -569,6 +567,7 @@ exports[`override snapshots with testing-lib 1`] = `
     "jest/no-try-expect": "off",
     "jest/prefer-called-with": "error",
     "jest/prefer-comparison-matcher": "warn",
+    "jest/prefer-each": "warn",
     "jest/prefer-expect-assertions": "off",
     "jest/prefer-expect-resolves": "warn",
     "jest/prefer-hooks-in-order": "warn",
@@ -583,7 +582,6 @@ exports[`override snapshots with testing-lib 1`] = `
     "jest/prefer-todo": "warn",
     "jest/require-to-throw-message": "off",
     "jest/require-top-level-describe": "off",
-    "jest/unbound-method": "warn",
     "jest/valid-describe-callback": "error",
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",

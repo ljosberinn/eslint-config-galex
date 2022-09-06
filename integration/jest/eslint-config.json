@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": false,
-    "node": false
+    "node": false,
+    "es6": true
   },
   "overrides": [
     {
@@ -210,7 +211,8 @@
         "plugin:jest-formatting/strict"
       ],
       "files": [
-        "**/*.?(test|spec).?(ts|js)?(x)"
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
       ],
       "parserOptions": {
         "ecmaVersion": 2020
@@ -244,7 +246,6 @@
         "jest/no-identical-title": "error",
         "jest/no-interpolation-in-snapshots": "error",
         "jest/no-jasmine-globals": "error",
-        "jest/no-jest-import": "error",
         "jest/no-large-snapshots": [
           "warn",
           {
@@ -260,6 +261,7 @@
         "jest/no-try-expect": "off",
         "jest/prefer-called-with": "error",
         "jest/prefer-comparison-matcher": "warn",
+        "jest/prefer-each": "warn",
         "jest/prefer-expect-assertions": "off",
         "jest/prefer-expect-resolves": "warn",
         "jest/prefer-hooks-in-order": "warn",
@@ -281,6 +283,7 @@
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/unbound-method": "off",
         "@typescript-eslint/no-empty-function": "off",
+        "jest/unbound-method": "warn",
         "@typescript-eslint/explicit-member-accessibility": "off",
         "@typescript-eslint/no-unsafe-argument": "off",
         "import/no-namespace": "off",

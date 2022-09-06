@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "overrides": [
     {
@@ -266,7 +267,8 @@
         "plugin:jest-formatting/strict"
       ],
       "files": [
-        "**/*.?(test|spec).?(ts|js)?(x)"
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
       ],
       "parserOptions": {
         "ecmaVersion": 2020
@@ -305,7 +307,6 @@
         "jest/no-identical-title": "error",
         "jest/no-interpolation-in-snapshots": "error",
         "jest/no-jasmine-globals": "error",
-        "jest/no-jest-import": "error",
         "jest/no-large-snapshots": [
           "warn",
           {
@@ -321,6 +322,7 @@
         "jest/no-try-expect": "off",
         "jest/prefer-called-with": "error",
         "jest/prefer-comparison-matcher": "warn",
+        "jest/prefer-each": "warn",
         "jest/prefer-expect-assertions": "off",
         "jest/prefer-hooks-on-top": "error",
         "jest/prefer-inline-snapshots": "off",
@@ -380,7 +382,6 @@
         "testing-library/prefer-user-event": "warn",
         "testing-library/prefer-wait-for": "warn",
         "testing-library/render-result-naming-convention": "off",
-        "jest/unbound-method": "warn",
         "import/no-namespace": "off",
         "no-empty-function": "off",
         "sonarjs/no-duplicate-string": "off",

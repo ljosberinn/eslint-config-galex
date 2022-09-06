@@ -17,7 +17,10 @@ export const env: OverrideESLintConfig['env'] = {
 };
 
 export const extendsConfig = ['plugin:jest-formatting/strict'];
-export const files = ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'];
+export const files = [
+  '**/__tests__/**/*.[jt]s?(x)',
+  '**/?(*.)+(spec|test).[jt]s?(x)',
+];
 export const parserOptions: OverrideESLintConfig['parserOptions'] = {
   ecmaVersion: 2020,
 };
@@ -275,13 +278,6 @@ export const createJestRules: RulesCreator = ({
     'jest/no-jasmine-globals': 'error',
 
     /**
-     * disallows importing jest
-     *
-     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jest-import.md
-     */
-    'jest/no-jest-import': 'error',
-
-    /**
      * ensures snapshots stay reasonable in size
      *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-large-snapshots.md
@@ -353,6 +349,13 @@ export const createJestRules: RulesCreator = ({
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-comparison-matcher.md
      */
     'jest/prefer-comparison-matcher': 'warn',
+
+    /**
+     * suggests using *.each if possible
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/prefer-each.md
+     */
+    'jest/prefer-each': 'warn',
 
     /**
      * off because should be either globally defined or not at all
@@ -825,7 +828,7 @@ export const createTestOverrides: RulesCreator = ({
    *
    * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
    */
-  ...(hasTypeScript ? null : { 'jest/unbound-method': 'warn' }),
+  ...(hasTypeScript ? { 'jest/unbound-method': 'warn' } : null),
 
   /**
    * off because its regularily done in tests
