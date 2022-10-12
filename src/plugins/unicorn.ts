@@ -291,6 +291,13 @@ export const createUnicornRules: RulesCreator = ({
   'unicorn/no-this-assignment': 'warn',
 
   /**
+   * disallows awaiting non-awaitables
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unnecessary-await.md
+   */
+  'unicorn/no-unnecessary-await': hasTypeScript ? 'off' : 'warn',
+
+  /**
    * prevents abusive destructuring
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md
@@ -767,6 +774,13 @@ export const createUnicornRules: RulesCreator = ({
   'unicorn/string-content': 'off',
 
   /**
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md
+   */
+  'unicorn/switch-case-braces': 'warn',
+
+  /**
+   * enforces braces in switch cases
+   *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md
    */
   'unicorn/template-indent': 'warn',

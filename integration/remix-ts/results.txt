@@ -85,6 +85,24 @@ not ok 3 - eslint-config-galex\integration\remix-ts\app\root.tsx
         line: 62
         column: 7
         ruleId: prefer-const
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 66
+        column: 5
+        ruleId: unicorn/switch-case-braces
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 74
+        column: 5
+        ruleId: unicorn/switch-case-braces
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 80
+        column: 5
+        ruleId: unicorn/switch-case-braces
   ...
 not ok 4 - eslint-config-galex\integration\remix-ts\app\routes\demos\about.tsx
   ---
@@ -296,18 +314,36 @@ not ok 10 - eslint-config-galex\integration\remix-ts\app\routes\demos\params\$id
         line: 53
         column: 7
         ruleId: prefer-const
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 57
+        column: 5
+        ruleId: unicorn/switch-case-braces
     - message: Expected a 'break' statement before 'case'.
       severity: warning
       data:
         line: 64
         column: 5
         ruleId: no-fallthrough
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 64
+        column: 5
+        ruleId: unicorn/switch-case-braces
     - message: Expected a 'break' statement before 'default'.
       severity: warning
       data:
         line: 68
         column: 5
         ruleId: no-fallthrough
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 68
+        column: 5
+        ruleId: unicorn/switch-case-braces
     - message: Missing return type on function.
       severity: error
       data:

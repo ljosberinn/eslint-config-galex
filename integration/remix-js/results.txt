@@ -61,6 +61,24 @@ not ok 3 - eslint-config-galex\integration\remix-js\app\root.jsx
         line: 61
         column: 7
         ruleId: prefer-const
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 65
+        column: 5
+        ruleId: unicorn/switch-case-braces
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 73
+        column: 5
+        ruleId: unicorn/switch-case-braces
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 79
+        column: 5
+        ruleId: unicorn/switch-case-braces
   ...
 not ok 4 - eslint-config-galex\integration\remix-js\app\routes\demos\about.jsx
   ---
@@ -218,18 +236,36 @@ not ok 10 - eslint-config-galex\integration\remix-js\app\routes\demos\params\$id
         line: 52
         column: 7
         ruleId: prefer-const
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 56
+        column: 5
+        ruleId: unicorn/switch-case-braces
     - message: Expected a 'break' statement before 'case'.
       severity: warning
       data:
         line: 63
         column: 5
         ruleId: no-fallthrough
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 63
+        column: 5
+        ruleId: unicorn/switch-case-braces
     - message: Expected a 'break' statement before 'default'.
       severity: warning
       data:
         line: 67
         column: 5
         ruleId: no-fallthrough
+    - message: Missing braces in case clause.
+      severity: warning
+      data:
+        line: 67
+        column: 5
+        ruleId: unicorn/switch-case-braces
     - message: Unexpected console statement.
       severity: warning
       data:
