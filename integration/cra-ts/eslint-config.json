@@ -496,6 +496,7 @@
           }
         ],
         "jest/no-mocks-import": "error",
+        "jest/no-restricted-jest-methods": "off",
         "jest/no-restricted-matchers": "off",
         "jest/no-standalone-expect": "off",
         "jest/no-test-prefixes": "error",

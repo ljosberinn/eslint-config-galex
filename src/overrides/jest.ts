@@ -292,6 +292,13 @@ export const createJestRules: RulesCreator = ({
     'jest/no-mocks-import': 'error',
 
     /**
+     * off because workspace specific if even
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-restricted-jest-methods.md
+     */
+    'jest/no-restricted-jest-methods': 'off',
+
+    /**
      * off because nothing is restricted
      *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-restricted-matchers.md
