@@ -69,6 +69,7 @@ exports[`createEslintCoreRules defaults 1`] = `
   "linebreak-style": "off",
   "lines-around-comment": 0,
   "lines-between-class-members": "warn",
+  "logical-assignment-operators": "off",
   "max-classes-per-file": "off",
   "max-depth": "off",
   "max-len": 0,

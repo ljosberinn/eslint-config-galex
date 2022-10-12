@@ -1612,6 +1612,14 @@ export const createStylisticIssuesRules: RulesCreator = () => ({
   'lines-between-class-members': 'warn',
 
   /**
+   * off because opinionated and mostly unevaluated at this time, sorry!
+   * needs to be guarded behind ES2021 check at least
+   *
+   * @see https://eslint.org/docs/latest/rules/logical-assignment-operators#rule-details
+   */
+  'logical-assignment-operators': 'off',
+
+  /**
    * off because opinionated
    *
    * @see https://eslint.org/docs/rules/max-depth

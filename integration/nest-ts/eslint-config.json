@@ -637,6 +637,7 @@
     "linebreak-style": "off",
     "lines-around-comment": 0,
     "lines-between-class-members": "warn",
+    "logical-assignment-operators": "off",
     "max-depth": "off",
     "max-len": 0,
     "max-lines": "off",
