@@ -1,4 +1,4 @@
-ESLint v8.25.0
+ESLint v8.27.0
 running createConfig with extra arguments: {"enableJavaScriptSpecificRulesInTypeScriptProject":true}
 writing deps to eslint-config-galex\integration\js-ts-migration-mix-force-js-linting\deps.json
 writing config cache to eslint-config-galex\integration\js-ts-migration-mix-force-js-linting\eslint-config.json

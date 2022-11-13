@@ -577,7 +577,9 @@ export const createBestPracticesTypescriptRules: RulesCreator = ({
 /**
  * @see https://eslint.org/docs/rules/#best-practices
  */
-export const createBestPractices: RulesCreator = () => ({
+export const createBestPractices: RulesCreator = ({
+  typescript: { hasTypeScript },
+}) => ({
   /**
    * off because opinionated
    *
@@ -754,6 +756,13 @@ export const createBestPractices: RulesCreator = () => ({
   'no-empty-pattern': 'warn',
 
   /**
+   * disallows empty statics
+   *
+   * @see https://eslint.org/docs/latest/rules/no-empty-static-block
+   */
+  'no-empty-static-block': 'warn',
+
+  /**
    * disallow unsafe null comparison
    *
    * @see https://eslint.org/docs/rules/no-eq-null
@@ -918,6 +927,11 @@ export const createBestPractices: RulesCreator = () => ({
    * @see https://eslint.org/docs/rules/no-new-func
    */
   'no-new-func': 'error',
+
+  /**
+   * @see https://eslint.org/docs/latest/rules/no-new-native-nonconstructor
+   */
+  'no-new-native-nonconstructor': hasTypeScript ? 'off' : 'warn',
 
   /**
    * disallows primitive wrapper instances such as `new String('foo')`
