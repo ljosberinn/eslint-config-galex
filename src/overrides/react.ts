@@ -1219,7 +1219,7 @@ export const createJSXA11yRules: RulesCreator = ({
 
 export const createNextJsRules: RulesCreator = ({
   react: { isNext },
-  // typescript: { hasTypeScript },
+  typescript: { hasTypeScript },
 }) => {
   if (!isNext) {
     return null;
@@ -1349,16 +1349,30 @@ export const createNextJsRules: RulesCreator = ({
      */
     '@next/next/next-script-for-ga': 'warn',
 
-    // ...(hasTypeScript
-    //   ? null
-    //   : {
-    //       /**
-    //        * prevents reassigning the variable `module`
-    //        *
-    //        * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-assign-module-variable.js
-    //        */
-    //       '@next/next/no-assign-module-variable': 'warn',
-    //     }),
+    ...(hasTypeScript
+      ? null
+      : {
+          /**
+           * prevents reassigning the variable `module`
+           *
+           * @see https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/rules/no-assign-module-variable.js
+           */
+          '@next/next/no-assign-module-variable': 'warn',
+        }),
+
+    /**
+     * prevents next/script beforeInteractive strategy outside of document
+     *
+     * @see https://nextjs.org/docs/messages/no-before-interactive-script-outside-document
+     */
+    '@next/next/no-before-interactive-script-outside-document': 'error',
+
+    /**
+     * prevents usages of styled-jsx in document
+     *
+     * @see https://nextjs.org/docs/messages/no-before-interactive-script-outside-document
+     */
+    '@next/next/no-styled-jsx-in-document': 'error',
   };
 };
 
