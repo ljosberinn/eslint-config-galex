@@ -1,5 +1,5 @@
 {
-  "name": "js-ts-migration-mix",
+  "name": "js-ts-migration-mix-checkjs-on",
   "private": true,
   "scripts": {
     "lint:integration": "eslint src --max-warnings=0 --format=tap > results.txt"
