@@ -6,6 +6,7 @@ exports[`with typescript 1`] = `
   "promise/avoid-new": "off",
   "promise/catch-or-return": "off",
   "promise/no-callback-in-promise": "off",
+  "promise/no-multiple-resolved": "warn",
   "promise/no-native": "off",
   "promise/no-nesting": "warn",
   "promise/no-new-statics": "error",
