@@ -39,7 +39,7 @@ const overrideOrder = {
 export const mergeSortOverrides = (
   overrides: WithOverrideType<OverrideESLintConfig>[]
 ): WithOverrideType<OverrideESLintConfig>[] => {
-  return overrides
+  return [...overrides]
     .reduce<WithOverrideType<OverrideESLintConfig>[]>((carry, override) => {
       const isInternalOverride = !!override.overrideType;
 
