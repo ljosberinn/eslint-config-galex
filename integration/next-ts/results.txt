@@ -1,4 +1,4 @@
-ESLint v8.27.0
+ESLint v8.29.0
 writing deps to eslint-config-galex\integration\next-ts\deps.json
 writing config cache to eslint-config-galex\integration\next-ts\eslint-config.json
 TAP version 13

@@ -4,7 +4,7 @@ import type {
   TopLevelESLintConfig,
 } from '../types';
 
-export const plugins = ['import', 'unicorn', 'promise', 'sonarjs', 'etc'];
+export const plugins = ['import', 'unicorn', 'promise', 'sonarjs'];
 
 /**
  * @see https://www.npmjs.com/org/testing-library

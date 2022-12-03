@@ -470,7 +470,6 @@ list, check out the source.
 - `const { createPromiseRules } = require('eslint-config-galex/dist/plugins/promise')`
 - `const { createSonarjsRules } = require('eslint-config-galex/dist/plugins/sonarjs')`
 - `const { createUnicornRules } = require('eslint-config-galex/dist/plugins/unicorn')`
-- `const { createEtcRules } = require('eslint-config-galex/dist/plugins/etc')`
 
 # Examples
 

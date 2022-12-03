@@ -42,7 +42,6 @@ test('removes duplicates in plugins if passed', () => {
       "unicorn",
       "promise",
       "sonarjs",
-      "etc",
       "foo",
     ]
   `);

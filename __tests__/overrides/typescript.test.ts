@@ -4,6 +4,7 @@ import {
   createTypeScriptRules,
   createNestJsRules,
   createRemixTypeScriptOverride,
+  createEtcRules,
 } from '../../src/overrides/typescript';
 import type { OverrideCreator } from '../../src/types';
 import tsConfig from '../../tsconfig.json';
@@ -328,5 +329,15 @@ describe('createRemixTypeScriptOverride', () => {
         },
       })
     ).toMatchSnapshot();
+  });
+});
+
+describe('createEtcRules', () => {
+  test('without TS', () => {
+    expect(createEtcRules(defaultProject)).toBeNull();
+  });
+
+  test('with TS', () => {
+    expect(createEtcRules(typescriptDefaultProject)).not.toBeNull();
   });
 });
