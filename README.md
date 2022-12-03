@@ -464,12 +464,12 @@ list, check out the source.
 
 ### Rulesets
 
-- `const { createEslintCoreRules } = require('eslint-config-galex/dist/rulesets/eslint-core')`
-- `const { createImportRules } = require('eslint-config-galex/dist/rulesets/import')`
-- `const { createNextJsRules } = require('eslint-config-galex/dist/rulesets/next')`
-- `const { createPromiseRules } = require('eslint-config-galex/dist/rulesets/promise')`
-- `const { createSonarjsRules } = require('eslint-config-galex/dist/rulesets/sonarjs')`
-- `const { createUnicornRules } = require('eslint-config-galex/dist/rulesets/unicorn')`
+- `const { createEslintCoreRules } = require('eslint-config-galex/dist/plugins/eslint-core')`
+- `const { createImportRules } = require('eslint-config-galex/dist/plugins/import')`
+- `const { createNextJsRules } = require('eslint-config-galex/dist/plugins/next')`
+- `const { createPromiseRules } = require('eslint-config-galex/dist/plugins/promise')`
+- `const { createSonarjsRules } = require('eslint-config-galex/dist/plugins/sonarjs')`
+- `const { createUnicornRules } = require('eslint-config-galex/dist/plugins/unicorn')`
 
 # Examples
 

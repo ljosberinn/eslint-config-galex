@@ -29,7 +29,7 @@ const defaultParserOptions = {
   warnOnUnsupportedTypeScriptVersion: true,
 };
 
-const plugins = ['@typescript-eslint'];
+const plugins = ['@typescript-eslint', 'etc'];
 const defaultSettings = {
   react: {
     version: 'detect',
@@ -56,6 +56,7 @@ export const createTypeScriptOverride: OverrideCreator = ({
   const rules = {
     ...createTypeScriptRules(dependencies),
     ...createNestJsRules(dependencies),
+    ...createEtcRules(dependencies),
     ...prettierTypeScriptRules,
     ...customRules,
   };
@@ -1116,6 +1117,60 @@ export const createNestJsRules: RulesCreator = ({ hasNest }) => {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-extraneous-class': 'off',
+  };
+};
+
+/**
+ * @see https://github.com/cartant/eslint-plugin-etc
+ */
+export const createEtcRules: RulesCreator = ({
+  typescript: { hasTypeScript },
+}) => {
+  if (!hasTypeScript) {
+    return null;
+  }
+  return {
+    /**
+     * forbids the assignment of returned, mutated arrays.
+     *
+     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-assign-mutated-array.md
+     */
+    'etc/no-assign-mutated-array': 'error',
+
+    /**
+     * forbids commented-out code.
+     *
+     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-commented-out-code.md
+     */
+    'etc/no-commented-out-code': 'off',
+
+    /**
+     * forbids the use of deprecated APIs. TypeScript already seems to be doing this
+     *
+     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-deprecated.md
+     */
+    // 'etc/no-deprecated': 'off',
+
+    /**
+     * forbids the use of internal APIs.
+     *
+     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-internal.md
+     */
+    'etc/no-internal': 'warn',
+
+    /**
+     * Forbids type parameters without inference sites and type parameters that don't add type safety to declarations.
+     *
+     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-misused-generics.md
+     */
+    'etc/no-misused-generics': 'warn',
+
+    /**
+     * forbids the assignment of returned, mutated arrays.
+     *
+     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-assign-mutated-array.md
+     */
+    'etc/underscore-internal': 'warn',
   };
 };
 

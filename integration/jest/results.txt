@@ -1,4 +1,4 @@
-ESLint v8.27.0
+ESLint v8.29.0
 writing deps to eslint-config-galex\integration\jest\deps.json
 writing config cache to eslint-config-galex\integration\jest\eslint-config.json
 TAP version 13

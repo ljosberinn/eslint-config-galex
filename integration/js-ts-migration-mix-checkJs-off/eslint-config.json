@@ -18,7 +18,8 @@
         "warnOnUnsupportedTypeScriptVersion": true
       },
       "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "etc"
       ],
       "settings": {
         "react": {
@@ -199,6 +200,11 @@
         "@typescript-eslint/typedef": "off",
         "@typescript-eslint/unbound-method": "warn",
         "@typescript-eslint/unified-signatures": "warn",
+        "etc/no-assign-mutated-array": "error",
+        "etc/no-commented-out-code": "off",
+        "etc/no-internal": "warn",
+        "etc/no-misused-generics": "warn",
+        "etc/underscore-internal": "warn",
         "@typescript-eslint/object-curly-spacing": "off"
       },
       "overrides": []
