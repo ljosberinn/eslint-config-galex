@@ -254,16 +254,6 @@ export const createJestRules: RulesCreator = ({
     'jest/no-identical-title': 'error',
 
     /**
-     * ensures less complex tests
-     *
-     * @deprecated in favor of `no-conditional-in-test`
-     *
-     * @see jest/no-conditional-expect
-     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-if.md
-     */
-    // 'jest/no-if': 'off',
-
-    /**
      * ensures snapshots can be updated
      *
      * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-interpolation-in-snapshots.md

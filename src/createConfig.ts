@@ -10,6 +10,7 @@ import {
   createEslintCoreRules,
   eslintDefaultRulesTypeScriptOverride,
 } from './plugins/eslint-core';
+import { createEtcRules } from './plugins/etc';
 import { createImportRules } from './plugins/import';
 import { createPromiseRules } from './plugins/promise';
 import { createSonarjsRules } from './plugins/sonarjs';
@@ -96,6 +97,7 @@ export const createConfig = ({
       ...createPromiseRules(dependencies),
       ...createImportRules(dependencies),
       ...createSonarjsRules(dependencies),
+      ...createEtcRules(dependencies),
       ...rules,
     },
     flags

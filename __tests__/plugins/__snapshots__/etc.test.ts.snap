@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with create-react-app 1`] = `
+{
+  "etc/no-assign-mutated-array": "error",
+  "etc/no-commented-out-code": "warn",
+  "etc/no-deprecated": "warn",
+  "etc/no-internal": "warn",
+  "etc/no-misused-generics": "warn",
+  "etc/underscore-internal": "warn",
+}
+`;
+
+exports[`with typescript 1`] = `
+{
+  "etc/no-assign-mutated-array": "error",
+  "etc/no-commented-out-code": "warn",
+  "etc/no-deprecated": "off",
+  "etc/no-internal": "warn",
+  "etc/no-misused-generics": "warn",
+  "etc/underscore-internal": "warn",
+}
+`;
