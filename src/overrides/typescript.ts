@@ -1159,16 +1159,16 @@ export const createEtcRules: RulesCreator = ({
     'etc/no-internal': 'warn',
 
     /**
-     * Forbids type parameters without inference sites and type parameters that don't add type safety to declarations.
+     * forbids type parameters without inference sites and type parameters that don't add type safety to declarations.
      *
      * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-misused-generics.md
      */
     'etc/no-misused-generics': 'warn',
 
     /**
-     * forbids the assignment of returned, mutated arrays.
+     * forbids internal APIs that are not prefixed with underscores.
      *
-     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-assign-mutated-array.md
+     * @see https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/underscore-internal.md
      */
     'etc/underscore-internal': 'warn',
   };
