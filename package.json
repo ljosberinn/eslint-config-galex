@@ -113,7 +113,7 @@
     "eslint-plugin-sonarjs": "0.16.0",
     "eslint-plugin-storybook": "0.6.7",
     "eslint-plugin-testing-library": "5.9.1",
-    "eslint-plugin-unicorn": "44.0.2",
+    "eslint-plugin-unicorn": "45.0.2",
     "lodash.merge": "4.6.2",
     "read-pkg-up": "7.0.1",
     "typescript": "4.9.3"
