@@ -319,6 +319,7 @@
         "jest/no-standalone-expect": "off",
         "jest/no-test-prefixes": "error",
         "jest/no-test-return-statement": "error",
+        "jest/no-untyped-mock-factory": "off",
         "jest/no-truthy-falsy": "off",
         "jest/no-try-expect": "off",
         "jest/prefer-called-with": "error",

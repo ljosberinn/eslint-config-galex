@@ -26,9 +26,9 @@ Beginning with `eslint-config-galex` `v4.2.2` or newer, until this disclaimer is
 - `"eslint-plugin-jest": "27.1.5"`
 
 ```sh
-npm i --save-dev eslint-plugin-jest@27.1.5
+npm i --save-dev eslint-plugin-jest@27.2.0
 
-yarn add -D eslint-plugin-jest@27.1.5
+yarn add -D eslint-plugin-jest@27.2.0
 ```
 
 </details>

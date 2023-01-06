@@ -328,6 +328,13 @@ export const createJestRules: RulesCreator = ({
     'jest/no-test-return-statement': 'error',
 
     /**
+     * disallows using jest.mock without passing a type
+     *
+     * @see https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-untyped-mock-factory.md
+     */
+    'jest/no-untyped-mock-factory': hasTypeScript ? 'warn' : 'off',
+
+    /**
      * off because superseded in favor of `jest/no-restricted-matchers`
      *
      * @see jest/no-restricted-matchers
