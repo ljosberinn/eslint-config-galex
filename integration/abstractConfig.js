@@ -1,3 +1,4 @@
+// @ts-check
 // do not trigger linting through the vscode eslint extension, as paths turn
 // out to be fairly different
 if (!process.argv.some(arg => arg.includes('vscode-eslint'))) {

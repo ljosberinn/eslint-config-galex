@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "typescript": "4.6.4",
-    "eslint": ">=8.14.0"
+    "eslint": ">=8.27.0"
   }
 }

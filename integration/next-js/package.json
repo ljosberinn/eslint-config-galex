@@ -10,11 +10,11 @@
     "lint:integration": "eslint pages --max-warnings=0 --format=tap > results.txt"
   },
   "dependencies": {
-    "next": "13.0.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next": "13.1.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "eslint": ">=8.14.0"
+    "eslint": ">=8.27.0"
   }
 }

@@ -14,7 +14,7 @@
     "isNext": true,
     "isRemix": false,
     "isPreact": false,
-    "version": "18.1.0"
+    "version": "18.2.0"
   },
   "typescript": {
     "config": {
@@ -47,6 +47,6 @@
       ]
     },
     "hasTypeScript": true,
-    "version": "4.6.4"
+    "version": "4.9.4"
   }
 }
