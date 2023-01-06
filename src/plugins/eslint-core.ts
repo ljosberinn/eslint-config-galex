@@ -1801,8 +1801,9 @@ export const createStylisticIssuesRules: RulesCreator = () => ({
    * prefer `if(true) {} else` flows
    *
    * @see https://eslint.org/docs/rules/no-negated-condition
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md
    */
-  'no-negated-condition': 'error',
+  'no-negated-condition': 'off',
 
   /**
    * off because opinionated

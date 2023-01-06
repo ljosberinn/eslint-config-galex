@@ -166,7 +166,7 @@ exports[`createEslintCoreRules defaults 1`] = `
   "no-multi-spaces": "off",
   "no-multi-str": "off",
   "no-multiple-empty-lines": "off",
-  "no-negated-condition": "error",
+  "no-negated-condition": "off",
   "no-nested-ternary": "off",
   "no-new": "error",
   "no-new-func": "error",

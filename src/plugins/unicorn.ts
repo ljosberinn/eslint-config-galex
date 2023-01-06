@@ -225,6 +225,13 @@ export const createUnicornRules: RulesCreator = ({
   'unicorn/no-lonely-if': 'warn',
 
   /**
+   * disallows negated conditions
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md
+   * @see https://eslint.org/docs/rules/no-negated-condition
+   */
+  'unicorn/no-negated-condition': 'warn',
+
+  /**
    * off because prettier takes care of it
    *
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md
@@ -289,6 +296,13 @@ export const createUnicornRules: RulesCreator = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-this-assignment.md
    */
   'unicorn/no-this-assignment': 'warn',
+
+  /**
+   * disallows comparing undefined using typeof
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-typeof-undefined.md
+   */
+  'unicorn/no-typeof-undefined': 'warn',
 
   /**
    * disallows awaiting non-awaitables
@@ -645,6 +659,13 @@ export const createUnicornRules: RulesCreator = ({
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md
    */
   'unicorn/prefer-set-has': 'error',
+
+  /**
+   * avoids unnecessarily spreading a set into array to check length when .size can be used instead
+   *
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md
+   */
+  'unicorn/prefer-set-size': 'warn',
 
   /**
    * prefer [...arr] over Array.from
