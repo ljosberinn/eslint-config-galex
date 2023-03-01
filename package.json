@@ -116,7 +116,7 @@
     "eslint-plugin-unicorn": "45.0.2",
     "lodash.merge": "4.6.2",
     "read-pkg-up": "7.0.1",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.2",
