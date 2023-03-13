@@ -13,6 +13,7 @@ import {
 import { createImportRules } from './plugins/import';
 import { createPromiseRules } from './plugins/promise';
 import { createSonarjsRules } from './plugins/sonarjs';
+import { createTailwindRules } from './plugins/tailwindcss';
 import { createUnicornRules } from './plugins/unicorn';
 import type {
   ESLintConfig,
@@ -57,6 +58,7 @@ export const createConfig = ({
   settings,
 }: CreateConfigArgs = {}): TopLevelESLintConfig => {
   const dependencies = getDependencies({ cwd, tsConfigPath });
+  const {hasTailwind} = dependencies;
 
   const flags: Flags = {
     convertToESLintInternals,
@@ -96,6 +98,7 @@ export const createConfig = ({
       ...createPromiseRules(dependencies),
       ...createImportRules(dependencies),
       ...createSonarjsRules(dependencies),
+      ...(hasTailwind ? createTailwindRules(dependencies) : {}),
       ...rules,
     },
     flags

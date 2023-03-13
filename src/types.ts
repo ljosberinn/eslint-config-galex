@@ -35,6 +35,7 @@ export type Dependencies = {
     hasTypeScript: boolean;
     version: null | string;
   };
+  hasTailwind: boolean;
 };
 
 export type ESLintConfig = Omit<
