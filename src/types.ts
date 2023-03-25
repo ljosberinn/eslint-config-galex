@@ -35,6 +35,7 @@ export type Dependencies = {
     hasTypeScript: boolean;
     version: null | string;
   };
+  hasTailwind: boolean;
 };
 
 export type ESLintConfig = Omit<
@@ -67,7 +68,7 @@ export type RulesetCreator = (
   args: Dependencies & {
     rules?: Linter.RulesRecord;
   }
-) => Linter.RulesRecord;
+) => Linter.RulesRecord | null;
 
 /**
  * internal type including the custom `overrideType` property

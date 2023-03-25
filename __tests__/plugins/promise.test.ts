@@ -14,7 +14,7 @@ test('allows passing rules', () => {
     },
   });
 
-  expect(result[ruleName]).toBe(ruleValue);
+  expect(result?.[ruleName]).toBe(ruleValue);
 });
 
 test('with typescript', () => {

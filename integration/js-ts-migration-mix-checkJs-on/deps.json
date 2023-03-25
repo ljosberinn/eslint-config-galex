@@ -46,5 +46,6 @@
     },
     "hasTypeScript": true,
     "version": "4.6.4"
-  }
+  },
+  "hasTailwind": false
 }

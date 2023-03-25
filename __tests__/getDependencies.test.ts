@@ -83,6 +83,7 @@ describe('getDependencies', () => {
         "hasJestDom": false,
         "hasNest": false,
         "hasNodeTypes": false,
+        "hasTailwind": false,
         "hasTestingLibrary": false,
         "react": {
           "hasReact": false,

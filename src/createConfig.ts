@@ -14,6 +14,7 @@ import { createImportRules } from './plugins/import';
 import { createSimpleImportSortRules } from './plugins/import-sort';
 import { createPromiseRules } from './plugins/promise';
 import { createSonarjsRules } from './plugins/sonarjs';
+import { createTailwindRules } from './plugins/tailwindcss';
 import { createUnicornRules } from './plugins/unicorn';
 import {
   type ESLintConfig,
@@ -98,6 +99,7 @@ export const createConfig = ({
       ...createImportRules(dependencies),
       ...createSonarjsRules(dependencies),
       ...createSimpleImportSortRules(dependencies),
+      ...createTailwindRules(dependencies),
       ...rules,
     },
     flags

@@ -106,6 +106,12 @@ export const detectStorybook = (
   };
 };
 
+export const detectTailwind = (
+  dependencies: Map<string, string>
+): Dependencies['hasTailwind'] => {
+  return dependencies.has('tailwindcss');
+};
+
 export const detectNest = (
   dependencies: Map<string, string>
 ): Dependencies['hasNest'] => {
@@ -142,6 +148,7 @@ export const getDependencies = ({
     const hasTestingLibrary = detectTestingLibrary(deps);
     const storybook = detectStorybook(deps);
     const hasNest = detectNest(deps);
+    const hasTailwind = detectTailwind(deps);
 
     return {
       hasJest,
@@ -152,6 +159,7 @@ export const getDependencies = ({
       storybook,
       react,
       typescript,
+      hasTailwind,
     };
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -180,6 +188,7 @@ export const getDependencies = ({
         hasTypeScript: false,
         version: null,
       },
+      hasTailwind: false,
     };
   }
 };

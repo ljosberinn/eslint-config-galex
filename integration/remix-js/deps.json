@@ -20,5 +20,6 @@
     "config": null,
     "hasTypeScript": false,
     "version": null
-  }
+  },
+  "hasTailwind": false
 }

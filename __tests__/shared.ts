@@ -6,6 +6,7 @@ export const defaultProject: Parameters<OverrideCreator>[0] = {
   hasNest: false,
   hasNodeTypes: false,
   hasTestingLibrary: false,
+  hasTailwind: true,
   react: {
     hasReact: false,
     isCreateReactApp: false,
