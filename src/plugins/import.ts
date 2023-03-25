@@ -1,4 +1,5 @@
 import type { RulesetCreator } from '../types';
+import { fulfillsVersionRequirement } from '../utils/version';
 
 export const createImportPlugin: RulesetCreator = ({
   rules: customRules,
@@ -13,10 +14,31 @@ export const createImportPlugin: RulesetCreator = ({
  *
  */
 export const createImportRules: RulesetCreator = ({
-  typescript: { hasTypeScript },
+  typescript: { hasTypeScript, version },
   react: { isCreateReactApp },
 }) => ({
+  /**
+   * allows setting style for type-only imports
+   *
+   * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/consistent-type-specifier-style.md
+   */
+  'import/consistent-type-specifier-style':
+    !hasTypeScript ||
+    !version ||
+    !fulfillsVersionRequirement({
+      given: version,
+      expected: '^4.5.0',
+    })
+      ? 'off'
+      : ['warn', 'prefer-inline'],
+
+  /**
+   * warns about missing default export in the imported path
+   *
+   * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/default.md
+   */
   'import/default': 'warn',
+
   /**
    * reports any dynamic imports without a webpackChunkName specificied
    *
@@ -161,6 +183,13 @@ export const createImportRules: RulesetCreator = ({
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-dynamic-require.md
    */
   'import/no-dynamic-require': 'warn',
+
+  /**
+   * reports the use of empty named import blocks
+   *
+   * @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-empty-named-blocks.md
+   */
+  'import/no-empty-named-blocks': 'warn',
 
   /**
    * prevents using dependencies not defined in package.json

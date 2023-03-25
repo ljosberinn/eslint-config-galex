@@ -1,6 +1,7 @@
 import type { Linter } from 'eslint';
 import { rules as allPrettierRules } from 'eslint-config-prettier';
 
+import { remixRunRoutesOverrideFiles } from './react';
 import type {
   Dependencies,
   OverrideCreator,
@@ -11,7 +12,6 @@ import type {
 import { uniqueArrayEntries } from '../utils/array';
 import { tsOverrideType } from '../utils/overrideType';
 import { fulfillsVersionRequirement } from '../utils/version';
-import { remixRunRoutesOverrideFiles } from './react';
 
 const prettierTypeScriptRules = Object.fromEntries(
   Object.entries(allPrettierRules).filter(([key]) =>
@@ -124,10 +124,10 @@ const createOverrides = (
  *
  */
 export const createTypeScriptRules: RulesCreator = ({
-  typescript: { version, hasTypeScript },
+  typescript: { version, hasTypeScript, config },
   react: { isCreateReactApp, hasReact },
 }) => {
-  if (!hasTypeScript || !version) {
+  if (!hasTypeScript || !version || !config) {
     return null;
   }
 
@@ -341,6 +341,14 @@ export const createTypeScriptRules: RulesCreator = ({
      * @see keyword-spacing
      */
     '@typescript-eslint/keyword-spacing': 'off',
+
+    /**
+     * formatting; prettier handles it.
+     *
+     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/lines-around-comment.md
+     * @see lines-around-comment
+     */
+    '@typescript-eslint/lines-around-comment': 'off',
 
     /**
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md
@@ -903,7 +911,8 @@ export const createTypeScriptRules: RulesCreator = ({
      *
      * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md
      */
-    ...(fulfillsVersionRequirement({ given: version, expected: '^3.7.0' })
+    ...(config?.compilerOptions?.strictNullChecks &&
+    fulfillsVersionRequirement({ given: version, expected: '^3.7.0' })
       ? { '@typescript-eslint/prefer-nullish-coalescing': 'error' }
       : null),
 

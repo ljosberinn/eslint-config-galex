@@ -2,6 +2,7 @@
 
 exports[`with create-react-app 1`] = `
 {
+  "import/consistent-type-specifier-style": "off",
   "import/default": "warn",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "error",
@@ -22,6 +23,7 @@ exports[`with create-react-app 1`] = `
   "import/no-deprecated": "warn",
   "import/no-duplicates": "warn",
   "import/no-dynamic-require": "warn",
+  "import/no-empty-named-blocks": "warn",
   "import/no-extraneous-dependencies": "warn",
   "import/no-import-module-exports": "off",
   "import/no-internal-modules": "off",
@@ -70,6 +72,10 @@ exports[`with create-react-app 1`] = `
 
 exports[`with typescript 1`] = `
 {
+  "import/consistent-type-specifier-style": [
+    "warn",
+    "prefer-inline",
+  ],
   "import/default": "warn",
   "import/dynamic-import-chunkname": "warn",
   "import/export": "off",
@@ -96,6 +102,7 @@ exports[`with typescript 1`] = `
   "import/no-deprecated": "off",
   "import/no-duplicates": "off",
   "import/no-dynamic-require": "warn",
+  "import/no-empty-named-blocks": "warn",
   "import/no-extraneous-dependencies": "warn",
   "import/no-import-module-exports": "off",
   "import/no-internal-modules": "off",

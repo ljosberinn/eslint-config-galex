@@ -31,7 +31,7 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "importsNotUsedAsValues": "error"
+    "verbatimModuleSyntax": false
   },
   "include": ["src", "__tests__/**/*.ts"],
   "exclude": ["node_modules"]

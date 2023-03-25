@@ -1,4 +1,4 @@
-ESLint v8.31.0
+ESLint v8.36.0
 writing deps to eslint-config-galex\integration\nest-ts\deps.json
 writing config cache to eslint-config-galex\integration\nest-ts\eslint-config.json
 TAP version 13

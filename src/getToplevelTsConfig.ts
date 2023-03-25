@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import { convertToObject, parseJsonText } from 'typescript';
+import ts from 'typescript';
 
 import type { TSConfig } from './types';
 
@@ -29,8 +29,8 @@ export const getTopLevelTsConfig = ({
   }
 
   const tsConfigRaw = readFileSync(path, 'utf-8');
-  const tsConfig: TSConfig = convertToObject(
-    parseJsonText(tsConfigName, tsConfigRaw),
+  const tsConfig: TSConfig = ts.convertToObject(
+    ts.parseJsonText(tsConfigName, tsConfigRaw),
     []
   );
 

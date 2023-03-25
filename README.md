@@ -23,12 +23,28 @@ npm install --save-dev eslint-config-galex eslint
 
 Beginning with `eslint-config-galex` `v4.2.2` or newer, until this disclaimer is removed you need to install the following dependencies additionally:
 
-- `"eslint-plugin-jest": "27.1.5"`
+- `"eslint-plugin-jest": "27.2.0"`
 
 ```sh
 npm i --save-dev eslint-plugin-jest@27.2.0
 
 yarn add -D eslint-plugin-jest@27.2.0
+```
+
+Beginning with `eslint-config-galex` `v4.5.0` or newer, until this disclaimer is removed you need to install the following dependencies additionally:
+
+- `"eslint-plugin-react": "7.32.2"`
+- `"eslint-plugin-jsx-a11y": "6.7.1"`
+- `"eslint-plugin-import": "2.27.5"`
+
+```sh
+npm i --save-dev eslint-plugin-react@7.32.2
+npm i --save-dev eslint-plugin-jsx-a11y@6.7.1
+npm i --save-dev eslint-plugin-import@2.27.5
+
+yarn add -D eslint-plugin-react@7.32.2
+yarn add -D eslint-plugin-jsx-a11y@6.7.1
+yarn add -D eslint-plugin-import@2.27.5
 ```
 
 </details>

@@ -1,4 +1,4 @@
-ESLint v8.31.0
+ESLint v8.36.0
 writing deps to eslint-config-galex\integration\remix-js\deps.json
 writing config cache to eslint-config-galex\integration\remix-js\eslint-config.json
 TAP version 13
@@ -79,6 +79,14 @@ not ok 3 - eslint-config-galex\integration\remix-js\app\root.jsx
         line: 79
         column: 5
         ruleId: unicorn/switch-case-braces
+    - message: >-
+        Use <img alt=...>, or <img alt=...> instead of the "img" role to ensure
+        accessibility across all devices.
+      severity: error
+      data:
+        line: 152
+        column: 5
+        ruleId: jsx-a11y/prefer-tag-over-role
   ...
 not ok 4 - eslint-config-galex\integration\remix-js\app\routes\demos\about.jsx
   ---

@@ -1,7 +1,15 @@
-ESLint v8.31.0
+ESLint v8.36.0
 writing deps to eslint-config-galex\integration\jest\deps.json
 writing config cache to eslint-config-galex\integration\jest\eslint-config.json
 TAP version 13
 1..1
 ok 1 - eslint-config-galex\integration\jest\jest.config.ts
+  ---
+  message: Prefer using inline type specifiers instead of a top-level type-only import.
+  severity: warning
+  data:
+    line: 1
+    column: 1
+    ruleId: import/consistent-type-specifier-style
+  ...
 

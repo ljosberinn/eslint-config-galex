@@ -222,6 +222,25 @@ describe('createTypeScriptRules', () => {
     ).toMatchSnapshot();
   });
 
+  test('with version 3.7 and strict null checks', () => {
+    expect(
+      createTypeScriptRules({
+        ...typescriptDefaultProject,
+        typescript: {
+          ...typescriptDefaultProject.typescript,
+          version: '3.7.0',
+          config: {
+            ...typescriptDefaultProject.typescript.config,
+            compilerOptions: {
+              ...typescriptDefaultProject.typescript.config?.compilerOptions,
+              strictNullChecks: true,
+            },
+          },
+        },
+      })
+    ).toMatchSnapshot();
+  });
+
   test('with version 3.8', () => {
     expect(
       createTypeScriptRules({
