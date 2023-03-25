@@ -74,6 +74,7 @@ test('drops overrideType', () => {
       hasTypeScript: false,
       version: null,
     },
+    hasTailwind: false,
   };
 
   jest.spyOn(getDeps, 'getDependencies').mockImplementation(() => {
@@ -132,6 +133,7 @@ test('removes duplicates if eslint-config-galex internal overrides are passed an
       hasTypeScript: true,
       version: '4.0.0',
     },
+    hasTailwind: false,
   };
 
   jest.spyOn(getDeps, 'getDependencies').mockImplementation(() => {
@@ -184,6 +186,7 @@ test('does not remove internal override if files are different', () => {
       hasTypeScript: false,
       version: null,
     },
+    hasTailwind: false,
   };
 
   jest.spyOn(getDeps, 'getDependencies').mockImplementation(() => {

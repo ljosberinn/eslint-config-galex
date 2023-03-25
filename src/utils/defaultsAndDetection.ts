@@ -3,8 +3,9 @@ import {
   type ESLintConfig,
   type TopLevelESLintConfig,
 } from '../types';
+import { uniqueArrayEntries } from './array';
 
-export const plugins = [
+const plugins = [
   'import',
   'unicorn',
   'promise',
@@ -64,4 +65,15 @@ export const detectParserOptions = (
     sourceType,
     ecmaFeatures,
   };
+};
+
+export const detectPlugins = (
+  dependencies: Dependencies,
+  customPlugins?: string[]
+): string[] => {
+  return uniqueArrayEntries([
+    ...plugins,
+    ...(dependencies.hasTailwind ? ['tailwindcss'] : []),
+    ...(customPlugins ?? []),
+  ]);
 };

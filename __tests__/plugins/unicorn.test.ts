@@ -104,7 +104,7 @@ describe('topLevelAwait detection', () => {
           version: packageJson.dependencies.typescript,
           config: {
             compilerOptions: {
-              target: 2017,
+              target: ScriptTarget.ES2017,
               module: ModuleKind.ESNext,
             },
           },
@@ -122,7 +122,7 @@ describe('topLevelAwait detection', () => {
           version: packageJson.dependencies.typescript,
           config: {
             compilerOptions: {
-              target: 2017,
+              target: ScriptTarget.ES2017,
             },
           },
         },

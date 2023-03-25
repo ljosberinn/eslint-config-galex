@@ -23,11 +23,10 @@ import {
   type TopLevelESLintConfig,
   type WithOverrideType,
 } from './types';
-import { uniqueArrayEntries } from './utils/array';
 import {
   detectEnv,
   detectParserOptions,
-  plugins as defaultPlugins,
+  detectPlugins,
 } from './utils/defaultsAndDetection';
 import { applyFlags } from './utils/flags';
 import { dropOverrideType, mergeSortOverrides } from './utils/overrideType';
@@ -105,11 +104,7 @@ export const createConfig = ({
     flags
   );
 
-  const finalPlugins = uniqueArrayEntries([
-    ...defaultPlugins,
-    ...(plugins ?? []),
-  ]);
-
+  const finalPlugins = detectPlugins(dependencies, plugins);
   const finalEnv = detectEnv(dependencies, env);
   const finalParserOptions = detectParserOptions(parserOptions);
 

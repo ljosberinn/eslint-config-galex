@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`detectPlugins with custom plugins 1`] = `
+[
+  "import",
+  "unicorn",
+  "promise",
+  "sonarjs",
+  "simple-import-sort",
+  "foo",
+]
+`;
+
+exports[`detectPlugins with tailwind 1`] = `
+[
+  "import",
+  "unicorn",
+  "promise",
+  "sonarjs",
+  "simple-import-sort",
+  "tailwindcss",
+]
+`;
+
+exports[`detectPlugins without tailwind 1`] = `
+[
+  "import",
+  "unicorn",
+  "promise",
+  "sonarjs",
+  "simple-import-sort",
+]
+`;

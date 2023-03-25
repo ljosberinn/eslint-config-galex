@@ -1,6 +1,7 @@
 import {
   detectEnv,
   detectParserOptions,
+  detectPlugins,
 } from '../../src/utils/defaultsAndDetection';
 
 const mockDependencies = {
@@ -9,6 +10,7 @@ const mockDependencies = {
   hasNodeTypes: false,
   hasTestingLibrary: false,
   hasNest: false,
+  hasTailwind: false,
   storybook: {
     hasStorybook: false,
     hasStorybookTestingLibrary: false,
@@ -97,5 +99,21 @@ describe('detectParserOptions', () => {
     expect(
       detectParserOptions({ ecmaFeatures: { jsx: true } })?.ecmaFeatures
     ).toMatchObject({ jsx: true });
+  });
+});
+
+describe('detectPlugins', () => {
+  test('without tailwind', () => {
+    expect(detectPlugins(mockDependencies)).toMatchSnapshot();
+  });
+
+  test('with tailwind', () => {
+    expect(
+      detectPlugins({ ...mockDependencies, hasTailwind: true })
+    ).toMatchSnapshot();
+  });
+
+  test('with custom plugins', () => {
+    expect(detectPlugins(mockDependencies, ['foo'])).toMatchSnapshot();
   });
 });
