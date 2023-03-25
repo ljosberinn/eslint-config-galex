@@ -302,7 +302,8 @@
         "sonarjs/no-duplicate-string": "off",
         "sonarjs/no-identical-functions": "off",
         "require-unicode-regexp": "off",
-        "no-param-reassign": "off"
+        "no-param-reassign": "off",
+        "@typescript-eslint/consistent-type-imports": "off"
       }
     },
     {
@@ -374,7 +375,8 @@
     "import",
     "unicorn",
     "promise",
-    "sonarjs"
+    "sonarjs",
+    "simple-import-sort"
   ],
   "rules": {
     "for-direction": "error",
@@ -916,7 +918,7 @@
     "import/export": "off",
     "import/exports-last": "off",
     "import/extensions": "off",
-    "import/first": "error",
+    "import/first": "warn",
     "import/group-exports": "off",
     "import/max-dependencies": "off",
     "import/named": "off",
@@ -957,28 +959,7 @@
     "import/no-unused-modules": "warn",
     "import/no-useless-path-segments": "off",
     "import/no-webpack-loader-syntax": "error",
-    "import/order": [
-      "warn",
-      {
-        "alphabetize": {
-          "order": "asc"
-        },
-        "groups": [
-          [
-            "builtin",
-            "external",
-            "internal"
-          ],
-          [
-            "unknown",
-            "parent",
-            "sibling"
-          ],
-          "index"
-        ],
-        "newlines-between": "always"
-      }
-    ],
+    "import/order": "off",
     "import/prefer-default-export": "off",
     "import/unambiguous": "off",
     "sonarjs/cognitive-complexity": "warn",
@@ -1015,7 +996,9 @@
     "sonarjs/prefer-immediate-return": "warn",
     "sonarjs/prefer-object-literal": "error",
     "sonarjs/prefer-single-boolean-return": "warn",
-    "sonarjs/prefer-while": "error"
+    "sonarjs/prefer-while": "error",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn"
   },
   "reportUnusedDisableDirectives": true,
   "root": true

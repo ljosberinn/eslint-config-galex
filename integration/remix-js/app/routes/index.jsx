@@ -1,4 +1,4 @@
-import { useLoaderData, json, Link } from "remix";
+import { useLoaderData, json, Link } from 'remix';
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
@@ -8,32 +8,32 @@ export let loader = () => {
   let data = {
     resources: [
       {
-        name: "Remix Docs",
-        url: "https://remix.run/docs"
+        name: 'Remix Docs',
+        url: 'https://remix.run/docs',
       },
       {
-        name: "React Router Docs",
-        url: "https://reactrouter.com/docs"
+        name: 'React Router Docs',
+        url: 'https://reactrouter.com/docs',
       },
       {
-        name: "Remix Discord",
-        url: "https://discord.gg/VBePs6d"
-      }
+        name: 'Remix Discord',
+        url: 'https://discord.gg/VBePs6d',
+      },
     ],
     demos: [
       {
-        to: "demos/actions",
-        name: "Actions"
+        to: 'demos/actions',
+        name: 'Actions',
       },
       {
-        to: "demos/about",
-        name: "Nested Routes, CSS loading/unloading"
+        to: 'demos/about',
+        name: 'Nested Routes, CSS loading/unloading',
       },
       {
-        to: "demos/params",
-        name: "URL Params and Error Boundaries"
-      }
-    ]
+        to: 'demos/params',
+        name: 'URL Params and Error Boundaries',
+      },
+    ],
   };
 
   // https://remix.run/api/remix#json
@@ -43,8 +43,8 @@ export let loader = () => {
 // https://remix.run/api/conventions#meta
 export let meta = () => {
   return {
-    title: "Remix Starter",
-    description: "Welcome to remix!"
+    title: 'Remix Starter',
+    description: 'Welcome to remix!',
   };
 };
 
@@ -64,8 +64,8 @@ export default function Index() {
           up-and-running quickly.
         </p>
         <p>
-          Check out all the demos in this starter, and then just delete the{" "}
-          <code>app/routes/demos</code> and <code>app/styles/demos</code>{" "}
+          Check out all the demos in this starter, and then just delete the{' '}
+          <code>app/routes/demos</code> and <code>app/styles/demos</code>{' '}
           folders when you're ready to turn this into your next project.
         </p>
       </main>

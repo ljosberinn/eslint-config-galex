@@ -6,13 +6,19 @@ TAP version 13
 ok 1 - eslint-config-galex\integration\remix-ts\app\entry.client.tsx
 not ok 2 - eslint-config-galex\integration\remix-ts\app\entry.server.tsx
   ---
-  message: Missing return type on function.
-  severity: error
+  message: Run autofix to sort these imports!
+  severity: warning
   data:
-    line: 5
-    column: 16
-    ruleId: '@typescript-eslint/explicit-module-boundary-types'
+    line: 1
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: Missing return type on function.
+      severity: error
+      data:
+        line: 5
+        column: 16
+        ruleId: '@typescript-eslint/explicit-module-boundary-types'
     - message: '''markup'' is never reassigned. Use ''const'' instead.'
       severity: error
       data:
@@ -28,21 +34,13 @@ not ok 2 - eslint-config-galex\integration\remix-ts\app\entry.server.tsx
   ...
 not ok 3 - eslint-config-galex\integration\remix-ts\app\root.tsx
   ---
-  message: There should be no empty line within import group
+  message: Run autofix to sort these imports!
   severity: warning
   data:
-    line: 11
+    line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
-    - message: >-
-        `~/styles/dark.css` import should occur before import of
-        `~/styles/global.css`
-      severity: warning
-      data:
-        line: 14
-        column: 1
-        ruleId: import/order
     - message: Exporting mutable 'let' binding, use 'const' instead.
       severity: error
       data:
@@ -114,12 +112,12 @@ not ok 3 - eslint-config-galex\integration\remix-ts\app\root.tsx
   ...
 not ok 4 - eslint-config-galex\integration\remix-ts\app\routes\demos\about.tsx
   ---
-  message: There should be no empty line within import group
+  message: Run autofix to sort these imports!
   severity: warning
   data:
-    line: 2
+    line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
     - message: Exporting mutable 'let' binding, use 'const' instead.
       severity: error
@@ -172,13 +170,19 @@ not ok 6 - eslint-config-galex\integration\remix-ts\app\routes\demos\about\whoa.
   ...
 not ok 7 - eslint-config-galex\integration\remix-ts\app\routes\demos\actions.tsx
   ---
-  message: Missing return type on function.
-  severity: error
+  message: Run autofix to sort these imports!
+  severity: warning
   data:
-    line: 5
-    column: 8
-    ruleId: '@typescript-eslint/explicit-module-boundary-types'
+    line: 1
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: Missing return type on function.
+      severity: error
+      data:
+        line: 5
+        column: 8
+        ruleId: '@typescript-eslint/explicit-module-boundary-types'
     - message: Exporting mutable 'let' binding, use 'const' instead.
       severity: error
       data:
@@ -245,13 +249,19 @@ not ok 8 - eslint-config-galex\integration\remix-ts\app\routes\demos\correct.tsx
   ...
 not ok 9 - eslint-config-galex\integration\remix-ts\app\routes\demos\params.tsx
   ---
-  message: '''useCatch'' is defined but never used.'
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
-    column: 10
-    ruleId: '@typescript-eslint/no-unused-vars'
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: '''useCatch'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 10
+        ruleId: '@typescript-eslint/no-unused-vars'
     - message: '''json'' is defined but never used.'
       severity: warning
       data:
@@ -279,13 +289,19 @@ not ok 9 - eslint-config-galex\integration\remix-ts\app\routes\demos\params.tsx
   ...
 not ok 10 - eslint-config-galex\integration\remix-ts\app\routes\demos\params\$id.tsx
   ---
-  message: '''Link'' is defined but never used.'
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
-    column: 20
-    ruleId: '@typescript-eslint/no-unused-vars'
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: '''Link'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 20
+        ruleId: '@typescript-eslint/no-unused-vars'
     - message: Exporting mutable 'let' binding, use 'const' instead.
       severity: error
       data:
@@ -385,13 +401,19 @@ not ok 10 - eslint-config-galex\integration\remix-ts\app\routes\demos\params\$id
   ...
 not ok 11 - eslint-config-galex\integration\remix-ts\app\routes\demos\params\index.tsx
   ---
-  message: '''useCatch'' is defined but never used.'
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
-    column: 10
-    ruleId: '@typescript-eslint/no-unused-vars'
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: '''useCatch'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 10
+        ruleId: '@typescript-eslint/no-unused-vars'
     - message: '''Link'' is defined but never used.'
       severity: warning
       data:
@@ -431,13 +453,19 @@ not ok 11 - eslint-config-galex\integration\remix-ts\app\routes\demos\params\ind
   ...
 not ok 12 - eslint-config-galex\integration\remix-ts\app\routes\index.tsx
   ---
-  message: Array type using 'Array<T>' is forbidden. Use 'T[]' instead.
+  message: Run autofix to sort these imports!
   severity: warning
   data:
-    line: 5
-    column: 14
-    ruleId: '@typescript-eslint/array-type'
+    line: 1
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: Array type using 'Array<T>' is forbidden. Use 'T[]' instead.
+      severity: warning
+      data:
+        line: 5
+        column: 14
+        ruleId: '@typescript-eslint/array-type'
     - message: Array type using 'Array<T>' is forbidden. Use 'T[]' instead.
       severity: warning
       data:

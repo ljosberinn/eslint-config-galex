@@ -6,21 +6,21 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch
-} from "remix";
+  useCatch,
+} from 'remix';
 
-import globalStylesUrl from "~/styles/global.css";
-import darkStylesUrl from "~/styles/dark.css";
+import globalStylesUrl from '~/styles/global.css';
+import darkStylesUrl from '~/styles/dark.css';
 
 // https://remix.run/api/app#links
 export let links = () => {
   return [
-    { rel: "stylesheet", href: globalStylesUrl },
+    { rel: 'stylesheet', href: globalStylesUrl },
     {
-      rel: "stylesheet",
+      rel: 'stylesheet',
       href: darkStylesUrl,
-      media: "(prefers-color-scheme: dark)"
-    }
+      media: '(prefers-color-scheme: dark)',
+    },
   ];
 };
 
@@ -106,7 +106,7 @@ function Document({ children, title }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
   );

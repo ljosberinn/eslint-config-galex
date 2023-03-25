@@ -1,4 +1,4 @@
-import type { OverrideCreator } from '../src/types';
+import { type OverrideCreator } from '../src/types';
 
 export const defaultProject: Parameters<OverrideCreator>[0] = {
   hasJest: false,

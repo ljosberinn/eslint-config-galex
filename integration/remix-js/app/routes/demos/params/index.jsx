@@ -1,11 +1,11 @@
-import { useCatch, Link, json, useLoaderData, Outlet } from "remix";
+import { useCatch, Link, json, useLoaderData, Outlet } from 'remix';
 
 export default function Boundaries() {
   return (
     <>
       <h2>Params</h2>
       <p>
-        When you name a route segment with $ like{" "}
+        When you name a route segment with $ like{' '}
         <code>routes/users/$userId.js</code>, the $ segment will be parsed from
         the URL and sent to your loaders and actions by the same name.
       </p>
@@ -20,7 +20,7 @@ export default function Boundaries() {
       <p>So be as granular as you want with your error handling.</p>
       <h2>Not Found</h2>
       <p>
-        (and other{" "}
+        (and other{' '}
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses">
           client errors
         </a>

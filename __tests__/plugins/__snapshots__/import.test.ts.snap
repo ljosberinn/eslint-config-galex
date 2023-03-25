@@ -8,7 +8,7 @@ exports[`with create-react-app 1`] = `
   "import/export": "error",
   "import/exports-last": "off",
   "import/extensions": "off",
-  "import/first": "error",
+  "import/first": "warn",
   "import/group-exports": "off",
   "import/max-dependencies": "off",
   "import/named": "error",
@@ -43,28 +43,7 @@ exports[`with create-react-app 1`] = `
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": [
-    "warn",
-    {
-      "alphabetize": {
-        "order": "asc",
-      },
-      "groups": [
-        [
-          "builtin",
-          "external",
-          "internal",
-        ],
-        [
-          "unknown",
-          "parent",
-          "sibling",
-        ],
-        "index",
-      ],
-      "newlines-between": "always",
-    },
-  ],
+  "import/order": "off",
   "import/prefer-default-export": "off",
   "import/unambiguous": "off",
 }
@@ -81,7 +60,7 @@ exports[`with typescript 1`] = `
   "import/export": "off",
   "import/exports-last": "off",
   "import/extensions": "off",
-  "import/first": "error",
+  "import/first": "warn",
   "import/group-exports": "off",
   "import/max-dependencies": "off",
   "import/named": "off",
@@ -122,28 +101,7 @@ exports[`with typescript 1`] = `
   "import/no-unused-modules": "warn",
   "import/no-useless-path-segments": "off",
   "import/no-webpack-loader-syntax": "error",
-  "import/order": [
-    "warn",
-    {
-      "alphabetize": {
-        "order": "asc",
-      },
-      "groups": [
-        [
-          "builtin",
-          "external",
-          "internal",
-        ],
-        [
-          "unknown",
-          "parent",
-          "sibling",
-        ],
-        "index",
-      ],
-      "newlines-between": "always",
-    },
-  ],
+  "import/order": "off",
   "import/prefer-default-export": "off",
   "import/unambiguous": "off",
 }

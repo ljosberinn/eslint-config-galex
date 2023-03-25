@@ -7,11 +7,11 @@ ok 1 - eslint-config-galex\integration\next-js\pages\_app.js
 ok 2 - eslint-config-galex\integration\next-js\pages\api\hello.js
 ok 3 - eslint-config-galex\integration\next-js\pages\index.js
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
-    line: 2
+    line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   ...
 

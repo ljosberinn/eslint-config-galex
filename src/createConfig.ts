@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint';
+import { type Linter } from 'eslint';
 
-import type { GetDepsArgs } from './getDependencies';
+import { type GetDepsArgs } from './getDependencies';
 import { getDependencies } from './getDependencies';
 import { createJestConfigOverride, createJestOverride } from './overrides/jest';
 import { createReactOverride } from './overrides/react';
@@ -11,15 +11,16 @@ import {
   eslintDefaultRulesTypeScriptOverride,
 } from './plugins/eslint-core';
 import { createImportRules } from './plugins/import';
+import { createSimpleImportSortRules } from './plugins/import-sort';
 import { createPromiseRules } from './plugins/promise';
 import { createSonarjsRules } from './plugins/sonarjs';
 import { createUnicornRules } from './plugins/unicorn';
-import type {
-  ESLintConfig,
-  Flags,
-  OverrideESLintConfig,
-  TopLevelESLintConfig,
-  WithOverrideType,
+import {
+  type ESLintConfig,
+  type Flags,
+  type OverrideESLintConfig,
+  type TopLevelESLintConfig,
+  type WithOverrideType,
 } from './types';
 import { uniqueArrayEntries } from './utils/array';
 import {
@@ -96,6 +97,7 @@ export const createConfig = ({
       ...createPromiseRules(dependencies),
       ...createImportRules(dependencies),
       ...createSonarjsRules(dependencies),
+      ...createSimpleImportSortRules(dependencies),
       ...rules,
     },
     flags

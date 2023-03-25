@@ -37,7 +37,7 @@ test('with @types/node', () => {
   expect(
     createUnicornPlugin({
       ...defaultProject,
-      hasNodeTypes: true
+      hasNodeTypes: true,
     })
   ).toMatchSnapshot();
 });

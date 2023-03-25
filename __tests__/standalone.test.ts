@@ -5,13 +5,13 @@ import { format } from 'prettier';
 import * as createConfig from '../src/createConfig';
 import {
   backupExistingEslintrc,
-  maybeFindSettings,
-  maybeLoadExistingEslintrc,
+  defaultEslintRcJsonPath,
   generateStandalone,
   loadPrettier,
-  standaloneSettingsName,
-  defaultEslintRcJsonPath,
+  maybeFindSettings,
+  maybeLoadExistingEslintrc,
   prettierOptions,
+  standaloneSettingsName,
 } from '../src/utils/standalone';
 
 describe('maybeFindSettings', () => {

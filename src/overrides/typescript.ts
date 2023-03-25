@@ -1,17 +1,17 @@
-import type { Linter } from 'eslint';
+import { type Linter } from 'eslint';
 import { rules as allPrettierRules } from 'eslint-config-prettier';
 
-import { remixRunRoutesOverrideFiles } from './react';
-import type {
-  Dependencies,
-  OverrideCreator,
-  OverrideESLintConfig,
-  OverrideInternalOverride,
-  RulesCreator,
+import {
+  type Dependencies,
+  type OverrideCreator,
+  type OverrideESLintConfig,
+  type OverrideInternalOverride,
+  type RulesCreator,
 } from '../types';
 import { uniqueArrayEntries } from '../utils/array';
 import { tsOverrideType } from '../utils/overrideType';
 import { fulfillsVersionRequirement } from '../utils/version';
+import { remixRunRoutesOverrideFiles } from './react';
 
 const prettierTypeScriptRules = Object.fromEntries(
   Object.entries(allPrettierRules).filter(([key]) =>

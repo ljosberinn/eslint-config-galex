@@ -5,21 +5,28 @@ TAP version 13
 1..5
 ok 1 - eslint-config-galex\integration\cra-js\src\App.js
   ---
-  message: Prefer named exports.
-  severity: warning
-  data:
-    line: 25
-    column: 8
-    ruleId: import/no-default-export
-  ...
-not ok 2 - eslint-config-galex\integration\cra-js\src\App.test.js
-  ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
+  messages:
+    - message: Prefer named exports.
+      severity: warning
+      data:
+        line: 25
+        column: 8
+        ruleId: import/no-default-export
+  ...
+not ok 2 - eslint-config-galex\integration\cra-js\src\App.test.js
+  ---
+  message: Run autofix to sort these imports!
+  severity: warning
+  data:
+    line: 1
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
     - message: Expected blank line before this statement.
       severity: error
@@ -30,12 +37,12 @@ not ok 2 - eslint-config-galex\integration\cra-js\src\App.test.js
   ...
 not ok 3 - eslint-config-galex\integration\cra-js\src\index.js
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
-    line: 2
+    line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
     - message: Prefer `.querySelector()` over `.getElementById()`.
       severity: error

@@ -1,6 +1,10 @@
 import { ModuleKind } from 'typescript';
 
-import type { Dependencies, RulesCreator, RulesetCreator } from '../types';
+import {
+  type Dependencies,
+  type RulesCreator,
+  type RulesetCreator,
+} from '../types';
 import { prettierUnicornRules } from '../utils/prettier';
 
 export const createUnicornPlugin: RulesetCreator = ({

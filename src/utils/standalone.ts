@@ -1,8 +1,8 @@
 /* eslint-disable import/dynamic-import-chunkname */
-import { writeFileSync, readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import merge from 'lodash.merge';
 import { resolve } from 'path';
-import type { format } from 'prettier';
+import { type format } from 'prettier';
 
 import { createConfig } from '../createConfig';
 

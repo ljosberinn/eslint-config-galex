@@ -1,4 +1,4 @@
-import type { CreateConfigArgs } from '../src/createConfig';
+import { type CreateConfigArgs } from '../src/createConfig';
 import { createConfig } from '../src/createConfig';
 import * as getDeps from '../src/getDependencies';
 import * as react from '../src/overrides/react';
@@ -42,6 +42,7 @@ test('removes duplicates in plugins if passed', () => {
       "unicorn",
       "promise",
       "sonarjs",
+      "simple-import-sort",
       "foo",
     ]
   `);

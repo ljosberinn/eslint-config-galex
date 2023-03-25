@@ -16,7 +16,7 @@ jobs:
           node-version: lts/*
           cache: 'yarn'
           cache-dependency-path: 'integration/**/yarn.lock'
-      - name: Install dependencies    
+      - name: Install dependencies
         run: yarn --frozen-lockfile && yarn install:integration
       - name: Build
         run: yarn build

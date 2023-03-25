@@ -206,6 +206,7 @@ exports[`createJestRules with typescript 1`] = `
     "jest",
   ],
   "rules": {
+    "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -298,6 +299,7 @@ exports[`createTestOverrides with react 1`] = `
 
 exports[`createTestOverrides with typescript 1`] = `
 {
+  "@typescript-eslint/consistent-type-imports": "off",
   "@typescript-eslint/explicit-member-accessibility": "off",
   "@typescript-eslint/no-empty-function": "off",
   "@typescript-eslint/no-non-null-assertion": "off",

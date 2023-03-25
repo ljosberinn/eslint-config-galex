@@ -1,12 +1,12 @@
 import packageJson from '../../package.json';
 import {
-  createTypeScriptOverride,
-  createTypeScriptRules,
+  createEtcRules,
   createNestJsRules,
   createRemixTypeScriptOverride,
-  createEtcRules,
+  createTypeScriptOverride,
+  createTypeScriptRules,
 } from '../../src/overrides/typescript';
-import type { OverrideCreator } from '../../src/types';
+import { type OverrideCreator } from '../../src/types';
 import tsConfig from '../../tsconfig.json';
 import { defaultProject } from '../shared';
 

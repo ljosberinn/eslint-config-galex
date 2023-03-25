@@ -5,19 +5,13 @@ TAP version 13
 1..6
 not ok 1 - eslint-config-galex\integration\cra-ts\src\App.test.tsx
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
-    line: 2
+    line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
-    - message: '`@testing-library/react` import should occur before import of `react`'
-      severity: warning
-      data:
-        line: 2
-        column: 1
-        ruleId: import/order
     - message: Expected blank line before this statement.
       severity: error
       data:
@@ -27,12 +21,12 @@ not ok 1 - eslint-config-galex\integration\cra-ts\src\App.test.tsx
   ...
 not ok 2 - eslint-config-galex\integration\cra-ts\src\App.tsx
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
     - message: Missing return type on function.
       severity: error
@@ -49,12 +43,12 @@ not ok 2 - eslint-config-galex\integration\cra-ts\src\App.tsx
   ...
 not ok 3 - eslint-config-galex\integration\cra-ts\src\index.tsx
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
-    line: 2
+    line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
     - message: Prefer `.querySelector()` over `.getElementById()`.
       severity: error

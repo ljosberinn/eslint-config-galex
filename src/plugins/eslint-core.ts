@@ -1,13 +1,13 @@
 import restrictedGlobals from 'confusing-browser-globals';
-import type { Linter } from 'eslint';
+import { type Linter } from 'eslint';
 
 import { files as typeScriptFilesPattern } from '../overrides/typescript';
-import type {
-  Dependencies,
-  OverrideESLintConfig,
-  RulesCreator,
-  RulesetCreator,
-  WithOverrideType,
+import {
+  type Dependencies,
+  type OverrideESLintConfig,
+  type RulesCreator,
+  type RulesetCreator,
+  type WithOverrideType,
 } from '../types';
 import { prettierRules } from '../utils/prettier';
 
@@ -2380,6 +2380,7 @@ export const createES6Rules: RulesCreator = () => ({
    *
    * @see https://eslint.org/docs/rules/sort-imports
    * @see import/order
+   * @see eslint-plugin-simple-import-sort
    */
   'sort-imports': 'off',
 

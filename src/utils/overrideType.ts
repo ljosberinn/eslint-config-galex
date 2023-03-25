@@ -1,6 +1,6 @@
 import merge from 'lodash.merge';
 
-import type { OverrideESLintConfig, WithOverrideType } from '../types';
+import { type OverrideESLintConfig, type WithOverrideType } from '../types';
 
 const createOverrideType = (type: string) => `eslint-config-galex/${type}`;
 

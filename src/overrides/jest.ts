@@ -1,10 +1,10 @@
-import type {
-  Dependencies,
-  OverrideCreator,
-  OverrideESLintConfig,
-  OverrideInternalOverride,
-  RulesCreator,
-  SettingsCreator,
+import {
+  type Dependencies,
+  type OverrideCreator,
+  type OverrideESLintConfig,
+  type OverrideInternalOverride,
+  type RulesCreator,
+  type SettingsCreator,
 } from '../types';
 import { uniqueArrayEntries } from '../utils/array';
 import {
@@ -921,6 +921,13 @@ export const createTestOverrides: RulesCreator = ({
    * @see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md
    */
   ...(hasReact ? { 'jsx-a11y/control-has-associated-label': 'off' } : null),
+
+  /**
+   * off because required for global jest.mock
+   */
+  ...(hasTypeScript
+    ? { '@typescript-eslint/consistent-type-imports': 'off' }
+    : null),
 });
 
 /**

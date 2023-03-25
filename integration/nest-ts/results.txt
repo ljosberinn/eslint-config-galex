@@ -5,19 +5,13 @@ TAP version 13
 1..5
 not ok 1 - eslint-config-galex\integration\nest-ts\src\app.controller.spec.ts
   ---
-  message: Import "TestingModule" is only used as types.
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
     column: 1
-    ruleId: '@typescript-eslint/consistent-type-imports'
+    ruleId: simple-import-sort/imports
   messages:
-    - message: There should be at least one empty line between import groups
-      severity: warning
-      data:
-        line: 1
-        column: 1
-        ruleId: import/order
     - message: Expected blank line before this statement.
       severity: error
       data:
@@ -27,12 +21,12 @@ not ok 1 - eslint-config-galex\integration\nest-ts\src\app.controller.spec.ts
   ...
 not ok 2 - eslint-config-galex\integration\nest-ts\src\app.controller.ts
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
     - message: Missing accessibility modifier on method definition constructor.
       severity: error
@@ -49,12 +43,12 @@ not ok 2 - eslint-config-galex\integration\nest-ts\src\app.controller.ts
   ...
 ok 3 - eslint-config-galex\integration\nest-ts\src\app.module.ts
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   ...
 not ok 4 - eslint-config-galex\integration\nest-ts\src\app.service.ts
   ---
@@ -67,12 +61,12 @@ not ok 4 - eslint-config-galex\integration\nest-ts\src\app.service.ts
   ...
 not ok 5 - eslint-config-galex\integration\nest-ts\src\main.ts
   ---
-  message: There should be at least one empty line between import groups
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
     - message: >-
         Promises must be awaited, end with a call to .catch, end with a call to

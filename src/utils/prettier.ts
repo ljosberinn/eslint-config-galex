@@ -1,4 +1,4 @@
-import type { Linter } from 'eslint';
+import { type Linter } from 'eslint';
 import { rules as allPrettierRules } from 'eslint-config-prettier';
 
 export const disabledValueToString = (value: 0 | 'off'): 'off' =>
@@ -48,8 +48,8 @@ const {
 );
 
 export {
-  prettierTypeScriptRules,
-  prettierRules,
   prettierReactRules,
+  prettierRules,
+  prettierTypeScriptRules,
   prettierUnicornRules,
 };

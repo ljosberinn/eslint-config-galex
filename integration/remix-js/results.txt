@@ -22,21 +22,13 @@ ok 2 - eslint-config-galex\integration\remix-js\app\entry.server.jsx
   ...
 not ok 3 - eslint-config-galex\integration\remix-js\app\root.jsx
   ---
-  message: There should be no empty line within import group
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
     column: 1
-    ruleId: import/order
+    ruleId: simple-import-sort/imports
   messages:
-    - message: >-
-        `~/styles/dark.css` import should occur before import of
-        `~/styles/global.css`
-      severity: warning
-      data:
-        line: 13
-        column: 1
-        ruleId: import/order
     - message: Exporting mutable 'let' binding, use 'const' instead.
       severity: error
       data:
@@ -90,19 +82,13 @@ not ok 3 - eslint-config-galex\integration\remix-js\app\root.jsx
   ...
 not ok 4 - eslint-config-galex\integration\remix-js\app\routes\demos\about.jsx
   ---
-  message: There should be no empty line within import group
-  severity: warning
+  message: Exporting mutable 'let' binding, use 'const' instead.
+  severity: error
   data:
-    line: 1
-    column: 1
-    ruleId: import/order
+    line: 5
+    column: 8
+    ruleId: import/no-mutable-exports
   messages:
-    - message: Exporting mutable 'let' binding, use 'const' instead.
-      severity: error
-      data:
-        line: 5
-        column: 8
-        ruleId: import/no-mutable-exports
     - message: '''meta'' is never reassigned. Use ''const'' instead.'
       severity: warning
       data:
@@ -126,13 +112,19 @@ ok 5 - eslint-config-galex\integration\remix-js\app\routes\demos\about\index.jsx
 ok 6 - eslint-config-galex\integration\remix-js\app\routes\demos\about\whoa.jsx
 not ok 7 - eslint-config-galex\integration\remix-js\app\routes\demos\actions.jsx
   ---
-  message: Exporting mutable 'let' binding, use 'const' instead.
-  severity: error
+  message: Run autofix to sort these imports!
+  severity: warning
   data:
-    line: 11
-    column: 8
-    ruleId: import/no-mutable-exports
+    line: 1
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 11
+        column: 8
+        ruleId: import/no-mutable-exports
     - message: '''action'' is never reassigned. Use ''const'' instead.'
       severity: warning
       data:
@@ -179,13 +171,19 @@ not ok 7 - eslint-config-galex\integration\remix-js\app\routes\demos\actions.jsx
 ok 8 - eslint-config-galex\integration\remix-js\app\routes\demos\correct.jsx
 ok 9 - eslint-config-galex\integration\remix-js\app\routes\demos\params.jsx
   ---
-  message: '''useCatch'' is defined but never used.'
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
-    column: 10
-    ruleId: no-unused-vars
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: '''useCatch'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 10
+        ruleId: no-unused-vars
     - message: '''json'' is defined but never used.'
       severity: warning
       data:
@@ -201,13 +199,19 @@ ok 9 - eslint-config-galex\integration\remix-js\app\routes\demos\params.jsx
   ...
 not ok 10 - eslint-config-galex\integration\remix-js\app\routes\demos\params\$id.jsx
   ---
-  message: '''Link'' is defined but never used.'
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
-    column: 20
-    ruleId: no-unused-vars
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: '''Link'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 20
+        ruleId: no-unused-vars
     - message: Exporting mutable 'let' binding, use 'const' instead.
       severity: error
       data:
@@ -295,13 +299,19 @@ not ok 10 - eslint-config-galex\integration\remix-js\app\routes\demos\params\$id
   ...
 ok 11 - eslint-config-galex\integration\remix-js\app\routes\demos\params\index.jsx
   ---
-  message: '''useCatch'' is defined but never used.'
+  message: Run autofix to sort these imports!
   severity: warning
   data:
     line: 1
-    column: 10
-    ruleId: no-unused-vars
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: '''useCatch'' is defined but never used.'
+      severity: warning
+      data:
+        line: 1
+        column: 10
+        ruleId: no-unused-vars
     - message: '''Link'' is defined but never used.'
       severity: warning
       data:
@@ -329,13 +339,19 @@ ok 11 - eslint-config-galex\integration\remix-js\app\routes\demos\params\index.j
   ...
 not ok 12 - eslint-config-galex\integration\remix-js\app\routes\index.jsx
   ---
-  message: Exporting mutable 'let' binding, use 'const' instead.
-  severity: error
+  message: Run autofix to sort these imports!
+  severity: warning
   data:
-    line: 7
-    column: 8
-    ruleId: import/no-mutable-exports
+    line: 1
+    column: 1
+    ruleId: simple-import-sort/imports
   messages:
+    - message: Exporting mutable 'let' binding, use 'const' instead.
+      severity: error
+      data:
+        line: 7
+        column: 8
+        ruleId: import/no-mutable-exports
     - message: '''loader'' is never reassigned. Use ''const'' instead.'
       severity: warning
       data:

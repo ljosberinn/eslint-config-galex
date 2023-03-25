@@ -1,4 +1,4 @@
-import type { RulesetCreator } from '../types';
+import { type RulesetCreator } from '../types';
 import { fulfillsVersionRequirement } from '../utils/version';
 
 export const createImportPlugin: RulesetCreator = ({
@@ -72,7 +72,7 @@ export const createImportRules: RulesetCreator = ({
    *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md
    */
-  'import/first': 'error',
+  'import/first': 'warn',
 
   /**
    * off because too opinionated
@@ -336,22 +336,13 @@ export const createImportRules: RulesetCreator = ({
    * - alphabetically sorts them
    * - enforces new lines between groups
    *
+   * superseded by eslint-plugin-simple-import-sort
+   *
    * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
+   * @see https://github.com/ljosberinn/eslint-config-galex/issues/744
+   * @see https://github.com/lydell/eslint-plugin-simple-import-sort
    */
-  'import/order': [
-    'warn',
-    {
-      alphabetize: {
-        order: 'asc',
-      },
-      groups: [
-        ['builtin', 'external', 'internal'],
-        ['unknown', 'parent', 'sibling'],
-        'index',
-      ],
-      'newlines-between': 'always',
-    },
-  ],
+  'import/order': 'off',
 
   /**
    * off because named exports are preferred

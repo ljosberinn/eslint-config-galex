@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import ts from 'typescript';
 
-import type { TSConfig } from './types';
+import { type TSConfig } from './types';
 
 const defaultTsConfigName = 'tsconfig.json';
 

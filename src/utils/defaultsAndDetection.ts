@@ -1,10 +1,16 @@
-import type {
-  Dependencies,
-  ESLintConfig,
-  TopLevelESLintConfig,
+import {
+  type Dependencies,
+  type ESLintConfig,
+  type TopLevelESLintConfig,
 } from '../types';
 
-export const plugins = ['import', 'unicorn', 'promise', 'sonarjs'];
+export const plugins = [
+  'import',
+  'unicorn',
+  'promise',
+  'sonarjs',
+  'simple-import-sort',
+];
 
 /**
  * @see https://www.npmjs.com/org/testing-library

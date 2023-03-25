@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { parseJsonText, convertToObject } from 'typescript';
+import { convertToObject, parseJsonText } from 'typescript';
 
 import { detectTypeScript } from '../../src/getDependencies';
 

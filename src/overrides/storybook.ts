@@ -1,4 +1,4 @@
-import type { OverrideCreator, RulesCreator } from '../types';
+import { type OverrideCreator, type RulesCreator } from '../types';
 import { uniqueArrayEntries } from '../utils/array';
 import { storybookOverrideType } from '../utils/overrideType';
 

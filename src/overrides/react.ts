@@ -1,11 +1,11 @@
-import type { Linter } from 'eslint';
+import { type Linter } from 'eslint';
 
-import type {
-  Dependencies,
-  OverrideCreator,
-  OverrideESLintConfig,
-  OverrideInternalOverride,
-  RulesCreator,
+import {
+  type Dependencies,
+  type OverrideCreator,
+  type OverrideESLintConfig,
+  type OverrideInternalOverride,
+  type RulesCreator,
 } from '../types';
 import { uniqueArrayEntries } from '../utils/array';
 import { reactOverrideType } from '../utils/overrideType';

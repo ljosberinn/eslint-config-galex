@@ -1,5 +1,5 @@
 import { createStorybookOverride } from '../../src/overrides/storybook';
-import type { OverrideCreator } from '../../src/types';
+import { type OverrideCreator } from '../../src/types';
 import { defaultProject } from '../shared';
 
 const storybookDefaultProject: Parameters<OverrideCreator>[0] = {

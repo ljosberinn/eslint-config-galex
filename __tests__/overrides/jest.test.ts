@@ -1,13 +1,13 @@
 import {
+  createJestConfigOverride,
   createJestDomRules,
   createJestOverride,
   createJestRules,
   createTestingLibraryRules,
-  createTestOverrides,
   createTestingLibrarySettings,
-  createJestConfigOverride,
+  createTestOverrides,
 } from '../../src/overrides/jest';
-import type { OverrideCreator } from '../../src/types';
+import { type OverrideCreator } from '../../src/types';
 import { defaultProject } from '../shared';
 
 const jestDefaultProject: Parameters<OverrideCreator>[0] = {

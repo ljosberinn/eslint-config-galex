@@ -4,7 +4,7 @@ import {
   createReactRules,
   createRemixRoutesOverride,
 } from '../../src/overrides/react';
-import type { OverrideCreator } from '../../src/types';
+import { type OverrideCreator } from '../../src/types';
 import { defaultProject } from '../shared';
 
 const reactDefaultProject: Parameters<OverrideCreator>[0] = {

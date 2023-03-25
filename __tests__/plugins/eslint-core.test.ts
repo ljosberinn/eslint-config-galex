@@ -1,12 +1,12 @@
 import packageJson from '../../package.json';
 import {
-  createEslintCoreRules,
-  eslintDefaultRulesTypeScriptOverride,
-  createES6TypeScriptRules,
-  createVariableTypeScriptRules,
-  createPossibleTypeScriptErrorRules,
   createBestPracticesTypescriptRules,
+  createES6TypeScriptRules,
+  createEslintCoreRules,
+  createPossibleTypeScriptErrorRules,
   createStylisticIssuesTypeScriptRules,
+  createVariableTypeScriptRules,
+  eslintDefaultRulesTypeScriptOverride,
 } from '../../src/plugins/eslint-core';
 import tsConfig from '../../tsconfig.json';
 import { defaultProject } from '../shared';

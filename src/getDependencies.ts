@@ -1,8 +1,8 @@
 import { sync } from 'read-pkg-up';
 
-import type { GetTopLevelTsConfigArgs } from './getToplevelTsConfig';
+import { type GetTopLevelTsConfigArgs } from './getToplevelTsConfig';
 import { getTopLevelTsConfig } from './getToplevelTsConfig';
-import type { Dependencies } from './types';
+import { type Dependencies } from './types';
 import { testingLibFamily } from './utils/defaultsAndDetection';
 
 export type GetDepsArgs = {
