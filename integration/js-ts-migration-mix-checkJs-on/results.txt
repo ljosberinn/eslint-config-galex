@@ -1,4 +1,4 @@
-ESLint v8.36.0
+ESLint v8.37.0
 writing deps to eslint-config-galex\integration\js-ts-migration-mix-checkJs-on\deps.json
 writing config cache to eslint-config-galex\integration\js-ts-migration-mix-checkJs-on\eslint-config.json
 TAP version 13
