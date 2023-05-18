@@ -135,7 +135,7 @@
     "jest-watch-typeahead": "2.2.2",
     "next": "13.2.4",
     "prettier": "2.8.7",
-    "rimraf": "4.4.1",
+    "rimraf": "5.0.1",
     "semantic-release": "19.0.5"
   },
   "peerDependencies": {
