@@ -115,7 +115,7 @@
     "eslint-plugin-storybook": "0.6.11",
     "eslint-plugin-tailwindcss": "3.10.3",
     "eslint-plugin-testing-library": "5.10.2",
-    "eslint-plugin-unicorn": "46.0.0",
+    "eslint-plugin-unicorn": "46.0.1",
     "lodash.merge": "4.6.2",
     "read-pkg-up": "7.0.1",
     "typescript": "5.1.3"
