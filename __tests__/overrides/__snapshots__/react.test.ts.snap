@@ -163,6 +163,8 @@ exports[`createReactRules with next 1`] = `
       "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
+        "src/app/**/*.?(t|j)s?(x)",
+        "app/**/*.?(t|j)s?(x)",
       ],
       "rules": {
         "import/no-default-export": "off",
@@ -743,6 +745,8 @@ exports[`createReactRules with typescript and next 1`] = `
       "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
+        "src/app/**/*.?(t|j)s?(x)",
+        "app/**/*.?(t|j)s?(x)",
       ],
       "rules": {
         "import/no-default-export": "off",
@@ -2102,6 +2106,8 @@ exports[`override snapshots with next 1`] = `
       "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
+        "src/app/**/*.?(t|j)s?(x)",
+        "app/**/*.?(t|j)s?(x)",
       ],
       "rules": {
         "import/no-default-export": "off",
@@ -2401,6 +2407,8 @@ exports[`override snapshots with next and typescript 1`] = `
       "files": [
         "src/pages/**/*.?(t|j)s?(x)",
         "pages/**/*.?(t|j)s?(x)",
+        "src/app/**/*.?(t|j)s?(x)",
+        "app/**/*.?(t|j)s?(x)",
       ],
       "rules": {
         "import/no-default-export": "off",

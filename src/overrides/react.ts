@@ -1410,6 +1410,8 @@ export const createNextJsRules: RulesCreator = ({
 const nextJsPagesOverrideFiles: OverrideESLintConfig['files'] = [
   'src/pages/**/*.?(t|j)s?(x)',
   'pages/**/*.?(t|j)s?(x)',
+  'src/app/**/*.?(t|j)s?(x)',
+  'app/**/*.?(t|j)s?(x)',
 ];
 
 const nextJsPagesRules: OverrideESLintConfig['rules'] = {
