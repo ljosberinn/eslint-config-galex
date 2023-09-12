@@ -94,7 +94,7 @@ describe('maybeLoadExistingEslintRc', () => {
   });
 });
 
-test('backupExistingEslintrc creates a scoped & formatted backup', () => {
+test('backupExistingEslintrc creates a scoped & formatted backup', async () => {
   const writeFileSyncMock = jest.fn();
   jest.spyOn(fs, 'writeFileSync').mockImplementation(writeFileSyncMock);
 
@@ -103,7 +103,7 @@ test('backupExistingEslintrc creates a scoped & formatted backup', () => {
   });
   const mockConfig = { foo: 'bar' };
 
-  backupExistingEslintrc(mockConfig, mockFormat);
+  await backupExistingEslintrc(mockConfig, mockFormat);
 
   expect(mockFormat).toHaveBeenCalledWith(
     JSON.stringify(mockConfig),
