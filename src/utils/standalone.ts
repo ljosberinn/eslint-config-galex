@@ -56,16 +56,20 @@ export const maybeLoadExistingEslintrc = (
   }
 };
 
-export const backupExistingEslintrc = (
+export const backupExistingEslintrc = async (
   config: Record<string, unknown>,
-  format: (str: string, options?: Record<string, unknown>) => string
-): void => {
+  format: (str: string, options?: Record<string, unknown>) => Promise<string>
+): Promise<void> => {
   const name = `./.eslintrc-${Date.now()}-bak.json`;
   const targetPath = resolve(name);
 
   log(`backing existing ".eslintrc.json" up at "${name}"`);
 
-  writeFileSync(targetPath, format(JSON.stringify(config), prettierOptions));
+  const formattedOptions = await format(
+    JSON.stringify(config),
+    prettierOptions
+  );
+  writeFileSync(targetPath, formattedOptions);
 };
 
 export async function generateStandalone(): Promise<void> {
@@ -74,19 +78,24 @@ export async function generateStandalone(): Promise<void> {
     const targetPath = resolve(defaultEslintRcJsonPath);
 
     const existingConfig = maybeLoadExistingEslintrc(targetPath);
-    const format = await loadPrettier();
+    // TODO: Remove type overwrite after updating prettier
+    const format = (await loadPrettier()) as unknown as (
+      str: string,
+      options?: Record<string, unknown>
+    ) => Promise<string>;
 
     if (existingConfig) {
-      backupExistingEslintrc(existingConfig, format);
+      await backupExistingEslintrc(existingConfig, format);
     }
 
     const config = createConfig(settings ?? undefined);
     const finalConfig = existingConfig ? merge(config, existingConfig) : config;
-
-    writeFileSync(
-      targetPath,
-      format(JSON.stringify(finalConfig), prettierOptions)
+    const formattedFinalConfig = await format(
+      JSON.stringify(finalConfig),
+      prettierOptions
     );
+
+    writeFileSync(targetPath, formattedFinalConfig);
 
     log(`wrote ".eslintrc.json" to "${targetPath}"`);
   } catch (error) {
